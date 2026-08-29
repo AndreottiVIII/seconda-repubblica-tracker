@@ -249,6 +249,38 @@ button.p95:active{border-color:var(--ombra) var(--luce) var(--luce) var(--ombra)
 </div>
 
 <script>
+/* L'indirizzo del sito non cambia mai, e GitHub lo serve con dieci minuti di
+   cache: chi ha aperto la pagina poco prima di una correzione continua a
+   vedere quella vecchia, e il browser non chiede nemmeno se ce ne sia una
+   nuova. Quindi la pagina se lo chiede da sola, scavalcando la cache, e se
+   trova una versione piu' fresca si ricarica una volta sola.
+
+   Una volta sola per davvero: il numero di versione atteso resta annotato,
+   cosi' se la copia che torna e' ancora quella vecchia non si riparte in
+   circolo. E con un tempo massimo, perche' fetch da solo non ce l'ha e
+   aspetterebbe per sempre. */
+const VERSIONE = '%%VERSIONE%%';
+(function controllaVersione(){
+  if (location.protocol === 'file:' || !window.fetch) return;
+  const taglia = new AbortController();
+  const scadenza = setTimeout(() => taglia.abort(), 6000);
+  fetch('versione.txt?_=' + Date.now(), {cache: 'no-store', signal: taglia.signal})
+    .then(r => r.ok ? r.text() : null)
+    .then(t => {
+      clearTimeout(scadenza);
+      const fresca = (t || '').trim();
+      if (!fresca || fresca === VERSIONE) return;
+      try {
+        if (sessionStorage.getItem('attesa') === fresca) return;
+        sessionStorage.setItem('attesa', fresca);
+      } catch (e) { return; }
+      // Un indirizzo diverso e' l'unico modo sicuro di scavalcare la cache.
+      location.replace(location.pathname + '?v=' + encodeURIComponent(fresca) +
+                       location.hash);
+    })
+    .catch(() => clearTimeout(scadenza));
+})();
+
 const DATI = /*__DATI__*/;
 const COLOFONE = /*__COLOFONE__*/;
 
@@ -850,7 +882,7 @@ function daDoveVeniva(p, i){
 }
 
 VISTE['responsabili'] = function(){
-  let h = '<h1>I gruppi di soccorso</h1>' +
+  let h = '<h1>I Responsabili</h1>' +
     '<p>Nel dicembre 2010 il governo Berlusconi IV sopravvive per tre voti alla ' +
     'mozione di sfiducia. Nelle settimane successive nascono due gruppi ' +
     'parlamentari che prima non c&rsquo;erano: <b>Iniziativa Responsabile</b> alla ' +
@@ -889,7 +921,7 @@ VISTE['responsabili'] = function(){
     'vero prima del passaggio, saltando il misto quando &egrave; stato una tappa ' +
     'intermedia; dice <i>gruppo misto</i> solo per chi nel misto era rimasto ' +
     'dall&rsquo;inizio. Ogni riga si apre nella scheda della persona, con tutte le date.</p>';
-  return {titolo: 'I gruppi di soccorso', icona: '&#9937;', html: h, faccia: true,
+  return {titolo: 'I Responsabili', icona: '&#9937;', html: h, faccia: true,
           larghezza: 660, altezza: 540, stato: totale + ' persone',
           stato2: 'XVI legislatura'};
 };
@@ -968,7 +1000,7 @@ const SCRIVANIA = [
   ['&#127963;', 'Seconda Repubblica', 'indice', ''],
   ['&#128193;', 'Risorse del Parlamento', 'elenco', ''],
   ['&#127942;', 'Classifiche', 'classifiche', ''],
-  ['&#9937;', 'Gruppi di soccorso', 'responsabili', ''],
+  ['&#9937;', 'I Responsabili', 'responsabili', ''],
   ['&#128193;', 'Partiti', 'partiti', ''],
   ['&#128269;', 'Trova...', 'trova', ''],
   ['&#128209;', 'Il metodo', 'metodo', ''],

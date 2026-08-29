@@ -5,7 +5,7 @@ Un file solo, coi dati dentro: si apre col doppio clic dal disco, si mette su
 qualunque hosting statico, non serve ne' un server ne' un database. Le chiavi
 sono di una o due lettere perche' il file finito viaggia intero nel browser.
 """
-import sys, os, json, datetime, re
+import sys, os, json, datetime, re, hashlib
 
 sys.stdout.reconfigure(encoding='utf-8', errors='replace')
 
@@ -162,11 +162,23 @@ def main():
     }
 
     modello = open(MODELLO, encoding='utf-8').read()
+    corpo = json.dumps(dati, ensure_ascii=False, separators=(',', ':'))
+
+    # La versione e' un'impronta del contenuto, non un orario: cosi' cambia
+    # quando cambia qualcosa davvero, e chi ha la pagina aperta non se la
+    # vede ricaricare ogni notte per niente. La data di generazione resta
+    # fuori dal conto proprio per questo.
+    senza_data = dict(dati)
+    senza_data.pop('generato', None)
+    impronta = hashlib.md5(
+        (modello + json.dumps(senza_data, ensure_ascii=False, sort_keys=True)
+         ).encode('utf-8')).hexdigest()[:12]
+
     html = (modello
-            .replace('/*__DATI__*/', json.dumps(dati, ensure_ascii=False,
-                                                separators=(',', ':')))
+            .replace('/*__DATI__*/', corpo)
             .replace('/*__COLOFONE__*/', json.dumps(COLOFONE, ensure_ascii=False))
-            .replace('%%TITOLO%%', TITOLO))
+            .replace('%%TITOLO%%', TITOLO)
+            .replace('%%VERSIONE%%', impronta))
 
     # Prima di scrivere su disco. Con i dati dentro la pagina, una stringa
     # non chiusa non rompe una funzione: spegne tutto lo script, e il sito
@@ -176,11 +188,14 @@ def main():
     os.makedirs(USCITA, exist_ok=True)
     percorso = os.path.join(USCITA, 'index.html')
     open(percorso, 'w', encoding='utf-8').write(html)
+    # Il file che la pagina interroga per sapere se e' rimasta indietro.
+    open(os.path.join(USCITA, 'versione.txt'), 'w', encoding='utf-8').write(impronta)
 
     vivi = sum(1 for p in persone if p['s'] == 1)
     print('%s: %d persone, %d viventi, %d cambi di casacca'
           % (os.path.basename(percorso), len(persone), vivi,
              sum(p['c'] for p in persone)))
+    print('versione: %s' % impronta)
     print('peso: %.2f MB' % (os.path.getsize(percorso) / 1024.0 / 1024.0))
 
 
