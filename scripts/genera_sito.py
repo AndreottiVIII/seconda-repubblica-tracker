@@ -15,6 +15,7 @@ import casacche, controlla_js
 
 INGRESSO = os.path.join(QUI, '..', 'data', 'elenco.json')
 MODELLO = os.path.join(QUI, 'modello.html')
+DISTINTIVI = os.path.join(QUI, '..', 'data', 'distintivi.json')
 USCITA = os.path.join(QUI, '..', 'sito')
 
 TITOLO = 'Seconda Repubblica Tracker'
@@ -163,6 +164,24 @@ def main():
 
     persone = [compatta(p, gruppi, ant) for p in grezzo['persone']]
     persone.sort(key=lambda x: x['n'])
+
+    # I distintivi: fatti datati e con una fonte, scritti a mano perche'
+    # nessun registro li tiene. Il file e' piccolo apposta: se un distintivo
+    # non si puo' scrivere senza un aggettivo, non e' un fatto.
+    distintivi = {}
+    if os.path.exists(DISTINTIVI):
+        distintivi = {k: v for k, v in
+                      json.load(open(DISTINTIVI, encoding='utf-8')).items()
+                      if not k.startswith('_')}
+        noti = {p['q'] for p in persone}
+        for q in list(distintivi):
+            if q not in noti:
+                print('  distintivo per uno sconosciuto, ignorato: %s' % q)
+                del distintivi[q]
+        for p in persone:
+            if p['q'] in distintivi:
+                p['ds'] = distintivi[p['q']]
+        print('distintivi assegnati: %d' % len(distintivi))
 
     dati = {
         'generato': datetime.date.today().isoformat(),

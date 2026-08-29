@@ -568,7 +568,7 @@ function tabellaPersone(elenco, opzioni){
     const passaggi = passaggiDi(p);
     return '<tr class="riga" data-q="' + p.q + '">' +
       '<td>' + (p.s === 2 ? '<span class="morto">' : '<span>') + esc(perElenco(p)) +
-        (p.v ? ' &#9884;' : '') + (p.x ? ' &#9873;' : '') + '</span></td>' +
+        (p.v ? ' &#9884;' : '') + (p.x ? ' &#9873;' : '') + (p.ds ? ' &#9733;' : '') + '</span></td>' +
       '<td class="num">' + (p.b ? p.b.slice(0,4) : '&mdash;') + '</td>' +
       '<td>' + p.m.join(' ') + '</td>' +
       '<td>' + passaggi.slice(0, 4).map(c => pill(c)).join('') +
@@ -678,6 +678,19 @@ VISTE['persona'] = function(q){
     'enciclopedica &egrave; per questo.</div>';
   if (p.md) corpo += '<div class="avviso">Una fonte riporta una morte nel ' + esc(p.md[0]) +
     ', con il solo anno e senza conferma dei registri: non &egrave; stata presa per buona.</div>';
+
+  if (p.ds && p.ds.length){
+    corpo += '<h2 style="margin-top:12px">Distintivi</h2>' + p.ds.map(d =>
+      '<div class="riquadro" style="margin-bottom:6px">' +
+      '<div><b>' + esc(d.et) + '</b> <span style="color:#606060">' +
+        dataIt(d.data) + '</span></div>' +
+      '<div style="margin-top:3px">' + esc(d.testo) + '</div>' +
+      '<div class="piede" style="margin-top:5px;padding-top:4px">Fonte: ' +
+        (/^https?:/.test(d.fonte || '')
+          ? '<a target="_blank" rel="noopener" href="' + esc(d.fonte) + '">' +
+            esc(d.fonte) + '</a>'
+          : esc(d.fonte || '')) + '</div></div>').join('');
+  }
 
   if (p.g && p.g.length){
     corpo += '<h2 style="margin-top:12px">Le casacche, in ordine</h2>' + striscia(p);
@@ -869,6 +882,9 @@ VISTE['lista'] = function(filtro){
     gente = valore === '0' ? conGruppo().filter(p => p.c === 0)
                            : conGruppo().filter(p => p.c > 0);
     titolo = valore === '0' ? 'Mai cambiato casacca' : 'Hanno cambiato almeno una volta';
+  } else if (tipo === 'morti'){
+    gente = P.filter(p => p.s === 2 && p.d && p.d.slice(0, 4) === valore);
+    titolo = 'Ci hanno lasciato nel ' + valore;
   } else if (tipo === 'fedeli'){
     gente = conGruppo().filter(p => p.c === 0 && p.m.length === ORDINE.length);
     titolo = 'I fedeli';
@@ -1195,6 +1211,137 @@ VISTE['aggiorna'] = function(){
     larghezza: 580, altezza: 470, stato: 'ricontrollo dal vivo'};
 };
 
+/* ---- Statistiche: i conti che si possono fare senza aggiungere niente ---- */
+function barra(n, massimo, colore){
+  const l = massimo ? Math.max(1, Math.round(100 * n / massimo)) : 0;
+  return '<span style="display:inline-block;height:10px;vertical-align:0;width:' +
+    l + '%;background:' + (colore || '#000080') + ';border:1px solid rgba(0,0,0,.4)"></span>';
+}
+
+function tabellaConBarre(righe, fnClic){
+  const massimo = Math.max.apply(null, righe.map(r => r[1]).concat([1]));
+  return '<table><tbody>' + righe.map(r =>
+    '<tr><td style="width:22%;white-space:nowrap">' + r[0] + '</td>' +
+    '<td class="num" style="width:14%">' +
+      (fnClic ? numero(r[1], fnClic(r)[0], fnClic(r)[1]) : r[1]) + '</td>' +
+    '<td>' + barra(r[1], massimo, r[2]) + '</td></tr>').join('') + '</tbody></table>';
+}
+
+VISTE['statistiche'] = function(){
+  const vivi = P.filter(p => p.s === 1);
+  const morti = P.filter(p => p.s === 2);
+  const conGruppo = P.filter(p => p.g);
+  const anno = s => s ? +String(s).slice(0, 4) : null;
+
+  let h = '<h1>Statistiche</h1>';
+
+  // --- il tracker: quanti sono ancora qui
+  h += '<div class="gruppone">' +
+    riquadro('In vita', vivi.length, perc(vivi.length, P.length) + '% dei 2.763.',
+             'lista', 'stato:vivi') +
+    riquadro('Deceduti', morti.length, perc(morti.length, P.length) + '%.',
+             'lista', 'stato:morti') +
+    '</div>';
+
+  // --- eta' anagrafica dei vivi
+  const eta_vivi = vivi.map(eta).filter(x => x != null);
+  const media = eta_vivi.length
+    ? Math.round(10 * eta_vivi.reduce((a, b) => a + b, 0) / eta_vivi.length) / 10 : 0;
+  const eta_morti = morti.map(eta).filter(x => x != null);
+  const mediaM = eta_morti.length
+    ? Math.round(10 * eta_morti.reduce((a, b) => a + b, 0) / eta_morti.length) / 10 : 0;
+  h += '<h2 style="margin-top:14px">Le et&agrave;</h2>' +
+    '<p>Chi &egrave; ancora vivo ha in media <b>' + String(media).replace('.', ',') +
+    ' anni</b>. Chi non c&rsquo;&egrave; pi&ugrave; se n&rsquo;&egrave; andato in media a <b>' +
+    String(mediaM).replace('.', ',') + '</b>.</p>';
+
+  const fasce = [[0,49],[50,59],[60,69],[70,79],[80,89],[90,199]];
+  const rf = fasce.map(f => {
+    const n = eta_vivi.filter(x => x >= f[0] && x <= f[1]).length;
+    return [(f[1] > 150 ? '90 e oltre' : f[0] + '-' + f[1] + ' anni'), n, '#006400'];
+  });
+  h += '<h3>I vivi, per et&agrave;</h3>' + tabellaConBarre(rf);
+
+  const piu = vivi.filter(p => p.b).sort((a, b) => a.b.localeCompare(b.b));
+  if (piu.length)
+    h += '<p>Il pi&ugrave; anziano fra i vivi &egrave; ' +
+      '<span class="clic" data-apri="persona" data-arg="' + piu[0].q + '">' +
+      esc(piu[0].n) + '</span>, ' + eta(piu[0]) + ' anni. Il pi&ugrave; giovane ' +
+      '<span class="clic" data-apri="persona" data-arg="' + piu[piu.length-1].q + '">' +
+      esc(piu[piu.length-1].n) + '</span>, ' + eta(piu[piu.length-1]) + '.</p>';
+
+  // --- morti per anno
+  const perAnno = {};
+  morti.forEach(p => { const a = anno(p.d); if (a) perAnno[a] = (perAnno[a] || 0) + 1; });
+  const anni = Object.keys(perAnno).map(Number).sort();
+  const recenti = anni.filter(a => a >= 1994);
+  h += '<h2 style="margin-top:14px">Morti per anno</h2>' +
+    '<p>Dal 1994 a oggi. Il conto sale con l&rsquo;et&agrave; della classe politica ' +
+    'che questo sito racconta.</p>' +
+    tabellaConBarre(recenti.map(a => [String(a), perAnno[a], '#8b0000']),
+                    r => ['lista', 'morti:' + r[0]]);
+
+  // --- vivi per legislatura
+  h += '<h2 style="margin-top:14px">Quanti ne restano, legislatura per legislatura</h2>' +
+    '<table><thead><tr><th>Legislatura</th><th class="num">Persone</th>' +
+    '<th class="num">Vive</th><th class="num">%</th><th></th></tr></thead><tbody>' +
+    LEG.map(l => {
+      const gente = P.filter(p => p.m.indexOf(l.n) >= 0);
+      const v = gente.filter(p => p.s === 1).length;
+      return '<tr><td>' + l.n + ' <span style="color:#606060">' + l.anni + '</span></td>' +
+        '<td class="num">' + numero(gente.length, 'lista', 'mandato:' + l.n) + '</td>' +
+        '<td class="num">' + v + '</td>' +
+        '<td class="num">' + perc(v, gente.length) + '%</td>' +
+        '<td>' + barra(v, gente.length, '#006400') + '</td></tr>';
+    }).join('') + '</tbody></table>';
+
+  // --- quante legislature a testa
+  const perQuante = {};
+  P.forEach(p => { perQuante[p.m.length] = (perQuante[p.m.length] || 0) + 1; });
+  h += '<h2 style="margin-top:14px">Quante legislature a testa</h2>' +
+    tabellaConBarre(Object.keys(perQuante).sort().map(k =>
+      [k + (k === '1' ? ' legislatura' : ' legislature'), perQuante[k], '#000080']));
+
+  // --- i cambi
+  const perCambi = {};
+  conGruppo.forEach(p => { perCambi[p.c] = (perCambi[p.c] || 0) + 1; });
+  h += '<h2 style="margin-top:14px">Cambi di casacca a testa</h2>' +
+    tabellaConBarre(Object.keys(perCambi).map(Number).sort((a,b) => a-b).map(k =>
+      [(k === 0 ? 'mai' : k + (k === 1 ? ' volta' : ' volte')), perCambi[k],
+       k === 0 ? '#006400' : '#b8860b']),
+      r => ['lista', 'cambi:' + (r[0] === 'mai' ? '0' : '1+')]);
+
+  // --- partiti estinti
+  const estinti = Object.keys(PARTITI).map(c => {
+    const a = annidiPartito(c);
+    return {c: c, fine: a[1], n: membriDi(c).length};
+  }).filter(x => x.n && x.fine).sort((a, b) => a.fine.localeCompare(b.fine));
+  h += '<h2 style="margin-top:14px">Quando si sono spenti i partiti</h2>' +
+    '<p>L&rsquo;ultimo giorno in cui qualcuno risulta iscritto a quel gruppo, ' +
+    'in questo perimetro. Chi arriva al 14 marzo 2013 &egrave; arrivato in fondo ' +
+    'alla Seconda Repubblica.</p>' +
+    '<table><thead><tr><th>Partito</th><th>Ultimo giorno</th>' +
+    '<th class="num">Persone</th></tr></thead><tbody>' +
+    estinti.map(x => '<tr><td><span class="clic" data-apri="partito" data-arg="' +
+      x.c + '">' + pill(x.c, nomePartito(x.c)) + '</span></td>' +
+      '<td>' + dataIt(x.fine) + (x.fine === '20130314' ?
+        ' <span style="color:#606060">(fine legislatura)</span>' : '') + '</td>' +
+      '<td class="num">' + numero(x.n, 'lista', 'partito:' + x.c) + '</td></tr>').join('') +
+    '</tbody></table>';
+
+  // --- il misto
+  const misto = membriDi('MISTO').length;
+  h += '<h2 style="margin-top:14px">Il gruppo misto</h2>' +
+    '<p>Ci sono passate <b>' + numero(misto, 'lista', 'partito:MISTO') + '</b> persone, ' +
+    'il ' + perc(misto, conGruppo.length) + '% di chi ha avuto un gruppo. ' +
+    '&Egrave; la seconda casacca pi&ugrave; diffusa della Seconda Repubblica, ' +
+    'e non &egrave; un partito.</p>';
+
+  return {titolo: 'Statistiche', icona: '&#128202;', html: h, faccia: true,
+          larghezza: 660, altezza: 560,
+          stato: P.length + ' persone', stato2: 'media ' + String(media).replace('.', ',') + ' anni'};
+};
+
 VISTE['metodo'] = function(){
   const h =
     '<h1>Come &egrave; fatto</h1>' +
@@ -1269,6 +1416,7 @@ const SCRIVANIA = [
   ['&#127963;', 'Seconda Repubblica', 'indice', ''],
   ['&#128193;', 'Risorse del Parlamento', 'elenco', ''],
   ['&#127942;', 'Classifiche', 'classifiche', ''],
+  ['&#128202;', 'Statistiche', 'statistiche', ''],
   ['&#9937;', 'I Responsabili', 'responsabili', ''],
   ['&#128193;', 'Partiti', 'partiti', ''],
   ['&#127793;', 'Albero dei partiti', 'albero', ''],
