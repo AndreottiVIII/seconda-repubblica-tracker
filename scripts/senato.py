@@ -19,7 +19,7 @@ Q_SENATORI = """
 PREFIX osr: <http://dati.senato.it/osr/>
 PREFIX ocd: <http://dati.camera.it/ocd/>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
-SELECT DISTINCT ?s ?nome ?cognome ?leg ?nascita ?morte ?tipo WHERE {
+SELECT DISTINCT ?s ?nome ?cognome ?leg ?nascita ?morte ?tipo ?foto ?genere WHERE {
   ?s a osr:Senatore ; foaf:firstName ?nome ; foaf:lastName ?cognome ;
      osr:mandato ?m .
   ?m a ocd:mandatoSenato ; osr:legislatura ?leg .
@@ -27,6 +27,8 @@ SELECT DISTINCT ?s ?nome ?cognome ?leg ?nascita ?morte ?tipo WHERE {
   OPTIONAL { ?m osr:tipoMandato ?tipo }
   OPTIONAL { ?s osr:dataNascita ?nascita }
   OPTIONAL { ?s osr:dataMorte ?morte }
+  OPTIONAL { ?s foaf:depiction ?foto }
+  OPTIONAL { ?s foaf:gender ?genere }
 }
 """
 
@@ -243,6 +245,16 @@ def _costruisci():
                                               r.get('cognome', {}).get('value')),
                 'uri': r['s']['value'],
                 'cognome': (r.get('cognome', {}).get('value') or '').strip()}
+        # Il Senato pubblica la foto ufficiale di tutti i suoi senatori,
+        # legislatura per legislatura. Dell'indirizzo bastano il numero della
+        # legislatura e l'identificativo: il resto e' sempre uguale.
+        m = re.search(r'/leg/(\d+)/Immagini/Senatori/0*(\d+)\.jpg',
+                      r.get('foto', {}).get('value') or '')
+        if m:
+            voce['foto_senato'] = [m.group(1), m.group(2)]
+        g = (r.get('genere', {}).get('value') or '').strip().upper()
+        if g:
+            voce['genere'] = 'F' if g.startswith('F') else 'M'
         # I senatori a vita e di diritto attraversano ogni legislatura per
         # definizione: contati come gli altri falserebbero ogni classifica
         # di longevita', quindi restano marcati.

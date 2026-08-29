@@ -30,10 +30,11 @@ LEGISLATURE = [
 Q_DEPUTATI = """
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 PREFIX ocd: <http://dati.camera.it/ocd/>
-SELECT DISTINCT ?dep ?cognome ?nome WHERE {
+SELECT DISTINCT ?dep ?cognome ?nome ?genere WHERE {
   ?dep a ocd:deputato ;
        ocd:rif_leg <http://dati.camera.it/ocd/legislatura.rdf/%s> ;
        foaf:surname ?cognome ; foaf:firstName ?nome .
+  OPTIONAL { ?dep foaf:gender ?genere }
 }
 """
 
@@ -322,6 +323,9 @@ def _costruisci():
             # elenco di persone si ordina per cognome, e 'Nome Cognome' non
             # dice dove finisce l'uno e comincia l'altro.
             voce['cognome'] = (r.get('cognome', {}).get('value') or '').strip().title()
+            g = (r.get('genere', {}).get('value') or '').strip().lower()
+            if g:
+                voce['genere'] = 'F' if g.startswith('f') else 'M'
             if pid in gruppi:
                 voce['gruppi'] = gruppi[pid]
                 voce['gruppo'] = gruppi[pid][0]['g']

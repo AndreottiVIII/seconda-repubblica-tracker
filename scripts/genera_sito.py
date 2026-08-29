@@ -143,12 +143,18 @@ def compatta(p, gruppi, ant):
         camerali = [m for m in ORDINE if ramo.get(m) == 'C']
         if camerali:
             d['fc'] = [p['id_camera'], camerali[-1]]
+    if p.get('foto_senato'):
+        # Il Senato ha la foto ufficiale di tutti i suoi senatori, nessuno
+        # escluso: chiude i buchi che Wikidata e la Camera lasciano aperti.
+        d['fs'] = p['foto_senato']
     if p.get('wikipedia'):
         d['w'] = wiki_breve(p['wikipedia'])
     if p.get('non_eletto'):
         d['x'] = 1
     if p.get('senatore_a_vita'):
         d['v'] = 1
+    if p.get('genere'):
+        d['ge'] = p['genere']
     if p.get('solo_registro'):
         d['r'] = 1
     if p.get('morte_dubbia'):

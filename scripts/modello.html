@@ -423,6 +423,7 @@ function apri(vista, arg, senzaStoria){
   fronte(k);
   disegnaBarra();
   if (!senzaStoria) storia(k);
+  if (vista === 'confronta') disegnaConfronto();
   document.body.classList.remove('attesa');
   return FIN[k];
 }
@@ -739,6 +740,10 @@ function ritratto(p){
     return '<img alt="" src="https://documenti.camera.it/apps/nuovosito/deputato/' +
            'getFoto.asp?id=' + encodeURIComponent(p.fc[0]) + '&legislatura=' +
            NUMERO_LEG[p.fc[1]] + '">';
+  if (p.fs)
+    // Il Senato numera i file con otto cifre e gli zeri davanti.
+    return '<img alt="" src="https://www.senato.it/leg/' + encodeURIComponent(p.fs[0]) +
+           '/Immagini/Senatori/' + String(p.fs[1]).padStart(8, '0') + '.jpg">';
   return '<div class="vuoto">&#128100;</div>';
 }
 
@@ -890,6 +895,14 @@ VISTE['lista'] = function(filtro){
     gente = valore === '0' ? conGruppo().filter(p => p.c === 0)
                            : conGruppo().filter(p => p.c > 0);
     titolo = valore === '0' ? 'Mai cambiato casacca' : 'Hanno cambiato almeno una volta';
+  } else if (tipo === 'eta'){
+    const [da, a] = valore.split('-').map(Number);
+    gente = P.filter(p => p.s === 1 && eta(p) != null && eta(p) >= da && eta(p) <= a);
+    titolo = a > 150 ? 'Vivi, da ' + da + ' anni in su'
+                     : 'Vivi, fra ' + da + ' e ' + a + ' anni';
+  } else if (tipo === 'donne'){
+    gente = P.filter(p => p.ge === 'F' && p.m.indexOf(valore) >= 0);
+    titolo = 'Donne, ' + valore + ' legislatura';
   } else if (tipo === 'governo'){
     gente = P.filter(p => (p.gv || []).indexOf(valore) >= 0);
     titolo = 'Governo ' + valore;
@@ -1270,9 +1283,11 @@ VISTE['statistiche'] = function(){
   const fasce = [[0,49],[50,59],[60,69],[70,79],[80,89],[90,199]];
   const rf = fasce.map(f => {
     const n = eta_vivi.filter(x => x >= f[0] && x <= f[1]).length;
-    return [(f[1] > 150 ? '90 e oltre' : f[0] + '-' + f[1] + ' anni'), n, '#006400'];
+    return [(f[1] > 150 ? '90 e oltre' : f[0] + '-' + f[1] + ' anni'), n, '#006400',
+            f[0] + '-' + f[1]];
   });
-  h += '<h3>I vivi, per et&agrave;</h3>' + tabellaConBarre(rf);
+  h += '<h3>I vivi, per et&agrave;</h3>' +
+       tabellaConBarre(rf, r => ['lista', 'eta:' + r[3]]);
 
   const piu = vivi.filter(p => p.b).sort((a, b) => a.b.localeCompare(b.b));
   if (piu.length)
@@ -1493,15 +1508,7 @@ VISTE['cestino'] = function(){
     '<p><b>' + chi.length + ' persone</b> su ' + P.length +
     ' hanno una condanna penale passata in giudicato, per un totale di ' +
     C.voci.length + ' sentenze.</p>' +
-    '<div class="avviso">Ogni riga &egrave; stata verificata sulla voce di ' +
-    'Wikipedia in italiano, che &egrave; linkata. Wikidata ne dichiarava ' +
-    'quattordici: nove sono state scartate perch&eacute; non definitive, non ' +
-    'confermate o con dati sbagliati &mdash; a Marcello Dell&rsquo;Utri ' +
-    'attribuiva il 1994 per una sentenza del 2014. Il <b>patteggiamento</b> ' +
-    '&egrave; equiparato per legge a una condanna, ma non &egrave; una ' +
-    'condanna in dibattimento, e qui viene detto. Chi non compare non &egrave; ' +
-    'per questo senza vicende giudiziarie: compare solo chi ha una condanna ' +
-    'definitiva verificata.</div>';
+    '<p class="piede">Ogni riga e\' verificata sulla voce di Wikipedia in italiano, che e\' linkata sotto ciascuna. Il patteggiamento e\' equiparato per legge a una condanna ma non e\' una condanna in dibattimento, e viene distinto. Chi non compare non e\' per questo senza vicende giudiziarie.</p>';
 
   chi.forEach(q => {
     const p = perQid[q];
@@ -1534,6 +1541,238 @@ VISTE['cestino'] = function(){
   return {titolo: 'Cestino', icona: '&#128465;', html: h, faccia: true,
           larghezza: 660, altezza: 540,
           stato: chi.length + ' persone', stato2: C.voci.length + ' sentenze'};
+};
+
+/* ---- I governi: l'altra meta' del periodo, quella che non e' il Parlamento ---- */
+const GOVERNI = [
+  ['Berlusconi I',   '10.05.1994', '17.01.1995'],
+  ['Dini',           '17.01.1995', '17.05.1996'],
+  ['Prodi I',        '17.05.1996', '21.10.1998'],
+  ["D'Alema I",      '21.10.1998', '22.12.1999'],
+  ["D'Alema II",     '22.12.1999', '26.04.2000'],
+  ['Amato II',       '26.04.2000', '11.06.2001'],
+  ['Berlusconi II',  '11.06.2001', '23.04.2005'],
+  ['Berlusconi III', '23.04.2005', '17.05.2006'],
+  ['Prodi II',       '17.05.2006', '08.05.2008'],
+  ['Berlusconi IV',  '08.05.2008', '16.11.2011'],
+  ['Monti',          '16.11.2011', '28.04.2013']
+];
+
+VISTE['governi'] = function(){
+  let h = '<h1>Gli undici governi</h1>' +
+    '<p>Dal maggio 1994 all&rsquo;aprile 2013. Il numero &egrave; quante persone ' +
+    'di questo elenco vi hanno fatto parte: sono i ministri, e comprendono chi ' +
+    'in Parlamento non &egrave; mai entrato.</p>' +
+    '<table><thead><tr><th>Governo</th><th>Dal</th><th>Al</th>' +
+    '<th class="num">Ministri</th><th class="num">Mai eletti</th></tr></thead><tbody>';
+  GOVERNI.forEach(g => {
+    const gente = P.filter(p => (p.gv || []).indexOf(g[0]) >= 0);
+    const fuori = gente.filter(p => p.x).length;
+    h += '<tr><td><b>' + esc(g[0]) + '</b></td><td>' + g[1] + '</td><td>' + g[2] + '</td>' +
+      '<td class="num">' + numero(gente.length, 'lista', 'governo:' + g[0]) + '</td>' +
+      '<td class="num">' + (fuori || '&mdash;') + '</td></tr>';
+  });
+  h += '</tbody></table>';
+  const monti = P.filter(p => (p.gv || []).indexOf('Monti') >= 0);
+  h += '<p style="margin-top:10px">Il governo Monti &egrave; il solo in cui ' +
+    'la quota di ministri senza un seggio &egrave; la maggioranza: ' +
+    monti.filter(p => p.x).length + ' su ' + monti.length + '.</p>' +
+    '<p class="piede">Le date sono quelle del giuramento e delle dimissioni. ' +
+    'Un ministro che ha servito in pi&ugrave; governi compare in ognuno.</p>';
+  return {titolo: 'Governi', icona: '&#127963;', html: h, faccia: true,
+          larghezza: 620, altezza: 480, stato: GOVERNI.length + ' governi'};
+};
+
+/* ---- Confronta due percorsi, uno sopra l'altro ---- */
+function opzioniPersone(scelto){
+  return P.map(p => '<option value="' + p.q + '"' +
+    (p.q === scelto ? ' selected' : '') + '>' + esc(perElenco(p)) + '</option>').join('');
+}
+
+VISTE['confronta'] = function(){
+  const a = P.find(p => p.n === 'Clemente Mastella') || P[0];
+  const b = P.find(p => p.n === 'Gianfranco Fini') || P[1];
+  return {titolo: 'Confronta', icona: '&#9878;', faccia: true,
+    html: '<p>Due percorsi affiancati, sulla stessa scala di tempo.</p>' +
+      '<p><select id="conf-a">' + opzioniPersone(a.q) + '</select> ' +
+      '<select id="conf-b">' + opzioniPersone(b.q) + '</select></p>' +
+      '<div id="conf-esito"></div>',
+    larghezza: 640, altezza: 500, stato: 'scegline due'};
+};
+
+function disegnaConfronto(){
+  const a = perQid[document.getElementById('conf-a').value];
+  const b = perQid[document.getElementById('conf-b').value];
+  if (!a || !b) return;
+  const scheda = p => '<div style="margin-bottom:12px">' +
+    '<div><b><span class="clic" data-apri="persona" data-arg="' + p.q + '">' +
+    esc(p.n) + '</span></b> &mdash; ' + p.m.length +
+    (p.m.length === 1 ? ' legislatura, ' : ' legislature, ') +
+    '<b>' + p.c + '</b> ' + (p.c === 1 ? 'cambio' : 'cambi') + ' di casacca' +
+    (p.k && p.k.length ? ', ' + esc(p.k[0]).toLowerCase() : '') + '</div>' +
+    (p.g && p.g.length ? striscia(p) : '<p style="color:#606060">Nessun gruppo.</p>') +
+    '</div>';
+  const comuni = partitiDi(a).filter(x => partitiDi(b).indexOf(x) >= 0);
+  document.getElementById('conf-esito').innerHTML = scheda(a) + scheda(b) +
+    '<p>' + (comuni.length
+      ? 'Casacche in comune: ' + comuni.map(c => pill(c, nomePartito(c))).join(' ')
+      : 'Nessuna casacca in comune.') + '</p>';
+}
+
+/* ---- Le donne ---- */
+VISTE['donne'] = function(){
+  const conGenere = P.filter(p => p.ge);
+  const donne = conGenere.filter(p => p.ge === 'F');
+  let h = '<h1>Le donne in Parlamento</h1>' +
+    '<p>Il genere lo pubblicano i registri di Camera e Senato. Su ' +
+    conGenere.length + ' persone che lo dichiarano, <b>' + donne.length +
+    '</b> sono donne: il ' + perc(donne.length, conGenere.length) + '%.</p>';
+
+  h += '<h2>Legislatura per legislatura</h2>' +
+    '<table><thead><tr><th>Legislatura</th><th class="num">Donne</th>' +
+    '<th class="num">Totale</th><th class="num">%</th><th></th></tr></thead><tbody>' +
+    LEG.map(l => {
+      const g = P.filter(p => p.m.indexOf(l.n) >= 0 && p.ge);
+      const d = g.filter(p => p.ge === 'F').length;
+      const q = g.length ? Math.round(1000 * d / g.length) / 10 : 0;
+      return '<tr><td>' + l.n + ' <span style="color:#606060">' + l.anni +
+        '</span></td><td class="num">' + numero(d, 'lista', 'donne:' + l.n) +
+        '</td><td class="num">' + g.length + '</td>' +
+        '<td class="num">' + String(q).replace('.', ',') + '%</td>' +
+        '<td><span style="display:inline-block;height:11px;width:' +
+        Math.max(1, Math.round(q * 3)) + '%;background:#a0248c;' +
+        'border:1px solid rgba(0,0,0,.4)"></span></td></tr>';
+    }).join('') + '</tbody></table>';
+
+  const cariche = donne.filter(p => p.h);
+  h += '<h2 style="margin-top:12px">Con una carica di governo (' + cariche.length + ')</h2>' +
+    '<table><tbody>' + cariche.slice().sort(perCognome).map(p =>
+      '<tr class="riga" data-q="' + p.q + '"><td style="width:34%">' +
+      esc(perElenco(p)) + '</td><td>' + esc((p.k || []).join('; ')) +
+      '</td></tr>').join('') + '</tbody></table>';
+
+  const piuCambi = donne.filter(p => p.g).slice().sort((x, y) => y.c - x.c).slice(0, 6);
+  h += '<p style="margin-top:10px">Le donne che hanno cambiato pi&ugrave; casacca: ' +
+    piuCambi.map(p => '<span class="clic" data-apri="persona" data-arg="' + p.q +
+      '">' + esc(p.n) + '</span> (' + p.c + ')').join(', ') + '.</p>';
+  h += '<p class="piede">Per ' + (P.length - conGenere.length) + ' persone il genere ' +
+    'non risulta: sono quasi tutte ministri mai eletti, che nei registri ' +
+    'parlamentari non compaiono.</p>';
+  return {titolo: 'Le donne in Parlamento', icona: '&#9792;', html: h, faccia: true,
+          larghezza: 640, altezza: 520,
+          stato: donne.length + ' donne', stato2: perc(donne.length, conGenere.length) + '%'};
+};
+
+/* ---- Esegui: il comando che apre una scheda a caso ---- */
+VISTE['esegui'] = function(){
+  return {titolo: 'Esegui', icona: '&#9654;', faccia: true,
+    html: '<p>Digitare il nome di una persona o di un partito, e il sito ' +
+      'lo aprir&agrave;. Lasciando il campo vuoto si apre una scheda a caso.</p>' +
+      '<p><input type="text" id="q-esegui" size="30" placeholder="Apri:"> ' +
+      '<button class="p95" id="vai-esegui">OK</button></p>' +
+      '<div id="esito-esegui" style="color:#8b0000"></div>',
+    larghezza: 460, altezza: 240, stato: 'vuoto = una a caso'};
+};
+
+function esegui(){
+  const q = (document.getElementById('q-esegui').value || '').trim().toLowerCase();
+  const avviso = document.getElementById('esito-esegui');
+  avviso.textContent = '';
+  if (!q){
+    apri('persona', P[Math.floor(Math.random() * P.length)].q);
+    return;
+  }
+  const part = Object.keys(PARTITI).find(c => c.toLowerCase() === q ||
+    PARTITI[c].nome.toLowerCase() === q);
+  if (part) return apri('partito', part);
+  const esatto = P.find(p => p.n.toLowerCase() === q);
+  if (esatto) return apri('persona', esatto.q);
+  const simili = P.filter(p => p.n.toLowerCase().indexOf(q) >= 0);
+  if (simili.length === 1) return apri('persona', simili[0].q);
+  if (simili.length > 1) return apri('lista', 'cerca:' + q);
+  avviso.textContent = 'Impossibile trovare "' + q +
+    '". Controllare di aver digitato correttamente il nome.';
+}
+
+/* ---- La linea del tempo dei partiti ---- */
+VISTE['tempo'] = function(){
+  const t0 = giorno(LEG[0].da), t1 = giorno(LEG[LEG.length - 1].a);
+  const arco = t1 - t0;
+  const righe = Object.keys(PARTITI).map(c => {
+    const a = annidiPartito(c);
+    return {c: c, da: a[0], a: a[1], n: membriDi(c).length};
+  }).filter(x => x.n && x.da && x.a).sort((x, y) => x.da.localeCompare(y.da) || y.n - x.n);
+
+  let h = '<h1>Linea del tempo</h1>' +
+    '<p>Ogni barra &egrave; un partito: comincia il primo giorno in cui qualcuno ' +
+    'vi risulta iscritto e finisce l&rsquo;ultimo. L&rsquo;altezza dice quante ' +
+    'persone ci sono passate.</p><div style="min-width:520px">';
+  const massimo = Math.max.apply(null, righe.map(r => r.n));
+  righe.forEach(r => {
+    const x = Math.max(0, (giorno(r.da) - t0) / arco) * 100;
+    const l = Math.max(0.7, (giorno(r.a) - giorno(r.da)) / arco * 100);
+    const alto = 6 + Math.round(14 * r.n / massimo);
+    const col = colorePartito(r.c);
+    h += '<div style="position:relative;height:' + (alto + 6) + 'px;margin-bottom:2px">' +
+      '<span class="clic" data-apri="partito" data-arg="' + r.c + '" ' +
+      'title="' + esc(nomePartito(r.c)) + ' — ' + r.n + ' persone" ' +
+      'style="position:absolute;left:' + x.toFixed(2) + '%;width:' + l.toFixed(2) +
+      '%;height:' + alto + 'px;background:' + col +
+      ';border:1px solid rgba(0,0,0,.45);text-decoration:none"></span>' +
+      '<span style="position:absolute;left:calc(' + Math.min(x, 72).toFixed(2) +
+      '% + ' + (l > 12 ? 3 : Math.round(l * 5) + 3) + 'px);font-size:10px;' +
+      'line-height:' + (alto + 4) + 'px;color:#000;white-space:nowrap">' +
+      esc(r.c) + '</span></div>';
+  });
+  h += '</div><div class="tacche" style="height:16px;margin-top:4px">' +
+    LEG.map(l => '<span style="left:' +
+      ((giorno(l.da) - t0) / arco * 100).toFixed(2) + '%">' + l.n + '</span>').join('') +
+    '</div>';
+  return {titolo: 'Linea del tempo', icona: '&#128198;', html: h, faccia: true,
+          larghezza: 700, altezza: 560, stato: righe.length + ' partiti'};
+};
+
+/* ---- Il misto ---- */
+VISTE['misto'] = function(){
+  const dentro = membriDi('MISTO');
+  const conGruppo = P.filter(p => p.g);
+  let h = '<h1>Il gruppo misto</h1>' +
+    '<p>Ci sono passate <b>' + numero(dentro.length, 'lista', 'partito:MISTO') +
+    '</b> persone, il ' + perc(dentro.length, conGruppo.length) + '% di chi ha ' +
+    'avuto un gruppo. &Egrave; la seconda casacca pi&ugrave; diffusa della ' +
+    'Seconda Repubblica, e non &egrave; un partito: &egrave; dove finisce chi ' +
+    'un gruppo non ce l&rsquo;ha.</p>';
+
+  h += '<h2>Legislatura per legislatura</h2>' +
+    '<table><thead><tr><th>Legislatura</th><th class="num">Nel misto</th>' +
+    '<th class="num">Totale</th><th class="num">%</th></tr></thead><tbody>' +
+    LEG.map(l => {
+      const i = ORDINE.indexOf(l.n);
+      const nel = P.filter(p => (p.g || []).some(t => t[0] === i && t[1] === 'MISTO')).length;
+      const tot = P.filter(p => p.m.indexOf(l.n) >= 0 && p.g).length;
+      return '<tr><td>' + l.n + ' <span style="color:#606060">' + l.anni + '</span></td>' +
+        '<td class="num">' + nel + '</td><td class="num">' + tot + '</td>' +
+        '<td class="num">' + perc(nel, tot) + '%</td></tr>';
+    }).join('') + '</tbody></table>';
+
+  const da = {}, verso = {};
+  P.forEach(p => {
+    const g = p.g || [];
+    for (let i = 0; i < g.length; i++){
+      if (g[i][1] !== 'MISTO') continue;
+      if (i > 0 && g[i-1][1] !== 'MISTO') da[g[i-1][1]] = (da[g[i-1][1]] || 0) + 1;
+      if (i < g.length-1 && g[i+1][1] !== 'MISTO') verso[g[i+1][1]] = (verso[g[i+1][1]] || 0) + 1;
+    }
+  });
+  h += '<div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:10px">' +
+    '<div style="flex:1;min-width:200px"><h2>Ci arrivano da</h2>' + flusso(da) + '</div>' +
+    '<div style="flex:1;min-width:200px"><h2>Se ne vanno verso</h2>' + flusso(verso) + '</div></div>';
+
+  const solo = dentro.filter(p => partitiDi(p).length === 1);
+  h += '<p style="margin-top:10px"><b>' + solo.length + '</b> persone non hanno ' +
+    'conosciuto altro che il misto: ci sono entrate e non ne sono mai uscite.</p>';
+  return {titolo: 'Il gruppo misto', icona: '&#128220;', html: h, faccia: true,
+          larghezza: 640, altezza: 520, stato: dentro.length + ' persone'};
 };
 
 VISTE['metodo'] = function(){
@@ -1616,6 +1855,12 @@ const SCRIVANIA = [
   ['&#127793;', 'Albero dei partiti', 'albero', '', 'sx'],
   ['&#127941;', 'Hall of fame', 'famosi', '', 'sx'],
   ['&#9937;', 'I Responsabili', 'responsabili', '', 'sx'],
+  ['&#127963;', 'Governi', 'governi', '', 'sx'],
+  ['&#128198;', 'Linea del tempo', 'tempo', '', 'sx'],
+  ['&#128220;', 'Il gruppo misto', 'misto', '', 'sx'],
+  ['&#9792;', 'Le donne', 'donne', '', 'dx'],
+  ['&#9878;', 'Confronta', 'confronta', '', 'dx'],
+  ['&#9654;', 'Esegui...', 'esegui', '', 'dx'],
   ['&#128200;', 'Spread', 'spread', '', 'dx'],
   ['&#128269;', 'Trova...', 'trova', '', 'dx'],
   ['&#128260;', 'Aggiorna', 'aggiorna', '', 'dx'],
@@ -1783,6 +2028,11 @@ document.addEventListener('click', e => {
 });
 document.addEventListener('keydown', e => {
   if (e.key === 'Enter' && e.target.id === 'q-trova') cercaOra();
+  if (e.key === 'Enter' && e.target.id === 'q-esegui') esegui();
+});
+
+document.addEventListener('change', e => {
+  if (e.target.id === 'conf-a' || e.target.id === 'conf-b') disegnaConfronto();
 });
 
 /* ---------- avvio ---------- */

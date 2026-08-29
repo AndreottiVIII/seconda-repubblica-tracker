@@ -363,6 +363,10 @@ def adotta_dal_registro(persone, reg, agganciate, etichetta):
             'qid': sintetico, 'nome': nomi[0],
             'cognome': next((v.get('cognome') for v in voci.values()
                              if v.get('cognome')), None),
+            'foto_senato': next((v.get('foto_senato') for v in voci.values()
+                                 if v.get('foto_senato')), None),
+            'genere': next((v.get('genere') for v in voci.values()
+                            if v.get('genere')), None),
             'nascita': nascite[0] if nascite else None,
             'prec_nascita': ('giorno' if nascite and len(nascite[0]) == 10
                              else ('anno' if nascite else None)),
@@ -564,6 +568,11 @@ def main():
             # dato per cui esiste questo sito, e va raccolto da tutti e due i
             # rami, perche' chi e' passato dalla Camera al Senato ha meta'
             # della sua storia in ciascuno.
+            for m in comuni:
+                if voci[m].get('foto_senato') and not p.get('foto_senato'):
+                    p['foto_senato'] = voci[m]['foto_senato']
+                if voci[m].get('genere') and not p.get('genere'):
+                    p['genere'] = voci[m]['genere']
             if not p.get('cognome'):
                 p['cognome'] = next((voci[m].get('cognome') for m in comuni
                                      if voci[m].get('cognome')), None)
