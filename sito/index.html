@@ -37,8 +37,14 @@ body.attesa,body.attesa *{cursor:wait !important}
 
 /* --- scrivania e icone --- */
 #scrivania{position:absolute;inset:0 0 30px 0;overflow:hidden}
-#icone{position:absolute;top:8px;left:8px;width:96px;display:flex;
-  flex-direction:column;gap:4px;z-index:1}
+/* Una colonna sola non basta piu': quando le icone superano l'altezza dello
+   schermo devono andare a capo in una seconda colonna, come su una scrivania
+   vera, invece di finire sotto la barra delle applicazioni. Il wrap in
+   direzione colonna fa esattamente questo, e non serve calcolare niente. */
+#icone,#icone-destra{position:absolute;top:8px;z-index:1;display:flex;
+  flex-flow:column wrap;max-height:calc(100% - 16px);gap:4px 6px}
+#icone{left:8px;align-content:flex-start}
+#icone-destra{right:8px;align-content:flex-end}
 .icona{width:88px;padding:4px 2px;text-align:center;cursor:default;
   color:#fff;text-shadow:1px 1px 0 rgba(0,0,0,.7);user-select:none}
 .icona .dis{font-size:30px;line-height:34px;display:block}
@@ -206,8 +212,8 @@ button.p95:active{border-color:var(--ombra) var(--luce) var(--luce) var(--ombra)
 
 @media (max-width:768px){
   body{font-size:14px}
-  #icone{position:static;width:auto;flex-direction:row;flex-wrap:wrap;
-    gap:2px;padding:6px}
+  #icone,#icone-destra{position:static;max-height:none;flex-flow:row wrap;
+    align-content:flex-start;gap:2px;padding:6px}
   .icona{width:78px}
   .finestra{position:static !important;width:auto !important;
     height:auto !important;margin:6px;max-height:none}
@@ -223,6 +229,7 @@ button.p95:active{border-color:var(--ombra) var(--luce) var(--luce) var(--ombra)
 
 <div id="scrivania">
   <div id="icone"></div>
+  <div id="icone-destra"></div>
   <div id="finestre"></div>
 </div>
 
@@ -259,7 +266,7 @@ button.p95:active{border-color:var(--ombra) var(--luce) var(--luce) var(--ombra)
    cosi' se la copia che torna e' ancora quella vecchia non si riparte in
    circolo. E con un tempo massimo, perche' fetch da solo non ce l'ha e
    aspetterebbe per sempre. */
-const VERSIONE = '8c9052d313b7';
+const VERSIONE = '8fae09b22605';
 (function controllaVersione(){
   if (location.protocol === 'file:' || !window.fetch) return;
   const taglia = new AbortController();
@@ -1536,27 +1543,32 @@ VISTE['errore'] = function(){
 
 /* ---------- scrivania, menu, orologio ---------- */
 const SCRIVANIA = [
-  ['&#127963;', 'Seconda Repubblica', 'indice', ''],
-  ['&#128193;', 'Risorse del Parlamento', 'elenco', ''],
-  ['&#127942;', 'Classifiche', 'classifiche', ''],
-  ['&#128202;', 'Statistiche', 'statistiche', ''],
-  ['&#128200;', 'Spread', 'spread', ''],
-  ['&#9937;', 'I Responsabili', 'responsabili', ''],
-  ['&#128193;', 'Partiti', 'partiti', ''],
-  ['&#127793;', 'Albero dei partiti', 'albero', ''],
-  ['&#127941;', 'Hall of fame', 'famosi', ''],
-  ['&#128269;', 'Trova...', 'trova', ''],
-  ['&#128260;', 'Aggiorna', 'aggiorna', ''],
-  ['&#128209;', 'Il metodo', 'metodo', ''],
-  ['&#128441;', 'Colofone.txt', 'leggimi', ''],
+  // [icona, etichetta, vista, argomento, lato]
+  ['&#127963;', 'Seconda Repubblica', 'indice', '', 'sx'],
+  ['&#128193;', 'Risorse del Parlamento', 'elenco', '', 'sx'],
+  ['&#127942;', 'Classifiche', 'classifiche', '', 'sx'],
+  ['&#128202;', 'Statistiche', 'statistiche', '', 'sx'],
+  ['&#128193;', 'Partiti', 'partiti', '', 'sx'],
+  ['&#127793;', 'Albero dei partiti', 'albero', '', 'sx'],
+  ['&#127941;', 'Hall of fame', 'famosi', '', 'sx'],
+  ['&#9937;', 'I Responsabili', 'responsabili', '', 'sx'],
+  ['&#128200;', 'Spread', 'spread', '', 'dx'],
+  ['&#128269;', 'Trova...', 'trova', '', 'dx'],
+  ['&#128260;', 'Aggiorna', 'aggiorna', '', 'dx'],
+  ['&#128209;', 'Il metodo', 'metodo', '', 'dx'],
+  ['&#128441;', 'Colofone.txt', 'leggimi', '', 'dx'],
 ];
 
 function disegnaScrivania(){
-  const c = document.getElementById('icone');
-  c.innerHTML = SCRIVANIA.map(x =>
-    '<div class="icona" data-apri="' + x[2] + '" data-arg="' + x[3] + '">' +
-    '<span class="dis">' + x[0] + '</span><span class="et">' + x[1] + '</span></div>'
-  ).join('');
+  const disegna = (dove, lato) => {
+    document.getElementById(dove).innerHTML = SCRIVANIA
+      .filter(x => (x[4] || 'sx') === lato)
+      .map(x => '<div class="icona" data-apri="' + x[2] + '" data-arg="' + x[3] + '">' +
+        '<span class="dis">' + x[0] + '</span>' +
+        '<span class="et">' + x[1] + '</span></div>').join('');
+  };
+  disegna('icone', 'sx');
+  disegna('icone-destra', 'dx');
   const m = document.getElementById('voci-menu');
   m.innerHTML = SCRIVANIA.map(x =>
     '<li data-apri="' + x[2] + '" data-arg="' + x[3] + '">' +
