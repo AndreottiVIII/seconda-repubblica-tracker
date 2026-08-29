@@ -17,6 +17,7 @@ INGRESSO = os.path.join(QUI, '..', 'data', 'elenco.json')
 MODELLO = os.path.join(QUI, 'modello.html')
 DISTINTIVI = os.path.join(QUI, '..', 'data', 'distintivi.json')
 SPREAD = os.path.join(QUI, '..', 'data', 'spread.json')
+CONDANNE = os.path.join(QUI, '..', 'data', 'condanne.json')
 USCITA = os.path.join(QUI, '..', 'sito')
 
 TITOLO = 'Seconda Repubblica Tracker'
@@ -195,6 +196,19 @@ def main():
     # sito esce lo stesso, con una schermata in meno.
     if os.path.exists(SPREAD):
         dati['spread'] = json.load(open(SPREAD, encoding='utf-8'))
+    # Le condanne: scritte a mano perche' verificate a mano, e attaccate solo a
+    # persone che nell'elenco esistono davvero.
+    if os.path.exists(CONDANNE):
+        c = json.load(open(CONDANNE, encoding='utf-8'))
+        noti = {p['q'] for p in persone}
+        buone = [v for v in c.get('voci', []) if v.get('qid') in noti]
+        for v in c.get('voci', []):
+            if v.get('qid') not in noti:
+                print('  condanna per uno sconosciuto, ignorata: %s' % v.get('qid'))
+        if buone:
+            dati['condanne'] = {'voci': buone}
+            print('condanne verificate: %d su %d persone'
+                  % (len(buone), len({v['qid'] for v in buone})))
     else:
         print('  (data/spread.json assente: niente schermata dello spread)')
 

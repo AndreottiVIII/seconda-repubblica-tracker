@@ -1,0 +1,87 @@
+{
+  "_nota": "Condanne penali passate in giudicato, verificate una per una sulle voci di Wikipedia in italiano il 30 agosto 2026. Wikidata ne dichiarava quattordici: nove sono state scartate perche' non definitive, non confermate o con dati sbagliati (a Marcello Dell'Utri attribuiva il 1994 per una sentenza del 2014). Qui c'e' solo cio' che risulta definitivo, con il grado, l'anno e la fonte. Il patteggiamento e' equiparato per legge a una condanna e viene indicato come tale. Chi non compare non e' per questo senza vicende giudiziarie: compare solo chi ha una condanna definitiva verificata.",
+
+  "voci": [
+    {
+      "qid": "Q558815",
+      "reato": "Concorso esterno in associazione di tipo mafioso",
+      "anno": 2014,
+      "grado": "definitiva",
+      "pena": "7 anni di reclusione",
+      "dettaglio": "Cassazione, 9 maggio 2014. Wikidata attribuiva questa condanna al 1994.",
+      "fonte": "https://it.wikipedia.org/wiki/Marcello_Dell%27Utri"
+    },
+    {
+      "qid": "Q558815",
+      "reato": "Abuso edilizio",
+      "anno": 2015,
+      "grado": "definitiva",
+      "pena": "8 mesi di reclusione",
+      "dettaglio": "Cassazione, 21 maggio 2015.",
+      "fonte": "https://it.wikipedia.org/wiki/Marcello_Dell%27Utri"
+    },
+    {
+      "qid": "Q11860",
+      "reato": "Frode fiscale",
+      "anno": 2013,
+      "grado": "definitiva",
+      "pena": "4 anni di reclusione e 2 anni di interdizione dai pubblici uffici",
+      "dettaglio": "E' l'unica condanna definitiva che la voce gli attribuisce, su oltre trenta procedimenti. Wikidata ne dichiarava sei.",
+      "fonte": "https://it.wikipedia.org/wiki/Silvio_Berlusconi"
+    },
+    {
+      "qid": "Q730966",
+      "reato": "Corruzione (appalti del MOSE)",
+      "anno": 2014,
+      "grado": "patteggiamento",
+      "pena": "2 anni e 10 mesi",
+      "dettaglio": "Patteggiamento del 9 ottobre 2014, con la restituzione di 2,5 milioni di euro.",
+      "fonte": "https://it.wikipedia.org/wiki/Giancarlo_Galan"
+    },
+    {
+      "qid": "Q463130",
+      "reato": "Traffico di influenze illecite",
+      "anno": 2022,
+      "grado": "definitiva",
+      "pena": "1 anno e 10 mesi di reclusione",
+      "dettaglio": "La Cassazione aveva annullato nel 2021 la precedente condanna per corruzione; il reato e' stato riqualificato nel giudizio d'appello del febbraio 2022.",
+      "fonte": "https://it.wikipedia.org/wiki/Gianni_Alemanno"
+    },
+    {
+      "qid": "Q902439",
+      "reato": "Corruzione (tangenti autostradali in Veneto)",
+      "anno": null,
+      "grado": "patteggiamento",
+      "pena": "1 anno e 6 mesi",
+      "dettaglio": "La voce riporta oltre trenta procedimenti e diverse assoluzioni.",
+      "fonte": "https://it.wikipedia.org/wiki/Gianni_De_Michelis"
+    },
+    {
+      "qid": "Q902439",
+      "reato": "Vicenda Enimont",
+      "anno": null,
+      "grado": "patteggiamento",
+      "pena": "6 mesi",
+      "dettaglio": "Pena complessiva di due anni, sospesa condizionalmente.",
+      "fonte": "https://it.wikipedia.org/wiki/Gianni_De_Michelis"
+    },
+    {
+      "qid": "Q2246855",
+      "reato": "Violazione della legge sul finanziamento ai partiti (Enimont)",
+      "anno": null,
+      "grado": "definitiva",
+      "pena": "1 anno e 8 mesi",
+      "dettaglio": "Ha ottenuto la riabilitazione dal Tribunale di sorveglianza di Roma nel 2011.",
+      "fonte": "https://it.wikipedia.org/wiki/Paolo_Cirino_Pomicino"
+    },
+    {
+      "qid": "Q2246855",
+      "reato": "Corruzione (fondi neri ENI)",
+      "anno": 2002,
+      "grado": "patteggiamento",
+      "pena": "2 mesi",
+      "dettaglio": "Su circa quaranta procedimenti, la voce riporta in prevalenza assoluzioni e prescrizioni. Riabilitato nel 2011.",
+      "fonte": "https://it.wikipedia.org/wiki/Paolo_Cirino_Pomicino"
+    }
+  ]
+}

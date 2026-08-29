@@ -42,7 +42,7 @@ body.attesa,body.attesa *{cursor:wait !important}
    vera, invece di finire sotto la barra delle applicazioni. Il wrap in
    direzione colonna fa esattamente questo, e non serve calcolare niente. */
 #icone,#icone-destra{position:absolute;top:8px;z-index:1;display:flex;
-  flex-flow:column wrap;max-height:calc(100% - 16px);gap:4px 6px}
+  flex-flow:column wrap;max-height:min(calc(100% - 16px), 430px);gap:4px 8px}
 #icone{left:8px;align-content:flex-start}
 #icone-destra{right:8px;align-content:flex-end}
 .icona{width:88px;padding:4px 2px;text-align:center;cursor:default;
@@ -679,7 +679,8 @@ VISTE['persona'] = function(q){
     'legislature per definizione, quindi resta fuori dalle classifiche di longevit&agrave;.</div>';
   if (p.x) corpo += '<div class="avviso">Ministro mai eletto in Parlamento. ' +
     'Non ha mai avuto un gruppo, quindi non ha cambi di casacca.</div>';
-  if (p.r) corpo += '<div class="avviso">Scheda costruita sui registri di Camera e ' +
+  if (p.r && !(p.f || p.fc) && !p.w)
+    corpo += '<div class="avviso">Scheda costruita sui registri di Camera e ' +
     'Senato. Wikidata non collega questa persona alle legislature 1994-2013, ' +
     'quindi non &egrave; arrivata da l&igrave;: dove mancano la foto o la voce ' +
     'enciclopedica &egrave; per questo.</div>';
@@ -1449,11 +1450,6 @@ VISTE['spread'] = function(){
     'di cui <b>' + maiEletti.length + '</b> non hanno mai avuto un seggio in ' +
     'Parlamento fra il 1994 e il 2013.</p>';
 
-  h += '<p class="piede">Questa finestra dovrebbe aprirsi con Ctrl+Alt+Canc, ' +
-    'ma quella combinazione Windows se la tiene per s&eacute;: la intercetta il ' +
-    'sistema operativo prima di ogni programma, ed &egrave; il motivo per cui ' +
-    'esiste. Nessuna pagina web pu&ograve; riceverla. Per questo c&rsquo;&egrave; ' +
-    'anche un&rsquo;icona. (Ctrl+Alt+Backspace invece arriva.)</p>';
   h += '<p class="piede">Fonte dei tassi: ' + esc(S.fonte) + '. ' +
     '<a target="_blank" rel="noopener" href="' + esc(S.url) + '">data.ecb.europa.eu</a>. ' +
     'Le date del novembre 2011 sono fatti pubblici e verificabili; ' +
@@ -1471,6 +1467,74 @@ function meseIt(m){
   const p = String(m).split('-');
   return MESI_BREVI[+p[1] - 1] + ' ' + p[0];
 }
+
+/* ---------------------------------------------------------------------------
+   Il cestino. Condanne passate in giudicato, verificate una per una sulle voci
+   di Wikipedia: nome, reato, anno, grado, pena e link alla fonte.
+
+   Wikidata ne dichiarava quattordici; nove sono state scartate perche' non
+   definitive, non confermate o con dati sbagliati. Il patteggiamento e'
+   equiparato per legge a una condanna e viene indicato come tale, perche' non
+   e' la stessa cosa di una condanna in dibattimento e chi legge ha diritto di
+   saperlo. Dove c'e' stata riabilitazione, sta scritto.
+   --------------------------------------------------------------------------- */
+VISTE['cestino'] = function(){
+  const C = DATI.condanne;
+  if (!C || !C.voci || !C.voci.length)
+    throw new Error('Il cestino e vuoto: manca data/condanne.json.');
+
+  const perPersona = {};
+  C.voci.forEach(v => (perPersona[v.qid] = perPersona[v.qid] || []).push(v));
+  const chi = Object.keys(perPersona)
+    .filter(q => perQid[q])
+    .sort((a, b) => perCognome(perQid[a], perQid[b]));
+
+  let h = '<h1>Cestino</h1>' +
+    '<p><b>' + chi.length + ' persone</b> su ' + P.length +
+    ' hanno una condanna penale passata in giudicato, per un totale di ' +
+    C.voci.length + ' sentenze.</p>' +
+    '<div class="avviso">Ogni riga &egrave; stata verificata sulla voce di ' +
+    'Wikipedia in italiano, che &egrave; linkata. Wikidata ne dichiarava ' +
+    'quattordici: nove sono state scartate perch&eacute; non definitive, non ' +
+    'confermate o con dati sbagliati &mdash; a Marcello Dell&rsquo;Utri ' +
+    'attribuiva il 1994 per una sentenza del 2014. Il <b>patteggiamento</b> ' +
+    '&egrave; equiparato per legge a una condanna, ma non &egrave; una ' +
+    'condanna in dibattimento, e qui viene detto. Chi non compare non &egrave; ' +
+    'per questo senza vicende giudiziarie: compare solo chi ha una condanna ' +
+    'definitiva verificata.</div>';
+
+  chi.forEach(q => {
+    const p = perQid[q];
+    h += '<div class="riquadro" style="margin-bottom:8px">' +
+      '<div style="font-size:13px"><b><span class="clic" data-apri="persona" ' +
+      'data-arg="' + q + '">' + esc(p.n) + '</span></b>' +
+      (p.k && p.k.length ? ' <span style="color:#404040">&mdash; ' +
+        esc(p.k.join('; ')) + '</span>' : '') + '</div>' +
+      '<table style="margin-top:5px"><tbody>' +
+      perPersona[q].map(v =>
+        '<tr><td style="width:44%">' + esc(v.reato) + '</td>' +
+        '<td style="width:16%">' + (v.anno || '<span style="color:#606060">' +
+          'anno non indicato</span>') + '</td>' +
+        '<td style="width:20%">' + (v.grado === 'patteggiamento'
+          ? '<span class="pill" style="background:#8a7ca8">patteggiamento</span>'
+          : '<span class="pill" style="background:#8b0000">definitiva</span>') +
+        '</td><td>' + esc(v.pena || '') + '</td></tr>' +
+        (v.dettaglio ? '<tr><td colspan="4" style="color:#404040;padding-bottom:4px">' +
+          esc(v.dettaglio) + '</td></tr>' : '')).join('') +
+      '</tbody></table>' +
+      '<div class="piede" style="margin-top:4px;padding-top:4px">' +
+      '<a target="_blank" rel="noopener" href="' + esc(perPersona[q][0].fonte) +
+      '">Voce su Wikipedia</a></div></div>';
+  });
+
+  h += '<p class="piede">Verifica del 30 agosto 2026. Se qualcosa qui &egrave; ' +
+    'sbagliato o superato, scrivete a davide.caniatti@gmail.com e viene ' +
+    'corretto: <span class="clic" data-apri="errore">segnala un errore</span>.</p>';
+
+  return {titolo: 'Cestino', icona: '&#128465;', html: h, faccia: true,
+          larghezza: 660, altezza: 540,
+          stato: chi.length + ' persone', stato2: C.voci.length + ' sentenze'};
+};
 
 VISTE['metodo'] = function(){
   const h =
@@ -1557,6 +1621,7 @@ const SCRIVANIA = [
   ['&#128260;', 'Aggiorna', 'aggiorna', '', 'dx'],
   ['&#128209;', 'Il metodo', 'metodo', '', 'dx'],
   ['&#128441;', 'Colofone.txt', 'leggimi', '', 'dx'],
+  ['&#128465;', 'Cestino', 'cestino', '', 'dx'],
 ];
 
 function disegnaScrivania(){
