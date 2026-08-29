@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>%%TITOLO%%</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%23c0c0c0%22/%3E%3Crect%20x%3D%221%22%20y%3D%221%22%20width%3D%2214%22%20height%3D%2214%22%20fill%3D%22%23c0c0c0%22%20stroke%3D%22%23000%22%20stroke-width%3D%221%22/%3E%3Crect%20x%3D%222%22%20y%3D%222%22%20width%3D%2212%22%20height%3D%223%22%20fill%3D%22%23000080%22/%3E%3Crect%20x%3D%223%22%20y%3D%227%22%20width%3D%229%22%20height%3D%221%22%20fill%3D%22%23000%22/%3E%3Crect%20x%3D%223%22%20y%3D%229%22%20width%3D%229%22%20height%3D%221%22%20fill%3D%22%23000%22/%3E%3Crect%20x%3D%223%22%20y%3D%2211%22%20width%3D%226%22%20height%3D%221%22%20fill%3D%22%23000%22/%3E%3C/svg%3E">
+<style>
+/* ---------------------------------------------------------------------------
+   Windows 95. Tre colori e due bordi: il rilievo si fa col chiaro in alto a
+   sinistra e lo scuro in basso a destra, l'incavo al contrario. Non serve
+   nient'altro, ed e' il motivo per cui quell'interfaccia si disegnava con
+   quattro pixel.
+   --------------------------------------------------------------------------- */
+:root{
+  --faccia:#c0c0c0; --luce:#ffffff; --chiaro:#dfdfdf; --ombra:#808080;
+  --buio:#000000; --scrivania:#008080; --titolo:#000080; --titolo-spento:#808080;
+  --selezione:#000080; --testo:#000000; --campo:#ffffff;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;padding:0}
+body{
+  background:var(--scrivania); color:var(--testo); overflow:hidden;
+  font-family:"MS Sans Serif",Tahoma,Geneva,Verdana,sans-serif; font-size:12px;
+  -webkit-font-smoothing:none;
+}
+body.attesa,body.attesa *{cursor:wait !important}
+
+.rilievo{border:2px solid;border-color:var(--luce) var(--buio) var(--buio) var(--luce);
+  box-shadow:inset 1px 1px 0 var(--chiaro),inset -1px -1px 0 var(--ombra);
+  background:var(--faccia)}
+.incavo{border:2px solid;border-color:var(--ombra) var(--luce) var(--luce) var(--ombra);
+  box-shadow:inset 1px 1px 0 var(--buio),inset -1px -1px 0 var(--chiaro);
+  background:var(--campo)}
+.incavo-piatto{border:2px solid;border-color:var(--ombra) var(--luce) var(--luce) var(--ombra);
+  background:var(--faccia)}
+
+/* --- scrivania e icone --- */
+#scrivania{position:absolute;inset:0 0 30px 0;overflow:hidden}
+#icone{position:absolute;top:8px;left:8px;width:96px;display:flex;
+  flex-direction:column;gap:4px;z-index:1}
+.icona{width:88px;padding:4px 2px;text-align:center;cursor:default;
+  color:#fff;text-shadow:1px 1px 0 rgba(0,0,0,.7);user-select:none}
+.icona .dis{font-size:30px;line-height:34px;display:block}
+.icona .et{display:inline-block;padding:1px 3px;font-size:11px;line-height:13px}
+.icona:hover .et{background:rgba(0,0,128,.45)}
+.icona.viva .et{background:var(--selezione);color:#fff;outline:1px dotted #fff}
+
+/* --- finestre --- */
+.finestra{position:absolute;min-width:260px;display:flex;flex-direction:column;
+  background:var(--faccia);
+  border:2px solid;border-color:var(--luce) var(--buio) var(--buio) var(--luce);
+  box-shadow:inset 1px 1px 0 var(--chiaro),inset -1px -1px 0 var(--ombra);
+  padding:2px}
+.barra-titolo{display:flex;align-items:center;gap:4px;padding:2px 2px 2px 3px;
+  background:var(--titolo-spento);color:#fff;font-weight:bold;cursor:default;
+  user-select:none;flex:none}
+.finestra.fronte .barra-titolo{
+  background:linear-gradient(90deg,var(--titolo),#1084d0)}
+.barra-titolo .tit{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.barra-titolo .dis{font-size:12px}
+.bottoni{display:flex;gap:2px;flex:none}
+.bottoni button{width:18px;height:16px;padding:0;font-size:10px;line-height:10px;
+  font-family:inherit;font-weight:bold;background:var(--faccia);color:#000;
+  border:2px solid;border-color:var(--luce) var(--buio) var(--buio) var(--luce);
+  box-shadow:inset 1px 1px 0 var(--chiaro),inset -1px -1px 0 var(--ombra);
+  cursor:default}
+.bottoni button:active{border-color:var(--ombra) var(--luce) var(--luce) var(--ombra);
+  box-shadow:inset 1px 1px 0 var(--buio)}
+.menu-finestra{display:flex;gap:2px;padding:1px 2px;flex:none}
+.menu-finestra span{padding:1px 6px;cursor:default}
+.menu-finestra span:hover{background:var(--selezione);color:#fff}
+.corpo{flex:1;overflow:auto;margin:2px;padding:8px;
+  border:2px solid;border-color:var(--ombra) var(--luce) var(--luce) var(--ombra);
+  box-shadow:inset 1px 1px 0 var(--buio),inset -1px -1px 0 var(--chiaro);
+  background:var(--campo)}
+.corpo.faccia{background:var(--faccia)}
+.stato{display:flex;gap:2px;padding:0 2px 1px;flex:none}
+.stato div{padding:2px 5px;font-size:11px;
+  border:2px solid;border-color:var(--ombra) var(--luce) var(--luce) var(--ombra)}
+.stato div:first-child{flex:1}
+.maniglia{position:absolute;right:1px;bottom:1px;width:14px;height:14px;
+  cursor:nwse-resize}
+
+/* --- barra delle applicazioni --- */
+#barra{position:absolute;left:0;right:0;bottom:0;height:30px;display:flex;
+  align-items:center;gap:4px;padding:2px 3px;background:var(--faccia);
+  border-top:2px solid var(--luce);z-index:9000}
+#avvio{display:flex;align-items:center;gap:4px;height:23px;padding:0 6px;
+  font-family:inherit;font-size:12px;font-weight:bold;background:var(--faccia);
+  border:2px solid;border-color:var(--luce) var(--buio) var(--buio) var(--luce);
+  box-shadow:inset 1px 1px 0 var(--chiaro),inset -1px -1px 0 var(--ombra);
+  cursor:default}
+#avvio.aperto{border-color:var(--ombra) var(--luce) var(--luce) var(--ombra);
+  box-shadow:inset 1px 1px 0 var(--buio)}
+#attivita{flex:1;display:flex;gap:3px;overflow:hidden}
+.taskbtn{max-width:170px;min-width:0;flex:1 1 130px;height:22px;padding:0 6px;
+  display:flex;align-items:center;gap:4px;font-family:inherit;font-size:11px;
+  background:var(--faccia);cursor:default;overflow:hidden;white-space:nowrap;
+  border:2px solid;border-color:var(--luce) var(--buio) var(--buio) var(--luce)}
+.taskbtn.giu{border-color:var(--ombra) var(--luce) var(--luce) var(--ombra);
+  background:repeating-conic-gradient(var(--faccia) 0 25%,var(--chiaro) 0 50%) 0 0/2px 2px;
+  font-weight:bold}
+.taskbtn .et{overflow:hidden;text-overflow:ellipsis}
+#orologio{padding:3px 8px;font-size:11px;
+  border:2px solid;border-color:var(--ombra) var(--luce) var(--luce) var(--ombra)}
+
+/* --- menu avvio --- */
+#menu{position:absolute;left:3px;bottom:30px;width:230px;display:none;
+  background:var(--faccia);z-index:9500;padding:2px;
+  border:2px solid;border-color:var(--luce) var(--buio) var(--buio) var(--luce);
+  box-shadow:inset 1px 1px 0 var(--chiaro),inset -1px -1px 0 var(--ombra)}
+#menu.aperto{display:flex}
+#menu .costola{width:22px;flex:none;
+  background:linear-gradient(180deg,#000080,#1084d0);position:relative}
+#menu .costola span{position:absolute;bottom:8px;left:50%;
+  transform:translateX(-50%) rotate(180deg);writing-mode:vertical-rl;
+  color:#fff;font-size:15px;font-weight:bold;letter-spacing:1px;white-space:nowrap}
+#menu ul{list-style:none;margin:0;padding:2px 0;flex:1}
+#menu li{display:flex;align-items:center;gap:8px;padding:5px 8px;cursor:default}
+#menu li:hover{background:var(--selezione);color:#fff}
+#menu li.riga{padding:0;margin:3px 2px;height:2px;
+  border-top:1px solid var(--ombra);border-bottom:1px solid var(--luce)}
+#menu li.riga:hover{background:none}
+#menu li .dis{font-size:18px;width:22px;text-align:center}
+
+/* --- contenuti --- */
+h1,h2,h3{margin:0 0 6px;font-size:13px}
+h1{font-size:14px}
+p{margin:0 0 8px;line-height:1.45}
+a{color:#0000c0}
+a:hover{color:#c00000}
+.clic{color:#0000c0;text-decoration:underline;cursor:pointer}
+.clic:hover{color:#c00000}
+table{border-collapse:collapse;width:100%;font-size:12px}
+th{position:sticky;top:-8px;background:var(--faccia);text-align:left;
+  padding:3px 6px;font-weight:bold;z-index:2;
+  border:2px solid;border-color:var(--luce) var(--ombra) var(--ombra) var(--luce);
+  cursor:default;white-space:nowrap}
+td{padding:2px 6px;border-bottom:1px solid #e6e6e6;vertical-align:top}
+tr.riga:hover td{background:#e8e8f8}
+tr.riga{cursor:default}
+.num{text-align:right;font-variant-numeric:tabular-nums}
+.morto{color:#606060}
+.pill{display:inline-block;padding:0 5px;margin:1px 2px 1px 0;color:#fff;
+  font-size:11px;line-height:16px;white-space:nowrap;
+  border:1px solid rgba(0,0,0,.35)}
+.pill.chiara{color:#000}
+.quadro{width:10px;height:10px;display:inline-block;vertical-align:-1px;
+  margin-right:4px;border:1px solid rgba(0,0,0,.4)}
+.gruppone{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));
+  gap:6px}
+.riquadro{padding:8px;background:var(--faccia);
+  border:2px solid;border-color:var(--luce) var(--ombra) var(--ombra) var(--luce)}
+.riquadro .grande{font-size:22px;font-weight:bold;line-height:26px}
+.cartella{display:inline-flex;flex-direction:column;align-items:center;
+  width:104px;padding:6px 2px;text-align:center;cursor:default}
+.cartella:hover{background:#e8e8f8}
+.cartella .dis{font-size:28px;line-height:30px}
+.piede{margin-top:10px;padding-top:6px;border-top:1px solid var(--ombra);
+  font-size:11px;color:#404040}
+.avviso{padding:6px 8px;margin:0 0 8px;background:#ffffe1;
+  border:1px solid var(--buio);font-size:11px}
+input[type=text],select{font-family:inherit;font-size:12px;padding:2px 4px;
+  background:var(--campo);
+  border:2px solid;border-color:var(--ombra) var(--luce) var(--luce) var(--ombra);
+  box-shadow:inset 1px 1px 0 var(--buio)}
+button.p95{font-family:inherit;font-size:12px;padding:3px 12px;min-width:70px;
+  background:var(--faccia);cursor:default;
+  border:2px solid;border-color:var(--luce) var(--buio) var(--buio) var(--luce);
+  box-shadow:inset 1px 1px 0 var(--chiaro),inset -1px -1px 0 var(--ombra)}
+button.p95:active{border-color:var(--ombra) var(--luce) var(--luce) var(--ombra);
+  box-shadow:inset 1px 1px 0 var(--buio)}
+
+/* --- la striscia del tempo di una persona --- */
+.striscia{position:relative;height:26px;margin:6px 0 2px;background:#e0e0e0;
+  border:2px solid;border-color:var(--ombra) var(--luce) var(--luce) var(--ombra)}
+.striscia i{position:absolute;top:0;bottom:0;overflow:hidden;font-style:normal;
+  font-size:10px;line-height:22px;color:#fff;text-align:center;
+  text-shadow:0 0 2px rgba(0,0,0,.8);border-right:1px solid rgba(0,0,0,.35)}
+.tacche{position:relative;height:14px;font-size:10px;color:#404040}
+.tacche span{position:absolute;transform:translateX(-50%);white-space:nowrap}
+
+/* --- scheda persona --- */
+.scheda{display:flex;gap:12px;align-items:flex-start;flex-wrap:wrap}
+.ritratto{width:120px;flex:none;background:var(--faccia);padding:3px;
+  border:2px solid;border-color:var(--ombra) var(--luce) var(--luce) var(--ombra)}
+.ritratto img{width:100%;display:block;image-rendering:auto}
+.ritratto .vuoto{height:150px;display:flex;align-items:center;justify-content:center;
+  font-size:44px;color:var(--ombra);background:#e8e8e8}
+.dati{flex:1;min-width:220px}
+.dati dl{display:grid;grid-template-columns:auto 1fr;gap:2px 10px;margin:0}
+.dati dt{font-weight:bold;white-space:nowrap}
+.dati dd{margin:0}
+
+/* --- salvaschermo e schermata blu --- */
+#salvaschermo{position:fixed;inset:0;background:#000;z-index:9800;display:none}
+#salvaschermo.acceso{display:block}
+#salvaschermo b{position:absolute;color:#00ff66;font-size:26px;white-space:nowrap;
+  font-weight:bold;text-shadow:0 0 12px #00ff66}
+#bsod{position:fixed;inset:0;background:#0000aa;color:#fff;z-index:9900;
+  display:none;padding:8vh 8vw;font-family:"Courier New",monospace;font-size:15px;
+  line-height:1.6}
+#bsod.acceso{display:block}
+#bsod .cap{background:#c0c0c0;color:#0000aa;padding:0 8px;font-weight:bold}
+
+@media (max-width:768px){
+  body{font-size:14px}
+  #icone{position:static;width:auto;flex-direction:row;flex-wrap:wrap;
+    gap:2px;padding:6px}
+  .icona{width:78px}
+  .finestra{position:static !important;width:auto !important;
+    height:auto !important;margin:6px;max-height:none}
+  .corpo{max-height:none;padding:8px 6px}
+  #scrivania{overflow:auto;-webkit-overflow-scrolling:touch}
+  .maniglia{display:none}
+  .bottoni button:not(.chiudi){display:none}
+  th{position:static}
+}
+</style>
+</head>
+<body>
+
+<div id="scrivania">
+  <div id="icone"></div>
+  <div id="finestre"></div>
+</div>
+
+<div id="barra">
+  <button id="avvio"><span>&#9612;&#9612;</span> Avvio</button>
+  <div id="attivita"></div>
+  <div id="orologio"></div>
+</div>
+
+<div id="menu">
+  <div class="costola"><span>Seconda Repubblica 95</span></div>
+  <ul id="voci-menu"></ul>
+</div>
+
+<div id="salvaschermo"><b>Seconda Repubblica Tracker</b></div>
+
+<div id="bsod">
+  <p><span class="cap">Seconda Repubblica</span></p>
+  <p id="bsod-testo">Si &egrave; verificato un errore irreversibile.</p>
+  <p>&nbsp;</p>
+  <p>* Premere un tasto qualsiasi per tornare alla scrivania.</p>
+  <p>&nbsp;</p>
+  <p style="text-align:center">Premere un tasto per continuare _</p>
+</div>
+
+<script>
+const DATI = /*__DATI__*/;
+const COLOFONE = /*__COLOFONE__*/;
+
+const P = DATI.persone;
+const PARTITI = DATI.partiti;
+const LEG = DATI.legislature;
+const ORDINE = LEG.map(l => l.n);
+const perQid = {}; P.forEach(p => perQid[p.q] = p);
+
+/* ---------- utilita' ---------- */
+const esc = s => String(s == null ? '' : s)
+  .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+const perc = (n, t) => t ? String(Math.round(1000 * n / t) / 10).replace('.', ',') : 0;
+const nomePartito = c => (PARTITI[c] && PARTITI[c].nome) || c || 'senza gruppo';
+const colorePartito = c => (PARTITI[c] && PARTITI[c].colore) || '#909090';
+
+function chiaroSuScuro(hex){
+  const n = parseInt((hex || '#888').slice(1), 16);
+  const l = (((n>>16)&255)*299 + ((n>>8)&255)*587 + (n&255)*114) / 1000;
+  return l > 160;
+}
+function pill(codice, testo){
+  const c = colorePartito(codice);
+  return '<span class="pill' + (chiaroSuScuro(c) ? ' chiara' : '') +
+    '" style="background:' + c + '">' + esc(testo || codice) + '</span>';
+}
+const MESI = ['gennaio','febbraio','marzo','aprile','maggio','giugno','luglio',
+  'agosto','settembre','ottobre','novembre','dicembre'];
+function dataIt(s){
+  if (!s) return '';
+  if (s.length === 8) s = s.slice(0,4)+'-'+s.slice(4,6)+'-'+s.slice(6,8);
+  const p = s.split('-');
+  if (p.length === 1) return p[0];
+  if (p.length === 2) return MESI[+p[1]-1] + ' ' + p[0];
+  return (+p[2]) + ' ' + MESI[+p[1]-1] + ' ' + p[0];
+}
+function giorno(s){                       // 'YYYYMMDD' -> numero di giorni
+  if (!s || s.length < 8) return null;
+  return Date.UTC(+s.slice(0,4), +s.slice(4,6)-1, +s.slice(6,8)) / 86400000;
+}
+const OGGI = new Date();
+function eta(p){
+  if (!p.b) return null;
+  const fine = p.d ? new Date(p.d.length >= 10 ? p.d : p.d.slice(0,4)+'-07-01') : OGGI;
+  const nas = new Date(p.b.length >= 10 ? p.b : p.b.slice(0,4)+'-07-01');
+  let a = fine.getFullYear() - nas.getFullYear();
+  const m = fine.getMonth() - nas.getMonth();
+  if (m < 0 || (m === 0 && fine.getDate() < nas.getDate())) a--;
+  return a;
+}
+
+/* ---------- interrogazioni sull'elenco ---------- */
+const vivi     = () => P.filter(p => p.s === 1);
+const morti    = () => P.filter(p => p.s === 2);
+const ignoti   = () => P.filter(p => p.s === 3);
+const conGruppo= () => P.filter(p => p.g);
+const legislatureDi = p => p.m;
+const partitiDi = p => {
+  const v = [];
+  (p.g || []).forEach(t => { if (v.indexOf(t[1]) < 0) v.push(t[1]); });
+  return v;
+};
+function passaggiDi(p){                 // il percorso ridotto ai salti visibili
+  const v = [];
+  (p.g || []).forEach(t => { if (!v.length || v[v.length-1] !== t[1]) v.push(t[1]); });
+  return v;
+}
+function membriDi(codice){
+  return P.filter(p => (p.g || []).some(t => t[1] === codice));
+}
+function annidiPartito(codice){
+  let da = null, a = null;
+  P.forEach(p => (p.g || []).forEach(t => {
+    if (t[1] !== codice) return;
+    if (t[2] && (!da || t[2] < da)) da = t[2];
+    if (t[3] && (!a || t[3] > a)) a = t[3];
+  }));
+  return [da, a];
+}
+
+/* ---------- il gestore delle finestre ---------- */
+const FIN = {};          // chiave -> {el, vista, arg}
+let zeta = 10, apertaN = 0;
+const stretto = () => window.innerWidth <= 768;
+
+function chiave(vista, arg){ return arg ? vista + '/' + arg : vista; }
+
+function apri(vista, arg, senzaStoria){
+  const k = chiave(vista, arg);
+  if (FIN[k]) { fronte(k); if (!senzaStoria) storia(k); return; }
+  const v = VISTE[vista];
+  if (!v) return schermataBlu('La vista richiesta non esiste: ' + vista);
+  document.body.classList.add('attesa');
+  let contenuto;
+  try { contenuto = v(arg); }
+  catch (e) { document.body.classList.remove('attesa');
+              return schermataBlu(e && e.message ? e.message : String(e)); }
+  const el = document.createElement('div');
+  el.className = 'finestra';
+  const l = Math.min(contenuto.larghezza || 640, window.innerWidth - 30);
+  const h = Math.min(contenuto.altezza || 460, window.innerHeight - 70);
+  if (!stretto()){
+    el.style.width = l + 'px';
+    el.style.height = h + 'px';
+    const passo = (apertaN++ % 7) * 24;
+    el.style.left = Math.max(8, Math.min(118 + passo, window.innerWidth - l - 12)) + 'px';
+    el.style.top  = Math.max(8, Math.min(20 + passo, window.innerHeight - h - 50)) + 'px';
+  }
+  el.innerHTML =
+    '<div class="barra-titolo"><span class="dis">' + (contenuto.icona || '&#128462;') +
+      '</span><span class="tit">' + esc(contenuto.titolo) + '</span>' +
+      '<span class="bottoni">' +
+        '<button class="riduci" title="Riduci a icona">_</button>' +
+        '<button class="ingrandisci" title="Ingrandisci">&#9633;</button>' +
+        '<button class="chiudi" title="Chiudi">&#10005;</button>' +
+      '</span></div>' +
+    '<div class="menu-finestra"><span data-menu="file">File</span>' +
+      '<span data-menu="vai">Vai</span><span data-menu="?">?</span></div>' +
+    '<div class="corpo' + (contenuto.faccia ? ' faccia' : '') + '">' + contenuto.html + '</div>' +
+    '<div class="stato"><div>' + esc(contenuto.stato || '') + '</div>' +
+      '<div>' + esc(contenuto.stato2 || '') + '</div></div>' +
+    '<div class="maniglia"></div>';
+  document.getElementById('finestre').appendChild(el);
+  FIN[k] = {el: el, vista: vista, arg: arg, titolo: contenuto.titolo,
+            icona: contenuto.icona || '&#128462;'};
+  collega(k);
+  fronte(k);
+  disegnaBarra();
+  if (!senzaStoria) storia(k);
+  document.body.classList.remove('attesa');
+  return FIN[k];
+}
+
+function chiudi(k){
+  if (!FIN[k]) return;
+  FIN[k].el.remove();
+  delete FIN[k];
+  disegnaBarra();
+  const restanti = Object.keys(FIN);
+  if (restanti.length) fronte(restanti[restanti.length - 1]);
+}
+
+function fronte(k){
+  if (!FIN[k]) return;
+  Object.keys(FIN).forEach(x => FIN[x].el.classList.remove('fronte'));
+  FIN[k].el.style.display = '';
+  FIN[k].el.style.zIndex = ++zeta;
+  FIN[k].el.classList.add('fronte');
+  disegnaBarra();
+}
+
+function collega(k){
+  const f = FIN[k], el = f.el;
+  const titolo = el.querySelector('.barra-titolo');
+  el.addEventListener('mousedown', () => fronte(k), true);
+  el.querySelector('.chiudi').onclick = e => { e.stopPropagation(); chiudi(k); };
+  el.querySelector('.riduci').onclick = e => {
+    e.stopPropagation(); el.style.display = 'none'; disegnaBarra(); };
+  el.querySelector('.ingrandisci').onclick = e => {
+    e.stopPropagation();
+    if (el.dataset.grande){
+      el.style.cssText = el.dataset.prima; delete el.dataset.grande;
+    } else {
+      el.dataset.prima = el.style.cssText; el.dataset.grande = '1';
+      el.style.left = '0px'; el.style.top = '0px';
+      el.style.width = window.innerWidth + 'px';
+      el.style.height = (window.innerHeight - 30) + 'px';
+    }
+  };
+  titolo.ondblclick = () => el.querySelector('.ingrandisci').click();
+  el.querySelectorAll('.menu-finestra span').forEach(s => {
+    s.onclick = () => {
+      const q = s.dataset.menu;
+      if (q === 'file') chiudi(k);
+      else if (q === 'vai') apri('indice');
+      else apri('leggimi');
+    };
+  });
+  if (stretto()) return;
+  trascina(titolo, el);
+  ridimensiona(el.querySelector('.maniglia'), el);
+}
+
+function trascina(presa, el){
+  presa.addEventListener('mousedown', e => {
+    if (e.target.closest('.bottoni')) return;
+    const x0 = e.clientX, y0 = e.clientY;
+    const l0 = el.offsetLeft, t0 = el.offsetTop;
+    const muovi = ev => {
+      el.style.left = Math.max(-el.offsetWidth + 80,
+        Math.min(window.innerWidth - 60, l0 + ev.clientX - x0)) + 'px';
+      el.style.top = Math.max(0,
+        Math.min(window.innerHeight - 60, t0 + ev.clientY - y0)) + 'px';
+    };
+    const molla = () => {
+      document.removeEventListener('mousemove', muovi);
+      document.removeEventListener('mouseup', molla);
+    };
+    document.addEventListener('mousemove', muovi);
+    document.addEventListener('mouseup', molla);
+    e.preventDefault();
+  });
+}
+
+function ridimensiona(presa, el){
+  presa.addEventListener('mousedown', e => {
+    const x0 = e.clientX, y0 = e.clientY;
+    const l0 = el.offsetWidth, a0 = el.offsetHeight;
+    const muovi = ev => {
+      el.style.width = Math.max(260, l0 + ev.clientX - x0) + 'px';
+      el.style.height = Math.max(140, a0 + ev.clientY - y0) + 'px';
+    };
+    const molla = () => {
+      document.removeEventListener('mousemove', muovi);
+      document.removeEventListener('mouseup', molla);
+    };
+    document.addEventListener('mousemove', muovi);
+    document.addEventListener('mouseup', molla);
+    e.preventDefault(); e.stopPropagation();
+  });
+}
+
+function disegnaBarra(){
+  const b = document.getElementById('attivita');
+  b.innerHTML = '';
+  Object.keys(FIN).forEach(k => {
+    const f = FIN[k];
+    const t = document.createElement('button');
+    t.className = 'taskbtn' + (f.el.classList.contains('fronte') &&
+      f.el.style.display !== 'none' ? ' giu' : '');
+    t.innerHTML = '<span class="dis">' + f.icona + '</span>' +
+      '<span class="et">' + esc(f.titolo) + '</span>';
+    t.onclick = () => {
+      if (f.el.style.display === 'none') { fronte(k); }
+      else if (f.el.classList.contains('fronte')) { f.el.style.display = 'none'; disegnaBarra(); }
+      else fronte(k);
+    };
+    b.appendChild(t);
+  });
+}
+
+/* ---------- la cronologia del browser ---------- */
+let ignoraHash = false;
+function storia(k){
+  ignoraHash = true;
+  location.hash = '#' + k;
+  setTimeout(() => { ignoraHash = false; }, 0);
+}
+window.addEventListener('hashchange', () => {
+  if (ignoraHash) return;
+  const h = decodeURIComponent(location.hash.replace(/^#/, ''));
+  if (!h) return;
+  const i = h.indexOf('/');
+  const vista = i < 0 ? h : h.slice(0, i);
+  const arg = i < 0 ? '' : h.slice(i + 1);
+  apri(vista, arg, true);
+});
+
+/* ---------- pezzi riusabili ---------- */
+function tabellaPersone(elenco, opzioni){
+  opzioni = opzioni || {};
+  if (!elenco.length) return '<p>Nessuno.</p>';
+  const righe = elenco.map(p => {
+    const passaggi = passaggiDi(p);
+    return '<tr class="riga" data-q="' + p.q + '">' +
+      '<td>' + (p.s === 2 ? '<span class="morto">' : '<span>') + esc(p.n) +
+        (p.v ? ' &#9884;' : '') + (p.x ? ' &#9873;' : '') + '</span></td>' +
+      '<td class="num">' + (p.b ? p.b.slice(0,4) : '&mdash;') + '</td>' +
+      '<td>' + p.m.join(' ') + '</td>' +
+      '<td>' + passaggi.slice(0, 4).map(c => pill(c)).join('') +
+        (passaggi.length > 4 ? '&hellip;' : '') + '</td>' +
+      '<td class="num">' + p.c + '</td>' +
+      '<td>' + (p.s === 1 ? 'vivo' : p.s === 2 ? '&#8224; ' + (p.d ? p.d.slice(0,4) : '') : '?') + '</td>' +
+    '</tr>';
+  }).join('');
+  return '<table><thead><tr>' +
+    '<th>Nome</th><th class="num">Nato</th><th>Legislature</th>' +
+    '<th>Casacche</th><th class="num">Cambi</th><th>Stato</th>' +
+    '</tr></thead><tbody>' + righe + '</tbody></table>';
+}
+
+function numero(n, vista, arg){
+  return '<span class="clic" data-apri="' + vista + '" data-arg="' +
+    esc(arg || '') + '">' + n + '</span>';
+}
+
+/* ---------- le viste ---------- */
+const VISTE = {};
+
+VISTE['indice'] = function(){
+  const n = P.length, v = vivi().length, m = morti().length, ig = ignoti().length;
+  const cambi = P.reduce((a, p) => a + p.c, 0);
+  const fermi = conGruppo().filter(p => p.c === 0).length;
+  const html =
+    '<div class="gruppone">' +
+      riquadro('Persone', n, 'Deputati, senatori e ministri fra il 1994 e il 2013.', 'elenco', '') +
+      riquadro('Ancora vivi', v, perc(v, n) + '% del totale.', 'lista', 'stato:vivi') +
+      riquadro('Deceduti', m, ig ? ig + ' di sorte ignota.' : 'Con la data registrata.', 'lista', 'stato:morti') +
+      riquadro('Cambi di casacca', cambi, 'Passaggi da un partito a un altro.', 'classifiche', '') +
+    '</div>' +
+    '<p style="margin-top:10px">' + numero(fermi, 'lista', 'cambi:0') +
+      ' non hanno mai cambiato. ' +
+      numero(conGruppo().length - fermi, 'lista', 'cambi:1+') + ' almeno una volta.</p>' +
+    '<h2 style="margin-top:12px">Le cinque legislature</h2>' +
+    '<table><thead><tr><th>Legislatura</th><th>Anni</th>' +
+      '<th class="num">Persone</th><th class="num">Cambi</th></tr></thead><tbody>' +
+    LEG.map(l => {
+      const gente = P.filter(p => p.m.indexOf(l.n) >= 0);
+      const c = gente.reduce((a, p) => a + contaCambiIn(p, l.n), 0);
+      return '<tr class="riga2"><td>' +
+        '<span class="clic" data-apri="lista" data-arg="mandato:' + l.n + '">' +
+        l.n + ' legislatura</span></td><td>' + l.anni + '</td>' +
+        '<td class="num">' + gente.length + '</td><td class="num">' + c + '</td></tr>';
+    }).join('') + '</tbody></table>' +
+    '<p class="piede">Dati aggiornati al ' + dataIt(DATI.generato) +
+      '. Fonti: dati.camera.it, dati.senato.it, Wikidata.</p>';
+  return {titolo: 'Seconda Repubblica Tracker', icona: '&#127963;', html: html,
+          faccia: true, larghezza: 660, altezza: 500,
+          stato: n + ' persone', stato2: cambi + ' cambi'};
+};
+
+function riquadro(et, n, sotto, vista, arg){
+  return '<div class="riquadro"><div>' + et + '</div>' +
+    '<div class="grande">' + numero(n.toLocaleString('it-IT'), vista, arg) + '</div>' +
+    '<div style="font-size:11px;color:#404040">' + sotto + '</div></div>';
+}
+
+function contaCambiIn(p, leg){
+  const i = ORDINE.indexOf(leg);
+  const passi = (p.g || []).filter(t => t[0] === i);
+  let n = 0;
+  for (let x = 1; x < passi.length; x++) if (passi[x][1] !== passi[x-1][1]) n++;
+  return n;
+}
+
+VISTE['elenco'] = function(){
+  return {titolo: 'Risorse del Parlamento', icona: '&#128193;',
+          html: '<div id="filtro-elenco" style="margin-bottom:6px">' +
+            'Cerca: <input type="text" id="q-elenco" size="18"> ' +
+            '<span style="color:#404040" id="n-elenco"></span></div>' +
+            '<div id="corpo-elenco">' + tabellaPersone(P.slice(0, 300)) + '</div>',
+          larghezza: 720, altezza: 520,
+          stato: P.length + ' persone', stato2: 'primi 300'};
+};
+
+VISTE['persona'] = function(q){
+  const p = perQid[q];
+  if (!p) throw new Error('Persona non trovata: ' + q);
+  const et = eta(p);
+  let d = '<dl>';
+  d += '<dt>Nascita</dt><dd>' + (p.b ? dataIt(p.b) : 'non registrata') + '</dd>';
+  if (p.s === 2) d += '<dt>Morte</dt><dd>' + (p.d ? dataIt(p.d) : 'data ignota') + '</dd>';
+  d += '<dt>Stato</dt><dd>' + (p.s === 1 ? 'in vita' : p.s === 2 ? 'deceduto' : 'sorte ignota') +
+       (et != null ? ' &mdash; ' + et + ' anni' + (p.s === 2 ? ' alla morte' : '') : '') + '</dd>';
+  d += '<dt>Legislature</dt><dd>' + (p.m.length ? p.m.map(m =>
+        '<span class="clic" data-apri="lista" data-arg="mandato:' + m + '">' + m + '</span>'
+       ).join(', ') : 'nessuna') + '</dd>';
+  if (p.gv) d += '<dt>Governi</dt><dd>' + p.gv.map(esc).join(', ') + '</dd>';
+  if (p.k) d += '<dt>Cariche</dt><dd>' + p.k.map(esc).join('<br>') + '</dd>';
+  d += '<dt>Cambi di casacca</dt><dd><b>' + p.c + '</b></dd>';
+  d += '</dl>';
+
+  let corpo = '<div class="scheda"><div class="ritratto">' +
+    (p.f ? '<img loading="eager" alt="" src="https://commons.wikimedia.org/wiki/Special:FilePath/' +
+           p.f + '?width=240">'
+         : '<div class="vuoto">&#128100;</div>') +
+    '</div><div class="dati"><h1>' + esc(p.n) + '</h1>' + d + '</div></div>';
+
+  if (p.v) corpo += '<div class="avviso">Senatore a vita o di diritto: sta in tutte le ' +
+    'legislature per definizione, quindi resta fuori dalle classifiche di longevit&agrave;.</div>';
+  if (p.x) corpo += '<div class="avviso">Ministro mai eletto in Parlamento. ' +
+    'Non ha mai avuto un gruppo, quindi non ha cambi di casacca.</div>';
+  if (p.r) corpo += '<div class="avviso">Scheda costruita sui soli registri di Camera e ' +
+    'Senato: Wikidata non lo conosce, e da l&igrave; non arrivano n&eacute; foto n&eacute; voce enciclopedica.</div>';
+  if (p.md) corpo += '<div class="avviso">Una fonte riporta una morte nel ' + esc(p.md[0]) +
+    ', con il solo anno e senza conferma dei registri: non &egrave; stata presa per buona.</div>';
+
+  if (p.g && p.g.length){
+    corpo += '<h2 style="margin-top:12px">Le casacche, in ordine</h2>' + striscia(p);
+    corpo += '<table><thead><tr><th>Dal</th><th>Al</th><th>Partito</th>' +
+      '<th>Gruppo</th><th>Ramo</th></tr></thead><tbody>';
+    let prima = null;
+    p.g.forEach(t => {
+      const salto = prima !== null && t[1] !== prima;
+      corpo += '<tr class="riga2"' + (salto ? ' style="border-top:2px solid #000"' : '') + '>' +
+        '<td>' + dataIt(t[2]) + '</td><td>' + dataIt(t[3]) + '</td>' +
+        '<td><span class="clic" data-apri="partito" data-arg="' + t[1] + '">' +
+          pill(t[1], nomePartito(t[1])) + '</span></td>' +
+        '<td>' + esc(t[5] || nomePartito(t[1])) + '</td>' +
+        '<td>' + (t[4] === 'C' ? 'Camera' : t[4] === 'S' ? 'Senato' : '?') + '</td></tr>';
+      prima = t[1];
+    });
+    corpo += '</tbody></table>';
+  }
+  if (p.w) corpo += '<p class="piede">' +
+    '<a target="_blank" rel="noopener" href="https://it.wikipedia.org/wiki/' + p.w +
+    '">Voce su Wikipedia</a></p>';
+  return {titolo: p.n, icona: '&#128100;', html: corpo, faccia: true,
+          larghezza: 620, altezza: 520,
+          stato: p.c + ' cambi di casacca',
+          stato2: p.m.length + ' legislature'};
+};
+
+function striscia(p){
+  const t0 = giorno(LEG[0].da), t1 = giorno(LEG[LEG.length-1].a);
+  const arco = t1 - t0;
+  let barre = '';
+  (p.g || []).forEach(t => {
+    const a = giorno(t[2]), b = giorno(t[3]);
+    if (a == null || b == null) return;
+    const x = Math.max(0, (a - t0) / arco) * 100;
+    const l = Math.max(0.6, (Math.min(b, t1) - Math.max(a, t0)) / arco * 100);
+    const c = colorePartito(t[1]);
+    barre += '<i style="left:' + x.toFixed(2) + '%;width:' + l.toFixed(2) + '%;background:' + c +
+      ';' + (chiaroSuScuro(c) ? 'color:#000;text-shadow:none' : '') + '" title="' +
+      esc(nomePartito(t[1]) + ' — ' + dataIt(t[2]) + ' / ' + dataIt(t[3])) + '">' +
+      (l > 7 ? esc(t[1]) : '') + '</i>';
+  });
+  let tacche = '';
+  LEG.forEach(l => {
+    const x = (giorno(l.da) - t0) / arco * 100;
+    tacche += '<span style="left:' + x.toFixed(2) + '%">' + l.n + '</span>';
+  });
+  return '<div class="striscia">' + barre + '</div><div class="tacche">' + tacche + '</div>';
+}
+
+VISTE['classifiche'] = function(){
+  const con = conGruppo();
+  const perCambi = con.slice().sort((a,b) => b.c - a.c || a.n.localeCompare(b.n));
+  const perGruppi = con.slice().sort((a,b) =>
+    partitiDi(b).length - partitiDi(a).length || a.n.localeCompare(b.n));
+  const perLeg = P.slice().sort((a,b) => b.m.length - a.m.length || a.n.localeCompare(b.n));
+  const dentroUna = con.map(p => {
+    let mx = 0, quale = '';
+    ORDINE.forEach(l => { const c = contaCambiIn(p, l); if (c > mx){ mx = c; quale = l; } });
+    return {p: p, n: mx, l: quale};
+  }).sort((a,b) => b.n - a.n || a.p.n.localeCompare(b.p.n));
+  const fedeli = con.filter(p => p.c === 0 && p.m.length === ORDINE.length);
+
+  let h = '<h1>Classifiche</h1>';
+  h += '<h2>Pi&ugrave; cambi di casacca, 1994-2013</h2>' + classifica(perCambi.slice(0,15),
+        p => p.c + (p.c === 1 ? ' cambio' : ' cambi'),
+        p => passaggiDi(p).map(c => pill(c)).join(''));
+  h += '<h2 style="margin-top:12px">Pi&ugrave; cambi dentro una sola legislatura</h2>' +
+       '<table><tbody>' + dentroUna.slice(0,10).map(x =>
+        '<tr class="riga" data-q="' + x.p.q + '"><td>' + esc(x.p.n) + '</td>' +
+        '<td class="num">' + x.n + '</td><td>nella ' + x.l + '</td></tr>').join('') +
+       '</tbody></table>';
+  h += '<h2 style="margin-top:12px">Pi&ugrave; partiti diversi attraversati</h2>' +
+       classifica(perGruppi.slice(0,10), p => partitiDi(p).length + ' partiti',
+        p => partitiDi(p).map(c => pill(c)).join(''));
+  h += '<h2 style="margin-top:12px">Pi&ugrave; legislature</h2>' +
+       classifica(perLeg.filter(p => !p.v).slice(0,10),
+        p => p.m.length + ' legislature', p => p.m.join(' '));
+  h += '<h2 style="margin-top:12px">I fedeli</h2>' +
+       '<p>Hanno fatto tutte e cinque le legislature senza cambiare casacca nemmeno una volta: ' +
+       numero(fedeli.length, 'lista', 'fedeli') + '.</p>';
+  return {titolo: 'Classifiche', icona: '&#127942;', html: h, faccia: true,
+          larghezza: 660, altezza: 540, stato: 'ordinate per numero di cambi'};
+}
+
+function classifica(elenco, valore, extra){
+  return '<table><tbody>' + elenco.map(p =>
+    '<tr class="riga" data-q="' + p.q + '">' +
+    '<td style="width:38%">' + esc(p.n) + '</td>' +
+    '<td class="num" style="width:14%">' + valore(p) + '</td>' +
+    '<td>' + (extra ? extra(p) : '') + '</td></tr>').join('') + '</tbody></table>';
+}
+
+VISTE['partiti'] = function(){
+  const codici = Object.keys(PARTITI).sort((a,b) => membriDi(b).length - membriDi(a).length);
+  let h = '<p>Trentaquattro partiti in cinque legislature. Il numero &egrave; ' +
+    'quante persone ci sono passate, anche per un giorno.</p><div>';
+  codici.forEach(c => {
+    const n = membriDi(c).length;
+    if (!n) return;
+    h += '<div class="cartella clic" data-apri="partito" data-arg="' + c + '">' +
+      '<span class="dis" style="color:' + colorePartito(c) + '">&#128193;</span>' +
+      '<span>' + esc(c) + '</span>' +
+      '<span style="color:#404040">' + n + '</span></div>';
+  });
+  return {titolo: 'Partiti', icona: '&#128193;', html: h + '</div>', faccia: true,
+          larghezza: 620, altezza: 460, stato: codici.length + ' partiti'};
+};
+
+VISTE['partito'] = function(codice){
+  const info = PARTITI[codice];
+  if (!info) throw new Error('Partito sconosciuto: ' + codice);
+  const gente = membriDi(codice);
+  const anni = annidiPartito(codice);
+  const eredi = Object.keys(PARTITI).filter(c =>
+    (PARTITI[c].eredita_da || []).indexOf(codice) >= 0);
+  let h = '<h1>' + pill(codice, info.nome) + '</h1>';
+  h += '<dl style="display:grid;grid-template-columns:auto 1fr;gap:2px 10px">' +
+    '<dt><b>In Parlamento</b></dt><dd>dal ' + dataIt(anni[0]) + ' al ' + dataIt(anni[1]) + '</dd>' +
+    '<dt><b>Ci sono passati</b></dt><dd>' + numero(gente.length, 'lista', 'partito:' + codice) + '</dd>';
+  if ((info.eredita_da || []).length)
+    h += '<dt><b>Erede di</b></dt><dd>' + info.eredita_da.map(c =>
+      '<span class="clic" data-apri="partito" data-arg="' + c + '">' +
+      pill(c, nomePartito(c)) + '</span>').join(' ') + '</dd>';
+  if (eredi.length)
+    h += '<dt><b>Gli succede</b></dt><dd>' + eredi.map(c =>
+      '<span class="clic" data-apri="partito" data-arg="' + c + '">' +
+      pill(c, nomePartito(c)) + '</span>').join(' ') + '</dd>';
+  h += '</dl>';
+
+  const dentro = {}, fuori = {};
+  P.forEach(p => {
+    const g = p.g || [];
+    for (let i = 0; i < g.length; i++){
+      if (g[i][1] !== codice) continue;
+      if (i > 0 && g[i-1][1] !== codice) dentro[g[i-1][1]] = (dentro[g[i-1][1]] || 0) + 1;
+      if (i < g.length-1 && g[i+1][1] !== codice) fuori[g[i+1][1]] = (fuori[g[i+1][1]] || 0) + 1;
+    }
+  });
+  h += '<div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:10px">' +
+    '<div style="flex:1;min-width:200px"><h2>Sono arrivati da</h2>' + flusso(dentro) + '</div>' +
+    '<div style="flex:1;min-width:200px"><h2>Se ne sono andati verso</h2>' + flusso(fuori) + '</div>' +
+    '</div>';
+  h += '<h2 style="margin-top:12px">Chi ci &egrave; passato</h2>' +
+       tabellaPersone(gente.slice(0, 200));
+  if (gente.length > 200) h += '<p class="piede">Mostrati i primi 200 di ' + gente.length + '.</p>';
+  return {titolo: info.nome, icona: '&#128193;', html: h, faccia: true,
+          larghezza: 680, altezza: 540,
+          stato: gente.length + ' persone', stato2: dataIt(anni[0]) + ' / ' + dataIt(anni[1])};
+};
+
+function flusso(m){
+  const k = Object.keys(m).sort((a,b) => m[b] - m[a]);
+  if (!k.length) return '<p style="color:#404040">Nessuno.</p>';
+  return '<table><tbody>' + k.map(c =>
+    '<tr><td><span class="clic" data-apri="partito" data-arg="' + c + '">' +
+    pill(c, nomePartito(c)) + '</span></td>' +
+    '<td class="num" style="width:50px">' + m[c] + '</td></tr>').join('') + '</tbody></table>';
+}
+
+VISTE['lista'] = function(filtro){
+  let gente = P, titolo = 'Elenco';
+  const [tipo, valore] = (filtro || '').split(':');
+  if (tipo === 'stato'){
+    gente = valore === 'vivi' ? vivi() : valore === 'morti' ? morti() : ignoti();
+    titolo = valore === 'vivi' ? 'Ancora vivi' : valore === 'morti' ? 'Deceduti' : 'Sorte ignota';
+  } else if (tipo === 'mandato'){
+    gente = P.filter(p => p.m.indexOf(valore) >= 0);
+    titolo = valore + ' legislatura';
+  } else if (tipo === 'partito'){
+    gente = membriDi(valore);
+    titolo = nomePartito(valore);
+  } else if (tipo === 'cambi'){
+    gente = valore === '0' ? conGruppo().filter(p => p.c === 0)
+                           : conGruppo().filter(p => p.c > 0);
+    titolo = valore === '0' ? 'Mai cambiato casacca' : 'Hanno cambiato almeno una volta';
+  } else if (tipo === 'fedeli'){
+    gente = conGruppo().filter(p => p.c === 0 && p.m.length === ORDINE.length);
+    titolo = 'I fedeli';
+  } else if (tipo === 'cerca'){
+    const q = (valore || '').toLowerCase();
+    gente = P.filter(p => p.n.toLowerCase().indexOf(q) >= 0);
+    titolo = 'Trovati: ' + valore;
+  }
+  gente = gente.slice().sort((a,b) => b.c - a.c || a.n.localeCompare(b.n));
+  return {titolo: titolo, icona: '&#128203;',
+          html: tabellaPersone(gente.slice(0, 400)) +
+            (gente.length > 400 ? '<p class="piede">Mostrati i primi 400 di ' +
+              gente.length + ', in ordine di cambi.</p>' : ''),
+          larghezza: 700, altezza: 520,
+          stato: gente.length + ' persone',
+          stato2: gente.reduce((a,p) => a + p.c, 0) + ' cambi'};
+};
+
+VISTE['trova'] = function(){
+  return {titolo: 'Trova: persone e partiti', icona: '&#128269;', faccia: true,
+    html: '<p>Nome, cognome o sigla di partito.</p>' +
+      '<p><input type="text" id="q-trova" size="30" autofocus> ' +
+      '<button class="p95" id="vai-trova">Trova</button></p>' +
+      '<div id="esito-trova"></div>',
+    larghezza: 560, altezza: 420, stato: 'digita e premi Invio'};
+};
+
+VISTE['metodo'] = function(){
+  const h =
+    '<h1>Come &egrave; fatto</h1>' +
+    '<p>Ogni notte tre fonti pubbliche vengono interrogate e messe a confronto: ' +
+    'gli open data della <b>Camera dei deputati</b>, quelli del <b>Senato della ' +
+    'Repubblica</b> e <b>Wikidata</b>. L&rsquo;elenco di chi ha seduto in Parlamento ' +
+    'lo danno le Camere: dove le fonti si contraddicono, comandano i registri.</p>' +
+    '<h2>Che cosa conta come cambio di casacca</h2>' +
+    '<p>Due iscrizioni consecutive a gruppi diversi sono un cambio, con due eccezioni. ' +
+    'La prima: se il gruppo ha soltanto cambiato nome, non conta &mdash; e non serve ' +
+    'nemmeno accorgersene, perch&eacute; il registro della Camera tiene l&rsquo;identit&agrave; ' +
+    'del gruppo separata dal nome, e <i>Iniziativa Responsabile</i> e <i>Popolo e ' +
+    'Territorio</i> risultano lo stesso gruppo. La seconda: fra una legislatura e ' +
+    'l&rsquo;altra, se il partito d&rsquo;arrivo &egrave; erede di quello di partenza. Chi ' +
+    'passa dai DS al Partito Democratico non ha cambiato casacca: si &egrave; mosso il ' +
+    'partito, non la persona. Quando un partito si spacca, sono eredi tutti e due i tronconi.</p>' +
+    '<p>Le successioni valgono <b>solo</b> fra una legislatura e l&rsquo;altra. Dentro una ' +
+    'legislatura ogni spostamento &egrave; una scelta: Gianfranco Fini che nel luglio 2010 ' +
+    'lascia il PdL per Futuro e Libert&agrave; ha cambiato casacca.</p>' +
+    '<p>Il passaggio al <b>gruppo misto</b> conta sempre. Uscire da un gruppo senza ' +
+    'entrare in un altro &egrave; una scelta come le altre.</p>' +
+    '<h2>Il perimetro</h2>' +
+    '<p>Le legislature dalla XII alla XVI: dal 15 aprile 1994 al 14 marzo 2013. ' +
+    'Ci sono tutti i deputati e i senatori, compresi i subentrati a mandato in corso ' +
+    'e gli eletti all&rsquo;estero, e i ministri degli undici governi del periodo anche ' +
+    'se non furono mai eletti. I senatori a vita e di diritto sono segnalati e restano ' +
+    'fuori dalle classifiche di longevit&agrave;, perch&eacute; attraversano ogni legislatura ' +
+    'per definizione.</p>' +
+    '<h2>I difetti dei dati, e come sono stati aggirati</h2>' +
+    '<ul style="margin:0 0 8px 18px;padding:0">' +
+    '<li>Il dataset del Senato contiene anche i mandati alla Camera di chi &egrave; poi ' +
+    'diventato senatore: senza filtrarli, Calderoli risultava senatore nella XII.</li>' +
+    '<li>La Camera restituisce ogni riga due volte, e il Senato ripete l&rsquo;iscrizione ' +
+    'a un gruppo una volta per ogni carica ricoperta dentro quel gruppo.</li>' +
+    '<li>Le iscrizioni consecutive allo stesso gruppo, spezzate in due dal registro, ' +
+    'vengono fuse: contarle separate inventerebbe cambi mai avvenuti.</li>' +
+    '<li>Wikidata attribuisce meno legislature di quante ne risultino alle Camere, e ' +
+    'non lega i senatori a vita a nessuna legislatura.</li>' +
+    '</ul>' +
+    '<h2>Che cosa questo sito non dice</h2>' +
+    '<p>Non dice perch&eacute;. Un cambio di gruppo &egrave; un atto pubblico, depositato ' +
+    'e datato; le ragioni no. Qui trovate il fatto, con la data e la fonte.</p>' +
+    '<p class="piede">Se trovate un errore scrivete a davide.caniatti@gmail.com e viene ' +
+    'corretto. <span class="clic" data-apri="errore">Segnala un errore</span>.</p>';
+  return {titolo: 'Il metodo', icona: '&#128209;', html: h, faccia: true,
+          larghezza: 640, altezza: 520, stato: 'documentazione'};
+};
+
+VISTE['leggimi'] = function(){
+  return {titolo: 'Leggimi.txt - Blocco note', icona: '&#128441;',
+    html: '<div style="font-family:\'Courier New\',monospace;font-size:13px;' +
+      'white-space:pre-wrap;line-height:1.5">' +
+      COLOFONE.map(esc).join('\n') + '</div>',
+    larghezza: 560, altezza: 480, stato: 'Leggimi.txt'};
+};
+
+VISTE['errore'] = function(){
+  return {titolo: 'Segnala un errore', icona: '&#9993;', faccia: true,
+    html: '<p>Il sito non ha un modulo che raccoglie dati: la segnalazione ' +
+      'arriva per posta, e la leggo io.</p>' +
+      '<p><b>davide.caniatti@gmail.com</b></p>' +
+      '<p>Scrivete il nome della persona, che cosa risulta sbagliato e, se l&rsquo;avete, ' +
+      'la fonte giusta. I dati vengono dai registri ufficiali: se l&rsquo;errore &egrave; ' +
+      'l&igrave;, lo segnalo a mia volta.</p>' +
+      '<p><a href="mailto:davide.caniatti@gmail.com?subject=Seconda%20Repubblica%20Tracker">' +
+      'Apri il programma di posta</a></p>',
+    larghezza: 460, altezza: 300, stato: 'correzioni'};
+};
+
+/* ---------- scrivania, menu, orologio ---------- */
+const SCRIVANIA = [
+  ['&#127963;', 'Seconda Repubblica', 'indice', ''],
+  ['&#128193;', 'Risorse del Parlamento', 'elenco', ''],
+  ['&#127942;', 'Classifiche', 'classifiche', ''],
+  ['&#128193;', 'Partiti', 'partiti', ''],
+  ['&#128269;', 'Trova...', 'trova', ''],
+  ['&#128209;', 'Il metodo', 'metodo', ''],
+  ['&#128441;', 'Leggimi.txt', 'leggimi', ''],
+];
+
+function disegnaScrivania(){
+  const c = document.getElementById('icone');
+  c.innerHTML = SCRIVANIA.map(x =>
+    '<div class="icona" data-apri="' + x[2] + '" data-arg="' + x[3] + '">' +
+    '<span class="dis">' + x[0] + '</span><span class="et">' + x[1] + '</span></div>'
+  ).join('');
+  const m = document.getElementById('voci-menu');
+  m.innerHTML = SCRIVANIA.map(x =>
+    '<li data-apri="' + x[2] + '" data-arg="' + x[3] + '">' +
+    '<span class="dis">' + x[0] + '</span>' + x[1] + '</li>').join('') +
+    '<li class="riga"></li>' +
+    '<li data-apri="errore"><span class="dis">&#9993;</span>Segnala un errore...</li>' +
+    '<li id="chiudi-sessione"><span class="dis">&#9211;</span>Chiudi sessione...</li>';
+}
+
+function orologio(){
+  const d = new Date();
+  document.getElementById('orologio').textContent =
+    String(d.getHours()).padStart(2,'0') + '.' + String(d.getMinutes()).padStart(2,'0');
+}
+
+/* ---------- salvaschermo e schermata blu ---------- */
+let inattivo = 0, timerSalva = null;
+function contaInattivita(){
+  inattivo = 0;
+  const s = document.getElementById('salvaschermo');
+  if (s.classList.contains('acceso')){
+    s.classList.remove('acceso');
+    clearInterval(timerSalva); timerSalva = null;
+  }
+}
+setInterval(() => {
+  inattivo++;
+  if (inattivo === 300) accendiSalvaschermo();      // cinque minuti
+}, 1000);
+
+function accendiSalvaschermo(){
+  const s = document.getElementById('salvaschermo');
+  const b = s.querySelector('b');
+  s.classList.add('acceso');
+  let x = 60, y = 60, dx = 2.2, dy = 1.7;
+  timerSalva = setInterval(() => {
+    const L = window.innerWidth - b.offsetWidth, A = window.innerHeight - b.offsetHeight;
+    x += dx; y += dy;
+    if (x < 0 || x > L) { dx = -dx; x = Math.max(0, Math.min(L, x)); }
+    if (y < 0 || y > A) { dy = -dy; y = Math.max(0, Math.min(A, y)); }
+    b.style.left = x + 'px'; b.style.top = y + 'px';
+  }, 30);
+}
+
+function schermataBlu(messaggio){
+  const b = document.getElementById('bsod');
+  document.getElementById('bsod-testo').innerHTML =
+    'Si &egrave; verificato un errore irreversibile alla 0E:0028:C11B3ADC ' +
+    'nell&rsquo;applicazione corrente.<br><br>' + esc(messaggio) +
+    '<br><br>L&rsquo;applicazione verr&agrave; chiusa.';
+  b.classList.add('acceso');
+  document.body.classList.remove('attesa');
+}
+window.onerror = function(m){ schermataBlu(m); return true; };
+
+/* ---------- ascolti ---------- */
+document.addEventListener('mousemove', contaInattivita);
+document.addEventListener('keydown', contaInattivita);
+document.addEventListener('click', contaInattivita, true);
+
+document.addEventListener('click', e => {
+  if (document.getElementById('bsod').classList.contains('acceso')){
+    document.getElementById('bsod').classList.remove('acceso');
+    return;
+  }
+  const av = document.getElementById('avvio');
+  const menu = document.getElementById('menu');
+  if (e.target.closest('#avvio')){
+    menu.classList.toggle('aperto');
+    av.classList.toggle('aperto', menu.classList.contains('aperto'));
+    return;
+  }
+  if (!e.target.closest('#menu')){
+    menu.classList.remove('aperto'); av.classList.remove('aperto');
+  }
+
+  if (e.target.closest('#chiudi-sessione')){
+    return schermataBlu('Chiusura della sessione in corso. In realtà non si ' +
+      'chiude niente: è una pagina web.');
+  }
+  const bersaglio = e.target.closest('[data-apri]');
+  if (bersaglio){
+    apri(bersaglio.dataset.apri, bersaglio.dataset.arg || '');
+    return;
+  }
+  const riga = e.target.closest('tr.riga');
+  if (riga && riga.dataset.q) apri('persona', riga.dataset.q);
+});
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape'){
+    document.getElementById('bsod').classList.remove('acceso');
+    document.getElementById('menu').classList.remove('aperto');
+  }
+});
+
+document.addEventListener('input', e => {
+  if (e.target.id === 'q-elenco'){
+    const q = e.target.value.trim().toLowerCase();
+    const gente = q ? P.filter(p => p.n.toLowerCase().indexOf(q) >= 0) : P;
+    document.getElementById('corpo-elenco').innerHTML =
+      tabellaPersone(gente.slice(0, 300));
+    document.getElementById('n-elenco').textContent =
+      gente.length + (gente.length === 1 ? ' persona' : ' persone') +
+      (gente.length > 300 ? ' (mostrate le prime 300)' : '');
+  }
+});
+
+function cercaOra(){
+  const q = (document.getElementById('q-trova').value || '').trim();
+  if (!q) return;
+  const b = q.toLowerCase();
+  const gente = P.filter(p => p.n.toLowerCase().indexOf(b) >= 0);
+  const parti = Object.keys(PARTITI).filter(c =>
+    c.toLowerCase().indexOf(b) >= 0 || PARTITI[c].nome.toLowerCase().indexOf(b) >= 0);
+  let h = '';
+  if (parti.length) h += '<h2>Partiti</h2><p>' + parti.map(c =>
+    '<span class="clic" data-apri="partito" data-arg="' + c + '">' +
+    pill(c, nomePartito(c)) + '</span>').join(' ') + '</p>';
+  h += '<h2>Persone (' + gente.length + ')</h2>' + tabellaPersone(gente.slice(0, 120));
+  document.getElementById('esito-trova').innerHTML = h;
+}
+document.addEventListener('click', e => {
+  if (e.target.id === 'vai-trova') cercaOra();
+});
+document.addEventListener('keydown', e => {
+  if (e.key === 'Enter' && e.target.id === 'q-trova') cercaOra();
+});
+
+/* ---------- avvio ---------- */
+disegnaScrivania();
+orologio();
+setInterval(orologio, 20000);
+
+const partenza = decodeURIComponent(location.hash.replace(/^#/, ''));
+if (partenza){
+  const i = partenza.indexOf('/');
+  apri(i < 0 ? partenza : partenza.slice(0, i), i < 0 ? '' : partenza.slice(i+1), true);
+} else {
+  apri('indice', '', true);
+}
+</script>
+</body>
+</html>

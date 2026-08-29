@@ -1,0 +1,342 @@
+{
+ "_nota": "Dal gruppo parlamentare al partito. La chiave e' 'legislatura|ramo|nome del gruppo come lo scrive il registro'. 'eredita_da' dice di chi un partito e' erede legittimo: un passaggio verso un erede non conta come cambio di casacca, perche' e' il partito che si e' mosso, non la persona. Quando un partito si spacca, sono eredi tutti e due i tronconi. File generato da scripts/costruisci_mappa_partiti.py.",
+ "gruppi": {
+  "XIII|C|ALLEANZA NAZIONALE": "AN",
+  "XIII|C|CENTRO CRISTIANO DEMOCRATICO": "CCD",
+  "XIII|C|COMUNISTA": "PDCI",
+  "XIII|C|DEMOCRATICI - L'ULIVO": "DEM",
+  "XIII|C|DEMOCRATICI DI SINISTRA - L'ULIVO": "DS",
+  "XIII|C|FORZA ITALIA": "FI",
+  "XIII|C|LEGA NORD PADANIA": "LEGA",
+  "XIII|C|MISTO": "MISTO",
+  "XIII|C|POPOLARI DEMOCRATICI - L'ULIVO": "PPI",
+  "XIII|C|RINNOVAMENTO ITALIANO": "RINN",
+  "XIII|C|UDR - UNIONE DEMOCRATICA PER LA REPUBBLICA": "UDR",
+  "XIII|C|UNIONE DEMOCRATICA PER L'EUROPA": "UDEUR",
+  "XIII|S|AN": "AN",
+  "XIII|S|CCD": "CCD",
+  "XIII|S|CCD-CDL": "CCD",
+  "XIII|S|CDU": "CDU",
+  "XIII|S|CDU-CDR": "CDU",
+  "XIII|S|DS-U": "DS",
+  "XIII|S|Democrazia Europea": "DE",
+  "XIII|S|FI": "FI",
+  "XIII|S|Lega": "LEGA",
+  "XIII|S|Lega Forza Padania": "LEGA",
+  "XIII|S|Lega Nord": "LEGA",
+  "XIII|S|Misto": "MISTO",
+  "XIII|S|PPI": "PPI",
+  "XIII|S|Rif.Com.-Progr.": "PRC",
+  "XIII|S|Rin.Ld.Ind-Pop.": "RINN",
+  "XIII|S|Rinn. Ital. e Ind.": "RINN",
+  "XIII|S|Rinnovam. Ital.": "RINN",
+  "XIII|S|Sin.Dem.-Ulivo": "DS",
+  "XIII|S|UDEUR": "UDEUR",
+  "XIII|S|UDR": "UDR",
+  "XIII|S|UDR(CDU-CDR-NI)": "UDR",
+  "XIII|S|UDeuR": "UDEUR",
+  "XIII|S|Verdi-U": "VERDI",
+  "XII|C|ALLEANZA NAZIONALE": "AN",
+  "XII|C|CENTRO CRISTIANO DEMOCRATICO": "CCD",
+  "XII|C|FEDERALISTI E LIBERALDEMOCRATICI": "LEGA-FED",
+  "XII|C|FORZA ITALIA": "FI",
+  "XII|C|I DEMOCRATICI": "DEM",
+  "XII|C|LEGA ITALIANA FEDERALISTA": "LEGA-FED",
+  "XII|C|LEGA NORD": "LEGA",
+  "XII|C|MISTO": "MISTO",
+  "XII|C|PARTITO POPOLARE ITALIANO": "PPI",
+  "XII|C|PROGRESSISTI - FEDERATIVO": "PDS",
+  "XII|C|RIFONDAZIONE COMUNISTA - PROGRESSISTI": "PRC",
+  "XII|S|AN": "AN",
+  "XII|S|AN-MSI": "AN",
+  "XII|S|CCD": "CCD",
+  "XII|S|CDU": "CDU",
+  "XII|S|FI": "FI",
+  "XII|S|LIF": "LEGA-FED",
+  "XII|S|Lega Federal.": "LEGA-FED",
+  "XII|S|Lega Nord": "LEGA",
+  "XII|S|Misto": "MISTO",
+  "XII|S|PPI": "PPI",
+  "XII|S|Pr. Verdi-Rete": "VERDI",
+  "XII|S|Progr. Feder.": "PDS",
+  "XII|S|Progr. PSI": "PSI-PROG",
+  "XII|S|Rif.Com.-Progr.": "PRC",
+  "XII|S|Scudo Crociato": "CDU",
+  "XII|S|Sinistra Dem.": "SIN-IND",
+  "XIV|C|ALLEANZA NAZIONALE": "AN",
+  "XIV|C|DEMOCRATICI DI SINISTRA-L'ULIVO": "DS",
+  "XIV|C|FORZA ITALIA": "FI",
+  "XIV|C|LEGA NORD FEDERAZIONE PADANA": "LEGA",
+  "XIV|C|MARGHERITA, DL-L'ULIVO": "MARGHERITA",
+  "XIV|C|MISTO": "MISTO",
+  "XIV|C|RIFONDAZIONE COMUNISTA": "PRC",
+  "XIV|C|UDC UNIONE DEI DEMOCRATICI CRISTIANI E DEI DEMOCRATICI DI CENTRO (CCD-CDU)": "UDC",
+  "XIV|S|AN": "AN",
+  "XIV|S|Aut": "AUT",
+  "XIV|S|CCD-CDU:BF": "UDC",
+  "XIV|S|DS-U": "DS",
+  "XIV|S|FI": "FI",
+  "XIV|S|LNP": "LEGA",
+  "XIV|S|Mar": "MARGHERITA",
+  "XIV|S|Mar-DL-U": "MARGHERITA",
+  "XIV|S|Misto": "MISTO",
+  "XIV|S|UDC": "UDC",
+  "XIV|S|Verdi-U": "VERDI",
+  "XIV|S|Verdi-Un": "VERDI",
+  "XVI|C|FUTURO E LIBERTA' PER IL TERZO POLO": "FLI",
+  "XVI|C|ITALIA DEI VALORI": "IDV",
+  "XVI|C|LEGA NORD PADANIA": "LEGA",
+  "XVI|C|MISTO": "MISTO",
+  "XVI|C|PARTITO DEMOCRATICO": "PD",
+  "XVI|C|POPOLO DELLA LIBERTA'": "PDL",
+  "XVI|C|POPOLO E TERRITORIO (NOI SUD-LIBERTA' ED AUTONOMIA, POPOLARI D'ITALIA DOMANI-PID, MOVIMENTO DI RESPONSABILITA' NAZIONALE-MRN, AZIONE POPOLARE, ALLEANZA DI CENTRO-ADC, INTESA POPOLARE)": "RESP",
+  "XVI|C|UNIONE DI CENTRO PER IL TERZO POLO": "UDC",
+  "XVI|S|CDN": "CDN",
+  "XVI|S|CN": "CN",
+  "XVI|S|CN-Io Sud": "CN",
+  "XVI|S|CN-Io Sud-FS": "CN",
+  "XVI|S|CN:GS-SI-PID-IB": "CN",
+  "XVI|S|FDI-CDN": "CDN",
+  "XVI|S|FLI": "FLI",
+  "XVI|S|IdV": "IDV",
+  "XVI|S|LNP": "LEGA",
+  "XVI|S|Misto": "MISTO",
+  "XVI|S|PD": "PD",
+  "XVI|S|PdL": "PDL",
+  "XVI|S|Per il Terzo Polo:ApI-FLI": "FLI",
+  "XVI|S|UDC-SVP-AUT:UV-MAIE-VN-MRE-PLI": "UDC",
+  "XVI|S|UDC-SVP-AUT:UV-MAIE-VN-MRE-PLI-PSI": "UDC",
+  "XVI|S|UDC-SVP-Aut": "UDC",
+  "XVI|S|UDC-SVP-Aut:UV-MAIE-Io Sud-MRE": "UDC",
+  "XVI|S|UDC-SVP-IS-Aut": "UDC",
+  "XV|C|ALLEANZA NAZIONALE": "AN",
+  "XV|C|COMUNISTI ITALIANI": "PDCI",
+  "XV|C|DCA-DEMOCRAZIA CRISTIANA PER LE AUTONOMIE-NUOVO PSI": "DCA",
+  "XV|C|FORZA ITALIA": "FI",
+  "XV|C|ITALIA DEI VALORI": "IDV",
+  "XV|C|LEGA NORD PADANIA": "LEGA",
+  "XV|C|MISTO": "MISTO",
+  "XV|C|PARTITO DEMOCRATICO-L'ULIVO": "PD",
+  "XV|C|POPOLARI-UDEUR": "UDEUR",
+  "XV|C|RIFONDAZIONE COMUNISTA - SINISTRA EUROPEA": "PRC",
+  "XV|C|SINISTRA DEMOCRATICA. PER IL SOCIALISMO EUROPEO": "SD",
+  "XV|C|SOCIALISTI E RADICALI-RNP": "ROSA",
+  "XV|C|UDC (UNIONE DEI DEMOCRATICI CRISTIANI E DEI DEMOCRATICI DI CENTRO)": "UDC",
+  "XV|C|VERDI": "VERDI",
+  "XV|S|AN": "AN",
+  "XV|S|Aut": "AUT",
+  "XV|S|DC-Ind-MA": "DCA",
+  "XV|S|DC-PRI-IND-MPA": "DCA",
+  "XV|S|FI": "FI",
+  "XV|S|IU-Verdi-Com": "IU",
+  "XV|S|LNP": "LEGA",
+  "XV|S|Misto": "MISTO",
+  "XV|S|PD-Ulivo": "PD",
+  "XV|S|RC-SE": "PRC",
+  "XV|S|SDSE": "SD",
+  "XV|S|UDC": "UDC",
+  "XV|S|Ulivo": "PD"
+ },
+ "partiti": {
+  "AN": {
+   "colore": "#1560BD",
+   "eredita_da": [],
+   "nome": "Alleanza Nazionale"
+  },
+  "AUT": {
+   "colore": "#A0522D",
+   "eredita_da": [],
+   "nome": "Autonomie (SVP, Valle d'Aosta, minoranze linguistiche)"
+  },
+  "CCD": {
+   "colore": "#1C90D4",
+   "eredita_da": [],
+   "nome": "Centro Cristiano Democratico"
+  },
+  "CDN": {
+   "colore": "#6A5ACD",
+   "eredita_da": [],
+   "nome": "Centro Destra Nazionale"
+  },
+  "CDU": {
+   "colore": "#5BB6E8",
+   "eredita_da": [],
+   "nome": "Cristiani Democratici Uniti"
+  },
+  "CN": {
+   "colore": "#8A7CA8",
+   "eredita_da": [],
+   "nome": "Coesione Nazionale"
+  },
+  "DCA": {
+   "colore": "#B0B0B0",
+   "eredita_da": [],
+   "nome": "Democrazia Cristiana per le Autonomie - Nuovo PSI"
+  },
+  "DE": {
+   "colore": "#66A3D2",
+   "eredita_da": [],
+   "nome": "Democrazia Europea"
+  },
+  "DEM": {
+   "colore": "#F4A300",
+   "eredita_da": [],
+   "nome": "I Democratici"
+  },
+  "DS": {
+   "colore": "#D8001C",
+   "eredita_da": [
+    "PDS"
+   ],
+   "nome": "Democratici di Sinistra"
+  },
+  "FI": {
+   "colore": "#005BAA",
+   "eredita_da": [],
+   "nome": "Forza Italia"
+  },
+  "FLI": {
+   "colore": "#00A0B0",
+   "eredita_da": [
+    "PDL"
+   ],
+   "nome": "Futuro e Libertà per l'Italia"
+  },
+  "IDV": {
+   "colore": "#FF7900",
+   "eredita_da": [],
+   "nome": "Italia dei Valori"
+  },
+  "IU": {
+   "colore": "#8FBC5A",
+   "eredita_da": [
+    "VERDI",
+    "PDCI"
+   ],
+   "nome": "Insieme con l'Unione (Verdi e Comunisti)"
+  },
+  "LEGA": {
+   "colore": "#009933",
+   "eredita_da": [],
+   "nome": "Lega Nord"
+  },
+  "LEGA-FED": {
+   "colore": "#66CC66",
+   "eredita_da": [
+    "LEGA"
+   ],
+   "nome": "Lega Italiana Federalista / Federalisti e Liberaldemocratici"
+  },
+  "MARGHERITA": {
+   "colore": "#F0A30A",
+   "eredita_da": [
+    "PPI",
+    "DEM"
+   ],
+   "nome": "La Margherita - Democrazia e Libertà"
+  },
+  "MISTO": {
+   "colore": "#808080",
+   "eredita_da": [],
+   "nome": "Gruppo misto"
+  },
+  "PD": {
+   "colore": "#EF3340",
+   "eredita_da": [
+    "DS",
+    "MARGHERITA"
+   ],
+   "nome": "Partito Democratico"
+  },
+  "PDCI": {
+   "colore": "#A00000",
+   "eredita_da": [
+    "PRC"
+   ],
+   "nome": "Partito dei Comunisti Italiani"
+  },
+  "PDL": {
+   "colore": "#0F52BA",
+   "eredita_da": [
+    "FI",
+    "AN"
+   ],
+   "nome": "Il Popolo della Libertà"
+  },
+  "PDS": {
+   "colore": "#E2001A",
+   "eredita_da": [],
+   "nome": "Partito Democratico della Sinistra"
+  },
+  "PPI": {
+   "colore": "#0F8C8C",
+   "eredita_da": [],
+   "nome": "Partito Popolare Italiano"
+  },
+  "PRC": {
+   "colore": "#B80000",
+   "eredita_da": [],
+   "nome": "Partito della Rifondazione Comunista"
+  },
+  "PSI-PROG": {
+   "colore": "#F4436C",
+   "eredita_da": [],
+   "nome": "Progressisti PSI"
+  },
+  "RESP": {
+   "colore": "#7B68A6",
+   "eredita_da": [],
+   "nome": "I Responsabili / Popolo e Territorio"
+  },
+  "RINN": {
+   "colore": "#FFD24C",
+   "eredita_da": [],
+   "nome": "Rinnovamento Italiano"
+  },
+  "ROSA": {
+   "colore": "#E6007E",
+   "eredita_da": [],
+   "nome": "La Rosa nel Pugno / Socialisti e Radicali"
+  },
+  "SD": {
+   "colore": "#C8102E",
+   "eredita_da": [
+    "DS"
+   ],
+   "nome": "Sinistra Democratica per il Socialismo Europeo"
+  },
+  "SIN-IND": {
+   "colore": "#B03060",
+   "eredita_da": [],
+   "nome": "Sinistra Democratica (indipendenti)"
+  },
+  "UDC": {
+   "colore": "#0E7AC4",
+   "eredita_da": [
+    "CCD",
+    "CDU"
+   ],
+   "nome": "Unione di Centro"
+  },
+  "UDEUR": {
+   "colore": "#8DB600",
+   "eredita_da": [
+    "UDR"
+   ],
+   "nome": "Unione Democratici per l'Europa"
+  },
+  "UDR": {
+   "colore": "#9BC53D",
+   "eredita_da": [
+    "CCD",
+    "CDU"
+   ],
+   "nome": "Unione Democratica per la Repubblica"
+  },
+  "VERDI": {
+   "colore": "#7AC943",
+   "eredita_da": [],
+   "nome": "Federazione dei Verdi"
+  }
+ }
+}
