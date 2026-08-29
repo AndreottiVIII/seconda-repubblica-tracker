@@ -18,6 +18,7 @@ MODELLO = os.path.join(QUI, 'modello.html')
 DISTINTIVI = os.path.join(QUI, '..', 'data', 'distintivi.json')
 SPREAD = os.path.join(QUI, '..', 'data', 'spread.json')
 CONDANNE = os.path.join(QUI, '..', 'data', 'condanne.json')
+VOTO_RUBY = os.path.join(QUI, '..', 'data', 'voto_ruby.json')
 USCITA = os.path.join(QUI, '..', 'sito')
 
 TITOLO = 'Seconda Repubblica Tracker'
@@ -204,6 +205,14 @@ def main():
         dati['spread'] = json.load(open(SPREAD, encoding='utf-8'))
     # Le condanne: scritte a mano perche' verificate a mano, e attaccate solo a
     # persone che nell'elenco esistono davvero.
+    if os.path.exists(VOTO_RUBY):
+        v = json.load(open(VOTO_RUBY, encoding='utf-8'))
+        noti = {p['q'] for p in persone}
+        v['voti'] = [x for x in v.get('voti', []) if x.get('qid') in noti]
+        if v['voti']:
+            dati['voto_ruby'] = v
+            print('voto del 14 settembre 2011: %d nomi' % len(v['voti']))
+
     if os.path.exists(CONDANNE):
         c = json.load(open(CONDANNE, encoding='utf-8'))
         noti = {p['q'] for p in persone}

@@ -2126,6 +2126,11 @@ VISTE['cavaliere'] = function(){
       '<p>Nato il ' + dataIt(lui.b) + ', morto il ' + dataIt(lui.d) + '. ' +
       '<span class="clic" data-apri="persona" data-arg="' + BERLUSCONI +
       '">La sua scheda</span>.</p>' +
+      (DATI.voto_ruby
+        ? '<p>Il 14 settembre 2011 il Senato vot&ograve; un conflitto di ' +
+          'attribuzione sul caso Ruby: ' +
+          '<span class="clic" data-apri="mubarak">i 282 voti, per nome</span>.</p>'
+        : '') +
       (DATI.condanne && DATI.condanne.voci.some(v => v.qid === BERLUSCONI)
         ? '<p>Nel 2013 una condanna definitiva per frode fiscale: ' +
           '<span class="clic" data-apri="cestino">nel cestino</span>.</p>' : '') +
@@ -2135,6 +2140,99 @@ VISTE['cavaliere'] = function(){
   return {titolo: 'Il Cavaliere', icona: '&#128081;', html: h, faccia: true,
           larghezza: 660, altezza: 560,
           stato: '48,3% dei giorni', stato2: suoi.length + ' persone nei suoi gruppi'};
+};
+
+/* ---------------------------------------------------------------------------
+   Il voto sul conflitto di attribuzione, con i nomi.
+
+   Attenzione a come si racconta. Nessuno ha votato «che Ruby fosse la nipote
+   di Mubarak»: si votava se sollevare davanti alla Corte costituzionale un
+   conflitto di attribuzione, sostenendo che i magistrati di Milano avessero
+   invaso la sfera del potere di governo. La premessa della Giunta era che
+   Berlusconi, telefonando in questura, credesse la ragazza nipote di Hosni
+   Mubarak, e agisse quindi nell'esercizio delle sue funzioni. Nel dibattito
+   pubblico e' rimasta quella frase, e qui c'e' scritto perche'.
+
+   La Camera vota il 5 aprile 2011, il Senato il 14 settembre. Del voto della
+   Camera negli open data non c'e' traccia, e comunque la Camera pubblica solo
+   i totali. Del Senato c'e' l'appello nominale, ed e' quello che si legge qui.
+   --------------------------------------------------------------------------- */
+VISTE['mubarak'] = function(){
+  const V = DATI.voto_ruby;
+  if (!V || !V.voti || !V.voti.length)
+    throw new Error('Il voto non e stato incorporato: manca data/voto_ruby.json.');
+
+  const gruppi = {favorevole: [], contrario: [], astenuto: []};
+  V.voti.forEach(v => {
+    const p = perQid[v.qid];
+    if (p) gruppi[v.come].push(p);
+  });
+  Object.keys(gruppi).forEach(k => gruppi[k].sort(perCognome));
+
+  const partitoIl = (p, quando) => {
+    let scelto = null;
+    (p.g || []).forEach(t => {
+      if (t[2] && t[2] <= quando && (!t[3] || t[3] >= quando)) scelto = t[1];
+    });
+    return scelto;
+  };
+  const GIORNO = '20110914';
+
+  let h = '<h1>La nipote di Mubarak</h1>' +
+    '<p>Il 5 aprile 2011 la Camera, e il <b>14 settembre 2011</b> il Senato, ' +
+    'votano per sollevare davanti alla Corte costituzionale un <b>conflitto di ' +
+    'attribuzione</b>: la tesi era che i magistrati di Milano, indagando sul ' +
+    'caso Ruby, avessero invaso la sfera del potere di governo. La premessa ' +
+    'della Giunta per le autorizzazioni era che Silvio Berlusconi, telefonando ' +
+    'in questura, ritenesse la ragazza <b>nipote di Hosni Mubarak</b>, e ' +
+    'agisse dunque nell&rsquo;esercizio delle sue funzioni.</p>' +
+    '<p>Nessuno ha votato che Ruby fosse davvero la nipote di Mubarak: si ' +
+    'votava il conflitto. Ma la premessa era quella, ed &egrave; la frase ' +
+    'con cui quel voto &egrave; passato alla storia.</p>';
+
+  h += '<div class="gruppone">' +
+    '<div class="riquadro"><div>A favore del conflitto</div>' +
+      '<div class="grande" style="color:#006400">' + V.favorevoli + '</div>' +
+      '<div style="font-size:11px;color:#404040">Il conflitto fu sollevato.</div></div>' +
+    '<div class="riquadro"><div>Contrari</div>' +
+      '<div class="grande" style="color:#8b0000">' + V.contrari + '</div>' +
+      '<div style="font-size:11px;color:#404040">Su ' + V.votanti + ' votanti.</div></div>' +
+    '<div class="riquadro"><div>Astenuti</div>' +
+      '<div class="grande">' + V.astenuti + '</div>' +
+      '<div style="font-size:11px;color:#404040">' + V.presenti + ' presenti.</div></div>' +
+    '</div>';
+
+  const blocco = (chiave, titolo, colore) => {
+    const g = gruppi[chiave];
+    if (!g.length) return '';
+    return '<h2 style="margin-top:14px">' + titolo + ' (' + g.length + ')</h2>' +
+      '<table><tbody>' + g.map(p => {
+        const c = partitoIl(p, GIORNO);
+        return '<tr class="riga" data-q="' + p.q + '">' +
+          '<td style="width:46%"><span style="color:' + colore + '">&#9632;</span> ' +
+          esc(perElenco(p)) + '</td>' +
+          '<td>' + (c ? pill(c, nomePartito(c)) : '') + '</td></tr>';
+      }).join('') + '</tbody></table>';
+  };
+
+  h += blocco('favorevole', 'Hanno votato a favore', '#006400') +
+       blocco('contrario', 'Hanno votato contro', '#8b0000') +
+       blocco('astenuto', 'Si sono astenuti', '#808080');
+
+  h += '<p class="piede">Appello nominale del Senato della Repubblica, seduta ' +
+    'del 14 settembre 2011, votazione elettronica: ' + esc(V.esito) + '. ' +
+    'Il gruppo indicato accanto a ogni nome &egrave; quello a cui la persona ' +
+    'risultava iscritta quel giorno. Fonte: ' +
+    '<a target="_blank" rel="noopener" href="' + esc(V.fonte) + '">dati.senato.it</a>.</p>' +
+    '<p class="piede">Della votazione della Camera del 5 aprile 2011 non ' +
+    'esiste l&rsquo;equivalente: gli open data della Camera coprono le ' +
+    'votazioni legate agli atti legislativi, e in ogni caso pubblicano solo i ' +
+    'totali, mai i nomi. Per i deputati questa tabella non si pu&ograve; fare.</p>';
+
+  return {titolo: 'La nipote di Mubarak', icona: '&#127466;&#127468;', html: h,
+          faccia: true, larghezza: 660, altezza: 560,
+          stato: V.favorevoli + ' a ' + V.contrari,
+          stato2: '14 settembre 2011'};
 };
 
 VISTE['metodo'] = function(){
@@ -2223,6 +2321,7 @@ const SCRIVANIA = [
   ['&#128220;', 'Il gruppo misto', 'misto', '', 'sx'],
   ['&#9792;', 'Le donne', 'donne', '', 'dx'],
   ['&#128081;', 'Il Cavaliere', 'cavaliere', '', 'dx'],
+  ['&#127466;&#127468;', 'La nipote di Mubarak', 'mubarak', '', 'dx'],
   ['&#9878;', 'Confronta', 'confronta', '', 'dx'],
   ['&#9654;', 'Esegui...', 'esegui', '', 'dx'],
   ['&#128200;', 'Spread', 'spread', '', 'dx'],

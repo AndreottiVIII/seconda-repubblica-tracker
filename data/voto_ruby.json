@@ -1,0 +1,1130 @@
+{
+ "titolo": "",
+ "data": "2011-09-14",
+ "ramo": "Senato della Repubblica",
+ "favorevoli": 151,
+ "contrari": 129,
+ "astenuti": 2,
+ "presenti": 284,
+ "votanti": 282,
+ "esito": "approvato",
+ "fonte": "https://dati.senato.it/",
+ "voti": [
+  {
+   "qid": "Q3619202",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q1055587",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3616771",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q1119601",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q438845",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3941512",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3946129",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3948253",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3770985",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3611446",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3725929",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3665586",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3660252",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3751452",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3939002",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q4013426",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3751482",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3723060",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3615921",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q689244",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3837044",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3745295",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3764245",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q738585",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3946186",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3848982",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q2246867",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3750491",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3779428",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3757091",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3840070",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3737819",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3847486",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3856789",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q303466",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3852713",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3745314",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3740843",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3743812",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3659832",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3609315",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3894457",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3946219",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3762969",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3695134",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3604922",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q4013527",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3929173",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3903034",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3894506",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3885580",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3620269",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3768247",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3604430",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3763782",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3771584",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3763733",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3623008",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3961174",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3779498",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3897161",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q1082088",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q4008361",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3992582",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3801873",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q930967",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3645613",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3827716",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3893701",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3750214",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3751122",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3615489",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3619485",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3839545",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3697356",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3706747",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3479655",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3972465",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q558815",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3847761",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q4003056",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3738016",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q208100",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3956100",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3770500",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q4013257",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3680032",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3848564",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3770563",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3946294",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3615709",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3894070",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3695114",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3847088",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3851266",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q431345",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3619638",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3726542",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q4867438",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q645165",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3713069",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3839729",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3695121",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3695123",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q2756121",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q4008624",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3770811",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3903281",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3838894",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q1122768",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3851120",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3893747",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3619232",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3712911",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3745113",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3762454",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3749627",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3714273",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3827735",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3836888",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3941594",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q954698",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3617687",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3765306",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3756547",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q2689015",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3953736",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3610479",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3838539",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3929024",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q1522083",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3766040",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3769524",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3763739",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q15796471",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q4007864",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3619042",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3733385",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3749750",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3847297",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3852549",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3770321",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q962655",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q122345",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3839508",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3934410",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3759794",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3941357",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3665396",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3852806",
+   "come": "favorevole"
+  },
+  {
+   "qid": "Q3904043",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3615830",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3749420",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q607219",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3852857",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3608429",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3611205",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3701806",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q4011430",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q1098090",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3934529",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3680142",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3751437",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3683396",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3725930",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3738078",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3725938",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3843092",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q4013432",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3619099",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3893090",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3604402",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3972634",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3659707",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3846354",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3746509",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q1803484",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3829229",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3938535",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3107313",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3713707",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q1111570",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3877218",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3929149",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3765714",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3876343",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3894431",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3620131",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3761935",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q535345",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3762608",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3750589",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3617771",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3604425",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3960950",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3608093",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3846505",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3608610",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3946239",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3765788",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3992012",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3840245",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q4013379",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q4018036",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3840260",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3956341",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3847955",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3638038",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3852754",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3960597",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q2246844",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3847121",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3984266",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3770028",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3655211",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q48800542",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3839570",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q711355",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3960760",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3938759",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3720360",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3838841",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3749965",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3846119",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q783995",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3617812",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3852604",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q1226015",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3677351",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q4015219",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q4013285",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3779289",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3847822",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3695484",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3848619",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3847327",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3937225",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3858817",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3737731",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3894115",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3845083",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3680082",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q958889",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3847272",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3876252",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3847359",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3767560",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3839777",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3821561",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3839801",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3848047",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3723837",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3769348",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3745886",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3847685",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3742103",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3847548",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q1346089",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3749287",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3980560",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q50002",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3701882",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3751180",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3745122",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3897807",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3618956",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3770193",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3769322",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3617747",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q516691",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3972422",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3749290",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3554631",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3659193",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3634608",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q3833185",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q4015858",
+   "come": "contrario"
+  },
+  {
+   "qid": "Q1681291",
+   "come": "astenuto"
+  },
+  {
+   "qid": "Q2857289",
+   "come": "astenuto"
+  }
+ ]
+}
