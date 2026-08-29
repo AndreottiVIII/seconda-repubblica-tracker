@@ -882,6 +882,9 @@ VISTE['lista'] = function(filtro){
     gente = valore === '0' ? conGruppo().filter(p => p.c === 0)
                            : conGruppo().filter(p => p.c > 0);
     titolo = valore === '0' ? 'Mai cambiato casacca' : 'Hanno cambiato almeno una volta';
+  } else if (tipo === 'governo'){
+    gente = P.filter(p => (p.gv || []).indexOf(valore) >= 0);
+    titolo = 'Governo ' + valore;
   } else if (tipo === 'morti'){
     gente = P.filter(p => p.s === 2 && p.d && p.d.slice(0, 4) === valore);
     titolo = 'Ci hanno lasciato nel ' + valore;
@@ -1195,11 +1198,12 @@ VISTE['aggiorna'] = function(){
   return {titolo: 'Aggiorna', icona: '&#128260;', faccia: true,
     html: '<p>Interroga la Camera dei deputati e Wikidata adesso, da questo ' +
       'browser, e le confronta con quello che il sito ha in pancia.</p>' +
-      '<p><b>Puo solo aggiungere morti, mai toglierne.</b> Una fonte che tace ' +
-      'non &egrave; una prova, e un registro che non risponde farebbe ' +
-      'resuscitare mezzo Parlamento. Se un giro solo volesse far morire ' +
-      'pi&ugrave; di trenta persone non &egrave; una notizia: &egrave; un ' +
-      'guasto, e non viene applicato niente.</p>' +
+      '<p>Il controllo pu&ograve; soltanto <b>aggiungere</b> una data di morte, ' +
+      'mai rimuoverne una. Il silenzio di una fonte non prova nulla, e un ' +
+      'registro che non risponde riporterebbe in vita mezzo Parlamento. ' +
+      'Per la stessa ragione c&rsquo;&egrave; un limite: oltre trenta ' +
+      'aggiornamenti in un colpo solo il controllo si ferma e non applica ' +
+      'niente.</p>' +
       '<p>Il Senato resta fuori, perch&eacute; non &egrave; interrogabile da ' +
       'una pagina web. Il lavoro notturno invece lo interroga, ed &egrave; ' +
       'l&igrave; che la sua parola conta.</p>' +
@@ -1311,6 +1315,41 @@ VISTE['statistiche'] = function(){
        k === 0 ? '#006400' : '#b8860b']),
       r => ['lista', 'cambi:' + (r[0] === 'mai' ? '0' : '1+')]);
 
+
+  // --- la hall of fame
+  const hof = P.filter(p => p.h);
+  const conta = pre => hof.filter(p => (p.k || []).some(x => x.indexOf(pre) === 0)).length;
+  const hofVivi = hof.filter(p => p.s === 1).length;
+  const hofCambi = hof.filter(p => p.g).reduce((a, p) => a + p.c, 0);
+  const hofConGruppo = hof.filter(p => p.g);
+  const mediaHof = hofConGruppo.length
+    ? Math.round(100 * hofCambi / hofConGruppo.length) / 100 : 0;
+  const mediaTutti = conGruppo.length
+    ? Math.round(100 * conGruppo.reduce((a,p) => a + p.c, 0) / conGruppo.length) / 100 : 0;
+  h += '<h2 style="margin-top:14px">La hall of fame</h2>' +
+    '<p><b>' + numero(hof.length, 'famosi', '') + '</b> persone hanno avuto una ' +
+    'carica di governo o una presidenza. Di queste ne sono vive <b>' + hofVivi +
+    '</b>, il ' + perc(hofVivi, hof.length) + '%: il ' +
+    perc(vivi.length, P.length) + '% fra tutti gli altri.</p>' +
+    tabellaConBarre([
+      ['Presidenti del Consiglio', conta('Presidente del Consiglio'), '#000080'],
+      ['Presidenti della Camera', conta('Presidente della Camera'), '#000080'],
+      ['Presidenti del Senato', conta('Presidente del Senato'), '#000080'],
+      ['Vicepresidenti del Consiglio', conta('Vicepresidente del Consiglio'), '#4169e1'],
+      ['Con almeno un ministero', conta('Ministro') + conta('Ministri'), '#6495ed']
+    ]) +
+    '<p style="margin-top:8px">Chi ha avuto una carica ha cambiato casacca in ' +
+    'media <b>' + String(mediaHof).replace('.', ',') + '</b> volte. Tutti gli ' +
+    'altri <b>' + String(mediaTutti).replace('.', ',') + '</b>. ' +
+    (mediaHof > mediaTutti
+      ? 'Chi ha governato si &egrave; spostato di pi&ugrave;.'
+      : 'Chi ha governato si &egrave; spostato di meno.') + '</p>';
+
+  const hofPiu = hofConGruppo.slice().sort((a, b) => b.c - a.c).slice(0, 5);
+  h += '<p>I ministri che hanno cambiato di pi&ugrave;: ' + hofPiu.map(p =>
+    '<span class="clic" data-apri="persona" data-arg="' + p.q + '">' +
+    esc(p.n) + '</span> (' + p.c + ')').join(', ') + '.</p>';
+
   // --- partiti estinti
   const estinti = Object.keys(PARTITI).map(c => {
     const a = annidiPartito(c);
@@ -1341,6 +1380,90 @@ VISTE['statistiche'] = function(){
           larghezza: 660, altezza: 560,
           stato: P.length + ' persone', stato2: 'media ' + String(media).replace('.', ',') + ' anni'};
 };
+
+/* ---------------------------------------------------------------------------
+   Ctrl+Alt+Canc. Nel novembre 2011 il differenziale fra i titoli italiani e
+   quelli tedeschi arriva a 519 punti base di media mensile; il 12 novembre
+   Berlusconi si dimette, il 16 giura Monti. La Seconda Repubblica finisce con
+   la combinazione di tasti che si usa quando un programma non risponde piu'.
+
+   I numeri vengono dalla Banca Centrale Europea e sono quelli che pubblica
+   lei: nessuna media, nessun massimo giornaliero, nessuna interpolazione.
+   --------------------------------------------------------------------------- */
+const TAPPE = [
+  ['2011-11', '4 novembre', 'Al G20 di Cannes l’Italia rifiuta il prestito del Fondo monetario e accetta la sorveglianza del Fondo sui conti.'],
+  ['2011-11', '8 novembre', 'Alla Camera il rendiconto generale dello Stato passa con 308 voti: sotto la maggioranza assoluta di 316. Berlusconi annuncia le dimissioni.'],
+  ['2011-11', '12 novembre', 'Berlusconi si dimette.'],
+  ['2011-11', '16 novembre', 'Giura il governo Monti. Nessuno dei suoi ministri siede in Parlamento.']
+];
+
+VISTE['spread'] = function(){
+  const S = DATI.spread;
+  if (!S || !S.mesi || !S.mesi.length)
+    throw new Error('I dati della BCE non sono stati incorporati.');
+  const dentro = S.mesi.filter(x => x.m >= '2010-06' && x.m <= '2012-12');
+  const massimo = Math.max.apply(null, dentro.map(x => x.s));
+  const picco = S.mesi.reduce((a, b) => b.s > a.s ? b : a);
+
+  let h = '<div class="riquadro" style="margin-bottom:10px">' +
+    '<div style="font-size:14px"><b>Seconda Repubblica</b> ' +
+    '<span style="color:#8b0000">(non risponde)</span></div>' +
+    '<div style="color:#404040;margin-top:2px">1994-2013 &mdash; ' +
+    P.length + ' persone, ' + P.reduce((a,p) => a + p.c, 0) + ' cambi di casacca</div>' +
+    '</div>';
+
+  h += '<p>Il differenziale fra i titoli di Stato italiani e quelli tedeschi ' +
+    'a dieci anni, mese per mese, in punti base. Il massimo &egrave; ' +
+    '<b>' + picco.s + '</b> nel ' + meseIt(picco.m) + ': i titoli italiani ' +
+    'rendevano il ' + String(picco.it).replace('.', ',') + '%, i tedeschi ' +
+    // 'l'1,87%', non 'il 1,87%': davanti a uno si elide.
+    (String(picco.de).charAt(0) === '1' ? 'l&rsquo;' : 'il ') +
+    String(picco.de).replace('.', ',') + '%.</p>';
+
+  h += '<table><tbody>' + dentro.map(x => {
+    const largo = Math.max(1, Math.round(100 * x.s / massimo));
+    const forte = x.s >= 400;
+    return '<tr><td style="width:78px;white-space:nowrap">' + meseIt(x.m) + '</td>' +
+      '<td class="num" style="width:44px">' + x.s + '</td>' +
+      '<td><span style="display:inline-block;height:11px;width:' + largo + '%;' +
+      'background:' + (forte ? '#8b0000' : '#000080') +
+      ';border:1px solid rgba(0,0,0,.4)"></span></td></tr>';
+  }).join('') + '</tbody></table>';
+
+  h += '<h2 style="margin-top:12px">Novembre 2011</h2>' +
+    '<table><tbody>' + TAPPE.map(t =>
+      '<tr><td style="width:96px;white-space:nowrap"><b>' + t[1] + '</b></td>' +
+      '<td>' + t[2] + '</td></tr>').join('') + '</tbody></table>';
+
+  const monti = P.filter(p => (p.gv || []).indexOf('Monti') >= 0);
+  const maiEletti = monti.filter(p => p.x);
+  h += '<p style="margin-top:10px">Il governo Monti conta ' +
+    numero(monti.length, 'lista', 'governo:Monti') + ' persone in questo elenco, ' +
+    'di cui <b>' + maiEletti.length + '</b> non hanno mai avuto un seggio in ' +
+    'Parlamento fra il 1994 e il 2013.</p>';
+
+  h += '<p class="piede">Questa finestra dovrebbe aprirsi con Ctrl+Alt+Canc, ' +
+    'ma quella combinazione Windows se la tiene per s&eacute;: la intercetta il ' +
+    'sistema operativo prima di ogni programma, ed &egrave; il motivo per cui ' +
+    'esiste. Nessuna pagina web pu&ograve; riceverla. Per questo c&rsquo;&egrave; ' +
+    'anche un&rsquo;icona. (Ctrl+Alt+Backspace invece arriva.)</p>';
+  h += '<p class="piede">Fonte dei tassi: ' + esc(S.fonte) + '. ' +
+    '<a target="_blank" rel="noopener" href="' + esc(S.url) + '">data.ecb.europa.eu</a>. ' +
+    'Le date del novembre 2011 sono fatti pubblici e verificabili; ' +
+    'la relazione fra il differenziale e la caduta del governo &egrave; una ' +
+    'lettura, non un dato, e questo sito non la fa al posto vostro.</p>';
+
+  return {titolo: 'Termina applicazione', icona: '&#128200;', html: h,
+          faccia: true, larghezza: 600, altezza: 540,
+          stato: 'massimo ' + picco.s + ' punti base',
+          stato2: meseIt(picco.m)};
+};
+
+const MESI_BREVI = ['gen','feb','mar','apr','mag','giu','lug','ago','set','ott','nov','dic'];
+function meseIt(m){
+  const p = String(m).split('-');
+  return MESI_BREVI[+p[1] - 1] + ' ' + p[0];
+}
 
 VISTE['metodo'] = function(){
   const h =
@@ -1417,6 +1540,7 @@ const SCRIVANIA = [
   ['&#128193;', 'Risorse del Parlamento', 'elenco', ''],
   ['&#127942;', 'Classifiche', 'classifiche', ''],
   ['&#128202;', 'Statistiche', 'statistiche', ''],
+  ['&#128200;', 'Spread', 'spread', ''],
   ['&#9937;', 'I Responsabili', 'responsabili', ''],
   ['&#128193;', 'Partiti', 'partiti', ''],
   ['&#127793;', 'Albero dei partiti', 'albero', ''],
@@ -1440,6 +1564,7 @@ function disegnaScrivania(){
     '<li class="riga"></li>' +
     '<li data-apri="leggimi"><span class="dis">&#8505;</span>Informazioni su Seconda Repubblica...</li>' +
     '<li data-apri="errore"><span class="dis">&#9993;</span>Segnala un errore...</li>' +
+    '<li data-apri="spread"><span class="dis">&#128200;</span>Termina applicazione...</li>' +
     '<li id="chiudi-sessione"><span class="dis">&#9211;</span>Chiudi sessione...</li>';
 }
 
@@ -1524,6 +1649,12 @@ document.addEventListener('click', e => {
 });
 
 document.addEventListener('keydown', e => {
+  // La combinazione che si premeva quando un programma non rispondeva piu'.
+  if (e.ctrlKey && e.altKey && (e.key === 'Delete' || e.key === 'Backspace')){
+    e.preventDefault();
+    apri('spread');
+    return;
+  }
   if (e.key === 'Escape'){
     document.getElementById('bsod').classList.remove('acceso');
     document.getElementById('menu').classList.remove('aperto');

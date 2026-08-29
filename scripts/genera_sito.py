@@ -16,6 +16,7 @@ import casacche, controlla_js
 INGRESSO = os.path.join(QUI, '..', 'data', 'elenco.json')
 MODELLO = os.path.join(QUI, 'modello.html')
 DISTINTIVI = os.path.join(QUI, '..', 'data', 'distintivi.json')
+SPREAD = os.path.join(QUI, '..', 'data', 'spread.json')
 USCITA = os.path.join(QUI, '..', 'sito')
 
 TITOLO = 'Seconda Repubblica Tracker'
@@ -190,6 +191,12 @@ def main():
         'legislature': [{'n': m, 'anni': ANNI[m],
                          'da': DURATA[m][0], 'a': DURATA[m][1]} for m in ORDINE],
     }
+    # Lo spread non e' un dato parlamentare: viene dalla BCE, e se manca il
+    # sito esce lo stesso, con una schermata in meno.
+    if os.path.exists(SPREAD):
+        dati['spread'] = json.load(open(SPREAD, encoding='utf-8'))
+    else:
+        print('  (data/spread.json assente: niente schermata dello spread)')
 
     modello = open(MODELLO, encoding='utf-8').read()
     corpo = json.dumps(dati, ensure_ascii=False, separators=(',', ':'))
