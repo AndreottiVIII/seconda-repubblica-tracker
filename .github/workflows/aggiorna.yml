@@ -40,12 +40,20 @@ jobs:
       - name: Genera il sito
         run: python scripts/genera_sito.py
 
-      # novita.py esce con errore se i morti tornano vivi in massa: vuol dire
-      # che una fonte e' caduta, e il lavoro si ferma prima di pubblicare.
+      # Due passi distinti, e la differenza conta. Il primo e' un controllo
+      # e deve fermare tutto: se i morti tornano vivi in massa vuol dire che
+      # una fonte e' caduta, e pubblicare peggiorerebbe il sito invece di
+      # aggiornarlo. Il secondo e' contabilita': tenere il registro dei
+      # decessi nella cronologia del repository e' utile, ma se fallisce non
+      # e' una ragione per non pubblicare.
+      - name: Controlla che nessuno torni in vita
+        run: python scripts/novita.py > novita.txt
+
       - name: Registra le novita'
+        continue-on-error: true
         run: |
-          set -e
-          MESSAGGIO="$(python scripts/novita.py)"
+          MESSAGGIO="$(cat novita.txt)"
+          rm -f novita.txt
           if [ -z "$MESSAGGIO" ]; then
             echo "Nessuna novita': sono ancora tutti al loro posto."
             exit 0
@@ -54,8 +62,12 @@ jobs:
           git config user.name  "Seconda Repubblica Tracker"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/elenco.json data/registri sito/index.html
+          if git diff --cached --quiet; then
+            echo "Le novita' non hanno cambiato nessun file da versionare."
+            exit 0
+          fi
           git commit -m "$(date -u +%Y-%m-%d): $MESSAGGIO"
-          git push
+          git push || echo "ATTENZIONE: commit fatto ma non spinto. Si pubblica lo stesso."
 
       - uses: actions/configure-pages@v5
 
