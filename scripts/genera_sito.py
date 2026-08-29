@@ -133,6 +133,13 @@ def compatta(p, gruppi, ant):
         d['h'] = 1
     if p.get('foto'):
         d['f'] = foto_breve(p['foto'])
+    elif p.get('id_camera'):
+        # Ripiego: la foto ufficiale della Camera, che ce l'ha per il 99% dei
+        # suoi deputati. L'indirizzo si ricava dall'identificativo e dalla
+        # legislatura, e vale la pena tenerla anche quando Wikidata tace.
+        camerali = [m for m in ORDINE if ramo.get(m) == 'C']
+        if camerali:
+            d['fc'] = [p['id_camera'], camerali[-1]]
     if p.get('wikipedia'):
         d['w'] = wiki_breve(p['wikipedia'])
     if p.get('non_eletto'):

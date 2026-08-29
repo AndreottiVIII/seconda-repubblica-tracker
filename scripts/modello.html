@@ -665,9 +665,7 @@ VISTE['persona'] = function(q){
   d += '</dl>';
 
   let corpo = '<div class="scheda"><div class="ritratto">' +
-    (p.f ? '<img loading="eager" alt="" src="https://commons.wikimedia.org/wiki/Special:FilePath/' +
-           p.f + '?width=240">'
-         : '<div class="vuoto">&#128100;</div>') +
+    ritratto(p) +
     '</div><div class="dati"><h1>' + esc(p.n) + '</h1>' + d + '</div></div>';
 
   if (p.v) corpo += '<div class="avviso">Senatore a vita o di diritto: sta in tutte le ' +
@@ -706,6 +704,22 @@ VISTE['persona'] = function(q){
           stato: p.c + ' cambi di casacca',
           stato2: p.m.length + ' legislature'};
 };
+
+const NUMERO_LEG = {XII: 12, XIII: 13, XIV: 14, XV: 15, XVI: 16};
+
+function ritratto(p){
+  if (p.f)
+    // Il nome del file arriva gia' codificato da Wikidata: codificarlo una
+    // seconda volta lo rompe, e 'Luigi%20Bobbio.jpg' diventa
+    // 'Luigi%2520Bobbio.jpg', che non esiste.
+    return '<img alt="" src="https://commons.wikimedia.org/wiki/Special:FilePath/' +
+           p.f + '?width=240">';
+  if (p.fc)
+    return '<img alt="" src="https://documenti.camera.it/apps/nuovosito/deputato/' +
+           'getFoto.asp?id=' + encodeURIComponent(p.fc[0]) + '&legislatura=' +
+           NUMERO_LEG[p.fc[1]] + '">';
+  return '<div class="vuoto">&#128100;</div>';
+}
 
 function striscia(p){
   const t0 = giorno(LEG[0].da), t1 = giorno(LEG[LEG.length-1].a);
@@ -1034,6 +1048,153 @@ VISTE['albero'] = function(){
           larghezza: 640, altezza: 540, stato: codici.length + ' partiti'};
 };
 
+/* ---------------------------------------------------------------------------
+   Il ricontrollo dal vivo: interroga la Camera e Wikidata da questo browser e
+   aggiorna quello che vede, tenendo il risultato in localStorage.
+
+   Una regola sola, e non negoziabile: puo' soltanto AGGIUNGERE morti, mai
+   toglierne. Una fonte che tace non e' una prova di niente, e un registro che
+   non risponde farebbe resuscitare mezzo Parlamento. Per lo stesso motivo c'e'
+   un tetto: se un giro solo volesse far morire piu' di trenta persone non e'
+   una notizia, e' un guasto, e non si applica niente.
+
+   Il Senato resta fuori: non manda le intestazioni CORS, quindi da una pagina
+   web non e' raggiungibile. Il lavoro notturno invece lo interroga.
+   --------------------------------------------------------------------------- */
+const TETTO_MORTI = 30;
+
+function morteSalvata(){
+  try { return JSON.parse(localStorage.getItem('morti') || '{}'); }
+  catch (e) { return {}; }
+}
+
+function applicaSalvate(){
+  const m = morteSalvata();
+  let n = 0;
+  Object.keys(m).forEach(q => {
+    const p = perQid[q];
+    if (!p || p.s === 2) return;          // mai al contrario
+    p.s = 2; p.d = m[q]; p.rc = 1; n++;
+  });
+  return n;
+}
+
+function chiediSparql(url, corpo, secondi){
+  const taglia = new AbortController();
+  const scadenza = setTimeout(() => taglia.abort(), (secondi || 60) * 1000);
+  return fetch(url, {
+    method: 'POST', signal: taglia.signal,
+    headers: {'Accept': 'application/sparql-results+json',
+              'Content-Type': 'application/x-www-form-urlencoded'},
+    body: 'query=' + encodeURIComponent(corpo)
+  }).then(r => {
+    clearTimeout(scadenza);
+    if (!r.ok) throw new Error('ha risposto ' + r.status);
+    return r.json();
+  }).then(d => d.results.bindings);
+}
+
+function dataCompatta(v){
+  const t = String(v || '').replace(/[^0-9]/g, '');
+  return t.length === 8 ? t.slice(0,4) + '-' + t.slice(4,6) + '-' + t.slice(6,8) : null;
+}
+
+async function ricontrolla(scrivi){
+  const vivi = P.filter(p => p.s === 1);
+  const nuove = {};
+  scrivi('Persone che qui risultano vive: ' + vivi.length + '.');
+
+  const perId = {};
+  vivi.forEach(p => { if (p.ci) perId[p.ci] = p; });
+  scrivi('Interrogo la Camera dei deputati...');
+  try {
+    const righe = await chiediSparql('https://dati.camera.it/sparql',
+      'PREFIX foaf: <http://xmlns.com/foaf/0.1/> ' +
+      'PREFIX bio: <http://purl.org/vocab/bio/0.1/> ' +
+      'SELECT DISTINCT ?pers ?morte WHERE { ?pers a foaf:Person ; bio:Death ?d . ' +
+      '?d bio:date ?morte }', 90);
+    let visti = 0;
+    righe.forEach(r => {
+      const m = /\/p(\d+)/.exec(r.pers.value);
+      if (!m) return;
+      const p = perId[m[1]];
+      if (!p) return;
+      const data = dataCompatta(r.morte.value);
+      if (data) { nuove[p.q] = data; visti++; }
+    });
+    scrivi('  risponde: ' + righe.length + ' decessi in archivio, ' + visti +
+           ' riguardano chi qui risulta vivo.');
+  } catch (e) {
+    scrivi('  la Camera non risponde (' + e.message + '). Si prosegue senza.');
+  }
+
+  const qid = vivi.filter(p => p.q.charAt(0) === 'Q').map(p => p.q);
+  scrivi('Interrogo Wikidata (' + qid.length + ' schede, a blocchi)...');
+  for (let i = 0; i < qid.length; i += 400) {
+    const blocco = qid.slice(i, i + 400);
+    try {
+      const righe = await chiediSparql('https://query.wikidata.org/sparql',
+        'SELECT ?p ?morte WHERE { VALUES ?p { wd:' + blocco.join(' wd:') +
+        ' } ?p wdt:P570 ?morte }', 60);
+      righe.forEach(r => {
+        const q = r.p.value.split('/').pop();
+        const data = (r.morte.value || '').slice(0, 10);
+        if (perQid[q] && data && !nuove[q]) nuove[q] = data;
+      });
+    } catch (e) {
+      scrivi('  blocco ' + (i / 400 + 1) + ': ' + e.message);
+    }
+  }
+
+  const quanti = Object.keys(nuove).length;
+  if (!quanti) {
+    scrivi('');
+    scrivi('Nessuna novita. Sono ancora tutti al loro posto.');
+    return;
+  }
+  if (quanti > TETTO_MORTI) {
+    scrivi('');
+    scrivi('FERMO TUTTO: il controllo vorrebbe far morire ' + quanti +
+           ' persone in un colpo solo. Non e una notizia, e un guasto di una ' +
+           'fonte. Non applico niente.');
+    return;
+  }
+  const salvate = morteSalvata();
+  Object.keys(nuove).forEach(q => { salvate[q] = nuove[q]; });
+  try { localStorage.setItem('morti', JSON.stringify(salvate)); } catch (e) {}
+  const n = applicaSalvate();
+  scrivi('');
+  scrivi(quanti + (quanti === 1 ? ' persona risulta deceduta' :
+         ' persone risultano decedute') + ' secondo le fonti, e qui non lo era:');
+  Object.keys(nuove).forEach(q => {
+    scrivi('   ' + ((perQid[q] && perQid[q].n) || q) + ' - ' + dataIt(nuove[q]));
+  });
+  scrivi('');
+  scrivi('Aggiornate ' + n + ' schede, e restano su questo computer. Il sito ' +
+         'pubblicato si aggiorna per conto suo ogni notte.');
+}
+
+VISTE['aggiorna'] = function(){
+  const salvate = Object.keys(morteSalvata()).length;
+  return {titolo: 'Aggiorna', icona: '&#128260;', faccia: true,
+    html: '<p>Interroga la Camera dei deputati e Wikidata adesso, da questo ' +
+      'browser, e le confronta con quello che il sito ha in pancia.</p>' +
+      '<p><b>Puo solo aggiungere morti, mai toglierne.</b> Una fonte che tace ' +
+      'non &egrave; una prova, e un registro che non risponde farebbe ' +
+      'resuscitare mezzo Parlamento. Se un giro solo volesse far morire ' +
+      'pi&ugrave; di trenta persone non &egrave; una notizia: &egrave; un ' +
+      'guasto, e non viene applicato niente.</p>' +
+      '<p>Il Senato resta fuori, perch&eacute; non &egrave; interrogabile da ' +
+      'una pagina web. Il lavoro notturno invece lo interroga, ed &egrave; ' +
+      'l&igrave; che la sua parola conta.</p>' +
+      (salvate ? '<p>Da un controllo precedente questo computer ricorda ' +
+        salvate + ' aggiornamenti.</p>' : '') +
+      '<p><button class="p95" id="vai-aggiorna">Controlla adesso</button></p>' +
+      '<div id="esito-aggiorna" style="font-family:Courier New,monospace;' +
+      'font-size:12px;white-space:pre-wrap;line-height:1.5"></div>',
+    larghezza: 580, altezza: 470, stato: 'ricontrollo dal vivo'};
+};
+
 VISTE['metodo'] = function(){
   const h =
     '<h1>Come &egrave; fatto</h1>' +
@@ -1113,6 +1274,7 @@ const SCRIVANIA = [
   ['&#127793;', 'Albero dei partiti', 'albero', ''],
   ['&#127941;', 'Hall of fame', 'famosi', ''],
   ['&#128269;', 'Trova...', 'trova', ''],
+  ['&#128260;', 'Aggiorna', 'aggiorna', ''],
   ['&#128209;', 'Il metodo', 'metodo', ''],
   ['&#128441;', 'Colofone.txt', 'leggimi', ''],
 ];
@@ -1247,12 +1409,28 @@ function cercaOra(){
 }
 document.addEventListener('click', e => {
   if (e.target.id === 'vai-trova') cercaOra();
+  if (e.target.id === 'vai-aggiorna'){
+    const b = e.target, esito = document.getElementById('esito-aggiorna');
+    b.disabled = true;
+    b.textContent = 'Controllo in corso...';
+    document.body.classList.add('attesa');
+    esito.textContent = '';
+    const scrivi = t => { esito.textContent += t + '\n'; };
+    ricontrolla(scrivi).catch(err => scrivi('Errore: ' + err.message)).then(() => {
+      b.disabled = false;
+      b.textContent = 'Controlla di nuovo';
+      document.body.classList.remove('attesa');
+      // I conteggi della prima pagina sono cambiati: la si rifa'.
+      Object.keys(FIN).forEach(k => { if (FIN[k].vista === 'indice') chiudi(k); });
+    });
+  }
 });
 document.addEventListener('keydown', e => {
   if (e.key === 'Enter' && e.target.id === 'q-trova') cercaOra();
 });
 
 /* ---------- avvio ---------- */
+applicaSalvate();
 disegnaScrivania();
 orologio();
 setInterval(orologio, 20000);
