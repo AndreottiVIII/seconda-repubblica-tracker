@@ -187,6 +187,33 @@ def _istantanea():
     return None
 
 
+# La circoscrizione di elezione. Dal 2006 quattro sono fuori dai confini:
+# Europa, America meridionale, America settentrionale e centrale, e
+# Africa-Asia-Oceania-Antartide. Sono la novita' istituzionale del periodo.
+Q_CIRCOSCRIZIONE = """
+PREFIX ocd: <http://dati.camera.it/ocd/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT DISTINCT ?dep ?circ WHERE {
+  ?dep a ocd:deputato ;
+       ocd:rif_leg <http://dati.camera.it/ocd/legislatura.rdf/%s> ;
+       ocd:rif_mandatoCamera ?m .
+  ?m ocd:rif_elezione ?e . ?e rdfs:label ?circ .
+}
+"""
+
+
+def circoscrizioni(codice):
+    """{identificativo persona: circoscrizione} per una legislatura."""
+    fuori = {}
+    for r in interroga(Q_CIRCOSCRIZIONE % codice):
+        pid = id_persona(r['dep']['value'])
+        m = re.search(r'circoscrizione\s+(.+?)\s+nelle elezioni',
+                      r['circ']['value'])
+        if pid and m:
+            fuori[pid] = m.group(1).strip()
+    return fuori
+
+
 Q_PRESIDENTI = """
 PREFIX ocd: <http://dati.camera.it/ocd/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -287,6 +314,14 @@ def _costruisci():
 
     fuori = {}
     for mandato, codice in LEGISLATURE:
+        # La circoscrizione di elezione. Se la query non riesce si prosegue
+        # senza: e' un dato in piu', non uno da cui dipende il resto.
+        try:
+            circ = circoscrizioni(codice)
+        except Exception as e:
+            sys.stderr.write('  circoscrizioni %s: %s\n' % (mandato, str(e)[:60]))
+            circ = {}
+
         # Qui, al contrario della prima Repubblica, i gruppi si tengono
         # TUTTI: la successione datata delle adesioni e' il dato per cui
         # esiste questo sito.
@@ -323,6 +358,8 @@ def _costruisci():
             # elenco di persone si ordina per cognome, e 'Nome Cognome' non
             # dice dove finisce l'uno e comincia l'altro.
             voce['cognome'] = (r.get('cognome', {}).get('value') or '').strip().title()
+            if pid in circ:
+                voce['circoscrizione'] = circ[pid]
             g = (r.get('genere', {}).get('value') or '').strip().lower()
             if g:
                 voce['genere'] = 'F' if g.startswith('f') else 'M'

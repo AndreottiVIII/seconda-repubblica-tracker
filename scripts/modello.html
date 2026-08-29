@@ -922,6 +922,9 @@ VISTE['lista'] = function(filtro){
     if (valore === 'vivi') gente = gente.filter(p => p.s === 1);
     titolo = valore === 'vivi' ? 'Forza Italia e PdL, ancora vivi'
                                : 'Passati per Forza Italia o il PdL';
+  } else if (tipo === 'estero'){
+    gente = P.filter(p => p.es);
+    titolo = 'Eletti nella circoscrizione Estero';
   } else if (tipo === 'eta'){
     const [da, a] = valore.split('-').map(Number);
     gente = P.filter(p => p.s === 1 && eta(p) != null && eta(p) >= da && eta(p) <= a);
@@ -2235,6 +2238,91 @@ VISTE['mubarak'] = function(){
           stato2: '14 settembre 2011'};
 };
 
+/* ---------------------------------------------------------------------------
+   Fuori dall'Italia. Due cose diverse nella stessa finestra, e sono tenute
+   distinte perche' hanno un peso diverso: la circoscrizione Estero viene dai
+   registri come tutto il resto del sito, la cronologia no. Quella e' una
+   scelta di chi scrive, ogni voce con la sua data e la sua fonte, e sta
+   scritto che lo e'.
+   --------------------------------------------------------------------------- */
+const CIRCOSCRIZIONI = [
+  ['EUROPA', 'Europa'],
+  ['AMERICA MERIDIONALE', 'America meridionale'],
+  ['AMERICA SETTENTRIONALE', 'America settentrionale e centrale'],
+  ['AFRICA', 'Africa, Asia, Oceania e Antartide'],
+  ['ASIA', 'Africa, Asia, Oceania e Antartide']
+];
+
+function circoscrizioneDi(testo){
+  const t = (testo || '').toUpperCase();
+  for (let i = 0; i < CIRCOSCRIZIONI.length; i++)
+    if (t.indexOf(CIRCOSCRIZIONI[i][0]) >= 0) return CIRCOSCRIZIONI[i][1];
+  return null;
+}
+
+VISTE['estero'] = function(){
+  const eletti = P.filter(p => p.es);
+  const per = {};
+  eletti.forEach(p => {
+    Object.keys(p.es).forEach(m => {
+      const c = circoscrizioneDi(p.es[m]);
+      if (!c) return;
+      (per[c] = per[c] || {})[m] = (per[c][m] || 0) + 1;
+    });
+  });
+
+  let h = '<h1>Fuori dall&rsquo;Italia</h1>';
+
+  // --- la circoscrizione Estero, dai registri
+  h += '<h2>La circoscrizione Estero</h2>' +
+    '<p>Dal 2006 gli italiani residenti all&rsquo;estero eleggono i propri ' +
+    'parlamentari in quattro circoscrizioni fuori dai confini. &Egrave; la ' +
+    'novit&agrave; istituzionale del periodo, e riguarda ' +
+    numero(eletti.length, 'lista', 'estero:tutti') + ' persone di questo ' +
+    'elenco, nella XV e nella XVI legislatura.</p>' +
+    '<table><thead><tr><th>Circoscrizione</th><th class="num">XV</th>' +
+    '<th class="num">XVI</th></tr></thead><tbody>' +
+    Object.keys(per).sort().map(c =>
+      '<tr><td>' + esc(c) + '</td><td class="num">' + (per[c]['XV'] || 0) +
+      '</td><td class="num">' + (per[c]['XVI'] || 0) + '</td></tr>').join('') +
+    '</tbody></table>' +
+    tabellaPersone(eletti.slice().sort(perCognome));
+
+  // --- la cronologia, che non viene dai registri
+  const E = DATI.estero;
+  if (E && E.eventi && E.eventi.length){
+    h += '<h2 style="margin-top:16px">Che cosa faceva l&rsquo;Italia fuori dai ' +
+      'confini</h2>' +
+      '<div class="avviso">Questa parte non viene dai registri parlamentari. ' +
+      'Sono avvenimenti scelti a mano, ognuno con la data e la fonte: il resto ' +
+      'del sito si controlla interrogando Camera e Senato, questo no.</div>';
+    E.eventi.forEach(ev => {
+      h += '<div class="riquadro" style="margin-bottom:8px">' +
+        '<div style="display:flex;gap:10px;flex-wrap:wrap">' +
+        (ev.foto
+          ? '<div class="ritratto" style="width:160px;flex:none">' +
+            '<img alt="" src="https://commons.wikimedia.org/wiki/Special:FilePath/' +
+            encodeURIComponent(ev.foto).replace(/%20/g, '_') + '?width=320">' +
+            (ev.didascalia ? '<div style="font-size:10px;color:#404040;' +
+              'padding:2px 1px 0">' + esc(ev.didascalia) + '</div>' : '') +
+            '</div>'
+          : '') +
+        '<div style="flex:1;min-width:220px">' +
+        '<div style="font-size:13px"><b>' + esc(ev.titolo) + '</b> ' +
+        '<span style="color:#606060">' + dataIt(ev.data) + '</span></div>' +
+        '<div style="margin-top:4px">' + esc(ev.testo) + '</div>' +
+        '<div class="piede" style="margin-top:5px;padding-top:4px">' +
+        '<a target="_blank" rel="noopener" href="' + esc(ev.fonte) + '">' +
+        'La voce su Wikipedia</a></div></div></div></div>';
+    });
+  }
+
+  return {titolo: 'Fuori dall\u2019Italia', icona: '&#127757;', html: h,
+          faccia: true, larghezza: 680, altezza: 560,
+          stato: eletti.length + ' eletti all\u2019estero',
+          stato2: (E && E.eventi ? E.eventi.length + ' fatti' : '')};
+};
+
 VISTE['metodo'] = function(){
   const h =
     '<h1>Come &egrave; fatto</h1>' +
@@ -2319,9 +2407,9 @@ const SCRIVANIA = [
   ['&#128721;', 'Le cadute', 'cadute', '', 'sx'],
   ['&#128198;', 'Linea del tempo', 'tempo', '', 'sx'],
   ['&#128220;', 'Il gruppo misto', 'misto', '', 'sx'],
+  ['&#127757;', 'Fuori dall\u2019Italia', 'estero', '', 'sx'],
   ['&#9792;', 'Le donne', 'donne', '', 'dx'],
   ['&#128081;', 'Il Cavaliere', 'cavaliere', '', 'dx'],
-  ['&#127466;&#127468;', 'La nipote di Mubarak', 'mubarak', '', 'dx'],
   ['&#9878;', 'Confronta', 'confronta', '', 'dx'],
   ['&#9654;', 'Esegui...', 'esegui', '', 'dx'],
   ['&#128200;', 'Spread', 'spread', '', 'dx'],

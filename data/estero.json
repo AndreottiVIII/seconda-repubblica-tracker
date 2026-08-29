@@ -1,0 +1,61 @@
+{
+ "_nota": "I fatti di politica estera del perimetro. Questa e' l'unica parte del sito che non viene dai registri parlamentari: sono avvenimenti scelti a mano, ognuno con la data, una fonte e, dove esiste un'immagine libera, una fotografia. La circoscrizione Estero invece viene dai registri come tutto il resto.",
+ "eventi": [
+  {
+   "data": "1999-03-24",
+   "titolo": "La guerra del Kosovo",
+   "testo": "Cominciano i bombardamenti della NATO sulla Jugoslavia. Le basi italiane sono il perno delle operazioni, e il governo che accompagna il Paese in guerra e' quello di Massimo D'Alema, primo presidente del Consiglio proveniente dal Partito Comunista Italiano.",
+   "fonte": "https://it.wikipedia.org/wiki/Guerra_del_Kosovo",
+   "foto": "Belgrade during NATO bombing of Yugoslavia.jpg",
+   "didascalia": "Belgrado durante i bombardamenti del 1999"
+  },
+  {
+   "data": "2001-07-20",
+   "titolo": "Il G8 di Genova",
+   "testo": "Il vertice dei grandi si tiene a Genova dal 20 al 22 luglio, sei settimane dopo l'insediamento del secondo governo Berlusconi. Nelle stesse ore muore Carlo Giuliani, e la citta' resta il nome di un passaggio della storia italiana.",
+   "fonte": "https://it.wikipedia.org/wiki/G8_di_Genova",
+   "foto": "Vladimir Putin 22 July 2001-1.jpg",
+   "didascalia": "Il vertice di Genova, 22 luglio 2001"
+  },
+  {
+   "data": "2002-05-28",
+   "titolo": "Il vertice di Pratica di Mare",
+   "testo": "Alla base aerea di Pratica di Mare, alle porte di Roma, la NATO e la Russia firmano la dichiarazione che istituisce il Consiglio NATO-Russia. E' il momento in cui l'Italia si presenta come il luogo dove Occidente e Russia si parlano, e resta la fotografia piu' citata della politica estera di quegli anni.",
+   "fonte": "https://it.wikipedia.org/wiki/Consiglio_NATO-Russia",
+   "foto": "Vladimir Putin 28 May 2002-13.jpg",
+   "didascalia": "Pratica di Mare, 28 maggio 2002"
+  },
+  {
+   "data": "2003-11-12",
+   "titolo": "Nassiriya",
+   "testo": "Un attentato contro la base italiana in Iraq uccide diciannove italiani, dodici carabinieri, cinque militari dell'Esercito e due civili, oltre a nove iracheni. E' la perdita piu' grave per l'Italia dalla seconda guerra mondiale.",
+   "fonte": "https://it.wikipedia.org/wiki/Attentato_di_Nassiriya",
+   "foto": null,
+   "didascalia": ""
+  },
+  {
+   "data": "2008-08-30",
+   "titolo": "Il Trattato di Bengasi",
+   "testo": "Italia e Libia firmano a Bengasi il trattato di amicizia, partenariato e cooperazione: cinque miliardi di dollari in vent'anni come risarcimento per il periodo coloniale, in cambio di collaborazione sui flussi migratori.",
+   "fonte": "https://it.wikipedia.org/wiki/Trattato_di_Bengasi",
+   "foto": null,
+   "didascalia": ""
+  },
+  {
+   "data": "2011-03-19",
+   "titolo": "La Libia, tre anni dopo",
+   "testo": "Comincia l'intervento internazionale contro Gheddafi. L'Italia mette a disposizione sette basi: meno di tre anni dopo il trattato di amicizia, e con lo stesso governo in carica.",
+   "fonte": "https://it.wikipedia.org/wiki/Intervento_militare_in_Libia_del_2011",
+   "foto": "RAF Tornado GR4 Aircraft at Gioia Del Colle Airbase, Italy during Operation Ellamy MOD 45153408.jpg",
+   "didascalia": "La base di Gioia del Colle durante le operazioni su Libia, 2011"
+  },
+  {
+   "data": "2011-11-03",
+   "titolo": "Il G20 di Cannes",
+   "testo": "Al vertice di Cannes l'Italia rifiuta il prestito del Fondo monetario internazionale ma ne accetta la sorveglianza sui conti pubblici. Nove giorni dopo Berlusconi si dimette.",
+   "fonte": "https://it.wikipedia.org/wiki/Governo_Berlusconi_IV",
+   "foto": "G20 - Cumbre de Cannes - 20111103.jpg",
+   "didascalia": "Il G20 di Cannes, 3 novembre 2011"
+  }
+ ]
+}

@@ -367,6 +367,8 @@ def adotta_dal_registro(persone, reg, agganciate, etichetta):
                                  if v.get('foto_senato')), None),
             'genere': next((v.get('genere') for v in voci.values()
                             if v.get('genere')), None),
+            'circoscrizioni': {m: v['circoscrizione'] for m, v in voci.items()
+                               if v.get('circoscrizione')},
             'nascita': nascite[0] if nascite else None,
             'prec_nascita': ('giorno' if nascite and len(nascite[0]) == 10
                              else ('anno' if nascite else None)),
@@ -573,6 +575,8 @@ def main():
                     p['foto_senato'] = voci[m]['foto_senato']
                 if voci[m].get('genere') and not p.get('genere'):
                     p['genere'] = voci[m]['genere']
+                if voci[m].get('circoscrizione'):
+                    p.setdefault('circoscrizioni', {})[m] = voci[m]['circoscrizione']
             if not p.get('cognome'):
                 p['cognome'] = next((voci[m].get('cognome') for m in comuni
                                      if voci[m].get('cognome')), None)

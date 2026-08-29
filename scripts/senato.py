@@ -19,10 +19,11 @@ Q_SENATORI = """
 PREFIX osr: <http://dati.senato.it/osr/>
 PREFIX ocd: <http://dati.camera.it/ocd/>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
-SELECT DISTINCT ?s ?nome ?cognome ?leg ?nascita ?morte ?tipo ?foto ?genere WHERE {
+SELECT DISTINCT ?s ?nome ?cognome ?leg ?nascita ?morte ?tipo ?foto ?genere ?circ WHERE {
   ?s a osr:Senatore ; foaf:firstName ?nome ; foaf:lastName ?cognome ;
      osr:mandato ?m .
   ?m a ocd:mandatoSenato ; osr:legislatura ?leg .
+  OPTIONAL { ?m osr:regioneElezione ?circ }
   FILTER(?leg >= 12 && ?leg <= 16)
   OPTIONAL { ?m osr:tipoMandato ?tipo }
   OPTIONAL { ?s osr:dataNascita ?nascita }
@@ -252,6 +253,9 @@ def _costruisci():
                       r.get('foto', {}).get('value') or '')
         if m:
             voce['foto_senato'] = [m.group(1), m.group(2)]
+        circ = (r.get('circ', {}).get('value') or '').strip()
+        if circ:
+            voce['circoscrizione'] = circ
         g = (r.get('genere', {}).get('value') or '').strip().upper()
         if g:
             voce['genere'] = 'F' if g.startswith('F') else 'M'

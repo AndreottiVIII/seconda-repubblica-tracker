@@ -19,6 +19,7 @@ DISTINTIVI = os.path.join(QUI, '..', 'data', 'distintivi.json')
 SPREAD = os.path.join(QUI, '..', 'data', 'spread.json')
 CONDANNE = os.path.join(QUI, '..', 'data', 'condanne.json')
 VOTO_RUBY = os.path.join(QUI, '..', 'data', 'voto_ruby.json')
+ESTERO = os.path.join(QUI, '..', 'data', 'estero.json')
 USCITA = os.path.join(QUI, '..', 'sito')
 
 TITOLO = 'Seconda Repubblica Tracker'
@@ -156,6 +157,13 @@ def compatta(p, gruppi, ant):
         d['v'] = 1
     if p.get('genere'):
         d['ge'] = p['genere']
+    # Solo le quattro circoscrizioni fuori dai confini: le altre sono venti
+    # regioni che nel sito non servono a niente, e peserebbero.
+    estere = {m: c for m, c in (p.get('circoscrizioni') or {}).items()
+              if any(x in c.upper() for x in
+                     ('EUROPA', 'AMERICA', 'AFRICA', 'ASIA', 'OCEANIA'))}
+    if estere:
+        d['es'] = estere
     if p.get('solo_registro'):
         d['r'] = 1
     if p.get('morte_dubbia'):
@@ -205,6 +213,12 @@ def main():
         dati['spread'] = json.load(open(SPREAD, encoding='utf-8'))
     # Le condanne: scritte a mano perche' verificate a mano, e attaccate solo a
     # persone che nell'elenco esistono davvero.
+    if os.path.exists(ESTERO):
+        e = json.load(open(ESTERO, encoding='utf-8'))
+        if e.get('eventi'):
+            dati['estero'] = {'eventi': e['eventi']}
+            print('fatti fuori dai confini: %d' % len(e['eventi']))
+
     if os.path.exists(VOTO_RUBY):
         v = json.load(open(VOTO_RUBY, encoding='utf-8'))
         noti = {p['q'] for p in persone}
