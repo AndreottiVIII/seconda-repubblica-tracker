@@ -124,7 +124,10 @@ body.attesa,body.attesa *{cursor:wait !important}
 #menu .costola span{position:absolute;bottom:8px;left:50%;
   transform:translateX(-50%) rotate(180deg);writing-mode:vertical-rl;
   color:#fff;font-size:15px;font-weight:bold;letter-spacing:1px;white-space:nowrap}
-#menu ul{list-style:none;margin:0;padding:2px 0;flex:1}
+/* Venti voci non ci stanno su uno schermo basso: la lista scorre
+   invece di sfondare sotto la barra. */
+#menu ul{list-style:none;margin:0;padding:2px 0;flex:1;
+  max-height:calc(100vh - 84px);overflow-y:auto}
 #menu li{display:flex;align-items:center;gap:8px;padding:5px 8px;cursor:default}
 #menu li:hover{background:var(--selezione);color:#fff}
 #menu li.riga{padding:0;margin:3px 2px;height:2px;
@@ -269,7 +272,7 @@ button.p95:active{border-color:var(--ombra) var(--luce) var(--luce) var(--ombra)
    cosi' se la copia che torna e' ancora quella vecchia non si riparte in
    circolo. E con un tempo massimo, perche' fetch da solo non ce l'ha e
    aspetterebbe per sempre. */
-const VERSIONE = '796b4b1eadca';
+const VERSIONE = '833b74634017';
 (function controllaVersione(){
   if (location.protocol === 'file:' || !window.fetch) return;
   const taglia = new AbortController();
@@ -787,25 +790,39 @@ VISTE['classifiche'] = function(){
   const fedeli = con.filter(p => p.c === 0 && p.m.length === ORDINE.length);
 
   let h = '<h1>Classifiche</h1>';
-  h += '<h2>Pi&ugrave; cambi di casacca, 1994-2013</h2>' + classifica(perCambi.slice(0,15),
-        p => p.c + (p.c === 1 ? ' cambio' : ' cambi'),
+  const testa = senzaTagliare(perCambi, 15, p => p.c);
+  h += '<h2>Pi&ugrave; cambi di casacca, 1994-2013</h2>' +
+       '<p style="color:#404040">Tutti quelli che hanno cambiato almeno ' +
+       testa[testa.length - 1].c + ' volte: sono ' + testa.length + '.</p>' +
+       classifica(testa, p => p.c + (p.c === 1 ? ' cambio' : ' cambi'),
         p => passaggiDi(p).map(c => pill(c)).join(''));
   h += '<h2 style="margin-top:12px">Pi&ugrave; cambi dentro una sola legislatura</h2>' +
-       '<table><tbody>' + dentroUna.slice(0,10).map(x =>
+       '<table><tbody>' + senzaTagliare(dentroUna, 10, x => x.n).map(x =>
         '<tr class="riga" data-q="' + x.p.q + '"><td>' + esc(x.p.n) + '</td>' +
         '<td class="num">' + x.n + '</td><td>nella ' + x.l + '</td></tr>').join('') +
        '</tbody></table>';
   h += '<h2 style="margin-top:12px">Pi&ugrave; partiti diversi attraversati</h2>' +
-       classifica(perGruppi.slice(0,10), p => partitiDi(p).length + ' partiti',
+       classifica(senzaTagliare(perGruppi, 10, p => partitiDi(p).length),
+        p => partitiDi(p).length + ' partiti',
         p => partitiDi(p).map(c => pill(c)).join(''));
   h += '<h2 style="margin-top:12px">Pi&ugrave; legislature</h2>' +
-       classifica(perLeg.filter(p => !p.v).slice(0,10),
+       classifica(senzaTagliare(perLeg.filter(p => !p.v), 10, p => p.m.length),
         p => p.m.length + ' legislature', p => p.m.join(' '));
   h += '<h2 style="margin-top:12px">I fedeli</h2>' +
        '<p>Hanno fatto tutte e cinque le legislature senza cambiare casacca nemmeno una volta: ' +
        numero(fedeli.length, 'lista', 'fedeli') + '.</p>';
   return {titolo: 'Classifiche', icona: '&#127942;', html: h, faccia: true,
           larghezza: 660, altezza: 540, stato: 'ordinate per numero di cambi'};
+}
+
+/* Una classifica non si taglia in mezzo a una fascia: se al quindicesimo
+   posto ci sono cinque cambi, si mostrano tutti quelli con cinque cambi,
+   altrimenti chi resta fuori ci resta per l'ordine alfabetico e non per
+   quello che ha fatto. */
+function senzaTagliare(elenco, quanti, quanto){
+  if (elenco.length <= quanti) return elenco;
+  const soglia = quanto(elenco[quanti - 1]);
+  return elenco.filter(p => quanto(p) >= soglia);
 }
 
 function classifica(elenco, valore, extra){
@@ -1017,10 +1034,38 @@ function haCarica(p, prefisso){
 
 VISTE['famosi'] = function(){
   const tutti = P.filter(p => p.h);
+  const vivi = tutti.filter(p => p.s === 1);
+  const morti = tutti.filter(p => p.s === 2);
+  const eta_vivi = vivi.map(eta).filter(x => x != null);
+  const media = eta_vivi.length
+    ? Math.round(10 * eta_vivi.reduce((a, b) => a + b, 0) / eta_vivi.length) / 10 : 0;
+  const eta_morti = morti.map(eta).filter(x => x != null);
+  const mediaM = eta_morti.length
+    ? Math.round(10 * eta_morti.reduce((a, b) => a + b, 0) / eta_morti.length) / 10 : 0;
+  const conGruppo = tutti.filter(p => p.g);
+  const cambiHof = conGruppo.length
+    ? Math.round(100 * conGruppo.reduce((a, p) => a + p.c, 0) / conGruppo.length) / 100 : 0;
+  const anziano = vivi.filter(p => p.b).sort((a, b) => a.b.localeCompare(b.b))[0];
+
   let h = '<h1>Hall of fame</h1>' +
     '<p>Chi fra il 1994 e il 2013 ha guidato un governo, presieduto una Camera ' +
     'o avuto un ministero. Non &egrave; una classifica di importanza: &egrave; ' +
-    'l&rsquo;elenco delle cariche, e la carica o ce l&rsquo;hai avuta o no.</p>';
+    'l&rsquo;elenco delle cariche, e la carica o ce l&rsquo;hai avuta o no.</p>' +
+    '<div class="gruppone">' +
+      riquadro('Con una carica', tutti.length, 'Su ' + P.length + ' persone.', 'famosi', '') +
+      riquadro('Ancora vivi', vivi.length, perc(vivi.length, tutti.length) +
+               '%, contro il ' + perc(P.filter(p => p.s === 1).length, P.length) +
+               '% di tutti gli altri.', 'famosi', '') +
+      riquadro('Deceduti', morti.length, 'Segnati con la croce.', 'famosi', '') +
+    '</div>' +
+    '<p style="margin-top:8px">I vivi hanno in media <b>' +
+    String(media).replace('.', ',') + ' anni</b>; chi non c&rsquo;&egrave; ' +
+    'pi&ugrave; se n&rsquo;&egrave; andato a <b>' + String(mediaM).replace('.', ',') +
+    '</b>. Hanno cambiato casacca <b>' + String(cambiHof).replace('.', ',') +
+    '</b> volte a testa.' +
+    (anziano ? ' Il pi&ugrave; anziano &egrave; <span class="clic" ' +
+      'data-apri="persona" data-arg="' + anziano.q + '">' + esc(anziano.n) +
+      '</span>, ' + eta(anziano) + ' anni.' : '') + '</p>';
   const gia = {};
   GRADI.forEach(([prefisso, titolo]) => {
     const chi = tutti.filter(p => haCarica(p, prefisso)).sort(perCognome);
@@ -1029,14 +1074,20 @@ VISTE['famosi'] = function(){
       '<table><tbody>' + chi.map(p => {
         gia[p.q] = 1;
         return '<tr class="riga" data-q="' + p.q + '"><td style="width:34%">' +
-          esc(perElenco(p)) + '</td><td>' + esc((p.k || []).join('; ')) + '</td></tr>';
+          (p.s === 2 ? '<span class="morto">&#8224; ' + esc(perElenco(p)) +
+            (p.d ? ' <span style="font-size:11px">' + p.d.slice(0,4) + '</span>' : '') +
+            '</span>' : esc(perElenco(p))) +
+          '</td><td>' + esc((p.k || []).join('; ')) + '</td></tr>';
       }).join('') + '</tbody></table>';
   });
   const ministri = tutti.filter(p => !gia[p.q]).sort(perCognome);
   h += '<h2 style="margin-top:12px">Ministri (' + ministri.length + ')</h2>' +
     '<table><tbody>' + ministri.map(p =>
       '<tr class="riga" data-q="' + p.q + '"><td style="width:34%">' +
-      esc(perElenco(p)) + '</td><td>' + esc((p.k || []).join('; ')) +
+      (p.s === 2 ? '<span class="morto">&#8224; ' + esc(perElenco(p)) +
+        (p.d ? ' <span style="font-size:11px">' + p.d.slice(0,4) + '</span>' : '') +
+        '</span>' : esc(perElenco(p))) +
+      '</td><td>' + esc((p.k || []).join('; ')) +
       '</td></tr>').join('') + '</tbody></table>';
   return {titolo: 'Hall of fame', icona: '&#127941;', html: h, faccia: true,
           larghezza: 700, altezza: 540, stato: tutti.length + ' persone con una carica'};
@@ -1790,6 +1841,7 @@ VISTE['misto'] = function(){
    --------------------------------------------------------------------------- */
 const CADUTE = [
   {g: 'Berlusconi I', fine: '22 dicembre 1994', tipo: 'ritiro',
+   finestra: ['XII', '19941201', '19950228'],
    chi: 'Lega Nord', qid: 'Q47832', nome: 'Umberto Bossi',
    t: 'Il 17 dicembre 1994 la Lega Nord annuncia l\u2019uscita dalla maggioranza. ' +
       'Il 20 dicembre Lega, PDS e PPI depositano una mozione di sfiducia. Il 21 ' +
@@ -1798,6 +1850,7 @@ const CADUTE = [
    fonte: 'https://it.wikipedia.org/wiki/Governo_Berlusconi_I'},
 
   {g: 'Prodi I', fine: '9 ottobre 1998', tipo: 'voto', voto: '312 s\u00ec, 313 no',
+   finestra: ['XIII', '19980915', '19981231'],
    chi: 'Rifondazione Comunista', qid: 'Q559577', nome: 'Fausto Bertinotti',
    t: 'Il 4 ottobre 1998 Rifondazione Comunista annuncia il passaggio ' +
       'all\u2019opposizione e il governo perde la maggioranza alla Camera. Il 9 ' +
@@ -1808,6 +1861,7 @@ const CADUTE = [
    fonte: 'https://it.wikipedia.org/wiki/Governo_Prodi_I', gruppo: 'PDCI'},
 
   {g: 'Prodi II', fine: '24 gennaio 2008', tipo: 'voto',
+   finestra: ['XV', '20080101', '20080331'],
    voto: '156 favorevoli, 161 contrari, 1 astenuto',
    chi: 'Popolari-UDEUR', qid: 'Q1394911', nome: 'Clemente Mastella',
    t: 'Il 17 gennaio 2008 Mastella si dimette da ministro della Giustizia. Nei ' +
@@ -1817,6 +1871,9 @@ const CADUTE = [
    fonte: 'https://it.wikipedia.org/wiki/Governo_Prodi_II', gruppo: 'UDEUR'},
 
   {g: 'Berlusconi IV', fine: '12 novembre 2011', tipo: 'voto',
+   finestra: ['XVI', '20100701', '20111231'],
+   registro: '308 favorevoli, nessun contrario, 1 astenuto su 309 presenti',
+   scheda: 'http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=547_1&tipo=dettaglio',
    voto: '308 voti, sotto la maggioranza assoluta di 316',
    chi: 'Futuro e Libert\u00e0 e il differenziale sui titoli di Stato',
    qid: 'Q47583', nome: 'Gianfranco Fini',
@@ -1842,16 +1899,43 @@ const SENZA_CADUTA = [
             'PdL, e resta in carica per gli affari correnti fino alle elezioni.'],
 ];
 
+
+/* Chi ha cambiato gruppo nelle settimane della caduta. Non e' l'appello
+   nominale: quello, per queste votazioni, nessuno dei due registri lo
+   pubblica. E' pero' un fatto vicino e verificabile, con nomi e date, e
+   spesso dice la stessa cosa: nel dicembre 1994 quaranta deputati lasciano
+   la Lega, nel luglio 2010 quarantasei lasciano il PdL. */
+function movimentiFra(leg, da, a){
+  const i = ORDINE.indexOf(leg);
+  const fuori = [];
+  P.forEach(p => {
+    const g = (p.g || []).filter(t => t[0] === i);
+    for (let k = 1; k < g.length; k++){
+      if (g[k][2] >= da && g[k][2] <= a && g[k][1] !== g[k-1][1])
+        fuori.push({p: p, da: g[k][2], prima: g[k-1][1], dopo: g[k][1]});
+    }
+  });
+  fuori.sort((x, y) => x.da.localeCompare(y.da) || perCognome(x.p, y.p));
+  return fuori;
+}
+
+function tabellaMovimenti(righe){
+  if (!righe.length) return '<p style="color:#606060">Nessun cambio di gruppo ' +
+    'in quelle settimane.</p>';
+  return '<table><thead><tr><th>Il giorno</th><th>Nome</th><th>Da</th>' +
+    '<th>A</th></tr></thead><tbody>' + righe.map(r =>
+    '<tr class="riga" data-q="' + r.p.q + '"><td>' + dataIt(r.da) + '</td>' +
+    '<td>' + esc(perElenco(r.p)) + '</td>' +
+    '<td>' + pill(r.prima, nomePartito(r.prima)) + '</td>' +
+    '<td>' + pill(r.dopo, nomePartito(r.dopo)) + '</td></tr>').join('') +
+    '</tbody></table>';
+}
+
 VISTE['cadute'] = function(){
   let h = '<h1>Le cadute</h1>' +
     '<p>Quattro governi su undici sono finiti prima del tempo per un voto ' +
     'perso o per un appoggio ritirato. Qui c&rsquo;&egrave; come, quando, e ' +
-    'con quali numeri.</p>' +
-    '<div class="avviso">Un governo cade per un voto d&rsquo;aula o per una ' +
-    'decisione di partito, e sono due cose diverse: la prima ha un verbale, la ' +
-    'seconda no. Qui restano distinte. Che un ritiro di appoggio &laquo;abbia ' +
-    'fatto cadere&raquo; il governo &egrave; una conclusione, non un dato: le ' +
-    'date sono in fila, la conclusione la trae chi legge.</div>';
+    'con quali numeri.</p>';
 
   CADUTE.forEach(c => {
     h += '<div class="riquadro" style="margin-bottom:8px">' +
@@ -1868,16 +1952,32 @@ VISTE['cadute'] = function(){
       (perQid[c.qid] ? '<tr><td><b>Chi lo annuncia</b></td><td>' +
         '<span class="clic" data-apri="persona" data-arg="' + c.qid + '">' +
         esc(perQid[c.qid].n) + '</span></td></tr>' : '') +
+      (c.registro ? '<tr><td><b>Nel registro della Camera</b></td><td>' +
+        esc(c.registro) + '</td></tr>' : '') +
       '</tbody></table>' +
+      (c.finestra ? '<div style="margin-top:8px"><b>Chi ha cambiato gruppo in ' +
+        'quelle settimane</b>' +
+        tabellaMovimenti(movimentiFra(c.finestra[0], c.finestra[1], c.finestra[2])) +
+        '</div>' : '') +
       '<div class="piede" style="margin-top:4px;padding-top:4px">' +
       '<a target="_blank" rel="noopener" href="' + esc(c.fonte) + '">' +
-      'Fonte: la voce del governo su Wikipedia</a></div></div>';
+      'Fonte: la voce del governo su Wikipedia</a>' +
+      (c.scheda ? ' &mdash; <a target="_blank" rel="noopener" href="' +
+        esc(c.scheda) + '">la scheda ufficiale del voto, coi nomi</a>' : '') +
+      '</div></div>';
   });
 
   h += '<h2 style="margin-top:12px">Gli altri sette</h2>' +
     '<table><tbody>' + SENZA_CADUTA.map(x =>
       '<tr><td style="width:26%;white-space:nowrap"><b>' + esc(x[0]) + '</b></td>' +
       '<td>' + esc(x[1]) + '</td></tr>').join('') + '</tbody></table>';
+  h += '<p class="piede">L&rsquo;appello nominale &mdash; chi ha votato che ' +
+    'cosa, uno per uno &mdash; non &egrave; negli open data: il Senato ' +
+    'pubblica i voti per nome ma non per la seduta del 24 gennaio 2008, che ' +
+    'fu per appello, e la Camera pubblica solo i totali. Dove esiste, la ' +
+    'scheda ufficiale coi nomi &egrave; linkata. Le tabelle qui sopra sono ' +
+    'un&rsquo;altra cosa: i cambi di gruppo depositati nei registri in quelle ' +
+    'settimane.</p>';
   h += '<p class="piede">Le date e i numeri dei voti vengono dalle voci di ' +
     'Wikipedia dei singoli governi. I gruppi parlamentari e le date di ' +
     'iscrizione, invece, dai registri di Camera e Senato: sono quelli che ' +
