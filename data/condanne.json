@@ -1,87 +1,347 @@
 {
-  "_nota": "Condanne penali passate in giudicato, verificate una per una sulle voci di Wikipedia in italiano il 30 agosto 2026. Wikidata ne dichiarava quattordici: nove sono state scartate perche' non definitive, non confermate o con dati sbagliati (a Marcello Dell'Utri attribuiva il 1994 per una sentenza del 2014). Qui c'e' solo cio' che risulta definitivo, con il grado, l'anno e la fonte. Il patteggiamento e' equiparato per legge a una condanna e viene indicato come tale. Chi non compare non e' per questo senza vicende giudiziarie: compare solo chi ha una condanna definitiva verificata.",
-
-  "voci": [
-    {
-      "qid": "Q558815",
-      "reato": "Concorso esterno in associazione di tipo mafioso",
-      "anno": 2014,
-      "grado": "definitiva",
-      "pena": "7 anni di reclusione",
-      "dettaglio": "Cassazione, 9 maggio 2014. Wikidata attribuiva questa condanna al 1994.",
-      "fonte": "https://it.wikipedia.org/wiki/Marcello_Dell%27Utri"
-    },
-    {
-      "qid": "Q558815",
-      "reato": "Abuso edilizio",
-      "anno": 2015,
-      "grado": "definitiva",
-      "pena": "8 mesi di reclusione",
-      "dettaglio": "Cassazione, 21 maggio 2015.",
-      "fonte": "https://it.wikipedia.org/wiki/Marcello_Dell%27Utri"
-    },
-    {
-      "qid": "Q11860",
-      "reato": "Frode fiscale",
-      "anno": 2013,
-      "grado": "definitiva",
-      "pena": "4 anni di reclusione e 2 anni di interdizione dai pubblici uffici",
-      "dettaglio": "E' l'unica condanna definitiva che la voce gli attribuisce, su oltre trenta procedimenti. Wikidata ne dichiarava sei.",
-      "fonte": "https://it.wikipedia.org/wiki/Silvio_Berlusconi"
-    },
-    {
-      "qid": "Q730966",
-      "reato": "Corruzione (appalti del MOSE)",
-      "anno": 2014,
-      "grado": "patteggiamento",
-      "pena": "2 anni e 10 mesi",
-      "dettaglio": "Patteggiamento del 9 ottobre 2014, con la restituzione di 2,5 milioni di euro.",
-      "fonte": "https://it.wikipedia.org/wiki/Giancarlo_Galan"
-    },
-    {
-      "qid": "Q463130",
-      "reato": "Traffico di influenze illecite",
-      "anno": 2022,
-      "grado": "definitiva",
-      "pena": "1 anno e 10 mesi di reclusione",
-      "dettaglio": "La Cassazione aveva annullato nel 2021 la precedente condanna per corruzione; il reato e' stato riqualificato nel giudizio d'appello del febbraio 2022.",
-      "fonte": "https://it.wikipedia.org/wiki/Gianni_Alemanno"
-    },
-    {
-      "qid": "Q902439",
-      "reato": "Corruzione (tangenti autostradali in Veneto)",
-      "anno": null,
-      "grado": "patteggiamento",
-      "pena": "1 anno e 6 mesi",
-      "dettaglio": "La voce riporta oltre trenta procedimenti e diverse assoluzioni.",
-      "fonte": "https://it.wikipedia.org/wiki/Gianni_De_Michelis"
-    },
-    {
-      "qid": "Q902439",
-      "reato": "Vicenda Enimont",
-      "anno": null,
-      "grado": "patteggiamento",
-      "pena": "6 mesi",
-      "dettaglio": "Pena complessiva di due anni, sospesa condizionalmente.",
-      "fonte": "https://it.wikipedia.org/wiki/Gianni_De_Michelis"
-    },
-    {
-      "qid": "Q2246855",
-      "reato": "Violazione della legge sul finanziamento ai partiti (Enimont)",
-      "anno": null,
-      "grado": "definitiva",
-      "pena": "1 anno e 8 mesi",
-      "dettaglio": "Ha ottenuto la riabilitazione dal Tribunale di sorveglianza di Roma nel 2011.",
-      "fonte": "https://it.wikipedia.org/wiki/Paolo_Cirino_Pomicino"
-    },
-    {
-      "qid": "Q2246855",
-      "reato": "Corruzione (fondi neri ENI)",
-      "anno": 2002,
-      "grado": "patteggiamento",
-      "pena": "2 mesi",
-      "dettaglio": "Su circa quaranta procedimenti, la voce riporta in prevalenza assoluzioni e prescrizioni. Riabilitato nel 2011.",
-      "fonte": "https://it.wikipedia.org/wiki/Paolo_Cirino_Pomicino"
-    }
-  ]
+ "_nota": "Condanne penali passate in giudicato, lette una per una sulle voci di Wikipedia in italiano fra il 29 e il 30 agosto 2026. I candidati sono stati cercati incrociando le categorie dei deputati e dei senatori delle cinque legislature con le formule che indicano una sentenza definitiva, e poi verificati a mano. Sono state scartate: le condanne non definitive; quelle di persone diverse citate nella stessa voce; le assoluzioni confermate in via definitiva; le condanne della Corte dei conti, che non sono penali; e i casi in cui la voce afferma che esiste una condanna definitiva ma non dice per quale reato. Il patteggiamento e' equiparato per legge a una condanna e viene indicato come tale.",
+ "voci": [
+  {
+   "qid": "Q3608104",
+   "reato": "Peculato",
+   "anno": null,
+   "grado": "definitiva",
+   "pena": "6 anni e mezzo di reclusione",
+   "dettaglio": "",
+   "fonte": "https://it.wikipedia.org/wiki/Alberto_Acierno"
+  },
+  {
+   "qid": "Q3613897",
+   "reato": "Concorso esterno in associazione di tipo mafioso",
+   "anno": null,
+   "grado": "definitiva",
+   "pena": "",
+   "dettaglio": "",
+   "fonte": "https://it.wikipedia.org/wiki/Amedeo_Matacena"
+  },
+  {
+   "qid": "Q3620269",
+   "reato": "Falso in certificazione",
+   "anno": null,
+   "grado": "definitiva",
+   "pena": "3 anni",
+   "dettaglio": "Per aver alterato una cartella clinica.",
+   "fonte": "https://it.wikipedia.org/wiki/Antonio_Tomassini"
+  },
+  {
+   "qid": "Q1056548",
+   "reato": "Abuso d'ufficio",
+   "anno": 1994,
+   "grado": "definitiva",
+   "pena": "16 mesi di reclusione e interdizione dai pubblici uffici",
+   "dettaglio": "Cassazione, 1994, per favoreggiamenti in appalti. Si dimise da consigliere regionale nel dicembre 1994.",
+   "fonte": "https://it.wikipedia.org/wiki/Augusto_Rollandin"
+  },
+  {
+   "qid": "Q2947026",
+   "reato": "Corruzione in atti giudiziari (processo IMI-SIR)",
+   "anno": 2006,
+   "grado": "definitiva",
+   "pena": "6 anni di reclusione",
+   "dettaglio": "Cassazione, 4 maggio 2006, con interdizione perpetua dai pubblici uffici. Nel 2007 una seconda condanna definitiva per il processo Lodo Mondadori.",
+   "fonte": "https://it.wikipedia.org/wiki/Cesare_Previti"
+  },
+  {
+   "qid": "Q784785",
+   "reato": "Diffamazione a mezzo stampa",
+   "anno": 2010,
+   "grado": "definitiva",
+   "pena": "",
+   "dettaglio": "Cassazione, 12 febbraio 2010.",
+   "fonte": "https://it.wikipedia.org/wiki/Daniele_Capezzone"
+  },
+  {
+   "qid": "Q472396",
+   "reato": "Bancarotta",
+   "anno": 2020,
+   "grado": "definitiva",
+   "pena": "6 anni e mezzo di reclusione",
+   "dettaglio": "Cassazione, 3 novembre 2020, per il Credito Cooperativo Fiorentino. Altre condanne definitive per il fallimento di Societa Toscana Edizioni e di un'impresa edile.",
+   "fonte": "https://it.wikipedia.org/wiki/Denis_Verdini"
+  },
+  {
+   "qid": "Q3713160",
+   "reato": "Lesioni volontarie personali",
+   "anno": 1977,
+   "grado": "definitiva",
+   "pena": "7 mesi",
+   "dettaglio": "Fatti del 1969, quando aveva diciotto anni: scontri fra studenti. Sentenza del 1977.",
+   "fonte": "https://it.wikipedia.org/wiki/Domenico_Nania"
+  },
+  {
+   "qid": "Q3720401",
+   "reato": "Processo Enimont",
+   "anno": 1998,
+   "grado": "definitiva",
+   "pena": "6 mesi",
+   "dettaglio": "Sentenza del 21 gennaio 1998.",
+   "fonte": "https://it.wikipedia.org/wiki/Egidio_Sterpa"
+  },
+  {
+   "qid": "Q3762823",
+   "reato": "Concorso esterno in associazione di tipo mafioso",
+   "anno": 2002,
+   "grado": "definitiva",
+   "pena": "",
+   "dettaglio": "Confermata in Cassazione alla fine del 2002; ha scontato quattro anni di carcere dal 2003 al 2007. Assolto nello stesso processo dall'accusa di concorso in omicidio.",
+   "fonte": "https://it.wikipedia.org/wiki/Giancarlo_Cito"
+  },
+  {
+   "qid": "Q3762823",
+   "reato": "Concussione (caso Cervelli)",
+   "anno": 2011,
+   "grado": "definitiva",
+   "pena": "5 anni e 6 mesi di reclusione",
+   "dettaglio": "Cassazione, aprile 2011: una ditta di trasporti fu costretta a pagare una tangente per il rinnovo di un appalto comunale.",
+   "fonte": "https://it.wikipedia.org/wiki/Giancarlo_Cito"
+  },
+  {
+   "qid": "Q3763758",
+   "reato": "Corruzione",
+   "anno": null,
+   "grado": "definitiva",
+   "pena": "",
+   "dettaglio": "Piu' procedimenti fra il 1992 e il 2015.",
+   "fonte": "https://it.wikipedia.org/wiki/Gianstefano_Frigerio"
+  },
+  {
+   "qid": "Q2460954",
+   "reato": "Processo Enimont",
+   "anno": 1998,
+   "grado": "definitiva",
+   "pena": "6 mesi e 20 giorni di reclusione",
+   "dettaglio": "Sentenza del 13 giugno 1998; aveva ammesso la propria responsabilita.",
+   "fonte": "https://it.wikipedia.org/wiki/Giorgio_La_Malfa"
+  },
+  {
+   "qid": "S74",
+   "reato": "Diffamazione",
+   "anno": 2010,
+   "grado": "definitiva",
+   "pena": "",
+   "dettaglio": "Sentenza del 4 maggio 2010, per aver diffamato un magistrato.",
+   "fonte": "https://it.wikipedia.org/wiki/Giulio_Andreotti"
+  },
+  {
+   "qid": "Q3769524",
+   "reato": "Millantato credito",
+   "anno": 2008,
+   "grado": "definitiva",
+   "pena": "",
+   "dettaglio": "Sentenza del 4 novembre 2008.",
+   "fonte": "https://it.wikipedia.org/wiki/Giulio_Camber"
+  },
+  {
+   "qid": "Q3770321",
+   "reato": "Finanziamento illecito ai partiti",
+   "anno": 2000,
+   "grado": "definitiva",
+   "pena": "",
+   "dettaglio": "Affidato ai servizi sociali in ragione dell'eta.",
+   "fonte": "https://it.wikipedia.org/wiki/Giuseppe_Ciarrapico"
+  },
+  {
+   "qid": "Q3770321",
+   "reato": "Truffa aggravata ai danni dello Stato",
+   "anno": 2015,
+   "grado": "definitiva",
+   "pena": "3 anni",
+   "dettaglio": "Per venti milioni di euro di contributi all'editoria ottenuti indebitamente.",
+   "fonte": "https://it.wikipedia.org/wiki/Giuseppe_Ciarrapico"
+  },
+  {
+   "qid": "Q3771074",
+   "reato": "Abuso d'ufficio",
+   "anno": null,
+   "grado": "definitiva",
+   "pena": "6 mesi di reclusione",
+   "dettaglio": "Tre anni in primo grado nel dicembre 1993, ridotti a sei mesi in Cassazione.",
+   "fonte": "https://it.wikipedia.org/wiki/Giuseppe_Naro"
+  },
+  {
+   "qid": "Q3833075",
+   "reato": "Diffamazione a mezzo stampa",
+   "anno": 2002,
+   "grado": "definitiva",
+   "pena": "2 anni, 5 mesi e 10 giorni di reclusione",
+   "dettaglio": "",
+   "fonte": "https://it.wikipedia.org/wiki/Lino_Jannuzzi"
+  },
+  {
+   "qid": "Q3839801",
+   "reato": "Appropriazione indebita dei rimborsi elettorali",
+   "anno": null,
+   "grado": "definitiva",
+   "pena": "",
+   "dettaglio": "Era tesoriere de La Margherita.",
+   "fonte": "https://it.wikipedia.org/wiki/Luigi_Lusi"
+  },
+  {
+   "qid": "Q1346627",
+   "reato": "Incendio",
+   "anno": 2005,
+   "grado": "definitiva",
+   "pena": "2 mesi e 20 giorni di reclusione",
+   "dettaglio": "Cassazione, luglio 2005.",
+   "fonte": "https://it.wikipedia.org/wiki/Mario_Borghezio"
+  },
+  {
+   "qid": "Q473177",
+   "reato": "Concorso esterno in associazione di tipo mafioso",
+   "anno": 2023,
+   "grado": "definitiva",
+   "pena": "10 anni di reclusione",
+   "dettaglio": "Aprile 2023.",
+   "fonte": "https://it.wikipedia.org/wiki/Nicola_Cosentino"
+  },
+  {
+   "qid": "Q664465",
+   "reato": "Corruzione",
+   "anno": 2019,
+   "grado": "definitiva",
+   "pena": "5 anni e 10 mesi di reclusione",
+   "dettaglio": "Cassazione, 21 febbraio 2019.",
+   "fonte": "https://it.wikipedia.org/wiki/Roberto_Formigoni"
+  },
+  {
+   "qid": "Q787816",
+   "reato": "Favoreggiamento e rivelazione di segreto d'ufficio",
+   "anno": 2011,
+   "grado": "definitiva",
+   "pena": "7 anni di reclusione",
+   "dettaglio": "Cassazione, 22 gennaio 2011. Il Senato accolse le sue dimissioni il 2 febbraio 2011.",
+   "fonte": "https://it.wikipedia.org/wiki/Salvatore_Cuffaro"
+  },
+  {
+   "qid": "Q47832",
+   "reato": "Violazione della legge sul finanziamento ai partiti",
+   "anno": null,
+   "grado": "definitiva",
+   "pena": "8 mesi di reclusione",
+   "dettaglio": "Cassazione. La somma fu restituita per intero.",
+   "fonte": "https://it.wikipedia.org/wiki/Umberto_Bossi"
+  },
+  {
+   "qid": "Q47832",
+   "reato": "Vilipendio alla bandiera",
+   "anno": 2007,
+   "grado": "definitiva",
+   "pena": "1 anno e 4 mesi, poi commutati in 3.000 euro di multa",
+   "dettaglio": "Cassazione, 15 giugno 2007; la multa fu poi coperta da indulto.",
+   "fonte": "https://it.wikipedia.org/wiki/Umberto_Bossi"
+  },
+  {
+   "qid": "Q4013426",
+   "reato": "Bancarotta fraudolenta e riciclaggio",
+   "anno": 2025,
+   "grado": "definitiva",
+   "pena": "5 anni e 6 mesi di reclusione",
+   "dettaglio": "Cassazione, giugno 2025. Assolto dall'accusa di voto di scambio.",
+   "fonte": "https://it.wikipedia.org/wiki/Vincenzo_Nespoli"
+  },
+  {
+   "qid": "Q686194",
+   "reato": "Irregolarita edilizia",
+   "anno": 2001,
+   "grado": "definitiva",
+   "pena": "",
+   "dettaglio": "Un box di copertura di un serbatoio, costruito col permesso del Comune ma non della sovrintendenza.",
+   "fonte": "https://it.wikipedia.org/wiki/Vincenzo_Visco"
+  },
+  {
+   "qid": "Q4017903",
+   "reato": "Truffa ai danni dello Stato e della CEE",
+   "anno": 1993,
+   "grado": "patteggiamento",
+   "pena": "1 anno e 4 mesi",
+   "dettaglio": "Febbraio 1993, per falsi corsi di qualificazione.",
+   "fonte": "https://it.wikipedia.org/wiki/Walter_De_Rigo"
+  },
+  {
+   "qid": "Q558815",
+   "reato": "Concorso esterno in associazione di tipo mafioso",
+   "anno": 2014,
+   "grado": "definitiva",
+   "pena": "7 anni di reclusione",
+   "dettaglio": "Cassazione, 9 maggio 2014. Wikidata attribuiva questa condanna al 1994.",
+   "fonte": "https://it.wikipedia.org/wiki/Marcello_Dell%27Utri"
+  },
+  {
+   "qid": "Q558815",
+   "reato": "Abuso edilizio",
+   "anno": 2015,
+   "grado": "definitiva",
+   "pena": "8 mesi di reclusione",
+   "dettaglio": "Cassazione, 21 maggio 2015.",
+   "fonte": "https://it.wikipedia.org/wiki/Marcello_Dell%27Utri"
+  },
+  {
+   "qid": "Q11860",
+   "reato": "Frode fiscale",
+   "anno": 2013,
+   "grado": "definitiva",
+   "pena": "4 anni di reclusione e 2 anni di interdizione dai pubblici uffici",
+   "dettaglio": "E' l'unica condanna definitiva che la voce gli attribuisce, su oltre trenta procedimenti. Wikidata ne dichiarava sei.",
+   "fonte": "https://it.wikipedia.org/wiki/Silvio_Berlusconi"
+  },
+  {
+   "qid": "Q730966",
+   "reato": "Corruzione (appalti del MOSE)",
+   "anno": 2014,
+   "grado": "patteggiamento",
+   "pena": "2 anni e 10 mesi",
+   "dettaglio": "Patteggiamento del 9 ottobre 2014, con la restituzione di 2,5 milioni di euro.",
+   "fonte": "https://it.wikipedia.org/wiki/Giancarlo_Galan"
+  },
+  {
+   "qid": "Q463130",
+   "reato": "Traffico di influenze illecite",
+   "anno": 2022,
+   "grado": "definitiva",
+   "pena": "1 anno e 10 mesi di reclusione",
+   "dettaglio": "La Cassazione aveva annullato nel 2021 la condanna per corruzione; il reato e' stato riqualificato nel giudizio d'appello del febbraio 2022.",
+   "fonte": "https://it.wikipedia.org/wiki/Gianni_Alemanno"
+  },
+  {
+   "qid": "Q902439",
+   "reato": "Corruzione (tangenti autostradali in Veneto)",
+   "anno": null,
+   "grado": "patteggiamento",
+   "pena": "1 anno e 6 mesi",
+   "dettaglio": "La voce riporta oltre trenta procedimenti e diverse assoluzioni.",
+   "fonte": "https://it.wikipedia.org/wiki/Gianni_De_Michelis"
+  },
+  {
+   "qid": "Q902439",
+   "reato": "Vicenda Enimont",
+   "anno": null,
+   "grado": "patteggiamento",
+   "pena": "6 mesi",
+   "dettaglio": "Pena complessiva di due anni, sospesa condizionalmente.",
+   "fonte": "https://it.wikipedia.org/wiki/Gianni_De_Michelis"
+  },
+  {
+   "qid": "Q2246855",
+   "reato": "Violazione della legge sul finanziamento ai partiti (Enimont)",
+   "anno": null,
+   "grado": "definitiva",
+   "pena": "1 anno e 8 mesi",
+   "dettaglio": "Ha ottenuto la riabilitazione dal Tribunale di sorveglianza di Roma nel 2011.",
+   "fonte": "https://it.wikipedia.org/wiki/Paolo_Cirino_Pomicino"
+  },
+  {
+   "qid": "Q2246855",
+   "reato": "Corruzione (fondi neri ENI)",
+   "anno": 2002,
+   "grado": "patteggiamento",
+   "pena": "2 mesi",
+   "dettaglio": "Su circa quaranta procedimenti la voce riporta in prevalenza assoluzioni e prescrizioni. Riabilitato nel 2011.",
+   "fonte": "https://it.wikipedia.org/wiki/Paolo_Cirino_Pomicino"
+  }
+ ]
 }

@@ -42,9 +42,11 @@ body.attesa,body.attesa *{cursor:wait !important}
    vera, invece di finire sotto la barra delle applicazioni. Il wrap in
    direzione colonna fa esattamente questo, e non serve calcolare niente. */
 #icone,#icone-destra{position:absolute;top:8px;z-index:1;display:flex;
-  flex-flow:column wrap;max-height:min(calc(100% - 16px), 430px);gap:4px 8px}
+  flex-flow:column wrap;max-height:calc(100% - 92px);gap:4px 8px}
 #icone{left:8px;align-content:flex-start}
 #icone-destra{right:8px;align-content:flex-end}
+/* Il cestino sta in fondo a destra, come su ogni scrivania. */
+#cestino-icona{position:absolute;right:8px;bottom:8px;z-index:1}
 .icona{width:88px;padding:4px 2px;text-align:center;cursor:default;
   color:#fff;text-shadow:1px 1px 0 rgba(0,0,0,.7);user-select:none}
 .icona .dis{font-size:30px;line-height:34px;display:block}
@@ -212,8 +214,8 @@ button.p95:active{border-color:var(--ombra) var(--luce) var(--luce) var(--ombra)
 
 @media (max-width:768px){
   body{font-size:14px}
-  #icone,#icone-destra{position:static;max-height:none;flex-flow:row wrap;
-    align-content:flex-start;gap:2px;padding:6px}
+  #icone,#icone-destra,#cestino-icona{position:static;max-height:none;
+    flex-flow:row wrap;align-content:flex-start;gap:2px;padding:6px}
   .icona{width:78px}
   .finestra{position:static !important;width:auto !important;
     height:auto !important;margin:6px;max-height:none}
@@ -230,6 +232,7 @@ button.p95:active{border-color:var(--ombra) var(--luce) var(--luce) var(--ombra)
 <div id="scrivania">
   <div id="icone"></div>
   <div id="icone-destra"></div>
+  <div id="cestino-icona"></div>
   <div id="finestre"></div>
 </div>
 
@@ -1775,6 +1778,117 @@ VISTE['misto'] = function(){
           larghezza: 640, altezza: 520, stato: dentro.length + ' persone'};
 };
 
+/* ---------------------------------------------------------------------------
+   Le cadute. Come e' finito ogni governo, con le date e, dove c'e' stato un
+   voto, i numeri di quel voto.
+
+   Un governo cade per un voto o per un ritiro di appoggio, e sono due cose
+   diverse: la prima e' un atto d'aula con un verbale, la seconda una decisione
+   di partito. Qui sono tenute distinte. Chi ha ritirato l'appoggio ha un nome
+   e una data; che quel ritiro «abbia fatto cadere» il governo e' un giudizio
+   che si forma da solo leggendo le due righe di seguito, e non serve scriverlo.
+   --------------------------------------------------------------------------- */
+const CADUTE = [
+  {g: 'Berlusconi I', fine: '22 dicembre 1994', tipo: 'ritiro',
+   chi: 'Lega Nord', qid: 'Q47832', nome: 'Umberto Bossi',
+   t: 'Il 17 dicembre 1994 la Lega Nord annuncia l\u2019uscita dalla maggioranza. ' +
+      'Il 20 dicembre Lega, PDS e PPI depositano una mozione di sfiducia. Il 21 ' +
+      'Berlusconi annuncia alla Camera le dimissioni, che formalizza il 22 ' +
+      'chiedendo il ritorno alle urne. Al voto sulla mozione non si arriva.',
+   fonte: 'https://it.wikipedia.org/wiki/Governo_Berlusconi_I'},
+
+  {g: 'Prodi I', fine: '9 ottobre 1998', tipo: 'voto', voto: '312 s\u00ec, 313 no',
+   chi: 'Rifondazione Comunista', qid: 'Q559577', nome: 'Fausto Bertinotti',
+   t: 'Il 4 ottobre 1998 Rifondazione Comunista annuncia il passaggio ' +
+      'all\u2019opposizione e il governo perde la maggioranza alla Camera. Il 9 ' +
+      'ottobre la Camera nega la fiducia per un voto. Nel gruppo di ' +
+      'Rifondazione il capogruppo Oliviero Diliberto annuncia il voto a favore ' +
+      'del governo, Bertinotti la sfiducia: da quella frattura nasce il gruppo ' +
+      'Comunista, che nei registri della Camera compare dall\u2019ottobre 1998.',
+   fonte: 'https://it.wikipedia.org/wiki/Governo_Prodi_I', gruppo: 'PDCI'},
+
+  {g: 'Prodi II', fine: '24 gennaio 2008', tipo: 'voto',
+   voto: '156 favorevoli, 161 contrari, 1 astenuto',
+   chi: 'Popolari-UDEUR', qid: 'Q1394911', nome: 'Clemente Mastella',
+   t: 'Il 17 gennaio 2008 Mastella si dimette da ministro della Giustizia. Nei ' +
+      'giorni successivi i Popolari-UDEUR ritirano l\u2019appoggio e passano ' +
+      'all\u2019opposizione. Il 24 gennaio il Senato nega la fiducia e Prodi si ' +
+      'dimette lo stesso giorno.',
+   fonte: 'https://it.wikipedia.org/wiki/Governo_Prodi_II', gruppo: 'UDEUR'},
+
+  {g: 'Berlusconi IV', fine: '12 novembre 2011', tipo: 'voto',
+   voto: '308 voti, sotto la maggioranza assoluta di 316',
+   chi: 'Futuro e Libert\u00e0 e il differenziale sui titoli di Stato',
+   qid: 'Q47583', nome: 'Gianfranco Fini',
+   t: 'Il 30 luglio 2010 Fini lascia il PdL e fonda Futuro e Libert\u00e0: la ' +
+      'maggioranza si assottiglia. L\u20198 novembre 2011 il rendiconto generale ' +
+      'dello Stato passa alla Camera con 308 voti, sotto la maggioranza ' +
+      'assoluta. Berlusconi annuncia le dimissioni e le rassegna il 12 novembre.',
+   fonte: 'https://it.wikipedia.org/wiki/Governo_Berlusconi_IV', gruppo: 'FLI'},
+];
+
+const SENZA_CADUTA = [
+  ['Dini', 'Si dimette nel gennaio 1996 a legislatura conclusa, dopo aver ' +
+           'ottenuto l\u2019approvazione della manovra.'],
+  ["D'Alema I", 'Si dimette nel dicembre 1999 per un rimpasto: nasce il ' +
+                'D\u2019Alema II con la stessa maggioranza.'],
+  ["D'Alema II", 'Si dimette nell\u2019aprile 2000 dopo la sconfitta della ' +
+                 'coalizione alle elezioni regionali.'],
+  ['Amato II', 'Si conclude con la fine della legislatura, nel maggio 2001.'],
+  ['Berlusconi II', 'Si dimette nell\u2019aprile 2005 dopo le regionali, e ' +
+                    'nasce il Berlusconi III con la stessa maggioranza.'],
+  ['Berlusconi III', 'Si conclude con la fine della legislatura, nel maggio 2006.'],
+  ['Monti', 'Si dimette nel dicembre 2012 dopo il ritiro dell\u2019appoggio del ' +
+            'PdL, e resta in carica per gli affari correnti fino alle elezioni.'],
+];
+
+VISTE['cadute'] = function(){
+  let h = '<h1>Le cadute</h1>' +
+    '<p>Quattro governi su undici sono finiti prima del tempo per un voto ' +
+    'perso o per un appoggio ritirato. Qui c&rsquo;&egrave; come, quando, e ' +
+    'con quali numeri.</p>' +
+    '<div class="avviso">Un governo cade per un voto d&rsquo;aula o per una ' +
+    'decisione di partito, e sono due cose diverse: la prima ha un verbale, la ' +
+    'seconda no. Qui restano distinte. Che un ritiro di appoggio &laquo;abbia ' +
+    'fatto cadere&raquo; il governo &egrave; una conclusione, non un dato: le ' +
+    'date sono in fila, la conclusione la trae chi legge.</div>';
+
+  CADUTE.forEach(c => {
+    h += '<div class="riquadro" style="margin-bottom:8px">' +
+      '<div style="font-size:13px"><b>Governo ' + esc(c.g) + '</b> &mdash; ' +
+      'finisce il ' + esc(c.fine) + '</div>' +
+      '<div style="margin-top:4px">' + esc(c.t) + '</div>' +
+      '<table style="margin-top:6px"><tbody>' +
+      (c.voto ? '<tr><td style="width:34%"><b>Il voto</b></td><td>' +
+        esc(c.voto) + '</td></tr>' : '') +
+      '<tr><td><b>Chi ritira l&rsquo;appoggio</b></td><td>' + esc(c.chi) +
+      (c.gruppo && PARTITI[c.gruppo] ? ' ' +
+        '<span class="clic" data-apri="partito" data-arg="' + c.gruppo + '">' +
+        pill(c.gruppo, nomePartito(c.gruppo)) + '</span>' : '') + '</td></tr>' +
+      (perQid[c.qid] ? '<tr><td><b>Chi lo annuncia</b></td><td>' +
+        '<span class="clic" data-apri="persona" data-arg="' + c.qid + '">' +
+        esc(perQid[c.qid].n) + '</span></td></tr>' : '') +
+      '</tbody></table>' +
+      '<div class="piede" style="margin-top:4px;padding-top:4px">' +
+      '<a target="_blank" rel="noopener" href="' + esc(c.fonte) + '">' +
+      'Fonte: la voce del governo su Wikipedia</a></div></div>';
+  });
+
+  h += '<h2 style="margin-top:12px">Gli altri sette</h2>' +
+    '<table><tbody>' + SENZA_CADUTA.map(x =>
+      '<tr><td style="width:26%;white-space:nowrap"><b>' + esc(x[0]) + '</b></td>' +
+      '<td>' + esc(x[1]) + '</td></tr>').join('') + '</tbody></table>';
+  h += '<p class="piede">Le date e i numeri dei voti vengono dalle voci di ' +
+    'Wikipedia dei singoli governi. I gruppi parlamentari e le date di ' +
+    'iscrizione, invece, dai registri di Camera e Senato: sono quelli che ' +
+    'mostrano il gruppo Comunista nascere nell&rsquo;ottobre 1998 e Futuro e ' +
+    'Libert&agrave; il 30 luglio 2010.</p>';
+
+  return {titolo: 'Le cadute', icona: '&#128721;', html: h, faccia: true,
+          larghezza: 660, altezza: 540,
+          stato: '4 governi caduti su 11'};
+};
+
 VISTE['metodo'] = function(){
   const h =
     '<h1>Come &egrave; fatto</h1>' +
@@ -1856,6 +1970,7 @@ const SCRIVANIA = [
   ['&#127941;', 'Hall of fame', 'famosi', '', 'sx'],
   ['&#9937;', 'I Responsabili', 'responsabili', '', 'sx'],
   ['&#127963;', 'Governi', 'governi', '', 'sx'],
+  ['&#128721;', 'Le cadute', 'cadute', '', 'sx'],
   ['&#128198;', 'Linea del tempo', 'tempo', '', 'sx'],
   ['&#128220;', 'Il gruppo misto', 'misto', '', 'sx'],
   ['&#9792;', 'Le donne', 'donne', '', 'dx'],
@@ -1866,7 +1981,7 @@ const SCRIVANIA = [
   ['&#128260;', 'Aggiorna', 'aggiorna', '', 'dx'],
   ['&#128209;', 'Il metodo', 'metodo', '', 'dx'],
   ['&#128441;', 'Colofone.txt', 'leggimi', '', 'dx'],
-  ['&#128465;', 'Cestino', 'cestino', '', 'dx'],
+  ['&#128465;', 'Cestino', 'cestino', '', 'giu'],
 ];
 
 function disegnaScrivania(){
@@ -1879,6 +1994,7 @@ function disegnaScrivania(){
   };
   disegna('icone', 'sx');
   disegna('icone-destra', 'dx');
+  disegna('cestino-icona', 'giu');
   const m = document.getElementById('voci-menu');
   m.innerHTML = SCRIVANIA.map(x =>
     '<li data-apri="' + x[2] + '" data-arg="' + x[3] + '">' +
