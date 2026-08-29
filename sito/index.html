@@ -828,6 +828,72 @@ VISTE['trova'] = function(){
     larghezza: 560, altezza: 420, stato: 'digita e premi Invio'};
 };
 
+/* I gruppi nati in corso di legislatura per sostenere un governo in difficolta'.
+   La vista non dice perche' qualcuno ci sia entrato: dice chi, quando e da
+   dove, che e' quello che c'e' scritto nei registri. */
+const SOCCORSO = [
+  {c: 'RESP', ramo: 'Camera', nato: '20110120'},
+  {c: 'CN',   ramo: 'Senato', nato: '20110302'}
+];
+
+function daDoveVeniva(p, i){
+  // L'ultimo gruppo vero prima del passaggio. Chi e' passato dal misto in
+  // mezzo va riportato al gruppo da cui era uscito, non al misto. Ma chi nel
+  // misto ci e' stato sempre viene dal misto, e va scritto: quei gruppi sono
+  // nati nel 2011, nessuno ci e' stato eletto dentro.
+  const g = p.g || [];
+  if (i === 0) return {c: null, come: 'primo'};
+  for (let k = i - 1; k >= 0; k--){
+    if (g[k][1] !== 'MISTO' && g[k][1] !== g[i][1]) return {c: g[k][1], come: 'gruppo'};
+  }
+  return {c: 'MISTO', come: 'misto'};
+}
+
+VISTE['responsabili'] = function(){
+  let h = '<h1>I gruppi di soccorso</h1>' +
+    '<p>Nel dicembre 2010 il governo Berlusconi IV sopravvive per tre voti alla ' +
+    'mozione di sfiducia. Nelle settimane successive nascono due gruppi ' +
+    'parlamentari che prima non c&rsquo;erano: <b>Iniziativa Responsabile</b> alla ' +
+    'Camera, il 20 gennaio 2011, che diventer&agrave; poi Popolo e Territorio; e ' +
+    '<b>Coesione Nazionale</b> al Senato, il 2 marzo 2011.</p>' +
+    '<p>Qui c&rsquo;&egrave; chi ci &egrave; entrato, il giorno in cui l&rsquo;ha fatto ' +
+    'e il gruppo da cui veniva. Sono dati dei registri di Camera e Senato. ' +
+    'Le ragioni di ciascuno non stanno in nessun registro, e qui non le trovate.</p>';
+
+  let totale = 0;
+  SOCCORSO.forEach(s => {
+    const righe = [];
+    P.forEach(p => {
+      (p.g || []).forEach((t, i) => {
+        if (t[1] !== s.c) return;
+        if (righe.some(r => r.q === p.q)) return;
+        righe.push({q: p.q, n: p.n, da: t[2], prima: daDoveVeniva(p, i)});
+      });
+    });
+    righe.sort((a, b) => (a.da || '').localeCompare(b.da || '') || a.n.localeCompare(b.n));
+    totale += righe.length;
+    h += '<h2 style="margin-top:14px">' + pill(s.c, nomePartito(s.c)) + ' &mdash; ' +
+      s.ramo + ', ' + righe.length + ' persone</h2>' +
+      '<table><thead><tr><th>Entrato il</th><th>Nome</th>' +
+      '<th>Veniva da</th></tr></thead><tbody>' +
+      righe.map(r => '<tr class="riga" data-q="' + r.q + '">' +
+        '<td>' + dataIt(r.da) + '</td><td>' + esc(r.n) + '</td>' +
+        '<td>' + (r.prima.c ? pill(r.prima.c, nomePartito(r.prima.c)) +
+            (r.prima.come === 'misto' ? '' : '')
+          : '<span style="color:#606060">nessun gruppo prima</span>') +
+        '</td></tr>').join('') + '</tbody></table>';
+  });
+
+  h += '<p class="piede">Questi gruppi sono nati nel 2011: nessuno ci &egrave; stato ' +
+    'eletto dentro. La colonna &laquo;veniva da&raquo; mostra l&rsquo;ultimo gruppo ' +
+    'vero prima del passaggio, saltando il misto quando &egrave; stato una tappa ' +
+    'intermedia; dice <i>gruppo misto</i> solo per chi nel misto era rimasto ' +
+    'dall&rsquo;inizio. Ogni riga si apre nella scheda della persona, con tutte le date.</p>';
+  return {titolo: 'I gruppi di soccorso', icona: '&#9937;', html: h, faccia: true,
+          larghezza: 660, altezza: 540, stato: totale + ' persone',
+          stato2: 'XVI legislatura'};
+};
+
 VISTE['metodo'] = function(){
   const h =
     '<h1>Come &egrave; fatto</h1>' +
@@ -877,11 +943,11 @@ VISTE['metodo'] = function(){
 };
 
 VISTE['leggimi'] = function(){
-  return {titolo: 'Leggimi.txt - Blocco note', icona: '&#128441;',
+  return {titolo: 'Colofone.txt - Blocco note', icona: '&#128441;',
     html: '<div style="font-family:\'Courier New\',monospace;font-size:13px;' +
       'white-space:pre-wrap;line-height:1.5">' +
       COLOFONE.map(esc).join('\n') + '</div>',
-    larghezza: 560, altezza: 480, stato: 'Leggimi.txt'};
+    larghezza: 560, altezza: 480, stato: 'chi lo fa, con che dati, cosa se ne puo' fare'};
 };
 
 VISTE['errore'] = function(){
@@ -902,10 +968,11 @@ const SCRIVANIA = [
   ['&#127963;', 'Seconda Repubblica', 'indice', ''],
   ['&#128193;', 'Risorse del Parlamento', 'elenco', ''],
   ['&#127942;', 'Classifiche', 'classifiche', ''],
+  ['&#9937;', 'Gruppi di soccorso', 'responsabili', ''],
   ['&#128193;', 'Partiti', 'partiti', ''],
   ['&#128269;', 'Trova...', 'trova', ''],
   ['&#128209;', 'Il metodo', 'metodo', ''],
-  ['&#128441;', 'Leggimi.txt', 'leggimi', ''],
+  ['&#128441;', 'Colofone.txt', 'leggimi', ''],
 ];
 
 function disegnaScrivania(){
@@ -919,6 +986,7 @@ function disegnaScrivania(){
     '<li data-apri="' + x[2] + '" data-arg="' + x[3] + '">' +
     '<span class="dis">' + x[0] + '</span>' + x[1] + '</li>').join('') +
     '<li class="riga"></li>' +
+    '<li data-apri="leggimi"><span class="dis">&#8505;</span>Informazioni su Seconda Repubblica...</li>' +
     '<li data-apri="errore"><span class="dis">&#9993;</span>Segnala un errore...</li>' +
     '<li id="chiudi-sessione"><span class="dis">&#9211;</span>Chiudi sessione...</li>';
 }
