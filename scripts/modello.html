@@ -310,6 +310,8 @@ const perCognome = (a, b) =>
 P.sort(perCognome);
 
 /* ---------- utilita' ---------- */
+const migliaia = n => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+const conUnDecimale = n => (Math.round(n * 10) / 10).toFixed(1).replace('.', ',');
 const esc = s => String(s == null ? '' : s)
   .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 const perc = (n, t) => t ? String(Math.round(1000 * n / t) / 10).replace('.', ',') : 0;
@@ -915,6 +917,11 @@ VISTE['lista'] = function(filtro){
     gente = valore === '0' ? conGruppo().filter(p => p.c === 0)
                            : conGruppo().filter(p => p.c > 0);
     titolo = valore === '0' ? 'Mai cambiato casacca' : 'Hanno cambiato almeno una volta';
+  } else if (tipo === 'cavaliere'){
+    gente = P.filter(p => (p.g || []).some(t => t[1] === 'FI' || t[1] === 'PDL'));
+    if (valore === 'vivi') gente = gente.filter(p => p.s === 1);
+    titolo = valore === 'vivi' ? 'Forza Italia e PdL, ancora vivi'
+                               : 'Passati per Forza Italia o il PdL';
   } else if (tipo === 'eta'){
     const [da, a] = valore.split('-').map(Number);
     gente = P.filter(p => p.s === 1 && eta(p) != null && eta(p) >= da && eta(p) <= a);
@@ -1302,7 +1309,8 @@ function tabellaConBarre(righe, fnClic){
   return '<table><tbody>' + righe.map(r =>
     '<tr><td style="width:22%;white-space:nowrap">' + r[0] + '</td>' +
     '<td class="num" style="width:14%">' +
-      (fnClic ? numero(r[1], fnClic(r)[0], fnClic(r)[1]) : r[1]) + '</td>' +
+      // r[4], se c'e', e' il numero gia' scritto come va letto: '12,0%'.
+      (fnClic ? numero(r[4] || r[1], fnClic(r)[0], fnClic(r)[1]) : (r[4] || r[1])) + '</td>' +
     '<td>' + barra(r[1], massimo, r[2]) + '</td></tr>').join('') + '</tbody></table>';
 }
 
@@ -1989,6 +1997,146 @@ VISTE['cadute'] = function(){
           stato: '4 governi caduti su 11'};
 };
 
+/* ---------------------------------------------------------------------------
+   Il Cavaliere. La finestra fa il paio con quella sulle donne: la' si guarda
+   una minoranza attraverso i registri, qui l'uomo che ha attraversato tutto il
+   perimetro. Nessun aggettivo, gli stessi registri: i giorni di governo, le
+   persone passate per i suoi gruppi, la quota femminile, i ministri, le due
+   scissioni e la sua scheda.
+   --------------------------------------------------------------------------- */
+const BERLUSCONI = 'Q11860';
+
+const A_PALAZZO = [
+  ['Berlusconi', 3340], ['Prodi', 1609], ["D'Alema", 553],
+  ['Monti', 529], ['Dini', 486], ['Amato', 411]
+];
+const GIORNI_PERIMETRO = 6908;
+
+const SUOI_GOVERNI = [
+  ['Berlusconi I',  '10.05.1994', '17.01.1995',  252],
+  ['Berlusconi II', '11.06.2001', '23.04.2005', 1412],
+  ['Berlusconi III','23.04.2005', '17.05.2006',  389],
+  ['Berlusconi IV', '08.05.2008', '16.11.2011', 1287]
+];
+
+function quotaDonne(gente){
+  const con = gente.filter(p => p.ge);
+  const f = con.filter(p => p.ge === 'F').length;
+  return {f: f, tot: con.length, q: con.length ? Math.round(1000 * f / con.length) / 10 : 0};
+}
+
+VISTE['cavaliere'] = function(){
+  const lui = perQid[BERLUSCONI];
+  const suoi = P.filter(p => (p.g || []).some(t => t[1] === 'FI' || t[1] === 'PDL'));
+  const vivi = suoi.filter(p => p.s === 1).length;
+  const suaQ = quotaDonne(suoi), tuttaQ = quotaDonne(P);
+  const ministri = P.filter(p => (p.gv || []).some(g => g.indexOf('Berlusconi') === 0));
+  const maiEletti = ministri.filter(p => p.x).length;
+
+  let h = '<h1>Il Cavaliere</h1>';
+
+  // --- 1. i giorni
+  h += '<h2>Quanto ha governato</h2>' +
+    '<p><b>3.340 giorni su 6.908</b>: il <b>48,3%</b> della Seconda Repubblica ' +
+    'con un suo governo in carica. Poco meno della met&agrave; dei ' +
+    'diciannove anni che questo sito racconta.</p>' +
+    tabellaConBarre(A_PALAZZO.map(x =>
+      [x[0], x[1], x[0] === 'Berlusconi' ? '#005baa' : '#808080', null,
+       migliaia(x[1]) + ' g']));
+  h += '<p style="color:#404040;font-size:11px">Giorni fra il giuramento e le ' +
+    'dimissioni di ogni governo, contati sul perimetro 15 aprile 1994 &ndash; ' +
+    '14 marzo 2013.</p>';
+
+  // --- 2. la galassia
+  h += '<h2 style="margin-top:14px">Quante persone sono passate di l&igrave;</h2>' +
+    '<div class="gruppone">' +
+      riquadro('Forza Italia o PdL', suoi.length,
+               perc(suoi.length, P.length) + '% di tutto il perimetro.',
+               'lista', 'cavaliere:tutti') +
+      riquadro('Ancora vivi', vivi, perc(vivi, suoi.length) + '% di loro.',
+               'lista', 'cavaliere:vivi') +
+    '</div>' +
+    '<p style="margin-top:8px">Pi&ugrave; di un parlamentare su quattro, fra il ' +
+    '1994 e il 2013, ha portato una delle sue due casacche. ' +
+    numero(membriDi('FI').length, 'lista', 'partito:FI') + ' sono passati per ' +
+    pill('FI', nomePartito('FI')) + ' e ' +
+    numero(membriDi('PDL').length, 'lista', 'partito:PDL') + ' per ' +
+    pill('PDL', nomePartito('PDL')) + '.</p>';
+
+  // --- 3. le donne
+  h += '<h2 style="margin-top:14px">Le donne, nei suoi gruppi</h2>' +
+    '<p>Nei gruppi di Forza Italia e del PdL le donne sono il <b>' +
+    conUnDecimale(suaQ.q) + '%</b> (' + suaQ.f + ' su ' + suaQ.tot +
+    '). Nel perimetro intero sono il <b>' + conUnDecimale(tuttaQ.q) +
+    '%</b>.</p>' +
+    tabellaConBarre([
+      ['Nei suoi gruppi', suaQ.q, '#a0248c', null,
+       conUnDecimale(suaQ.q) + '%'],
+      ['In tutto il perimetro', tuttaQ.q, '#808080', null,
+       conUnDecimale(tuttaQ.q) + '%']
+    ]) +
+    '<p style="color:#404040;font-size:11px">Percentuali. Il genere lo ' +
+    'pubblicano i registri di Camera e Senato. Si veda anche ' +
+    '<span class="clic" data-apri="donne">Le donne in Parlamento</span>.</p>';
+
+  // --- 4. i governi
+  h += '<h2 style="margin-top:14px">I quattro governi</h2>' +
+    '<table><thead><tr><th>Governo</th><th>Dal</th><th>Al</th>' +
+    '<th class="num">Giorni</th><th class="num">Ministri</th></tr></thead><tbody>' +
+    SUOI_GOVERNI.map(g => {
+      const gente = P.filter(p => (p.gv || []).indexOf(g[0]) >= 0);
+      return '<tr><td><b>' + esc(g[0]) + '</b></td><td>' + g[1] + '</td>' +
+        '<td>' + g[2] + '</td><td class="num">' + g[3] + '</td>' +
+        '<td class="num">' + numero(gente.length, 'lista', 'governo:' + g[0]) +
+        '</td></tr>';
+    }).join('') + '</tbody></table>' +
+    '<p style="margin-top:6px"><b>' + ministri.length + '</b> persone distinte ' +
+    'hanno fatto parte di almeno uno dei suoi governi, e <b>' + maiEletti +
+    '</b> di loro non hanno mai avuto un seggio in Parlamento.</p>';
+
+  // --- 5. le due scissioni
+  const fli = membriDi('FLI'), resp = membriDi('RESP');
+  h += '<h2 style="margin-top:14px">Le due scissioni</h2>' +
+    '<table><tbody>' +
+    '<tr><td style="width:30%">' +
+      '<span class="clic" data-apri="partito" data-arg="FLI">' +
+      pill('FLI', nomePartito('FLI')) + '</span></td>' +
+      '<td class="num" style="width:12%">' + numero(fli.length, 'lista', 'partito:FLI') +
+      '</td><td>luglio 2010 &mdash; se ne vanno, e la maggioranza non basta ' +
+      'pi&ugrave;</td></tr>' +
+    '<tr><td><span class="clic" data-apri="partito" data-arg="RESP">' +
+      pill('RESP', nomePartito('RESP')) + '</span></td>' +
+      '<td class="num">' + numero(resp.length, 'lista', 'partito:RESP') +
+      '</td><td>gennaio 2011 &mdash; arrivano, e la maggioranza torna</td></tr>' +
+    '</tbody></table>' +
+    '<p style="margin-top:6px">Sei mesi separano le due cose. ' +
+    '<span class="clic" data-apri="responsabili">I Responsabili</span> e ' +
+    '<span class="clic" data-apri="cadute">Le cadute</span> raccontano ' +
+    'l&rsquo;una e l&rsquo;altra con le date.</p>';
+
+  // --- 6. lui
+  if (lui){
+    h += '<h2 style="margin-top:14px">Lui</h2>' +
+      '<div class="scheda"><div class="ritratto">' + ritratto(lui) + '</div>' +
+      '<div class="dati"><p><b>Cinque legislature su cinque, e ' +
+      '<b>' + lui.c + '</b> cambi di casacca.</b> Il partito cambia nome sotto ' +
+      'di lui &mdash; Forza Italia diventa il Popolo della Libert&agrave; nel ' +
+      '2008 &mdash; ma lui resta dov&rsquo;&egrave;. &Egrave; l&rsquo;unica ' +
+      'persona che attraversa tutto il perimetro governandolo per met&agrave;.</p>' +
+      '<p>Nato il ' + dataIt(lui.b) + ', morto il ' + dataIt(lui.d) + '. ' +
+      '<span class="clic" data-apri="persona" data-arg="' + BERLUSCONI +
+      '">La sua scheda</span>.</p>' +
+      (DATI.condanne && DATI.condanne.voci.some(v => v.qid === BERLUSCONI)
+        ? '<p>Nel 2013 una condanna definitiva per frode fiscale: ' +
+          '<span class="clic" data-apri="cestino">nel cestino</span>.</p>' : '') +
+      '</div></div>';
+  }
+
+  return {titolo: 'Il Cavaliere', icona: '&#128081;', html: h, faccia: true,
+          larghezza: 660, altezza: 560,
+          stato: '48,3% dei giorni', stato2: suoi.length + ' persone nei suoi gruppi'};
+};
+
 VISTE['metodo'] = function(){
   const h =
     '<h1>Come &egrave; fatto</h1>' +
@@ -2074,6 +2222,7 @@ const SCRIVANIA = [
   ['&#128198;', 'Linea del tempo', 'tempo', '', 'sx'],
   ['&#128220;', 'Il gruppo misto', 'misto', '', 'sx'],
   ['&#9792;', 'Le donne', 'donne', '', 'dx'],
+  ['&#128081;', 'Il Cavaliere', 'cavaliere', '', 'dx'],
   ['&#9878;', 'Confronta', 'confronta', '', 'dx'],
   ['&#9654;', 'Esegui...', 'esegui', '', 'dx'],
   ['&#128200;', 'Spread', 'spread', '', 'dx'],
@@ -2169,9 +2318,11 @@ document.addEventListener('click', e => {
     av.classList.toggle('aperto', menu.classList.contains('aperto'));
     return;
   }
-  if (!e.target.closest('#menu')){
-    menu.classList.remove('aperto'); av.classList.remove('aperto');
-  }
+  // Qualunque clic che non sia sul pulsante Avvio chiude il menu, compresi
+  // quelli sulle sue voci: altrimenti resta aperto sopra la finestra che ha
+  // appena aperto, e la copre.
+  menu.classList.remove('aperto');
+  av.classList.remove('aperto');
 
   if (e.target.closest('#chiudi-sessione')){
     return schermataBlu('Chiusura della sessione in corso. In realtà non si ' +
