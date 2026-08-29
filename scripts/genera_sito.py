@@ -11,7 +11,7 @@ sys.stdout.reconfigure(encoding='utf-8', errors='replace')
 
 QUI = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, QUI)
-import casacche
+import casacche, controlla_js
 
 INGRESSO = os.path.join(QUI, '..', 'data', 'elenco.json')
 MODELLO = os.path.join(QUI, 'modello.html')
@@ -167,6 +167,11 @@ def main():
                                                 separators=(',', ':')))
             .replace('/*__COLOFONE__*/', json.dumps(COLOFONE, ensure_ascii=False))
             .replace('%%TITOLO%%', TITOLO))
+
+    # Prima di scrivere su disco. Con i dati dentro la pagina, una stringa
+    # non chiusa non rompe una funzione: spegne tutto lo script, e il sito
+    # diventa una scrivania vuota senza nemmeno un messaggio d'errore.
+    controlla_js.controlla(html, 'index.html')
 
     os.makedirs(USCITA, exist_ok=True)
     percorso = os.path.join(USCITA, 'index.html')
