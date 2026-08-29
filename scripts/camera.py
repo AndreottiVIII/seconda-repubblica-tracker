@@ -186,6 +186,38 @@ def _istantanea():
     return None
 
 
+Q_PRESIDENTI = """
+PREFIX ocd: <http://dati.camera.it/ocd/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT DISTINCT ?dep ?u WHERE {
+  ?dep a ocd:deputato ;
+       ocd:rif_leg <http://dati.camera.it/ocd/legislatura.rdf/%s> ;
+       ocd:rif_ufficioParlamentare ?uf .
+  ?uf rdfs:label ?u .
+  FILTER(STRSTARTS(STR(?u), "PRESIDENTE di UFFICIO DI PRESIDENZA,"))
+}
+"""
+
+
+def presidenti():
+    """{identificativo persona: legislatura} di chi ha presieduto la Camera.
+
+    Su Wikidata quella carica e' quasi tutta mancante: alla voce 'presidente
+    della Camera dei deputati' ci sono nove nomi in tutto, e per il nostro
+    perimetro solo Irene Pivetti. Violante, Casini, Bertinotti e Fini non ci
+    sono. La Camera invece i propri presidenti li registra, dentro gli uffici
+    parlamentari. Comanda il registro, come sempre.
+    """
+    fuori = {}
+    for mandato, codice in LEGISLATURE:
+        for r in interroga(Q_PRESIDENTI % codice):
+            pid = id_persona(r['dep']['value'])
+            if pid:
+                fuori[pid] = mandato
+        time.sleep(0.3)
+    return fuori
+
+
 def registro(usa_cache=True):
     """{chiave nome: {mandato: {'morte':…, 'nascita':…, 'id':…}}}
 
@@ -286,6 +318,10 @@ def _costruisci():
             # chiave d'aggancio, che e' illeggibile ('agostinacchio antonio').
             voce['nome'] = nome_leggibile(r.get('nome', {}).get('value'),
                                           r.get('cognome', {}).get('value'))
+            # Il cognome separato serve a mettere l'elenco in ordine: un
+            # elenco di persone si ordina per cognome, e 'Nome Cognome' non
+            # dice dove finisce l'uno e comincia l'altro.
+            voce['cognome'] = (r.get('cognome', {}).get('value') or '').strip().title()
             if pid in gruppi:
                 voce['gruppi'] = gruppi[pid]
                 voce['gruppo'] = gruppi[pid][0]['g']

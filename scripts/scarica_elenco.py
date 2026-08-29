@@ -70,6 +70,23 @@ Q_GOVERNO = """SELECT ?p ?pLabel ?nascita ?precN ?morte ?precM ?foto ?art ?posLa
   { ?st pq:P5054 wd:%(g)s } UNION { ?st pq:P642 wd:%(g)s } UNION { ?st pq:P361 wd:%(g)s }
 """ + DATE + "}"
 
+# Le cariche piu' alte non sono legate a una legislatura, quindi non passano
+# dalle query di sopra: la presidenza della Camera sparisce, e con lei Pivetti,
+# Violante, Casini, Bertinotti e Fini. Vanno chieste per nome, e tenute solo
+# se cadono dentro il perimetro.
+CARICHE_ALTE = [
+    ('Q6360077',  'presidente della Camera dei deputati'),
+    ('Q7477985',  'presidente del Senato della Repubblica Italiana'),
+    ('Q796897',   'presidente del Consiglio dei ministri della Repubblica Italiana'),
+    ('Q332711',   'presidente della Repubblica Italiana'),
+]
+
+Q_CARICA_ALTA = """SELECT ?p ?inizio ?fine WHERE {
+  ?p p:P39 ?st . ?st ps:P39 wd:%s .
+  OPTIONAL { ?st pq:P580 ?inizio }
+  OPTIONAL { ?st pq:P582 ?fine }
+}"""
+
 # I partiti di Wikidata restano solo come ripiego: comanda il gruppo
 # parlamentare, che e' il partito di allora e non le militanze successive.
 Q_PARTITI = """SELECT ?p ?partitoLabel WHERE {
@@ -118,7 +135,8 @@ def assorbi(persone, righe, etichetta_mandato):
         if not q:
             continue
         p = persone.setdefault(q, {
-            'qid': q, 'nome': None, 'nascita': None, 'prec_nascita': None,
+            'qid': q, 'nome': None, 'cognome': None,
+            'nascita': None, 'prec_nascita': None,
             'morte': None, 'prec_morte': None, 'foto': None, 'wikipedia': None,
             'gruppi_per_mandato': {}, 'ramo': {}, 'senatore_a_vita': False,
             'mandati': [], 'cariche': set(), 'partiti': set()})
@@ -343,6 +361,8 @@ def adotta_dal_registro(persone, reg, agganciate, etichetta):
         morti = [v['morte'] for v in voci.values() if v.get('morte')]
         p = {
             'qid': sintetico, 'nome': nomi[0],
+            'cognome': next((v.get('cognome') for v in voci.values()
+                             if v.get('cognome')), None),
             'nascita': nascite[0] if nascite else None,
             'prec_nascita': ('giorno' if nascite and len(nascite[0]) == 10
                              else ('anno' if nascite else None)),
@@ -369,6 +389,56 @@ def adotta_dal_registro(persone, reg, agganciate, etichetta):
     return aggiunti
 
 
+Q_RITRATTO = """SELECT ?p ?pLabel ?nascita ?foto ?art WHERE {
+  VALUES ?nascita { %s }
+  ?p wdt:P31 wd:Q5 ; wdt:P569 ?nascita ; wdt:P27 wd:Q38 .
+  OPTIONAL { ?p wdt:P18 ?foto }
+  OPTIONAL { ?art schema:about ?p ; schema:isPartOf <https://it.wikipedia.org/> }
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "it,en". }
+}"""
+
+
+def recupera_ritratti(persone):
+    """Foto e voce di Wikipedia per chi e' entrato solo dai registri.
+
+    Sono persone che Wikidata conosce benissimo ma non collega a queste
+    legislature: Giulio Andreotti fra i senatori a vita e' il caso limite.
+    Si cercano per data di nascita e poi si accetta solo chi ha anche il
+    nome giusto: la data da sola accoppierebbe due estranei nati lo stesso
+    giorno, il nome da solo due omonimi.
+    """
+    orfani = [p for p in persone.values()
+              if p.get('solo_registro') and not p.get('foto') and p.get('nascita')
+              and len(p['nascita']) == 10]
+    if not orfani:
+        return 0
+    per_data = {}
+    for p in orfani:
+        per_data.setdefault(p['nascita'], []).append(p)
+    date = sorted(per_data)
+    trovati = 0
+    for i in range(0, len(date), 60):
+        blocco = date[i:i + 60]
+        valori = ' '.join('"%sT00:00:00Z"^^xsd:dateTime' % d for d in blocco)
+        try:
+            righe = cache_o_query('ritratti_%d' % i, Q_RITRATTO % valori)
+        except Exception as e:
+            print('  ritratti, blocco %d non riuscito: %s' % (i, str(e)[:60]))
+            continue
+        for r in righe:
+            data = (wd.v(r, 'nascita') or '')[:10]
+            etichetta = wd.v(r, 'pLabel') or ''
+            for p in per_data.get(data, []):
+                if camera.chiave(etichetta) != camera.chiave(p['nome']):
+                    continue
+                if wd.v(r, 'foto') and not p.get('foto'):
+                    p['foto'] = wd.v(r, 'foto')
+                    trovati += 1
+                if wd.v(r, 'art') and not p.get('wikipedia'):
+                    p['wikipedia'] = wd.v(r, 'art')
+    return trovati
+
+
 def main():
     persone = {}
 
@@ -384,6 +454,24 @@ def main():
         assorbi(persone, cache_o_query('gov_%s' % nome, Q_GOVERNO % {'g': q}),
                 'Governo ' + nome)
         print('  totale cumulato: %d' % len(persone))
+
+    print('Cariche alte...')
+    for qid_carica, etichetta_carica in CARICHE_ALTE:
+        for r in cache_o_query('carica_%s' % qid_carica, Q_CARICA_ALTA % qid_carica):
+            qq = wd.qid(r, 'p')
+            if qq not in persone:
+                continue
+            inizio = (wd.v(r, 'inizio') or '')[:10]
+            fine = (wd.v(r, 'fine') or '')[:10]
+            # Dentro il perimetro: chi ha presieduto prima del 1994 o dopo il
+            # marzo 2013 ha presieduto un'altra stagione.
+            if inizio and inizio > '2013-03-14':
+                continue
+            if fine and fine < '1994-04-15':
+                continue
+            if not inizio and not fine:
+                continue
+            persone[qq]['cariche'].add(etichetta_carica)
 
     print('Partiti...')
     for nome, q, anni in LEGISLATURE:
@@ -476,6 +564,9 @@ def main():
             # dato per cui esiste questo sito, e va raccolto da tutti e due i
             # rami, perche' chi e' passato dalla Camera al Senato ha meta'
             # della sua storia in ciascuno.
+            if not p.get('cognome'):
+                p['cognome'] = next((voci[m].get('cognome') for m in comuni
+                                     if voci[m].get('cognome')), None)
             for m in comuni:
                 gruppi = voci[m].get('gruppi')
                 if gruppi and m not in p['gruppi_per_mandato']:
@@ -519,6 +610,28 @@ def main():
         print('  %d decessi che Wikidata non registrava' % recuperati)
         aggiunti = adotta_dal_registro(persone, reg, agganciate, etichetta)
         print('  %d persone note solo al registro' % aggiunti)
+    # Questi due passi vanno DOPO l'incrocio, non prima: e' l'incrocio che
+    # crea le schede adottate dai registri e che assegna gli identificativi
+    # della Camera. Messi prima non trovavano niente da fare, in silenzio.
+    print('Presidenti della Camera (dal registro)...')
+    try:
+        capi = camera.presidenti()
+        n = 0
+        for p in persone.values():
+            # A questo punto le cariche sono gia' una lista ordinata, non piu'
+            # un insieme: si aggiunge come si aggiunge a una lista.
+            if p.get('id_camera') in capi:
+                titolo = 'presidente della Camera dei deputati'
+                if titolo not in p['cariche']:
+                    p['cariche'].append(titolo)
+                n += 1
+        print('  %d presidenti riconosciuti' % n)
+    except Exception as e:
+        print('  registro muto sui presidenti (%s)' % str(e)[:60])
+
+    print('Ritratti per chi arriva dai soli registri...')
+    print('  %d foto recuperate' % recupera_ritratti(persone))
+
     # Una morte che ha il solo anno, che viene dalla sola Wikidata, e che il
     # registro ufficiale smentisce tacendo, e' quasi sempre un fine mandato
     # finito nella casella sbagliata: Stojan Spetic risultava morto nel 1992,
@@ -557,7 +670,11 @@ def main():
 
     for q, p in persone.items():
         p['stato'] = stato_di(p, oggi)
-        p['non_eletto'] = q not in eletti
+        # Chi un gruppo parlamentare ce l'ha ha seduto, punto: il marchio
+        # vale solo per i ministri presi dai governi. Senza questo controllo
+        # le 79 schede adottate dai registri risultavano tutte "mai elette",
+        # Giulio Andreotti compreso.
+        p['non_eletto'] = q not in eletti and not p.get('gruppi_per_mandato')
         p['hall_of_fame'] = q in hof
         if q in hof:
             p['cursus'] = hof[q].get('cursus')

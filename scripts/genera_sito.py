@@ -103,6 +103,10 @@ def compatta(p, gruppi, ant):
         's': {'vivente': 1, 'deceduto': 2, 'ignoto': 3}[p['stato']],
         'm': [x for x in ORDINE if x in p['mandati']],
         'c': casacche.cambi(p, gruppi, ant),
+        # Il cognome serve a mettere l'elenco in ordine. Per i ministri mai
+        # eletti nessun registro lo separa dal nome: si ripiega sull'ultima
+        # parola, che nella stragrande maggioranza dei casi e' quella giusta.
+        'co': p.get('cognome') or (p['nome'] or '?').split()[-1],
     }
     if p.get('nascita'):
         d['b'] = p['nascita']

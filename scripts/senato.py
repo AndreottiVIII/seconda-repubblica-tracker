@@ -241,7 +241,8 @@ def _costruisci():
                 'nascita': data_iso(r.get('nascita', {}).get('value')),
                 'nome': camera.nome_leggibile(r.get('nome', {}).get('value'),
                                               r.get('cognome', {}).get('value')),
-                'uri': r['s']['value']}
+                'uri': r['s']['value'],
+                'cognome': (r.get('cognome', {}).get('value') or '').strip()}
         # I senatori a vita e di diritto attraversano ogni legislatura per
         # definizione: contati come gli altri falserebbero ogni classifica
         # di longevita', quindi restano marcati.

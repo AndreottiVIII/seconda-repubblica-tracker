@@ -289,6 +289,12 @@ const PARTITI = DATI.partiti;
 const LEG = DATI.legislature;
 const ORDINE = LEG.map(l => l.n);
 const perQid = {}; P.forEach(p => perQid[p.q] = p);
+/* Un elenco di persone si ordina per cognome. I registri lo tengono separato
+   dal nome, quindi non c'e' da indovinare dove finisce l'uno. */
+const perCognome = (a, b) =>
+  (a.co || '').localeCompare(b.co || '', 'it') ||
+  (a.n || '').localeCompare(b.n || '', 'it');
+P.sort(perCognome);
 
 /* ---------- utilita' ---------- */
 const esc = s => String(s == null ? '' : s)
@@ -540,13 +546,28 @@ window.addEventListener('hashchange', () => {
 });
 
 /* ---------- pezzi riusabili ---------- */
+function perElenco(p){
+  /* 'Andreotti Giulio': in un elenco ordinato per cognome, il cognome sta
+     davanti, altrimenti l'ordine sembra casuale. Nella scheda resta il nome
+     come lo si dice. */
+  if (!p.co) return p.n;
+  // Niente espressioni regolari costruite al volo su dati altrui: un cognome
+  // con una parentesi o un punto le manderebbe in pezzi. Basta cercare la
+  // posizione del cognome dentro il nome e togliercelo.
+  const i = p.n.toLowerCase().lastIndexOf(p.co.toLowerCase());
+  if (i < 0) return p.co + ' ' + p.n;
+  const resto = (p.n.slice(0, i) + ' ' + p.n.slice(i + p.co.length))
+                  .replace(/\s+/g, ' ').trim();
+  return resto ? p.co + ' ' + resto : p.n;
+}
+
 function tabellaPersone(elenco, opzioni){
   opzioni = opzioni || {};
   if (!elenco.length) return '<p>Nessuno.</p>';
   const righe = elenco.map(p => {
     const passaggi = passaggiDi(p);
     return '<tr class="riga" data-q="' + p.q + '">' +
-      '<td>' + (p.s === 2 ? '<span class="morto">' : '<span>') + esc(p.n) +
+      '<td>' + (p.s === 2 ? '<span class="morto">' : '<span>') + esc(perElenco(p)) +
         (p.v ? ' &#9884;' : '') + (p.x ? ' &#9873;' : '') + '</span></td>' +
       '<td class="num">' + (p.b ? p.b.slice(0,4) : '&mdash;') + '</td>' +
       '<td>' + p.m.join(' ') + '</td>' +
@@ -621,9 +642,9 @@ VISTE['elenco'] = function(){
           html: '<div id="filtro-elenco" style="margin-bottom:6px">' +
             'Cerca: <input type="text" id="q-elenco" size="18"> ' +
             '<span style="color:#404040" id="n-elenco"></span></div>' +
-            '<div id="corpo-elenco">' + tabellaPersone(P.slice(0, 300)) + '</div>',
+            '<div id="corpo-elenco">' + tabellaPersone(P) + '</div>',
           larghezza: 720, altezza: 520,
-          stato: P.length + ' persone', stato2: 'primi 300'};
+          stato: P.length + ' persone', stato2: 'in ordine di cognome'};
 };
 
 VISTE['persona'] = function(q){
@@ -653,8 +674,10 @@ VISTE['persona'] = function(q){
     'legislature per definizione, quindi resta fuori dalle classifiche di longevit&agrave;.</div>';
   if (p.x) corpo += '<div class="avviso">Ministro mai eletto in Parlamento. ' +
     'Non ha mai avuto un gruppo, quindi non ha cambi di casacca.</div>';
-  if (p.r) corpo += '<div class="avviso">Scheda costruita sui soli registri di Camera e ' +
-    'Senato: Wikidata non lo conosce, e da l&igrave; non arrivano n&eacute; foto n&eacute; voce enciclopedica.</div>';
+  if (p.r) corpo += '<div class="avviso">Scheda costruita sui registri di Camera e ' +
+    'Senato. Wikidata non collega questa persona alle legislature 1994-2013, ' +
+    'quindi non &egrave; arrivata da l&igrave;: dove mancano la foto o la voce ' +
+    'enciclopedica &egrave; per questo.</div>';
   if (p.md) corpo += '<div class="avviso">Una fonte riporta una morte nel ' + esc(p.md[0]) +
     ', con il solo anno e senza conferma dei registri: non &egrave; stata presa per buona.</div>';
 
@@ -801,8 +824,7 @@ VISTE['partito'] = function(codice){
     '<div style="flex:1;min-width:200px"><h2>Se ne sono andati verso</h2>' + flusso(fuori) + '</div>' +
     '</div>';
   h += '<h2 style="margin-top:12px">Chi ci &egrave; passato</h2>' +
-       tabellaPersone(gente.slice(0, 200));
-  if (gente.length > 200) h += '<p class="piede">Mostrati i primi 200 di ' + gente.length + '.</p>';
+       tabellaPersone(gente.slice().sort(perCognome));
   return {titolo: info.nome, icona: '&#128193;', html: h, faccia: true,
           larghezza: 680, altezza: 540,
           stato: gente.length + ' persone', stato2: dataIt(anni[0]) + ' / ' + dataIt(anni[1])};
@@ -841,11 +863,9 @@ VISTE['lista'] = function(filtro){
     gente = P.filter(p => p.n.toLowerCase().indexOf(q) >= 0);
     titolo = 'Trovati: ' + valore;
   }
-  gente = gente.slice().sort((a,b) => b.c - a.c || a.n.localeCompare(b.n));
+  gente = gente.slice().sort(perCognome);
   return {titolo: titolo, icona: '&#128203;',
-          html: tabellaPersone(gente.slice(0, 400)) +
-            (gente.length > 400 ? '<p class="piede">Mostrati i primi 400 di ' +
-              gente.length + ', in ordine di cambi.</p>' : ''),
+          html: tabellaPersone(gente),
           larghezza: 700, altezza: 520,
           stato: gente.length + ' persone',
           stato2: gente.reduce((a,p) => a + p.c, 0) + ' cambi'};
@@ -926,6 +946,94 @@ VISTE['responsabili'] = function(){
           stato2: 'XVI legislatura'};
 };
 
+/* ---- Hall of fame: chi ha avuto una carica, non chi e' famoso ---- */
+const GRADI = [
+  ['Presidente del Consiglio', 'Presidenti del Consiglio'],
+  ['Presidente della Camera', 'Presidenti della Camera'],
+  ['Presidente del Senato', 'Presidenti del Senato'],
+  ['Vicepresidente del Consiglio', 'Vicepresidenti del Consiglio'],
+];
+
+function haCarica(p, prefisso){
+  return (p.k || []).some(x => x.indexOf(prefisso) === 0);
+}
+
+VISTE['famosi'] = function(){
+  const tutti = P.filter(p => p.h);
+  let h = '<h1>Hall of fame</h1>' +
+    '<p>Chi fra il 1994 e il 2013 ha guidato un governo, presieduto una Camera ' +
+    'o avuto un ministero. Non &egrave; una classifica di importanza: &egrave; ' +
+    'l&rsquo;elenco delle cariche, e la carica o ce l&rsquo;hai avuta o no.</p>';
+  const gia = {};
+  GRADI.forEach(([prefisso, titolo]) => {
+    const chi = tutti.filter(p => haCarica(p, prefisso)).sort(perCognome);
+    if (!chi.length) return;
+    h += '<h2 style="margin-top:12px">' + titolo + ' (' + chi.length + ')</h2>' +
+      '<table><tbody>' + chi.map(p => {
+        gia[p.q] = 1;
+        return '<tr class="riga" data-q="' + p.q + '"><td style="width:34%">' +
+          esc(perElenco(p)) + '</td><td>' + esc((p.k || []).join('; ')) + '</td></tr>';
+      }).join('') + '</tbody></table>';
+  });
+  const ministri = tutti.filter(p => !gia[p.q]).sort(perCognome);
+  h += '<h2 style="margin-top:12px">Ministri (' + ministri.length + ')</h2>' +
+    '<table><tbody>' + ministri.map(p =>
+      '<tr class="riga" data-q="' + p.q + '"><td style="width:34%">' +
+      esc(perElenco(p)) + '</td><td>' + esc((p.k || []).join('; ')) +
+      '</td></tr>').join('') + '</tbody></table>';
+  return {titolo: 'Hall of fame', icona: '&#127941;', html: h, faccia: true,
+          larghezza: 700, altezza: 540, stato: tutti.length + ' persone con una carica'};
+};
+
+/* ---- L'albero dei partiti, disegnato dalle successioni ---- */
+VISTE['albero'] = function(){
+  const codici = Object.keys(PARTITI);
+  const eredi = {};
+  codici.forEach(c => (PARTITI[c].eredita_da || []).forEach(a => {
+    (eredi[a] = eredi[a] || []).push(c);
+  }));
+  const radici = codici.filter(c => !(PARTITI[c].eredita_da || []).length && eredi[c]);
+  const isolati = codici.filter(c => !(PARTITI[c].eredita_da || []).length && !eredi[c]);
+
+  function ramo(c, profondita, visti){
+    if (visti[c]) return '';
+    visti[c] = 1;
+    const n = membriDi(c).length;
+    const anni = annidiPartito(c);
+    let r = '<div style="margin-left:' + (profondita * 22) + 'px;padding:1px 0">' +
+      (profondita ? '<span style="color:#808080">&#9492;&#9472; </span>' : '') +
+      '<span class="clic" data-apri="partito" data-arg="' + c + '">' +
+      pill(c, nomePartito(c)) + '</span> ' +
+      '<span style="color:#404040;font-size:11px">' + n + ' persone, ' +
+      (anni[0] ? anni[0].slice(0,4) : '?') + '-' + (anni[1] ? anni[1].slice(0,4) : '?') +
+      '</span></div>';
+    (eredi[c] || []).sort((a, b) => membriDi(b).length - membriDi(a).length)
+      .forEach(x => { r += ramo(x, profondita + 1, visti); });
+    return r;
+  }
+
+  let h = '<h1>Albero dei partiti</h1>' +
+    '<p>Chi discende da chi. Una freccia vuol dire che il partito sotto &egrave; ' +
+    'erede legittimo di quello sopra, e che passare dall&rsquo;uno all&rsquo;altro ' +
+    'fra una legislatura e l&rsquo;altra <b>non</b> conta come cambio di casacca: ' +
+    'si &egrave; mosso il partito, non la persona. Dove due rami confluiscono nello ' +
+    'stesso nome, due partiti si sono fusi.</p>';
+  const visti = {};
+  radici.sort((a, b) => membriDi(b).length - membriDi(a).length)
+    .forEach(c => { h += '<div style="margin:8px 0">' + ramo(c, 0, visti) + '</div>'; });
+  // Chi confluisce in un ramo gia' disegnato va mostrato lo stesso, da capo.
+  codici.filter(c => !visti[c] && eredi[c]).forEach(c => {
+    h += '<div style="margin:8px 0">' + ramo(c, 0, {}) + '</div>';
+  });
+  const soli = isolati.filter(c => membriDi(c).length).sort(
+    (a, b) => membriDi(b).length - membriDi(a).length);
+  h += '<h2 style="margin-top:14px">Senza eredi e senza antenati</h2><p>' +
+    soli.map(c => '<span class="clic" data-apri="partito" data-arg="' + c + '">' +
+      pill(c, nomePartito(c)) + '</span>').join(' ') + '</p>';
+  return {titolo: 'Albero dei partiti', icona: '&#127793;', html: h, faccia: true,
+          larghezza: 640, altezza: 540, stato: codici.length + ' partiti'};
+};
+
 VISTE['metodo'] = function(){
   const h =
     '<h1>Come &egrave; fatto</h1>' +
@@ -1002,6 +1110,8 @@ const SCRIVANIA = [
   ['&#127942;', 'Classifiche', 'classifiche', ''],
   ['&#9937;', 'I Responsabili', 'responsabili', ''],
   ['&#128193;', 'Partiti', 'partiti', ''],
+  ['&#127793;', 'Albero dei partiti', 'albero', ''],
+  ['&#127941;', 'Hall of fame', 'famosi', ''],
   ['&#128269;', 'Trova...', 'trova', ''],
   ['&#128209;', 'Il metodo', 'metodo', ''],
   ['&#128441;', 'Colofone.txt', 'leggimi', ''],
@@ -1114,11 +1224,9 @@ document.addEventListener('input', e => {
   if (e.target.id === 'q-elenco'){
     const q = e.target.value.trim().toLowerCase();
     const gente = q ? P.filter(p => p.n.toLowerCase().indexOf(q) >= 0) : P;
-    document.getElementById('corpo-elenco').innerHTML =
-      tabellaPersone(gente.slice(0, 300));
+    document.getElementById('corpo-elenco').innerHTML = tabellaPersone(gente);
     document.getElementById('n-elenco').textContent =
-      gente.length + (gente.length === 1 ? ' persona' : ' persone') +
-      (gente.length > 300 ? ' (mostrate le prime 300)' : '');
+      gente.length + (gente.length === 1 ? ' persona' : ' persone');
   }
 });
 
@@ -1133,7 +1241,8 @@ function cercaOra(){
   if (parti.length) h += '<h2>Partiti</h2><p>' + parti.map(c =>
     '<span class="clic" data-apri="partito" data-arg="' + c + '">' +
     pill(c, nomePartito(c)) + '</span>').join(' ') + '</p>';
-  h += '<h2>Persone (' + gente.length + ')</h2>' + tabellaPersone(gente.slice(0, 120));
+  h += '<h2>Persone (' + gente.length + ')</h2>' +
+       tabellaPersone(gente.slice().sort(perCognome));
   document.getElementById('esito-trova').innerHTML = h;
 }
 document.addEventListener('click', e => {
