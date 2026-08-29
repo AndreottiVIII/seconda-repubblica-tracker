@@ -5,7 +5,7 @@ piu' i ministri di tutti gli undici governi del periodo, anche i mai eletti.
 Le date arrivano con la loro precisione: su Wikidata un anno secco viene
 servito come 1 gennaio, e preso alla lettera produrrebbe compleanni inventati.
 """
-import sys, os, json, time, datetime, re, urllib.parse
+import sys, os, json, time, datetime, re, urllib.parse, hashlib
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import wd, camera, senato
 
@@ -324,7 +324,19 @@ def adotta_dal_registro(persone, reg, agganciate, etichetta):
         if not nomi:
             continue
         ids = [v['id'] for v in voci.values() if v.get('id')]
-        sintetico = ('C' + ids[0]) if ids else ('R' + str(abs(hash(k)) % 10 ** 8))
+        uri = [v['uri'] for v in voci.values() if v.get('uri')]
+        # L'identificativo deve essere lo STESSO a ogni giro: e' l'indirizzo
+        # della scheda sul sito. hash() di Python non va bene, perche' cambia
+        # a ogni avvio del programma: la prima notte 76 persone erano sparite
+        # e 76 erano comparse, ed erano le stesse. Si usano gli identificativi
+        # veri delle Camere, e solo in mancanza di entrambi un'impronta del
+        # nome, che almeno non si muove.
+        if ids:
+            sintetico = 'C' + ids[0]
+        elif uri:
+            sintetico = 'S' + uri[0].rsplit('/', 1)[-1]
+        else:
+            sintetico = 'R' + hashlib.md5(k.encode('utf-8')).hexdigest()[:10]
         if sintetico in persone:
             continue
         nascite = [v['nascita'] for v in voci.values() if v.get('nascita')]
