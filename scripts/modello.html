@@ -694,6 +694,17 @@ VISTE['persona'] = function(q){
     'quindi non &egrave; arrivata da l&igrave;: dove mancano la foto o la voce ' +
     'enciclopedica &egrave; per questo.</div>';
 
+  const suePartito = guideDi(p.q);
+  if (suePartito.length)
+    corpo += '<h2 style="margin-top:12px">Alla guida del partito</h2>' +
+      '<table><thead><tr><th>Partito</th><th>Ruolo</th><th>Quando</th>' +
+      '</tr></thead><tbody>' + suePartito.map(r =>
+        '<tr><td><span class="clic" data-apri="partito" data-arg="' + r[0] +
+        '">' + pill(r[0], nomePartito(r[0])) + '</span></td>' +
+        '<td style="font-size:11px">' + esc(r[1]) + '</td>' +
+        '<td style="white-space:nowrap">' + periodoGuida(r[2], r[3]) +
+        '</td></tr>').join('') + '</tbody></table>';
+
   if (p['in']){
     const righe = [];
     ORDINE.forEach(m => (p['in'][m] || []).forEach(x => righe.push([m, x[0], x[1]])));
@@ -857,6 +868,46 @@ VISTE['partiti'] = function(){
           larghezza: 620, altezza: 460, stato: codici.length + ' partiti'};
 };
 
+
+/* Chi ha guidato un partito. Non e' un dato parlamentare: la segreteria di un
+   partito non e' un atto delle Camere e nei registri non c'e'. Wikidata la
+   tiene male, quindi il file e' scritto a mano; ogni riga ha la voce di
+   Wikipedia da cui viene, e le date con il solo anno sono quelle che la fonte
+   da' con il solo anno.
+
+   Chi non e' mai stato in Parlamento nel perimetro resta scritto senza
+   collegamento: una scheda non ce l'ha, e fingere di averla sarebbe peggio. */
+function periodoGuida(da, a){
+  // dataIt legge gia' l'anno secco, l'anno-mese e la data intera.
+  const d = dataIt(da), f = dataIt(a);
+  if (d && f) return d === f ? d : d + ' &ndash; ' + f;
+  if (d) return 'dal ' + d;
+  return f ? 'fino al ' + f : '&mdash;';
+}
+
+function tabellaGuide(righe){
+  return '<table><thead><tr><th>Chi</th><th>Ruolo</th><th>Quando</th>' +
+    '</tr></thead><tbody>' + righe.map(r =>
+      '<tr' + (r[4] ? ' class="riga" data-q="' + r[4] + '"' : '') + '>' +
+      '<td>' + (r[4] ? esc(r[0])
+                     : esc(r[0]) + ' <span style="color:#606060;font-size:11px">' +
+                       'mai in Parlamento qui</span>') + '</td>' +
+      '<td style="font-size:11px">' + esc(r[1]) + '</td>' +
+      '<td style="white-space:nowrap">' + periodoGuida(r[2], r[3]) + '</td></tr>'
+    ).join('') + '</tbody></table>';
+}
+
+/* Le guide di partito di una persona, per la sua scheda: si cerca dentro tutti
+   i partiti, perche' il file e' indicizzato dal lato del partito. */
+function guideDi(q){
+  const G = (DATI.segretari || {}).guide || {};
+  const fuori = [];
+  Object.keys(G).forEach(sig => G[sig].forEach(r => {
+    if (r[4] === q) fuori.push([sig, r[1], r[2], r[3]]);
+  }));
+  return fuori.sort((a, b) => (a[2] || '9').localeCompare(b[2] || '9'));
+}
+
 VISTE['partito'] = function(codice){
   const info = PARTITI[codice];
   if (!info) throw new Error('Partito sconosciuto: ' + codice);
@@ -891,6 +942,18 @@ VISTE['partito'] = function(codice){
     '<div style="flex:1;min-width:200px"><h2>Sono arrivati da</h2>' + flusso(dentro) + '</div>' +
     '<div style="flex:1;min-width:200px"><h2>Se ne sono andati verso</h2>' + flusso(fuori) + '</div>' +
     '</div>';
+  const guide = ((DATI.segretari || {}).guide || {})[codice];
+  if (guide && guide.length){
+    const fonte = ((DATI.segretari || {}).fonti || {})[codice];
+    h += '<h2 style="margin-top:12px">Chi lo ha guidato</h2>' +
+      tabellaGuide(guide) +
+      '<p class="piede">Segreterie e presidenze non sono atti delle Camere: ' +
+      'nei registri di Camera e Senato non compaiono. Queste righe sono ' +
+      'scritte a mano' + (fonte
+        ? ' da <a target="_blank" rel="noopener" href="' + esc(fonte) +
+          '">la voce del partito su Wikipedia</a>' : '') + '.</p>';
+  }
+
   h += '<h2 style="margin-top:12px">Chi ci &egrave; passato</h2>' +
        tabellaPersone(gente.slice().sort(perCognome));
   return {titolo: info.nome, icona: '&#128193;', html: h, faccia: true,

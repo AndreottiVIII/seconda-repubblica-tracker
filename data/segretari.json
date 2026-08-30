@@ -1,0 +1,143 @@
+{
+ "_nota": "Chi ha guidato i partiti: segretari, presidenti, coordinatori, portavoce. Non e' un dato parlamentare: la segreteria di un partito non e' un atto delle Camere e nei registri di Camera e Senato non compare. Wikidata la copre male (sessantaquattro cariche grezze, undici vere, nove delle quali di un solo partito), quindi questo file e' scritto a mano, una riga per volta, ognuna con la voce di Wikipedia da cui viene. Le date con il solo anno sono quelle che la fonte da' con il solo anno: non sono state arrotondate ne' indovinate. Chi non e' mai stato in Parlamento nel perimetro resta scritto senza collegamento, perche' una scheda non ce l'ha.",
+
+ "fonti": {
+  "FI": "https://it.wikipedia.org/wiki/Forza_Italia_(1994)",
+  "AN": "https://it.wikipedia.org/wiki/Alleanza_Nazionale",
+  "PDL": "https://it.wikipedia.org/wiki/Il_Popolo_della_Libert%C3%A0",
+  "FLI": "https://it.wikipedia.org/wiki/Futuro_e_Libert%C3%A0_per_l%27Italia",
+  "LEGA": "https://it.wikipedia.org/wiki/Lega_Nord",
+  "PDS": "https://it.wikipedia.org/wiki/Democratici_di_Sinistra",
+  "DS": "https://it.wikipedia.org/wiki/Democratici_di_Sinistra",
+  "PD": "https://it.wikipedia.org/wiki/Partito_Democratico_(Italia)",
+  "PRC": "https://it.wikipedia.org/wiki/Partito_della_Rifondazione_Comunista",
+  "PDCI": "https://it.wikipedia.org/wiki/Partito_dei_Comunisti_Italiani",
+  "VERDI": "https://it.wikipedia.org/wiki/Federazione_dei_Verdi",
+  "PPI": "https://it.wikipedia.org/wiki/Partito_Popolare_Italiano_(1994)",
+  "MARGHERITA": "https://it.wikipedia.org/wiki/Democrazia_%C3%A8_Libert%C3%A0_-_La_Margherita",
+  "CCD": "https://it.wikipedia.org/wiki/Centro_Cristiano_Democratico",
+  "CDU": "https://it.wikipedia.org/wiki/Cristiani_Democratici_Uniti",
+  "UDC": "https://it.wikipedia.org/wiki/Unione_di_Centro_(2002)",
+  "UDEUR": "https://it.wikipedia.org/wiki/Popolari_UDEUR",
+  "IDV": "https://it.wikipedia.org/wiki/Italia_dei_Valori"
+ },
+
+ "guide": {
+  "FI": [
+   ["Silvio Berlusconi", "presidente", "1994-01-18", "2009-03-27"]
+  ],
+
+  "AN": [
+   ["Gianfranco Fini", "presidente", "1995-01-27", "2008"],
+   ["Ignazio La Russa", "reggente", "2008", "2009-03-22"]
+  ],
+
+  "PDL": [
+   ["Silvio Berlusconi", "presidente", "2009-03-29", ""],
+   ["Angelino Alfano", "segretario", "2011", "2013"],
+   ["Ignazio La Russa", "coordinatore nazionale", "2009", "2012"],
+   ["Denis Verdini", "coordinatore nazionale", "2009", "2013"],
+   ["Sandro Bondi", "coordinatore nazionale", "2009", "2013"]
+  ],
+
+  "FLI": [
+   ["Gianfranco Fini", "presidente", "2011-02-13", "2013-05-08"],
+   ["Italo Bocchino", "vicepresidente", "2011-02-13", "2013-05-08"],
+   ["Roberto Menia", "coordinatore", "2011-02-13", "2015-11"],
+   ["Giulia Bongiorno", "portavoce", "2012", "2015-11"]
+  ],
+
+  "LEGA": [
+   ["Umberto Bossi", "segretario federale", "1991-02", "2012-04-05"],
+   ["Roberto Maroni", "segretario federale", "2012-07-01", "2013-12-15"]
+  ],
+
+  "PDS": [
+   ["Achille Occhetto", "segretario", "1991-02-08", "1994-06-14"],
+   ["Massimo D'Alema", "segretario", "1994", "1998"]
+  ],
+
+  "DS": [
+   ["Massimo D'Alema", "segretario", "1998", "1998"],
+   ["Walter Veltroni", "segretario", "1998", "2001"],
+   ["Piero Fassino", "segretario", "2001-11", "2007"]
+  ],
+
+  "PD": [
+   ["Walter Veltroni", "segretario", "2007-10-27", "2009"],
+   ["Dario Franceschini", "segretario", "2009", "2009"],
+   ["Pier Luigi Bersani", "segretario", "2009-10-25", "2013"]
+  ],
+
+  "PRC": [
+   ["Sergio Garavini", "segretario", "1992", "1993-06-27"],
+   ["Fausto Bertinotti", "segretario", "1994-01-23", "2006"],
+   ["Francesco Giordano", "segretario", "2006-05-07", "2008-04"],
+   ["Paolo Ferrero", "segretario", "2008-07-27", ""]
+  ],
+
+  "PDCI": [
+   ["Armando Cossutta", "presidente", "1998", ""],
+   ["Oliviero Diliberto", "segretario", "2000-04-29", ""]
+  ],
+
+  "VERDI": [
+   ["Carlo Ripa di Meana", "portavoce nazionale", "1993-03-21", "1996-11-24"],
+   ["Luigi Manconi", "portavoce nazionale", "1996-11-24", "1999-07-25"],
+   ["Grazia Francescato", "presidente", "1999-07-25", "2001-12-01"],
+   ["Alfonso Pecoraro Scanio", "presidente", "2001-12-01", "2008-07-19"],
+   ["Angelo Bonelli", "portavoce", "2009-10-10", "2013-11-23"]
+  ],
+
+  "PPI": [
+   ["Mino Martinazzoli", "segretario", "1994-01-18", "1994-03-30"],
+   ["Rocco Buttiglione", "segretario", "1994-07-29", "1995-07-01"],
+   ["Gerardo Bianco", "segretario", "1995-07-01", "1997-01-12"],
+   ["Franco Marini", "segretario", "1997-01-12", "1999-10-02"],
+   ["Pierluigi Castagnetti", "segretario", "1999-10-02", "2002-03-24"]
+  ],
+
+  "MARGHERITA": [
+   ["Francesco Rutelli", "presidente federale", "2002-03-24", "2007-10-14"],
+   ["Dario Franceschini", "coordinatore dell'esecutivo", "2002", "2006"],
+   ["Antonello Soro", "coordinatore dell'esecutivo", "2006", "2007"],
+   ["Arturo Parisi", "presidente dell'assemblea federale", "2004", "2006"],
+   ["Willer Bordon", "presidente dell'assemblea federale", "2006", "2007"]
+  ],
+
+  "CCD": [
+   ["Pier Ferdinando Casini", "segretario", "1994", "2001"],
+   ["Marco Follini", "segretario", "2001", "2002-12-06"],
+   ["Clemente Mastella", "presidente del consiglio nazionale", "1994", "1998"],
+   ["Sandro Fontana", "presidente del consiglio nazionale", "1998", "2002"]
+  ],
+
+  "CDU": [
+   ["Rocco Buttiglione", "segretario", "1995-07-23", "2002-12-06"],
+   ["Roberto Formigoni", "presidente", "1996-07-21", "1998-06-04"],
+   ["Mario Tassone", "presidente", "1998-07-26", "2002-12-06"]
+  ],
+
+  "UDC": [
+   ["Marco Follini", "segretario", "2002", "2005-10-15"],
+   ["Lorenzo Cesa", "segretario", "2005-10-27", ""],
+   ["Rocco Buttiglione", "presidente", "2002", ""]
+  ],
+
+  "UDEUR": [
+   ["Clemente Mastella", "segretario", "1999", "2013"],
+   ["Mauro Fabris", "coordinatore", "1999", "2006"],
+   ["Irene Pivetti", "presidente", "1999", "2002"],
+   ["Ida Maria Dentamaro", "presidente", "2002", "2004"],
+   ["Mino Martinazzoli", "presidente", "2004", "2005"],
+   ["Lorenzo Acquarone", "presidente", "2005", "2006"],
+   ["Federica Rossi Gasparrini", "presidente", "2007", "2008"],
+   ["Marilina Intrieri", "presidente", "2009", "2010"],
+   ["Mimmo Caratelli", "presidente", "2010", "2013"]
+  ],
+
+  "IDV": [
+   ["Antonio Di Pietro", "presidente", "1998", "2013"]
+  ]
+ }
+}

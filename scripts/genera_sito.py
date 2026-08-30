@@ -5,7 +5,7 @@ Un file solo, coi dati dentro: si apre col doppio clic dal disco, si mette su
 qualunque hosting statico, non serve ne' un server ne' un database. Le chiavi
 sono di una o due lettere perche' il file finito viaggia intero nel browser.
 """
-import sys, os, json, datetime, re, hashlib
+import sys, os, json, datetime, re, hashlib, unicodedata
 
 sys.stdout.reconfigure(encoding='utf-8', errors='replace')
 
@@ -21,6 +21,7 @@ CONDANNE = os.path.join(QUI, '..', 'data', 'condanne.json')
 VOTO_RUBY = os.path.join(QUI, '..', 'data', 'voto_ruby.json')
 ESTERO = os.path.join(QUI, '..', 'data', 'estero.json')
 ELEZIONI = os.path.join(QUI, '..', 'data', 'elezioni.json')
+SEGRETARI = os.path.join(QUI, '..', 'data', 'segretari.json')
 USCITA = os.path.join(QUI, '..', 'sito')
 
 TITOLO = 'Seconda Repubblica Tracker'
@@ -100,6 +101,15 @@ def wiki_breve(u):
     if not u:
         return None
     return u.rsplit('/', 1)[-1]
+
+
+def chiave_nome(nome):
+    """Il nome ridotto all'osso, per riconoscere la stessa persona scritta in
+    due modi. Via gli accenti, via gli apostrofi, e le parole in ordine
+    alfabetico: cosi' 'D'Alema Massimo' e 'Massimo D'Alema' cadono insieme."""
+    n = unicodedata.normalize('NFD', (nome or '').lower())
+    n = ''.join(c for c in n if not unicodedata.combining(c))
+    return ' '.join(sorted(n.replace("'", ' ').split()))
 
 
 def compatta(p, gruppi, ant):
@@ -220,6 +230,39 @@ def main():
         dati['spread'] = json.load(open(SPREAD, encoding='utf-8'))
     # Le condanne: scritte a mano perche' verificate a mano, e attaccate solo a
     # persone che nell'elenco esistono davvero.
+    # Chi ha guidato i partiti. Wikidata queste cariche le tiene male: su
+    # 2.763 persone ne restituisce undici vere, nove delle quali di un solo
+    # partito. Quindi il file e' scritto a mano, e qui i nomi vengono
+    # riagganciati alle schede: chi una scheda non ce l'ha - perche' in
+    # Parlamento nel perimetro non c'e' mai stato - resta scritto senza
+    # collegamento, che e' il modo onesto di dire che di lui non sappiamo
+    # niente d'altro.
+    if os.path.exists(SEGRETARI):
+        sg = json.load(open(SEGRETARI, encoding='utf-8'))
+        per_nome = {}
+        for p in persone:
+            per_nome.setdefault(chiave_nome(p['n']), []).append(p['q'])
+        guide, agganciati, orfani = {}, 0, 0
+        for sigla, righe in sg.get('guide', {}).items():
+            fuori = []
+            for nome, ruolo, da, a in righe:
+                cand = per_nome.get(chiave_nome(nome), [])
+                q = cand[0] if len(cand) == 1 else ''
+                if q:
+                    agganciati += 1
+                else:
+                    orfani += 1
+                    fuori.append(nome)
+                guide.setdefault(sigla, []).append([nome, ruolo, da, a, q])
+            for nome in fuori:
+                print('  guida senza scheda (resta senza collegamento): %s, %s'
+                      % (nome, sigla))
+        if guide:
+            dati['segretari'] = {'guide': guide, 'fonti': sg.get('fonti', {})}
+            print('chi ha guidato i partiti: %d voci su %d partiti, '
+                  '%d con scheda, %d senza'
+                  % (agganciati + orfani, len(guide), agganciati, orfani))
+
     if os.path.exists(ELEZIONI):
         el = json.load(open(ELEZIONI, encoding='utf-8'))
         if el.get('politiche'):
