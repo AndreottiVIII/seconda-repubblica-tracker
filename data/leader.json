@@ -1,0 +1,517 @@
+{
+ "_nota": "Chi ha guidato i partiti: segretari, presidenti, coordinatori. Da Wikidata, che modella queste cariche dal lato della persona. Non sono atti parlamentari e nei registri di Camera e Senato non compaiono.",
+ "voci": [
+  {
+   "qid": "Q340239",
+   "ruolo": "segretario",
+   "partito": "Democratici di Sinistra",
+   "carica": "Segretario dei Democratici di Sinistra",
+   "da": "1991-02-08",
+   "a": "1994-06-14"
+  },
+  {
+   "qid": "Q695875",
+   "ruolo": "presidente",
+   "partito": "Friuli-Venezia Giulia",
+   "carica": "presidente del Friuli-Venezia Giulia",
+   "da": "2003-06-10",
+   "a": "2008-04-15"
+  },
+  {
+   "qid": "Q3851022",
+   "ruolo": "presidente",
+   "partito": "Friuli-Venezia Giulia",
+   "carica": "presidente del Friuli-Venezia Giulia",
+   "da": "2018-05-03",
+   "a": ""
+  },
+  {
+   "qid": "Q731150",
+   "ruolo": "presidente",
+   "partito": "Lazio",
+   "carica": "presidente del Lazio",
+   "da": "2000-04-17",
+   "a": "2005-02-17"
+  },
+  {
+   "qid": "Q3939954",
+   "ruolo": "presidente",
+   "partito": "Lazio",
+   "carica": "presidente del Lazio",
+   "da": "",
+   "a": ""
+  },
+  {
+   "qid": "Q3746774",
+   "ruolo": "presidente",
+   "partito": "Molise",
+   "carica": "presidente del Molise",
+   "da": "1975-01-01",
+   "a": "1982-01-01"
+  },
+  {
+   "qid": "Q3839583",
+   "ruolo": "presidente",
+   "partito": "Molise",
+   "carica": "presidente del Molise",
+   "da": "1992-08-03",
+   "a": "1993-12-22"
+  },
+  {
+   "qid": "Q1246852",
+   "ruolo": "presidente",
+   "partito": "Molise",
+   "carica": "presidente del Molise",
+   "da": "1998-02-09",
+   "a": "1999-01-28"
+  },
+  {
+   "qid": "Q3767139",
+   "ruolo": "presidente",
+   "partito": "Molise",
+   "carica": "presidente del Molise",
+   "da": "2000-04-17",
+   "a": "2001-11-12"
+  },
+  {
+   "qid": "Q1246852",
+   "ruolo": "presidente",
+   "partito": "Molise",
+   "carica": "presidente del Molise",
+   "da": "2001-11-12",
+   "a": "2013-03-16"
+  },
+  {
+   "qid": "Q319547",
+   "ruolo": "segretario",
+   "partito": "Partito Democratico",
+   "carica": "segretario del Partito Democratico",
+   "da": "2007-10-14",
+   "a": "2009-02-21"
+  },
+  {
+   "qid": "Q38484",
+   "ruolo": "presidente",
+   "partito": "Partito Democratico",
+   "carica": "presidente del Partito Democratico",
+   "da": "2007-10-14",
+   "a": "2008-04-16"
+  },
+  {
+   "qid": "Q388442",
+   "ruolo": "segretario",
+   "partito": "Partito Democratico",
+   "carica": "segretario del Partito Democratico",
+   "da": "2009-02-21",
+   "a": "2009-11-07"
+  },
+  {
+   "qid": "Q47556",
+   "ruolo": "segretario",
+   "partito": "Partito Democratico",
+   "carica": "segretario del Partito Democratico",
+   "da": "2009-11-07",
+   "a": "2013-04-20"
+  },
+  {
+   "qid": "Q466836",
+   "ruolo": "presidente",
+   "partito": "Partito Democratico",
+   "carica": "presidente del Partito Democratico",
+   "da": "2009-11-07",
+   "a": "2013-04-19"
+  },
+  {
+   "qid": "Q3763486",
+   "ruolo": "presidente",
+   "partito": "Partito Democratico",
+   "carica": "presidente del Partito Democratico",
+   "da": "2013-12-15",
+   "a": "2014-01-21"
+  },
+  {
+   "qid": "Q1071031",
+   "ruolo": "presidente",
+   "partito": "Partito Democratico",
+   "carica": "presidente del Partito Democratico",
+   "da": "2019-03-17",
+   "a": "2020-02-22"
+  },
+  {
+   "qid": "Q674957",
+   "ruolo": "segretario",
+   "partito": "Partito Democratico",
+   "carica": "segretario del Partito Democratico",
+   "da": "2021-03-14",
+   "a": "2023-03-12"
+  },
+  {
+   "qid": "Q3726542",
+   "ruolo": "presidente",
+   "partito": "Piemonte",
+   "carica": "presidente del Piemonte",
+   "da": "1995-06-12",
+   "a": "2005-04-27"
+  },
+  {
+   "qid": "Q762411",
+   "ruolo": "presidente",
+   "partito": "Piemonte",
+   "carica": "presidente del Piemonte",
+   "da": "2010-03-30",
+   "a": "2014-05-26"
+  },
+  {
+   "qid": "Q1054714",
+   "ruolo": "presidente",
+   "partito": "Piemonte",
+   "carica": "presidente del Piemonte",
+   "da": "2014-06-09",
+   "a": "2019-06-06"
+  },
+  {
+   "qid": "Q15966857",
+   "ruolo": "presidente",
+   "partito": "Trentino-Alto Adige",
+   "carica": "presidente del Trentino-Alto Adige",
+   "da": "1989-01-01",
+   "a": "1994-01-01"
+  },
+  {
+   "qid": "Q730966",
+   "ruolo": "presidente",
+   "partito": "Veneto",
+   "carica": "presidente del Veneto",
+   "da": "1995-05-26",
+   "a": "2010-04-13"
+  },
+  {
+   "qid": "Q508338",
+   "ruolo": "presidente",
+   "partito": "Veneto",
+   "carica": "presidente del Veneto",
+   "da": "2010-04-13",
+   "a": "2025-12-05"
+  },
+  {
+   "qid": "Q3939600",
+   "ruolo": "presidente",
+   "partito": "l'Abruzzo",
+   "carica": "presidente dell'Abruzzo",
+   "da": "1990-07-31",
+   "a": "1992-10-13"
+  },
+  {
+   "qid": "Q3767854",
+   "ruolo": "presidente",
+   "partito": "l'Abruzzo",
+   "carica": "presidente dell'Abruzzo",
+   "da": "2000-05-09",
+   "a": "2005-04-22"
+  },
+  {
+   "qid": "Q1535927",
+   "ruolo": "presidente",
+   "partito": "l'Abruzzo",
+   "carica": "presidente dell'Abruzzo",
+   "da": "2005-04-22",
+   "a": "2008-07-17"
+  },
+  {
+   "qid": "Q3846259",
+   "ruolo": "presidente",
+   "partito": "l'Abruzzo",
+   "carica": "presidente dell'Abruzzo",
+   "da": "2019-02-23",
+   "a": ""
+  },
+  {
+   "qid": "Q3765734",
+   "ruolo": "presidente",
+   "partito": "l'Accademia Nazionale dei Lincei",
+   "carica": "Presidente dell'Accademia Nazionale dei Lincei",
+   "da": "1990-04-17",
+   "a": "1994-07-25"
+  },
+  {
+   "qid": "Q47556",
+   "ruolo": "presidente",
+   "partito": "l'Emilia-Romagna",
+   "carica": "presidente dell'Emilia-Romagna",
+   "da": "1993-07-06",
+   "a": "1996-05-17"
+  },
+  {
+   "qid": "Q3838610",
+   "ruolo": "presidente",
+   "partito": "l'Emilia-Romagna",
+   "carica": "presidente dell'Emilia-Romagna",
+   "da": "",
+   "a": ""
+  },
+  {
+   "qid": "Q3745122",
+   "ruolo": "presidente",
+   "partito": "la Basilicata",
+   "carica": "presidente della Basilicata",
+   "da": "2000-05-08",
+   "a": "2005-05-06"
+  },
+  {
+   "qid": "Q3838657",
+   "ruolo": "presidente",
+   "partito": "la CRUI",
+   "carica": "presidente della CRUI",
+   "da": "1998-01-01",
+   "a": "2002-01-01"
+  },
+  {
+   "qid": "Q3941371",
+   "ruolo": "presidente",
+   "partito": "la Calabria",
+   "carica": "presidente della Calabria",
+   "da": "1987-12-30",
+   "a": "1991-11-07"
+  },
+  {
+   "qid": "Q1240927",
+   "ruolo": "presidente",
+   "partito": "la Calabria",
+   "carica": "presidente della Calabria",
+   "da": "2005-04-20",
+   "a": "2010-04-10"
+  },
+  {
+   "qid": "Q3848876",
+   "ruolo": "presidente",
+   "partito": "la Calabria",
+   "carica": "presidente della Calabria",
+   "da": "2014-12-09",
+   "a": "2020-02-15"
+  },
+  {
+   "qid": "Q3809798",
+   "ruolo": "presidente",
+   "partito": "la Calabria",
+   "carica": "presidente della Calabria",
+   "da": "2020-02-15",
+   "a": "2020-10-15"
+  },
+  {
+   "qid": "Q3939013",
+   "ruolo": "presidente",
+   "partito": "la Calabria",
+   "carica": "presidente della Calabria",
+   "da": "2021-10-29",
+   "a": ""
+  },
+  {
+   "qid": "Q1218549",
+   "ruolo": "presidente",
+   "partito": "la Campania",
+   "carica": "presidente della Campania",
+   "da": "2000-04-17",
+   "a": "2005-04-05"
+  },
+  {
+   "qid": "Q1218549",
+   "ruolo": "presidente",
+   "partito": "la Campania",
+   "carica": "presidente della Campania",
+   "da": "2005-05-04",
+   "a": "2010-03-30"
+  },
+  {
+   "qid": "Q687662",
+   "ruolo": "presidente",
+   "partito": "la Campania",
+   "carica": "presidente della Campania",
+   "da": "2010-04-17",
+   "a": "2015-06-18"
+  },
+  {
+   "qid": "Q4013216",
+   "ruolo": "presidente",
+   "partito": "la Campania",
+   "carica": "presidente della Campania",
+   "da": "2015-06-18",
+   "a": "2025-12-09"
+  },
+  {
+   "qid": "Q562097",
+   "ruolo": "segretario",
+   "partito": "la Lega Nord",
+   "carica": "Segretario Federale della Lega Nord",
+   "da": "2012-07-01",
+   "a": "2013-12-15"
+  },
+  {
+   "qid": "Q3948194",
+   "ruolo": "presidente",
+   "partito": "la Liguria",
+   "carica": "presidente della Liguria",
+   "da": "2000-05-12",
+   "a": "2005-04-14"
+  },
+  {
+   "qid": "Q546288",
+   "ruolo": "presidente",
+   "partito": "la Liguria",
+   "carica": "presidente della Liguria",
+   "da": "2005-04-14",
+   "a": "2015-06-11"
+  },
+  {
+   "qid": "Q1074619",
+   "ruolo": "presidente",
+   "partito": "la Lombardia",
+   "carica": "presidente della Lombardia",
+   "da": "1987-07-17",
+   "a": "1989-01-31"
+  },
+  {
+   "qid": "Q664465",
+   "ruolo": "presidente",
+   "partito": "la Lombardia",
+   "carica": "presidente della Lombardia",
+   "da": "1995-04-23",
+   "a": "2013-02-27"
+  },
+  {
+   "qid": "Q562097",
+   "ruolo": "presidente",
+   "partito": "la Lombardia",
+   "carica": "presidente della Lombardia",
+   "da": "2013-03-18",
+   "a": "2018-03-26"
+  },
+  {
+   "qid": "Q1060314",
+   "ruolo": "presidente",
+   "partito": "la Puglia",
+   "carica": "presidente della Puglia",
+   "da": "2000-04-16",
+   "a": "2005-04-04"
+  },
+  {
+   "qid": "Q507595",
+   "ruolo": "presidente",
+   "partito": "la Puglia",
+   "carica": "presidente della Puglia",
+   "da": "2005-04-05",
+   "a": "2015-07-02"
+  },
+  {
+   "qid": "Q3301763",
+   "ruolo": "presidente",
+   "partito": "la Sardegna",
+   "carica": "presidente della Sardegna",
+   "da": "",
+   "a": ""
+  },
+  {
+   "qid": "Q3618956",
+   "ruolo": "presidente",
+   "partito": "la Sardegna",
+   "carica": "presidente della Sardegna",
+   "da": "",
+   "a": ""
+  },
+  {
+   "qid": "Q3741850",
+   "ruolo": "presidente",
+   "partito": "la Sardegna",
+   "carica": "presidente della Sardegna",
+   "da": "",
+   "a": ""
+  },
+  {
+   "qid": "Q3554631",
+   "ruolo": "presidente",
+   "partito": "la Toscana",
+   "carica": "presidente della Toscana",
+   "da": "1992-01-11",
+   "a": "2000-05-18"
+  },
+  {
+   "qid": "Q432052",
+   "ruolo": "presidente",
+   "partito": "la Valle d'Aosta",
+   "carica": "presidente della Valle d'Aosta",
+   "da": "1970-05-15",
+   "a": "1974-11-15"
+  },
+  {
+   "qid": "Q1056548",
+   "ruolo": "presidente",
+   "partito": "la Valle d'Aosta",
+   "carica": "presidente della Valle d'Aosta",
+   "da": "1984-01-04",
+   "a": "1990-06-25"
+  },
+  {
+   "qid": "Q2939238",
+   "ruolo": "presidente",
+   "partito": "la Valle d'Aosta",
+   "carica": "presidente della Valle d'Aosta",
+   "da": "2003-07-08",
+   "a": "2005-07-04"
+  },
+  {
+   "qid": "Q684295",
+   "ruolo": "presidente",
+   "partito": "la Valle d'Aosta",
+   "carica": "presidente della Valle d'Aosta",
+   "da": "2005-07-04",
+   "a": "2008-06-30"
+  },
+  {
+   "qid": "Q1056548",
+   "ruolo": "presidente",
+   "partito": "la Valle d'Aosta",
+   "carica": "presidente della Valle d'Aosta",
+   "da": "2008-07-01",
+   "a": "2017-03-10"
+  },
+  {
+   "qid": "Q2857289",
+   "ruolo": "presidente",
+   "partito": "la Valle d'Aosta",
+   "carica": "presidente della Valle d'Aosta",
+   "da": "2018-12-10",
+   "a": "2019-12-16"
+  },
+  {
+   "qid": "Q3060476",
+   "ruolo": "presidente",
+   "partito": "l’Azione Cattolica Italiana",
+   "carica": "Presidente nazionale dell’Azione Cattolica Italiana",
+   "da": "1980-01-01",
+   "a": "1986-01-01"
+  },
+  {
+   "qid": "Q3929025",
+   "ruolo": "presidente",
+   "partito": "l’Azione Cattolica Italiana",
+   "carica": "Presidente nazionale dell’Azione Cattolica Italiana",
+   "da": "1986-01-01",
+   "a": "1992-01-01"
+  },
+  {
+   "qid": "Q1055449",
+   "ruolo": "leader",
+   "partito": "partito",
+   "carica": "leader di partito",
+   "da": "2012-06-02",
+   "a": "2015-11-21"
+  },
+  {
+   "qid": "Q2248530",
+   "ruolo": "segretario",
+   "partito": "partito",
+   "carica": "segretario di partito",
+   "da": "2019-01-27",
+   "a": ""
+  }
+ ]
+}

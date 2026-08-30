@@ -169,7 +169,8 @@ def compatta(p, gruppi, ant):
         d['in'] = {m: [[x['r'], x['o']] for x in v]
                    for m, v in p['incarichi'].items()}
     if p.get('mandato'):
-        d['md'] = p['mandato']
+        # 'md' e' gia' della morte dubbia: qui ci vuole un nome suo.
+        d['mn'] = p['mandato']
     if p.get('solo_registro'):
         d['r'] = 1
     if p.get('morte_dubbia'):

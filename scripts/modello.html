@@ -693,8 +693,6 @@ VISTE['persona'] = function(q){
     'Senato. Wikidata non collega questa persona alle legislature 1994-2013, ' +
     'quindi non &egrave; arrivata da l&igrave;: dove mancano la foto o la voce ' +
     'enciclopedica &egrave; per questo.</div>';
-  if (p.md) corpo += '<div class="avviso">Una fonte riporta una morte nel ' + esc(p.md[0]) +
-    ', con il solo anno e senza conferma dei registri: non &egrave; stata presa per buona.</div>';
 
   if (p['in']){
     const righe = [];
@@ -940,7 +938,7 @@ VISTE['lista'] = function(filtro){
     const FINI = {XII: '19960508', XIII: '20010529', XIV: '20060427',
                   XV: '20080428', XVI: '20130314'};
     gente = P.filter(p => {
-      const d = (p.md || {})[valore];
+      const d = (p.mn || {})[valore];
       if (!d) return false;
       return tipo === 'subentrati' ? (d[0] && d[0] > INIZI[valore])
                                    : (d[1] && d[1] < FINI[valore]);
@@ -1480,7 +1478,7 @@ VISTE['statistiche'] = function(){
   const contaMandati = (fn) => {
     const c = {};
     P.forEach(p => ORDINE.forEach(m => {
-      const d = (p.md || {})[m];
+      const d = (p.mn || {})[m];
       if (d && fn(m, d)) c[m] = (c[m] || 0) + 1;
     }));
     return c;
