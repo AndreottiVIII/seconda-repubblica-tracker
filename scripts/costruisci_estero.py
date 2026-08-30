@@ -87,7 +87,7 @@ EVENTI = [
   'momento in cui l’Italia si presenta come il luogo dove Occidente e '
   'Russia si parlano, e resta la fotografia più citata della politica '
   'estera di quegli anni.',
-  'Consiglio_NATO-Russia', 'Vladimir Putin 28 May 2002 Pratica di Mare',
+  'Consiglio_NATO-Russia', 'Berlusconi Bush Putin Pratica di Mare 2002',
   'Pratica di Mare, 28 maggio 2002'),
 
  ('2003-03-20', 'La guerra in Iraq',
@@ -128,7 +128,7 @@ EVENTI = [
   'Italia e Libia firmano a Bengasi il trattato di amicizia, partenariato e '
   'cooperazione: cinque miliardi di dollari in vent’anni come risarcimento '
   'per il periodo coloniale, in cambio di collaborazione sui flussi migratori.',
-  'Trattato_di_Bengasi', '',
+  'Trattato_di_Bengasi', 'Benghazi Libya',
   'Dalla voce sul trattato'),
 
  ('2008-09-15', 'Lehman Brothers',
@@ -193,6 +193,19 @@ SALTA = ('commons-logo', 'wikidata', 'disambig', 'question_book', 'edit-',
          'wiki', 'icon', 'symbol', 'blue_pencil', 'searchtool', 'star_')
 
 
+def cerca_foto(termine, quante=4):
+    """I primi risultati di Commons per un termine. Illustrano, non provano."""
+    if not termine:
+        return []
+    u = 'https://commons.wikimedia.org/w/api.php?' + urllib.parse.urlencode({
+        'action': 'query', 'list': 'search',
+        'srsearch': termine + ' filetype:bitmap', 'srnamespace': 6,
+        'srlimit': quante, 'format': 'json'})
+    r = urllib.request.Request(u, headers={'User-Agent': UA})
+    d = json.load(urllib.request.urlopen(r, timeout=60))
+    return [x['title'][5:] for x in d.get('query', {}).get('search', [])]
+
+
 def foto_della_voce(titolo):
     """I file usati dalla voce di Wikipedia, nell'ordine in cui compaiono.
 
@@ -233,7 +246,7 @@ def main():
     for data, titolo, testo, voce, cerca, didascalia in EVENTI:
         foto = None
         try:
-            for candidato in foto_della_voce(voce):
+            for candidato in cerca_foto(cerca) + foto_della_voce(voce):
                 if scarica_prova(candidato):
                     foto = candidato
                     break
@@ -242,8 +255,7 @@ def main():
         print('   %-28s %s' % (titolo[:28], foto[:54] if foto else '(senza foto)'))
         eventi.append({'data': data, 'titolo': titolo, 'testo': testo,
                        'fonte': W + voce, 'foto': foto,
-                       'didascalia': ('Immagine della voce «%s»'
-                                      % voce.replace('_', ' ')) if foto else ''})
+                       'didascalia': ''})
         time.sleep(0.3)
 
     nota = (

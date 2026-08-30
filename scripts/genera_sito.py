@@ -20,6 +20,7 @@ SPREAD = os.path.join(QUI, '..', 'data', 'spread.json')
 CONDANNE = os.path.join(QUI, '..', 'data', 'condanne.json')
 VOTO_RUBY = os.path.join(QUI, '..', 'data', 'voto_ruby.json')
 ESTERO = os.path.join(QUI, '..', 'data', 'estero.json')
+ELEZIONI = os.path.join(QUI, '..', 'data', 'elezioni.json')
 USCITA = os.path.join(QUI, '..', 'sito')
 
 TITOLO = 'Seconda Repubblica Tracker'
@@ -213,6 +214,14 @@ def main():
         dati['spread'] = json.load(open(SPREAD, encoding='utf-8'))
     # Le condanne: scritte a mano perche' verificate a mano, e attaccate solo a
     # persone che nell'elenco esistono davvero.
+    if os.path.exists(ELEZIONI):
+        el = json.load(open(ELEZIONI, encoding='utf-8'))
+        if el.get('politiche'):
+            dati['elezioni'] = {'politiche': el['politiche'],
+                                'referendum': el.get('referendum', [])}
+            print('elezioni: %d politiche, %d referendum'
+                  % (len(el['politiche']), len(el.get('referendum', []))))
+
     if os.path.exists(ESTERO):
         e = json.load(open(ESTERO, encoding='utf-8'))
         if e.get('eventi'):

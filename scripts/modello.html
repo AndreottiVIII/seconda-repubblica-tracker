@@ -922,6 +922,10 @@ VISTE['lista'] = function(filtro){
     if (valore === 'vivi') gente = gente.filter(p => p.s === 1);
     titolo = valore === 'vivi' ? 'Forza Italia e PdL, ancora vivi'
                                : 'Passati per Forza Italia o il PdL';
+  } else if (tipo === 'quante'){
+    gente = P.filter(p => p.m.length === +valore);
+    titolo = valore === '0' ? 'Mai in Parlamento'
+      : (valore === '1' ? 'Una legislatura sola' : valore + ' legislature');
   } else if (tipo === 'estero'){
     gente = P.filter(p => p.es);
     titolo = 'Eletti nella circoscrizione Estero';
@@ -1392,7 +1396,8 @@ VISTE['statistiche'] = function(){
   P.forEach(p => { perQuante[p.m.length] = (perQuante[p.m.length] || 0) + 1; });
   h += '<h2 style="margin-top:14px">Quante legislature a testa</h2>' +
     tabellaConBarre(Object.keys(perQuante).sort().map(k =>
-      [k + (k === '1' ? ' legislatura' : ' legislature'), perQuante[k], '#000080']));
+      [k + (k === '1' ? ' legislatura' : ' legislature'), perQuante[k], '#000080', k]),
+      r => ['lista', 'quante:' + r[3]]);
 
   // --- i cambi
   const perCambi = {};
@@ -2405,6 +2410,86 @@ VISTE['poltrone'] = function(){
           stato: testa.length + ' in testa', stato2: traversi.length + ' da una parte e dall\u2019altra'};
 };
 
+/* ---------------------------------------------------------------------------
+   Elezioni e referendum. Date e affluenze vengono dalle voci di Wikipedia; il
+   governo formatosi dopo ogni elezione viene invece dai dati di questo sito,
+   ed e' cliccabile come tutto il resto.
+
+   La cosa che si vede da sola, guardando le due tabelle una sotto l'altra: le
+   politiche partono dall'86% e scendono al 75%, i referendum abrogativi
+   raggiungono il quorum due volte su sette.
+   --------------------------------------------------------------------------- */
+VISTE['elezioni'] = function(){
+  const E = DATI.elezioni;
+  if (!E || !E.politiche) throw new Error('Manca data/elezioni.json.');
+
+  let h = '<h1>Elezioni</h1>';
+
+  h += '<h2>Le politiche</h2>' +
+    '<table><thead><tr><th>Quando</th><th>Legisl.</th>' +
+    '<th class="num">Affluenza</th><th>Legge</th><th>Il governo dopo</th>' +
+    '</tr></thead><tbody>' +
+    E.politiche.map(e => {
+      const nostra = ORDINE.indexOf(e.leg) >= 0;
+      const gente = nostra ? P.filter(p => p.m.indexOf(e.leg) >= 0).length : 0;
+      return '<tr><td><a target="_blank" rel="noopener" href="' + esc(e.fonte) +
+        '">' + esc(e.etichetta) + '</a></td>' +
+        '<td>' + (nostra
+          ? '<span class="clic" data-apri="lista" data-arg="mandato:' + e.leg +
+            '">' + e.leg + '</span> <span style="color:#606060">(' + gente + ')</span>'
+          : e.leg + ' <span style="color:#606060">fuori perimetro</span>') + '</td>' +
+        '<td class="num">' + String(e.affluenza).replace('.', ',') + '%</td>' +
+        '<td style="font-size:11px">' + esc(e.legge) + '</td>' +
+        '<td>' + (e.dopo
+          ? '<span class="clic" data-apri="lista" data-arg="governo:' + e.dopo +
+            '">' + esc(e.dopo) + '</span> <span style="color:#606060;' +
+            'font-size:11px">' + esc(e.durata) + '</span>'
+          : '<span style="color:#606060">&mdash;</span>') + '</td></tr>';
+    }).join('') + '</tbody></table>';
+
+  const massimaA = Math.max.apply(null, E.politiche.map(x => x.affluenza));
+  h += '<h3 style="margin-top:10px">L&rsquo;affluenza, elezione per elezione</h3>' +
+    tabellaConBarre(E.politiche.map(e =>
+      [e.data.slice(0, 4), e.affluenza, '#000080', null,
+       String(e.affluenza).replace('.', ',') + '%']));
+  h += '<p style="color:#404040;font-size:11px">Dall&rsquo;86,07% del 1994 al ' +
+    '75,19% del 2013: quasi undici punti in diciannove anni.</p>';
+
+  const R = E.referendum || [];
+  const abrogativi = R.filter(r => r.tipo === 'abrogativo');
+  const conQuorum = abrogativi.filter(r => r.quorum).length;
+  h += '<h2 style="margin-top:16px">I referendum</h2>' +
+    '<p>Nel perimetro se ne sono tenuti <b>' + R.length + '</b>: ' +
+    abrogativi.length + ' abrogativi e ' + (R.length - abrogativi.length) +
+    ' costituzionali. Degli abrogativi, <b>' + conQuorum + '</b> hanno ' +
+    'raggiunto il quorum. Nei costituzionali il quorum non esiste.</p>' +
+    '<table><thead><tr><th>Quando</th><th>Tipo</th><th>Oggetto</th>' +
+    '<th class="num">Affluenza</th><th>Esito</th></tr></thead><tbody>' +
+    R.map(r => {
+      const colore = r.quorum === true ? '#006400'
+                   : (r.quorum === false ? '#8b0000' : '#000080');
+      return '<tr><td style="white-space:nowrap"><a target="_blank" ' +
+        'rel="noopener" href="' + esc(r.fonte) + '">' + esc(r.etichetta) + '</a></td>' +
+        '<td>' + esc(r.tipo) + (r.quesiti > 1
+          ? ' <span style="color:#606060">' + r.quesiti + ' quesiti</span>' : '') +
+        '</td><td style="font-size:11px">' + esc(r.oggetto) + '</td>' +
+        '<td class="num" style="color:' + colore + '"><b>' +
+        String(r.affluenza).replace('.', ',') + '%</b></td>' +
+        '<td style="font-size:11px">' + esc(r.esito) + '</td></tr>';
+    }).join('') + '</tbody></table>' +
+    tabellaConBarre(R.map(r => [r.data.slice(0, 4), r.affluenza,
+      r.quorum === true ? '#006400' : (r.quorum === false ? '#8b0000' : '#000080'),
+      null, String(r.affluenza).replace('.', ',') + '%']));
+  h += '<p style="color:#404040;font-size:11px">In verde i referendum in cui il ' +
+    'quorum del 50% &egrave; stato raggiunto, in rosso quelli in cui non lo ' +
+    'e&rsquo; stato, in blu i costituzionali, che il quorum non lo prevedono.</p>';
+
+  return {titolo: 'Elezioni', icona: '&#128203;', html: h, faccia: true,
+          larghezza: 700, altezza: 560,
+          stato: E.politiche.length + ' politiche',
+          stato2: R.length + ' referendum'};
+};
+
 VISTE['metodo'] = function(){
   const h =
     '<h1>Come &egrave; fatto</h1>' +
@@ -2486,6 +2571,7 @@ const SCRIVANIA = [
   ['&#127941;', 'Hall of fame', 'famosi', '', 'sx'],
   ['&#128188;', 'Le poltrone', 'poltrone', '', 'sx'],
   ['&#9937;', 'I Responsabili', 'responsabili', '', 'sx'],
+  ['&#128203;', 'Elezioni', 'elezioni', '', 'sx'],
   ['&#127963;', 'Governi', 'governi', '', 'sx'],
   ['&#128721;', 'Le cadute', 'cadute', '', 'sx'],
   ['&#128198;', 'Linea del tempo', 'tempo', '', 'sx'],
@@ -2493,7 +2579,6 @@ const SCRIVANIA = [
   ['&#127757;', 'Fuori dall\u2019Italia', 'estero', '', 'sx'],
   ['&#9792;', 'Le donne', 'donne', '', 'dx'],
   ['&#128081;', 'Il Cavaliere', 'cavaliere', '', 'dx'],
-  ['&#128203;', 'Il voto su Ruby', 'mubarak', '', 'dx'],
   ['&#9878;', 'Confronta', 'confronta', '', 'dx'],
   ['&#9654;', 'Esegui...', 'esegui', '', 'dx'],
   ['&#128200;', 'Spread', 'spread', '', 'dx'],
