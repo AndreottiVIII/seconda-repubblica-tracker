@@ -2036,7 +2036,11 @@ VISTE['cavaliere'] = function(){
   const ministri = P.filter(p => (p.gv || []).some(g => g.indexOf('Berlusconi') === 0));
   const maiEletti = ministri.filter(p => p.x).length;
 
-  let h = '<h1>Il Cavaliere</h1>';
+  let h = '<h1>Il Cavaliere</h1>' +
+    (DATI.voto_ruby ? '<p style="margin-bottom:10px">Il voto del Senato del ' +
+      '14 settembre 2011 sul caso Ruby, coi nomi di chi ha votato che cosa: ' +
+      '<span class="clic" data-apri="mubarak">La nipote di Mubarak</span>.</p>'
+     : '');
 
   // --- 1. i giorni
   h += '<h2>Quanto ha governato</h2>' +
@@ -2489,6 +2493,7 @@ const SCRIVANIA = [
   ['&#127757;', 'Fuori dall\u2019Italia', 'estero', '', 'sx'],
   ['&#9792;', 'Le donne', 'donne', '', 'dx'],
   ['&#128081;', 'Il Cavaliere', 'cavaliere', '', 'dx'],
+  ['&#128203;', 'Il voto su Ruby', 'mubarak', '', 'dx'],
   ['&#9878;', 'Confronta', 'confronta', '', 'dx'],
   ['&#9654;', 'Esegui...', 'esegui', '', 'dx'],
   ['&#128200;', 'Spread', 'spread', '', 'dx'],

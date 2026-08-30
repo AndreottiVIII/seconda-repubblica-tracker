@@ -1,5 +1,5 @@
 {
- "_nota": "Condanne penali passate in giudicato, lette una per una sulle voci di Wikipedia in italiano fra il 29 e il 30 agosto 2026. I candidati sono stati cercati incrociando le categorie dei deputati e dei senatori delle cinque legislature con le formule che indicano una sentenza definitiva, e poi verificati a mano. Sono state scartate: le condanne non definitive; quelle di persone diverse citate nella stessa voce; le assoluzioni confermate in via definitiva; le condanne della Corte dei conti, che non sono penali; e i casi in cui la voce afferma che esiste una condanna definitiva ma non dice per quale reato. Il patteggiamento e' equiparato per legge a una condanna e viene indicato come tale.",
+ "_nota": "Condanne penali passate in giudicato, lette una per una sulle voci di Wikipedia in italiano. Sono escluse le condanne non definitive, quelle di persone diverse citate nella stessa voce, le assoluzioni, le condanne della Corte dei conti che non sono penali, e i casi in cui la voce non dice per quale reato. Il patteggiamento e' equiparato per legge a una condanna e viene indicato come tale.",
  "voci": [
   {
    "qid": "Q3608104",
@@ -268,7 +268,7 @@
    "anno": 2014,
    "grado": "definitiva",
    "pena": "7 anni di reclusione",
-   "dettaglio": "Cassazione, 9 maggio 2014. Wikidata attribuiva questa condanna al 1994.",
+   "dettaglio": "Cassazione, 9 maggio 2014.",
    "fonte": "https://it.wikipedia.org/wiki/Marcello_Dell%27Utri"
   },
   {
@@ -286,7 +286,7 @@
    "anno": 2013,
    "grado": "definitiva",
    "pena": "4 anni di reclusione e 2 anni di interdizione dai pubblici uffici",
-   "dettaglio": "E' l'unica condanna definitiva che la voce gli attribuisce, su oltre trenta procedimenti. Wikidata ne dichiarava sei.",
+   "dettaglio": "E' l'unica condanna definitiva che la voce gli attribuisce, su oltre trenta procedimenti.",
    "fonte": "https://it.wikipedia.org/wiki/Silvio_Berlusconi"
   },
   {

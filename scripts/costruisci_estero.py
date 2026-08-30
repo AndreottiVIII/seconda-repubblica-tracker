@@ -5,10 +5,12 @@ E' l'unica parte del sito che non viene dai registri parlamentari. Sono
 avvenimenti scelti a mano, ognuno con la data e la voce di Wikipedia che lo
 racconta, e dove esiste un'immagine libera anche una fotografia.
 
-Le fotografie non si scrivono a mano: si cercano su Wikimedia Commons e poi si
-SCARICANO per verificare che esistano davvero. Un nome di file sbagliato non
-produce un errore, produce un riquadro vuoto nella pagina, ed e' il tipo di
-guasto che nessuno nota finche' non lo vede un lettore.
+Le fotografie si prendono DALLA VOCE dell'evento, non da una ricerca per
+parole. La differenza non e' un dettaglio: cercando "Muammar Gaddafi" su
+Commons e' tornata la foto di un politico indonesiano, che e' finita sul sito
+sotto la didascalia "Muammar Gheddafi". Verificare che un'immagine esista non
+dice niente su chi ci sia dentro; prenderla dalla voce che parla di quel
+fatto lo dice, perche' quella l'hanno scelta delle persone per quel fatto.
 """
 import sys, os, json, time, urllib.request, urllib.parse
 
@@ -113,7 +115,7 @@ EVENTI = [
   'A Baghdad il funzionario del SISMI Nicola Calipari viene ucciso da militari '
   'statunitensi mentre riporta all’aeroporto la giornalista Giuliana '
   'Sgrena, appena liberata. Il caso apre una frattura diplomatica fra Roma e '
-  'Washington.', 'Nicola_Calipari', 'Giuliana Sgrena', 'Giuliana Sgrena, liberata quel giorno'),
+  'Washington.', 'Nicola_Calipari', '', 'Dalla voce su Nicola Calipari'),
 
  ('2006-08-11', 'Il Libano',
   'Il Consiglio di sicurezza approva la risoluzione 1701 e l’Italia manda '
@@ -126,8 +128,8 @@ EVENTI = [
   'Italia e Libia firmano a Bengasi il trattato di amicizia, partenariato e '
   'cooperazione: cinque miliardi di dollari in vent’anni come risarcimento '
   'per il periodo coloniale, in cambio di collaborazione sui flussi migratori.',
-  'Trattato_di_Bengasi', 'Muammar Gaddafi portrait',
-  'Muammar Gheddafi'),
+  'Trattato_di_Bengasi', '',
+  'Dalla voce sul trattato'),
 
  ('2008-09-15', 'Lehman Brothers',
   'Il fallimento della banca d’affari apre la crisi finanziaria mondiale. '
@@ -170,6 +172,13 @@ EVENTI = [
   'occuperà la diplomazia italiana per anni.',
   'Caso_Enrica_Lexie', 'Enrica Lexie', 'La petroliera Enrica Lexie'),
 
+ ('2011-11-16', 'Lo spread e il governo Monti',
+  'Il differenziale fra i titoli di Stato italiani e quelli tedeschi tocca i '
+  '519 punti base di media mensile a novembre. Il 12 Berlusconi si dimette, '
+  'il 16 giura Mario Monti con un governo di soli tecnici. Per la prima volta '
+  'dal 1994 il presidente del Consiglio non ha un seggio in Parlamento.',
+  'Governo_Monti', '', ''),
+
  ('2012-03-02', 'Il fiscal compact',
   'Venticinque paesi firmano il trattato sulla stabilità nell’unione '
   'economica e monetaria. L’Italia lo firma col governo Monti, e da '
@@ -179,14 +188,32 @@ EVENTI = [
 ]
 
 
-def cerca_foto(termine, quante=5):
-    u = 'https://commons.wikimedia.org/w/api.php?' + urllib.parse.urlencode({
-        'action': 'query', 'list': 'search',
-        'srsearch': termine + ' filetype:bitmap', 'srnamespace': 6,
-        'srlimit': quante, 'format': 'json'})
-    r = urllib.request.Request(u, headers={'User-Agent': UA})
+SALTA = ('commons-logo', 'wikidata', 'disambig', 'question_book', 'edit-',
+         'flag_of', 'bandiera', 'ambox', 'crystal', 'nuvola', 'stub',
+         'wiki', 'icon', 'symbol', 'blue_pencil', 'searchtool', 'star_')
+
+
+def foto_della_voce(titolo):
+    """I file usati dalla voce di Wikipedia, nell'ordine in cui compaiono.
+
+    Sono immagini che qualcuno ha scelto per quel fatto: e' una garanzia
+    debole sul soggetto, ma incomparabilmente piu' forte di una ricerca per
+    parole chiave. Si scartano loghi, bandiere e iconcine di servizio.
+    """
+    url = 'https://it.wikipedia.org/w/api.php?' + urllib.parse.urlencode({
+        'action': 'parse', 'page': titolo, 'prop': 'images',
+        'format': 'json', 'redirects': 1})
+    r = urllib.request.Request(url, headers={'User-Agent': UA})
     d = json.load(urllib.request.urlopen(r, timeout=60))
-    return [x['title'][5:] for x in d.get('query', {}).get('search', [])]
+    fuori = []
+    for nome in d.get('parse', {}).get('images', []):
+        basso = nome.lower()
+        if not basso.endswith(('.jpg', '.jpeg', '.png')):
+            continue
+        if any(x in basso for x in SALTA):
+            continue
+        fuori.append(nome)
+    return fuori
 
 
 def scarica_prova(nome):
@@ -206,16 +233,17 @@ def main():
     for data, titolo, testo, voce, cerca, didascalia in EVENTI:
         foto = None
         try:
-            for candidato in cerca_foto(cerca):
+            for candidato in foto_della_voce(voce):
                 if scarica_prova(candidato):
                     foto = candidato
                     break
         except Exception as e:
-            print('  ricerca fallita per %s: %s' % (titolo, str(e)[:50]))
-        print('   %-28s %s' % (titolo[:28], foto[:52] if foto else '(senza foto)'))
+            print('  voce non letta per %s: %s' % (titolo, str(e)[:50]))
+        print('   %-28s %s' % (titolo[:28], foto[:54] if foto else '(senza foto)'))
         eventi.append({'data': data, 'titolo': titolo, 'testo': testo,
                        'fonte': W + voce, 'foto': foto,
-                       'didascalia': didascalia if foto else ''})
+                       'didascalia': ('Immagine della voce «%s»'
+                                      % voce.replace('_', ' ')) if foto else ''})
         time.sleep(0.3)
 
     nota = (
