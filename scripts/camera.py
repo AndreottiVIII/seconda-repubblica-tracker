@@ -214,6 +214,76 @@ def circoscrizioni(codice):
     return fuori
 
 
+# Gli incarichi interni: presidenze e vicepresidenze di commissione, ufficio
+# di presidenza, questori, segretari, capigruppo in commissione. Sono la
+# seconda dimensione del potere parlamentare, accanto ai ministeri, e la
+# Camera li pubblica tutti. Il Senato no: il suo osr:carica raccoglie le
+# cariche extraparlamentari (consigliere comunale, presidente di associazioni),
+# che sono un'altra cosa.
+#
+# L'etichetta ha sempre la forma "RUOLO di ORGANO, NOME (dal-al)".
+Q_INCARICHI = """
+PREFIX ocd: <http://dati.camera.it/ocd/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT DISTINCT ?dep ?u WHERE {
+  ?dep a ocd:deputato ;
+       ocd:rif_leg <http://dati.camera.it/ocd/legislatura.rdf/%s> ;
+       ocd:rif_ufficioParlamentare ?uf .
+  ?uf rdfs:label ?u .
+}
+"""
+
+RUOLO = re.compile(r'^([A-ZÀ-Ù\' ]+?)\s+di\s+(.+?),\s*[A-ZÀ-Ù]', re.U)
+
+
+def spezza_incarico(etichetta):
+    """'PRESIDENTE di VI COMMISSIONE (FINANZE), TIZIO (01.01.2000-...)'
+    -> ('PRESIDENTE', 'VI COMMISSIONE (FINANZE)')."""
+    m = RUOLO.match((etichetta or '').strip())
+    if not m:
+        return None, None
+    return m.group(1).strip(), re.sub(r'\s+', ' ', m.group(2)).strip()
+
+
+def incarichi(codice):
+    """{identificativo persona: [(ruolo, organo)]} per una legislatura."""
+    fuori = {}
+    for r in interroga(Q_INCARICHI % codice):
+        pid = id_persona(r['dep']['value'])
+        ruolo, organo = spezza_incarico(r['u']['value'])
+        if not pid or not ruolo:
+            continue
+        fuori.setdefault(pid, set()).add((ruolo, organo))
+    return {k: sorted(v) for k, v in fuori.items()}
+
+
+# Il primo giorno di ogni legislatura entra l'ondata dei proclamati; dopo si
+# entra uno alla volta, al posto di chi se ne va. Per distinguere gli uni
+# dagli altri serve la data del PRIMO mandato di ciascuno: una persona puo'
+# avere piu' record di mandato, e guardarne uno qualsiasi fa contare come
+# subentrati anche quelli che c'erano dal principio.
+Q_MANDATI = """
+PREFIX ocd: <http://dati.camera.it/ocd/>
+SELECT ?dep (MIN(?da) AS ?inizio) (MAX(?a) AS ?fine) WHERE {
+  ?dep a ocd:deputato ;
+       ocd:rif_leg <http://dati.camera.it/ocd/legislatura.rdf/%s> ;
+       ocd:rif_mandatoCamera ?m .
+  ?m ocd:startDate ?da . OPTIONAL { ?m ocd:endDate ?a }
+} GROUP BY ?dep
+"""
+
+
+def mandati(codice):
+    """{identificativo persona: (primo giorno, ultimo giorno)}."""
+    fuori = {}
+    for r in interroga(Q_MANDATI % codice):
+        pid = id_persona(r['dep']['value'])
+        if pid:
+            fuori[pid] = ((r.get('inizio', {}).get('value') or '')[:8],
+                          (r.get('fine', {}).get('value') or '')[:8])
+    return fuori
+
+
 Q_PRESIDENTI = """
 PREFIX ocd: <http://dati.camera.it/ocd/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -321,6 +391,16 @@ def _costruisci():
         except Exception as e:
             sys.stderr.write('  circoscrizioni %s: %s\n' % (mandato, str(e)[:60]))
             circ = {}
+        try:
+            inc = incarichi(codice)
+        except Exception as e:
+            sys.stderr.write('  incarichi %s: %s\n' % (mandato, str(e)[:60]))
+            inc = {}
+        try:
+            date = mandati(codice)
+        except Exception as e:
+            sys.stderr.write('  mandati %s: %s\n' % (mandato, str(e)[:60]))
+            date = {}
 
         # Qui, al contrario della prima Repubblica, i gruppi si tengono
         # TUTTI: la successione datata delle adesioni e' il dato per cui
@@ -360,6 +440,10 @@ def _costruisci():
             voce['cognome'] = (r.get('cognome', {}).get('value') or '').strip().title()
             if pid in circ:
                 voce['circoscrizione'] = circ[pid]
+            if pid in inc:
+                voce['incarichi'] = [{'r': r, 'o': o} for r, o in inc[pid]]
+            if pid in date:
+                voce['dal'], voce['al'] = date[pid]
             g = (r.get('genere', {}).get('value') or '').strip().lower()
             if g:
                 voce['genere'] = 'F' if g.startswith('f') else 'M'

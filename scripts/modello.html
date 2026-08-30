@@ -696,6 +696,18 @@ VISTE['persona'] = function(q){
   if (p.md) corpo += '<div class="avviso">Una fonte riporta una morte nel ' + esc(p.md[0]) +
     ', con il solo anno e senza conferma dei registri: non &egrave; stata presa per buona.</div>';
 
+  if (p['in']){
+    const righe = [];
+    ORDINE.forEach(m => (p['in'][m] || []).forEach(x => righe.push([m, x[0], x[1]])));
+    if (righe.length)
+      corpo += '<h2 style="margin-top:12px">Incarichi parlamentari</h2>' +
+        '<table><thead><tr><th>Legisl.</th><th>Ruolo</th><th>Organo</th>' +
+        '</tr></thead><tbody>' + righe.map(r =>
+          '<tr><td>' + r[0] + '</td><td>' + esc(r[1].toLowerCase()) + '</td>' +
+          '<td style="font-size:11px">' + esc(r[2]) + '</td></tr>').join('') +
+        '</tbody></table>';
+  }
+
   if (p.ds && p.ds.length){
     corpo += '<h2 style="margin-top:12px">Distintivi</h2>' + p.ds.map(d =>
       '<div class="riquadro" style="margin-bottom:6px">' +
@@ -922,6 +934,19 @@ VISTE['lista'] = function(filtro){
     if (valore === 'vivi') gente = gente.filter(p => p.s === 1);
     titolo = valore === 'vivi' ? 'Forza Italia e PdL, ancora vivi'
                                : 'Passati per Forza Italia o il PdL';
+  } else if (tipo === 'subentrati' || tipo === 'usciti'){
+    const INIZI = {XII: '19940415', XIII: '19960509', XIV: '20010530',
+                   XV: '20060428', XVI: '20080429'};
+    const FINI = {XII: '19960508', XIII: '20010529', XIV: '20060427',
+                  XV: '20080428', XVI: '20130314'};
+    gente = P.filter(p => {
+      const d = (p.md || {})[valore];
+      if (!d) return false;
+      return tipo === 'subentrati' ? (d[0] && d[0] > INIZI[valore])
+                                   : (d[1] && d[1] < FINI[valore]);
+    });
+    titolo = (tipo === 'subentrati' ? 'Subentrati nella ' : 'Usciti prima della fine, ')
+             + valore + (tipo === 'subentrati' ? ' legislatura' : '');
   } else if (tipo === 'quante'){
     gente = P.filter(p => p.m.length === +valore);
     titolo = valore === '0' ? 'Mai in Parlamento'
@@ -1443,6 +1468,40 @@ VISTE['statistiche'] = function(){
     '<span class="clic" data-apri="persona" data-arg="' + p.q + '">' +
     esc(p.n) + '</span> (' + p.c + ')').join(', ') + '.</p>';
 
+
+  // --- chi non c'era all'inizio e chi non c'era alla fine
+  const INIZI = {XII: '19940415', XIII: '19960509', XIV: '20010530',
+                 XV: '20060428', XVI: '20080429'};
+  const FINI = {XII: '19960508', XIII: '20010529', XIV: '20060427',
+                XV: '20080428', XVI: '20130314'};
+  // 'conta' esiste gia' in questa funzione, per la hall of fame: un secondo
+  // const con lo stesso nome non e' un errore a runtime, e' un errore di
+  // sintassi, e spegne l'intera pagina.
+  const contaMandati = (fn) => {
+    const c = {};
+    P.forEach(p => ORDINE.forEach(m => {
+      const d = (p.md || {})[m];
+      if (d && fn(m, d)) c[m] = (c[m] || 0) + 1;
+    }));
+    return c;
+  };
+  const entrati = contaMandati((m, d) => d[0] && d[0] > INIZI[m]);
+  const usciti = contaMandati((m, d) => d[1] && d[1] < FINI[m]);
+  const totE = ORDINE.reduce((a, m) => a + (entrati[m] || 0), 0);
+  const totU = ORDINE.reduce((a, m) => a + (usciti[m] || 0), 0);
+  h += '<h2 style="margin-top:14px">Chi arriva dopo e chi se ne va prima</h2>' +
+    '<p>Un seggio non dura sempre quanto la legislatura. <b>' + totE +
+    '</b> mandati cominciano a legislatura gi&agrave; aperta, <b>' + totU +
+    '</b> finiscono prima dell&rsquo;ultimo giorno: dimissioni, incompatibilit&agrave;, ' +
+    'decessi.</p>' +
+    '<table><thead><tr><th>Legislatura</th><th class="num">Subentrati</th>' +
+    '<th class="num">Usciti prima</th></tr></thead><tbody>' +
+    ORDINE.map(m => '<tr><td>' + m + ' <span style="color:#606060">' +
+      (LEG.find(l => l.n === m) || {}).anni + '</span></td>' +
+      '<td class="num">' + numero(entrati[m] || 0, 'lista', 'subentrati:' + m) +
+      '</td><td class="num">' + numero(usciti[m] || 0, 'lista', 'usciti:' + m) +
+      '</td></tr>').join('') + '</tbody></table>';
+
   // --- partiti estinti
   const estinti = Object.keys(PARTITI).map(c => {
     const a = annidiPartito(c);
@@ -1541,7 +1600,7 @@ VISTE['spread'] = function(){
     'la relazione fra il differenziale e la caduta del governo &egrave; una ' +
     'lettura, non un dato, e questo sito non la fa al posto vostro.</p>';
 
-  return {titolo: 'Termina applicazione', icona: '&#128200;', html: h,
+  return {titolo: 'Spread', icona: '&#128200;', html: h,
           faccia: true, larghezza: 600, altezza: 540,
           stato: 'massimo ' + picco.s + ' punti base',
           stato2: meseIt(picco.m)};
@@ -1971,10 +2030,10 @@ VISTE['cadute'] = function(){
       (c.registro ? '<tr><td><b>Nel registro della Camera</b></td><td>' +
         esc(c.registro) + '</td></tr>' : '') +
       '</tbody></table>' +
-      (c.finestra ? '<div style="margin-top:8px"><b>Chi ha cambiato gruppo in ' +
-        'quelle settimane</b>' +
-        tabellaMovimenti(movimentiFra(c.finestra[0], c.finestra[1], c.finestra[2])) +
-        '</div>' : '') +
+      (c.finestra ? '<div style="margin-top:6px">' +
+        numero(movimentiFra(c.finestra[0], c.finestra[1], c.finestra[2]).length,
+               'movimenti', c.g) +
+        ' cambi di gruppo in quelle settimane</div>' : '') +
       '<div class="piede" style="margin-top:4px;padding-top:4px">' +
       '<a target="_blank" rel="noopener" href="' + esc(c.fonte) + '">' +
       'Fonte: la voce del governo su Wikipedia</a>' +
@@ -2387,6 +2446,32 @@ VISTE['poltrone'] = function(){
       p.k.length + '</td><td style="font-size:11px">' +
       esc(p.k.join('; ')) + '</td></tr>').join('') + '</tbody></table>';
 
+
+  const conIncarichi = P.filter(p => p['in']);
+  const quanti = p => {
+    let n = 0;
+    Object.keys(p['in'] || {}).forEach(m => { n += p['in'][m].length; });
+    return n;
+  };
+  const perIncarichi = conIncarichi.slice().sort(
+    (a, b) => quanti(b) - quanti(a) || perCognome(a, b));
+  const capiI = senzaTagliare(perIncarichi, 12, quanti);
+  h += '<h2 style="margin-top:14px">Pi&ugrave; incarichi parlamentari</h2>' +
+    '<p>Presidenze e vicepresidenze di commissione, ufficio di presidenza, ' +
+    'questori, segretari, capigruppo in commissione: <b>' + conIncarichi.length +
+    '</b> persone ne hanno avuto almeno uno.</p>' +
+    '<table><tbody>' + capiI.map(p => {
+      const elenco = [];
+      ORDINE.forEach(m => (p['in'][m] || []).forEach(x => elenco.push(x[1])));
+      return '<tr class="riga" data-q="' + p.q + '"><td style="width:26%">' +
+        esc(perElenco(p)) + '</td><td class="num" style="width:8%">' +
+        quanti(p) + '</td><td style="font-size:11px">' +
+        esc([...new Set(elenco)].slice(0, 4).join('; ')) + '</td></tr>';
+    }).join('') + '</tbody></table>' +
+    '<p class="piede">Solo la Camera: il Senato negli open data non pubblica ' +
+    'gli incarichi interni dei suoi senatori, quindi questa met&agrave; del ' +
+    'Parlamento resta scoperta.</p>';
+
   const traversi = conGoverni.filter(p =>
     p.gv.some(g => DESTRA.indexOf(g) >= 0) &&
     p.gv.some(g => SINISTRA.indexOf(g) >= 0)).sort(perCognome);
@@ -2488,6 +2573,24 @@ VISTE['elezioni'] = function(){
           larghezza: 700, altezza: 560,
           stato: E.politiche.length + ' politiche',
           stato2: R.length + ' referendum'};
+};
+
+/* L'elenco dei movimenti attorno a una caduta stava dentro la finestra e la
+   allungava di trecento righe: adesso e' una finestra sua, che si apre dal
+   numero. */
+VISTE['movimenti'] = function(governo){
+  const c = CADUTE.find(x => x.g === governo);
+  if (!c || !c.finestra) throw new Error('Governo sconosciuto: ' + governo);
+  const righe = movimentiFra(c.finestra[0], c.finestra[1], c.finestra[2]);
+  return {titolo: 'Cambi di gruppo, ' + c.g, icona: '&#128721;', faccia: true,
+    html: '<h1>Governo ' + esc(c.g) + '</h1>' +
+      '<p>I cambi di gruppo depositati nei registri fra il ' +
+      dataIt(c.finestra[1]) + ' e il ' + dataIt(c.finestra[2]) + ', cio&egrave; ' +
+      'attorno alla caduta del ' + esc(c.fine) + '. Non &egrave; l&rsquo;appello ' +
+      'nominale del voto, che negli open data non c&rsquo;&egrave;: &egrave; ' +
+      'un fatto vicino, e con nomi e date.</p>' +
+      tabellaMovimenti(righe),
+    larghezza: 620, altezza: 520, stato: righe.length + ' cambi'};
 };
 
 VISTE['metodo'] = function(){
@@ -2607,7 +2710,7 @@ function disegnaScrivania(){
     '<li class="riga"></li>' +
     '<li data-apri="leggimi"><span class="dis">&#8505;</span>Informazioni su Seconda Repubblica...</li>' +
     '<li data-apri="errore"><span class="dis">&#9993;</span>Segnala un errore...</li>' +
-    '<li data-apri="spread"><span class="dis">&#128200;</span>Termina applicazione...</li>' +
+    '<li data-apri="spread"><span class="dis">&#128200;</span>Spread...</li>' +
     '<li id="chiudi-sessione"><span class="dis">&#9211;</span>Chiudi sessione...</li>';
 }
 

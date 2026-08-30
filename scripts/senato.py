@@ -19,10 +19,12 @@ Q_SENATORI = """
 PREFIX osr: <http://dati.senato.it/osr/>
 PREFIX ocd: <http://dati.camera.it/ocd/>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
-SELECT DISTINCT ?s ?nome ?cognome ?leg ?nascita ?morte ?tipo ?foto ?genere ?circ WHERE {
+SELECT DISTINCT ?s ?nome ?cognome ?leg ?nascita ?morte ?tipo ?foto ?genere ?circ ?dal ?al WHERE {
   ?s a osr:Senatore ; foaf:firstName ?nome ; foaf:lastName ?cognome ;
      osr:mandato ?m .
   ?m a ocd:mandatoSenato ; osr:legislatura ?leg .
+  OPTIONAL { ?m osr:inizio ?dal }
+  OPTIONAL { ?m osr:fine ?al }
   OPTIONAL { ?m osr:regioneElezione ?circ }
   FILTER(?leg >= 12 && ?leg <= 16)
   OPTIONAL { ?m osr:tipoMandato ?tipo }
@@ -253,6 +255,12 @@ def _costruisci():
                       r.get('foto', {}).get('value') or '')
         if m:
             voce['foto_senato'] = [m.group(1), m.group(2)]
+        dal = (r.get('dal', {}).get('value') or '')[:10].replace('-', '')
+        al = (r.get('al', {}).get('value') or '')[:10].replace('-', '')
+        if dal and (not voce.get('dal') or dal < voce['dal']):
+            voce['dal'] = dal
+        if al and (not voce.get('al') or al > voce['al']):
+            voce['al'] = al
         circ = (r.get('circ', {}).get('value') or '').strip()
         if circ:
             voce['circoscrizione'] = circ

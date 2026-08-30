@@ -165,6 +165,11 @@ def compatta(p, gruppi, ant):
                      ('EUROPA', 'AMERICA', 'AFRICA', 'ASIA', 'OCEANIA'))}
     if estere:
         d['es'] = estere
+    if p.get('incarichi'):
+        d['in'] = {m: [[x['r'], x['o']] for x in v]
+                   for m, v in p['incarichi'].items()}
+    if p.get('mandato'):
+        d['md'] = p['mandato']
     if p.get('solo_registro'):
         d['r'] = 1
     if p.get('morte_dubbia'):
