@@ -712,11 +712,7 @@ VISTE['persona'] = function(q){
       '<div><b>' + esc(d.et) + '</b> <span style="color:#606060">' +
         dataIt(d.data) + '</span></div>' +
       '<div style="margin-top:3px">' + esc(d.testo) + '</div>' +
-      '<div class="piede" style="margin-top:5px;padding-top:4px">Fonte: ' +
-        (/^https?:/.test(d.fonte || '')
-          ? '<a target="_blank" rel="noopener" href="' + esc(d.fonte) + '">' +
-            esc(d.fonte) + '</a>'
-          : esc(d.fonte || '')) + '</div></div>').join('');
+      '</div>').join('');
   }
 
   if (p.g && p.g.length){
@@ -1592,7 +1588,7 @@ VISTE['spread'] = function(){
     'di cui <b>' + maiEletti.length + '</b> non hanno mai avuto un seggio in ' +
     'Parlamento fra il 1994 e il 2013.</p>';
 
-  h += '<p class="piede">Fonte dei tassi: ' + esc(S.fonte) + '. ' +
+  h += '<p class="piede">Tassi della Banca Centrale Europea, ' +
     '<a target="_blank" rel="noopener" href="' + esc(S.url) + '">data.ecb.europa.eu</a>. ' +
     'Le date del novembre 2011 sono fatti pubblici e verificabili; ' +
     'la relazione fra il differenziale e la caduta del governo &egrave; una ' +
@@ -2034,7 +2030,7 @@ VISTE['cadute'] = function(){
         ' cambi di gruppo in quelle settimane</div>' : '') +
       '<div class="piede" style="margin-top:4px;padding-top:4px">' +
       '<a target="_blank" rel="noopener" href="' + esc(c.fonte) + '">' +
-      'Fonte: la voce del governo su Wikipedia</a>' +
+      'La voce del governo su Wikipedia</a>' +
       (c.scheda ? ' &mdash; <a target="_blank" rel="noopener" href="' +
         esc(c.scheda) + '">la scheda ufficiale del voto, coi nomi</a>' : '') +
       '</div></div>';
@@ -2291,7 +2287,7 @@ VISTE['mubarak'] = function(){
   h += '<p class="piede">Appello nominale del Senato della Repubblica, seduta ' +
     'del 14 settembre 2011, votazione elettronica: ' + esc(V.esito) + '. ' +
     'Il gruppo indicato accanto a ogni nome &egrave; quello a cui la persona ' +
-    'risultava iscritta quel giorno. Fonte: ' +
+    'risultava iscritta quel giorno, secondo ' +
     '<a target="_blank" rel="noopener" href="' + esc(V.fonte) + '">dati.senato.it</a>.</p>' +
     '<p class="piede">Della votazione della Camera del 5 aprile 2011 non ' +
     'esiste l&rsquo;equivalente: gli open data della Camera coprono le ' +
