@@ -2292,10 +2292,7 @@ VISTE['estero'] = function(){
   const E = DATI.estero;
   if (E && E.eventi && E.eventi.length){
     h += '<h2 style="margin-top:16px">Che cosa faceva l&rsquo;Italia fuori dai ' +
-      'confini</h2>' +
-      '<div class="avviso">Questa parte non viene dai registri parlamentari. ' +
-      'Sono avvenimenti scelti a mano, ognuno con la data e la fonte: il resto ' +
-      'del sito si controlla interrogando Camera e Senato, questo no.</div>';
+      'confini</h2>';
     E.eventi.forEach(ev => {
       h += '<div class="riquadro" style="margin-bottom:8px">' +
         '<div style="display:flex;gap:10px;flex-wrap:wrap">' +
@@ -2321,6 +2318,87 @@ VISTE['estero'] = function(){
           faccia: true, larghezza: 680, altezza: 560,
           stato: eletti.length + ' eletti all\u2019estero',
           stato2: (E && E.eventi ? E.eventi.length + ' fatti' : '')};
+};
+
+/* ---------------------------------------------------------------------------
+   Le poltrone: chi ne ha occupate di piu'. Una poltrona qui e' un seggio in
+   una legislatura o un posto in un governo, e si sommano: sono le due cose
+   che i registri contano davvero.
+
+   L'ultima tabella e' quella che dice di piu': chi ha servito sia in un
+   governo di Berlusconi sia in uno di Prodi, D'Alema o Amato. Non e' un
+   giudizio, e' un'intersezione fra due elenchi.
+   --------------------------------------------------------------------------- */
+const DESTRA = ['Berlusconi I', 'Berlusconi II', 'Berlusconi III', 'Berlusconi IV'];
+const SINISTRA = ['Prodi I', 'Prodi II', "D'Alema I", "D'Alema II", 'Amato II'];
+
+const poltrone = p => p.m.length + (p.gv || []).length;
+
+VISTE['poltrone'] = function(){
+  const conGoverni = P.filter(p => (p.gv || []).length);
+
+  let h = '<h1>Le poltrone</h1>' +
+    '<p>Un seggio in una legislatura e un posto in un governo. Sommati, ' +
+    'perch&eacute; sono le due cose che i registri contano.</p>';
+
+  const tutte = P.slice().sort((a, b) => poltrone(b) - poltrone(a) || perCognome(a, b));
+  const testa = senzaTagliare(tutte, 15, poltrone);
+  h += '<h2>Il totale</h2>' +
+    '<p style="color:#404040">Tutti quelli che ne hanno avute almeno ' +
+    poltrone(testa[testa.length - 1]) + ': sono ' + testa.length + '.</p>' +
+    '<table><thead><tr><th>Nome</th><th class="num">Totale</th>' +
+    '<th class="num">Legisl.</th><th class="num">Governi</th>' +
+    '<th>Cariche</th></tr></thead><tbody>' +
+    testa.map(p => '<tr class="riga" data-q="' + p.q + '">' +
+      '<td style="width:26%">' + esc(perElenco(p)) + '</td>' +
+      '<td class="num"><b>' + poltrone(p) + '</b></td>' +
+      '<td class="num">' + p.m.length + '</td>' +
+      '<td class="num">' + (p.gv || []).length + '</td>' +
+      '<td style="font-size:11px">' + esc((p.k || []).join('; ')) + '</td></tr>'
+    ).join('') + '</tbody></table>';
+
+  const perGoverni = conGoverni.slice().sort(
+    (a, b) => b.gv.length - a.gv.length || perCognome(a, b));
+  const capiG = senzaTagliare(perGoverni, 10, p => p.gv.length);
+  h += '<h2 style="margin-top:14px">Pi&ugrave; governi attraversati</h2>' +
+    '<table><tbody>' + capiG.map(p =>
+      '<tr class="riga" data-q="' + p.q + '"><td style="width:26%">' +
+      esc(perElenco(p)) + '</td><td class="num" style="width:8%">' +
+      p.gv.length + '</td><td style="font-size:11px">' +
+      esc(p.gv.join(', ')) + '</td></tr>').join('') + '</tbody></table>';
+
+  const conCariche = P.filter(p => (p.k || []).length);
+  const perCariche = conCariche.slice().sort(
+    (a, b) => b.k.length - a.k.length || perCognome(a, b));
+  const capiC = senzaTagliare(perCariche, 10, p => p.k.length);
+  h += '<h2 style="margin-top:14px">Pi&ugrave; incarichi diversi</h2>' +
+    '<table><tbody>' + capiC.map(p =>
+      '<tr class="riga" data-q="' + p.q + '"><td style="width:26%">' +
+      esc(perElenco(p)) + '</td><td class="num" style="width:8%">' +
+      p.k.length + '</td><td style="font-size:11px">' +
+      esc(p.k.join('; ')) + '</td></tr>').join('') + '</tbody></table>';
+
+  const traversi = conGoverni.filter(p =>
+    p.gv.some(g => DESTRA.indexOf(g) >= 0) &&
+    p.gv.some(g => SINISTRA.indexOf(g) >= 0)).sort(perCognome);
+  h += '<h2 style="margin-top:14px">Da una parte e dall&rsquo;altra</h2>' +
+    '<p>Hanno avuto un posto sia in un governo di Berlusconi sia in uno di ' +
+    'Prodi, D&rsquo;Alema o Amato. Sono <b>' + traversi.length + '</b>.</p>' +
+    (traversi.length
+      ? '<table><tbody>' + traversi.map(p =>
+          '<tr class="riga" data-q="' + p.q + '"><td style="width:30%">' +
+          esc(perElenco(p)) + '</td><td style="font-size:11px">' +
+          esc(p.gv.join(', ')) + '</td></tr>').join('') + '</tbody></table>'
+      : '<p style="color:#606060">Nessuno.</p>');
+
+  h += '<p class="piede">I governi vengono da Wikidata, le legislature dai ' +
+    'registri di Camera e Senato. I governi Dini e Monti non compaiono in ' +
+    'nessuna delle due colonne di sopra: erano governi tecnici, e chi vi ha ' +
+    'partecipato non attraversava niente.</p>';
+
+  return {titolo: 'Le poltrone', icona: '&#128188;', html: h, faccia: true,
+          larghezza: 680, altezza: 560,
+          stato: testa.length + ' in testa', stato2: traversi.length + ' da una parte e dall\u2019altra'};
 };
 
 VISTE['metodo'] = function(){
@@ -2402,6 +2480,7 @@ const SCRIVANIA = [
   ['&#128193;', 'Partiti', 'partiti', '', 'sx'],
   ['&#127793;', 'Albero dei partiti', 'albero', '', 'sx'],
   ['&#127941;', 'Hall of fame', 'famosi', '', 'sx'],
+  ['&#128188;', 'Le poltrone', 'poltrone', '', 'sx'],
   ['&#9937;', 'I Responsabili', 'responsabili', '', 'sx'],
   ['&#127963;', 'Governi', 'governi', '', 'sx'],
   ['&#128721;', 'Le cadute', 'cadute', '', 'sx'],
