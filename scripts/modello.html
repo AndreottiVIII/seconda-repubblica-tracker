@@ -2784,8 +2784,7 @@ document.addEventListener('click', e => {
   av.classList.remove('aperto');
 
   if (e.target.closest('#chiudi-sessione')){
-    return schermataBlu('Chiusura della sessione in corso. In realtà non si ' +
-      'chiude niente: è una pagina web.');
+    return schermataBlu('Chiusura della sessione in corso.');
   }
   const bersaglio = e.target.closest('[data-apri]');
   if (bersaglio){
