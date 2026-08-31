@@ -67,6 +67,16 @@ Esce `sito/index.html`. Senza `--fresco` le risposte restano in cache dodici ore
 
 davide.caniatti@gmail.com
 
-Per copiare questo sito, ripubblicarlo altrove, riusarne delle parti o adattarlo
-serve la mia autorizzazione scritta, e va citata la fonte: Seconda Repubblica
-Tracker, Davide Caniatti.
+## Licenza
+
+Tre parti, tre licenze diverse, scritte per esteso in [LICENSE](LICENSE):
+
+- il **codice** in `scripts/` e `.github/`, licenza MIT;
+- i **contenuti scritti a mano** — condanne, distintivi, fatti esteri, elezioni,
+  segretari, mappa dei partiti, testi del sito — CC BY 4.0, cioè riusabili
+  citando la fonte: *Seconda Repubblica Tracker, Davide Caniatti*;
+- i **dati parlamentari**, che non sono miei: restano di Camera (CC BY 4.0),
+  Senato (CC BY 3.0) e Wikidata (CC0), e chi li riusa risponde a quelle.
+
+Le fotografie hanno ognuna la licenza sua, sulla pagina del file di Wikimedia
+Commons: non sono ricaricate qui, sono richiamate all'origine.

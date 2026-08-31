@@ -1,0 +1,96 @@
+SECONDA REPUBBLICA TRACKER
+Copyright (c) 2026 Davide Caniatti
+
+Questo progetto tiene insieme cose di natura diversa, e una licenza sola le
+tratterebbe male. Quindi sono tre, ognuna sulla sua parte.
+
+
+-------------------------------------------------------------------------------
+1. IL CODICE - Licenza MIT
+-------------------------------------------------------------------------------
+
+Vale per tutto quello che sta in scripts/ e in .github/: gli script Python, il
+modello HTML, il flusso di lavoro notturno.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of
+this software and associated documentation files (the "Software"), to deal in
+the Software without restriction, including without limitation the rights to
+use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
+of the Software, and to permit persons to whom the Software is furnished to do
+so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+
+-------------------------------------------------------------------------------
+2. I CONTENUTI SCRITTI A MANO - CC BY 4.0
+-------------------------------------------------------------------------------
+
+Vale per la parte che nessun registro pubblica e che e' stata scritta e
+verificata una riga per volta:
+
+  data/condanne.json     le sentenze passate in giudicato
+  data/distintivi.json   i fatti attaccati a una singola persona
+  data/estero.json       i fatti fuori dai confini
+  data/elezioni.json     elezioni e referendum
+  data/segretari.json    chi ha guidato i partiti
+  data/partiti.json      la mappa dai gruppi parlamentari ai partiti
+  data/esclusi.json      le esclusioni, con la ragione scritta
+
+piu' i testi dell'interfaccia, le note di metodo e il README.
+
+Licenza Creative Commons Attribuzione 4.0 Internazionale (CC BY 4.0):
+https://creativecommons.org/licenses/by/4.0/deed.it
+
+Si puo' copiare, ridistribuire, adattare e riusare anche per fini commerciali,
+a una condizione: citare la fonte. La citazione richiesta e'
+
+  Seconda Repubblica Tracker, Davide Caniatti
+  https://andreottiviii.github.io/seconda-repubblica-tracker/
+
+Se il riuso e' online, il collegamento va messo. Se il materiale viene
+modificato, va detto che e' stato modificato.
+
+
+-------------------------------------------------------------------------------
+3. I DATI PARLAMENTARI - non sono miei, e non lo diventano
+-------------------------------------------------------------------------------
+
+L'elenco di chi ha seduto in Parlamento, i gruppi, le date di adesione, i
+mandati, gli incarichi interni e le votazioni non sono opera mia: li pubblicano
+le istituzioni, e restano loro. Chi li riusa risponde alle licenze di origine,
+non a questa.
+
+  Camera dei deputati, dati.camera.it        CC BY 4.0
+  Senato della Repubblica, dati.senato.it    CC BY 3.0
+  Wikidata                                   CC0 1.0
+
+Riguarda i file data/elenco.json, data/registri/*.json e tutto quello che ne
+deriva dentro sito/index.html.
+
+Le fotografie sono un caso a se': arrivano da Wikimedia Commons e da Wikidata,
+e ognuna ha la licenza sua, indicata sulla pagina del file. Chi le riusa la
+deve controllare una per una: qui non sono ricaricate ma richiamate all'origine,
+e questa licenza su di loro non dice niente.
+
+
+-------------------------------------------------------------------------------
+UNA COSA CHE NON E' UNA LICENZA
+-------------------------------------------------------------------------------
+
+Il sito registra fatti, non giudizi, e riguarda persone in gran parte viventi.
+Un cambio di gruppo parlamentare e' un atto pubblico, depositato e datato: qui
+c'e' quello, con la data e la fonte. Chi riusa questi dati per costruirci sopra
+delle qualifiche personali lo fa per conto suo, e non e' coperto da niente di
+quanto sta scritto sopra.
+
+Errori e correzioni: davide.caniatti@gmail.com

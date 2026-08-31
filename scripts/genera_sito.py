@@ -59,11 +59,13 @@ COLOFONE = [
     'Fatto da Davide Caniatti insieme a Claude (Anthropic), che ha scritto il '
     'codice, scovato i difetti dei dati e discusso ogni scelta di metodo.',
     '',
-    'Per copiare questo sito, ripubblicarlo altrove, riusarne delle parti o '
-    'adattarlo serve la mia autorizzazione scritta, e va citata la fonte: '
-    'Seconda Repubblica Tracker, Davide Caniatti. Vale anche per gli estratti, '
-    'per le tabelle e per i dati così come li trovate qui, già '
-    'incrociati e verificati.',
+    'Il codice del sito è libero (licenza MIT). I contenuti scritti a mano - '
+    'le condanne, i distintivi, i fatti fuori dai confini, le elezioni, i '
+    'segretari di partito, la mappa dei gruppi - si possono riusare citando '
+    'la fonte: Seconda Repubblica Tracker, Davide Caniatti. I dati '
+    'parlamentari non sono miei e restano di Camera, Senato e Wikidata, con '
+    'le licenze loro. Le fotografie hanno ognuna la sua, su Wikimedia '
+    'Commons. Tutto scritto per esteso nel file LICENSE del progetto.',
 ]
 
 # Le cariche che fanno di una persona un nome che si ricorda. Wikidata le
@@ -306,10 +308,17 @@ def main():
     # quando cambia qualcosa davvero, e chi ha la pagina aperta non se la
     # vede ricaricare ogni notte per niente. La data di generazione resta
     # fuori dal conto proprio per questo.
+    # Il colofone va contato anche lui. Sta fuori dai dati e fuori dal modello
+    # - e' una costante di questo script, iniettata a parte - e per un po' e'
+    # rimasto fuori pure dall'impronta: cambiarlo pubblicava una pagina nuova
+    # che nessun browser aperto avrebbe mai scaricato, perche' la versione
+    # restava quella di prima. Un testo che cambia senza cambiare la versione
+    # e' un aggiornamento che non arriva a nessuno.
     senza_data = dict(dati)
     senza_data.pop('generato', None)
     impronta = hashlib.md5(
-        (modello + json.dumps(senza_data, ensure_ascii=False, sort_keys=True)
+        (modello + json.dumps(COLOFONE, ensure_ascii=False)
+         + json.dumps(senza_data, ensure_ascii=False, sort_keys=True)
          ).encode('utf-8')).hexdigest()[:12]
 
     html = (modello
