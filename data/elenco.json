@@ -1,5 +1,5 @@
 {
- "generato": "2026-09-04",
+ "generato": "2026-09-11",
  "eta_massima_credibile": 106,
  "persone": [
   {
@@ -4317,7 +4317,7 @@
     "XII": [
      {
       "uri": "http://dati.senato.it/gruppo/2",
-      "g": "DC",
+      "g": "PPI",
       "da": "19940418",
       "a": "19950704"
      },
@@ -4445,7 +4445,7 @@
     "XII": [
      {
       "uri": "http://dati.senato.it/gruppo/2",
-      "g": "DC",
+      "g": "PPI",
       "da": "19940418",
       "a": "19960508"
      }
@@ -8664,7 +8664,7 @@
     "XII": [
      {
       "uri": "http://dati.senato.it/gruppo/2",
-      "g": "DC",
+      "g": "PPI",
       "da": "19940418",
       "a": "19960508"
      }
@@ -8711,7 +8711,7 @@
      "19991120"
     ]
    },
-   "gruppo_eletto": "DC",
+   "gruppo_eletto": "PPI",
    "id_senato": "http://dati.senato.it/senatore/935",
    "stato": "deceduto",
    "non_eletto": false,
@@ -13431,7 +13431,7 @@
     "XII": [
      {
       "uri": "http://dati.senato.it/gruppo/2",
-      "g": "DC",
+      "g": "PPI",
       "da": "19940418",
       "a": "19960508"
      }
@@ -13494,7 +13494,7 @@
      "20080428"
     ]
    },
-   "gruppo_eletto": "DC",
+   "gruppo_eletto": "PPI",
    "registro_muto": "Senato",
    "id_senato": "http://dati.senato.it/senatore/1770",
    "stato": "vivente",
@@ -29010,7 +29010,7 @@
     "XII": [
      {
       "uri": "http://dati.senato.it/gruppo/2",
-      "g": "DC",
+      "g": "PPI",
       "da": "19940418",
       "a": "19950704"
      },
@@ -29049,7 +29049,7 @@
      "19960508"
     ]
    },
-   "gruppo_eletto": "DC",
+   "gruppo_eletto": "PPI",
    "registro_muto": "Senato",
    "id_senato": "http://dati.senato.it/senatore/142",
    "stato": "vivente",
@@ -29091,7 +29091,7 @@
     "XII": [
      {
       "uri": "http://dati.senato.it/gruppo/2",
-      "g": "DC",
+      "g": "PPI",
       "da": "19940418",
       "a": "19960508"
      }
@@ -30630,7 +30630,7 @@
     "XII": [
      {
       "uri": "http://dati.senato.it/gruppo/2",
-      "g": "DC",
+      "g": "PPI",
       "da": "19940525",
       "a": "19950704"
      },
@@ -30669,7 +30669,7 @@
      "19960508"
     ]
    },
-   "gruppo_eletto": "DC",
+   "gruppo_eletto": "PPI",
    "registro_muto": "Senato",
    "id_senato": "http://dati.senato.it/senatore/2235",
    "stato": "vivente",
@@ -36256,7 +36256,7 @@
    "prec_nascita": "giorno",
    "morte": null,
    "prec_morte": null,
-   "foto": null,
+   "foto": "http://commons.wikimedia.org/wiki/Special:FilePath/Corrado%20Callegari.jpg",
    "wikipedia": "https://it.wikipedia.org/wiki/Corrado_Callegari",
    "gruppi_per_mandato": {
     "XVI": [
@@ -40795,7 +40795,7 @@
     "XII": [
      {
       "uri": "http://dati.senato.it/gruppo/2",
-      "g": "DC",
+      "g": "PPI",
       "da": "19940418",
       "a": "19960508"
      }
@@ -40828,7 +40828,7 @@
      "19960508"
     ]
    },
-   "gruppo_eletto": "DC",
+   "gruppo_eletto": "PPI",
    "registro_muto": "Senato",
    "id_senato": "http://dati.senato.it/senatore/494",
    "stato": "vivente",
@@ -48892,8 +48892,8 @@
    "cognome": "Bonino",
    "nascita": "1948-03-09",
    "prec_nascita": "giorno",
-   "morte": null,
-   "prec_morte": null,
+   "morte": "2026-09-11",
+   "prec_morte": "giorno",
    "foto": "http://commons.wikimedia.org/wiki/Special:FilePath/Emma%20Bonino%20-%20World%20Economic%20Forum%20on%20Europe%202010.jpg",
    "wikipedia": "https://it.wikipedia.org/wiki/Emma_Bonino",
    "gruppi_per_mandato": {
@@ -48995,7 +48995,7 @@
     "321"
    ],
    "id_senato": "http://dati.senato.it/senatore/321",
-   "stato": "vivente",
+   "stato": "deceduto",
    "non_eletto": false,
    "hall_of_fame": false
   },
@@ -56934,8 +56934,7 @@
     "XV"
    ],
    "cariche": [
-    "deputato della Repubblica Italiana",
-    "presidente della Camera dei deputati"
+    "deputato della Repubblica Italiana"
    ],
    "partiti": [
     "Partito Comunista Italiano",
@@ -65131,7 +65130,7 @@
     "XII": [
      {
       "uri": "http://dati.senato.it/gruppo/2",
-      "g": "DC",
+      "g": "PPI",
       "da": "19940418",
       "a": "19960508"
      }
@@ -77285,7 +77284,7 @@
     "XII": [
      {
       "uri": "http://dati.senato.it/gruppo/2",
-      "g": "DC",
+      "g": "PPI",
       "da": "19940418",
       "a": "19950704"
      },
@@ -77354,7 +77353,7 @@
      "20010529"
     ]
    },
-   "gruppo_eletto": "DC",
+   "gruppo_eletto": "PPI",
    "registro_muto": "Senato",
    "id_senato": "http://dati.senato.it/senatore/1009",
    "stato": "vivente",
@@ -79605,8 +79604,7 @@
    "cariche": [
     "deputato della Repubblica Italiana",
     "ministro degli esteri della Repubblica Italiana",
-    "vicepresidente del Consiglio dei ministri della Repubblica Italiana",
-    "presidente della Camera dei deputati"
+    "vicepresidente del Consiglio dei ministri della Repubblica Italiana"
    ],
    "partiti": [
     "Alleanza Nazionale",
@@ -93491,7 +93489,7 @@
     "XII": [
      {
       "uri": "http://dati.senato.it/gruppo/2",
-      "g": "DC",
+      "g": "PPI",
       "da": "19940418",
       "a": "19960508"
      }
@@ -95820,7 +95818,7 @@
     "XII": [
      {
       "uri": "http://dati.senato.it/gruppo/2",
-      "g": "DC",
+      "g": "PPI",
       "da": "19940418",
       "a": "19950704"
      },
@@ -96787,7 +96785,7 @@
     "XII": [
      {
       "uri": "http://dati.senato.it/gruppo/2",
-      "g": "DC",
+      "g": "PPI",
       "da": "19940418",
       "a": "19950713"
      }
@@ -96820,7 +96818,7 @@
      "19950713"
     ]
    },
-   "gruppo_eletto": "DC",
+   "gruppo_eletto": "PPI",
    "registro_muto": "Senato",
    "id_senato": "http://dati.senato.it/senatore/895",
    "stato": "vivente",
@@ -111774,7 +111772,7 @@
     "XII": [
      {
       "uri": "http://dati.senato.it/gruppo/2",
-      "g": "DC",
+      "g": "PPI",
       "da": "19940418",
       "a": "19960508"
      }
@@ -111822,7 +111820,7 @@
      "20010529"
     ]
    },
-   "gruppo_eletto": "DC",
+   "gruppo_eletto": "PPI",
    "registro_muto": "Senato",
    "id_senato": "http://dati.senato.it/senatore/878",
    "stato": "vivente",
@@ -116872,8 +116870,7 @@
     "XV"
    ],
    "cariche": [
-    "deputato della Repubblica Italiana",
-    "presidente della Camera dei deputati"
+    "deputato della Repubblica Italiana"
    ],
    "partiti": [
     "Democratici di Sinistra",
@@ -119416,7 +119413,7 @@
     "XII": [
      {
       "uri": "http://dati.senato.it/gruppo/2",
-      "g": "DC",
+      "g": "PPI",
       "da": "19940418",
       "a": "19940725"
      },
@@ -119515,7 +119512,7 @@
      "20130314"
     ]
    },
-   "gruppo_eletto": "DC",
+   "gruppo_eletto": "PPI",
    "registro_muto": "Senato",
    "id_senato": "http://dati.senato.it/senatore/1200",
    "stato": "vivente",
@@ -142424,7 +142421,7 @@
     "XII": [
      {
       "uri": "http://dati.senato.it/gruppo/2",
-      "g": "DC",
+      "g": "PPI",
       "da": "19940418",
       "a": "19960508"
      }
@@ -142457,7 +142454,7 @@
      "19960508"
     ]
    },
-   "gruppo_eletto": "DC",
+   "gruppo_eletto": "PPI",
    "id_senato": "http://dati.senato.it/senatore/951",
    "stato": "deceduto",
    "non_eletto": false,
@@ -144491,7 +144488,7 @@
     "XII": [
      {
       "uri": "http://dati.senato.it/gruppo/2",
-      "g": "DC",
+      "g": "PPI",
       "da": "19940418",
       "a": "19960508"
      }
@@ -144555,7 +144552,7 @@
      "20050516"
     ]
    },
-   "gruppo_eletto": "DC",
+   "gruppo_eletto": "PPI",
    "registro_muto": "Senato",
    "id_senato": "http://dati.senato.it/senatore/1300",
    "stato": "vivente",
@@ -144576,7 +144573,7 @@
     "XII": [
      {
       "uri": "http://dati.senato.it/gruppo/2",
-      "g": "DC",
+      "g": "PPI",
       "da": "19940418",
       "a": "19960508"
      }
@@ -144627,8 +144624,7 @@
      "20010529"
     ]
    },
-   "gruppo_eletto": "DC",
-   "registro_muto": "Senato",
+   "gruppo_eletto": "PPI",
    "id_senato": "http://dati.senato.it/senatore/1884",
    "stato": "deceduto",
    "non_eletto": false,
@@ -148718,7 +148714,7 @@
     "XII": [
      {
       "uri": "http://dati.senato.it/gruppo/2",
-      "g": "DC",
+      "g": "PPI",
       "da": "19940421",
       "a": "19960508"
      }
@@ -148800,7 +148796,7 @@
      "20060724"
     ]
    },
-   "gruppo_eletto": "DC",
+   "gruppo_eletto": "PPI",
    "registro_muto": "Senato",
    "id_senato": "http://dati.senato.it/senatore/1425",
    "stato": "vivente",
@@ -149337,7 +149333,7 @@
     "XII": [
      {
       "uri": "http://dati.senato.it/gruppo/2",
-      "g": "DC",
+      "g": "PPI",
       "da": "19940418",
       "a": "19960508"
      }
@@ -149370,7 +149366,7 @@
      "19960508"
     ]
    },
-   "gruppo_eletto": "DC",
+   "gruppo_eletto": "PPI",
    "id_senato": "http://dati.senato.it/senatore/336",
    "stato": "deceduto",
    "non_eletto": false,
@@ -150491,7 +150487,7 @@
     "XII": [
      {
       "uri": "http://dati.senato.it/gruppo/2",
-      "g": "DC",
+      "g": "PPI",
       "da": "19940418",
       "a": "19950704"
      },
@@ -151869,7 +151865,7 @@
     "XII": [
      {
       "uri": "http://dati.senato.it/gruppo/2",
-      "g": "DC",
+      "g": "PPI",
       "da": "19940418",
       "a": "19960508"
      }
@@ -151928,7 +151924,7 @@
      "20010529"
     ]
    },
-   "gruppo_eletto": "DC",
+   "gruppo_eletto": "PPI",
    "registro_muto": "Senato",
    "id_senato": "http://dati.senato.it/senatore/2552",
    "stato": "vivente",
@@ -158968,8 +158964,7 @@
     "XVI"
    ],
    "cariche": [
-    "deputato della Repubblica Italiana",
-    "presidente della Camera dei deputati"
+    "deputato della Repubblica Italiana"
    ],
    "partiti": [
     "Centristi per l'Europa",
@@ -160525,7 +160520,7 @@
     "XII": [
      {
       "uri": "http://dati.senato.it/gruppo/2",
-      "g": "DC",
+      "g": "PPI",
       "da": "19940418",
       "a": "19960508"
      }
@@ -160588,7 +160583,7 @@
      "20060427"
     ]
    },
-   "gruppo_eletto": "DC",
+   "gruppo_eletto": "PPI",
    "registro_muto": "Senato",
    "id_senato": "http://dati.senato.it/senatore/529",
    "stato": "vivente",
@@ -161402,7 +161397,7 @@
     "XII": [
      {
       "uri": "http://dati.senato.it/gruppo/2",
-      "g": "DC",
+      "g": "PPI",
       "da": "19940418",
       "a": "19950704"
      },
@@ -161442,7 +161437,7 @@
     ]
    },
    "aggancio": "data di nascita",
-   "gruppo_eletto": "DC",
+   "gruppo_eletto": "PPI",
    "registro_muto": "Senato",
    "id_senato": "http://dati.senato.it/senatore/2355",
    "stato": "vivente",
@@ -163309,7 +163304,7 @@
     "XII": [
      {
       "uri": "http://dati.senato.it/gruppo/2",
-      "g": "DC",
+      "g": "PPI",
       "da": "19940418",
       "a": "19950704"
      },
@@ -163348,7 +163343,7 @@
      "19960508"
     ]
    },
-   "gruppo_eletto": "DC",
+   "gruppo_eletto": "PPI",
    "registro_muto": "Senato",
    "id_senato": "http://dati.senato.it/senatore/1837",
    "stato": "vivente",
@@ -175325,7 +175320,7 @@
     "XII": [
      {
       "uri": "http://dati.senato.it/gruppo/2",
-      "g": "DC",
+      "g": "PPI",
       "da": "19940418",
       "a": "19960508"
      }
@@ -175725,7 +175720,7 @@
     "XII": [
      {
       "uri": "http://dati.senato.it/gruppo/2",
-      "g": "DC",
+      "g": "PPI",
       "da": "19940418",
       "a": "19960508"
      }
@@ -175789,7 +175784,7 @@
     ]
    },
    "aggancio": "data di nascita",
-   "gruppo_eletto": "DC",
+   "gruppo_eletto": "PPI",
    "id_senato": "http://dati.senato.it/senatore/714",
    "stato": "deceduto",
    "non_eletto": false,
@@ -176482,7 +176477,7 @@
     "XII": [
      {
       "uri": "http://dati.senato.it/gruppo/2",
-      "g": "DC",
+      "g": "PPI",
       "da": "19940418",
       "a": "19950704"
      },
@@ -176593,7 +176588,7 @@
      "20130314"
     ]
    },
-   "gruppo_eletto": "DC",
+   "gruppo_eletto": "PPI",
    "registro_muto": "Senato",
    "id_senato": "http://dati.senato.it/senatore/703",
    "stato": "vivente",
@@ -178981,7 +178976,7 @@
     "XII": [
      {
       "uri": "http://dati.senato.it/gruppo/2",
-      "g": "DC",
+      "g": "PPI",
       "da": "19940418",
       "a": "19960508"
      }
@@ -185228,7 +185223,7 @@
     "XII": [
      {
       "uri": "http://dati.senato.it/gruppo/2",
-      "g": "DC",
+      "g": "PPI",
       "da": "19940418",
       "a": "19960508"
      }
@@ -185291,7 +185286,7 @@
      "20030311"
     ]
    },
-   "gruppo_eletto": "DC",
+   "gruppo_eletto": "PPI",
    "id_senato": "http://dati.senato.it/senatore/1305",
    "stato": "deceduto",
    "non_eletto": false,
@@ -190428,7 +190423,7 @@
     "XII": [
      {
       "uri": "http://dati.senato.it/gruppo/2",
-      "g": "DC",
+      "g": "PPI",
       "da": "19940418",
       "a": "19950704"
      },
@@ -190608,7 +190603,7 @@
     "XII": [
      {
       "uri": "http://dati.senato.it/gruppo/2",
-      "g": "DC",
+      "g": "PPI",
       "da": "19940418",
       "a": "19960508"
      }
@@ -190669,7 +190664,7 @@
      "20060427"
     ]
    },
-   "gruppo_eletto": "DC",
+   "gruppo_eletto": "PPI",
    "registro_muto": "Senato",
    "id_senato": "http://dati.senato.it/senatore/199",
    "stato": "vivente",
@@ -191438,7 +191433,7 @@
     "XII": [
      {
       "uri": "http://dati.senato.it/gruppo/2",
-      "g": "DC",
+      "g": "PPI",
       "da": "19940418",
       "a": "19950704"
      },
@@ -191543,7 +191538,7 @@
      "20130314"
     ]
    },
-   "gruppo_eletto": "DC",
+   "gruppo_eletto": "PPI",
    "registro_muto": "Senato",
    "id_senato": "http://dati.senato.it/senatore/2547",
    "stato": "vivente",
@@ -195962,7 +195957,7 @@
     "XII": [
      {
       "uri": "http://dati.senato.it/gruppo/2",
-      "g": "DC",
+      "g": "PPI",
       "da": "19940418",
       "a": "19940519"
      }
@@ -195995,7 +195990,7 @@
      "19940519"
     ]
    },
-   "gruppo_eletto": "DC",
+   "gruppo_eletto": "PPI",
    "id_senato": "http://dati.senato.it/senatore/307",
    "stato": "deceduto",
    "non_eletto": false,
@@ -199043,7 +199038,7 @@
     "XII": [
      {
       "uri": "http://dati.senato.it/gruppo/2",
-      "g": "DC",
+      "g": "PPI",
       "da": "19940418",
       "a": "19960508"
      }
@@ -199091,7 +199086,7 @@
      "20010529"
     ]
    },
-   "gruppo_eletto": "DC",
+   "gruppo_eletto": "PPI",
    "registro_muto": "Senato",
    "id_senato": "http://dati.senato.it/senatore/554",
    "stato": "vivente",
