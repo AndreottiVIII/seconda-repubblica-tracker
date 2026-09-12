@@ -1,5 +1,5 @@
 {
- "generato": "2026-09-11",
+ "generato": "2026-09-12",
  "eta_massima_credibile": 106,
  "persone": [
   {
@@ -56934,7 +56934,8 @@
     "XV"
    ],
    "cariche": [
-    "deputato della Repubblica Italiana"
+    "deputato della Repubblica Italiana",
+    "presidente della Camera dei deputati"
    ],
    "partiti": [
     "Partito Comunista Italiano",
@@ -79604,7 +79605,8 @@
    "cariche": [
     "deputato della Repubblica Italiana",
     "ministro degli esteri della Repubblica Italiana",
-    "vicepresidente del Consiglio dei ministri della Repubblica Italiana"
+    "vicepresidente del Consiglio dei ministri della Repubblica Italiana",
+    "presidente della Camera dei deputati"
    ],
    "partiti": [
     "Alleanza Nazionale",
@@ -116870,7 +116872,8 @@
     "XV"
    ],
    "cariche": [
-    "deputato della Repubblica Italiana"
+    "deputato della Repubblica Italiana",
+    "presidente della Camera dei deputati"
    ],
    "partiti": [
     "Democratici di Sinistra",
@@ -158964,7 +158967,8 @@
     "XVI"
    ],
    "cariche": [
-    "deputato della Repubblica Italiana"
+    "deputato della Repubblica Italiana",
+    "presidente della Camera dei deputati"
    ],
    "partiti": [
     "Centristi per l'Europa",
@@ -164210,8 +164214,8 @@
    "cognome": "Costa",
    "nascita": "1936-09-08",
    "prec_nascita": "giorno",
-   "morte": null,
-   "prec_morte": null,
+   "morte": "2026-09-11",
+   "prec_morte": "giorno",
    "foto": "http://commons.wikimedia.org/wiki/Special:FilePath/Raffaele%20Costa%201992.jpg",
    "wikipedia": "https://it.wikipedia.org/wiki/Raffaele_Costa",
    "gruppi_per_mandato": {
@@ -164291,7 +164295,7 @@
    "id_camera": "15250",
    "gruppo_eletto": "FORZA ITALIA",
    "registro_muto": "Camera dei deputati",
-   "stato": "vivente",
+   "stato": "deceduto",
    "non_eletto": false,
    "hall_of_fame": false
   },
