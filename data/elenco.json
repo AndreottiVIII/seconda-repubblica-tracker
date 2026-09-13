@@ -1,5 +1,5 @@
 {
- "generato": "2026-09-12",
+ "generato": "2026-09-13",
  "eta_massima_credibile": 106,
  "persone": [
   {
@@ -21156,12 +21156,22 @@
    },
    "mandato": {
     "XII": [
-     "19940401",
+     "19940415",
      "19960508"
     ]
    },
    "id_camera": "23890",
    "gruppo_eletto": "ALLEANZA NAZIONALE",
+   "foto_senato": [
+    "12",
+    "209"
+   ],
+   "circoscrizioni": {
+    "XII": "Lazio"
+   },
+   "aggancio": "data di nascita",
+   "registro_muto": "Senato",
+   "id_senato": "http://dati.senato.it/senatore/209",
    "stato": "deceduto",
    "non_eletto": false,
    "hall_of_fame": false
@@ -56934,8 +56944,7 @@
     "XV"
    ],
    "cariche": [
-    "deputato della Repubblica Italiana",
-    "presidente della Camera dei deputati"
+    "deputato della Repubblica Italiana"
    ],
    "partiti": [
     "Partito Comunista Italiano",
@@ -79605,8 +79614,7 @@
    "cariche": [
     "deputato della Repubblica Italiana",
     "ministro degli esteri della Repubblica Italiana",
-    "vicepresidente del Consiglio dei ministri della Repubblica Italiana",
-    "presidente della Camera dei deputati"
+    "vicepresidente del Consiglio dei ministri della Repubblica Italiana"
    ],
    "partiti": [
     "Alleanza Nazionale",
@@ -116872,8 +116880,7 @@
     "XV"
    ],
    "cariche": [
-    "deputato della Repubblica Italiana",
-    "presidente della Camera dei deputati"
+    "deputato della Repubblica Italiana"
    ],
    "partiti": [
     "Democratici di Sinistra",
@@ -158967,8 +158974,7 @@
     "XVI"
    ],
    "cariche": [
-    "deputato della Repubblica Italiana",
-    "presidente della Camera dei deputati"
+    "deputato della Repubblica Italiana"
    ],
    "partiti": [
     "Centristi per l'Europa",
@@ -198535,8 +198541,8 @@
    },
    "nascita": "1948-04-23",
    "prec_nascita": "giorno",
-   "morte": null,
-   "prec_morte": null,
+   "morte": "2026-08-13",
+   "prec_morte": "giorno",
    "foto": "http://commons.wikimedia.org/wiki/Special:FilePath/Vito%20Gruosso%20XIV.jpg",
    "wikipedia": "https://it.wikipedia.org/wiki/Vito_Gruosso",
    "gruppi_per_mandato": {
@@ -198579,7 +198585,8 @@
    "cariche": [],
    "partiti": [],
    "solo_registro": "Senato",
-   "stato": "vivente",
+   "fonte_morte": "Senato",
+   "stato": "deceduto",
    "non_eletto": false,
    "hall_of_fame": false
   },
