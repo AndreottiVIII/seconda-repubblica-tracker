@@ -1,5 +1,5 @@
 {
- "generato": "2026-09-13",
+ "generato": "2026-09-18",
  "eta_massima_credibile": 106,
  "persone": [
   {
@@ -7308,8 +7308,8 @@
    "cognome": "Mantica",
    "nascita": "1943-07-17",
    "prec_nascita": "giorno",
-   "morte": null,
-   "prec_morte": null,
+   "morte": "2026-09-17",
+   "prec_morte": "giorno",
    "foto": "http://commons.wikimedia.org/wiki/Special:FilePath/Alfredo%20Mantica%202008.jpg",
    "wikipedia": "https://it.wikipedia.org/wiki/Alfredo_Mantica",
    "gruppi_per_mandato": {
@@ -7403,7 +7403,7 @@
    "gruppo_eletto": "AN",
    "registro_muto": "Senato",
    "id_senato": "http://dati.senato.it/senatore/1445",
-   "stato": "vivente",
+   "stato": "deceduto",
    "non_eletto": false,
    "hall_of_fame": false
   },
@@ -71843,7 +71843,7 @@
    "prec_nascita": "giorno",
    "morte": "2025-01-14",
    "prec_morte": "giorno",
-   "foto": null,
+   "foto": "http://commons.wikimedia.org/wiki/Special:FilePath/Furio%20Colombo%20deputato.jpg",
    "wikipedia": "https://it.wikipedia.org/wiki/Furio_Colombo",
    "gruppi_per_mandato": {
     "XIII": [
@@ -183089,7 +183089,7 @@
    "qid": "Q3956084",
    "nome": "Sergio D'Elia",
    "cognome": "D'Elia",
-   "nascita": "1952-05-05",
+   "nascita": "1952-01-05",
    "prec_nascita": "giorno",
    "morte": null,
    "prec_morte": null,
