@@ -1,5 +1,5 @@
 {
- "generato": "2026-09-18",
+ "generato": "2026-09-19",
  "eta_massima_credibile": 106,
  "persone": [
   {
@@ -56944,7 +56944,8 @@
     "XV"
    ],
    "cariche": [
-    "deputato della Repubblica Italiana"
+    "deputato della Repubblica Italiana",
+    "presidente della Camera dei deputati"
    ],
    "partiti": [
     "Partito Comunista Italiano",
@@ -79614,7 +79615,8 @@
    "cariche": [
     "deputato della Repubblica Italiana",
     "ministro degli esteri della Repubblica Italiana",
-    "vicepresidente del Consiglio dei ministri della Repubblica Italiana"
+    "vicepresidente del Consiglio dei ministri della Repubblica Italiana",
+    "presidente della Camera dei deputati"
    ],
    "partiti": [
     "Alleanza Nazionale",
@@ -116880,7 +116882,8 @@
     "XV"
    ],
    "cariche": [
-    "deputato della Repubblica Italiana"
+    "deputato della Repubblica Italiana",
+    "presidente della Camera dei deputati"
    ],
    "partiti": [
     "Democratici di Sinistra",
@@ -131224,8 +131227,8 @@
    "cognome": "Mazzetto",
    "nascita": "1943-03-31",
    "prec_nascita": "giorno",
-   "morte": null,
-   "prec_morte": null,
+   "morte": "2026-07-20",
+   "prec_morte": "giorno",
    "foto": "http://commons.wikimedia.org/wiki/Special:FilePath/Mariella%20Mazzetto%20daticamera.jpg",
    "wikipedia": "https://it.wikipedia.org/wiki/Mariella_Mazzetto",
    "gruppi_per_mandato": {
@@ -131262,8 +131265,8 @@
    },
    "id_camera": "33700",
    "gruppo_eletto": "LEGA NORD",
-   "registro_muto": "Camera dei deputati",
-   "stato": "vivente",
+   "fonte_morte": "Camera dei deputati",
+   "stato": "deceduto",
    "non_eletto": false,
    "hall_of_fame": false
   },
@@ -158974,7 +158977,8 @@
     "XVI"
    ],
    "cariche": [
-    "deputato della Repubblica Italiana"
+    "deputato della Repubblica Italiana",
+    "presidente della Camera dei deputati"
    ],
    "partiti": [
     "Centristi per l'Europa",
