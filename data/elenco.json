@@ -1,5 +1,5 @@
 {
- "generato": "2026-09-19",
+ "generato": "2026-09-20",
  "eta_massima_credibile": 106,
  "persone": [
   {
@@ -7401,7 +7401,6 @@
     ]
    },
    "gruppo_eletto": "AN",
-   "registro_muto": "Senato",
    "id_senato": "http://dati.senato.it/senatore/1445",
    "stato": "deceduto",
    "non_eletto": false,
@@ -21156,22 +21155,12 @@
    },
    "mandato": {
     "XII": [
-     "19940415",
+     "19940401",
      "19960508"
     ]
    },
    "id_camera": "23890",
    "gruppo_eletto": "ALLEANZA NAZIONALE",
-   "foto_senato": [
-    "12",
-    "209"
-   ],
-   "circoscrizioni": {
-    "XII": "Lazio"
-   },
-   "aggancio": "data di nascita",
-   "registro_muto": "Senato",
-   "id_senato": "http://dati.senato.it/senatore/209",
    "stato": "deceduto",
    "non_eletto": false,
    "hall_of_fame": false
@@ -31809,8 +31798,8 @@
    },
    "nascita": "1945-07-15",
    "prec_nascita": "giorno",
-   "morte": null,
-   "prec_morte": null,
+   "morte": "2026-08-17",
+   "prec_morte": "giorno",
    "foto": null,
    "wikipedia": null,
    "gruppi_per_mandato": {
@@ -31853,7 +31842,8 @@
    "cariche": [],
    "partiti": [],
    "solo_registro": "Senato",
-   "stato": "vivente",
+   "fonte_morte": "Senato",
+   "stato": "deceduto",
    "non_eletto": false,
    "hall_of_fame": false
   },
@@ -64483,7 +64473,6 @@
      "20060427"
     ]
    },
-   "aggancio": "data di nascita",
    "gruppo_eletto": "Misto",
    "registro_muto": "Senato",
    "id_senato": "http://dati.senato.it/senatore/17576",
@@ -93960,7 +93949,7 @@
      {
       "uri": "http://dati.senato.it/gruppo/3",
       "g": "AN",
-      "da": "19960509",
+      "da": "19960516",
       "a": "20010529"
      }
     ]
