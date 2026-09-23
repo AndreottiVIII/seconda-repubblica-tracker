@@ -1,5 +1,5 @@
 {
- "generato": "2026-09-20",
+ "generato": "2026-09-23",
  "eta_massima_credibile": 106,
  "persone": [
   {
@@ -47638,7 +47638,6 @@
    },
    "gruppo_eletto": "Sin.Dem.-Ulivo",
    "id_senato": "http://dati.senato.it/senatore/3834",
-   "fonte_morte": "Senato",
    "stato": "deceduto",
    "non_eletto": false,
    "hall_of_fame": false
@@ -66542,8 +66541,8 @@
    "cognome": "Napoletano",
    "nascita": "1959-11-18",
    "prec_nascita": "giorno",
-   "morte": null,
-   "prec_morte": null,
+   "morte": "2026-06-22",
+   "prec_morte": "giorno",
    "foto": "http://commons.wikimedia.org/wiki/Special:FilePath/Francesco%20Napoletano%20daticamera%202006.jpg",
    "wikipedia": "https://it.wikipedia.org/wiki/Francesco_Napoletano_(politico)",
    "gruppi_per_mandato": {
@@ -66600,7 +66599,7 @@
    "id_camera": "302147",
    "gruppo_eletto": "MISTO",
    "registro_muto": "Camera dei deputati",
-   "stato": "vivente",
+   "stato": "deceduto",
    "non_eletto": false,
    "hall_of_fame": false
   },
@@ -131216,7 +131215,7 @@
    "cognome": "Mazzetto",
    "nascita": "1943-03-31",
    "prec_nascita": "giorno",
-   "morte": "2026-07-20",
+   "morte": "2026-07-21",
    "prec_morte": "giorno",
    "foto": "http://commons.wikimedia.org/wiki/Special:FilePath/Mariella%20Mazzetto%20daticamera.jpg",
    "wikipedia": "https://it.wikipedia.org/wiki/Mariella_Mazzetto",
@@ -131254,7 +131253,6 @@
    },
    "id_camera": "33700",
    "gruppo_eletto": "LEGA NORD",
-   "fonte_morte": "Camera dei deputati",
    "stato": "deceduto",
    "non_eletto": false,
    "hall_of_fame": false
