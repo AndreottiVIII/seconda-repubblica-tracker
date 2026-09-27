@@ -1,5 +1,5 @@
 {
- "generato": "2026-09-23",
+ "generato": "2026-09-27",
  "eta_massima_credibile": 106,
  "persone": [
   {
@@ -13953,7 +13953,7 @@
    "mandato": {
     "XII": [
      "19940415",
-     "19960508"
+     "19960516"
     ]
    },
    "gruppo_eletto": "Pr. Verdi-Rete",
@@ -64472,6 +64472,7 @@
      "20060427"
     ]
    },
+   "aggancio": "data di nascita",
    "gruppo_eletto": "Misto",
    "registro_muto": "Senato",
    "id_senato": "http://dati.senato.it/senatore/17576",
@@ -83627,8 +83628,8 @@
    },
    "nascita": "1931-03-18",
    "prec_nascita": "giorno",
-   "morte": null,
-   "prec_morte": null,
+   "morte": "2026-09-08",
+   "prec_morte": "giorno",
    "foto": null,
    "wikipedia": null,
    "gruppi_per_mandato": {
@@ -83651,7 +83652,8 @@
    "cariche": [],
    "partiti": [],
    "solo_registro": "Senato",
-   "stato": "vivente",
+   "fonte_morte": "Senato",
+   "stato": "deceduto",
    "non_eletto": false,
    "hall_of_fame": false
   },
@@ -93948,7 +93950,7 @@
      {
       "uri": "http://dati.senato.it/gruppo/3",
       "g": "AN",
-      "da": "19960516",
+      "da": "19960509",
       "a": "20010529"
      }
     ]
@@ -126984,6 +126986,7 @@
     "deputato della Repubblica Italiana"
    ],
    "partiti": [
+    "+Europa",
     "Partito Radicale"
    ],
    "genere": "M",
