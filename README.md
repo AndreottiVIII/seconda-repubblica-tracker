@@ -73,7 +73,8 @@ davide.caniatti@gmail.com
 
 Tre parti, tre licenze diverse, scritte per esteso in [LICENSE](LICENSE):
 
-- il **codice** in `scripts/` e `.github/`, licenza MIT;
+- il **codice** in `scripts/` e `.github/`, tutti i diritti riservati: si
+  guarda ma non si copia né si riusa senza permesso scritto;
 - i **contenuti scritti a mano** — condanne, distintivi, fatti esteri, elezioni,
   segretari, mappa dei partiti, testi del sito — CC BY 4.0, cioè riusabili
   citando la fonte: *Seconda Repubblica Tracker, Davide Caniatti*;

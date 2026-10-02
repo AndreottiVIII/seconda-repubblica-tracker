@@ -59,7 +59,8 @@ COLOFONE = [
     'Fatto da Davide Caniatti insieme a Claude (Anthropic), che ha scritto il '
     'codice, scovato i difetti dei dati e discusso ogni scelta di metodo.',
     '',
-    'Il codice del sito è libero (licenza MIT). I contenuti scritti a mano - '
+    'Il codice del sito è mio, con tutti i diritti riservati: non si copia '
+    'né si riusa senza permesso. I contenuti scritti a mano - '
     'le condanne, i distintivi, i fatti fuori dai confini, le elezioni, i '
     'segretari di partito, la mappa dei gruppi - si possono riusare citando '
     'la fonte: Seconda Repubblica Tracker, Davide Caniatti. I dati '

@@ -6,29 +6,19 @@ tratterebbe male. Quindi sono tre, ognuna sulla sua parte.
 
 
 -------------------------------------------------------------------------------
-1. IL CODICE - Licenza MIT
+1. IL CODICE - Tutti i diritti riservati
 -------------------------------------------------------------------------------
 
 Vale per tutto quello che sta in scripts/ e in .github/: gli script Python, il
-modello HTML, il flusso di lavoro notturno.
+modello HTML, il flusso di lavoro notturno, e il codice che ne esce dentro
+sito/index.html.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of
-this software and associated documentation files (the "Software"), to deal in
-the Software without restriction, including without limitation the rights to
-use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
-of the Software, and to permit persons to whom the Software is furnished to do
-so, subject to the following conditions:
+Il codice non e' concesso in licenza. Si puo' guardare, ma non copiare,
+modificare, ridistribuire o riusare, in tutto o in parte, senza un permesso
+scritto. Chi vuole usarlo lo chieda a davide.caniatti@gmail.com.
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+Fino al 3 ottobre 2026 il codice era sotto licenza MIT: chi ne ha preso una
+copia prima di quella data la tiene alle condizioni di allora.
 
 
 -------------------------------------------------------------------------------
@@ -55,7 +45,7 @@ Si puo' copiare, ridistribuire, adattare e riusare anche per fini commerciali,
 a una condizione: citare la fonte. La citazione richiesta e'
 
   Seconda Repubblica Tracker, Davide Caniatti
-  https://andreottiviii.github.io/seconda-repubblica-tracker/
+  https://secondarepubblica.it/
 
 Se il riuso e' online, il collegamento va messo. Se il materiale viene
 modificato, va detto che e' stato modificato.
