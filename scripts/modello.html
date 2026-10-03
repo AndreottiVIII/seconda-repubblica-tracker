@@ -230,6 +230,19 @@ button.p95:active{border-color:var(--ombra) var(--luce) var(--luce) var(--ombra)
   th{position:static}
 }
 </style>
+<!-- Contatore di visite GoatCounter: niente cookie, niente dati personali. Conta
+     solo sul dominio del sito, non su github.io ne' dal disco. -->
+<script>
+(function(){
+  var codice = {'secondarepubblica.it': 'secondarepubblica'}[location.hostname];
+  if (!codice) return;
+  var s = document.createElement('script');
+  s.async = true;
+  s.src = 'https://gc.zgo.at/count.js';
+  s.setAttribute('data-goatcounter', 'https://' + codice + '.goatcounter.com/count');
+  document.head.appendChild(s);
+})();
+</script>
 </head>
 <body>
 
