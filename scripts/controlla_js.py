@@ -109,11 +109,20 @@ def righe_sospette(js):
 
 
 def controlla(html, dove=''):
-    """Solleva un errore se lo script della pagina non regge."""
-    m = re.search(r'<script>(.*?)</script>', html, re.S)
-    if not m:
+    """Solleva un errore se uno degli script della pagina non regge.
+
+    Tutti, non il primo. Per un po' questo controllo ha guardato solo il primo
+    <script> della pagina, e da quando nella testa c'e' il contatore di visite
+    il primo era quello: il programma vero, duemila righe, non lo controllava
+    piu' nessuno. Una pagina che passa il controllo deve averlo passato tutta.
+
+    Se riceve un programma .js nudo, senza tag, lo controlla per intero."""
+    pezzi = re.findall(r'<script>(.*?)</script>', html, re.S)
+    if not pezzi and '<html' not in html[:500].lower():
+        pezzi = [html]
+    if not pezzi:
         raise SystemExit('%s: non c\'e\' nessuno script nella pagina.' % dove)
-    guai = righe_sospette(m.group(1))
+    guai = [g for pezzo in pezzi for g in righe_sospette(pezzo)]
     if guai:
         sys.stderr.write('%s: stringhe non chiuse, il sito non si aprirebbe.\n' % dove)
         for numero, testo in guai:

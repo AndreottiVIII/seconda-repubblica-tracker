@@ -11,7 +11,7 @@ sys.stdout.reconfigure(encoding='utf-8', errors='replace')
 
 QUI = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, QUI)
-import casacche, controlla_js
+import casacche, controlla_js, pagine_statiche
 
 INGRESSO = os.path.join(QUI, '..', 'data', 'elenco.json')
 MODELLO = os.path.join(QUI, 'modello.html')
@@ -23,6 +23,9 @@ ESTERO = os.path.join(QUI, '..', 'data', 'estero.json')
 ELEZIONI = os.path.join(QUI, '..', 'data', 'elezioni.json')
 SEGRETARI = os.path.join(QUI, '..', 'data', 'segretari.json')
 USCITA = os.path.join(QUI, '..', 'sito')
+# Il sito come lo pubblica il lavoro notturno: una pagina per finestra,
+# perche' Google lo trovi. Si rifa' da zero a ogni giro e non si versiona.
+PUBBLICA = os.path.join(QUI, '..', 'pubblica')
 
 TITOLO = 'Seconda Repubblica Tracker'
 ORDINE = casacche.ORDINE
@@ -201,6 +204,8 @@ def main():
 
     persone = [compatta(p, gruppi, ant) for p in grezzo['persone']]
     persone.sort(key=lambda x: x['n'])
+    # Il pezzo d'indirizzo di ogni scheda, /onorevole/clemente-mastella/.
+    pagine_statiche.assegna_schegge(persone)
 
     # I distintivi: fatti datati e con una fonte, scritti a mano perche'
     # nessun registro li tiene. Il file e' piccolo apposta: se un distintivo
@@ -302,6 +307,7 @@ def main():
     else:
         print('  (data/spread.json assente: niente schermata dello spread)')
 
+    dati['__INDIRIZZI__'] = None
     modello = open(MODELLO, encoding='utf-8').read()
     corpo = json.dumps(dati, ensure_ascii=False, separators=(',', ':'))
 
@@ -322,11 +328,21 @@ def main():
          + json.dumps(senza_data, ensure_ascii=False, sort_keys=True)
          ).encode('utf-8')).hexdigest()[:12]
 
-    html = (modello
-            .replace('/*__DATI__*/', corpo)
-            .replace('/*__COLOFONE__*/', json.dumps(COLOFONE, ensure_ascii=False))
-            .replace('%%TITOLO%%', TITOLO)
-            .replace('%%VERSIONE%%', impronta))
+    scheletro = (modello
+                 .replace('/*__DATI__*/', corpo)
+                 .replace('/*__COLOFONE__*/', json.dumps(COLOFONE, ensure_ascii=False))
+                 .replace('%%VERSIONE%%', impronta))
+
+    # La descrizione che Google mostra sotto il titolo: sotto i 160
+    # caratteri, oltre i quali la taglia, e con il numero vero delle schede.
+    descrizione = ('I %s deputati, senatori e ministri della Seconda Repubblica, '
+                   'dal 1994 al 2013: chi ha cambiato gruppo in Parlamento e '
+                   'quante volte.' % pagine_statiche.migliaia(len(persone)))
+    titolo_casa = TITOLO + ': chi ha cambiato casacca dal 1994 al 2013'
+    html = (scheletro
+            .replace('%%TITOLO%%', titolo_casa)
+            .replace('<!--%%TESTA%%-->', pagine_statiche.testa_casa(dati, descrizione))
+            .replace('<!--%%INTESTAZIONE%%-->', pagine_statiche.intestazione(titolo_casa)))
 
     # Prima di scrivere su disco. Con i dati dentro la pagina, una stringa
     # non chiusa non rompe una funzione: spegne tutto lo script, e il sito
@@ -345,6 +361,14 @@ def main():
              sum(p['c'] for p in persone)))
     print('versione: %s' % impronta)
     print('peso: %.2f MB' % (os.path.getsize(percorso) / 1024.0 / 1024.0))
+
+    file, in_mappa = pagine_statiche.costruisci(scheletro, dati, descrizione, impronta,
+                                                USCITA, PUBBLICA)
+    controlla_js.controlla(
+        open(os.path.join(PUBBLICA, 'programma.js'), encoding='utf-8').read(),
+        'programma.js')
+    print('sito da pubblicare: %d file in pubblica/, %d indirizzi nella mappa'
+          % (file, in_mappa))
 
 
 if __name__ == '__main__':

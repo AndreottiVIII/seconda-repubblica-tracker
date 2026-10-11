@@ -69,11 +69,24 @@ jobs:
           git commit -m "$(date -u +%Y-%m-%d): $MESSAGGIO"
           git push || echo "ATTENZIONE: commit fatto ma non spinto. Si pubblica lo stesso."
 
+      # Si pubblica pubblica/, non sito/: una pagina per ogni finestra, perche'
+      # Google la parte dopo il cancelletto la ignora. Se le schede sono
+      # troppo poche qualcosa si e' rotto per strada, e resta online il sito
+      # di ieri: meglio fermo a ieri che peggiore di ieri.
+      - name: Controlla le pagine prima di pubblicarle
+        run: |
+          SCHEDE=$(find pubblica/onorevole -name index.html | wc -l)
+          echo "Schede con un indirizzo loro: $SCHEDE"
+          test "$SCHEDE" -ge 2500
+          test -s pubblica/programma.js
+          test -s pubblica/sitemap.xml
+          test -s pubblica/preview.jpg
+
       - uses: actions/configure-pages@v5
 
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: sito
+          path: pubblica
 
       - id: pubblicazione
         uses: actions/deploy-pages@v4

@@ -4,20 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>%%TITOLO%%</title>
-<!-- L'anteprima quando il link gira su WhatsApp, Telegram, Facebook, X: vuole
-     indirizzi completi, quindi l'immagine sta accanto alla pagina e non dentro. -->
-<meta name="description" content="Chi ha cambiato casacca in Parlamento fra il 1994 e il 2013, e quante volte.">
-<meta property="og:type" content="website">
-<meta property="og:locale" content="it_IT">
-<meta property="og:site_name" content="Seconda Repubblica Tracker">
-<meta property="og:title" content="Seconda Repubblica Tracker">
-<meta property="og:description" content="Chi ha cambiato casacca in Parlamento fra il 1994 e il 2013, e quante volte.">
-<meta property="og:url" content="https://secondarepubblica.it/">
-<meta property="og:image" content="https://secondarepubblica.it/anteprima.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Una finestra di Windows 95: Seconda Repubblica Tracker, chi ha cambiato casacca in Parlamento dal 1994 al 2013">
-<meta name="twitter:card" content="summary_large_image">
+<!-- Descrizione, indirizzo ufficiale, anteprima per WhatsApp e compagnia, dati
+     strutturati: li scrive il generatore, pagina per pagina. -->
+<!--%%TESTA%%-->
 <link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAlUlEQVR42mNkYGD4zzCAgIlhgAELgtlAZ6sbBl0IUBccOOCAVdzB4cDgSgOjDqBZGkCP68EfArhSLe1CaLCmASWHKJpaeO/AstFsOMjLAfQ4Gnkh4DD7FXVqw1Sx0UQ4RNMAsXE3jHPBzWLSUrt6LwMDAwOD/U7iatOD7qNtwkHmAEZY3/DAgQMM9G0ROQyyEBixaQAAUFcdTMOyJw4AAAAASUVORK5CYII=">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%20shape-rendering%3D%22crispEdges%22%3E%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%23000000%22/%3E%3Crect%20x%3D%221%22%20y%3D%221%22%20width%3D%2214%22%20height%3D%2214%22%20fill%3D%22%23c0c0c0%22/%3E%3Crect%20x%3D%221%22%20y%3D%221%22%20width%3D%2214%22%20height%3D%224%22%20fill%3D%22%23000080%22/%3E%3Crect%20x%3D%2211%22%20y%3D%222%22%20width%3D%223%22%20height%3D%222%22%20fill%3D%22%23c0c0c0%22/%3E%3Crect%20x%3D%222%22%20y%3D%226%22%20width%3D%2212%22%20height%3D%222%22%20fill%3D%22%23e2001a%22/%3E%3Crect%20x%3D%222%22%20y%3D%229%22%20width%3D%229%22%20height%3D%222%22%20fill%3D%22%23005baa%22/%3E%3Crect%20x%3D%222%22%20y%3D%2212%22%20width%3D%226%22%20height%3D%222%22%20fill%3D%22%23009933%22/%3E%3Crect%20x%3D%229%22%20y%3D%2212%22%20width%3D%225%22%20height%3D%222%22%20fill%3D%22%23ff7900%22/%3E%3C/svg%3E">
 <style>
@@ -166,6 +155,11 @@ th{position:sticky;top:-8px;background:var(--faccia);text-align:left;
 td{padding:2px 6px;border-bottom:1px solid #e6e6e6;vertical-align:top}
 tr.riga:hover td{background:#e8e8f8}
 tr.riga{cursor:default}
+tr.riga a.nome{color:inherit;text-decoration:none}
+a.clic{color:#0000c0}
+/* visibile solo a chi legge con un lettore di schermo e ai motori: il titolo
+   vero della pagina, che graficamente e' gia' nella barra della finestra */
+.solo-lettori{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .num{text-align:right;font-variant-numeric:tabular-nums}
 .morto{color:#606060}
 .pill{display:inline-block;padding:0 5px;margin:1px 2px 1px 0;color:#fff;
@@ -259,28 +253,29 @@ button.p95:active{border-color:var(--ombra) var(--luce) var(--luce) var(--ombra)
 </script>
 </head>
 <body>
+<!--%%INTESTAZIONE%%-->
 
 <div id="scrivania">
-  <div id="icone"></div>
-  <div id="icone-destra"></div>
-  <div id="cestino-icona"></div>
+  <div id="icone" data-nosnippet></div>
+  <div id="icone-destra" data-nosnippet></div>
+  <div id="cestino-icona" data-nosnippet></div>
   <div id="finestre"></div>
 </div>
 
-<div id="barra">
+<div id="barra" data-nosnippet>
   <button id="avvio"><span>&#9612;&#9612;</span> Avvio</button>
   <div id="attivita"></div>
   <div id="orologio"></div>
 </div>
 
-<div id="menu">
+<div id="menu" data-nosnippet>
   <div class="costola"><span>Seconda Repubblica 95</span></div>
   <ul id="voci-menu"></ul>
 </div>
 
-<div id="salvaschermo"><b>Seconda Repubblica Tracker</b></div>
+<div id="salvaschermo" data-nosnippet><b>Seconda Repubblica Tracker</b></div>
 
-<div id="bsod">
+<div id="bsod" data-nosnippet>
   <p><span class="cap">Seconda Repubblica</span></p>
   <p id="bsod-testo">Si &egrave; verificato un errore irreversibile.</p>
   <p>&nbsp;</p>
@@ -301,11 +296,14 @@ button.p95:active{border-color:var(--ombra) var(--luce) var(--luce) var(--ombra)
    circolo. E con un tempo massimo, perche' fetch da solo non ce l'ha e
    aspetterebbe per sempre. */
 const VERSIONE = '%%VERSIONE%%';
+// Le pagine del sito pubblicato stanno anche in sottocartelle
+// (/onorevole/clemente-mastella/): i file comuni vanno cercati alla radice.
+const RADICE_SITO = typeof RADICE === 'string' ? RADICE : '';
 (function controllaVersione(){
   if (location.protocol === 'file:' || !window.fetch) return;
   const taglia = new AbortController();
   const scadenza = setTimeout(() => taglia.abort(), 6000);
-  fetch('versione.txt?_=' + Date.now(), {cache: 'no-store', signal: taglia.signal})
+  fetch(RADICE_SITO + 'versione.txt?_=' + Date.now(), {cache: 'no-store', signal: taglia.signal})
     .then(r => r.ok ? r.text() : null)
     .then(t => {
       clearTimeout(scadenza);
@@ -439,19 +437,20 @@ function apri(vista, arg, senzaStoria){
     el.style.top  = Math.max(8, Math.min(20 + passo, window.innerHeight - h - 50)) + 'px';
   }
   el.innerHTML =
-    '<div class="barra-titolo"><span class="dis">' + (contenuto.icona || '&#128462;') +
+    '<div class="barra-titolo" data-nosnippet><span class="dis">' + (contenuto.icona || '&#128462;') +
       '</span><span class="tit">' + esc(contenuto.titolo) + '</span>' +
       '<span class="bottoni">' +
         '<button class="riduci" title="Riduci a icona">_</button>' +
         '<button class="ingrandisci" title="Ingrandisci">&#9633;</button>' +
         '<button class="chiudi" title="Chiudi">&#10005;</button>' +
       '</span></div>' +
-    '<div class="menu-finestra"><span data-menu="file">File</span>' +
+    '<div class="menu-finestra" data-nosnippet><span data-menu="file">File</span>' +
       '<span data-menu="vai">Vai</span><span data-menu="?">?</span></div>' +
     '<div class="corpo' + (contenuto.faccia ? ' faccia' : '') + '">' + contenuto.html + '</div>' +
-    '<div class="stato"><div>' + esc(contenuto.stato || '') + '</div>' +
+    '<div class="stato" data-nosnippet><div>' + esc(contenuto.stato || '') + '</div>' +
       '<div>' + esc(contenuto.stato2 || '') + '</div></div>' +
     '<div class="maniglia"></div>';
+  if (INDIRIZZI) linkVeri(el);
   document.getElementById('finestre').appendChild(el);
   FIN[k] = {el: el, vista: vista, arg: arg, titolo: contenuto.titolo,
             icona: contenuto.icona || '&#128462;'};
@@ -572,22 +571,130 @@ function disegnaBarra(){
   });
 }
 
-/* ---------- la cronologia del browser ---------- */
+/* ---------- la cronologia del browser ----------
+   Il sito pubblicato non e' piu' un file solo: ogni finestra che vale la pena
+   trovare ha anche una pagina sua, con il suo titolo e la sua descrizione,
+   perche' Google la parte dopo il cancelletto la ignora e per lui il sito era
+   una pagina sola. A vista non cambia niente: la scrivania e' la stessa, e
+   aprendo finestre non si ricarica nulla, cambia solo l'indirizzo.
+
+     /                                  la finestra principale
+     /cestino/                          una finestra della scrivania
+     /onorevole/clemente-mastella/      una scheda
+     /partito/udeur/                    un partito
+     /elenco/legislatura/xiii/          un elenco
+
+   La tabella degli indirizzi arriva dal generatore insieme ai dati. Dove manca
+   (il file aperto dal disco) restano gli indirizzi col cancelletto, e i
+   vecchi link col cancelletto funzionano anche sul sito pubblicato. */
+const INDIRIZZI = DATI.indirizzi || null;
+const SITO = 'Seconda Repubblica Tracker';
+const PERCORSO_DI = {}, perScheggia = {};
+if (INDIRIZZI){
+  Object.keys(INDIRIZZI.percorsi).forEach(x => { PERCORSO_DI[INDIRIZZI.percorsi[x]] = x; });
+  P.forEach(p => { if (p.u) perScheggia[p.u] = p; });
+}
+
+function percorsoDi(k){
+  if (k.indexOf('persona/') === 0){
+    const p = perQid[k.slice(8)];
+    return p && p.u ? '/onorevole/' + p.u + '/' : null;
+  }
+  return PERCORSO_DI[k] || null;
+}
+
+function chiaveDaPercorso(x){
+  try { x = decodeURI(x || '/'); } catch (e) {}
+  x = x.replace(/index\.html$/, '');
+  if (x.slice(-1) !== '/') x += '/';
+  const scheda = x.match(/^\/onorevole\/([^/]+)\/$/);
+  if (scheda) return perScheggia[scheda[1]] ? 'persona/' + perScheggia[scheda[1]].q : null;
+  return INDIRIZZI.percorsi[x] || null;
+}
+
+// Il titolo della scheda nella linguetta del browser. Lo stesso che il
+// generatore scrive nella pagina (titolo_scheda): chi cambia l'uno cambi
+// anche l'altro.
+function titoloScheda(p){
+  return p.n + (p.b ? ' (' + p.b.slice(0, 4) + ')' : '');
+}
+function titoloDi(k){
+  if (k.indexOf('persona/') === 0 && perQid[k.slice(8)])
+    return titoloScheda(perQid[k.slice(8)]) + ' | ' + SITO;
+  const x = k === 'indice' ? '/' : percorsoDi(k);
+  if (x && INDIRIZZI.titoli[x]) return INDIRIZZI.titoli[x];
+  return (FIN[k] ? FIN[k].titolo + ' | ' : '') + SITO;
+}
+
 let ignoraHash = false;
 function storia(k){
+  if (INDIRIZZI){
+    try { history.pushState({k: k}, '', percorsoDi(k) || (k === 'indice' ? '/' : '/#' + k)); }
+    catch (e) {}
+    document.title = titoloDi(k);
+    return;
+  }
   ignoraHash = true;
   location.hash = '#' + k;
   setTimeout(() => { ignoraHash = false; }, 0);
 }
+
+function apriChiave(k){
+  const i = k.indexOf('/');
+  apri(i < 0 ? k : k.slice(0, i), i < 0 ? '' : k.slice(i + 1), true);
+}
+
 window.addEventListener('hashchange', () => {
   if (ignoraHash) return;
   const h = decodeURIComponent(location.hash.replace(/^#/, ''));
   if (!h) return;
-  const i = h.indexOf('/');
-  const vista = i < 0 ? h : h.slice(0, i);
-  const arg = i < 0 ? '' : h.slice(i + 1);
-  apri(vista, arg, true);
+  apriChiave(h);
+  if (INDIRIZZI){
+    const x = percorsoDi(h);
+    if (x) try { history.replaceState({k: h}, '', x); } catch (e) {}
+    document.title = titoloDi(h);
+  }
 });
+
+// Avanti e indietro, sul sito pubblicato. Col file aperto dal disco ci pensa
+// il cancelletto, qui sopra.
+window.addEventListener('popstate', e => {
+  if (!INDIRIZZI) return;
+  const k = (e.state && e.state.k) ||
+            (location.hash.length > 1 ? decodeURIComponent(location.hash.slice(1)) : '') ||
+            chiaveDaPercorso(location.pathname) || 'indice';
+  apriChiave(k);
+  document.title = titoloDi(k);
+});
+
+/* I collegamenti dentro le finestre sono scritti come <span data-apri>: per
+   chi clicca vanno benissimo, ma Google non li segue, e un sito che non si
+   lega a se stesso per lui e' un mucchio di pagine sparse. Sul sito
+   pubblicato, appena una finestra e' pronta, quelli che hanno un indirizzo
+   diventano link veri, e cosi' anche il nome in ogni riga di un elenco. Il
+   clic resta quello di prima; con ctrl si apre una scheda nuova del browser,
+   come su ogni sito. */
+function linkVeri(radice){
+  radice.querySelectorAll('span.clic[data-apri]').forEach(s => {
+    const x = percorsoDi(chiave(s.dataset.apri, s.dataset.arg || ''));
+    if (!x) return;
+    const a = document.createElement('a');
+    for (const at of s.attributes) a.setAttribute(at.name, at.value);
+    a.href = x;
+    while (s.firstChild) a.appendChild(s.firstChild);
+    s.replaceWith(a);
+  });
+  radice.querySelectorAll('tr.riga[data-q]').forEach(r => {
+    const td = r.querySelector('td');
+    const x = percorsoDi('persona/' + r.dataset.q);
+    if (!td || !x || td.querySelector('a')) return;
+    const a = document.createElement('a');
+    a.className = 'nome';
+    a.href = x;
+    while (td.firstChild) a.appendChild(td.firstChild);
+    td.appendChild(a);
+  });
+}
 
 /* ---------- pezzi riusabili ---------- */
 function perElenco(p){
@@ -2871,13 +2978,19 @@ document.addEventListener('click', e => {
   if (e.target.closest('#chiudi-sessione')){
     return schermataBlu('Chiusura della sessione in corso.');
   }
+  // un link vero con ctrl, maiuscolo o cmd: una scheda nuova del browser
+  if (e.target.closest('a[href]') && (e.ctrlKey || e.metaKey || e.shiftKey)) return;
   const bersaglio = e.target.closest('[data-apri]');
   if (bersaglio){
+    e.preventDefault();
     apri(bersaglio.dataset.apri, bersaglio.dataset.arg || '');
     return;
   }
   const riga = e.target.closest('tr.riga');
-  if (riga && riga.dataset.q) apri('persona', riga.dataset.q);
+  if (riga && riga.dataset.q){
+    e.preventDefault();
+    apri('persona', riga.dataset.q);
+  }
 });
 
 document.addEventListener('keydown', e => {
@@ -2952,11 +3065,19 @@ orologio();
 setInterval(orologio, 20000);
 
 const partenza = decodeURIComponent(location.hash.replace(/^#/, ''));
-if (partenza){
-  const i = partenza.indexOf('/');
-  apri(i < 0 ? partenza : partenza.slice(0, i), i < 0 ? '' : partenza.slice(i+1), true);
-} else {
-  apri('indice', '', true);
+const iniziale = partenza ||
+                 (INDIRIZZI ? chiaveDaPercorso(location.pathname) : '') || 'indice';
+apriChiave(iniziale);
+// Sul sito pubblicato un vecchio link col cancelletto, o un indirizzo che non
+// esiste piu', diventa quello vero. Il titolo scritto nella pagina, che e'
+// quello che legge Google, resta com'e'; si cambia solo quando la pagina e'
+// arrivata da un cancelletto, perche' allora e' quello della casa.
+if (INDIRIZZI){
+  try {
+    history.replaceState({k: iniziale}, '',
+      percorsoDi(iniziale) || (iniziale === 'indice' ? '/' : '/#' + iniziale));
+  } catch (e) {}
+  if (partenza) document.title = titoloDi(iniziale);
 }
 </script>
 </body>

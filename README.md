@@ -43,7 +43,14 @@ python scripts/costruisci_mappa_partiti.py
 python scripts/genera_sito.py
 ```
 
-Esce `sito/index.html`. Senza `--fresco` le risposte restano in cache dodici ore.
+Escono due cose. `sito/index.html` è il sito in un file solo, coi dati
+dentro: si apre col doppio clic dal disco. `pubblica/` è quello che va online:
+lo stesso Windows 95, ma con una pagina per ogni finestra
+(`/onorevole/clemente-mastella/`, `/partito/udeur/`, `/cestino/`), ognuna con
+titolo e descrizione suoi, più `sitemap.xml` e `robots.txt`. Serve a Google,
+che la parte dell'indirizzo dopo il cancelletto la ignora: col file solo, per
+lui il sito era una pagina sola. I vecchi link col cancelletto funzionano
+ancora. Senza `--fresco` le risposte restano in cache dodici ore.
 
 | script | cosa fa |
 |---|---|
@@ -52,6 +59,7 @@ Esce `sito/index.html`. Senza `--fresco` le risposte restano in cache dodici ore
 | `costruisci_mappa_partiti.py` | dai 135 nomi di gruppo ai 34 partiti |
 | `casacche.py` | il conto dei cambi, con le successioni |
 | `genera_sito.py` | compatta i dati e li inietta in `modello.html` |
+| `pagine_statiche.py` | scompone il sito in una pagina per finestra, in `pubblica/` |
 | `novita.py` | dice al lavoro notturno se è cambiato qualcosa di vero |
 | `verifica_viventi.py` | chiede conto ai registri di chi risulta vivo |
 

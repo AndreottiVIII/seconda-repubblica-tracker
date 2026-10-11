@@ -2,3 +2,5 @@ __pycache__/
 *.pyc
 data/cache/
 novita.txt
+# il sito scomposto in pagine: si rifa' da zero a ogni giro
+pubblica/
