@@ -81,6 +81,7 @@ jobs:
           test -s pubblica/programma.js
           test -s pubblica/sitemap.xml
           test -s pubblica/preview.jpg
+          test -s pubblica/favicon.ico
 
       - uses: actions/configure-pages@v5
 

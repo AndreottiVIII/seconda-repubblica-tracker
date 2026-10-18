@@ -38,6 +38,19 @@ SITO = 'Seconda Repubblica Tracker'
 # non le mostri.
 FUORI_DAI_MOTORI = {'trova', 'aggiorna', 'confronta', 'esegui', 'errore'}
 
+# L'icona come file vero. Quella incorporata nella pagina (data:) al browser
+# basta, ma Google nei risultati di ricerca la ignora e mette il mappamondo
+# grigio: vuole un indirizzo da scaricare, e una misura multipla di 48 pixel.
+# Solo nelle pagine pubblicate: dal disco /favicon.ico non porta da nessuna
+# parte, e li' resta l'icona incorporata.
+ICONE = '\n'.join([
+    '<link rel="icon" href="/favicon.ico" sizes="48x48">',
+    '<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png">',
+    '<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">',
+    '<link rel="apple-touch-icon" href="/apple-touch-icon.png">',
+])
+FILE_ICONE = ('favicon.ico', 'favicon-96.png', 'favicon-192.png', 'apple-touch-icon.png')
+
 
 def scheggia(testo):
     """'Clemente Mastella' -> 'clemente-mastella'. La stessa riduzione la fa
@@ -458,7 +471,7 @@ def costruisci(scheletro, dati, descrizione_casa, versione, cartella_sito, uscit
     def monta(titolo_pieno, testa_html, h1):
         return (involucro
                 .replace('%%TITOLO%%', e(titolo_pieno))
-                .replace('<!--%%TESTA%%-->', testa_html)
+                .replace('<!--%%TESTA%%-->', testa_html + '\n' + ICONE)
                 .replace('<!--%%INTESTAZIONE%%-->', intestazione(h1)))
 
     if os.path.isdir(uscita):
@@ -506,7 +519,7 @@ def costruisci(scheletro, dati, descrizione_casa, versione, cartella_sito, uscit
 
     # Quello che sta solo nella cartella del sito: l'icona e l'immagine per le
     # anteprime quando il link gira.
-    for nome in ('favicon.png', 'anteprima.png', 'preview.jpg'):
+    for nome in ('favicon.png', 'anteprima.png', 'preview.jpg') + FILE_ICONE:
         sorgente = os.path.join(cartella_sito, nome)
         if os.path.exists(sorgente):
             shutil.copyfile(sorgente, os.path.join(uscita, nome))
