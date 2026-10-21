@@ -216,9 +216,13 @@ def pagine(dati):
           'ogni governo, compresi quelli mai entrati in Parlamento.')
     if dati.get('fiducie'):
         fissa('fiducia', '/la-prima-fiducia/',
-              'La prima fiducia ai governi, nome per nome',
-              'Come hanno votato i deputati la prima fiducia a %s: sì, no, astenuti e '
-              'assenti, partito per partito.' % elenco_parole([f['g'] for f in dati['fiducie']]))
+              'Le fiducie ai governi alla Camera, voto per voto e nome per nome',
+              'I voti di fiducia alla Camera dal 2001 al 2012, con il governo e contro, e la prima '
+              'fiducia a %s deputato per deputato.' % elenco_parole([f['g'] for f in dati['fiducie']]))
+    fissa('flussi', '/dalla-lista-al-gruppo/',
+          'Dalla lista al gruppo: con che lista si entra alla Camera, in che gruppo si finisce',
+          'Legislatura per legislatura, dal 1994 al 2013: la lista con cui ogni deputato e\' stato '
+          'eletto e il gruppo in cui ha finito la legislatura.')
     fissa('cadute', '/le-cadute/', 'Le cadute dei governi della Seconda Repubblica',
           'I governi finiti prima del tempo per un voto perso o un appoggio '
           'ritirato: come, quando, con quali numeri, e chi ha cambiato gruppo attorno.')
@@ -537,6 +541,21 @@ def costruisci(scheletro, dati, descrizione_casa, versione, cartella_sito, uscit
             if titoli:
                 scrivi('proposte/%s.json' % q,
                        json.dumps(titoli, ensure_ascii=False, separators=(',', ':')))
+    # I nomi di ogni voto di fiducia, un file per votazione: il grafico li chiede
+    # quando si clicca un punto.
+    voti_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'data',
+                             'voti_camera.json')
+    if os.path.exists(voti_file):
+        per_ci = {p['ci']: p['q'] for p in dati['persone'] if p.get('ci')}
+        nomi = {}
+        for pid, legs in json.load(open(voti_file, encoding='utf-8'))['deputati'].items():
+            if pid not in per_ci:
+                continue
+            for v in legs.values():
+                for vs, scelta in v.get('fiducie', []):
+                    nomi.setdefault(vs, {}).setdefault(scelta, []).append(per_ci[pid])
+        for vs, voti in nomi.items():
+            scrivi('fiducie/%s.json' % vs, json.dumps(voti, separators=(',', ':')))
     scrivi('stile.css', stile)
     scrivi('programma.js', programma)
     scrivi('versione.txt', versione)

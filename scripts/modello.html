@@ -1301,6 +1301,10 @@ VISTE['lista'] = function(filtro){
   } else if (tipo === 'fedeli'){
     gente = conGruppo().filter(p => p.c === 0 && p.m.length === ORDINE.length);
     titolo = 'I fedeli';
+  } else if (tipo === 'flusso'){
+    const [leg, lista, arrivo] = (valore || '').split('|');
+    gente = (flussiDi(leg)[lista + '|' + arrivo] || []);
+    titolo = lista + ' \u2192 ' + nomePartito(arrivo) + ', ' + leg + ' legislatura';
   } else if (tipo === 'cerca'){
     const q = (valore || '').toLowerCase();
     gente = P.filter(p => p.n.toLowerCase().indexOf(q) >= 0);
@@ -2027,14 +2031,142 @@ function partitoAl(p, giorno){
   return t ? t[1] : '?';
 }
 
+const VOCE_FIDUCIA = {F: 'S&igrave;', C: 'No', A: 'Astenuti', M: 'In missione', N: 'Non hanno votato'};
+
+// I nomi di un voto di fiducia, per voto e poi per partito (quello del giorno).
+function nomiPerVoto(voti, giorno){
+  let h = '';
+  ['F', 'C', 'A', 'M', 'N'].forEach(k => {
+    const gente = (voti[k] || []).map(q => perQid[q]).filter(Boolean);
+    if (!gente.length) return;
+    const perP = {};
+    gente.forEach(p => { const c = partitoAl(p, giorno); (perP[c] = perP[c] || []).push(p); });
+    h += '<h3 style="margin:8px 0 2px">' + VOCE_FIDUCIA[k] + ' (' + gente.length + ')</h3><table><tbody>' +
+      Object.keys(perP).sort((a, b) => perP[b].length - perP[a].length).map(c =>
+        '<tr><td style="width:150px;vertical-align:top">' + pill(c, nomePartito(c)) +
+        ' <span style="color:#606060">' + perP[c].length + '</span></td><td style="font-size:11px">' +
+        perP[c].sort(perCognome).map(p => '<span class="clic" data-apri="persona" data-arg="' +
+          p.q + '">' + esc(perElenco(p)) + '</span>').join(', ') + '</td></tr>').join('') +
+      '</tbody></table>';
+  });
+  return h;
+}
+
+/* Il grafico di tutte le fiducie: i si' e i no di ogni voto, lungo il tempo,
+   con le fasce dei governi. I colori sono controllati col validatore (anche per
+   chi non distingue i colori, e per il contrasto sul bianco): blu per i si',
+   rosso per i no. Passandoci sopra si legge il voto; cliccando se ne aprono i
+   nomi. */
+const COL_SI = '#2a78d6', COL_NO = '#e34948';
+function graficoFiducie(){
+  const T = DATI.fiducie_tutte || [];
+  if (!T.length) return '';
+  const W = 680, H = 250, ml = 34, mr = 8, mt = 26, mb = 22;
+  const g = d => Date.UTC(+d.slice(0, 4), +d.slice(4, 6) - 1, +d.slice(6, 8)) / 864e5;
+  const x0 = g(T[0][1]) - 60, x1 = g(T[T.length - 1][1]) + 60;
+  const X = d => ml + (g(d) - x0) / (x1 - x0) * (W - ml - mr);
+  const Y = v => mt + (1 - v / 650) * (H - mt - mb);
+  // con il governo / contro il governo: in una mozione di sfiducia sono i no e i si'
+  const con = x => x[7] === 'S' ? x[4] : x[3];
+  const contro = x => x[7] === 'S' ? x[3] : x[4];
+  let svg = '';
+  // le fasce dei governi
+  const tratti = [];
+  T.forEach(r => {
+    const u = tratti[tratti.length - 1];
+    if (u && u.g === r[2]) u.fine = r[1]; else tratti.push({g: r[2], inizio: r[1], fine: r[1]});
+  });
+  tratti.forEach((t, i) => {
+    const a = X(t.inizio) - 5, b = X(t.fine) + 5;
+    svg += '<rect x="' + a + '" y="' + mt + '" width="' + Math.max(10, b - a) + '" height="' + (H - mt - mb) +
+      '" fill="' + (i % 2 ? '#ffffff' : '#f1f1f1') + '"/>' +
+      '<text x="' + ((a + b) / 2) + '" y="' + (mt - 8) + '" font-size="10" fill="#404040" text-anchor="middle">' +
+      esc(t.g) + '</text>';
+  });
+  // la griglia, discreta
+  [0, 200, 400, 600].forEach(v => {
+    svg += '<line x1="' + ml + '" x2="' + (W - mr) + '" y1="' + Y(v) + '" y2="' + Y(v) +
+      '" stroke="#d8d8d8" stroke-width="1"/>' +
+      '<text x="' + (ml - 4) + '" y="' + (Y(v) + 3) + '" font-size="10" fill="#606060" text-anchor="end">' + v + '</text>';
+  });
+  for (let a = +T[0][1].slice(0, 4) + 1; a <= +T[T.length - 1][1].slice(0, 4); a++) {
+    svg += '<text x="' + X(a + '0101') + '" y="' + (H - 6) + '" font-size="10" fill="#606060" text-anchor="middle">' +
+      a + '</text>';
+  }
+  // le linee, governo per governo, e i punti
+  tratti.forEach(t => {
+    const r = T.filter(x => x[2] === t.g && x[1] >= t.inizio && x[1] <= t.fine);
+    [[con, COL_SI], [contro, COL_NO]].forEach(([k, col]) => {
+      svg += '<polyline fill="none" stroke="' + col + '" stroke-width="2" points="' +
+        r.map(x => X(x[1]) + ',' + Y(k(x))).join(' ') + '"/>';
+    });
+  });
+  T.forEach(x => {
+    [[con, COL_SI], [contro, COL_NO]].forEach(([k, col]) => {
+      const cx = X(x[1]), cy = Y(k(x));
+      // le mozioni di sfiducia hanno un rombo, i voti di fiducia un punto
+      svg += x[7] === 'S'
+        ? '<rect x="' + (cx - 4.5) + '" y="' + (cy - 4.5) + '" width="9" height="9" transform="rotate(45 ' +
+          cx + ' ' + cy + ')" fill="#ffffff" stroke="' + col + '" stroke-width="2.5"/>'
+        : '<circle cx="' + cx + '" cy="' + cy + '" r="4" fill="' + col + '" stroke="#ffffff" stroke-width="2"/>';
+    });
+  });
+  // le zone sensibili, piu' larghe dei punti: si passa sopra e si clicca
+  T.forEach((x, i) => {
+    svg += '<rect class="punto-fiducia" data-i="' + i + '" data-apri="fiduciavoto" data-arg="' + x[0] +
+      '" x="' + (X(x[1]) - 5) + '" y="' + mt + '" width="10" height="' + (H - mt - mb) +
+      '" fill="transparent" style="cursor:pointer"/>';
+  });
+  return '<div class="grafico-fiducie" style="position:relative;background:#fff;border:2px inset #dfdfdf;padding:4px">' +
+    '<div style="font-size:11px;margin:0 0 2px 4px"><span style="color:' + COL_SI + '">&#9679;</span> Con il governo ' +
+    '&nbsp; <span style="color:' + COL_NO + '">&#9679;</span> Contro il governo &nbsp; &#9671; mozione di ' +
+    'sfiducia, dove chi vota no sostiene il governo &nbsp; <span style="color:#606060">cliccare un punto ' +
+    'per i nomi</span></div>' +
+    '<svg viewBox="0 0 ' + W + ' ' + H + '" style="width:100%;height:auto;display:block">' + svg + '</svg>' +
+    '<div class="tip-fiducia" style="display:none;position:absolute;pointer-events:none;background:#ffffe1;' +
+    'border:1px solid #000;padding:3px 5px;font-size:11px;max-width:260px"></div></div>';
+}
+
+// il riquadro che segue il mouse sul grafico
+document.addEventListener('mousemove', e => {
+  const box = e.target.closest && e.target.closest('.grafico-fiducie');
+  if (!box) return;
+  const r = e.target.closest('.punto-fiducia');
+  const tip = box.querySelector('.tip-fiducia');
+  if (!r) { tip.style.display = 'none'; return; }
+  const x = DATI.fiducie_tutte[+r.dataset.i];
+  tip.innerHTML = '<b>' + esc(x[2]) + '</b>, ' + dataIt(x[1]) + '<br>' + esc(x[6]) +
+    (x[7] === 'S' ? ' (mozione di sfiducia)' : '') + '<br>' + x[3] + ' s&igrave;, ' + x[4] + ' no' +
+    (x[5] ? ', ' + x[5] + ' astenuti' : '');
+  const b = box.getBoundingClientRect();
+  tip.style.display = 'block';
+  tip.style.left = Math.max(0, Math.min(e.clientX - b.left + 12, b.width - 270)) + 'px';
+  tip.style.top = (e.clientY - b.top + 12) + 'px';
+});
+
 VISTE['fiducia'] = function(){
   const F = DATI.fiducie || [];
   if (!F.length) throw new Error('Mancano i voti di fiducia.');
-  const voce = {F: 'S&igrave;', C: 'No', A: 'Astenuti', M: 'In missione', N: 'Non hanno votato'};
-  let h = '<h1>La prima fiducia</h1>' +
-    '<p>Il primo voto di fiducia di ogni governo alla Camera dei deputati, deputato per ' +
-    'deputato, diviso per partito. Le fiducie sono negli archivi della Camera dalla XIV ' +
-    'legislatura: quelle a Prodi I, D&rsquo;Alema e Amato non ci sono.</p>';
+  const T = DATI.fiducie_tutte || [];
+  let h = '<h1>Le fiducie</h1>';
+  if (T.length)
+    h += '<h2>Tutte le fiducie alla Camera, voto per voto</h2>' +
+      '<p>I ' + T.length + ' voti che la Camera segna come fiducia, dalla XIV legislatura: per ' +
+      'ognuno quanti hanno votato con il governo e quanti contro. Fra questi ci sono anche ' +
+      'cinque mozioni di sfiducia, al governo o a un ministro, dove votare s&igrave; vuol dire ' +
+      'votare contro. Prima del 2001 negli archivi della Camera le fiducie non sono segnate.</p>' +
+      graficoFiducie() +
+      '<details style="margin-top:6px"><summary class="clic">La tabella dei ' + T.length + ' voti</summary>' +
+      '<table><thead><tr><th>Data</th><th>Governo</th><th>Voto</th><th class="num">S&igrave;</th>' +
+      '<th class="num">No</th><th class="num">Astenuti</th></tr></thead><tbody>' +
+      T.map(x => '<tr><td style="white-space:nowrap"><span class="clic" data-apri="fiduciavoto" data-arg="' +
+        x[0] + '">' + dataIt(x[1]) + '</span></td><td>' + esc(x[2]) + '</td><td style="font-size:11px">' +
+        esc(x[6]) + (x[7] === 'S' ? ' &mdash; <b>mozione di sfiducia</b>' : '') + '</td><td class="num">' +
+        x[3] + '</td><td class="num">' + x[4] + '</td><td class="num">' +
+        (x[5] || '') + '</td></tr>').join('') + '</tbody></table></details>';
+  h += '<h2 style="margin-top:14px">La prima fiducia di ogni governo</h2>' +
+    '<p>Il voto con cui la Camera accoglie un governo nuovo, deputato per deputato, diviso per ' +
+    'partito. Quelle a Prodi I, D&rsquo;Alema e Amato negli archivi non ci sono.</p>';
   F.forEach((f, i) => {
     const conta = k => (f.voti[k] || []).length;
     const u = f.ufficiale || [];
@@ -2047,25 +2179,147 @@ VISTE['fiducia'] = function(){
       (u[0] != null && !uguale
         ? '<p class="piede">Totale ufficiale: ' + u[0] + ' s&igrave;, ' + u[1] + ' no. Nell&rsquo;elenco ' +
           'nominale della Camera ne risultano ' + conta('F') + ' e ' + conta('C') + ': i nomi qui ' +
-          'sotto sono quelli.</p>' : '');
-    ['F', 'C', 'A', 'M', 'N'].forEach(k => {
-      const gente = (f.voti[k] || []).map(q => perQid[q]).filter(Boolean);
-      if (!gente.length) return;
-      const perP = {};
-      gente.forEach(p => { const c = partitoAl(p, f.data); (perP[c] = perP[c] || []).push(p); });
-      h += '<h3 style="margin:8px 0 2px">' + voce[k] + ' (' + gente.length + ')</h3><table><tbody>' +
-        Object.keys(perP).sort((a, b) => perP[b].length - perP[a].length).map(c =>
-          '<tr><td style="width:150px;vertical-align:top">' + pill(c, nomePartito(c)) +
-          ' <span style="color:#606060">' + perP[c].length + '</span></td><td style="font-size:11px">' +
-          perP[c].sort(perCognome).map(p => '<span class="clic" data-apri="persona" data-arg="' +
-            p.q + '">' + esc(perElenco(p)) + '</span>').join(', ') + '</td></tr>').join('') +
-        '</tbody></table>';
-    });
-    h += '</details>';
+          'sotto sono quelli.</p>' : '') + nomiPerVoto(f.voti, f.data) + '</details>';
   });
-  return {titolo: 'La prima fiducia', icona: '&#128499;', html: h, faccia: true,
-          larghezza: 720, altezza: 560, stato: F.length + ' governi'};
+  return {titolo: 'Le fiducie', icona: '&#128499;', html: h, faccia: true,
+          larghezza: 740, altezza: 580, stato: T.length + ' voti di fiducia'};
 };
+
+// Un voto di fiducia qualsiasi, con i nomi: arrivano da /fiducie/<votazione>.json
+VISTE['fiduciavoto'] = function(vs){
+  const x = (DATI.fiducie_tutte || []).find(r => r[0] === vs);
+  if (!x) throw new Error('Voto di fiducia sconosciuto: ' + vs);
+  const prima = (DATI.fiducie || []).find(f => f.vs === vs);
+  const dove = 'nomi-' + vs;
+  let corpo = '<div id="' + dove + '">Caricamento dei nomi...</div>';
+  if (prima) corpo = nomiPerVoto(prima.voti, prima.data);
+  else if (!INDIRIZZI) corpo = '<p>I nomi di questo voto sono sul sito pubblicato.</p>';
+  else
+    fetch(RADICE_SITO + 'fiducie/' + vs + '.json').then(r => r.ok ? r.json() : Promise.reject())
+      .then(v => {
+        const el = document.getElementById(dove);
+        if (el) {
+          const nf = (v.F || []).length, nc = (v.C || []).length;
+          el.innerHTML = (nf !== x[3] || nc !== x[4]
+            ? '<p class="piede">Nell&rsquo;elenco nominale della Camera risultano ' + nf + ' s&igrave; e ' +
+              nc + ' no: i nomi qui sotto sono quelli.</p>' : '') + nomiPerVoto(v, x[1]);
+          linkVeri(el);
+        }
+      })
+      .catch(() => {
+        const el = document.getElementById(dove);
+        if (el) el.textContent = 'Nomi non disponibili.';
+      });
+  return {titolo: 'Fiducia, ' + x[2] + ', ' + dataIt(x[1]), icona: '&#128499;', faccia: true,
+    html: '<h1>' + esc(x[2]) + ', ' + dataIt(x[1]) + '</h1><p>' + esc(x[6]) + '</p>' +
+      (x[7] === 'S' ? '<p class="avviso">Mozione di sfiducia: votare s&igrave; vuol dire votare ' +
+        'contro il governo o il ministro.</p>' : '') +
+      '<p><b>' + x[3] + '</b> s&igrave;, <b>' + x[4] + '</b> no' + (x[5] ? ', ' + x[5] + ' astenuti' : '') +
+      '.</p>' + corpo,
+    larghezza: 680, altezza: 520, stato: x[3] + ' si, ' + x[4] + ' no'};
+};
+
+/* Dalla lista al gruppo: con quale lista si e' entrati alla Camera, e in quale
+   gruppo si e' finita la legislatura. A sinistra le liste, a destra i partiti
+   del gruppo d'arrivo, le bande larghe quanto i deputati. Nella XII, XIII e
+   XIV tre deputati su quattro sono entrati col maggioritario, senza lista: per
+   loro c'e' il blocco dei collegi uninominali. I colori sono quelli dei
+   partiti, gli stessi di tutto il sito: il colore segue il partito d'arrivo. */
+function flussiDi(leg){
+  const i = ORDINE.indexOf(leg);
+  const flussi = {};
+  P.forEach(p => {
+    const e = p.el && p.el[leg];
+    if (!e) return;
+    const passi = (p.g || []).filter(t => t[0] === i && t[4] === 'C');
+    if (!passi.length) return;
+    const lista = e[2] || (e[0] === 'M' ? 'COLLEGI UNINOMINALI' : '?');
+    const arrivo = passi[passi.length - 1][1];
+    const k = lista + '|' + arrivo;
+    (flussi[k] = flussi[k] || []).push(p);
+  });
+  return flussi;
+}
+
+function graficoFlussi(leg){
+  const flussi = flussiDi(leg);
+  const tot = {sx: {}, dx: {}};
+  Object.keys(flussi).forEach(k => {
+    const [l, a] = k.split('|');
+    tot.sx[l] = (tot.sx[l] || 0) + flussi[k].length;
+    tot.dx[a] = (tot.dx[a] || 0) + flussi[k].length;
+  });
+  const n = Object.values(tot.sx).reduce((a, b) => a + b, 0);
+  if (!n) return '<p>Nessun dato per questa legislatura.</p>';
+  const W = 720, H = 460, gap = 4, wN = 10, xs = 236, xd = W - 236;
+  const altezza = H - gap * 20;
+  const ordina = o => Object.keys(o).sort((a, b) => o[b] - o[a]);
+  const pos = (o) => {
+    let y = 0; const fuori = {};
+    ordina(o).forEach(k => { const h = o[k] / n * altezza; fuori[k] = {y: y, h: h, usato: 0}; y += h + gap; });
+    return fuori;
+  };
+  const S = pos(tot.sx), D = pos(tot.dx);
+  let svg = '';
+  // le bande, le piu' grandi per prime
+  Object.keys(flussi).sort((a, b) => flussi[b].length - flussi[a].length).forEach(k => {
+    const [l, a] = k.split('|');
+    const h = flussi[k].length / n * altezza;
+    const y1 = S[l].y + S[l].usato, y2 = D[a].y + D[a].usato;
+    S[l].usato += h; D[a].usato += h;
+    const x1 = xs + wN, x2 = xd, c = (x1 + x2) / 2;
+    svg += '<path class="banda-flusso" data-apri="lista" data-arg="flusso:' + leg + '|' + esc(k) + '" d="M' +
+      x1 + ',' + y1 + ' C' + c + ',' + y1 + ' ' + c + ',' + y2 + ' ' + x2 + ',' + y2 + ' L' + x2 + ',' + (y2 + h) +
+      ' C' + c + ',' + (y2 + h) + ' ' + c + ',' + (y1 + h) + ' ' + x1 + ',' + (y1 + h) + ' Z" fill="' +
+      colorePartito(a) + '" fill-opacity="0.45" stroke="#ffffff" stroke-width="1" style="cursor:pointer">' +
+      '<title>' + esc(l) + ' → ' + esc(nomePartito(a)) + ': ' + flussi[k].length + '</title></path>';
+  });
+  ordina(tot.sx).forEach(l => {
+    const s = S[l];
+    svg += '<rect x="' + xs + '" y="' + s.y + '" width="' + wN + '" height="' + Math.max(1, s.h) + '" fill="#606060"/>';
+    if (s.h >= 8) svg += '<text x="' + (xs - 4) + '" y="' + (s.y + s.h / 2 + 3) + '" font-size="10" fill="#202020" ' +
+      'text-anchor="end">' + esc(l.length > 36 ? l.slice(0, 35) + '…' : l) + ' ' + tot.sx[l] + '</text>';
+  });
+  ordina(tot.dx).forEach(a => {
+    const d = D[a];
+    svg += '<rect x="' + xd + '" y="' + d.y + '" width="' + wN + '" height="' + Math.max(1, d.h) + '" fill="' +
+      colorePartito(a) + '"/>';
+    if (d.h >= 8) svg += '<text x="' + (xd + wN + 4) + '" y="' + (d.y + d.h / 2 + 3) + '" font-size="10" ' +
+      'fill="#202020">' + esc(nomePartito(a).length > 36 ? nomePartito(a).slice(0, 35) + '…' : nomePartito(a)) +
+      ' ' + tot.dx[a] + '</text>';
+  });
+  return '<div style="background:#fff;border:2px inset #dfdfdf;padding:4px">' +
+    '<div style="font-size:11px;display:flex;justify-content:space-between;margin:0 4px 4px">' +
+    '<b>Lista con cui si &egrave; stati eletti</b><b>Gruppo a fine legislatura</b></div>' +
+    '<svg viewBox="0 0 ' + W + ' ' + H + '" style="width:100%;height:auto;display:block">' + svg + '</svg></div>';
+}
+
+VISTE['flussi'] = function(leg){
+  leg = ORDINE.indexOf(leg) >= 0 ? leg : 'XVI';
+  const scelte = ORDINE.map(m => m === leg ? '<b>' + m + '</b>' :
+    '<span class="clic sceglie-flusso" data-leg="' + m + '">' + m + '</span>').join(' &middot; ');
+  const html = '<h1>Dalla lista al gruppo</h1>' +
+    '<p>Con quale lista si entra alla Camera, e in quale gruppo si finisce la legislatura. Ogni banda ' +
+    '&egrave; larga quanto i deputati che fanno quel percorso; cliccandola si apre l&rsquo;elenco dei nomi. ' +
+    'Nella XII, XIII e XIV tre deputati su quattro sono stati eletti nei collegi uninominali, senza lista.</p>' +
+    '<p>Legislatura: ' + scelte + '</p><div class="contenitore-flussi">' + graficoFlussi(leg) + '</div>' +
+    '<p class="piede">Le liste come le scrive la Camera; il gruppo d&rsquo;arrivo &egrave; l&rsquo;ultimo ' +
+    'della legislatura alla Camera, col partito a cui il sito lo assegna.</p>';
+  return {titolo: 'Dalla lista al gruppo', icona: '&#128256;', html: html, faccia: true,
+          larghezza: 740, altezza: 600, stato: leg + ' legislatura'};
+};
+
+// cambiare legislatura dentro la finestra, senza aprirne un'altra
+document.addEventListener('click', e => {
+  const s = e.target.closest && e.target.closest('.sceglie-flusso');
+  if (!s) return;
+  const corpo = s.closest('.corpo');
+  const leg = s.dataset.leg;
+  corpo.innerHTML = VISTE['flussi'](leg).html;
+  const stato = corpo.closest('.finestra').querySelector('.stato div');
+  if (stato) stato.textContent = leg + ' legislatura';
+  if (INDIRIZZI) linkVeri(corpo);
+});
 
 VISTE['governi'] = function(){
   let h = '<h1>Gli undici governi</h1>' +
@@ -3056,7 +3310,8 @@ const SCRIVANIA = [
   ['&#9937;', 'I Responsabili', 'responsabili', '', 'sx'],
   ['&#128203;', 'Elezioni', 'elezioni', '', 'sx'],
   ['&#127963;', 'Governi', 'governi', '', 'sx'],
-  ['&#128499;', 'La prima fiducia', 'fiducia', '', 'sx'],
+  ['&#128499;', 'Le fiducie', 'fiducia', '', 'sx'],
+  ['&#128256;', 'Dalla lista al gruppo', 'flussi', '', 'sx'],
   ['&#128721;', 'Le cadute', 'cadute', '', 'sx'],
   ['&#128198;', 'Linea del tempo', 'tempo', '', 'sx'],
   ['&#128220;', 'Il gruppo misto', 'misto', '', 'sx'],

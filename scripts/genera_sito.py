@@ -322,6 +322,7 @@ def main():
     # missione, non ha votato).
     voti_file = os.path.join(QUI, '..', 'data', 'voti_camera.json')
     prime_fiducie = []
+    tutte_fiducie = []
     if os.path.exists(voti_file):
         V = json.load(open(voti_file, encoding='utf-8'))
         per_ci = {p['ci']: p for p in persone if p.get('ci')}
@@ -350,6 +351,29 @@ def main():
                             voti.setdefault(scelta, []).append(per_ci[pid]['q'])
             prime_fiducie.append({'g': governo_al(m['data']), 'data': m['data'], 'vs': vs,
                                   'ufficiale': m.get('ufficiale'), 'voti': voti})
+        # Tutte le fiducie, per il grafico: data, governo, si', no, astenuti (i totali
+        # ufficiali dove ci sono), e il titolo dell'atto. I nomi stanno in un file per
+        # votazione (pubblica/fiducie/), scritto da pagine_statiche.
+        conta_nom = {}
+        for pid, legs in V['deputati'].items():
+            for v in legs.values():
+                for x, scelta in v.get('fiducie', []):
+                    conta_nom.setdefault(x, {}).setdefault(scelta, 0)
+                    conta_nom[x][scelta] += 1
+        for vs, m in sorted(V['fiducie'].items(), key=lambda kv: kv[1].get('data') or ''):
+            u = m.get('ufficiale') or [None, None, None]
+            c = conta_nom.get(vs, {})
+            # Due totali ufficiali dell'archivio sono impossibili (510 e 470 contrari
+            # su 630 deputati, Prodi II, 2006): li' vale l'elenco nominale.
+            if None in u or sum(u) > 630:
+                u = [c.get('F', 0), c.get('C', 0), c.get('A', 0)]
+            titolo = re.sub(r'^Votazione\s+', '', m.get('titolo') or '')
+            desc = (m.get('descrizione') or '').upper()
+            # Le mozioni contro il governo o un ministro la Camera le segna come
+            # fiducie, ma li' votare si' vuol dire votare contro il governo.
+            sfiducia = titolo.startswith('Mozione') and 'DI FIDUCIA' not in desc
+            tutte_fiducie.append([vs, m.get('data'), governo_al(m.get('data') or ''),
+                                  u[0], u[1], u[2], titolo, 'S' if sfiducia else 'F'])
         print('voti alla Camera: %d schede; prime fiducie: %s'
               % (sum(1 for p in persone if p.get('vc')),
                  ', '.join('%s %s' % (x['g'], x['data']) for x in prime_fiducie)))
@@ -394,6 +418,8 @@ def main():
     # niente d'altro.
     if prime_fiducie:
         dati['fiducie'] = prime_fiducie
+    if tutte_fiducie:
+        dati['fiducie_tutte'] = tutte_fiducie
 
     if os.path.exists(SEGRETARI):
         sg = json.load(open(SEGRETARI, encoding='utf-8'))
