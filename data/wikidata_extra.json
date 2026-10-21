@@ -1,0 +1,8653 @@
+{
+"_nota": "Da Wikidata: luoghi di nascita, morte e sepoltura, parenti che stanno anche loro nell'elenco, voce della Treccani. Generato da scripts/wikidata_extra.py.",
+"luoghi": {
+"Q1220": {
+"morte": "Roma",
+"nascita": "Napoli",
+"sepoltura": "cimitero acattolico di Roma"
+},
+"Q1224": {
+"morte": "Roma",
+"nascita": "Livorno",
+"sepoltura": "cimitero della Misericordia"
+},
+"Q1230": {
+"morte": "Roma",
+"nascita": "Sassari",
+"sepoltura": "cimitero comunale di Sassari"
+},
+"Q1071031": {
+"nascita": "Roma"
+},
+"Q1082039": {
+"morte": "Roma",
+"nascita": "Napoli"
+},
+"Q1102044": {
+"nascita": "Roma"
+},
+"Q1226015": {
+"nascita": "Roma"
+},
+"Q1377749": {
+"nascita": "Roma"
+},
+"Q1379277": {
+"morte": "Roma",
+"nascita": "Genova",
+"sepoltura": "Genova"
+},
+"Q1384236": {
+"morte": "Roma",
+"nascita": "Fano"
+},
+"Q1442525": {
+"morte": "Roma",
+"nascita": "Civitavecchia"
+},
+"Q1055212": {
+"nascita": "Lubiana",
+"morte": "Gorizia"
+},
+"Q11860": {
+"morte": "Milano"
+},
+"Q1055449": {
+"nascita": "Milano"
+},
+"Q1341209": {
+"nascita": "Milano"
+},
+"Q1525100": {
+"morte": "Roma",
+"nascita": "Genova"
+},
+"Q13405623": {
+"morte": "Roma",
+"nascita": "Altavilla Irpina"
+},
+"Q15078797": {
+"nascita": "Roma"
+},
+"Q15117584": {
+"nascita": "Roma"
+},
+"Q15141218": {
+"nascita": "Roma",
+"morte": "Roma"
+},
+"Q15142811": {
+"nascita": "Roma"
+},
+"Q106641227": {
+"nascita": "Roma"
+},
+"Q110781901": {
+"nascita": "Roma"
+},
+"Q110797427": {
+"nascita": "Roma"
+},
+"Q110797552": {
+"nascita": "Roma"
+},
+"Q10270506": {
+"morte": "San Paolo",
+"nascita": "Alessandria"
+},
+"Q10309850": {
+"nascita": "San Paolo"
+},
+"Q1122937": {
+"nascita": "Torino"
+},
+"Q1237108": {
+"nascita": "Torino",
+"morte": "Torino"
+},
+"Q1346627": {
+"nascita": "Torino"
+},
+"Q1514742": {
+"nascita": "Bergamo",
+"morte": "Bergamo"
+},
+"Q1058130": {
+"nascita": "Como",
+"morte": "Como"
+},
+"Q1135246": {
+"nascita": "Como"
+},
+"Q110801263": {
+"nascita": "Roma"
+},
+"Q110801714": {
+"morte": "Milano",
+"nascita": "Fiume"
+},
+"Q110813583": {
+"nascita": "Milano"
+},
+"Q110813579": {
+"nascita": "Torino"
+},
+"Q116017492": {
+"nascita": "Torino"
+},
+"Q1522083": {
+"morte": "Milano",
+"nascita": "Saviano"
+},
+"Q104150973": {
+"nascita": "Milano"
+},
+"Q108672607": {
+"nascita": "Milano"
+},
+"Q110781001": {
+"nascita": "Milano"
+},
+"Q110781075": {
+"nascita": "Milano"
+},
+"Q1441240": {
+"nascita": "Busto Arsizio"
+},
+"Q110814127": {
+"nascita": "Venezia"
+},
+"Q1119601": {
+"nascita": "Cagliari"
+},
+"Q122345": {
+"nascita": "Genova"
+},
+"Q1055202": {
+"nascita": "Firenze"
+},
+"Q1459321": {
+"nascita": "Firenze"
+},
+"Q110781921": {
+"nascita": "Torino"
+},
+"Q110794445": {
+"nascita": "Torino"
+},
+"Q1074349": {
+"nascita": "Napoli"
+},
+"Q1079940": {
+"nascita": "Napoli"
+},
+"Q1250075": {
+"nascita": "Napoli"
+},
+"Q1379919": {
+"nascita": "Napoli",
+"morte": "Napoli"
+},
+"Q110813923": {
+"nascita": "Bari"
+},
+"Q110813989": {
+"nascita": "Bari"
+},
+"Q109768700": {
+"nascita": "Genova"
+},
+"Q1082088": {
+"nascita": "Palermo"
+},
+"Q1312739": {
+"nascita": "Palermo"
+},
+"Q106675084": {
+"nascita": "Verona",
+"morte": "Verona"
+},
+"Q105007549": {
+"nascita": "Catania",
+"morte": "Acireale"
+},
+"Q102164719": {
+"nascita": "Padova"
+},
+"Q115219562": {
+"nascita": "Brescia"
+},
+"Q115219595": {
+"morte": "Brescia",
+"nascita": "Chiari"
+},
+"Q14928120": {
+"morte": "Bari",
+"nascita": "Patù"
+},
+"Q110246119": {
+"morte": "Bari",
+"nascita": "Taverna"
+},
+"Q110781940": {
+"nascita": "Bari"
+},
+"Q13634274": {
+"nascita": "Firenze"
+},
+"Q106690741": {
+"nascita": "Firenze",
+"morte": "Pescara"
+},
+"Q11703835": {
+"nascita": "Bergamo"
+},
+"Q115558676": {
+"nascita": "Genova"
+},
+"Q137774074": {
+"nascita": "Genova",
+"morte": "Ponte di Legno"
+},
+"Q116017507": {
+"morte": "Cremona",
+"nascita": "San Daniele Po"
+},
+"Q1056548": {
+"morte": "Aosta",
+"nascita": "Brusson"
+},
+"Q136767065": {
+"nascita": "Treviso"
+},
+"Q1055262": {
+"morte": "Bari",
+"nascita": "Cerignola"
+},
+"Q1056330": {
+"nascita": "Bari"
+},
+"Q1111570": {
+"nascita": "Bari"
+},
+"Q1246500": {
+"nascita": "Bari"
+},
+"Q1075557": {
+"nascita": "Perugia"
+},
+"Q109611074": {
+"nascita": "L'Aquila"
+},
+"Q136766960": {
+"nascita": "Perugia"
+},
+"Q110801159": {
+"nascita": "Bagheria"
+},
+"Q1439643": {
+"nascita": "Trento"
+},
+"Q1055104": {
+"nascita": "Parma"
+},
+"Q101439107": {
+"nascita": "Napoli"
+},
+"Q108619929": {
+"nascita": "Ancona"
+},
+"Q110801429": {
+"nascita": "Pozzallo"
+},
+"Q1118549": {
+"nascita": "Piacenza"
+},
+"Q1378016": {
+"nascita": "Sassari"
+},
+"Q106095970": {
+"nascita": "Verbania"
+},
+"Q110813516": {
+"nascita": "Lecce"
+},
+"Q110813539": {
+"morte": "Vasto",
+"nascita": "Pisa"
+},
+"Q110801187": {
+"nascita": "Morro d'Oro"
+},
+"Q1109987": {
+"nascita": "Ferrara"
+},
+"Q1122768": {
+"nascita": "Ferrara"
+},
+"Q1117577": {
+"morte": "Gela",
+"nascita": "Filadelfia"
+},
+"Q1380538": {
+"nascita": "Catanzaro"
+},
+"Q115243278": {
+"nascita": "Pianiga"
+},
+"Q106675080": {
+"nascita": "Vicenza"
+},
+"Q110781884": {
+"nascita": "Brescia"
+},
+"Q1071053": {
+"nascita": "Cuneo"
+},
+"Q1060462": {
+"nascita": "Vicenza"
+},
+"Q108806947": {
+"nascita": "Lecco"
+},
+"Q137552401": {
+"nascita": "Desio"
+},
+"Q1054714": {
+"nascita": "Moncalieri"
+},
+"Q14633758": {
+"nascita": "Imperia"
+},
+"Q136772226": {
+"nascita": "Nardò"
+},
+"Q108805439": {
+"nascita": "Gorizia"
+},
+"Q1074619": {
+"nascita": "Quistello"
+},
+"Q1055587": {
+"nascita": "Arconate"
+},
+"Q110781865": {
+"nascita": "Addis Abeba"
+},
+"Q110813681": {
+"nascita": "Ururi"
+},
+"Q110814121": {
+"nascita": "Orotelli"
+},
+"Q110813254": {
+"nascita": "Picerno"
+},
+"Q116017496": {
+"nascita": "Grottaminarda"
+},
+"Q106639858": {
+"morte": "Sassari",
+"nascita": "Bitti"
+},
+"Q106097487": {
+"nascita": "Seregno",
+"morte": "Seregno"
+},
+"Q111546161": {
+"nascita": "Quinzano d'Oglio"
+},
+"Q110813644": {
+"nascita": "Civitavecchia"
+},
+"Q136766738": {
+"nascita": "Pieve di Bono"
+},
+"Q1225624": {
+"nascita": "Avezzano"
+},
+"Q15144796": {
+"nascita": "Grosseto"
+},
+"Q110801118": {
+"nascita": "Cassola"
+},
+"Q112684407": {
+"nascita": "Ferriere"
+},
+"Q106691221": {
+"nascita": "Treviso",
+"morte": "Treviso"
+},
+"Q137552564": {
+"nascita": "Abbiategrasso"
+},
+"Q137773449": {
+"nascita": "Rho"
+},
+"Q110813255": {
+"nascita": "Montebelluna"
+},
+"Q110781878": {
+"nascita": "Gela"
+},
+"Q1055575": {
+"nascita": "Mondovì",
+"morte": "Mondovì"
+},
+"Q108896439": {
+"nascita": "Jesolo"
+},
+"Q15127137": {
+"nascita": "Isola della Scala"
+},
+"Q110781925": {
+"nascita": "Savona"
+},
+"Q106884076": {
+"nascita": "Thiene"
+},
+"Q1098169": {
+"nascita": "Imperia"
+},
+"Q113327107": {
+"nascita": "Santeramo in Colle",
+"morte": "Santeramo in Colle"
+},
+"Q1241606": {
+"nascita": "Tolmezzo"
+},
+"Q1073202": {
+"nascita": "Soveria Simeri"
+},
+"Q1240927": {
+"nascita": "Santa Severina"
+},
+"Q110781892": {
+"nascita": "Torrebelvicino"
+},
+"Q13634401": {
+"nascita": "Tagliacozzo"
+},
+"Q1051169": {
+"nascita": "Città di Castello"
+},
+"Q1428924": {
+"nascita": "Montefalcione"
+},
+"Q110781916": {
+"nascita": "Piacenza"
+},
+"Q110383865": {
+"nascita": "Mesagne"
+},
+"Q106395183": {
+"nascita": "Crispiano",
+"morte": "Taranto"
+},
+"Q15144151": {
+"nascita": "Codogno"
+},
+"Q1334761": {
+"nascita": "Gioia Tauro"
+},
+"Q100315526": {
+"nascita": "Cuneo"
+},
+"Q116026": {
+"nascita": "Viareggio"
+},
+"Q1218549": {
+"nascita": "Afragola"
+},
+"Q105096236": {
+"nascita": "Castrovillari"
+},
+"Q109355984": {
+"nascita": "Corigliano Calabro"
+},
+"Q1055461": {
+"nascita": "Canterano"
+},
+"Q1098090": {
+"nascita": "Campli"
+},
+"Q1060314": {
+"nascita": "Maglie"
+},
+"Q110781909": {
+"nascita": "Novi Ligure"
+},
+"Q1111251": {
+"nascita": "Arborea"
+},
+"Q108198164": {
+"nascita": "Muro Leccese"
+},
+"Q1120464": {
+"nascita": "Gradoli"
+},
+"Q125852": {
+"nascita": "Pietrasanta"
+},
+"Q105093285": {
+"morte": "Montalbano Jonico",
+"nascita": "Rotondella"
+},
+"Q15212457": {
+"nascita": "Villa Santa Lucia"
+},
+"Q107441323": {
+"nascita": "Escalaplano"
+},
+"Q1394411": {
+"nascita": "Paternò"
+},
+"Q110796967": {
+"nascita": "Sant'Angelo d'Alife"
+},
+"Q13426373": {
+"nascita": "Teglio"
+},
+"Q15120158": {
+"nascita": "Massa Fiscaglia"
+},
+"Q110781100": {
+"nascita": "Gandino"
+},
+"Q106446": {
+"nascita": "Vignola"
+},
+"Q15143111": {
+"nascita": "Borgomanero"
+},
+"Q15269634": {
+"nascita": "Cantù"
+},
+"Q15117588": {
+"nascita": "Massa Marittima"
+},
+"Q109583415": {
+"nascita": "Abbazia"
+},
+"Q15063251": {
+"nascita": "Agerola"
+},
+"Q13382265": {
+"morte": "Cimitile",
+"nascita": "Nola"
+},
+"Q110793751": {
+"nascita": "Villa San Giovanni"
+},
+"Q1071082": {
+"nascita": "Darfo Boario Terme"
+},
+"Q1237458": {
+"nascita": "Settat"
+},
+"Q108317378": {
+"nascita": "Faenza"
+},
+"Q106645658": {
+"nascita": "Specchia"
+},
+"Q15057322": {
+"nascita": "Sant'Antioco"
+},
+"Q109595312": {
+"nascita": "Tavernola Bergamasca"
+},
+"Q1246852": {
+"nascita": "Morrone del Sannio"
+},
+"Q1442626": {
+"nascita": "Santa Maria del Molise"
+},
+"Q1230082": {
+"nascita": "Campo Tures"
+},
+"Q1394911": {
+"nascita": "Ceppaloni"
+},
+"Q1346089": {
+"nascita": "Aidone"
+},
+"Q10279154": {
+"nascita": "Caltagirone"
+},
+"Q100292854": {
+"nascita": "Grammichele"
+},
+"Q105403414": {
+"nascita": "Biancade"
+},
+"Q14636345": {
+"nascita": "Rotella"
+},
+"Q108940637": {
+"nascita": "Marcianise"
+},
+"Q15143075": {
+"nascita": "Isola del Liri"
+},
+"Q107428531": {
+"nascita": "Paliano"
+},
+"Q16524966": {
+"morte": "Roma",
+"nascita": "Spezzano della Sila"
+},
+"Q16527565": {
+"morte": "Roma",
+"nascita": "Portici"
+},
+"Q16557414": {
+"nascita": "Roma"
+},
+"Q16573955": {
+"nascita": "Roma"
+},
+"Q16039205": {
+"nascita": "Zurigo"
+},
+"Q15303869": {
+"nascita": "Il Cairo"
+},
+"Q16594212": {
+"nascita": "Roma"
+},
+"Q16606268": {
+"nascita": "Roma"
+},
+"Q17399510": {
+"nascita": "Roma",
+"morte": "Roma"
+},
+"Q17453214": {
+"nascita": "Roma",
+"morte": "Roma"
+},
+"Q15976361": {
+"nascita": "Milano"
+},
+"Q16526380": {
+"nascita": "Milano"
+},
+"Q16560074": {
+"nascita": "Milano"
+},
+"Q16561229": {
+"nascita": "Milano"
+},
+"Q16571325": {
+"nascita": "Milano"
+},
+"Q16573853": {
+"nascita": "Milano"
+},
+"Q17453257": {
+"nascita": "Roma"
+},
+"Q17516093": {
+"nascita": "Roma",
+"morte": "Roma"
+},
+"Q17638291": {
+"nascita": "Roma",
+"morte": "Pistoia"
+},
+"Q18224570": {
+"morte": "Roma",
+"nascita": "Castrovillari"
+},
+"Q18397497": {
+"nascita": "Roma"
+},
+"Q18575606": {
+"morte": "Roma",
+"nascita": "Marciana"
+},
+"Q1657794": {
+"nascita": "Roma"
+},
+"Q1825240": {
+"morte": "Roma",
+"nascita": "Firenze"
+},
+"Q15479558": {
+"nascita": "Roma"
+},
+"Q15621372": {
+"nascita": "Roma"
+},
+"Q15711036": {
+"nascita": "Roma"
+},
+"Q15711757": {
+"morte": "Roma",
+"nascita": "Crotone"
+},
+"Q15791568": {
+"nascita": "Roma"
+},
+"Q15931786": {
+"nascita": "Roma",
+"morte": "Viterbo"
+},
+"Q15931795": {
+"nascita": "Roma"
+},
+"Q15936503": {
+"nascita": "Roma"
+},
+"Q15961970": {
+"morte": "Roma",
+"nascita": "Zeri"
+},
+"Q15965568": {
+"morte": "Roma",
+"nascita": "Busto Arsizio"
+},
+"Q17453242": {
+"nascita": "Milano"
+},
+"Q17652398": {
+"nascita": "Milano"
+},
+"Q18222763": {
+"morte": "Milano",
+"nascita": "Zevio"
+},
+"Q18597481": {
+"nascita": "Milano"
+},
+"Q17375630": {
+"nascita": "Modena"
+},
+"Q16601221": {
+"nascita": "Torino"
+},
+"Q17328950": {
+"nascita": "Torino"
+},
+"Q17373244": {
+"nascita": "Torino"
+},
+"Q16575917": {
+"nascita": "Milano"
+},
+"Q16658149": {
+"nascita": "Milano"
+},
+"Q17639661": {
+"nascita": "Padova"
+},
+"Q17629279": {
+"nascita": "Torino"
+},
+"Q17636199": {
+"nascita": "Livorno"
+},
+"Q18224165": {
+"nascita": "Trieste"
+},
+"Q16590227": {
+"nascita": "Bergamo"
+},
+"Q18170178": {
+"nascita": "Rivarolo Canavese"
+},
+"Q17992224": {
+"nascita": "Susa"
+},
+"Q18580681": {
+"nascita": "Napoli",
+"morte": "Napoli"
+},
+"Q17453218": {
+"morte": "Campobasso",
+"nascita": "Larino"
+},
+"Q16597290": {
+"nascita": "Catania"
+},
+"Q16576982": {
+"nascita": "Napoli"
+},
+"Q16577233": {
+"nascita": "Napoli"
+},
+"Q17397679": {
+"nascita": "Napoli"
+},
+"Q18416009": {
+"morte": "Latina",
+"nascita": "Castelpoto"
+},
+"Q17652092": {
+"nascita": "Pesaro"
+},
+"Q15975915": {
+"nascita": "Venezia"
+},
+"Q17638296": {
+"nascita": "Udine"
+},
+"Q16598320": {
+"nascita": "Genova"
+},
+"Q17629266": {
+"nascita": "Castellucchio",
+"morte": "Goito"
+},
+"Q18222595": {
+"nascita": "Ponte di Piave"
+},
+"Q18608384": {
+"nascita": "Biella"
+},
+"Q18545648": {
+"nascita": "Molfetta"
+},
+"Q16526978": {
+"nascita": "Torino"
+},
+"Q16598534": {
+"nascita": "Como"
+},
+"Q17651872": {
+"nascita": "Pistoia"
+},
+"Q17628716": {
+"nascita": "Rovigo"
+},
+"Q18575575": {
+"nascita": "Cesena",
+"morte": "Cesena"
+},
+"Q18575577": {
+"nascita": "Cosenza"
+},
+"Q17992624": {
+"nascita": "Voghera"
+},
+"Q16622444": {
+"nascita": "Pescara"
+},
+"Q17453224": {
+"nascita": "Paola"
+},
+"Q17630383": {
+"nascita": "Frigento",
+"morte": "Sant'Angelo dei Lombardi"
+},
+"Q17352128": {
+"morte": "Trento",
+"nascita": "Riva del Garda"
+},
+"Q18201804": {
+"nascita": "Atessa"
+},
+"Q17453277": {
+"nascita": "Lauria"
+},
+"Q18564612": {
+"nascita": "Santorso"
+},
+"Q18219613": {
+"nascita": "Motta di Livenza"
+},
+"Q18559296": {
+"nascita": "Somma Vesuviana"
+},
+"Q17453244": {
+"nascita": "Vezzano sul Crostolo"
+},
+"Q1532642": {
+"nascita": "Milano"
+},
+"Q1851923": {
+"nascita": "Milano"
+},
+"Q15711787": {
+"nascita": "Milano"
+},
+"Q16268499": {
+"nascita": "Bologna",
+"morte": "Castel del Rio",
+"sepoltura": "cimitero di Castel del Rio"
+},
+"Q16268562": {
+"nascita": "Bologna"
+},
+"Q16268618": {
+"nascita": "Bologna"
+},
+"Q16560453": {
+"nascita": "Genova",
+"morte": "Genova"
+},
+"Q16561914": {
+"nascita": "Genova"
+},
+"Q16598539": {
+"nascita": "Ancona"
+},
+"Q16658040": {
+"nascita": "Potenza",
+"morte": "Potenza"
+},
+"Q1733598": {
+"nascita": "Venezia"
+},
+"Q15711755": {
+"nascita": "Catania"
+},
+"Q15958435": {
+"nascita": "Catania",
+"morte": "Catania"
+},
+"Q15796515": {
+"nascita": "Feltre"
+},
+"Q16566805": {
+"nascita": "Feltre"
+},
+"Q17600727": {
+"nascita": "Sala Consilina"
+},
+"Q17630333": {
+"nascita": "Castelnovo ne' Monti"
+},
+"Q16039395": {
+"nascita": "Palermo"
+},
+"Q16550545": {
+"nascita": "Palermo"
+},
+"Q15888286": {
+"nascita": "Pescara"
+},
+"Q15942109": {
+"morte": "Genova",
+"nascita": "Sanremo"
+},
+"Q15961960": {
+"nascita": "Genova"
+},
+"Q15649684": {
+"nascita": "Salerno"
+},
+"Q15813283": {
+"nascita": "Salerno"
+},
+"Q15916514": {
+"nascita": "Salerno"
+},
+"Q15896993": {
+"nascita": "Verona"
+},
+"Q15936324": {
+"nascita": "Verona"
+},
+"Q16575824": {
+"nascita": "Ascoli Piceno"
+},
+"Q15972744": {
+"nascita": "Ancona"
+},
+"Q16577230": {
+"nascita": "Alessandria"
+},
+"Q16527603": {
+"nascita": "Bari"
+},
+"Q16561124": {
+"nascita": "Bari"
+},
+"Q16524881": {
+"nascita": "Perugia"
+},
+"Q15300721": {
+"nascita": "Torino"
+},
+"Q16560945": {
+"nascita": "Catania"
+},
+"Q17399556": {
+"nascita": "Bari"
+},
+"Q17421687": {
+"nascita": "Bari",
+"morte": "Bari"
+},
+"Q16586767": {
+"nascita": "Livorno"
+},
+"Q15976366": {
+"nascita": "Ancona"
+},
+"Q16576995": {
+"nascita": "Savona"
+},
+"Q16590200": {
+"nascita": "Savona"
+},
+"Q16658148": {
+"nascita": "Brescia"
+},
+"Q17279956": {
+"morte": "Brescia",
+"nascita": "Borghetto di Vara"
+},
+"Q16527786": {
+"morte": "L'Aquila",
+"nascita": "Campotosto"
+},
+"Q16525226": {
+"nascita": "Varese"
+},
+"Q15636153": {
+"nascita": "Firenze"
+},
+"Q15830434": {
+"nascita": "Firenze"
+},
+"Q17394786": {
+"morte": "Varese",
+"nascita": "Gallarate"
+},
+"Q181794": {
+"nascita": "Cuneo"
+},
+"Q16039399": {
+"nascita": "Vicenza"
+},
+"Q16268563": {
+"nascita": "Parma"
+},
+"Q16560916": {
+"nascita": "Potenza"
+},
+"Q168752": {
+"nascita": "Cremona"
+},
+"Q16268329": {
+"nascita": "Crotone"
+},
+"Q16560982": {
+"nascita": "Crotone",
+"morte": "Crotone"
+},
+"Q17453054": {
+"morte": "Catanzaro",
+"nascita": "Sersale"
+},
+"Q16573982": {
+"nascita": "Terni"
+},
+"Q16597537": {
+"nascita": "Crotone",
+"morte": "Cosenza"
+},
+"Q16598633": {
+"nascita": "Crotone"
+},
+"Q16039318": {
+"nascita": "Cremona"
+},
+"Q16595553": {
+"nascita": "Nole"
+},
+"Q16578327": {
+"nascita": "Taranto"
+},
+"Q17279890": {
+"nascita": "Rimini"
+},
+"Q15791380": {
+"nascita": "Bari"
+},
+"Q15844749": {
+"nascita": "Bari"
+},
+"Q16039391": {
+"nascita": "Fermo"
+},
+"Q16268211": {
+"nascita": "Ferrara"
+},
+"Q16039280": {
+"nascita": "Prato"
+},
+"Q15558151": {
+"nascita": "Mantova"
+},
+"Q15714340": {
+"nascita": "Mantova"
+},
+"Q15936530": {
+"nascita": "Mantova"
+},
+"Q16601755": {
+"nascita": "Sassari"
+},
+"Q17284930": {
+"nascita": "Sassari",
+"morte": "Sassari"
+},
+"Q16524772": {
+"nascita": "Pordenone"
+},
+"Q16560071": {
+"nascita": "Foggia"
+},
+"Q16527696": {
+"nascita": "Taranto"
+},
+"Q16574106": {
+"nascita": "Taranto",
+"morte": "Grottaglie"
+},
+"Q16597402": {
+"nascita": "Fano"
+},
+"Q16573566": {
+"nascita": "Sciaffusa"
+},
+"Q17154572": {
+"nascita": "Nuoro"
+},
+"Q15921913": {
+"nascita": "Brindisi"
+},
+"Q15896935": {
+"nascita": "Palermo"
+},
+"Q15942142": {
+"nascita": "Palermo"
+},
+"Q16598731": {
+"morte": "Ferrara",
+"nascita": "Cengio"
+},
+"Q1803484": {
+"nascita": "Bolzano"
+},
+"Q17364583": {
+"nascita": "Messina"
+},
+"Q15411483": {
+"nascita": "Pavia"
+},
+"Q16268625": {
+"nascita": "Forlì"
+},
+"Q15888289": {
+"nascita": "Pinerolo",
+"morte": "Pinerolo"
+},
+"Q16564699": {
+"nascita": "Oristano",
+"morte": "Oristano"
+},
+"Q15796640": {
+"nascita": "Felizzano",
+"morte": "Quargnento"
+},
+"Q16582376": {
+"nascita": "Carpineto Sinello"
+},
+"Q17364584": {
+"nascita": "Civitella del Tronto",
+"morte": "Bracciano"
+},
+"Q17375654": {
+"nascita": "Lecce"
+},
+"Q17285100": {
+"nascita": "Iglesias"
+},
+"Q16555041": {
+"nascita": "Altamura",
+"morte": "Altamura"
+},
+"Q16575764": {
+"nascita": "Casale Monferrato"
+},
+"Q17279962": {
+"nascita": "Morsasco"
+},
+"Q16526948": {
+"nascita": "Piove di Sacco"
+},
+"Q16600136": {
+"nascita": "Gualdo Tadino"
+},
+"Q15624743": {
+"nascita": "Villacidro"
+},
+"Q15961976": {
+"nascita": "Massa"
+},
+"Q16268500": {
+"nascita": "Rimini"
+},
+"Q16554292": {
+"morte": "Rimini",
+"nascita": "Novafeltria"
+},
+"Q16600153": {
+"nascita": "Agrigento"
+},
+"Q16039333": {
+"nascita": "Foligno"
+},
+"Q15964383": {
+"nascita": "Pocapaglia"
+},
+"Q15727026": {
+"nascita": "Città di Castello"
+},
+"Q16526826": {
+"nascita": "Siziano"
+},
+"Q16561911": {
+"nascita": "Casale Litta"
+},
+"Q15948822": {
+"nascita": "Porto Alegre"
+},
+"Q16571889": {
+"nascita": "San Marco la Catola"
+},
+"Q16572003": {
+"nascita": "Granze"
+},
+"Q15917274": {
+"nascita": "Casalmaggiore"
+},
+"Q15885980": {
+"nascita": "Codogno"
+},
+"Q16575521": {
+"nascita": "Bassano del Grappa"
+},
+"Q16597380": {
+"nascita": "Pistoia"
+},
+"Q15896973": {
+"nascita": "La Spezia"
+},
+"Q15888162": {
+"nascita": "Caiolo"
+},
+"Q15886080": {
+"nascita": "Mede"
+},
+"Q15589948": {
+"nascita": "Lozzolo"
+},
+"Q16596323": {
+"nascita": "Cava de' Tirreni"
+},
+"Q16610292": {
+"nascita": "Aversa"
+},
+"Q16582357": {
+"nascita": "Cirò Marina"
+},
+"Q15622408": {
+"nascita": "Soncino"
+},
+"Q16550427": {
+"nascita": "Afragola"
+},
+"Q16597557": {
+"nascita": "Noicàttaro"
+},
+"Q16657885": {
+"nascita": "San Marco in Lamis"
+},
+"Q15964456": {
+"nascita": "Falcade"
+},
+"Q15975876": {
+"nascita": "Melzo"
+},
+"Q16539125": {
+"nascita": "Erba"
+},
+"Q16554221": {
+"nascita": "Erba"
+},
+"Q16606350": {
+"nascita": "Premosello-Chiovenda"
+},
+"Q16526216": {
+"nascita": "Noventa Padovana"
+},
+"Q16560780": {
+"nascita": "Taglio di Po"
+},
+"Q15948834": {
+"nascita": "Subbiano"
+},
+"Q15300659": {
+"nascita": "Pontecagnano Faiano"
+},
+"Q17284921": {
+"nascita": "Bassano del Grappa",
+"morte": "Bassano del Grappa"
+},
+"Q16574431": {
+"nascita": "Ercolano"
+},
+"Q16597960": {
+"nascita": "Montevarchi"
+},
+"Q16573563": {
+"nascita": "Taviano"
+},
+"Q16268338": {
+"nascita": "Faenza"
+},
+"Q16039227": {
+"nascita": "Torre del Greco"
+},
+"Q15633011": {
+"nascita": "Monteroni d'Arbia"
+},
+"Q15711025": {
+"nascita": "Casnigo"
+},
+"Q15585187": {
+"nascita": "Brusciano"
+},
+"Q15886083": {
+"nascita": "Viadana"
+},
+"Q16562369": {
+"nascita": "Fontanafredda"
+},
+"Q15465052": {
+"nascita": "Carpineto Romano"
+},
+"Q15714339": {
+"nascita": "Sardara"
+},
+"Q15303101": {
+"nascita": "Caltagirone"
+},
+"Q16576393": {
+"nascita": "Cotronei"
+},
+"Q16738741": {
+"nascita": "Regalbuto",
+"morte": "Sant'Agata li Battiati"
+},
+"Q16268762": {
+"nascita": "Cirò"
+},
+"Q16561076": {
+"nascita": "Casapulla"
+},
+"Q15972663": {
+"nascita": "Notaresco"
+},
+"Q16601752": {
+"nascita": "Valbondione"
+},
+"Q16600130": {
+"nascita": "Zogno"
+},
+"Q15961968": {
+"nascita": "Latronico"
+},
+"Q15966857": {
+"nascita": "Brentonico"
+},
+"Q16581327": {
+"nascita": "Rivolta d'Adda"
+},
+"Q1577398": {
+"nascita": "Bressanone"
+},
+"Q16527648": {
+"nascita": "Torchiara"
+},
+"Q16590535": {
+"nascita": "Marcianise"
+},
+"Q15958420": {
+"nascita": "Ischia"
+},
+"Q15796471": {
+"nascita": "Eboli"
+},
+"Q15972718": {
+"nascita": "Longobardi"
+},
+"Q15896895": {
+"nascita": "Maddaloni"
+},
+"Q1648265": {
+"nascita": "Merano"
+},
+"Q15931501": {
+"nascita": "Sora"
+},
+"Q17399512": {
+"nascita": "Giugliano in Campania",
+"morte": "Giugliano in Campania"
+},
+"Q15942091": {
+"nascita": "Costermano sul Garda",
+"morte": "Costermano sul Garda"
+},
+"Q15888334": {
+"nascita": "San Bonifacio"
+},
+"Q16598476": {
+"nascita": "Salò"
+},
+"Q17285757": {
+"nascita": "Ales"
+},
+"Q1681291": {
+"nascita": "Silandro"
+},
+"Q16577150": {
+"nascita": "Paulilatino"
+},
+"Q16600347": {
+"nascita": "Paternò"
+},
+"Q16268544": {
+"nascita": "Pavullo nel Frignano"
+},
+"Q16587440": {
+"nascita": "Ottati"
+},
+"Q16616215": {
+"nascita": "Polla"
+},
+"Q16560904": {
+"nascita": "Paternò"
+},
+"Q15917017": {
+"nascita": "Terlizzi"
+},
+"Q15972640": {
+"nascita": "Latiano"
+},
+"Q15623368": {
+"nascita": "Campiglia Marittima"
+},
+"Q15958468": {
+"nascita": "Tarquinia"
+},
+"Q16526960": {
+"nascita": "Zagarise"
+},
+"Q16268272": {
+"nascita": "Verucchio"
+},
+"Q16657904": {
+"nascita": "Eboli"
+},
+"Q16268176": {
+"nascita": "Camugnano"
+},
+"Q1535927": {
+"nascita": "Collelongo",
+"morte": "Collelongo"
+},
+"Q16557357": {
+"nascita": "Alcamo",
+"morte": "Alcamo"
+},
+"Q16581799": {
+"nascita": "Coreglia Antelminelli",
+"morte": "Coreglia Antelminelli"
+},
+"Q16562377": {
+"nascita": "Castelnuovo di Val di Cecina"
+},
+"Q16590457": {
+"nascita": "Carloforte"
+},
+"Q16575861": {
+"nascita": "Senigallia"
+},
+"Q16575806": {
+"nascita": "Vimercate"
+},
+"Q16526754": {
+"nascita": "Cassino"
+},
+"Q16526986": {
+"nascita": "Cassino"
+},
+"Q15945036": {
+"nascita": "Sant'Agata di Puglia",
+"morte": "Sant'Agata di Puglia"
+},
+"Q16268656": {
+"nascita": "Castel San Pietro Terme"
+},
+"Q16594302": {
+"nascita": "Courcelles"
+},
+"Q16559453": {
+"nascita": "Milena"
+},
+"Q16560169": {
+"nascita": "Entratico"
+},
+"Q16560088": {
+"nascita": "Gandino"
+},
+"Q16583188": {
+"nascita": "Pomigliano d'Arco"
+},
+"Q16620198": {
+"nascita": "Laconi"
+},
+"Q16566847": {
+"nascita": "Palazzago"
+},
+"Q16527247": {
+"nascita": "Alzano Lombardo",
+"morte": "Alzano Lombardo"
+},
+"Q16586847": {
+"nascita": "Villa San Pietro"
+},
+"Q16601770": {
+"nascita": "Castrignano del Capo"
+},
+"Q16599793": {
+"nascita": "Muro Leccese"
+},
+"Q16268549": {
+"nascita": "Alseno"
+},
+"Q16268473": {
+"nascita": "Fiorenzuola d'Arda"
+},
+"Q16599764": {
+"nascita": "Carini"
+},
+"Q16526775": {
+"nascita": "Gorga"
+},
+"Q16527761": {
+"nascita": "Buddusò"
+},
+"Q273228": {
+"morte": "Roma",
+"nascita": "Pieve Santo Stefano",
+"sepoltura": "cimitero Flaminio"
+},
+"Q276023": {
+"morte": "Roma",
+"nascita": "Torino",
+"sepoltura": "sepoltura in mare"
+},
+"Q285543": {
+"nascita": "Roma"
+},
+"Q291249": {
+"nascita": "Roma"
+},
+"Q1880844": {
+"nascita": "Roma"
+},
+"Q1986099": {
+"nascita": "Roma"
+},
+"Q2246855": {
+"morte": "Roma",
+"nascita": "Napoli"
+},
+"Q2251620": {
+"morte": "Roma",
+"nascita": "Reggio Calabria"
+},
+"Q2309460": {
+"morte": "Roma",
+"nascita": "Reggio Calabria"
+},
+"Q2674713": {
+"nascita": "Roma"
+},
+"Q2871689": {
+"nascita": "Roma",
+"morte": "Roma"
+},
+"Q3014907": {
+"nascita": "Roma"
+},
+"Q3080973": {
+"nascita": "Roma"
+},
+"Q3108001": {
+"morte": "Roma",
+"nascita": "Bari"
+},
+"Q18621048": {
+"morte": "Roma",
+"nascita": "Fragagnano"
+},
+"Q18715690": {
+"nascita": "Roma",
+"morte": "Roma"
+},
+"Q18811751": {
+"nascita": "Roma"
+},
+"Q18920599": {
+"nascita": "Roma"
+},
+"Q19614767": {
+"nascita": "Roma"
+},
+"Q19817411": {
+"nascita": "Roma"
+},
+"Q20873916": {
+"morte": "Roma",
+"nascita": "Napoli"
+},
+"Q19727863": {
+"nascita": "Milano"
+},
+"Q20830345": {
+"morte": "Milano",
+"nascita": "Novi Ligure"
+},
+"Q20980910": {
+"nascita": "Milano"
+},
+"Q239024": {
+"nascita": "Milano"
+},
+"Q1892362": {
+"nascita": "Milano"
+},
+"Q2054889": {
+"nascita": "Milano"
+},
+"Q2246709": {
+"nascita": "Milano"
+},
+"Q2247371": {
+"nascita": "Milano"
+},
+"Q2460954": {
+"nascita": "Milano"
+},
+"Q18610120": {
+"nascita": "Milano"
+},
+"Q19727859": {
+"nascita": "Venezia",
+"morte": "Venezia"
+},
+"Q18715210": {
+"nascita": "Torino"
+},
+"Q18681665": {
+"nascita": "Salerno",
+"morte": "Salerno"
+},
+"Q18630677": {
+"morte": "Orvieto",
+"nascita": "San Chirico Raparo"
+},
+"Q274404": {
+"nascita": "Trieste"
+},
+"Q202209": {
+"nascita": "Torino"
+},
+"Q2054692": {
+"nascita": "Torino"
+},
+"Q2847139": {
+"morte": "Torino",
+"nascita": "Cerignola"
+},
+"Q21208846": {
+"morte": "Roma",
+"nascita": "Torino"
+},
+"Q21587859": {
+"nascita": "Roma"
+},
+"Q21832775": {
+"nascita": "Roma",
+"morte": "Roma"
+},
+"Q23691602": {
+"morte": "Roma",
+"nascita": "Senigallia"
+},
+"Q24247682": {
+"nascita": "Roma"
+},
+"Q25403336": {
+"nascita": "Roma"
+},
+"Q23047386": {
+"nascita": "Modena"
+},
+"Q21296128": {
+"morte": "Milano",
+"nascita": "Messina"
+},
+"Q23047408": {
+"nascita": "Milano"
+},
+"Q20204266": {
+"nascita": "Catania"
+},
+"Q23691599": {
+"nascita": "Padova"
+},
+"Q24043605": {
+"nascita": "Padova",
+"morte": "Napoli"
+},
+"Q266651": {
+"nascita": "Salerno"
+},
+"Q2246844": {
+"nascita": "Salerno"
+},
+"Q22341846": {
+"nascita": "Venezia"
+},
+"Q23691597": {
+"morte": "Venezia",
+"nascita": "Cittadella"
+},
+"Q24043613": {
+"nascita": "Venezia"
+},
+"Q23690299": {
+"nascita": "Torino"
+},
+"Q2824733": {
+"nascita": "Padova"
+},
+"Q28057565": {
+"nascita": "Milano",
+"morte": "Ivrea"
+},
+"Q18812120": {
+"nascita": "Firenze"
+},
+"Q19817387": {
+"nascita": "Firenze"
+},
+"Q27078230": {
+"morte": "Modena",
+"nascita": "Vignola"
+},
+"Q27078138": {
+"nascita": "Roma"
+},
+"Q28966614": {
+"nascita": "Roma"
+},
+"Q29273997": {
+"morte": "Roma",
+"nascita": "Scerni"
+},
+"Q2573947": {
+"nascita": "Venezia"
+},
+"Q28965095": {
+"nascita": "Genova",
+"morte": "Rapallo"
+},
+"Q24033525": {
+"nascita": "Genova"
+},
+"Q18674897": {
+"nascita": "Napoli",
+"morte": "Napoli"
+},
+"Q22953883": {
+"nascita": "Como"
+},
+"Q3107313": {
+"nascita": "Catania"
+},
+"Q3108084": {
+"nascita": "Catania",
+"morte": "Catania"
+},
+"Q28966651": {
+"nascita": "Napoli"
+},
+"Q29273988": {
+"nascita": "Napoli"
+},
+"Q268537": {
+"morte": "Mosca",
+"nascita": "Istrana"
+},
+"Q2050277": {
+"nascita": "Genova"
+},
+"Q2312135": {
+"nascita": "Bologna"
+},
+"Q2528688": {
+"morte": "Bologna",
+"nascita": "Bardi"
+},
+"Q2850556": {
+"nascita": "Bologna"
+},
+"Q3059585": {
+"nascita": "Bologna"
+},
+"Q27986961": {
+"morte": "Perugia",
+"nascita": "Spoleto"
+},
+"Q28966643": {
+"nascita": "Perugia"
+},
+"Q27553651": {
+"morte": "Verona",
+"nascita": "Monselice"
+},
+"Q28966639": {
+"nascita": "Firenze"
+},
+"Q19862483": {
+"nascita": "Urbino"
+},
+"Q22991692": {
+"nascita": "Catania"
+},
+"Q24053170": {
+"morte": "Catania",
+"nascita": "Campobasso"
+},
+"Q24286983": {
+"nascita": "Catania",
+"morte": "Catania"
+},
+"Q21208855": {
+"nascita": "Bologna"
+},
+"Q23047397": {
+"morte": "Bologna",
+"nascita": "Papozze"
+},
+"Q19727828": {
+"nascita": "Siena"
+},
+"Q28112196": {
+"nascita": "Siena"
+},
+"Q26972023": {
+"nascita": "Firenze",
+"morte": "Udine"
+},
+"Q19614808": {
+"nascita": "Trento"
+},
+"Q28966650": {
+"morte": "Bologna",
+"nascita": "Fontanellato"
+},
+"Q208100": {
+"nascita": "Firenze"
+},
+"Q255788": {
+"nascita": "Firenze"
+},
+"Q23978360": {
+"nascita": "Cagliari",
+"morte": "Cagliari"
+},
+"Q18646088": {
+"nascita": "Udine"
+},
+"Q19120353": {
+"nascita": "Udine",
+"morte": "Udine"
+},
+"Q28964967": {
+"nascita": "L'Aquila"
+},
+"Q291186": {
+"nascita": "Napoli"
+},
+"Q2834878": {
+"nascita": "Napoli"
+},
+"Q3071910": {
+"nascita": "Napoli"
+},
+"Q23047409": {
+"nascita": "Bari"
+},
+"Q24015703": {
+"nascita": "Bari"
+},
+"Q24033524": {
+"nascita": "Bari"
+},
+"Q21587892": {
+"nascita": "Trento",
+"morte": "Cernusco sul Naviglio"
+},
+"Q28967178": {
+"nascita": "Cesena",
+"morte": "Cesena"
+},
+"Q18811785": {
+"nascita": "Cremona"
+},
+"Q18923611": {
+"morte": "Alessandria",
+"nascita": "Frugarolo"
+},
+"Q22991688": {
+"nascita": "Asti",
+"morte": "Collegno"
+},
+"Q28958813": {
+"nascita": "Addis Abeba"
+},
+"Q2270132": {
+"nascita": "Perugia"
+},
+"Q19361836": {
+"nascita": "Reggio Calabria",
+"morte": "Vibo Valentia"
+},
+"Q23047390": {
+"nascita": "Napoli",
+"morte": "Portici"
+},
+"Q26805762": {
+"nascita": "Napoli",
+"morte": "Foggia"
+},
+"Q3081082": {
+"nascita": "Palermo"
+},
+"Q19720100": {
+"nascita": "Mantova"
+},
+"Q2934352": {
+"nascita": "Asmara"
+},
+"Q19660843": {
+"nascita": "La Spezia"
+},
+"Q19614740": {
+"nascita": "Potenza"
+},
+"Q21076800": {
+"nascita": "Arezzo"
+},
+"Q27975720": {
+"morte": "Potenza",
+"nascita": "Avigliano"
+},
+"Q28070590": {
+"nascita": "Catanzaro"
+},
+"Q2171762": {
+"nascita": "Lecco"
+},
+"Q24045298": {
+"nascita": "Monza",
+"morte": "Guanzate",
+"sepoltura": "cimitero urbano di Monza"
+},
+"Q21086867": {
+"nascita": "Varese"
+},
+"Q24043619": {
+"nascita": "Cuneo"
+},
+"Q28966628": {
+"nascita": "Livorno"
+},
+"Q29169613": {
+"nascita": "Livorno"
+},
+"Q18674659": {
+"nascita": "Avellino"
+},
+"Q1876572": {
+"nascita": "Bolzano"
+},
+"Q1930012": {
+"nascita": "Bolzano"
+},
+"Q2094471": {
+"nascita": "Bolzano",
+"morte": "Brescia"
+},
+"Q2650303": {
+"nascita": "Bolzano"
+},
+"Q27975976": {
+"morte": "Asti",
+"nascita": "Baldissero Canavese"
+},
+"Q18812085": {
+"nascita": "Siracusa"
+},
+"Q22953944": {
+"nascita": "Pisa"
+},
+"Q2857289": {
+"nascita": "Ivrea"
+},
+"Q27986906": {
+"nascita": "Matera",
+"morte": "Matera"
+},
+"Q18811766": {
+"nascita": "Macerata"
+},
+"Q19832382": {
+"nascita": "Carrara",
+"morte": "Carrara"
+},
+"Q28057563": {
+"morte": "Brescia",
+"nascita": "Toscolano Maderno"
+},
+"Q28966641": {
+"nascita": "Macerata"
+},
+"Q28966642": {
+"morte": "Savona",
+"nascita": "Cairo Montenotte"
+},
+"Q19672165": {
+"nascita": "Enna"
+},
+"Q24043614": {
+"nascita": "Savona"
+},
+"Q18786782": {
+"nascita": "Caltanissetta",
+"morte": "Caltanissetta"
+},
+"Q230046": {
+"nascita": "Alessandria"
+},
+"Q25158696": {
+"nascita": "Potenza"
+},
+"Q23834749": {
+"nascita": "Reggio Emilia"
+},
+"Q28966617": {
+"nascita": "Lecce"
+},
+"Q27078225": {
+"nascita": "Carrara"
+},
+"Q2338481": {
+"nascita": "Vicenza",
+"morte": "Costabissara"
+},
+"Q23047391": {
+"nascita": "Piacenza"
+},
+"Q2248530": {
+"nascita": "Sondrio"
+},
+"Q19999170": {
+"nascita": "Aarau"
+},
+"Q20953735": {
+"nascita": "Taranto",
+"morte": "Torricella"
+},
+"Q19850591": {
+"nascita": "Rivolta d'Adda",
+"morte": "Vittorio Veneto"
+},
+"Q19361798": {
+"nascita": "Legnano"
+},
+"Q2050381": {
+"nascita": "Pomaretto"
+},
+"Q2426702": {
+"nascita": "Ferrara"
+},
+"Q23047385": {
+"morte": "Grosseto",
+"nascita": "Monterotondo Marittimo"
+},
+"Q26838250": {
+"morte": "Ascoli Piceno",
+"nascita": "Rotella",
+"sepoltura": "Civico Cimitero di Borgo Solestà"
+},
+"Q27493817": {
+"morte": "Verzuolo",
+"nascita": "Manta"
+},
+"Q30076228": {
+"nascita": "San Mauro Torinese"
+},
+"Q22991721": {
+"nascita": "Taranto"
+},
+"Q27078135": {
+"nascita": "Adria"
+},
+"Q27078137": {
+"nascita": "Adria"
+},
+"Q25295870": {
+"morte": "Ragusa",
+"nascita": "Scicli"
+},
+"Q28540512": {
+"nascita": "Cerignola"
+},
+"Q28946250": {
+"nascita": "Manfredonia"
+},
+"Q28966615": {
+"nascita": "Marcaria"
+},
+"Q30223215": {
+"nascita": "Marcaria"
+},
+"Q21587694": {
+"nascita": "Vittoria"
+},
+"Q20081330": {
+"nascita": "Sassari"
+},
+"Q19655850": {
+"nascita": "Spoleto"
+},
+"Q21832834": {
+"nascita": "Matera"
+},
+"Q3069750": {
+"nascita": "Garessio"
+},
+"Q258305": {
+"nascita": "Foggia"
+},
+"Q2832307": {
+"nascita": "Trichiana"
+},
+"Q28973680": {
+"nascita": "Cantù"
+},
+"Q2246867": {
+"nascita": "Lecce"
+},
+"Q2947036": {
+"nascita": "Lecce"
+},
+"Q3107310": {
+"nascita": "Lecce"
+},
+"Q28966640": {
+"nascita": "Avezzano"
+},
+"Q29545513": {
+"nascita": "Avezzano"
+},
+"Q2947026": {
+"nascita": "Reggio Calabria"
+},
+"Q19060515": {
+"nascita": "Carunchio"
+},
+"Q28966644": {
+"nascita": "Giulianova"
+},
+"Q18812239": {
+"nascita": "Bitonto"
+},
+"Q24043620": {
+"nascita": "Livorno"
+},
+"Q19545440": {
+"nascita": "Bisceglie"
+},
+"Q20829396": {
+"nascita": "Ispica"
+},
+"Q28966613": {
+"nascita": "Cava de' Tirreni"
+},
+"Q2835617": {
+"nascita": "Rimini",
+"morte": "Gardone Riviera"
+},
+"Q18613296": {
+"morte": "Mirano",
+"nascita": "Santa Maria di Sala"
+},
+"Q24206170": {
+"nascita": "Saonara"
+},
+"Q24043616": {
+"nascita": "Gallarate"
+},
+"Q2054899": {
+"nascita": "Latina"
+},
+"Q19817401": {
+"nascita": "Modugno"
+},
+"Q18812091": {
+"nascita": "Castellaneta"
+},
+"Q27553650": {
+"nascita": "Ceglie Messapica"
+},
+"Q29545514": {
+"nascita": "Faloppio"
+},
+"Q25418625": {
+"morte": "Messina",
+"nascita": "Caltagirone"
+},
+"Q268801": {
+"nascita": "Paluzza"
+},
+"Q19545368": {
+"nascita": "Mirano"
+},
+"Q3060476": {
+"nascita": "Sommariva Perno"
+},
+"Q2939238": {
+"nascita": "Torgnon"
+},
+"Q24065952": {
+"nascita": "Nuoro"
+},
+"Q2053904": {
+"nascita": "Avellino"
+},
+"Q2865950": {
+"nascita": "Avellino"
+},
+"Q24043615": {
+"nascita": "Vigasio"
+},
+"Q22991685": {
+"nascita": "Manduria"
+},
+"Q2635576": {
+"nascita": "Avezzano"
+},
+"Q30234227": {
+"nascita": "Goito"
+},
+"Q26972603": {
+"nascita": "Casalmaggiore"
+},
+"Q21208419": {
+"nascita": "Cava de' Tirreni"
+},
+"Q24033602": {
+"nascita": "Leonforte"
+},
+"Q19817414": {
+"nascita": "Nocera Inferiore",
+"morte": "Nocera Inferiore"
+},
+"Q23951992": {
+"nascita": "Carmiano"
+},
+"Q22953834": {
+"nascita": "Rose"
+},
+"Q19361834": {
+"nascita": "Foza"
+},
+"Q20953652": {
+"nascita": "Ghedi"
+},
+"Q20953679": {
+"nascita": "Arpino",
+"morte": "Sora"
+},
+"Q19614745": {
+"nascita": "Somma Vesuviana"
+},
+"Q19817406": {
+"nascita": "Battipaglia"
+},
+"Q28966057": {
+"nascita": "Massa Lombarda"
+},
+"Q28959517": {
+"nascita": "Serra San Bruno"
+},
+"Q29169620": {
+"nascita": "Baiano"
+},
+"Q29999948": {
+"nascita": "Airola",
+"morte": "Airola"
+},
+"Q18704079": {
+"nascita": "Grumo Nevano",
+"morte": "Bacoli"
+},
+"Q27986942": {
+"nascita": "Afragola",
+"morte": "Afragola"
+},
+"Q21207806": {
+"nascita": "Torre Annunziata"
+},
+"Q27986959": {
+"nascita": "Picerno"
+},
+"Q29169602": {
+"nascita": "Manerbio"
+},
+"Q18621047": {
+"nascita": "Telese Terme"
+},
+"Q2756121": {
+"nascita": "Sorrento"
+},
+"Q2051405": {
+"nascita": "San Vito dei Normanni"
+},
+"Q19727820": {
+"nascita": "Fontanellato",
+"morte": "San Teodoro"
+},
+"Q27986904": {
+"nascita": "Frignano"
+},
+"Q28950659": {
+"nascita": "Teverola",
+"morte": "Teverola"
+},
+"Q303466": {
+"nascita": "Conegliano"
+},
+"Q27986946": {
+"nascita": "Sarno"
+},
+"Q28966629": {
+"nascita": "Sarno"
+},
+"Q20035563": {
+"nascita": "Buonconvento"
+},
+"Q21076782": {
+"morte": "Meldola",
+"nascita": "Fumone"
+},
+"Q26972405": {
+"nascita": "Antonimina"
+},
+"Q22991653": {
+"nascita": "Locri"
+},
+"Q19727794": {
+"nascita": "Monteleone di Fermo",
+"morte": "Gallicano nel Lazio"
+},
+"Q19817405": {
+"nascita": "Ardore",
+"morte": "Ardore"
+},
+"Q23691598": {
+"nascita": "Procida"
+},
+"Q20940251": {
+"nascita": "Paluzza"
+},
+"Q19545484": {
+"nascita": "Mormanno"
+},
+"Q28112186": {
+"nascita": "Gambassi Terme"
+},
+"Q2710513": {
+"nascita": "Sant'Ambrogio di Valpolicella"
+},
+"Q2689015": {
+"nascita": "Sommacampagna"
+},
+"Q18812284": {
+"nascita": "Arco",
+"morte": "Arco"
+},
+"Q23047393": {
+"nascita": "Somma Vesuviana"
+},
+"Q24033526": {
+"nascita": "Sorrento"
+},
+"Q28966637": {
+"nascita": "Castelnuovo Rangone"
+},
+"Q19727814": {
+"nascita": "Santa Croce sull'Arno"
+},
+"Q18811996": {
+"nascita": "Artogne"
+},
+"Q26260254": {
+"nascita": "Pisciotta"
+},
+"Q24065956": {
+"morte": "Massa Marittima",
+"nascita": "San Miniato"
+},
+"Q18811992": {
+"nascita": "Tivoli",
+"morte": "Tivoli"
+},
+"Q22341848": {
+"nascita": "Sapri"
+},
+"Q26509642": {
+"nascita": "Verghereto"
+},
+"Q24043618": {
+"nascita": "Ponte dell'Olio"
+},
+"Q18920598": {
+"nascita": "Cantalice"
+},
+"Q19838670": {
+"nascita": "Senigallia"
+},
+"Q23309273": {
+"nascita": "Boville Ernica"
+},
+"Q24066026": {
+"nascita": "Monterado"
+},
+"Q19513303": {
+"nascita": "Salorno sulla Strada del Vino"
+},
+"Q19972076": {
+"nascita": "Rovereto"
+},
+"Q28112199": {
+"nascita": "Collesalvetti"
+},
+"Q19361786": {
+"nascita": "Alghero"
+},
+"Q2248891": {
+"nascita": "Gaeta"
+},
+"Q28857080": {
+"nascita": "Santa Fiora"
+},
+"Q27740446": {
+"nascita": "Viareggio"
+},
+"Q23047388": {
+"nascita": "Volterra"
+},
+"Q23047404": {
+"nascita": "Mamoiada"
+},
+"Q28966619": {
+"nascita": "Brunate"
+},
+"Q23047401": {
+"nascita": "Torre del Greco"
+},
+"Q23047394": {
+"nascita": "Serra San Quirico"
+},
+"Q26973073": {
+"nascita": "Alghero"
+},
+"Q29169617": {
+"nascita": "Agliana"
+},
+"Q28966645": {
+"nascita": "Pescia"
+},
+"Q23047403": {
+"nascita": "Altopascio"
+},
+"Q23047392": {
+"nascita": "Sestu"
+},
+"Q2635569": {
+"nascita": "Dire Daua"
+},
+"Q19501990": {
+"nascita": "Dornbirn"
+},
+"Q28222989": {
+"nascita": "Aragona",
+"morte": "Aragona"
+},
+"Q24065955": {
+"nascita": "Calangianus"
+},
+"Q28966638": {
+"nascita": "Palazzolo Acreide"
+},
+"Q21076801": {
+"nascita": "Licata"
+},
+"Q19850594": {
+"nascita": "Caltagirone",
+"morte": "Caltagirone"
+},
+"Q19727835": {
+"nascita": "Mazara del Vallo"
+},
+"Q19283935": {
+"nascita": "Poggioreale"
+},
+"Q319547": {
+"nascita": "Roma"
+},
+"Q333833": {
+"nascita": "Roma",
+"morte": "Roma"
+},
+"Q338536": {
+"morte": "Roma",
+"nascita": "Torino"
+},
+"Q346976": {
+"morte": "Roma",
+"nascita": "Napoli"
+},
+"Q3289628": {
+"nascita": "Roma"
+},
+"Q3342241": {
+"nascita": "Roma"
+},
+"Q3362601": {
+"morte": "Roma",
+"nascita": "Firenze"
+},
+"Q3362638": {
+"nascita": "Roma"
+},
+"Q3472189": {
+"nascita": "Roma"
+},
+"Q3483967": {
+"nascita": "Roma"
+},
+"Q3541976": {
+"morte": "Roma",
+"nascita": "Torre Annunziata",
+"sepoltura": "cimitero del Verano"
+},
+"Q3604425": {
+"nascita": "Roma"
+},
+"Q3605755": {
+"nascita": "Roma",
+"morte": "Roma"
+},
+"Q3606761": {
+"morte": "Roma",
+"nascita": "Genova"
+},
+"Q3608374": {
+"morte": "Roma",
+"nascita": "Napoli"
+},
+"Q3608446": {
+"nascita": "Roma"
+},
+"Q3609165": {
+"morte": "Roma",
+"nascita": "San Sostene"
+},
+"Q3609184": {
+"nascita": "Roma"
+},
+"Q3610270": {
+"nascita": "Roma"
+},
+"Q3611446": {
+"morte": "Roma",
+"nascita": "Colleferro"
+},
+"Q3615489": {
+"morte": "Roma",
+"nascita": "Novara"
+},
+"Q3616030": {
+"nascita": "Roma"
+},
+"Q3616895": {
+"nascita": "Roma"
+},
+"Q3619322": {
+"nascita": "Roma"
+},
+"Q3619559": {
+"nascita": "Roma"
+},
+"Q3619700": {
+"nascita": "Roma"
+},
+"Q3617884": {
+"nascita": "New York"
+},
+"Q3619783": {
+"morte": "Roma",
+"nascita": "Avellino"
+},
+"Q3619856": {
+"nascita": "Roma"
+},
+"Q3634651": {
+"nascita": "Roma"
+},
+"Q3634682": {
+"nascita": "Roma"
+},
+"Q3637263": {
+"nascita": "Roma"
+},
+"Q3645729": {
+"morte": "Roma",
+"nascita": "Sassari"
+},
+"Q3645960": {
+"morte": "Roma",
+"nascita": "Treviso"
+},
+"Q3658857": {
+"nascita": "Roma"
+},
+"Q3658862": {
+"nascita": "Roma"
+},
+"Q3659519": {
+"nascita": "Roma"
+},
+"Q3659883": {
+"nascita": "Roma"
+},
+"Q3665396": {
+"nascita": "Roma"
+},
+"Q3665586": {
+"morte": "Roma",
+"nascita": "Saronno"
+},
+"Q3679932": {
+"nascita": "Roma"
+},
+"Q3701806": {
+"nascita": "Milano"
+},
+"Q3701956": {
+"nascita": "Milano"
+},
+"Q3615910": {
+"nascita": "Milano"
+},
+"Q3619042": {
+"nascita": "Milano",
+"morte": "Milano"
+},
+"Q3619520": {
+"nascita": "Milano"
+},
+"Q3108160": {
+"nascita": "Milano"
+},
+"Q3547806": {
+"nascita": "Milano",
+"morte": "Milano"
+},
+"Q3604402": {
+"nascita": "Milano"
+},
+"Q3608649": {
+"nascita": "Milano"
+},
+"Q3608669": {
+"nascita": "Milano"
+},
+"Q3611171": {
+"nascita": "Milano"
+},
+"Q33528768": {
+"nascita": "Busto Arsizio",
+"morte": "Busto Arsizio"
+},
+"Q3660562": {
+"nascita": "Bergamo"
+},
+"Q3619275": {
+"nascita": "Torino"
+},
+"Q3667470": {
+"nascita": "Como"
+},
+"Q3701762": {
+"nascita": "Torino"
+},
+"Q3677338": {
+"nascita": "Catania"
+},
+"Q3613508": {
+"morte": "Orvieto",
+"nascita": "Amman"
+},
+"Q3613897": {
+"morte": "Dubai",
+"nascita": "Catania"
+},
+"Q3680082": {
+"nascita": "Genova"
+},
+"Q3614121": {
+"nascita": "Caserta"
+},
+"Q3619995": {
+"nascita": "Milano"
+},
+"Q3629591": {
+"nascita": "Milano"
+},
+"Q3629692": {
+"nascita": "Milano"
+},
+"Q3634608": {
+"nascita": "Milano"
+},
+"Q3659352": {
+"nascita": "Milano"
+},
+"Q3659636": {
+"nascita": "Milano"
+},
+"Q3659860": {
+"morte": "Milano",
+"nascita": "Ancona"
+},
+"Q3677336": {
+"nascita": "Bari"
+},
+"Q3617153": {
+"nascita": "Bologna"
+},
+"Q3619725": {
+"morte": "Bologna",
+"nascita": "Forlì"
+},
+"Q3611360": {
+"morte": "Genova",
+"nascita": "Pisa"
+},
+"Q3695484": {
+"nascita": "Palermo"
+},
+"Q3701773": {
+"nascita": "Palermo"
+},
+"Q3701882": {
+"nascita": "Pavia"
+},
+"Q3678150": {
+"nascita": "Napoli"
+},
+"Q3679928": {
+"nascita": "Napoli",
+"morte": "Napoli"
+},
+"Q3695121": {
+"nascita": "Napoli",
+"morte": "Napoli"
+},
+"Q3694322": {
+"nascita": "Cremona"
+},
+"Q3701971": {
+"nascita": "Udine"
+},
+"Q3611444": {
+"nascita": "Verona",
+"morte": "Negrar di Valpolicella"
+},
+"Q3619291": {
+"morte": "Verona",
+"nascita": "Bolzano"
+},
+"Q3605780": {
+"nascita": "Bergamo"
+},
+"Q3659910": {
+"nascita": "Orvieto"
+},
+"Q3680181": {
+"nascita": "Terni"
+},
+"Q3697356": {
+"nascita": "Bolzano"
+},
+"Q3608309": {
+"nascita": "Genova"
+},
+"Q3609394": {
+"nascita": "Genova"
+},
+"Q340239": {
+"nascita": "Torino"
+},
+"Q3606762": {
+"nascita": "Torino"
+},
+"Q3608481": {
+"nascita": "Torino"
+},
+"Q3610479": {
+"nascita": "Como"
+},
+"Q3619905": {
+"nascita": "Bergamo"
+},
+"Q3620211": {
+"nascita": "Padova"
+},
+"Q3695134": {
+"nascita": "Avellino"
+},
+"Q3637268": {
+"nascita": "Firenze"
+},
+"Q3615827": {
+"nascita": "Palermo"
+},
+"Q3619078": {
+"nascita": "Palermo"
+},
+"Q3680068": {
+"nascita": "Reggio Emilia"
+},
+"Q3665405": {
+"nascita": "Casale sul Sile"
+},
+"Q3686193": {
+"nascita": "Modica"
+},
+"Q3617584": {
+"nascita": "Roseto degli Abruzzi"
+},
+"Q3611516": {
+"nascita": "Napoli"
+},
+"Q3613895": {
+"nascita": "Napoli"
+},
+"Q3619661": {
+"morte": "Napoli",
+"nascita": "Sessa Aurunca"
+},
+"Q3629789": {
+"nascita": "Bologna"
+},
+"Q3617812": {
+"nascita": "Perugia"
+},
+"Q3619537": {
+"nascita": "Bari"
+},
+"Q3617215": {
+"nascita": "Potenza"
+},
+"Q3619854": {
+"nascita": "Napoli"
+},
+"Q3619875": {
+"nascita": "Napoli"
+},
+"Q3619876": {
+"nascita": "Napoli",
+"morte": "Napoli"
+},
+"Q3620005": {
+"nascita": "Napoli",
+"morte": "Napoli"
+},
+"Q3620079": {
+"morte": "Napoli",
+"nascita": "Portici"
+},
+"Q3617767": {
+"nascita": "Potenza"
+},
+"Q3619274": {
+"nascita": "Potenza"
+},
+"Q3608237": {
+"nascita": "Bologna"
+},
+"Q3610164": {
+"nascita": "Bologna"
+},
+"Q3695119": {
+"nascita": "Montemesola"
+},
+"Q3604430": {
+"nascita": "Firenze"
+},
+"Q3610476": {
+"nascita": "Firenze"
+},
+"Q3701785": {
+"nascita": "Trapani"
+},
+"Q3695460": {
+"nascita": "Pesco Sannita"
+},
+"Q3677351": {
+"nascita": "Vailate"
+},
+"Q3695124": {
+"nascita": "Carovigno",
+"morte": "Brindisi"
+},
+"Q3155882": {
+"nascita": "Napoli"
+},
+"Q3388667": {
+"nascita": "Napoli"
+},
+"Q3479655": {
+"nascita": "Napoli"
+},
+"Q3609255": {
+"morte": "Napoli",
+"nascita": "Avellino"
+},
+"Q3610141": {
+"nascita": "Napoli"
+},
+"Q36293310": {
+"nascita": "Alcamo"
+},
+"Q3683396": {
+"nascita": "Foggia"
+},
+"Q3659788": {
+"nascita": "Parma"
+},
+"Q3665368": {
+"nascita": "Murano"
+},
+"Q3665468": {
+"nascita": "San Demetrio Corone"
+},
+"Q37006234": {
+"nascita": "Cividate al Piano"
+},
+"Q3667497": {
+"nascita": "Iseo"
+},
+"Q3659219": {
+"nascita": "Pescara"
+},
+"Q3616859": {
+"nascita": "Reggio Emilia"
+},
+"Q3659195": {
+"nascita": "Ancona"
+},
+"Q3660376": {
+"morte": "Ancona",
+"nascita": "Saviano"
+},
+"Q33083457": {
+"nascita": "Torrice"
+},
+"Q3680032": {
+"nascita": "Fondi"
+},
+"Q3695114": {
+"nascita": "Martano"
+},
+"Q3695123": {
+"nascita": "Nova Siri"
+},
+"Q3615909": {
+"nascita": "La Spezia"
+},
+"Q3615709": {
+"nascita": "Chivasso"
+},
+"Q3680050": {
+"nascita": "Castel del Piano"
+},
+"Q3680142": {
+"nascita": "Riva del Garda"
+},
+"Q3635805": {
+"nascita": "Catania"
+},
+"Q3611519": {
+"nascita": "Ferrara"
+},
+"Q3616771": {
+"nascita": "San Benedetto del Tronto"
+},
+"Q3635309": {
+"morte": "Palermo",
+"nascita": "Geraci Siculo"
+},
+"Q3660230": {
+"nascita": "Palermo"
+},
+"Q3660374": {
+"nascita": "Palermo"
+},
+"Q3608104": {
+"nascita": "Palermo"
+},
+"Q3608175": {
+"nascita": "Palermo"
+},
+"Q3609711": {
+"nascita": "Palermo",
+"morte": "Palermo"
+},
+"Q3629664": {
+"nascita": "Campobasso"
+},
+"Q3695135": {
+"nascita": "Sezze"
+},
+"Q3663522": {
+"nascita": "Sassari"
+},
+"Q3620057": {
+"nascita": "Castellammare di Stabia"
+},
+"Q3615816": {
+"nascita": "Prato"
+},
+"Q3618960": {
+"nascita": "Prato"
+},
+"Q3619064": {
+"nascita": "Reggio Calabria"
+},
+"Q3608341": {
+"nascita": "Verona"
+},
+"Q3617467": {
+"nascita": "Castellammare di Stabia"
+},
+"Q3617047": {
+"nascita": "Caltanissetta"
+},
+"Q3619215": {
+"nascita": "Benevento"
+},
+"Q327879": {
+"morte": "Siena",
+"nascita": "Sassari"
+},
+"Q3619119": {
+"nascita": "Messina"
+},
+"Q3651566": {
+"nascita": "Monza"
+},
+"Q3607838": {
+"nascita": "Bari"
+},
+"Q3608610": {
+"nascita": "Bari"
+},
+"Q3620225": {
+"morte": "Reggio Emilia",
+"nascita": "Melfi"
+},
+"Q3611205": {
+"nascita": "Pescara",
+"morte": "Villamagna"
+},
+"Q3619219": {
+"nascita": "Brindisi"
+},
+"Q3659667": {
+"nascita": "Pavia"
+},
+"Q3617115": {
+"nascita": "Frassineto Po",
+"morte": "Frassineto Po"
+},
+"Q3611432": {
+"nascita": "Lecce"
+},
+"Q3605680": {
+"nascita": "Treviso"
+},
+"Q3619095": {
+"nascita": "Modica"
+},
+"Q3619290": {
+"nascita": "Modica",
+"morte": "Meldola"
+},
+"Q3119423": {
+"nascita": "Cuneo"
+},
+"Q3658839": {
+"nascita": "Rieti"
+},
+"Q3619127": {
+"morte": "Isernia",
+"nascita": "Sant'Agapito"
+},
+"Q3619638": {
+"nascita": "Cosenza"
+},
+"Q3619762": {
+"nascita": "Lanusei"
+},
+"Q3619485": {
+"nascita": "Trapani"
+},
+"Q3610441": {
+"nascita": "Monza"
+},
+"Q3609315": {
+"nascita": "Asti"
+},
+"Q3616756": {
+"nascita": "Cerignola"
+},
+"Q3619202": {
+"nascita": "Molfetta"
+},
+"Q3608295": {
+"nascita": "Empoli"
+},
+"Q3608429": {
+"nascita": "Lecce"
+},
+"Q3645852": {
+"nascita": "Nuoro"
+},
+"Q316226": {
+"morte": "Avellino",
+"nascita": "Nusco"
+},
+"Q3335245": {
+"nascita": "Sante Marie"
+},
+"Q3388783": {
+"nascita": "Corato"
+},
+"Q3620269": {
+"nascita": "Ascoli Piceno"
+},
+"Q3618963": {
+"nascita": "Alatri"
+},
+"Q3615834": {
+"nascita": "Portogruaro"
+},
+"Q3660378": {
+"nascita": "Benevento"
+},
+"Q3605758": {
+"nascita": "Brescia"
+},
+"Q3620121": {
+"nascita": "Siracusa"
+},
+"Q3645613": {
+"nascita": "Siracusa"
+},
+"Q3301763": {
+"nascita": "Carbonia"
+},
+"Q3608122": {
+"nascita": "Lecco"
+},
+"Q3194123": {
+"nascita": "Foligno"
+},
+"Q3604922": {
+"nascita": "Spoleto"
+},
+"Q3620021": {
+"nascita": "Foggia"
+},
+"Q3619752": {
+"nascita": "Putignano"
+},
+"Q3650963": {
+"nascita": "Agrigento"
+},
+"Q3616774": {
+"nascita": "Varallo"
+},
+"Q3642048": {
+"nascita": "Cosenza"
+},
+"Q3554631": {
+"nascita": "Pistoia"
+},
+"Q3611084": {
+"nascita": "Argelato"
+},
+"Q3610239": {
+"nascita": "Carpeneto"
+},
+"Q3619614": {
+"nascita": "Latiano"
+},
+"Q3617201": {
+"nascita": "Bovino"
+},
+"Q3623604": {
+"nascita": "Sliema"
+},
+"Q3608386": {
+"nascita": "Brindisi"
+},
+"Q3638079": {
+"nascita": "Andria"
+},
+"Q3619913": {
+"nascita": "Caltanissetta"
+},
+"Q3287004": {
+"nascita": "Vicenza"
+},
+"Q3608292": {
+"nascita": "Vicenza"
+},
+"Q3617746": {
+"nascita": "Galliate"
+},
+"Q3617747": {
+"nascita": "Appignano"
+},
+"Q3615480": {
+"nascita": "San Marzano sul Sarno"
+},
+"Q3615921": {
+"nascita": "Caramanico Terme"
+},
+"Q3615576": {
+"nascita": "Montoro Inferiore"
+},
+"Q3115881": {
+"nascita": "Paruzzaro"
+},
+"Q3615985": {
+"nascita": "Senigallia"
+},
+"Q3617023": {
+"nascita": "Polistena"
+},
+"Q3624592": {
+"nascita": "Torre del Greco"
+},
+"Q3620131": {
+"nascita": "Valmadrera"
+},
+"Q3659847": {
+"nascita": "Mandello del Lario"
+},
+"Q3557346": {
+"nascita": "Reggio Calabria"
+},
+"Q3645839": {
+"nascita": "Fossano"
+},
+"Q3629617": {
+"nascita": "Mosciano Sant'Angelo"
+},
+"Q3615830": {
+"nascita": "Barga"
+},
+"Q3660382": {
+"nascita": "Castellaneta"
+},
+"Q3638038": {
+"nascita": "Martina Franca"
+},
+"Q3619814": {
+"nascita": "Ascoli Satriano"
+},
+"Q3617472": {
+"nascita": "Torre del Greco"
+},
+"Q3615970": {
+"nascita": "Sarzana"
+},
+"Q3631022": {
+"nascita": "Piovene Rocchette",
+"morte": "Peschiera del Garda"
+},
+"Q3645929": {
+"nascita": "Imola",
+"morte": "Imola",
+"sepoltura": "Cimitero del Piratello"
+},
+"Q3604205": {
+"nascita": "Sciacca"
+},
+"Q3660252": {
+"nascita": "Monteleone di Puglia",
+"morte": "Monteleone di Puglia"
+},
+"Q3616765": {
+"nascita": "Rivello"
+},
+"Q3616933": {
+"nascita": "Povoletto"
+},
+"Q3437457": {
+"nascita": "Galati Mamertino"
+},
+"Q3608380": {
+"morte": "Lonigo",
+"nascita": "Zevio"
+},
+"Q3660245": {
+"nascita": "Graniti"
+},
+"Q3436949": {
+"nascita": "Donnas"
+},
+"Q3617687": {
+"nascita": "Riva del Garda"
+},
+"Q3609954": {
+"nascita": "Castrezzato"
+},
+"Q3608093": {
+"nascita": "Boretto"
+},
+"Q3623008": {
+"nascita": "Lezzeno"
+},
+"Q3659472": {
+"morte": "Foligno",
+"nascita": "Gualdo Tadino"
+},
+"Q3617476": {
+"nascita": "Giugliano in Campania"
+},
+"Q3610113": {
+"nascita": "Grado"
+},
+"Q3645821": {
+"nascita": "Isola del Liri"
+},
+"Q3660527": {
+"nascita": "Elizabeth"
+},
+"Q3613704": {
+"nascita": "Longano"
+},
+"Q3617771": {
+"nascita": "Piancastagnaio"
+},
+"Q3608083": {
+"nascita": "Montella"
+},
+"Q3620053": {
+"nascita": "Caneva"
+},
+"Q3659707": {
+"nascita": "San Vito al Tagliamento"
+},
+"Q365152": {
+"nascita": "Inverigo"
+},
+"Q3659637": {
+"nascita": "Cividale del Friuli"
+},
+"Q3293470": {
+"nascita": "Mondragone"
+},
+"Q3620125": {
+"nascita": "Marino"
+},
+"Q3629805": {
+"nascita": "Sesto San Giovanni"
+},
+"Q3659193": {
+"nascita": "Nova Siri"
+},
+"Q3620318": {
+"nascita": "Chiaromonte"
+},
+"Q3605754": {
+"nascita": "Arpino"
+},
+"Q3660261": {
+"nascita": "Orune"
+},
+"Q3619232": {
+"nascita": "Termini Imerese"
+},
+"Q3619357": {
+"nascita": "Ronciglione"
+},
+"Q3610182": {
+"nascita": "San Cataldo"
+},
+"Q3514464": {
+"nascita": "Mazara del Vallo"
+},
+"Q3655211": {
+"nascita": "Anzio"
+},
+"Q3629817": {
+"nascita": "Melicucco"
+},
+"Q3659832": {
+"nascita": "Piedimonte Matese"
+},
+"Q3635807": {
+"nascita": "Brolo"
+},
+"Q3660225": {
+"nascita": "Furci Siculo"
+},
+"Q3620006": {
+"nascita": "Gragnano"
+},
+"Q3620123": {
+"nascita": "Cursi"
+},
+"Q3645689": {
+"nascita": "Portici"
+},
+"Q3613555": {
+"nascita": "San Sperate"
+},
+"Q3618956": {
+"nascita": "Sant'Antioco"
+},
+"Q3618975": {
+"nascita": "Orgosolo"
+},
+"Q3616922": {
+"nascita": "Joppolo Giancaxio"
+},
+"Q3617042": {
+"nascita": "Racalmuto"
+},
+"Q3619085": {
+"nascita": "Ribera"
+},
+"Q3617049": {
+"nascita": "Grammichele"
+},
+"Q3619099": {
+"nascita": "Alcamo"
+},
+"Q3702094": {
+"nascita": "Roma"
+},
+"Q3713014": {
+"morte": "Roma",
+"nascita": "Montefino"
+},
+"Q3713069": {
+"nascita": "Roma"
+},
+"Q3713085": {
+"nascita": "Roma"
+},
+"Q3713743": {
+"morte": "Roma",
+"nascita": "Noci"
+},
+"Q3713769": {
+"morte": "Roma",
+"nascita": "Rionero in Vulture"
+},
+"Q3721908": {
+"morte": "Roma",
+"nascita": "Cagliari"
+},
+"Q3723044": {
+"nascita": "Roma",
+"morte": "Roma"
+},
+"Q3725786": {
+"nascita": "Roma"
+},
+"Q3725843": {
+"morte": "Roma",
+"nascita": "Venezia"
+},
+"Q3726477": {
+"nascita": "Roma",
+"morte": "Roma"
+},
+"Q3733432": {
+"nascita": "Roma"
+},
+"Q3737644": {
+"nascita": "Roma"
+},
+"Q3737980": {
+"nascita": "Roma"
+},
+"Q3738844": {
+"nascita": "Roma"
+},
+"Q3740421": {
+"morte": "Roma",
+"nascita": "Coli"
+},
+"Q3741557": {
+"nascita": "Roma"
+},
+"Q3741842": {
+"morte": "Roma",
+"nascita": "San Martino in Pensilis"
+},
+"Q3742617": {
+"morte": "Roma",
+"nascita": "Maddaloni"
+},
+"Q3745246": {
+"morte": "Roma",
+"nascita": "Palermo"
+},
+"Q3749294": {
+"morte": "Roma",
+"nascita": "Venezia"
+},
+"Q3749632": {
+"nascita": "Roma"
+},
+"Q3750255": {
+"nascita": "Roma"
+},
+"Q3750501": {
+"morte": "Roma",
+"nascita": "Subiaco"
+},
+"Q3750858": {
+"nascita": "Roma",
+"morte": "Napoli"
+},
+"Q3756578": {
+"morte": "Roma",
+"nascita": "Castellammare di Stabia"
+},
+"Q3760928": {
+"morte": "Roma",
+"nascita": "Guardia Lombardi"
+},
+"Q3762642": {
+"nascita": "Roma"
+},
+"Q3762882": {
+"nascita": "Roma"
+},
+"Q3763148": {
+"nascita": "Roma"
+},
+"Q3720401": {
+"morte": "Milano",
+"nascita": "Vejano"
+},
+"Q3721400": {
+"nascita": "Milano"
+},
+"Q3723060": {
+"nascita": "Milano"
+},
+"Q3723925": {
+"nascita": "Milano"
+},
+"Q3724245": {
+"morte": "Milano",
+"nascita": "San Severo"
+},
+"Q3751239": {
+"nascita": "Milano"
+},
+"Q3751600": {
+"morte": "Milano",
+"nascita": "Cambridge"
+},
+"Q3756557": {
+"morte": "Milano",
+"nascita": "Brescia"
+},
+"Q3757077": {
+"nascita": "Milano"
+},
+"Q3762730": {
+"nascita": "Modena"
+},
+"Q3760936": {
+"morte": "Milano",
+"nascita": "Santa Maria a Vico"
+},
+"Q3762887": {
+"nascita": "Milano",
+"morte": "Milano"
+},
+"Q3762931": {
+"nascita": "Milano"
+},
+"Q3745141": {
+"nascita": "Modena",
+"morte": "Bologna"
+},
+"Q3742689": {
+"morte": "Milano",
+"nascita": "Moltrasio",
+"sepoltura": "cimitero monumentale di Milano"
+},
+"Q3745869": {
+"nascita": "Milano"
+},
+"Q3745886": {
+"morte": "Milano",
+"nascita": "Reggiolo"
+},
+"Q3703515": {
+"nascita": "Torino"
+},
+"Q3706747": {
+"nascita": "Torino",
+"morte": "Napoli"
+},
+"Q3721447": {
+"nascita": "Torino"
+},
+"Q3751262": {
+"nascita": "Torino"
+},
+"Q3756650": {
+"nascita": "Torino"
+},
+"Q3762780": {
+"morte": "Padova",
+"nascita": "Cittadella"
+},
+"Q3762667": {
+"nascita": "Stoccolma"
+},
+"Q3738078": {
+"morte": "Torino",
+"nascita": "Urbino"
+},
+"Q3762291": {
+"nascita": "Bergamo"
+},
+"Q3706739": {
+"nascita": "Venezia"
+},
+"Q3725679": {
+"nascita": "Venezia"
+},
+"Q3751426": {
+"morte": "Bergamo",
+"nascita": "Nulvi"
+},
+"Q3751560": {
+"nascita": "Venezia"
+},
+"Q3762168": {
+"nascita": "Bologna"
+},
+"Q3762266": {
+"nascita": "Bologna"
+},
+"Q3762454": {
+"nascita": "Bologna"
+},
+"Q3762681": {
+"nascita": "Bologna"
+},
+"Q3726542": {
+"nascita": "Torino"
+},
+"Q3732026": {
+"nascita": "Torino"
+},
+"Q3738012": {
+"nascita": "Torino"
+},
+"Q3723227": {
+"nascita": "Padova"
+},
+"Q3749856": {
+"nascita": "Salerno"
+},
+"Q3762638": {
+"nascita": "Cagliari",
+"morte": "Cagliari"
+},
+"Q3762879": {
+"nascita": "Verona"
+},
+"Q3756547": {
+"nascita": "Como",
+"morte": "Sanremo"
+},
+"Q3756649": {
+"nascita": "Como"
+},
+"Q3749659": {
+"morte": "Firenze",
+"nascita": "Piacenza"
+},
+"Q3749427": {
+"nascita": "Verona"
+},
+"Q3725938": {
+"nascita": "Genova"
+},
+"Q3726061": {
+"nascita": "Genova",
+"morte": "Genova"
+},
+"Q3726712": {
+"nascita": "Genova",
+"morte": "Genova"
+},
+"Q3712924": {
+"morte": "Bologna",
+"nascita": "Roccella Ionica"
+},
+"Q3713683": {
+"nascita": "Bologna"
+},
+"Q3762995": {
+"morte": "Firenze",
+"nascita": "Belluno"
+},
+"Q3733994": {
+"nascita": "Trieste"
+},
+"Q3759822": {
+"nascita": "Napoli"
+},
+"Q3761935": {
+"morte": "Napoli",
+"nascita": "Caivano"
+},
+"Q3762880": {
+"morte": "Napoli",
+"nascita": "Tito"
+},
+"Q3713095": {
+"nascita": "Napoli"
+},
+"Q3758655": {
+"morte": "Palermo",
+"nascita": "Canicattì"
+},
+"Q3761985": {
+"nascita": "Palermo"
+},
+"Q3762510": {
+"nascita": "Palermo"
+},
+"Q3723996": {
+"morte": "Cagliari",
+"nascita": "Samugheo"
+},
+"Q3749290": {
+"nascita": "Napoli"
+},
+"Q3749884": {
+"nascita": "Napoli"
+},
+"Q3750491": {
+"nascita": "Napoli",
+"morte": "Napoli"
+},
+"Q3751401": {
+"nascita": "Napoli"
+},
+"Q3757091": {
+"nascita": "Napoli"
+},
+"Q3725841": {
+"nascita": "Salerno"
+},
+"Q3725754": {
+"nascita": "Firenze"
+},
+"Q3723208": {
+"nascita": "Trento"
+},
+"Q3702604": {
+"nascita": "Bari"
+},
+"Q3762458": {
+"nascita": "Potenza"
+},
+"Q3733385": {
+"nascita": "Buenos Aires"
+},
+"Q3731058": {
+"morte": "Bologna",
+"nascita": "Macerata"
+},
+"Q3745113": {
+"nascita": "Bologna"
+},
+"Q3763041": {
+"nascita": "Mantova"
+},
+"Q3749744": {
+"nascita": "Palermo"
+},
+"Q3750717": {
+"nascita": "Brescia",
+"morte": "Brescia"
+},
+"Q3749965": {
+"nascita": "Palermo"
+},
+"Q3756747": {
+"nascita": "Palermo"
+},
+"Q3762502": {
+"nascita": "Brescia"
+},
+"Q3723154": {
+"nascita": "Tripoli"
+},
+"Q3741850": {
+"nascita": "Cagliari"
+},
+"Q3713122": {
+"nascita": "Alessandria",
+"morte": "Lucca"
+},
+"Q3762947": {
+"nascita": "Catanzaro"
+},
+"Q3751122": {
+"nascita": "Perugia"
+},
+"Q3762970": {
+"nascita": "Crotone",
+"morte": "Crotone"
+},
+"Q3713702": {
+"nascita": "Catanzaro"
+},
+"Q3751642": {
+"nascita": "Rivara"
+},
+"Q3750290": {
+"nascita": "Fabriano",
+"morte": "Fabriano"
+},
+"Q3742622": {
+"morte": "Catania",
+"nascita": "Palermo"
+},
+"Q3745254": {
+"nascita": "Catania"
+},
+"Q3763131": {
+"nascita": "Trana"
+},
+"Q3725703": {
+"nascita": "Cuneo"
+},
+"Q3723247": {
+"nascita": "Novara"
+},
+"Q3756590": {
+"nascita": "Rovigo"
+},
+"Q3702018": {
+"nascita": "Brescia"
+},
+"Q3703513": {
+"nascita": "Brescia"
+},
+"Q3724390": {
+"nascita": "Brescia"
+},
+"Q3762043": {
+"nascita": "Imperia"
+},
+"Q3762686": {
+"morte": "Piacenza",
+"nascita": "Monticelli d’Ongina"
+},
+"Q3720340": {
+"nascita": "La Spezia"
+},
+"Q3732335": {
+"nascita": "Napoli"
+},
+"Q3734396": {
+"nascita": "Napoli"
+},
+"Q3763113": {
+"nascita": "Borgiallo"
+},
+"Q3762969": {
+"nascita": "Rivoli"
+},
+"Q3707212": {
+"nascita": "Cremona"
+},
+"Q3757090": {
+"nascita": "Reggio Calabria"
+},
+"Q3725649": {
+"nascita": "Gassino Torinese",
+"morte": "San Raffaele Cimena"
+},
+"Q3762237": {
+"nascita": "Iglesias"
+},
+"Q3734338": {
+"nascita": "Ancona",
+"morte": "Ancona"
+},
+"Q3750475": {
+"nascita": "Avellino"
+},
+"Q3741704": {
+"nascita": "Udine"
+},
+"Q3743812": {
+"nascita": "Udine"
+},
+"Q3746509": {
+"nascita": "Udine"
+},
+"Q3751482": {
+"nascita": "Savona"
+},
+"Q3751180": {
+"nascita": "Cosenza"
+},
+"Q3749627": {
+"nascita": "Vibo Valentia"
+},
+"Q3750589": {
+"nascita": "Iglesias"
+},
+"Q3725819": {
+"nascita": "Vicenza"
+},
+"Q3762506": {
+"nascita": "Cerreto di Spoleto"
+},
+"Q3763198": {
+"nascita": "Borgosesia",
+"morte": "autostrada A36"
+},
+"Q3702759": {
+"nascita": "Gorizia",
+"morte": "Obernai"
+},
+"Q3713707": {
+"nascita": "Arezzo"
+},
+"Q3726640": {
+"nascita": "Brescia"
+},
+"Q3721461": {
+"nascita": "Reggio Emilia"
+},
+"Q3724123": {
+"nascita": "Reggio Emilia",
+"morte": "Reggio Emilia"
+},
+"Q3702009": {
+"nascita": "Varese"
+},
+"Q3762475": {
+"morte": "Sassari",
+"nascita": "Ardara"
+},
+"Q3762823": {
+"nascita": "Taranto",
+"morte": "Taranto"
+},
+"Q3762608": {
+"nascita": "Arezzo"
+},
+"Q3725929": {
+"nascita": "Verbania"
+},
+"Q3762469": {
+"nascita": "Castelnuovo del Garda"
+},
+"Q3763228": {
+"nascita": "San Donà di Piave"
+},
+"Q3749809": {
+"nascita": "Brindisi"
+},
+"Q3737731": {
+"nascita": "Palermo"
+},
+"Q3725483": {
+"nascita": "Rimini"
+},
+"Q3760951": {
+"nascita": "Melfi"
+},
+"Q3713032": {
+"nascita": "Messina"
+},
+"Q3763051": {
+"nascita": "Minturno"
+},
+"Q3762911": {
+"nascita": "Forlì"
+},
+"Q3749564": {
+"nascita": "Spoleto"
+},
+"Q3757095": {
+"nascita": "Lendinara",
+"morte": "Bracciano"
+},
+"Q3762594": {
+"nascita": "Broni",
+"morte": "Broni"
+},
+"Q3754298": {
+"nascita": "Gaiarine"
+},
+"Q3749287": {
+"nascita": "Borgomanero"
+},
+"Q3713780": {
+"nascita": "Bitonto"
+},
+"Q3750702": {
+"nascita": "Sliema"
+},
+"Q3718905": {
+"nascita": "Livorno",
+"morte": "Livorno"
+},
+"Q3737691": {
+"nascita": "Massa"
+},
+"Q3742103": {
+"nascita": "Lecce"
+},
+"Q3701974": {
+"nascita": "Premosello-Chiovenda"
+},
+"Q3725757": {
+"nascita": "Varallo"
+},
+"Q3749320": {
+"nascita": "Messina"
+},
+"Q3759813": {
+"nascita": "Solopaca"
+},
+"Q3751540": {
+"nascita": "Porto Mantovano"
+},
+"Q3751437": {
+"nascita": "Legnano"
+},
+"Q3762674": {
+"nascita": "Scandiano"
+},
+"Q3762776": {
+"nascita": "Capriate San Gervasio"
+},
+"Q3763122": {
+"nascita": "Sesto San Giovanni"
+},
+"Q3725868": {
+"nascita": "Terni",
+"morte": "Terni"
+},
+"Q3737604": {
+"nascita": "Rovigo"
+},
+"Q3759794": {
+"nascita": "Casal di Principe"
+},
+"Q3725850": {
+"nascita": "Agrigento"
+},
+"Q3748816": {
+"nascita": "Reggio Calabria"
+},
+"Q3749505": {
+"nascita": "Bereguardo"
+},
+"Q3712882": {
+"nascita": "Vibo Valentia"
+},
+"Q3742653": {
+"nascita": "Taranto"
+},
+"Q3714273": {
+"nascita": "Pisa"
+},
+"Q3763116": {
+"nascita": "San Paolo Bel Sito"
+},
+"Q3745858": {
+"nascita": "Latina"
+},
+"Q3737680": {
+"nascita": "San Severo"
+},
+"Q3742632": {
+"nascita": "San Severo",
+"morte": "Torremaggiore"
+},
+"Q3749638": {
+"nascita": "Bisceglie"
+},
+"Q3750214": {
+"nascita": "Bisceglie"
+},
+"Q3723837": {
+"nascita": "Bernareggio"
+},
+"Q3751251": {
+"nascita": "Galatone"
+},
+"Q3751162": {
+"nascita": "Rosario"
+},
+"Q3705647": {
+"nascita": "Alliste"
+},
+"Q3720360": {
+"nascita": "Accettura"
+},
+"Q3749967": {
+"nascita": "San Vitaliano"
+},
+"Q3756979": {
+"nascita": "Roccapiemonte"
+},
+"Q3750476": {
+"nascita": "Gela"
+},
+"Q3723889": {
+"nascita": "Casalpusterlengo"
+},
+"Q3713160": {
+"nascita": "Barcellona Pozzo di Gotto"
+},
+"Q3721414": {
+"nascita": "Bassano del Grappa"
+},
+"Q3723857": {
+"nascita": "Lendinara"
+},
+"Q3702651": {
+"nascita": "Desio"
+},
+"Q3761997": {
+"nascita": "Cles"
+},
+"Q3762746": {
+"nascita": "Telti"
+},
+"Q3732613": {
+"nascita": "Castellammare di Stabia"
+},
+"Q3749457": {
+"nascita": "Nicotera"
+},
+"Q3751573": {
+"nascita": "Paduli"
+},
+"Q3749746": {
+"nascita": "Terlizzi",
+"morte": "Gioia del Colle"
+},
+"Q3749790": {
+"nascita": "Cursi"
+},
+"Q3741571": {
+"nascita": "Stagno Lombardo"
+},
+"Q3732032": {
+"nascita": "Melegnano"
+},
+"Q3745295": {
+"nascita": "Celano"
+},
+"Q3754274": {
+"nascita": "Bagnacavallo"
+},
+"Q3756528": {
+"nascita": "Faenza"
+},
+"Q3712976": {
+"nascita": "Morozzo"
+},
+"Q3712911": {
+"nascita": "Spoleto"
+},
+"Q3713771": {
+"nascita": "Cencenighe Agordino",
+"morte": "Cencenighe Agordino"
+},
+"Q3724272": {
+"nascita": "Bolognano"
+},
+"Q3723046": {
+"nascita": "Archi"
+},
+"Q3757009": {
+"nascita": "Capo d'Orlando"
+},
+"Q3749420": {
+"nascita": "Villarosa"
+},
+"Q3757075": {
+"nascita": "Maddaloni"
+},
+"Q3750146": {
+"nascita": "San Giovanni in Fiore"
+},
+"Q3749839": {
+"nascita": "Casignana"
+},
+"Q3702601": {
+"nascita": "Tradate"
+},
+"Q3750325": {
+"nascita": "Arta Terme"
+},
+"Q3749930": {
+"nascita": "Rutigliano"
+},
+"Q3749600": {
+"nascita": "Camposano"
+},
+"Q3713288": {
+"nascita": "Marcianise"
+},
+"Q3712979": {
+"nascita": "Teano"
+},
+"Q3733998": {
+"nascita": "Alanno"
+},
+"Q3713098": {
+"nascita": "Polignano a Mare"
+},
+"Q3712860": {
+"nascita": "Vieste"
+},
+"Q3723092": {
+"nascita": "Longobardi"
+},
+"Q3734355": {
+"nascita": "Minervino di Lecce"
+},
+"Q3742649": {
+"nascita": "Acquaviva delle Fonti"
+},
+"Q3734595": {
+"nascita": "Francavilla Fontana"
+},
+"Q3737734": {
+"nascita": "Caltanissetta"
+},
+"Q3751452": {
+"nascita": "Castell'Azzara"
+},
+"Q3732035": {
+"nascita": "Pieve Tesino",
+"morte": "Pieve Tesino"
+},
+"Q3749526": {
+"nascita": "Lamezia Terme"
+},
+"Q3725930": {
+"nascita": "Arquata Scrivia"
+},
+"Q3725986": {
+"nascita": "Tortona"
+},
+"Q3723755": {
+"nascita": "Castellana Grotte"
+},
+"Q3714289": {
+"nascita": "Filadelfia"
+},
+"Q3745314": {
+"nascita": "Cingoli"
+},
+"Q3737786": {
+"nascita": "Lissone"
+},
+"Q3745874": {
+"nascita": "Vigevano"
+},
+"Q3740843": {
+"nascita": "Buddusò"
+},
+"Q3737977": {
+"nascita": "Montegiorgio"
+},
+"Q3719714": {
+"nascita": "Wallenried"
+},
+"Q3719439": {
+"nascita": "Nocera Inferiore"
+},
+"Q3719660": {
+"nascita": "Treviglio"
+},
+"Q3749750": {
+"nascita": "Senigallia"
+},
+"Q3725943": {
+"nascita": "Pietra Ligure"
+},
+"Q3723093": {
+"nascita": "Grotteria"
+},
+"Q3748948": {
+"nascita": "Sant'Agata Feltria"
+},
+"Q3742955": {
+"nascita": "Portomaggiore"
+},
+"Q3733987": {
+"nascita": "Caravaggio"
+},
+"Q3745122": {
+"nascita": "Montescaglioso"
+},
+"Q3742537": {
+"nascita": "Polistena"
+},
+"Q3738016": {
+"nascita": "Casoli"
+},
+"Q3737819": {
+"nascita": "Cittiglio"
+},
+"Q3749382": {
+"nascita": "Collesano"
+},
+"Q3737814": {
+"nascita": "San Secondo Parmense"
+},
+"Q3749306": {
+"nascita": "Marsala",
+"morte": "Marsala"
+},
+"Q3749682": {
+"nascita": "Vibonati"
+},
+"Q3745104": {
+"nascita": "Sant'Agata de' Goti"
+},
+"Q3746774": {
+"nascita": "Termoli",
+"morte": "Termoli"
+},
+"Q3749973": {
+"nascita": "Mairano",
+"morte": "Mairano"
+},
+"Q3749286": {
+"nascita": "Castelfiorentino"
+},
+"Q3751214": {
+"nascita": "Montepulciano"
+},
+"Q3722958": {
+"nascita": "Rezzato"
+},
+"Q3722940": {
+"nascita": "Alghero"
+},
+"Q3737687": {
+"nascita": "Poviglio"
+},
+"Q3732005": {
+"nascita": "Sora"
+},
+"Q3713696": {
+"nascita": "Busalla"
+},
+"Q3712902": {
+"nascita": "Montevago"
+},
+"Q3736389": {
+"nascita": "Castelli Calepio"
+},
+"Q3737724": {
+"nascita": "San Giovanni in Persiceto"
+},
+"Q3726624": {
+"nascita": "San Lazzaro di Savena"
+},
+"Q3745275": {
+"nascita": "Mussomeli"
+},
+"Q3723275": {
+"nascita": "Cermes"
+},
+"Q3756755": {
+"nascita": "Bedonia"
+},
+"Q3756569": {
+"nascita": "Palazzago"
+},
+"Q3763739": {
+"morte": "Roma",
+"nascita": "Milano"
+},
+"Q3765590": {
+"nascita": "Roma"
+},
+"Q3765656": {
+"morte": "Roma",
+"nascita": "Nettuno"
+},
+"Q3765734": {
+"morte": "Roma",
+"nascita": "Milano"
+},
+"Q3765788": {
+"nascita": "Roma"
+},
+"Q3766565": {
+"nascita": "Roma"
+},
+"Q3766930": {
+"nascita": "Roma",
+"morte": "Catania"
+},
+"Q3766954": {
+"nascita": "Roma",
+"morte": "Roma"
+},
+"Q3769694": {
+"nascita": "Roma",
+"morte": "Roma"
+},
+"Q3769971": {
+"morte": "Roma",
+"nascita": "Orsogna"
+},
+"Q3770071": {
+"morte": "Roma",
+"nascita": "Reggio Emilia"
+},
+"Q3770321": {
+"nascita": "Roma",
+"morte": "Roma"
+},
+"Q3770350": {
+"morte": "Roma",
+"nascita": "Napoli"
+},
+"Q3770696": {
+"nascita": "Roma"
+},
+"Q3771119": {
+"morte": "Roma",
+"nascita": "Ragusa"
+},
+"Q3771601": {
+"nascita": "Roma"
+},
+"Q3772794": {
+"nascita": "Roma"
+},
+"Q3839570": {
+"morte": "Roma",
+"nascita": "Nola"
+},
+"Q3839785": {
+"morte": "Roma",
+"nascita": "Briatico"
+},
+"Q3839801": {
+"nascita": "Roma"
+},
+"Q3840070": {
+"morte": "Roma",
+"nascita": "Reggio Emilia"
+},
+"Q3840146": {
+"morte": "Roma",
+"nascita": "Cernusco sul Naviglio"
+},
+"Q3845102": {
+"nascita": "Roma"
+},
+"Q3845503": {
+"nascita": "Roma"
+},
+"Q3796375": {
+"nascita": "Roma"
+},
+"Q3814913": {
+"morte": "Roma",
+"nascita": "Tlemcen"
+},
+"Q3827735": {
+"nascita": "Roma"
+},
+"Q3829277": {
+"morte": "Roma",
+"nascita": "Scafati"
+},
+"Q3831684": {
+"morte": "Roma",
+"nascita": "Cesena"
+},
+"Q3836805": {
+"nascita": "Roma"
+},
+"Q3838100": {
+"nascita": "Roma"
+},
+"Q3838557": {
+"nascita": "Roma"
+},
+"Q3838947": {
+"nascita": "Roma"
+},
+"Q3839428": {
+"nascita": "Roma"
+},
+"Q3763518": {
+"morte": "Milano",
+"nascita": "Genova"
+},
+"Q3765370": {
+"nascita": "Milano",
+"morte": "Milano"
+},
+"Q3765539": {
+"nascita": "Milano"
+},
+"Q3765714": {
+"nascita": "Milano"
+},
+"Q3766216": {
+"nascita": "Milano"
+},
+"Q3771578": {
+"nascita": "Milano"
+},
+"Q3779428": {
+"nascita": "Milano"
+},
+"Q3768095": {
+"morte": "Torino",
+"nascita": "Cantarana"
+},
+"Q3845686": {
+"morte": "Milano",
+"nascita": "Genova"
+},
+"Q3763661": {
+"nascita": "Torino"
+},
+"Q3767689": {
+"nascita": "Torino",
+"morte": "Genova"
+},
+"Q3769524": {
+"nascita": "Trieste"
+},
+"Q3791436": {
+"nascita": "Trieste"
+},
+"Q3840445": {
+"nascita": "Trieste"
+},
+"Q3763486": {
+"nascita": "Trieste"
+},
+"Q3765306": {
+"morte": "Genova",
+"nascita": "Omegna"
+},
+"Q3770628": {
+"morte": "Senegal",
+"nascita": "Napoli"
+},
+"Q3765814": {
+"nascita": "Padova"
+},
+"Q3802251": {
+"nascita": "Modena"
+},
+"Q3838610": {
+"nascita": "Modena",
+"morte": "Modena"
+},
+"Q3838611": {
+"morte": "Modena",
+"nascita": "Napoli"
+},
+"Q3771713": {
+"nascita": "Padova"
+},
+"Q3845981": {
+"nascita": "Torino"
+},
+"Q3801873": {
+"nascita": "Zurigo",
+"morte": "Castiglione delle Stiviere"
+},
+"Q3770102": {
+"nascita": "Catania"
+},
+"Q3827731": {
+"nascita": "Padova",
+"morte": "Padova"
+},
+"Q3836834": {
+"nascita": "Padova"
+},
+"Q3765527": {
+"nascita": "Bergamo"
+},
+"Q3763782": {
+"nascita": "Feltre"
+},
+"Q3845957": {
+"nascita": "Venezia"
+},
+"Q3778992": {
+"nascita": "Firenze"
+},
+"Q3835602": {
+"morte": "Milano",
+"nascita": "Vienna"
+},
+"Q3835643": {
+"nascita": "Milano"
+},
+"Q3838684": {
+"nascita": "Milano"
+},
+"Q3845933": {
+"nascita": "Bologna"
+},
+"Q3763282": {
+"nascita": "Bologna"
+},
+"Q3763327": {
+"nascita": "Bologna"
+},
+"Q3765283": {
+"nascita": "Bologna",
+"morte": "Bologna"
+},
+"Q3839882": {
+"nascita": "Salerno"
+},
+"Q3839969": {
+"morte": "Buenos Aires",
+"nascita": "San Giorgio in Bosco"
+},
+"Q3821561": {
+"nascita": "Firenze"
+},
+"Q3838897": {
+"nascita": "Firenze"
+},
+"Q3769361": {
+"nascita": "Bologna"
+},
+"Q3839502": {
+"morte": "Cagliari",
+"nascita": "San Basilio"
+},
+"Q3840260": {
+"nascita": "Cagliari"
+},
+"Q3838657": {
+"nascita": "Catania",
+"morte": "Pisa"
+},
+"Q3765347": {
+"morte": "Cagliari",
+"nascita": "Jerzu"
+},
+"Q3765634": {
+"morte": "Cagliari",
+"nascita": "Iglesias"
+},
+"Q3767797": {
+"nascita": "Cagliari",
+"morte": "Napoli"
+},
+"Q3833075": {
+"morte": "Napoli",
+"nascita": "Grottolella"
+},
+"Q3833185": {
+"nascita": "Napoli"
+},
+"Q3839350": {
+"nascita": "Napoli"
+},
+"Q3840253": {
+"nascita": "Verona"
+},
+"Q3766795": {
+"nascita": "Firenze"
+},
+"Q3836866": {
+"morte": "Genova",
+"nascita": "Ventimiglia"
+},
+"Q3769250": {
+"nascita": "Napoli"
+},
+"Q3770413": {
+"nascita": "Napoli"
+},
+"Q3771417": {
+"nascita": "Napoli"
+},
+"Q3766909": {
+"nascita": "Catania"
+},
+"Q3813948": {
+"nascita": "Bologna"
+},
+"Q3792354": {
+"nascita": "Palermo"
+},
+"Q3770143": {
+"nascita": "Palermo"
+},
+"Q3770513": {
+"nascita": "Palermo"
+},
+"Q3779359": {
+"nascita": "Palermo"
+},
+"Q3830340": {
+"nascita": "Perugia"
+},
+"Q3771022": {
+"nascita": "Potenza"
+},
+"Q3765574": {
+"morte": "Perugia",
+"nascita": "Cortona"
+},
+"Q3839455": {
+"nascita": "Catania"
+},
+"Q3769931": {
+"nascita": "Asmara"
+},
+"Q3765300": {
+"nascita": "La Spezia"
+},
+"Q3768247": {
+"nascita": "Parma"
+},
+"Q3779205": {
+"nascita": "Pescara"
+},
+"Q3791744": {
+"nascita": "Bari"
+},
+"Q3768036": {
+"nascita": "Piadena"
+},
+"Q3765330": {
+"nascita": "Monza"
+},
+"Q3765379": {
+"nascita": "Vicenza"
+},
+"Q3770291": {
+"nascita": "Vicenza"
+},
+"Q3770985": {
+"nascita": "Cuneo"
+},
+"Q3830086": {
+"nascita": "Reggio Calabria"
+},
+"Q3830562": {
+"nascita": "Reggio Calabria",
+"morte": "Reggio Calabria"
+},
+"Q3767121": {
+"nascita": "Pescara"
+},
+"Q3839508": {
+"nascita": "Napoli"
+},
+"Q3839923": {
+"nascita": "Napoli"
+},
+"Q3839941": {
+"morte": "Napoli",
+"nascita": "Sant'Anastasia"
+},
+"Q3845246": {
+"nascita": "Napoli",
+"morte": "Napoli"
+},
+"Q3845574": {
+"nascita": "Napoli"
+},
+"Q3845695": {
+"nascita": "Napoli"
+},
+"Q3776015": {
+"nascita": "Empoli"
+},
+"Q3830507": {
+"nascita": "Asmara"
+},
+"Q3804895": {
+"nascita": "Aosta"
+},
+"Q3840245": {
+"nascita": "Monza"
+},
+"Q3827769": {
+"nascita": "Vicenza"
+},
+"Q3770125": {
+"morte": "Pisa",
+"nascita": "Manciano"
+},
+"Q3770147": {
+"nascita": "Varese"
+},
+"Q3765595": {
+"nascita": "Cavour"
+},
+"Q3827834": {
+"nascita": "Cuneo"
+},
+"Q3769001": {
+"morte": "Reggio Calabria",
+"nascita": "Polistena"
+},
+"Q3771584": {
+"nascita": "Reggio Calabria"
+},
+"Q3838634": {
+"nascita": "Macerata"
+},
+"Q3767574": {
+"nascita": "L'Aquila"
+},
+"Q3838894": {
+"nascita": "Luserna San Giovanni"
+},
+"Q3839583": {
+"nascita": "Campobasso",
+"morte": "Campobasso"
+},
+"Q3839545": {
+"nascita": "Bari"
+},
+"Q3764738": {
+"nascita": "Belluno"
+},
+"Q3767066": {
+"nascita": "Belluno"
+},
+"Q3826343": {
+"morte": "Lecco",
+"nascita": "Galbiate"
+},
+"Q3836888": {
+"nascita": "Lecco"
+},
+"Q3843092": {
+"nascita": "Novara"
+},
+"Q3832043": {
+"nascita": "Novara",
+"morte": "Bolzano"
+},
+"Q3769486": {
+"nascita": "Brescia"
+},
+"Q3771342": {
+"nascita": "Brescia"
+},
+"Q3839817": {
+"nascita": "Sassari"
+},
+"Q3839729": {
+"nascita": "Carrara"
+},
+"Q3764590": {
+"nascita": "Narni"
+},
+"Q3767854": {
+"nascita": "Chieti",
+"morte": "Chieti"
+},
+"Q3826859": {
+"nascita": "Chieti"
+},
+"Q3838964": {
+"nascita": "Chieti"
+},
+"Q3839875": {
+"nascita": "Reggio Calabria"
+},
+"Q3845107": {
+"nascita": "Novi Ligure"
+},
+"Q3765134": {
+"nascita": "Ravenna"
+},
+"Q3768072": {
+"nascita": "Savona",
+"morte": "Savona"
+},
+"Q3775998": {
+"nascita": "Arezzo"
+},
+"Q3845863": {
+"nascita": "Gorla Minore"
+},
+"Q3827827": {
+"nascita": "Latina"
+},
+"Q3770448": {
+"nascita": "Bitonto"
+},
+"Q3776080": {
+"nascita": "Magenta",
+"morte": "Robecco sul Naviglio"
+},
+"Q3763740": {
+"nascita": "Messina"
+},
+"Q3764245": {
+"nascita": "Veglio"
+},
+"Q3766539": {
+"nascita": "Ragusa"
+},
+"Q3767716": {
+"nascita": "Ragusa"
+},
+"Q3763783": {
+"nascita": "Sassari"
+},
+"Q3770811": {
+"nascita": "Mornago"
+},
+"Q3779986": {
+"morte": "Terni",
+"nascita": "Imola"
+},
+"Q3840248": {
+"nascita": "Taranto"
+},
+"Q3766829": {
+"nascita": "Sesto San Giovanni",
+"morte": "Sesto San Giovanni"
+},
+"Q3839347": {
+"nascita": "Cigliano"
+},
+"Q3838571": {
+"nascita": "Castelfranco Veneto"
+},
+"Q3844721": {
+"nascita": "Sedegliano"
+},
+"Q3839777": {
+"nascita": "Mesoraca"
+},
+"Q3827716": {
+"nascita": "Viterbo"
+},
+"Q3796329": {
+"nascita": "Desio"
+},
+"Q3838317": {
+"nascita": "Saronno"
+},
+"Q3767132": {
+"nascita": "Agrigento"
+},
+"Q3839544": {
+"nascita": "Bassano del Grappa"
+},
+"Q3845534": {
+"nascita": "San Stino di Livenza"
+},
+"Q3769520": {
+"nascita": "Olbia"
+},
+"Q3839809": {
+"nascita": "Gaggiano"
+},
+"Q3839937": {
+"nascita": "Codogno"
+},
+"Q3770490": {
+"nascita": "Scicli",
+"morte": "Modica"
+},
+"Q3775987": {
+"nascita": "Agna"
+},
+"Q3779385": {
+"nascita": "Sassari"
+},
+"Q3764747": {
+"nascita": "Cosenza"
+},
+"Q3845991": {
+"nascita": "Suzzara"
+},
+"Q3839770": {
+"nascita": "San Cassiano"
+},
+"Q3809798": {
+"nascita": "Cosenza",
+"morte": "Cosenza"
+},
+"Q3763721": {
+"nascita": "Quinto di Treviso",
+"morte": "Quinto di Treviso"
+},
+"Q3770042": {
+"nascita": "Caltanissetta"
+},
+"Q3838539": {
+"nascita": "Piombino Dese"
+},
+"Q3838170": {
+"nascita": "Cantù"
+},
+"Q3768377": {
+"nascita": "Taranto"
+},
+"Q3839615": {
+"nascita": "Sant'Eufemia d'Aspromonte"
+},
+"Q3767042": {
+"nascita": "Besana in Brianza"
+},
+"Q3763605": {
+"nascita": "Zelo Buon Persico"
+},
+"Q3767560": {
+"nascita": "Roccamontepiano"
+},
+"Q3767711": {
+"nascita": "Gioia del Colle",
+"morte": "Sammichele di Bari"
+},
+"Q3769322": {
+"nascita": "Scontrone"
+},
+"Q3763682": {
+"nascita": "Andria"
+},
+"Q3832076": {
+"nascita": "Arezzo"
+},
+"Q3771057": {
+"nascita": "Cosenza"
+},
+"Q3769705": {
+"nascita": "Viterbo"
+},
+"Q3839820": {
+"nascita": "Visano"
+},
+"Q3809258": {
+"nascita": "Legnano"
+},
+"Q3843542": {
+"nascita": "Carpi"
+},
+"Q3845082": {
+"nascita": "Carpi"
+},
+"Q3845083": {
+"nascita": "Pescia"
+},
+"Q3763335": {
+"nascita": "Fregona"
+},
+"Q3763733": {
+"nascita": "Oderzo"
+},
+"Q3770673": {
+"morte": "Acquaviva delle Fonti",
+"nascita": "Locorotondo"
+},
+"Q3767964": {
+"nascita": "Altino"
+},
+"Q3802495": {
+"nascita": "Sacile",
+"morte": "Sacile"
+},
+"Q3779040": {
+"nascita": "Pompei"
+},
+"Q3838943": {
+"nascita": "Lucera"
+},
+"Q3771468": {
+"nascita": "Satriano"
+},
+"Q3840101": {
+"nascita": "Codigoro"
+},
+"Q3837044": {
+"nascita": "Soresina"
+},
+"Q3838596": {
+"nascita": "Lonigo"
+},
+"Q3770202": {
+"nascita": "Monte Sant'Angelo"
+},
+"Q3770515": {
+"nascita": "Sansepolcro"
+},
+"Q3791736": {
+"nascita": "Lamezia Terme"
+},
+"Q3832605": {
+"nascita": "Cassano all'Ionio"
+},
+"Q3830689": {
+"nascita": "Montorio al Vomano"
+},
+"Q3836939": {
+"nascita": "San Cipriano d'Aversa"
+},
+"Q3779498": {
+"nascita": "Francavilla in Sinni"
+},
+"Q3831056": {
+"nascita": "Cervignano del Friuli"
+},
+"Q3838033": {
+"nascita": "Trecenta"
+},
+"Q3763742": {
+"nascita": "Calvagese della Riviera"
+},
+"Q3763729": {
+"nascita": "Villanuova sul Clisi"
+},
+"Q3801672": {
+"nascita": "Casarano"
+},
+"Q3838809": {
+"nascita": "Aulla"
+},
+"Q3770370": {
+"morte": "Oderzo",
+"nascita": "Lutrano"
+},
+"Q3771688": {
+"nascita": "Capistrello"
+},
+"Q3826862": {
+"nascita": "Campogalliano"
+},
+"Q3829229": {
+"nascita": "Castelnovo ne' Monti"
+},
+"Q3770170": {
+"morte": "Rionero in Vulture",
+"nascita": "Tobruch"
+},
+"Q3804452": {
+"nascita": "Recanati"
+},
+"Q3838186": {
+"nascita": "Recanati"
+},
+"Q3839942": {
+"nascita": "Sant'Egidio del Monte Albino",
+"morte": "Sant'Egidio del Monte Albino"
+},
+"Q3769603": {
+"nascita": "Monte San Pietrangeli"
+},
+"Q3771687": {
+"nascita": "Afragola"
+},
+"Q3792296": {
+"nascita": "Marsala"
+},
+"Q3766040": {
+"nascita": "Soveria Mannelli"
+},
+"Q3768076": {
+"nascita": "Acerra"
+},
+"Q3764802": {
+"nascita": "Sant'Antonio Abate"
+},
+"Q3767144": {
+"nascita": "Corigliano Calabro"
+},
+"Q3764585": {
+"nascita": "Bivongi"
+},
+"Q3779289": {
+"nascita": "Pralboino"
+},
+"Q3763555": {
+"nascita": "San Pellegrino Terme"
+},
+"Q3766264": {
+"nascita": "Casal di Principe"
+},
+"Q3767139": {
+"nascita": "Cercemaggiore"
+},
+"Q3839855": {
+"nascita": "Capannori"
+},
+"Q3840438": {
+"nascita": "Gondar"
+},
+"Q3830077": {
+"nascita": "Cermenate"
+},
+"Q3827772": {
+"nascita": "Borgo Valsugana"
+},
+"Q3770500": {
+"nascita": "Pagani"
+},
+"Q3804849": {
+"nascita": "Bicinicco"
+},
+"Q3839692": {
+"nascita": "Osimo"
+},
+"Q3845635": {
+"nascita": "Porto Azzurro"
+},
+"Q3770563": {
+"nascita": "San Cono"
+},
+"Q3838260": {
+"nascita": "Senigallia"
+},
+"Q3826318": {
+"nascita": "Tivoli"
+},
+"Q3835632": {
+"nascita": "Tivoli"
+},
+"Q3839950": {
+"nascita": "Pinzolo"
+},
+"Q3767110": {
+"morte": "Sinnai",
+"nascita": "Osini"
+},
+"Q3763593": {
+"nascita": "Orani"
+},
+"Q3769954": {
+"nascita": "Licata"
+},
+"Q3770193": {
+"nascita": "Latiano"
+},
+"Q3779516": {
+"nascita": "Taurianova"
+},
+"Q3779008": {
+"nascita": "Varapodio"
+},
+"Q3767860": {
+"nascita": "Piazza al Serchio"
+},
+"Q3764731": {
+"nascita": "Genzano di Roma"
+},
+"Q3802371": {
+"nascita": "Pagani"
+},
+"Q3769922": {
+"nascita": "Cento"
+},
+"Q3769348": {
+"nascita": "Carpi"
+},
+"Q3767864": {
+"nascita": "Pescosolido",
+"morte": "Anagni"
+},
+"Q3763758": {
+"nascita": "Cernusco sul Naviglio"
+},
+"Q3771374": {
+"nascita": "Ribera"
+},
+"Q3770934": {
+"nascita": "Sciacca"
+},
+"Q3770677": {
+"nascita": "Solarino"
+},
+"Q3770841": {
+"nascita": "Termini Imerese"
+},
+"Q3771431": {
+"nascita": "Casteltermini"
+},
+"Q3770716": {
+"nascita": "Arzano"
+},
+"Q3770460": {
+"nascita": "Cavalese"
+},
+"Q3770398": {
+"nascita": "Chiavari"
+},
+"Q3771074": {
+"nascita": "Militello Rosmarino"
+},
+"Q3839098": {
+"nascita": "Alcamo",
+"morte": "Gibellina"
+},
+"Q3770799": {
+"nascita": "Rapolano Terme"
+},
+"Q3770028": {
+"nascita": "San Giuliano di Puglia"
+},
+"Q3771419": {
+"nascita": "Aragona"
+},
+"Q3768024": {
+"nascita": "Salemi"
+},
+"Q3765476": {
+"nascita": "Mattuglie"
+},
+"Q3833070": {
+"nascita": "San Severino"
+},
+"Q3837950": {
+"nascita": "Mestre"
+},
+"Q3838841": {
+"nascita": "Magliano Sabina"
+},
+"Q3836377": {
+"nascita": "Civitavecchia"
+},
+"Q3765757": {
+"nascita": "Trevignano Romano"
+},
+"Q3767579": {
+"nascita": "Santo Stefano di Magra"
+},
+"Q3876381": {
+"morte": "Roma",
+"nascita": "Napoli"
+},
+"Q3879202": {
+"nascita": "Roma"
+},
+"Q3881622": {
+"nascita": "Roma"
+},
+"Q3886985": {
+"morte": "Roma",
+"nascita": "Vicenza"
+},
+"Q3893523": {
+"nascita": "Roma"
+},
+"Q3893565": {
+"morte": "Roma",
+"nascita": "Napoli"
+},
+"Q3893747": {
+"nascita": "Roma"
+},
+"Q3893889": {
+"nascita": "Roma"
+},
+"Q3897841": {
+"nascita": "Roma"
+},
+"Q385215": {
+"morte": "Roma",
+"nascita": "Piombino"
+},
+"Q3845998": {
+"morte": "Roma",
+"nascita": "Palermo"
+},
+"Q3846259": {
+"nascita": "Roma"
+},
+"Q3846823": {
+"nascita": "Roma",
+"morte": "Roma"
+},
+"Q3846928": {
+"nascita": "Roma"
+},
+"Q3847225": {
+"nascita": "Roma"
+},
+"Q3847374": {
+"nascita": "Roma"
+},
+"Q3847449": {
+"nascita": "Roma"
+},
+"Q3847714": {
+"nascita": "Roma"
+},
+"Q3848255": {
+"nascita": "Roma"
+},
+"Q3848290": {
+"morte": "Roma",
+"nascita": "Milano"
+},
+"Q3848619": {
+"morte": "Roma",
+"nascita": "Monteflavio"
+},
+"Q3902858": {
+"nascita": "Roma"
+},
+"Q3903004": {
+"nascita": "Roma"
+},
+"Q3903297": {
+"nascita": "Roma",
+"morte": "Roma"
+},
+"Q3903632": {
+"morte": "Roma",
+"nascita": "Villa Castelli"
+},
+"Q3903660": {
+"nascita": "Roma",
+"morte": "Roma"
+},
+"Q3925320": {
+"nascita": "Roma",
+"morte": "Roma"
+},
+"Q3929149": {
+"nascita": "Roma"
+},
+"Q3851077": {
+"nascita": "Roma"
+},
+"Q3851151": {
+"nascita": "Roma"
+},
+"Q3851340": {
+"morte": "Roma",
+"nascita": "Lagonegro"
+},
+"Q3851375": {
+"nascita": "Roma"
+},
+"Q3851408": {
+"nascita": "Roma"
+},
+"Q3851462": {
+"nascita": "Roma",
+"morte": "Roma"
+},
+"Q3852521": {
+"nascita": "Roma"
+},
+"Q3852587": {
+"nascita": "Roma"
+},
+"Q3852630": {
+"nascita": "Roma"
+},
+"Q3852806": {
+"nascita": "Roma"
+},
+"Q3854094": {
+"nascita": "Roma"
+},
+"Q3858834": {
+"morte": "Roma",
+"nascita": "Firenze",
+"sepoltura": "cimitero acattolico di Roma"
+},
+"Q3903879": {
+"nascita": "Padova"
+},
+"Q3903009": {
+"nascita": "Milano"
+},
+"Q3903125": {
+"nascita": "Milano"
+},
+"Q390378": {
+"nascita": "Milano"
+},
+"Q3846137": {
+"nascita": "Milano"
+},
+"Q3846255": {
+"nascita": "Milano"
+},
+"Q3849206": {
+"nascita": "Milano"
+},
+"Q3875866": {
+"morte": "Milano",
+"nascita": "Padova"
+},
+"Q3882132": {
+"morte": "Milano",
+"nascita": "Meda"
+},
+"Q3886077": {
+"nascita": "Milano",
+"morte": "Milano"
+},
+"Q3893738": {
+"nascita": "Milano"
+},
+"Q3894547": {
+"nascita": "Milano"
+},
+"Q3904043": {
+"nascita": "Genova"
+},
+"Q3847685": {
+"nascita": "Modena"
+},
+"Q3852780": {
+"nascita": "Modena"
+},
+"Q3902973": {
+"nascita": "Verona"
+},
+"Q3904154": {
+"nascita": "Napoli"
+},
+"Q3869839": {
+"nascita": "Padova"
+},
+"Q3894115": {
+"nascita": "Padova"
+},
+"Q3874766": {
+"morte": "Torino",
+"nascita": "Bologna"
+},
+"Q3887014": {
+"nascita": "Torino"
+},
+"Q3897807": {
+"nascita": "Torino"
+},
+"Q3847088": {
+"nascita": "Bergamo"
+},
+"Q3902934": {
+"nascita": "Venezia"
+},
+"Q3851255": {
+"nascita": "Torino"
+},
+"Q3851464": {
+"morte": "Torino",
+"nascita": "Garessio"
+},
+"Q3903884": {
+"nascita": "Udine"
+},
+"Q3847895": {
+"nascita": "Genova"
+},
+"Q3849194": {
+"nascita": "Genova"
+},
+"Q3903326": {
+"nascita": "Firenze",
+"morte": "Luino"
+},
+"Q3852085": {
+"morte": "Torino",
+"nascita": "Messina"
+},
+"Q3852857": {
+"nascita": "Torino"
+},
+"Q3851008": {
+"nascita": "Bologna"
+},
+"Q3847319": {
+"nascita": "Torino"
+},
+"Q3847543": {
+"nascita": "Torino"
+},
+"Q3894306": {
+"nascita": "Bologna"
+},
+"Q3893829": {
+"nascita": "Venezia"
+},
+"Q3851209": {
+"nascita": "Milano"
+},
+"Q3852636": {
+"nascita": "Milano"
+},
+"Q3851144": {
+"nascita": "Padova"
+},
+"Q3852713": {
+"nascita": "Padova"
+},
+"Q3850244": {
+"nascita": "Venezia"
+},
+"Q3904084": {
+"morte": "Palermo",
+"nascita": "Capo d'Orlando"
+},
+"Q3894571": {
+"nascita": "Genova"
+},
+"Q3846346": {
+"nascita": "Salerno"
+},
+"Q3876253": {
+"morte": "Catania",
+"nascita": "Maletto"
+},
+"Q3877231": {
+"nascita": "Catania",
+"morte": "Catania"
+},
+"Q3884888": {
+"nascita": "Catania"
+},
+"Q3852840": {
+"nascita": "Como"
+},
+"Q3903899": {
+"morte": "Bari",
+"nascita": "Lizzano"
+},
+"Q3903979": {
+"morte": "Bari",
+"nascita": "San Pietro Vernotico"
+},
+"Q3897028": {
+"nascita": "Napoli",
+"morte": "Napoli"
+},
+"Q3903981": {
+"nascita": "Perugia"
+},
+"Q3876309": {
+"nascita": "Verona",
+"morte": "Verona"
+},
+"Q3851390": {
+"nascita": "Firenze"
+},
+"Q3852156": {
+"nascita": "Firenze"
+},
+"Q3849391": {
+"nascita": "Caracas"
+},
+"Q3846354": {
+"nascita": "Firenze"
+},
+"Q3847486": {
+"nascita": "Firenze"
+},
+"Q3847761": {
+"nascita": "Cagliari",
+"morte": "Cagliari"
+},
+"Q3903779": {
+"nascita": "Ravenna"
+},
+"Q3851511": {
+"nascita": "Napoli"
+},
+"Q3856605": {
+"nascita": "Napoli"
+},
+"Q3851245": {
+"nascita": "Cagliari"
+},
+"Q3903119": {
+"nascita": "L'Aquila"
+},
+"Q3870121": {
+"nascita": "Firenze"
+},
+"Q3852519": {
+"nascita": "Palermo"
+},
+"Q3877226": {
+"morte": "Pescara",
+"nascita": "Penne"
+},
+"Q3847272": {
+"nascita": "Napoli"
+},
+"Q3847318": {
+"nascita": "Napoli",
+"morte": "Napoli"
+},
+"Q3885786": {
+"nascita": "Urbino"
+},
+"Q3892807": {
+"nascita": "Urbino"
+},
+"Q3846412": {
+"nascita": "Busto Arsizio"
+},
+"Q3902976": {
+"nascita": "Brescia"
+},
+"Q3851500": {
+"morte": "Urbino",
+"nascita": "Macerata Feltria"
+},
+"Q3851022": {
+"nascita": "Verona"
+},
+"Q3852082": {
+"nascita": "Verona"
+},
+"Q3852774": {
+"nascita": "Verona"
+},
+"Q3846918": {
+"nascita": "Bari"
+},
+"Q3847188": {
+"nascita": "Bari",
+"morte": "Bari"
+},
+"Q3852794": {
+"nascita": "Cremona"
+},
+"Q3893817": {
+"nascita": "Perugia"
+},
+"Q3851189": {
+"nascita": "L'Aquila"
+},
+"Q3847951": {
+"nascita": "Aosta"
+},
+"Q3848982": {
+"nascita": "Udine"
+},
+"Q3852103": {
+"nascita": "Mantova"
+},
+"Q3852492": {
+"nascita": "Pescara"
+},
+"Q3852768": {
+"nascita": "Trento"
+},
+"Q3852891": {
+"nascita": "Trento"
+},
+"Q3846592": {
+"nascita": "Verbania"
+},
+"Q3846384": {
+"nascita": "Pordenone"
+},
+"Q3851170": {
+"nascita": "Vicenza"
+},
+"Q3894431": {
+"nascita": "Varese"
+},
+"Q3856821": {
+"morte": "Catanzaro",
+"nascita": "Botricello"
+},
+"Q3902965": {
+"nascita": "Stradella"
+},
+"Q3903371": {
+"nascita": "Sassari",
+"morte": "Sassari"
+},
+"Q3847955": {
+"nascita": "Novara"
+},
+"Q3903758": {
+"nascita": "Rieti"
+},
+"Q3929066": {
+"nascita": "Acqui Terme"
+},
+"Q3852751": {
+"nascita": "Brescia"
+},
+"Q3903281": {
+"nascita": "Alano di Piave"
+},
+"Q3852604": {
+"nascita": "Belluno"
+},
+"Q3852680": {
+"nascita": "Belluno"
+},
+"Q3893959": {
+"nascita": "Ancona"
+},
+"Q3859965": {
+"nascita": "Melbourne"
+},
+"Q3877218": {
+"morte": "Melbourne",
+"nascita": "Leni"
+},
+"Q3894136": {
+"nascita": "Monza"
+},
+"Q3852400": {
+"nascita": "Monza"
+},
+"Q3904037": {
+"nascita": "Goito"
+},
+"Q3903034": {
+"nascita": "Motta di Livenza"
+},
+"Q3903223": {
+"nascita": "Rionero in Vulture"
+},
+"Q3929025": {
+"nascita": "Caulonia"
+},
+"Q3848231": {
+"nascita": "Cittadella"
+},
+"Q3847962": {
+"nascita": "Crotone"
+},
+"Q3851384": {
+"nascita": "Taranto"
+},
+"Q3852744": {
+"nascita": "Taranto"
+},
+"Q3848047": {
+"nascita": "Ancona"
+},
+"Q3893090": {
+"nascita": "Pisa"
+},
+"Q3893735": {
+"nascita": "Belluno"
+},
+"Q3860820": {
+"nascita": "Grosseto"
+},
+"Q3849029": {
+"nascita": "Massa"
+},
+"Q3881727": {
+"nascita": "Potenza"
+},
+"Q3929006": {
+"nascita": "Santa Paolina",
+"morte": "Santa Paolina"
+},
+"Q3903007": {
+"nascita": "Putignano"
+},
+"Q3903901": {
+"nascita": "Siderno"
+},
+"Q3852579": {
+"nascita": "Sondrio"
+},
+"Q3856834": {
+"nascita": "Lanzo Torinese"
+},
+"Q3858210": {
+"morte": "Rivalta di Torino",
+"nascita": "Gioiosa Ionica"
+},
+"Q3904297": {
+"nascita": "Allumiere"
+},
+"Q3846119": {
+"nascita": "Livorno"
+},
+"Q3846514": {
+"nascita": "Livorno"
+},
+"Q3893789": {
+"nascita": "Cremona"
+},
+"Q3847121": {
+"nascita": "Matera"
+},
+"Q3856772": {
+"nascita": "Trapani"
+},
+"Q3852795": {
+"nascita": "Chivasso"
+},
+"Q3929024": {
+"nascita": "Lucera"
+},
+"Q3848308": {
+"nascita": "Macerata"
+},
+"Q3852804": {
+"nascita": "Reggio Emilia"
+},
+"Q3852820": {
+"nascita": "Lucca",
+"morte": "Lucca"
+},
+"Q3893547": {
+"nascita": "Piacenza"
+},
+"Q3860840": {
+"nascita": "Pistoia"
+},
+"Q3848312": {
+"nascita": "Moglia"
+},
+"Q3905080": {
+"nascita": "Santa Maria Capua Vetere"
+},
+"Q3903839": {
+"nascita": "Vairano Patenora"
+},
+"Q3848874": {
+"nascita": "Scicli"
+},
+"Q3847084": {
+"nascita": "Cassano Magnago"
+},
+"Q3852754": {
+"nascita": "Narni"
+},
+"Q3876213": {
+"nascita": "Benevento"
+},
+"Q3879474": {
+"nascita": "Benevento"
+},
+"Q3897161": {
+"nascita": "Benevento"
+},
+"Q3904199": {
+"nascita": "Partinico"
+},
+"Q3848377": {
+"morte": "Cosenza",
+"nascita": "Plataci"
+},
+"Q3886220": {
+"nascita": "Asmara"
+},
+"Q3885580": {
+"nascita": "Alatri",
+"morte": "Alatri"
+},
+"Q3856523": {
+"nascita": "Viterbo",
+"morte": "Viterbo"
+},
+"Q3894506": {
+"nascita": "Teramo"
+},
+"Q3847281": {
+"nascita": "Carbonia"
+},
+"Q3894407": {
+"nascita": "Terni"
+},
+"Q3852525": {
+"nascita": "Arezzo"
+},
+"Q3848427": {
+"nascita": "Messina"
+},
+"Q3849000": {
+"nascita": "Messina"
+},
+"Q3847359": {
+"nascita": "San Sebastiano Curone"
+},
+"Q3848732": {
+"nascita": "Tortona"
+},
+"Q3846393": {
+"nascita": "Avellino"
+},
+"Q388442": {
+"nascita": "Ferrara"
+},
+"Q3848718": {
+"nascita": "Gallicchio"
+},
+"Q3847481": {
+"nascita": "Foligno"
+},
+"Q3848080": {
+"nascita": "Foligno"
+},
+"Q3858817": {
+"nascita": "Trivero"
+},
+"Q3856525": {
+"nascita": "Manfredonia"
+},
+"Q3849134": {
+"nascita": "Castrovillari"
+},
+"Q3847960": {
+"nascita": "Conegliano"
+},
+"Q3885576": {
+"nascita": "Alessandria"
+},
+"Q3846390": {
+"nascita": "Domodossola"
+},
+"Q3847190": {
+"nascita": "Torre Pellice"
+},
+"Q3897059": {
+"nascita": "Aversa"
+},
+"Q3849036": {
+"morte": "Mirano",
+"nascita": "Noale"
+},
+"Q3870604": {
+"nascita": "Vibo Valentia"
+},
+"Q3847327": {
+"nascita": "Merate"
+},
+"Q3847822": {
+"nascita": "Cuggiono"
+},
+"Q389134": {
+"nascita": "Alghero"
+},
+"Q3856789": {
+"nascita": "Torre Santa Susanna"
+},
+"Q3846505": {
+"nascita": "Noale"
+},
+"Q3847819": {
+"nascita": "Piedimonte Matese"
+},
+"Q3848939": {
+"nascita": "Bellosguardo"
+},
+"Q3876252": {
+"nascita": "Fasano"
+},
+"Q3893679": {
+"morte": "Foggia",
+"nascita": "Ascoli Satriano"
+},
+"Q3897098": {
+"nascita": "Martina Franca"
+},
+"Q3894080": {
+"nascita": "Lugo"
+},
+"Q3848902": {
+"nascita": "Guarcino"
+},
+"Q3849312": {
+"nascita": "Arcevia"
+},
+"Q3852708": {
+"nascita": "Spello"
+},
+"Q3876111": {
+"nascita": "Cosenza"
+},
+"Q3894326": {
+"nascita": "Cosenza"
+},
+"Q3856660": {
+"nascita": "Enna"
+},
+"Q3876096": {
+"nascita": "Cirò"
+},
+"Q3855054": {
+"nascita": "Santo Domingo"
+},
+"Q3851266": {
+"nascita": "Cuggiono"
+},
+"Q3852817": {
+"nascita": "Camisano Vicentino"
+},
+"Q3856626": {
+"nascita": "Acerra"
+},
+"Q3856759": {
+"nascita": "Agerola"
+},
+"Q3860811": {
+"nascita": "Pontassieve"
+},
+"Q3847548": {
+"nascita": "Copparo"
+},
+"Q3846120": {
+"nascita": "Fauglia"
+},
+"Q3851522": {
+"nascita": "Villorba"
+},
+"Q3876302": {
+"nascita": "Melfi"
+},
+"Q3876343": {
+"nascita": "Andria"
+},
+"Q3858073": {
+"nascita": "Sgonico"
+},
+"Q3851443": {
+"nascita": "Capo d'Orlando"
+},
+"Q3848814": {
+"nascita": "Anagni"
+},
+"Q3894070": {
+"nascita": "Arzignano"
+},
+"Q3893612": {
+"nascita": "Sulmona"
+},
+"Q3894084": {
+"nascita": "Paglieta"
+},
+"Q3848876": {
+"nascita": "San Giovanni in Fiore"
+},
+"Q3847313": {
+"nascita": "Locri"
+},
+"Q3847545": {
+"nascita": "Sezze"
+},
+"Q3847249": {
+"nascita": "Collepasso"
+},
+"Q3847495": {
+"nascita": "Nardò"
+},
+"Q3893730": {
+"nascita": "Colle di Val d'Elsa"
+},
+"Q3894052": {
+"nascita": "Santa Maria a Monte"
+},
+"Q3851120": {
+"nascita": "Viareggio"
+},
+"Q3858170": {
+"nascita": "Viareggio",
+"morte": "Viareggio"
+},
+"Q3875801": {
+"nascita": "San Nicandro Garganico"
+},
+"Q3848938": {
+"nascita": "San Giorgio del Sannio"
+},
+"Q3856793": {
+"nascita": "Palazzo San Gervasio"
+},
+"Q3850229": {
+"nascita": "Faenza"
+},
+"Q38484": {
+"nascita": "Scandiano"
+},
+"Q3894387": {
+"nascita": "Osimo"
+},
+"Q3894205": {
+"nascita": "Oschiri"
+},
+"Q3894457": {
+"nascita": "Portogruaro"
+},
+"Q3856607": {
+"nascita": "Formia",
+"morte": "Formia"
+},
+"Q3852602": {
+"nascita": "Bussolengo"
+},
+"Q3852722": {
+"nascita": "Sulmona"
+},
+"Q3848418": {
+"nascita": "Mazara del Vallo",
+"morte": "Mazara del Vallo"
+},
+"Q3876219": {
+"nascita": "Noci"
+},
+"Q3879476": {
+"nascita": "Montoro Inferiore"
+},
+"Q3894445": {
+"nascita": "Marigliano"
+},
+"Q3879198": {
+"nascita": "Militello Rosmarino"
+},
+"Q3876576": {
+"nascita": "Bisacquino"
+},
+"Q3893701": {
+"nascita": "Ebolowa"
+},
+"Q3851293": {
+"nascita": "Marsala"
+},
+"Q3856758": {
+"nascita": "Teggiano",
+"morte": "Sangineto"
+},
+"Q3847132": {
+"nascita": "Vetralla"
+},
+"Q3846930": {
+"nascita": "Genazzano"
+},
+"Q3847297": {
+"nascita": "San Vito Lo Capo"
+},
+"Q3887237": {
+"nascita": "Castelvetrano"
+},
+"Q3893674": {
+"nascita": "Vita"
+},
+"Q3852549": {
+"nascita": "Cavasso Nuovo"
+},
+"Q3879203": {
+"nascita": "Sciacca"
+},
+"Q3848564": {
+"nascita": "Lercara Friddi"
+},
+"Q3851459": {
+"nascita": "Alcamo"
+},
+"Q3856833": {
+"nascita": "Sesto Fiorentino"
+},
+"Q3852662": {
+"nascita": "Fiorenzuola d'Arda"
+},
+"Q3876133": {
+"nascita": "Avola"
+},
+"Q3856797": {
+"nascita": "Chiavari"
+},
+"Q3854168": {
+"nascita": "Raffadali"
+},
+"Q3893932": {
+"nascita": "Adro"
+},
+"Q3847712": {
+"nascita": "Campobello di Licata"
+},
+"Q3847958": {
+"nascita": "Caltagirone"
+},
+"Q3877203": {
+"nascita": "Termini Imerese"
+},
+"Q47602": {
+"nascita": "Roma"
+},
+"Q48602": {
+"nascita": "Roma"
+},
+"Q50002": {
+"morte": "Roma",
+"nascita": "Bra"
+},
+"Q405309": {
+"nascita": "Roma"
+},
+"Q431003": {
+"nascita": "Roma"
+},
+"Q431345": {
+"nascita": "Roma"
+},
+"Q445685": {
+"morte": "Roma",
+"nascita": "Reggio Emilia",
+"sepoltura": "cimitero del Verano"
+},
+"Q451791": {
+"nascita": "Roma"
+},
+"Q3929188": {
+"morte": "Roma",
+"nascita": "Napoli"
+},
+"Q3934529": {
+"nascita": "Roma"
+},
+"Q3935901": {
+"morte": "Roma",
+"nascita": "Pisa"
+},
+"Q3936109": {
+"morte": "Roma",
+"nascita": "Casina"
+},
+"Q3938759": {
+"nascita": "Roma"
+},
+"Q3938769": {
+"nascita": "Roma"
+},
+"Q3938844": {
+"nascita": "Roma"
+},
+"Q3938986": {
+"nascita": "Roma"
+},
+"Q447895": {
+"nascita": "New York"
+},
+"Q3939201": {
+"nascita": "Roma"
+},
+"Q3940693": {
+"nascita": "Roma",
+"morte": "Frosinone"
+},
+"Q3940919": {
+"morte": "Roma",
+"nascita": "Avigliano"
+},
+"Q3945936": {
+"nascita": "Roma"
+},
+"Q3946198": {
+"morte": "Roma",
+"nascita": "Santa Teresa di Riva"
+},
+"Q3956028": {
+"morte": "Roma",
+"nascita": "Sassari"
+},
+"Q3956297": {
+"morte": "Roma",
+"nascita": "Bologna"
+},
+"Q3958201": {
+"nascita": "Roma"
+},
+"Q3961182": {
+"nascita": "Roma"
+},
+"Q3972465": {
+"nascita": "Roma"
+},
+"Q3972634": {
+"nascita": "Roma"
+},
+"Q3983873": {
+"morte": "Roma",
+"sepoltura": "cimitero del Verano",
+"nascita": "Carunchio"
+},
+"Q3991530": {
+"morte": "Roma",
+"nascita": "Milano"
+},
+"Q4007930": {
+"morte": "Roma",
+"nascita": "Torino",
+"sepoltura": "Cimitero Monumentale di Torino"
+},
+"Q4013143": {
+"morte": "Roma",
+"nascita": "Aversa"
+},
+"Q4019905": {
+"morte": "Roma",
+"nascita": "Muggia"
+},
+"Q48814266": {
+"nascita": "Roma",
+"morte": "Ostuni"
+},
+"Q4013330": {
+"morte": "Milano",
+"nascita": "Paternò"
+},
+"Q48814037": {
+"nascita": "Milano"
+},
+"Q48814054": {
+"nascita": "Milano"
+},
+"Q3940655": {
+"morte": "Milano",
+"nascita": "Venezia"
+},
+"Q3946219": {
+"morte": "Milano",
+"nascita": "Moglia"
+},
+"Q3939137": {
+"nascita": "Torino"
+},
+"Q3951075": {
+"morte": "Torino",
+"nascita": "Mondovì"
+},
+"Q444509": {
+"morte": "Milano",
+"nascita": "Parabiago",
+"sepoltura": "cimitero monumentale di Milano"
+},
+"Q3938612": {
+"nascita": "Milano"
+},
+"Q3938941": {
+"nascita": "Milano",
+"morte": "Milano"
+},
+"Q3972702": {
+"nascita": "Milano"
+},
+"Q4009815": {
+"morte": "Milano",
+"nascita": "Pola"
+},
+"Q3944290": {
+"nascita": "Venezia"
+},
+"Q3948309": {
+"nascita": "Venezia"
+},
+"Q4013257": {
+"nascita": "Salerno",
+"morte": "Salerno"
+},
+"Q4013379": {
+"nascita": "Salerno"
+},
+"Q50359737": {
+"nascita": "Trieste"
+},
+"Q4013277": {
+"nascita": "Catania",
+"morte": "Palermo"
+},
+"Q4013432": {
+"nascita": "Catania"
+},
+"Q4013560": {
+"morte": "Catania",
+"nascita": "Licodia Eubea"
+},
+"Q48814049": {
+"nascita": "Padova"
+},
+"Q3960950": {
+"nascita": "Torino"
+},
+"Q3972340": {
+"nascita": "Torino"
+},
+"Q4013521": {
+"nascita": "Napoli",
+"morte": "Napoli"
+},
+"Q3938933": {
+"nascita": "Salerno"
+},
+"Q4013285": {
+"nascita": "Palermo"
+},
+"Q3929658": {
+"nascita": "Como"
+},
+"Q451035": {
+"nascita": "Torino"
+},
+"Q4002750": {
+"nascita": "Venezia"
+},
+"Q3945976": {
+"nascita": "Catania"
+},
+"Q3946199": {
+"nascita": "Catania"
+},
+"Q3946242": {
+"nascita": "Catania"
+},
+"Q3946294": {
+"nascita": "Catania"
+},
+"Q4013518": {
+"nascita": "Monza"
+},
+"Q3946104": {
+"morte": "Cagliari",
+"nascita": "Olzai"
+},
+"Q3984266": {
+"nascita": "Catania"
+},
+"Q3972781": {
+"nascita": "Genova"
+},
+"Q3944294": {
+"nascita": "Genova"
+},
+"Q3948194": {
+"nascita": "Genova"
+},
+"Q3956057": {
+"nascita": "Genova",
+"morte": "Genova"
+},
+"Q405098": {
+"nascita": "Genova"
+},
+"Q3938535": {
+"nascita": "Genova"
+},
+"Q3992773": {
+"nascita": "Roseto degli Abruzzi"
+},
+"Q4007770": {
+"nascita": "Bologna"
+},
+"Q4013527": {
+"morte": "Catanzaro",
+"nascita": "Bovalino"
+},
+"Q4013275": {
+"nascita": "Agrigento"
+},
+"Q4003357": {
+"nascita": "Verona"
+},
+"Q3956331": {
+"nascita": "Napoli"
+},
+"Q3960760": {
+"nascita": "Napoli"
+},
+"Q4002496": {
+"nascita": "Napoli"
+},
+"Q4003470": {
+"nascita": "Napoli"
+},
+"Q3960890": {
+"morte": "Palermo",
+"nascita": "Cremona"
+},
+"Q3961174": {
+"nascita": "Palermo"
+},
+"Q433628": {
+"nascita": "Napoli"
+},
+"Q452164": {
+"nascita": "Napoli"
+},
+"Q3929177": {
+"nascita": "Napoli"
+},
+"Q3991979": {
+"nascita": "Parma"
+},
+"Q3961150": {
+"nascita": "Firenze"
+},
+"Q3972630": {
+"nascita": "Firenze"
+},
+"Q4007598": {
+"nascita": "Firenze"
+},
+"Q48814050": {
+"nascita": "Alessandria"
+},
+"Q4015560": {
+"nascita": "Novara"
+},
+"Q3934298": {
+"nascita": "Montevideo"
+},
+"Q3939070": {
+"nascita": "Feltre"
+},
+"Q3956269": {
+"nascita": "Bologna"
+},
+"Q4013289": {
+"nascita": "Messina"
+},
+"Q3980740": {
+"nascita": "Bogotà"
+},
+"Q4015858": {
+"nascita": "Enna"
+},
+"Q3972786": {
+"nascita": "Perugia",
+"morte": "Perugia"
+},
+"Q47583": {
+"nascita": "Bologna"
+},
+"Q3929279": {
+"nascita": "Bologna"
+},
+"Q4015076": {
+"morte": "Brescia",
+"nascita": "Lumezzane"
+},
+"Q48814383": {
+"nascita": "Brescia"
+},
+"Q3939559": {
+"morte": "Parma",
+"nascita": "Girifalco"
+},
+"Q3934279": {
+"nascita": "Buenos Aires"
+},
+"Q3934518": {
+"nascita": "Napoli"
+},
+"Q3934651": {
+"nascita": "Napoli"
+},
+"Q3938595": {
+"nascita": "Napoli"
+},
+"Q3946099": {
+"nascita": "Napoli"
+},
+"Q3948212": {
+"nascita": "Napoli"
+},
+"Q3944221": {
+"nascita": "L'Aquila"
+},
+"Q3956100": {
+"nascita": "Trento"
+},
+"Q3946009": {
+"nascita": "Palermo"
+},
+"Q3946010": {
+"morte": "Palermo",
+"nascita": "Partinico"
+},
+"Q3956186": {
+"nascita": "Palermo"
+},
+"Q3948253": {
+"nascita": "Verbania"
+},
+"Q50359695": {
+"nascita": "Savigliano"
+},
+"Q4017903": {
+"nascita": "Santo Stefano di Cadore",
+"morte": "Cortina d'Ampezzo"
+},
+"Q50375349": {
+"nascita": "Ascoli Piceno"
+},
+"Q4013586": {
+"nascita": "Latina"
+},
+"Q48813421": {
+"nascita": "Gravina in Puglia",
+"morte": "Gravina in Puglia"
+},
+"Q4013688": {
+"nascita": "Rho"
+},
+"Q3946090": {
+"nascita": "Bari"
+},
+"Q3972562": {
+"morte": "Pavia",
+"nascita": "Altamura"
+},
+"Q41476446": {
+"nascita": "Carate Brianza"
+},
+"Q4013535": {
+"nascita": "Castelmezzano"
+},
+"Q3961039": {
+"morte": "Bari",
+"nascita": "Palo del Colle"
+},
+"Q4007660": {
+"nascita": "Bari"
+},
+"Q4013395": {
+"nascita": "Buonabitacolo"
+},
+"Q4018036": {
+"nascita": "Minerbio"
+},
+"Q4015219": {
+"nascita": "Roseto Capo Spulico"
+},
+"Q3961298": {
+"nascita": "Treviso"
+},
+"Q3935911": {
+"nascita": "Udine"
+},
+"Q3938582": {
+"nascita": "Udine"
+},
+"Q3932592": {
+"nascita": "Parma",
+"morte": "Parma"
+},
+"Q3992741": {
+"nascita": "Lanciano"
+},
+"Q4867438": {
+"nascita": "Frascineto"
+},
+"Q3946255": {
+"nascita": "Castellammare di Stabia"
+},
+"Q3972486": {
+"nascita": "Moncalieri"
+},
+"Q3956321": {
+"nascita": "San Benigno Canavese"
+},
+"Q4015364": {
+"nascita": "Predappio"
+},
+"Q3932676": {
+"nascita": "Ancona"
+},
+"Q3991990": {
+"nascita": "Brescia"
+},
+"Q42303912": {
+"nascita": "Torre del Greco"
+},
+"Q4007866": {
+"nascita": "Varese"
+},
+"Q47589": {
+"nascita": "Palermo"
+},
+"Q3936104": {
+"nascita": "Palermo"
+},
+"Q3941371": {
+"nascita": "Catanzaro"
+},
+"Q4015704": {
+"nascita": "Desenzano del Garda"
+},
+"Q4011430": {
+"nascita": "Forlì"
+},
+"Q463130": {
+"nascita": "Bari"
+},
+"Q3939130": {
+"nascita": "Campobasso"
+},
+"Q4015578": {
+"nascita": "Villafranca d'Asti"
+},
+"Q4017952": {
+"nascita": "Marsciano"
+},
+"Q3946121": {
+"nascita": "Potenza"
+},
+"Q3992765": {
+"nascita": "Piacenza"
+},
+"Q48812369": {
+"nascita": "Gallarate"
+},
+"Q3939954": {
+"nascita": "Viterbo",
+"morte": "Viterbo"
+},
+"Q3972368": {
+"nascita": "Pesaro"
+},
+"Q3961296": {
+"nascita": "Lecce"
+},
+"Q4003351": {
+"nascita": "Pistoia"
+},
+"Q3972422": {
+"nascita": "Pisa"
+},
+"Q3991983": {
+"nascita": "Pisa"
+},
+"Q4003348": {
+"morte": "Pisa",
+"nascita": "Bolzano"
+},
+"Q3984328": {
+"nascita": "Busca"
+},
+"Q3948152": {
+"nascita": "Pisa"
+},
+"Q459670": {
+"nascita": "Lecco"
+},
+"Q3939600": {
+"morte": "Chieti",
+"nascita": "Cellino Attanasio"
+},
+"Q3934410": {
+"nascita": "Brescia"
+},
+"Q405312": {
+"nascita": "Brazzaville"
+},
+"Q3930521": {
+"nascita": "Cremona"
+},
+"Q42535163": {
+"nascita": "Sirmione",
+"morte": "Sirmione"
+},
+"Q4017901": {
+"nascita": "Velletri"
+},
+"Q3956341": {
+"nascita": "Ravenna",
+"morte": "Trevignano Romano",
+"sepoltura": "Cimitero monumentale di Rimini"
+},
+"Q3956086": {
+"nascita": "Caltanissetta"
+},
+"Q4013426": {
+"nascita": "Afragola"
+},
+"Q3938632": {
+"nascita": "Mantova"
+},
+"Q4007863": {
+"nascita": "Macerata"
+},
+"Q3958418": {
+"nascita": "Olbia"
+},
+"Q3938580": {
+"nascita": "Novara"
+},
+"Q3950927": {
+"nascita": "Forlì"
+},
+"Q3950928": {
+"nascita": "Forlì"
+},
+"Q3956202": {
+"nascita": "La Spezia"
+},
+"Q3939234": {
+"nascita": "Rimini"
+},
+"Q3941254": {
+"nascita": "Cosenza"
+},
+"Q4015086": {
+"nascita": "Castelvetrano",
+"morte": "Castelvetrano"
+},
+"Q4018027": {
+"nascita": "Poggio Moiano"
+},
+"Q3972387": {
+"nascita": "Colle di Val d'Elsa"
+},
+"Q4002902": {
+"nascita": "Tolentino"
+},
+"Q3946023": {
+"morte": "Messina",
+"nascita": "Lipari"
+},
+"Q41476442": {
+"nascita": "Parghelia"
+},
+"Q48800542": {
+"nascita": "Forino"
+},
+"Q3932624": {
+"nascita": "Chivasso"
+},
+"Q4015443": {
+"nascita": "Guidonia Montecelio"
+},
+"Q3939167": {
+"nascita": "Biella"
+},
+"Q4002809": {
+"nascita": "Enna"
+},
+"Q4013216": {
+"nascita": "Ruvo del Monte"
+},
+"Q4008624": {
+"nascita": "Forni di Sotto"
+},
+"Q3992582": {
+"nascita": "Cortemilia"
+},
+"Q4008361": {
+"nascita": "Domodossola"
+},
+"Q4013404": {
+"nascita": "Racalmuto"
+},
+"Q3939122": {
+"nascita": "Casale Monferrato"
+},
+"Q3941594": {
+"nascita": "Tortona"
+},
+"Q3946239": {
+"nascita": "Francavilla Fontana"
+},
+"Q3972655": {
+"nascita": "Chiavari"
+},
+"Q3980560": {
+"nascita": "San Dorligo della Valle"
+},
+"Q3958504": {
+"nascita": "Monte Compatri",
+"morte": "Monte Compatri"
+},
+"Q3964775": {
+"nascita": "Sanremo"
+},
+"Q3939002": {
+"nascita": "Pavia"
+},
+"Q47832": {
+"morte": "Varese",
+"nascita": "Cassano Magnago"
+},
+"Q47904": {
+"nascita": "Varese"
+},
+"Q3939013": {
+"nascita": "Cosenza"
+},
+"Q3960745": {
+"nascita": "Argenta"
+},
+"Q3992732": {
+"nascita": "Casoria"
+},
+"Q3992712": {
+"nascita": "Marigliano"
+},
+"Q3939176": {
+"nascita": "Pietraperzia"
+},
+"Q3941264": {
+"nascita": "Maddaloni"
+},
+"Q4007864": {
+"nascita": "Oltre il Colle",
+"morte": "Seriate"
+},
+"Q3938605": {
+"nascita": "Livorno",
+"morte": "Las Vegas"
+},
+"Q3939939": {
+"nascita": "Collelongo"
+},
+"Q3941512": {
+"nascita": "San Pietro Vernotico"
+},
+"Q3939581": {
+"nascita": "Crispiano",
+"morte": "Grottaglie"
+},
+"Q3939061": {
+"nascita": "Forlì"
+},
+"Q3972724": {
+"nascita": "Motta di Livenza"
+},
+"Q3941344": {
+"nascita": "Enna"
+},
+"Q3939580": {
+"nascita": "Gubbio"
+},
+"Q3958502": {
+"nascita": "Noventa Padovana"
+},
+"Q3991952": {
+"nascita": "Gonzaga"
+},
+"Q3934420": {
+"nascita": "Andria"
+},
+"Q466489": {
+"nascita": "Siracusa"
+},
+"Q3938681": {
+"nascita": "Siracusa"
+},
+"Q3934472": {
+"nascita": "Pisa"
+},
+"Q3992854": {
+"nascita": "Pomigliano d'Arco"
+},
+"Q3951027": {
+"nascita": "Drapia"
+},
+"Q3937225": {
+"nascita": "Ferrara"
+},
+"Q3956072": {
+"nascita": "San Giuseppe Vesuviano"
+},
+"Q3984267": {
+"nascita": "Ceglie Messapica"
+},
+"Q4002820": {
+"nascita": "Gallipoli"
+},
+"Q4013095": {
+"nascita": "Gallipoli"
+},
+"Q445665": {
+"nascita": "San Carlo Canavese"
+},
+"Q3960611": {
+"nascita": "Chiari"
+},
+"Q3960597": {
+"nascita": "Senigallia"
+},
+"Q3946186": {
+"nascita": "Acerra"
+},
+"Q3946107": {
+"nascita": "Ischia"
+},
+"Q3948198": {
+"nascita": "Gambettola"
+},
+"Q3948177": {
+"nascita": "Mercato Saraceno"
+},
+"Q3993126": {
+"nascita": "Monreale"
+},
+"Q4013197": {
+"nascita": "Santa Maria a Vico"
+},
+"Q458064": {
+"nascita": "Cannobio"
+},
+"Q3953736": {
+"nascita": "Avola",
+"morte": "Avola"
+},
+"Q3948237": {
+"nascita": "Sogliano al Rubicone"
+},
+"Q3956084": {
+"nascita": "Pontecorvo"
+},
+"Q3938561": {
+"nascita": "Seregno"
+},
+"Q3938961": {
+"nascita": "Pieve di Cadore"
+},
+"Q3939956": {
+"nascita": "Ceggia"
+},
+"Q472396": {
+"nascita": "Fivizzano"
+},
+"Q4003056": {
+"nascita": "Carovilli"
+},
+"Q3960732": {
+"nascita": "Bitti"
+},
+"Q432052": {
+"morte": "Châtillon",
+"nascita": "Saint-Vincent"
+},
+"Q3932715": {
+"nascita": "Siderno"
+},
+"Q3929173": {
+"nascita": "Regalbuto"
+},
+"Q3945987": {
+"nascita": "Linguaglossa"
+},
+"Q3944351": {
+"nascita": "Larino"
+},
+"Q3946129": {
+"nascita": "San Paolo Albanese"
+},
+"Q3945970": {
+"nascita": "Partinico"
+},
+"Q473177": {
+"nascita": "Casal di Principe"
+},
+"Q3932420": {
+"nascita": "Monterubbiano"
+},
+"Q466836": {
+"nascita": "Sinalunga"
+},
+"Q3946247": {
+"nascita": "San Giovanni a Piro"
+},
+"Q3946005": {
+"nascita": "Banari"
+},
+"Q446016": {
+"nascita": "Morozzo"
+},
+"Q3930224": {
+"nascita": "Costacciaro"
+},
+"Q446679": {
+"nascita": "Pogliano Milanese"
+},
+"Q3941357": {
+"nascita": "Matino"
+},
+"Q47556": {
+"nascita": "Bettola"
+},
+"Q466712": {
+"nascita": "Leno"
+},
+"Q3934530": {
+"nascita": "Modica"
+},
+"Q3939230": {
+"nascita": "Spilimbergo"
+},
+"Q3940264": {
+"nascita": "Transacqua"
+},
+"Q3953734": {
+"nascita": "Cattolica Eraclea"
+},
+"Q3946001": {
+"nascita": "Mussomeli"
+},
+"Q3953773": {
+"nascita": "Lentini"
+},
+"Q3938622": {
+"nascita": "Legnano"
+},
+"Q3945932": {
+"nascita": "Ferrandina"
+},
+"Q3929908": {
+"nascita": "Manresa"
+},
+"Q3938945": {
+"nascita": "Canelli"
+},
+"Q3949448": {
+"nascita": "Santa Lucia del Mela"
+},
+"Q3953791": {
+"nascita": "Mistretta"
+},
+"Q3944292": {
+"nascita": "Caronno Pertusella"
+},
+"Q3932666": {
+"nascita": "Desio"
+},
+"Q3933026": {
+"nascita": "Castelnovo di Sotto"
+},
+"Q438845": {
+"nascita": "Cecina",
+"morte": "Capalbio"
+},
+"Q3929221": {
+"nascita": "San Romano in Garfagnana"
+},
+"Q3933020": {
+"nascita": "Primiero"
+},
+"Q47547": {
+"nascita": "Montenero di Bisaccia"
+},
+"Q53040": {
+"morte": "Roma",
+"nascita": "Firenze",
+"sepoltura": "cimitero delle Porte Sante"
+},
+"Q535345": {
+"nascita": "Roma"
+},
+"Q541458": {
+"nascita": "Roma",
+"sepoltura": "cimitero del Verano",
+"morte": "Campiglia Marittima"
+},
+"Q558991": {
+"morte": "Roma",
+"nascita": "Belluno"
+},
+"Q586973": {
+"nascita": "Roma"
+},
+"Q597551": {
+"nascita": "Roma"
+},
+"Q601439": {
+"morte": "Roma",
+"nascita": "Catanzaro"
+},
+"Q603390": {
+"morte": "Roma",
+"nascita": "Messina"
+},
+"Q604765": {
+"morte": "Roma",
+"nascita": "Aversa"
+},
+"Q607219": {
+"morte": "Roma",
+"nascita": "San Pio delle Camere"
+},
+"Q678252": {
+"morte": "Roma",
+"nascita": "Milano",
+"sepoltura": "cimitero del Verano"
+},
+"Q711355": {
+"nascita": "Roma",
+"morte": "Milano"
+},
+"Q729701": {
+"morte": "Roma",
+"nascita": "Châtillon"
+},
+"Q729862": {
+"morte": "Roma",
+"nascita": "Castelvetrano"
+},
+"Q645165": {
+"nascita": "Modena"
+},
+"Q528521": {
+"morte": "Trieste",
+"nascita": "Sambuca di Sicilia"
+},
+"Q695875": {
+"nascita": "Trieste"
+},
+"Q559577": {
+"nascita": "Milano"
+},
+"Q666504": {
+"nascita": "Milano"
+},
+"Q784785": {
+"nascita": "Roma"
+},
+"Q957190": {
+"morte": "Roma",
+"nascita": "Settimo Torinese"
+},
+"Q962655": {
+"morte": "Roma",
+"nascita": "Poggio Moiano"
+},
+"Q6929312": {
+"morte": "Roma",
+"nascita": "Frattamaggiore"
+},
+"Q50772345": {
+"morte": "Roma",
+"nascita": "Palermo"
+},
+"Q51880264": {
+"nascita": "Roma"
+},
+"Q55281035": {
+"nascita": "Roma",
+"morte": "Roma"
+},
+"Q56027969": {
+"morte": "Roma",
+"nascita": "Corigliano d'Otranto"
+},
+"Q546288": {
+"nascita": "Genova"
+},
+"Q583533": {
+"nascita": "Genova"
+},
+"Q58078": {
+"nascita": "Bergamo"
+},
+"Q530825": {
+"nascita": "Bergamo"
+},
+"Q659712": {
+"nascita": "Montevideo"
+},
+"Q934331": {
+"morte": "Modena",
+"nascita": "Zocca"
+},
+"Q730966": {
+"nascita": "Padova"
+},
+"Q739662": {
+"nascita": "Salerno"
+},
+"Q780378": {
+"nascita": "Milano",
+"morte": "Milano"
+},
+"Q929763": {
+"nascita": "Milano"
+},
+"Q956652": {
+"morte": "Milano",
+"nascita": "Napoli"
+},
+"Q958889": {
+"nascita": "Milano"
+},
+"Q7000640": {
+"nascita": "Milano",
+"morte": "Milano"
+},
+"Q50772294": {
+"nascita": "Milano"
+},
+"Q50772491": {
+"nascita": "Milano"
+},
+"Q680190": {
+"nascita": "Vienna"
+},
+"Q902439": {
+"nascita": "Venezia",
+"morte": "Venezia"
+},
+"Q946114": {
+"nascita": "Venezia"
+},
+"Q55281707": {
+"nascita": "Venezia",
+"morte": "Venezia"
+},
+"Q7312689": {
+"morte": "Chicago",
+"nascita": "Castrolibero"
+},
+"Q559513": {
+"nascita": "Catania"
+},
+"Q946023": {
+"nascita": "Torino"
+},
+"Q57785927": {
+"nascita": "Torino"
+},
+"Q552229": {
+"nascita": "Bologna",
+"morte": "Bologna"
+},
+"Q734294": {
+"morte": "Bologna",
+"nascita": "Trento"
+},
+"Q55721656": {
+"nascita": "Busto Arsizio"
+},
+"Q57776425": {
+"nascita": "Catania"
+},
+"Q701570": {
+"nascita": "Firenze"
+},
+"Q7191922": {
+"nascita": "Padova"
+},
+"Q52838173": {
+"nascita": "Padova",
+"morte": "Bolzano"
+},
+"Q930444": {
+"nascita": "Genova",
+"morte": "Genova"
+},
+"Q780012": {
+"nascita": "Bologna"
+},
+"Q55281912": {
+"nascita": "Caserta",
+"morte": "Verona"
+},
+"Q913004": {
+"morte": "Firenze",
+"nascita": "Rimini"
+},
+"Q687662": {
+"nascita": "Campobasso"
+},
+"Q739002": {
+"nascita": "Cagliari"
+},
+"Q56247570": {
+"nascita": "Alessandria"
+},
+"Q56433800": {
+"nascita": "Alessandria"
+},
+"Q515993": {
+"morte": "Gottinga",
+"nascita": "Maddaloni"
+},
+"Q558815": {
+"nascita": "Palermo"
+},
+"Q596847": {
+"nascita": "Palermo"
+},
+"Q616525": {
+"nascita": "Palermo"
+},
+"Q649382": {
+"nascita": "Palermo"
+},
+"Q703503": {
+"nascita": "Palermo"
+},
+"Q745563": {
+"nascita": "Palermo"
+},
+"Q677894": {
+"nascita": "Trento"
+},
+"Q835305": {
+"nascita": "Bolzano",
+"morte": "Frangarto"
+},
+"Q72397174": {
+"nascita": "Milano"
+},
+"Q50772304": {
+"nascita": "Napoli"
+},
+"Q52419185": {
+"nascita": "Napoli"
+},
+"Q930967": {
+"nascita": "Rovigo"
+},
+"Q57784221": {
+"nascita": "Rovigo",
+"morte": "Aviano"
+},
+"Q58851879": {
+"nascita": "Roma"
+},
+"Q60218146": {
+"morte": "Roma",
+"nascita": "Chiaravalle Centrale"
+},
+"Q60617583": {
+"morte": "Roma",
+"nascita": "Ancona"
+},
+"Q81208800": {
+"nascita": "Bologna"
+},
+"Q50772508": {
+"nascita": "Verbania"
+},
+"Q937258": {
+"nascita": "Catanzaro"
+},
+"Q79422275": {
+"nascita": "Svizzera"
+},
+"Q684295": {
+"nascita": "Aosta"
+},
+"Q81277368": {
+"nascita": "Roma"
+},
+"Q94998324": {
+"nascita": "Roma"
+},
+"Q61655182": {
+"nascita": "Trieste",
+"morte": "Trieste"
+},
+"Q62559630": {
+"nascita": "Trieste",
+"morte": "Trieste"
+},
+"Q98756145": {
+"nascita": "Genova",
+"morte": "Terni"
+},
+"Q927468": {
+"nascita": "Savona"
+},
+"Q79798765": {
+"nascita": "Salerno"
+},
+"Q762411": {
+"nascita": "Novara"
+},
+"Q80321805": {
+"nascita": "Napoli"
+},
+"Q81724290": {
+"nascita": "Napoli"
+},
+"Q83643513": {
+"morte": "Napoli",
+"nascita": "Santa Maria del Molise"
+},
+"Q58577186": {
+"nascita": "Torino"
+},
+"Q922984": {
+"nascita": "Reggio Emilia"
+},
+"Q941128": {
+"nascita": "Cirié"
+},
+"Q542406": {
+"nascita": "Avigliana"
+},
+"Q58598137": {
+"nascita": "Padova"
+},
+"Q55418177": {
+"morte": "Cosenza",
+"nascita": "Scigliano"
+},
+"Q70249096": {
+"nascita": "Salerno",
+"morte": "Salerno"
+},
+"Q55281526": {
+"nascita": "Rieti"
+},
+"Q664465": {
+"nascita": "Lecco"
+},
+"Q732850": {
+"nascita": "Sondrio"
+},
+"Q562097": {
+"nascita": "Varese",
+"morte": "Lozza"
+},
+"Q630738": {
+"nascita": "Varese"
+},
+"Q57784612": {
+"nascita": "Este",
+"morte": "Legnano"
+},
+"Q56248160": {
+"nascita": "Camposampiero"
+},
+"Q689244": {
+"nascita": "Lucca"
+},
+"Q52418976": {
+"nascita": "Manfredonia"
+},
+"Q64590420": {
+"nascita": "Genova"
+},
+"Q543783": {
+"nascita": "Bolzano"
+},
+"Q80012005": {
+"morte": "Imperia",
+"nascita": "Taggia"
+},
+"Q61058385": {
+"nascita": "Orvieto"
+},
+"Q61048339": {
+"nascita": "Palermo"
+},
+"Q79882800": {
+"nascita": "Taranto"
+},
+"Q96333400": {
+"nascita": "Taranto"
+},
+"Q59361063": {
+"morte": "Como",
+"nascita": "Figino Serenza"
+},
+"Q80691894": {
+"nascita": "San Benedetto del Tronto"
+},
+"Q65497374": {
+"nascita": "Bergamo",
+"morte": "Stezzano"
+},
+"Q79422270": {
+"nascita": "Losanna"
+},
+"Q783995": {
+"nascita": "Modica"
+},
+"Q84360026": {
+"morte": "Reggio Calabria",
+"nascita": "Villa San Giovanni"
+},
+"Q707862": {
+"nascita": "Reggio Calabria"
+},
+"Q61477771": {
+"nascita": "Venezia"
+},
+"Q79658801": {
+"nascita": "Venezia"
+},
+"Q942871": {
+"nascita": "Voghera"
+},
+"Q50772502": {
+"nascita": "Sesto San Giovanni"
+},
+"Q674957": {
+"nascita": "Pisa"
+},
+"Q780501": {
+"nascita": "Villasanta"
+},
+"Q50772494": {
+"nascita": "Sannazzaro de' Burgondi"
+},
+"Q80013505": {
+"nascita": "Vibo Valentia"
+},
+"Q80013486": {
+"nascita": "Messina"
+},
+"Q84259164": {
+"nascita": "Cosenza"
+},
+"Q730910": {
+"nascita": "Viterbo"
+},
+"Q59711474": {
+"morte": "Bologna",
+"nascita": "Ferrara"
+},
+"Q66372426": {
+"nascita": "Bologna"
+},
+"Q99640548": {
+"nascita": "Bricherasio"
+},
+"Q79884025": {
+"morte": "Fermo",
+"nascita": "Faenza"
+},
+"Q79798709": {
+"morte": "Broni",
+"nascita": "Broni"
+},
+"Q55471905": {
+"nascita": "Rubano"
+},
+"Q81738028": {
+"nascita": "Sossano",
+"morte": "Sossano"
+},
+"Q954698": {
+"nascita": "Fivizzano"
+},
+"Q971234": {
+"nascita": "Lauria"
+},
+"Q65124766": {
+"nascita": "Catania"
+},
+"Q50772784": {
+"nascita": "Fossalta di Piave"
+},
+"Q80013549": {
+"nascita": "Casale Monferrato"
+},
+"Q81738386": {
+"nascita": "Saluzzo"
+},
+"Q81738016": {
+"nascita": "Mira"
+},
+"Q79884018": {
+"nascita": "Lama dei Peligni"
+},
+"Q72717267": {
+"nascita": "Monza"
+},
+"Q535055": {
+"nascita": "Agrigento"
+},
+"Q960576": {
+"nascita": "Godega di Sant'Urbano"
+},
+"Q50772829": {
+"nascita": "Riese Pio X"
+},
+"Q60540196": {
+"nascita": "Pescara",
+"morte": "Pescara"
+},
+"Q79422041": {
+"nascita": "Pescara"
+},
+"Q58881846": {
+"nascita": "Napoli",
+"morte": "Portici"
+},
+"Q65497925": {
+"nascita": "Sondrio"
+},
+"Q54250090": {
+"nascita": "Scilla"
+},
+"Q642966": {
+"nascita": "Barcellona Pozzo di Gotto"
+},
+"Q578993": {
+"nascita": "Avezzano"
+},
+"Q52420175": {
+"nascita": "San Bonifacio"
+},
+"Q80445116": {
+"nascita": "Fossalta di Portogruaro"
+},
+"Q80321782": {
+"nascita": "Corigliano Calabro"
+},
+"Q508338": {
+"nascita": "Conegliano"
+},
+"Q686194": {
+"nascita": "Foggia"
+},
+"Q583106": {
+"nascita": "Sassari"
+},
+"Q767345": {
+"nascita": "Sassari"
+},
+"Q95675870": {
+"nascita": "Palazzo San Gervasio"
+},
+"Q61665376": {
+"morte": "Perugia",
+"nascita": "Montefiascone"
+},
+"Q55833304": {
+"nascita": "Scalea"
+},
+"Q84316314": {
+"nascita": "Moiano"
+},
+"Q91463718": {
+"nascita": "Formicola"
+},
+"Q72397158": {
+"nascita": "Piacenza",
+"morte": "Piacenza"
+},
+"Q81738006": {
+"nascita": "Bubbiano"
+},
+"Q80013530": {
+"nascita": "Rosà"
+},
+"Q80704856": {
+"nascita": "Cappelle sul Tavo"
+},
+"Q81738920": {
+"nascita": "Gioia del Colle"
+},
+"Q79798680": {
+"nascita": "Potenza"
+},
+"Q55414370": {
+"nascita": "Vobarno"
+},
+"Q56821943": {
+"morte": "Tivoli",
+"nascita": "Regalbuto"
+},
+"Q94998328": {
+"nascita": "Mola di Bari"
+},
+"Q58022679": {
+"nascita": "San Cipriano d'Aversa"
+},
+"Q65953016": {
+"nascita": "Cuneo"
+},
+"Q57952174": {
+"nascita": "Ottaviano"
+},
+"Q730921": {
+"nascita": "San Pietro Vernotico"
+},
+"Q551188": {
+"nascita": "Gallipoli"
+},
+"Q661580": {
+"nascita": "Cardinale"
+},
+"Q516691": {
+"nascita": "Chioggia"
+},
+"Q614172": {
+"nascita": "Bra"
+},
+"Q761792": {
+"nascita": "Aversa"
+},
+"Q59396051": {
+"nascita": "Vercelli"
+},
+"Q96181754": {
+"nascita": "San Vito dei Normanni"
+},
+"Q79798762": {
+"nascita": "Nardò"
+},
+"Q79686653": {
+"nascita": "Alessandria"
+},
+"Q659163": {
+"nascita": "Cazzago Brabbia"
+},
+"Q65497378": {
+"nascita": "Imperia"
+},
+"Q556191": {
+"nascita": "Pontebba"
+},
+"Q86817207": {
+"nascita": "Castel Condino"
+},
+"Q84259677": {
+"nascita": "Santa Margherita Ligure"
+},
+"Q60841163": {
+"nascita": "Lucca"
+},
+"Q65497382": {
+"nascita": "Livorno"
+},
+"Q65497737": {
+"nascita": "Treviso"
+},
+"Q6695833": {
+"nascita": "Spilimbergo"
+},
+"Q54250124": {
+"nascita": "Amorosi"
+},
+"Q7132235": {
+"nascita": "Barga"
+},
+"Q52144744": {
+"nascita": "Sessa Aurunca",
+"morte": "Teano"
+},
+"Q604531": {
+"nascita": "Giuliano Teatino"
+},
+"Q667530": {
+"nascita": "Villa Santa Maria"
+},
+"Q7000506": {
+"nascita": "Boscoreale"
+},
+"Q79851048": {
+"nascita": "Venafro"
+},
+"Q89365386": {
+"nascita": "Cles"
+},
+"Q58335454": {
+"nascita": "Barletta"
+},
+"Q80358731": {
+"nascita": "Pozzuoli"
+},
+"Q80009703": {
+"nascita": "Ponte San Pietro"
+},
+"Q715394": {
+"nascita": "San Mango Piemonte"
+},
+"Q56706784": {
+"nascita": "Macomer"
+},
+"Q50772339": {
+"nascita": "Benetutti"
+},
+"Q58454867": {
+"morte": "Taranto",
+"nascita": "Martina Franca"
+},
+"Q63607853": {
+"morte": "Prato",
+"nascita": "Tarsia"
+},
+"Q53836702": {
+"nascita": "Albano Laziale"
+},
+"Q58846276": {
+"nascita": "Campo San Martino"
+},
+"Q58232833": {
+"nascita": "Varzi",
+"morte": "Ravenna"
+},
+"Q726247": {
+"nascita": "Pianoro"
+},
+"Q787816": {
+"nascita": "Raffadali"
+},
+"Q54250152": {
+"nascita": "Mineo"
+},
+"Q763148": {
+"nascita": "Arcinazzo Romano"
+},
+"Q79851062": {
+"nascita": "Novafeltria"
+},
+"Q81158392": {
+"nascita": "Villa Santo Stefano"
+},
+"Q67214776": {
+"nascita": "Ferrara"
+},
+"Q5558099": {
+"nascita": "Marghera"
+},
+"Q63034837": {
+"morte": "Olbia",
+"nascita": "Luras"
+},
+"Q63079938": {
+"nascita": "Bellano"
+},
+"Q597654": {
+"nascita": "Sant'Antimo"
+},
+"Q647148": {
+"nascita": "Torre Annunziata"
+},
+"Q731150": {
+"nascita": "Cassino"
+},
+"Q65497580": {
+"nascita": "Tuglie"
+},
+"Q921486": {
+"nascita": "Bressanone"
+},
+"Q65497921": {
+"nascita": "Negrar di Valpolicella"
+},
+"Q58877776": {
+"nascita": "Roccabascerana"
+},
+"Q70248760": {
+"nascita": "Offida"
+},
+"Q714290": {
+"nascita": "Sala Bolognese"
+},
+"Q681778": {
+"nascita": "Scanzorosciate"
+},
+"Q58607428": {
+"nascita": "San Giorgio Monferrato"
+},
+"Q79422265": {
+"nascita": "Canneto Pavese"
+},
+"Q70248649": {
+"nascita": "San Valentino in Abruzzo Citeriore"
+},
+"Q58336439": {
+"morte": "Giulianova",
+"nascita": "Mosciano Sant'Angelo"
+},
+"Q79422310": {
+"nascita": "Camerana"
+},
+"Q79798666": {
+"nascita": "San Severo"
+},
+"Q61769007": {
+"nascita": "Montescaglioso"
+},
+"Q65497578": {
+"nascita": "Rivignano"
+},
+"Q65497591": {
+"nascita": "Crema"
+},
+"Q63652022": {
+"nascita": "Ravenna"
+},
+"Q79686671": {
+"nascita": "Ravenna"
+},
+"Q79658824": {
+"nascita": "Berra"
+},
+"Q61474407": {
+"nascita": "Tolmezzo"
+},
+"Q79882810": {
+"nascita": "Portoferraio"
+},
+"Q84603409": {
+"nascita": "Olevano Romano"
+},
+"Q61726695": {
+"nascita": "Montecreto"
+},
+"Q58463725": {
+"nascita": "Busseto"
+},
+"Q60584826": {
+"nascita": "Palo del Colle"
+},
+"Q65497325": {
+"nascita": "Domodossola"
+},
+"Q58276966": {
+"nascita": "Rovato"
+},
+"Q738585": {
+"nascita": "Ittiri"
+},
+"Q65497381": {
+"nascita": "San Marzano di San Giuseppe"
+},
+"Q58230376": {
+"nascita": "Acquarica del Capo"
+},
+"Q79798694": {
+"nascita": "Ceccano"
+},
+"Q67214782": {
+"nascita": "San Felice a Cancello"
+},
+"Q63034732": {
+"nascita": "Frattaminore"
+},
+"Q58464373": {
+"nascita": "Ventimiglia"
+},
+"Q62393095": {
+"nascita": "Cuccaro Vetere",
+"morte": "Vallo della Lucania"
+},
+"Q65497375": {
+"nascita": "Perdifumo"
+},
+"Q58911918": {
+"nascita": "Impruneta"
+},
+"Q60154901": {
+"nascita": "Fidenza"
+},
+"Q58455357": {
+"nascita": "Acireale"
+},
+"Q58344121": {
+"nascita": "Lunano"
+},
+"Q65953066": {
+"nascita": "Calangianus"
+},
+"Q58454924": {
+"nascita": "Ghedi"
+},
+"Q58593318": {
+"nascita": "Vigatto"
+}
+},
+"parenti": {
+"Q1230": [
+[
+"figlio",
+"Q767345"
+]
+],
+"Q1055575": [
+[
+"figlio",
+"Q3725703"
+]
+],
+"Q1379919": [
+[
+"figlio",
+"Q23047393"
+]
+],
+"Q1394411": [
+[
+"fratello",
+"Q4013330"
+]
+],
+"Q266651": [
+[
+"coniuge",
+"Q3610270"
+]
+],
+"Q2246709": [
+[
+"fratello",
+"Q390378"
+]
+],
+"Q2847139": [
+[
+"coniuge",
+"Q3616756"
+]
+],
+"Q23047393": [
+[
+"padre",
+"Q1379919"
+]
+],
+"Q327879": [
+[
+"fratello",
+"Q3956028"
+]
+],
+"Q340239": [
+[
+"coniuge",
+"Q3629789"
+]
+],
+"Q3610270": [
+[
+"coniuge",
+"Q266651"
+]
+],
+"Q3616756": [
+[
+"coniuge",
+"Q2847139"
+]
+],
+"Q3629789": [
+[
+"coniuge",
+"Q340239"
+]
+],
+"Q3702604": [
+[
+"coniuge",
+"Q3827834"
+]
+],
+"Q3725703": [
+[
+"padre",
+"Q1055575"
+]
+],
+"Q3749638": [
+[
+"coniuge",
+"Q3879474"
+]
+],
+"Q3750290": [
+[
+"parente",
+"Q3847449"
+]
+],
+"Q3827834": [
+[
+"coniuge",
+"Q3702604"
+]
+],
+"Q390378": [
+[
+"fratello",
+"Q2246709"
+]
+],
+"Q3847449": [
+[
+"parente",
+"Q3750290"
+]
+],
+"Q3852400": [
+[
+"padre",
+"Q678252"
+]
+],
+"Q3870121": [
+[
+"fratello",
+"Q3961150"
+]
+],
+"Q3879474": [
+[
+"coniuge",
+"Q3749638"
+]
+],
+"Q3956028": [
+[
+"fratello",
+"Q327879"
+]
+],
+"Q3961150": [
+[
+"fratello",
+"Q3870121"
+]
+],
+"Q4013330": [
+[
+"fratello",
+"Q1394411"
+]
+],
+"Q674957": [
+[
+"parente",
+"Q1225624"
+]
+],
+"Q678252": [
+[
+"figlio",
+"Q3852400"
+]
+],
+"Q767345": [
+[
+"padre",
+"Q1230"
+]
+]
+},
+"treccani": {
+"Q1220": "giorgio-napolitano",
+"Q1224": "carlo-azeglio-ciampi",
+"Q1230": "francesco-cossiga_(Dizionario-Biografico)",
+"Q11860": "silvio-berlusconi",
+"Q1054714": "sergio-chiamparino",
+"Q1055212": "eol-volcic-demetrio",
+"Q1055449": "matteo-salvini",
+"Q1058130": "gianfranco-miglio_(Dizionario-Biografico)",
+"Q1060314": "raffaele-fitto",
+"Q1071031": "paolo-gentiloni",
+"Q1071053": "cesare-damiano",
+"Q1074619": "bruno-tabacci",
+"Q1098169": "antonio-claudio-scajola",
+"Q1135246": "corrado-passera",
+"Q1225624": "gianni-letta",
+"Q1226015": "marco-follini",
+"Q1246500": "gianrico-carofiglio",
+"Q1341209": "vittorio-grilli",
+"Q1378016": "mariotto-segni",
+"Q1379277": "paolo-emilio-taviani_(Dizionario-Biografico)",
+"Q1379919": "francesco-de-martino",
+"Q1384236": "leopoldo-elia_(Dizionario-Biografico)",
+"Q1394411": "ignazio-la-russa",
+"Q1394911": "mario-clemente-mastella",
+"Q1428924": "nicola-mancino",
+"Q1525100": "luigi-giugni_(Dizionario-Biografico)",
+"Q181794": "daniela-santanche",
+"Q1532642": "paolo-romani",
+"Q1657794": "enzo-moavero-milanesi",
+"Q15936503": "fabio-rampelli",
+"Q16039318": "luciano-pizzetti",
+"Q16526978": "anna-rossomando",
+"Q21832775": "eol-biasco-salvatore",
+"Q23047409": "gianfranco-pagliarulo",
+"Q202209": "giuliano-amato",
+"Q208100": "lamberto-dini",
+"Q230046": "gianni-rivera",
+"Q266651": "mara-carfagna",
+"Q268801": "manuela-di-centa",
+"Q273228": "amintore-fanfani_(Dizionario-Biografico)",
+"Q274404": "claudio-magris",
+"Q276023": "susanna-agnelli",
+"Q291186": "paola-severino",
+"Q291249": "anna-maria-cancellieri",
+"Q2054692": "fabrizio-barca",
+"Q2248530": "benedetto-della-vedova",
+"Q2309460": "pietro-larizza",
+"Q2312135": "piero-gnudi",
+"Q2426702": "vittorio-sgarbi",
+"Q2460954": "giorgio-la-malfa",
+"Q2573947": "renato-brunetta",
+"Q2635569": "luciano-violante",
+"Q2824733": "adolfo-urso",
+"Q2847139": "giuseppe-tatarella",
+"Q2850556": "anna-maria-bernini",
+"Q2871689": "augusto-fantozzi",
+"Q3059585": "eol-roccella-eugenia",
+"Q3071910": "filippo-patroni-griffi",
+"Q3108001": "giuseppe-caldarola",
+"Q3615830": "andrea-marcucci",
+"Q3615909": "andrea-orlando",
+"Q3619783": "antonio-maccanico",
+"Q316226": "de-mita-luigi-ciriaco",
+"Q319547": "walter-veltroni",
+"Q327879": "eol-berlinguer-luigi",
+"Q333833": "franco-frattini",
+"Q340239": "achille-occhetto",
+"Q346976": "pasquale-squitieri",
+"Q365152": "alberto-cova",
+"Q3119423": "guido-crosetto",
+"Q3388667": "fulvio-tessitore_(Dizionario-Biografico)",
+"Q3541976": "tullio-de-mauro_(Dizionario-Biografico)",
+"Q3547806": "eol-intini-ugo",
+"Q3557346": "marco-minniti",
+"Q3605755": "adriano-ossicini",
+"Q3608374": "alberto-la-volpe",
+"Q3609255": "aldo-masullo",
+"Q3611360": "alfredo-biondi",
+"Q3615489": "eol-augello-andrea",
+"Q3637263": "beatrice-lorenzin",
+"Q3645960": "bruno-visentini_(Dizionario-Biografico)",
+"Q3659860": "carlo-smuraglia",
+"Q3725703": "enrico-costa",
+"Q3725930": "enrico-morando",
+"Q3726477": "eol-carra-enzo",
+"Q3741557": "federica-mogherini",
+"Q3741842": "federico-orlando",
+"Q3742617": "ferdinando-imposimato",
+"Q3749287": "franca-biondelli",
+"Q3749638": "francesco-boccia",
+"Q3756578": "gabriele-de-rosa",
+"Q3757091": "gaetano-quagliariello",
+"Q3760928": "gerardo-bianco",
+"Q3760936": "gerardo-d-ambrosio",
+"Q3762681": "gian-luca-galletti",
+"Q3762995": "gianclaudio-bressa",
+"Q3763131": "gianfranco-pasquino",
+"Q3763486": "gianni-cuperlo",
+"Q3764245": "gilberto-pichetto-fratin",
+"Q3765734": "giorgio-salvini",
+"Q3766829": "giovanni-bianchi",
+"Q3770413": "giuseppe-de-cristofaro",
+"Q3771578": "eol-valditara-giuseppe",
+"Q3776080": "graziella-mascia",
+"Q3779986": "gustavo-selva",
+"Q3809798": "jole-santelli",
+"Q3832043": "lidia-menapace",
+"Q3839785": "eol-lombardi-satriani-luigi-maria",
+"Q38484": "romano-prodi",
+"Q385215": "fabio-mussi",
+"Q388442": "dario-franceschini",
+"Q3847714": "marianna-madia",
+"Q3848290": "mario-arcelli",
+"Q3851022": "massimiliano-fedriga",
+"Q3851266": "massimo-garavaglia",
+"Q3858834": "miriam-mafai_(Dizionario-Biografico)",
+"Q3874766": "nerio-nesi",
+"Q3876381": "nicola-tranfaglia",
+"Q3879474": "nunzia-de-girolamo",
+"Q3882132": "ombretta-fumagalli-carulli",
+"Q3903297": "piero-melograni",
+"Q47547": "antonio-di-pietro",
+"Q47556": "pierluigi-bersani",
+"Q47583": "gianfranco-fini",
+"Q47589": "renato-giuseppe-schifani",
+"Q47602": "massimo-d-alema",
+"Q47832": "umberto-bossi",
+"Q47904": "mario-monti",
+"Q48602": "andrea-riccardi",
+"Q50002": "emma-bonino",
+"Q405098": "ignazio-marino",
+"Q431345": "maurizio-gasparri",
+"Q438845": "altero-matteoli",
+"Q444509": "franca-rame_(Dizionario-Biografico)",
+"Q445665": "elsa-fornero",
+"Q445685": "leonilde-iotti_(Dizionario-Biografico)",
+"Q451791": "giorgia-meloni",
+"Q463130": "gianni-alemanno",
+"Q466489": "stefania-prestigiacomo",
+"Q466712": "mariastella-gelmini",
+"Q466836": "rosy-bindi",
+"Q3938535": "roberta-pinotti",
+"Q3938844": "roberto-giachetti",
+"Q3939013": "roberto-occhiuto",
+"Q3956186": "sergio-mattarella",
+"Q3956297": "sergio-stanzani",
+"Q3956341": "sergio-zavoli",
+"Q3991530": "tina-lagostena-bassi",
+"Q3992012": "tiziano-treu",
+"Q4007930": "valerio-zanone",
+"Q4013216": "vincenzo-de-luca",
+"Q4019905": "willer-bordon",
+"Q53040": "franco-zeffirelli_(Dizionario-Biografico)",
+"Q507595": "nicola-vendola",
+"Q508338": "luca-zaia",
+"Q530825": "roberto-calderoli",
+"Q535055": "angelino-alfano",
+"Q535345": "francesco-rutelli",
+"Q541458": "lucio-colletti_(Dizionario-Biografico)",
+"Q542406": "piero-fassino",
+"Q551188": "rocco-buttiglione",
+"Q552229": "pier-ferdinando-casini",
+"Q558991": "tommaso-padoa-schioppa_(Dizionario-Biografico)",
+"Q559577": "fausto-bertinotti",
+"Q562097": "roberto-maroni",
+"Q597551": "giuliano-ferrara",
+"Q601439": "antonio-catricala",
+"Q603390": "antonio-martino",
+"Q604765": "antonio-ruberti_(Dizionario-Biografico)",
+"Q607219": "franco-marini",
+"Q630738": "carlo-scognamiglio",
+"Q649382": "giulia-bongiorno",
+"Q659163": "giancarlo-giorgetti",
+"Q659712": "luca-barbareschi",
+"Q664465": "roberto-formigoni",
+"Q666504": "giuliano-pisapia",
+"Q674957": "enrico-letta",
+"Q678252": "armando-cossutta",
+"Q686194": "vincenzo-visco",
+"Q689244": "marcello-pera",
+"Q703503": "leoluca-orlando",
+"Q715394": "arturo-parisi",
+"Q729701": "furio-colombo",
+"Q730966": "giancarlo-galan",
+"Q731150": "francesco-storace",
+"Q732850": "giulio-tremonti",
+"Q734294": "beniamino-andreatta_(Dizionario-Biografico)",
+"Q763148": "lorenzo-cesa",
+"Q780012": "enrico-boselli",
+"Q780378": "umberto-veronesi_(Dizionario-Biografico)",
+"Q780501": "lorenzo-ornaghi",
+"Q783995": "anna-finocchiaro",
+"Q902439": "gianni-de-michelis",
+"Q913004": "eol-paolucci-antonio",
+"Q927468": "francesco-profumo",
+"Q929763": "franco-bassanini",
+"Q930967": "alberti-casellati-maria-elisabetta",
+"Q934331": "eol-santagata-giulio",
+"Q941128": "giovanni-maria-flick",
+"Q956652": "renato-ruggiero"
+}
+}

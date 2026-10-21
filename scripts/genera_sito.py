@@ -315,6 +315,42 @@ def main():
                            for ramo, v in x['proposte'].items()}
         print('schede arricchite: %d' % sum(1 for p in persone if p['q'] in arr))
 
+    # Da Wikidata (scripts/wikidata_extra.py): luoghi di nascita, morte e
+    # sepoltura, parenti che stanno anche loro nell'elenco, voce della Treccani.
+    # Le parentele si scrivono dal punto di vista di ciascuno, e si completano
+    # al contrario: Wikidata a volte ne registra un lato solo.
+    wx_file = os.path.join(QUI, '..', 'data', 'wikidata_extra.json')
+    if os.path.exists(wx_file):
+        wx = json.load(open(wx_file, encoding='utf-8'))
+        dal_lato = {'padre': 'figlio_di', 'madre': 'figlio_di', 'figlio': 'genitore_di',
+                    'coniuge': 'coniuge', 'fratello': 'fratello', 'parente': 'parente'}
+        inverso = {'figlio_di': 'genitore_di', 'genitore_di': 'figlio_di', 'coniuge': 'coniuge',
+                   'fratello': 'fratello', 'parente': 'parente'}
+        legami = {}
+        for a, voci in wx.get('parenti', {}).items():
+            for rel, b in voci:
+                r = dal_lato[rel]
+                for x, y, z in ((a, b, r), (b, a, inverso[r])):
+                    if [z, y] not in legami.setdefault(x, []):
+                        legami[x].append([z, y])
+        per_q = {p['q']: p for p in persone}
+        for q, luoghi in wx.get('luoghi', {}).items():
+            if q in per_q:
+                per_q[q]['lu'] = luoghi
+        for q, v in legami.items():
+            if q in per_q:
+                per_q[q]['pa'] = v
+        for q, voce in wx.get('treccani', {}).items():
+            if q in per_q:
+                per_q[q]['tr'] = voce
+    # La lista P2 (scripts/lista_p2.py): il numero del fascicolo.
+    p2_file = os.path.join(QUI, '..', 'data', 'lista_p2.json')
+    if os.path.exists(p2_file):
+        per_q = {p['q']: p for p in persone}
+        for x in json.load(open(p2_file, encoding='utf-8')):
+            if x['qid'] in per_q:
+                per_q[x['qid']]['p2'] = x.get('fascicolo') or ''
+
     # I voti alla Camera, dalla XIII alla XVI: li conta scripts/conta_voti_camera.py
     # dagli archivi votoNN.rdf.zip (33 GB, solo sul PC). Per ogni legislatura:
     # votazioni, voti espressi, in missione, assente, votazioni con una linea del

@@ -827,8 +827,12 @@ VISTE['persona'] = function(q){
   if (!p) throw new Error('Persona non trovata: ' + q);
   const et = eta(p);
   let d = '<dl>';
-  d += '<dt>Nascita</dt><dd>' + (p.b ? dataIt(p.b) : 'non registrata') + '</dd>';
-  if (p.s === 2) d += '<dt>Morte</dt><dd>' + (p.d ? dataIt(p.d) : 'data ignota') + '</dd>';
+  const lu = p.lu || {};
+  d += '<dt>Nascita</dt><dd>' + (p.b ? dataIt(p.b) : 'non registrata') +
+       (lu.nascita ? ', ' + esc(lu.nascita) : '') + '</dd>';
+  if (p.s === 2) d += '<dt>Morte</dt><dd>' + (p.d ? dataIt(p.d) : 'data ignota') +
+       (lu.morte ? ', ' + esc(lu.morte) : '') + '</dd>';
+  if (lu.sepoltura) d += '<dt>Sepoltura</dt><dd>' + esc(lu.sepoltura) + '</dd>';
   d += '<dt>Stato</dt><dd>' + (p.s === 1 ? 'in vita' : p.s === 2 ? 'deceduto' : 'sorte ignota') +
        (et != null ? ' &mdash; ' + et + ' anni' + (p.s === 2 ? ' alla morte' : '') : '') + '</dd>';
   d += '<dt>Legislature</dt><dd>' + (p.m.length ? p.m.map(m =>
@@ -837,6 +841,18 @@ VISTE['persona'] = function(q){
   if (p.gv) d += '<dt>Governi</dt><dd>' + p.gv.map(esc).join(', ') + '</dd>';
   if (p.k) d += '<dt>Cariche</dt><dd>' + p.k.map(esc).join('<br>') + '</dd>';
   if (p.st) d += '<dt>Studi e professione</dt><dd>' + esc(p.st) + '</dd>';
+  // la famiglia in Parlamento: dal punto di vista di questa persona
+  if (p.pa && p.pa.length){
+    const f = p.ge === 'F';
+    const come = {figlio_di: f ? 'figlia di' : 'figlio di', genitore_di: f ? 'madre di' : 'padre di',
+                  coniuge: 'coniuge di', fratello: f ? 'sorella di' : 'fratello di', parente: 'parente di'};
+    d += '<dt>Parenti in Parlamento</dt><dd>' + p.pa.filter(x => perQid[x[1]]).map(x =>
+      come[x[0]] + ' <span class="clic" data-apri="persona" data-arg="' + x[1] + '">' +
+      esc(perQid[x[1]].n) + '</span>').join('<br>') + '</dd>';
+  }
+  if (p.p2 !== undefined)
+    d += '<dt>Lista P2</dt><dd>nella lista sequestrata a Castiglion Fibocchi nel 1981' +
+      (p.p2 ? ' (fascicolo ' + esc(p.p2) + ')' : '') + '</dd>';
   d += '<dt>Cambi di casacca</dt><dd><b>' + p.c + '</b></dd>';
   d += '</dl>';
 
@@ -1016,9 +1032,11 @@ VISTE['persona'] = function(q){
     });
     corpo += '</tbody></table>';
   }
-  if (p.w) corpo += '<p class="piede">' +
-    '<a target="_blank" rel="noopener" href="https://it.wikipedia.org/wiki/' + p.w +
-    '">Voce su Wikipedia</a></p>';
+  if (p.w || p.tr) corpo += '<p class="piede">' +
+    (p.w ? '<a target="_blank" rel="noopener" href="https://it.wikipedia.org/wiki/' + p.w +
+      '">Voce su Wikipedia</a>' : '') + (p.w && p.tr ? ' &middot; ' : '') +
+    (p.tr ? '<a target="_blank" rel="noopener" href="https://www.treccani.it/enciclopedia/' +
+      encodeURI(p.tr) + '/">Voce della Treccani</a>' : '') + '</p>';
   return {titolo: p.n, icona: '&#128100;', html: corpo, faccia: true,
           larghezza: 620, altezza: 520,
           stato: p.c + ' cambi di casacca',
