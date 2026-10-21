@@ -1,0 +1,14620 @@
+{
+"_nota": "Interventi dei deputati: XII dal portale storico (aula e commissione), XIV e XV dai siti delle legislature (interventi sulle leggi in aula), XVI dagli open data (aula; il terzo numero e' la commissione). La XIII non ha una fonte. Generato da scripts/interventi_camera.py.",
+"interventi": {
+"Q108198164": {
+"XII": [
+7,
+"aula e commissione"
+]
+},
+"Q340239": {
+"XII": [
+2,
+"aula e commissione"
+]
+},
+"Q2824733": {
+"XII": [
+4,
+"aula e commissione"
+],
+"XIV": [
+0,
+"leggi in aula"
+],
+"XV": [
+6,
+"leggi in aula"
+],
+"XVI": [
+12,
+"aula",
+10
+]
+},
+"Q28966619": {
+"XII": [
+3,
+"aula e commissione"
+]
+},
+"Q2246867": {
+"XII": [
+23,
+"aula e commissione"
+]
+},
+"Q3605680": {
+"XII": [
+41,
+"aula e commissione"
+]
+},
+"Q3605780": {
+"XII": [
+11,
+"aula e commissione"
+]
+},
+"Q23834749": {
+"XII": [
+29,
+"aula e commissione"
+]
+},
+"Q3608083": {
+"XII": [
+15,
+"aula e commissione"
+],
+"XIV": [
+39,
+"leggi in aula"
+]
+},
+"Q3608104": {
+"XII": [
+12,
+"aula e commissione"
+]
+},
+"Q365152": {
+"XII": [
+0,
+"aula e commissione"
+]
+},
+"Q3608669": {
+"XII": [
+9,
+"aula e commissione"
+],
+"XIV": [
+17,
+"leggi in aula"
+]
+},
+"Q3608374": {
+"XII": [
+14,
+"aula e commissione"
+]
+},
+"Q3608380": {
+"XII": [
+19,
+"aula e commissione"
+]
+},
+"Q108806947": {
+"XII": [
+3,
+"aula e commissione"
+]
+},
+"Q3608446": {
+"XII": [
+3,
+"aula e commissione"
+],
+"XIV": [
+17,
+"leggi in aula"
+]
+},
+"Q3060476": {
+"XII": [
+24,
+"aula e commissione"
+]
+},
+"Q18416009": {
+"XII": [
+7,
+"aula e commissione"
+]
+},
+"Q29273988": {
+"XII": [
+4,
+"aula e commissione"
+],
+"XIV": [
+27,
+"leggi in aula"
+]
+},
+"Q28057563": {
+"XII": [
+9,
+"aula e commissione"
+]
+},
+"Q28966629": {
+"XII": [
+16,
+"aula e commissione"
+]
+},
+"Q285543": {
+"XII": [
+11,
+"aula e commissione"
+],
+"XIV": [
+24,
+"leggi in aula"
+],
+"XVI": [
+124,
+"aula",
+274
+]
+},
+"Q55833304": {
+"XII": [
+9,
+"aula e commissione"
+]
+},
+"Q3610141": {
+"XII": [
+6,
+"aula e commissione"
+]
+},
+"Q50772491": {
+"XII": [
+36,
+"aula e commissione"
+]
+},
+"Q28966637": {
+"XII": [
+6,
+"aula e commissione"
+]
+},
+"Q739662": {
+"XII": [
+34,
+"aula e commissione"
+],
+"XIV": [
+84,
+"leggi in aula"
+],
+"XV": [
+0,
+"leggi in aula"
+]
+},
+"Q3611360": {
+"XII": [
+25,
+"aula e commissione"
+],
+"XIV": [
+58,
+"leggi in aula"
+]
+},
+"Q3611444": {
+"XII": [
+1,
+"aula e commissione"
+]
+},
+"Q3611519": {
+"XII": [
+9,
+"aula e commissione"
+]
+},
+"Q17992224": {
+"XII": [
+6,
+"aula e commissione"
+]
+},
+"Q438845": {
+"XII": [
+10,
+"aula e commissione"
+],
+"XIV": [
+0,
+"leggi in aula"
+]
+},
+"Q28966615": {
+"XII": [
+5,
+"aula e commissione"
+]
+},
+"Q3613897": {
+"XII": [
+11,
+"aula e commissione"
+]
+},
+"Q56821943": {
+"XII": [
+12,
+"aula e commissione"
+]
+},
+"Q15885980": {
+"XII": [
+6,
+"aula e commissione"
+],
+"XIV": [
+119,
+"leggi in aula"
+],
+"XV": [
+36,
+"leggi in aula"
+],
+"XVI": [
+21,
+"aula",
+529
+]
+},
+"Q110796924": {
+"XII": [
+0,
+"aula e commissione"
+]
+},
+"Q15714340": {
+"XII": [
+23,
+"aula e commissione"
+]
+},
+"Q23047386": {
+"XII": [
+0,
+"aula e commissione"
+]
+},
+"Q3616774": {
+"XII": [
+34,
+"aula e commissione"
+],
+"XIV": [
+34,
+"leggi in aula"
+],
+"XV": [
+11,
+"leggi in aula"
+],
+"XVI": [
+110,
+"aula",
+414
+]
+},
+"Q17154572": {
+"XII": [
+19,
+"aula e commissione"
+]
+},
+"Q110781878": {
+"XII": [
+8,
+"aula e commissione"
+]
+},
+"Q3617115": {
+"XII": [
+27,
+"aula e commissione"
+]
+},
+"Q110793814": {
+"XII": [
+0,
+"aula e commissione"
+]
+},
+"Q106639858": {
+"XII": [
+5,
+"aula e commissione"
+]
+},
+"Q3617215": {
+"XII": [
+8,
+"aula e commissione"
+],
+"XIV": [
+22,
+"leggi in aula"
+],
+"XV": [
+2,
+"leggi in aula"
+]
+},
+"Q72397158": {
+"XII": [
+0,
+"aula e commissione"
+]
+},
+"Q783995": {
+"XII": [
+41,
+"aula e commissione"
+],
+"XIV": [
+145,
+"leggi in aula"
+]
+},
+"Q28966628": {
+"XII": [
+9,
+"aula e commissione"
+]
+},
+"Q3617771": {
+"XII": [
+0,
+"aula e commissione"
+]
+},
+"Q19817411": {
+"XII": [
+18,
+"aula e commissione"
+]
+},
+"Q3618975": {
+"XII": [
+26,
+"aula e commissione"
+],
+"XIV": [
+24,
+"leggi in aula"
+],
+"XV": [
+4,
+"leggi in aula"
+],
+"XVI": [
+109,
+"aula",
+10
+]
+},
+"Q28966638": {
+"XII": [
+7,
+"aula e commissione"
+]
+},
+"Q110801468": {
+"XII": [
+11,
+"aula e commissione"
+]
+},
+"Q22991692": {
+"XII": [
+5,
+"aula e commissione"
+]
+},
+"Q3619219": {
+"XII": [
+12,
+"aula e commissione"
+]
+},
+"Q30076228": {
+"XII": [
+6,
+"aula e commissione"
+]
+},
+"Q20953735": {
+"XII": [
+4,
+"aula e commissione"
+]
+},
+"Q110801118": {
+"XII": [
+7,
+"aula e commissione"
+]
+},
+"Q19361786": {
+"XII": [
+7,
+"aula e commissione"
+]
+},
+"Q3619700": {
+"XII": [
+17,
+"aula e commissione"
+]
+},
+"Q106645658": {
+"XII": [
+14,
+"aula e commissione"
+]
+},
+"Q106675080": {
+"XII": [
+0,
+"aula e commissione"
+]
+},
+"C33520": {
+"XII": [
+3,
+"aula e commissione"
+]
+},
+"Q3619814": {
+"XII": [
+10,
+"aula e commissione"
+]
+},
+"Q603390": {
+"XII": [
+8,
+"aula e commissione"
+],
+"XIV": [
+0,
+"leggi in aula"
+],
+"XV": [
+3,
+"leggi in aula"
+],
+"XVI": [
+28,
+"aula",
+1
+]
+},
+"Q3619854": {
+"XII": [
+3,
+"aula e commissione"
+],
+"XIV": [
+0,
+"leggi in aula"
+],
+"XV": [
+2,
+"leggi in aula"
+]
+},
+"Q3619875": {
+"XII": [
+8,
+"aula e commissione"
+],
+"XIV": [
+28,
+"leggi in aula"
+],
+"XV": [
+10,
+"leggi in aula"
+],
+"XVI": [
+28,
+"aula",
+3
+]
+},
+"Q3619876": {
+"XII": [
+27,
+"aula e commissione"
+]
+},
+"Q24033526": {
+"XII": [
+8,
+"aula e commissione"
+]
+},
+"Q3620005": {
+"XII": [
+5,
+"aula e commissione"
+]
+},
+"Q3620021": {
+"XII": [
+0,
+"aula e commissione"
+],
+"XIV": [
+66,
+"leggi in aula"
+],
+"XV": [
+26,
+"leggi in aula"
+],
+"XVI": [
+28,
+"aula",
+105
+]
+},
+"Q6929312": {
+"XII": [
+4,
+"aula e commissione"
+],
+"XIV": [
+18,
+"leggi in aula"
+],
+"XV": [
+0,
+"leggi in aula"
+]
+},
+"Q27553651": {
+"XII": [
+0,
+"aula e commissione"
+]
+},
+"Q3620079": {
+"XII": [
+6,
+"aula e commissione"
+]
+},
+"Q27986946": {
+"XII": [
+1,
+"aula e commissione"
+]
+},
+"Q3620123": {
+"XII": [
+3,
+"aula e commissione"
+],
+"XIV": [
+6,
+"leggi in aula"
+]
+},
+"Q70248649": {
+"XII": [
+44,
+"aula e commissione"
+]
+},
+"Q3620225": {
+"XII": [
+48,
+"aula e commissione"
+],
+"XIV": [
+131,
+"leggi in aula"
+]
+},
+"Q62393095": {
+"XII": [
+8,
+"aula e commissione"
+]
+},
+"Q678252": {
+"XII": [
+10,
+"aula e commissione"
+],
+"XIV": [
+6,
+"leggi in aula"
+]
+},
+"Q110801429": {
+"XII": [
+31,
+"aula e commissione"
+]
+},
+"Q734294": {
+"XII": [
+31,
+"aula e commissione"
+]
+},
+"Q55418177": {
+"XII": [
+6,
+"aula e commissione"
+]
+},
+"Q24053170": {
+"XII": [
+22,
+"aula e commissione"
+],
+"XIV": [
+35,
+"leggi in aula"
+]
+},
+"Q3645929": {
+"XII": [
+88,
+"aula e commissione"
+]
+},
+"Q3658857": {
+"XII": [
+26,
+"aula e commissione"
+],
+"XIV": [
+127,
+"leggi in aula"
+]
+},
+"Q28966614": {
+"XII": [
+3,
+"aula e commissione"
+]
+},
+"Q125852": {
+"XII": [
+14,
+"aula e commissione"
+],
+"XIV": [
+87,
+"leggi in aula"
+]
+},
+"Q110817402": {
+"XII": [
+2,
+"aula e commissione"
+]
+},
+"Q645165": {
+"XII": [
+88,
+"aula e commissione"
+],
+"XIV": [
+0,
+"leggi in aula"
+],
+"XV": [
+32,
+"leggi in aula"
+]
+},
+"Q18646088": {
+"XII": [
+4,
+"aula e commissione"
+]
+},
+"Q20980910": {
+"XII": [
+7,
+"aula e commissione"
+]
+},
+"Q21076801": {
+"XII": [
+14,
+"aula e commissione"
+]
+},
+"Q3660261": {
+"XII": [
+6,
+"aula e commissione"
+],
+"XIV": [
+4,
+"leggi in aula"
+],
+"XV": [
+6,
+"leggi in aula"
+],
+"XVI": [
+15,
+"aula",
+83
+]
+},
+"Q3660378": {
+"XII": [
+20,
+"aula e commissione"
+]
+},
+"Q3660382": {
+"XII": [
+10,
+"aula e commissione"
+],
+"XIV": [
+21,
+"leggi in aula"
+],
+"XV": [
+19,
+"leggi in aula"
+],
+"XVI": [
+70,
+"aula",
+165
+]
+},
+"Q3660527": {
+"XII": [
+8,
+"aula e commissione"
+]
+},
+"Q110813240": {
+"XII": [
+5,
+"aula e commissione"
+]
+},
+"Q110801159": {
+"XII": [
+2,
+"aula e commissione"
+]
+},
+"Q110781075": {
+"XII": [
+8,
+"aula e commissione"
+]
+},
+"Q58607428": {
+"XII": [
+7,
+"aula e commissione"
+]
+},
+"Q1394911": {
+"XII": [
+9,
+"aula e commissione"
+],
+"XIV": [
+3,
+"leggi in aula"
+]
+},
+"C34070": {
+"XII": [
+19,
+"aula e commissione"
+]
+},
+"Q28966640": {
+"XII": [
+3,
+"aula e commissione"
+]
+},
+"Q110781925": {
+"XII": [
+6,
+"aula e commissione"
+]
+},
+"Q72397174": {
+"XII": [
+0,
+"aula e commissione"
+]
+},
+"Q3702018": {
+"XII": [
+15,
+"aula e commissione"
+],
+"XIV": [
+0,
+"leggi in aula"
+],
+"XVI": [
+22,
+"aula",
+12
+]
+},
+"Q55414370": {
+"XII": [
+0,
+"aula e commissione"
+]
+},
+"Q110797606": {
+"XII": [
+15,
+"aula e commissione"
+]
+},
+"Q19720100": {
+"XII": [
+4,
+"aula e commissione"
+]
+},
+"Q28966057": {
+"XII": [
+1,
+"aula e commissione"
+]
+},
+"Q28967178": {
+"XII": [
+7,
+"aula e commissione"
+]
+},
+"Q3706739": {
+"XII": [
+5,
+"aula e commissione"
+]
+},
+"Q3707212": {
+"XII": [
+23,
+"aula e commissione"
+]
+},
+"Q1122937": {
+"XII": [
+35,
+"aula e commissione"
+]
+},
+"Q3712882": {
+"XII": [
+10,
+"aula e commissione"
+]
+},
+"Q3712911": {
+"XII": [
+37,
+"aula e commissione"
+],
+"XIV": [
+91,
+"leggi in aula"
+],
+"XV": [
+63,
+"leggi in aula"
+]
+},
+"Q3712924": {
+"XII": [
+12,
+"aula e commissione"
+],
+"XIV": [
+24,
+"leggi in aula"
+]
+},
+"Q3712976": {
+"XII": [
+8,
+"aula e commissione"
+]
+},
+"Q3713069": {
+"XII": [
+7,
+"aula e commissione"
+]
+},
+"Q3713095": {
+"XII": [
+6,
+"aula e commissione"
+]
+},
+"Q3713122": {
+"XII": [
+25,
+"aula e commissione"
+]
+},
+"Q3713160": {
+"XII": [
+32,
+"aula e commissione"
+]
+},
+"Q27975720": {
+"XII": [
+1,
+"aula e commissione"
+]
+},
+"Q3719714": {
+"XII": [
+9,
+"aula e commissione"
+],
+"XIV": [
+6,
+"leggi in aula"
+]
+},
+"Q17629279": {
+"XII": [
+15,
+"aula e commissione"
+]
+},
+"Q15961976": {
+"XII": [
+8,
+"aula e commissione"
+],
+"XIV": [
+90,
+"leggi in aula"
+],
+"XV": [
+5,
+"leggi in aula"
+]
+},
+"Q3721461": {
+"XII": [
+8,
+"aula e commissione"
+],
+"XIV": [
+77,
+"leggi in aula"
+]
+},
+"Q17453054": {
+"XII": [
+1,
+"aula e commissione"
+]
+},
+"Q1079940": {
+"XII": [
+85,
+"aula e commissione"
+],
+"XIV": [
+89,
+"leggi in aula"
+],
+"XV": [
+37,
+"leggi in aula"
+],
+"XVI": [
+1,
+"aula",
+7
+]
+},
+"Q3723154": {
+"XII": [
+4,
+"aula e commissione"
+]
+},
+"Q3723208": {
+"XII": [
+5,
+"aula e commissione"
+]
+},
+"C34890": {
+"XII": [
+15,
+"aula e commissione"
+]
+},
+"Q63652022": {
+"XII": [
+2,
+"aula e commissione"
+]
+},
+"Q19120353": {
+"XII": [
+10,
+"aula e commissione"
+]
+},
+"Q110781916": {
+"XII": [
+4,
+"aula e commissione"
+]
+},
+"Q3723889": {
+"XII": [
+13,
+"aula e commissione"
+]
+},
+"Q15945036": {
+"XII": [
+19,
+"aula e commissione"
+]
+},
+"Q110801472": {
+"XII": [
+0,
+"aula e commissione"
+]
+},
+"Q50002": {
+"XII": [
+9,
+"aula e commissione"
+],
+"XV": [
+0,
+"leggi in aula"
+]
+},
+"Q3725483": {
+"XII": [
+4,
+"aula e commissione"
+]
+},
+"Q780012": {
+"XII": [
+1,
+"aula e commissione"
+],
+"XIV": [
+4,
+"leggi in aula"
+],
+"XV": [
+0,
+"leggi in aula"
+]
+},
+"Q3725679": {
+"XII": [
+11,
+"aula e commissione"
+]
+},
+"Q3725819": {
+"XII": [
+11,
+"aula e commissione"
+]
+},
+"Q3725841": {
+"XII": [
+7,
+"aula e commissione"
+]
+},
+"Q3725943": {
+"XII": [
+12,
+"aula e commissione"
+],
+"XIV": [
+19,
+"leggi in aula"
+],
+"XV": [
+0,
+"leggi in aula"
+]
+},
+"Q110813235": {
+"XII": [
+5,
+"aula e commissione"
+]
+},
+"Q106675084": {
+"XII": [
+2,
+"aula e commissione"
+]
+},
+"Q4013277": {
+"XII": [
+16,
+"aula e commissione"
+],
+"XIV": [
+23,
+"leggi in aula"
+]
+},
+"Q3726542": {
+"XII": [
+2,
+"aula e commissione"
+]
+},
+"Q110801188": {
+"XII": [
+5,
+"aula e commissione"
+]
+},
+"Q3726640": {
+"XII": [
+12,
+"aula e commissione"
+]
+},
+"Q3732335": {
+"XII": [
+20,
+"aula e commissione"
+]
+},
+"Q15942091": {
+"XII": [
+9,
+"aula e commissione"
+],
+"XIV": [
+57,
+"leggi in aula"
+],
+"XV": [
+10,
+"leggi in aula"
+]
+},
+"Q20953652": {
+"XII": [
+31,
+"aula e commissione"
+]
+},
+"Q3734338": {
+"XII": [
+17,
+"aula e commissione"
+],
+"XIV": [
+179,
+"leggi in aula"
+]
+},
+"Q18674897": {
+"XII": [
+2,
+"aula e commissione"
+]
+},
+"Q110797877": {
+"XII": [
+0,
+"aula e commissione"
+]
+},
+"Q79851048": {
+"XII": [
+3,
+"aula e commissione"
+],
+"XIV": [
+29,
+"leggi in aula"
+]
+},
+"Q3737680": {
+"XII": [
+7,
+"aula e commissione"
+]
+},
+"Q3737687": {
+"XII": [
+12,
+"aula e commissione"
+]
+},
+"Q3737691": {
+"XII": [
+16,
+"aula e commissione"
+],
+"XV": [
+30,
+"leggi in aula"
+],
+"XVI": [
+1135,
+"aula",
+96
+]
+},
+"Q385215": {
+"XII": [
+19,
+"aula e commissione"
+],
+"XIV": [
+16,
+"leggi in aula"
+],
+"XV": [
+0,
+"leggi in aula"
+]
+},
+"Q16555041": {
+"XII": [
+4,
+"aula e commissione"
+]
+},
+"Q3737977": {
+"XII": [
+3,
+"aula e commissione"
+]
+},
+"Q3738012": {
+"XII": [
+5,
+"aula e commissione"
+]
+},
+"Q28966643": {
+"XII": [
+0,
+"aula e commissione"
+]
+},
+"Q110801263": {
+"XII": [
+10,
+"aula e commissione"
+]
+},
+"Q28112196": {
+"XII": [
+5,
+"aula e commissione"
+],
+"XIV": [
+154,
+"leggi in aula"
+]
+},
+"Q3738844": {
+"XII": [
+18,
+"aula e commissione"
+],
+"XIV": [
+38,
+"leggi in aula"
+]
+},
+"Q559577": {
+"XII": [
+16,
+"aula e commissione"
+],
+"XIV": [
+12,
+"leggi in aula"
+]
+},
+"Q65497378": {
+"XII": [
+26,
+"aula e commissione"
+]
+},
+"Q110801111": {
+"XII": [
+10,
+"aula e commissione"
+]
+},
+"Q28966613": {
+"XII": [
+21,
+"aula e commissione"
+]
+},
+"Q3742537": {
+"XII": [
+2,
+"aula e commissione"
+],
+"XIV": [
+40,
+"leggi in aula"
+],
+"XV": [
+1,
+"leggi in aula"
+],
+"XVI": [
+55,
+"aula",
+30
+]
+},
+"Q17630383": {
+"XII": [
+10,
+"aula e commissione"
+]
+},
+"Q110813232": {
+"XII": [
+7,
+"aula e commissione"
+]
+},
+"Q3745874": {
+"XII": [
+8,
+"aula e commissione"
+]
+},
+"Q110781884": {
+"XII": [
+13,
+"aula e commissione"
+]
+},
+"Q27493817": {
+"XII": [
+10,
+"aula e commissione"
+]
+},
+"Q108805439": {
+"XII": [
+8,
+"aula e commissione"
+]
+},
+"Q19361834": {
+"XII": [
+4,
+"aula e commissione"
+],
+"XIV": [
+34,
+"leggi in aula"
+]
+},
+"Q15931501": {
+"XII": [
+7,
+"aula e commissione"
+],
+"XIV": [
+16,
+"leggi in aula"
+]
+},
+"Q28857080": {
+"XII": [
+14,
+"aula e commissione"
+]
+},
+"Q110813255": {
+"XII": [
+16,
+"aula e commissione"
+]
+},
+"Q3746774": {
+"XII": [
+10,
+"aula e commissione"
+]
+},
+"Q3748816": {
+"XII": [
+23,
+"aula e commissione"
+]
+},
+"Q3749290": {
+"XII": [
+1,
+"aula e commissione"
+],
+"XIV": [
+32,
+"leggi in aula"
+],
+"XV": [
+0,
+"leggi in aula"
+]
+},
+"Q3749306": {
+"XII": [
+6,
+"aula e commissione"
+]
+},
+"Q105001087": {
+"XII": [
+3,
+"aula e commissione"
+]
+},
+"Q19817387": {
+"XII": [
+6,
+"aula e commissione"
+]
+},
+"Q28964967": {
+"XII": [
+6,
+"aula e commissione"
+]
+},
+"Q28540512": {
+"XII": [
+11,
+"aula e commissione"
+],
+"XIV": [
+194,
+"leggi in aula"
+]
+},
+"Q70249096": {
+"XII": [
+12,
+"aula e commissione"
+]
+},
+"Q3749744": {
+"XII": [
+1,
+"aula e commissione"
+]
+},
+"Q3749856": {
+"XII": [
+21,
+"aula e commissione"
+]
+},
+"Q106097487": {
+"XII": [
+16,
+"aula e commissione"
+]
+},
+"Q110794594": {
+"XII": [
+0,
+"aula e commissione"
+]
+},
+"Q110813250": {
+"XII": [
+6,
+"aula e commissione"
+]
+},
+"Q95675870": {
+"XII": [
+18,
+"aula e commissione"
+]
+},
+"Q13382265": {
+"XII": [
+5,
+"aula e commissione"
+]
+},
+"Q24033525": {
+"XII": [
+16,
+"aula e commissione"
+]
+},
+"Q3750214": {
+"XII": [
+14,
+"aula e commissione"
+],
+"XIV": [
+9,
+"leggi in aula"
+],
+"XV": [
+4,
+"leggi in aula"
+]
+},
+"Q110781940": {
+"XII": [
+3,
+"aula e commissione"
+]
+},
+"Q28946250": {
+"XII": [
+1,
+"aula e commissione"
+]
+},
+"Q105096236": {
+"XII": [
+13,
+"aula e commissione"
+]
+},
+"Q110797582": {
+"XII": [
+0,
+"aula e commissione"
+]
+},
+"Q23978360": {
+"XII": [
+9,
+"aula e commissione"
+],
+"XIV": [
+7,
+"leggi in aula"
+]
+},
+"Q106395183": {
+"XII": [
+1,
+"aula e commissione"
+]
+},
+"Q16557357": {
+"XII": [
+15,
+"aula e commissione"
+],
+"XIV": [
+80,
+"leggi in aula"
+],
+"XV": [
+12,
+"leggi in aula"
+],
+"XVI": [
+0,
+"aula",
+4
+]
+},
+"Q22991721": {
+"XII": [
+16,
+"aula e commissione"
+]
+},
+"Q19850594": {
+"XII": [
+11,
+"aula e commissione"
+]
+},
+"Q731150": {
+"XII": [
+32,
+"aula e commissione"
+]
+},
+"Q110801437": {
+"XII": [
+5,
+"aula e commissione"
+]
+},
+"Q929763": {
+"XII": [
+25,
+"aula e commissione"
+]
+},
+"Q15796471": {
+"XII": [
+2,
+"aula e commissione"
+],
+"XIV": [
+4,
+"leggi in aula"
+]
+},
+"Q3751239": {
+"XII": [
+31,
+"aula e commissione"
+]
+},
+"Q3751251": {
+"XII": [
+7,
+"aula e commissione"
+]
+},
+"Q28966644": {
+"XII": [
+7,
+"aula e commissione"
+]
+},
+"Q607219": {
+"XII": [
+1,
+"aula e commissione"
+],
+"XIV": [
+0,
+"leggi in aula"
+]
+},
+"Q3751560": {
+"XII": [
+27,
+"aula e commissione"
+]
+},
+"Q3754274": {
+"XII": [
+17,
+"aula e commissione"
+],
+"XIV": [
+40,
+"leggi in aula"
+],
+"XV": [
+5,
+"leggi in aula"
+]
+},
+"Q24043620": {
+"XII": [
+6,
+"aula e commissione"
+]
+},
+"Q3756557": {
+"XII": [
+0,
+"aula e commissione"
+]
+},
+"Q3756578": {
+"XII": [
+7,
+"aula e commissione"
+]
+},
+"Q3756649": {
+"XII": [
+18,
+"aula e commissione"
+]
+},
+"Q19727863": {
+"XII": [
+39,
+"aula e commissione"
+],
+"XIV": [
+264,
+"leggi in aula"
+]
+},
+"Q18681665": {
+"XII": [
+5,
+"aula e commissione"
+]
+},
+"Q3757009": {
+"XII": [
+4,
+"aula e commissione"
+]
+},
+"Q110801761": {
+"XII": [
+1,
+"aula e commissione"
+]
+},
+"Q28966645": {
+"XII": [
+9,
+"aula e commissione"
+]
+},
+"Q583106": {
+"XII": [
+7,
+"aula e commissione"
+]
+},
+"Q105403414": {
+"XII": [
+0,
+"aula e commissione"
+]
+},
+"Q3761985": {
+"XII": [
+3,
+"aula e commissione"
+],
+"XIV": [
+23,
+"leggi in aula"
+],
+"XV": [
+18,
+"leggi in aula"
+]
+},
+"Q15896895": {
+"XII": [
+2,
+"aula e commissione"
+],
+"XV": [
+7,
+"leggi in aula"
+]
+},
+"Q50772494": {
+"XII": [
+7,
+"aula e commissione"
+],
+"XIV": [
+33,
+"leggi in aula"
+]
+},
+"Q110794456": {
+"XII": [
+7,
+"aula e commissione"
+]
+},
+"Q25418625": {
+"XII": [
+83,
+"aula e commissione"
+]
+},
+"Q3762475": {
+"XII": [
+8,
+"aula e commissione"
+],
+"XIV": [
+9,
+"leggi in aula"
+]
+},
+"Q3762638": {
+"XII": [
+17,
+"aula e commissione"
+],
+"XIV": [
+66,
+"leggi in aula"
+]
+},
+"Q110781909": {
+"XII": [
+21,
+"aula e commissione"
+]
+},
+"Q3762746": {
+"XII": [
+22,
+"aula e commissione"
+]
+},
+"Q730966": {
+"XII": [
+1,
+"aula e commissione"
+]
+},
+"Q3762879": {
+"XII": [
+6,
+"aula e commissione"
+]
+},
+"Q110797026": {
+"XII": [
+18,
+"aula e commissione"
+]
+},
+"Q3762970": {
+"XII": [
+6,
+"aula e commissione"
+]
+},
+"Q3763051": {
+"XII": [
+9,
+"aula e commissione"
+],
+"XIV": [
+40,
+"leggi in aula"
+],
+"XV": [
+41,
+"leggi in aula"
+],
+"XVI": [
+56,
+"aula",
+1986
+]
+},
+"Q47583": {
+"XII": [
+10,
+"aula e commissione"
+],
+"XIV": [
+0,
+"leggi in aula"
+],
+"XV": [
+4,
+"leggi in aula"
+],
+"XVI": [
+4077,
+"aula",
+56
+]
+},
+"Q616525": {
+"XII": [
+12,
+"aula e commissione"
+],
+"XIV": [
+0,
+"leggi in aula"
+],
+"XV": [
+0,
+"leggi in aula"
+],
+"XVI": [
+5,
+"aula",
+0
+]
+},
+"Q3763116": {
+"XII": [
+16,
+"aula e commissione"
+]
+},
+"Q28966639": {
+"XII": [
+5,
+"aula e commissione"
+]
+},
+"Q2053904": {
+"XII": [
+14,
+"aula e commissione"
+],
+"XIV": [
+15,
+"leggi in aula"
+],
+"XVI": [
+1,
+"aula",
+0
+]
+},
+"Q463130": {
+"XII": [
+4,
+"aula e commissione"
+],
+"XIV": [
+0,
+"leggi in aula"
+],
+"XV": [
+4,
+"leggi in aula"
+],
+"XVI": [
+0,
+"aula",
+0
+]
+},
+"Q3763518": {
+"XII": [
+55,
+"aula e commissione"
+]
+},
+"Q230046": {
+"XII": [
+10,
+"aula e commissione"
+]
+},
+"Q3763721": {
+"XII": [
+9,
+"aula e commissione"
+],
+"XIV": [
+0,
+"leggi in aula"
+],
+"XV": [
+17,
+"leggi in aula"
+],
+"XVI": [
+167,
+"aula",
+128
+]
+},
+"Q1525100": {
+"XII": [
+12,
+"aula e commissione"
+]
+},
+"Q3764731": {
+"XII": [
+13,
+"aula e commissione"
+]
+},
+"Q3765134": {
+"XII": [
+5,
+"aula e commissione"
+]
+},
+"Q3765283": {
+"XII": [
+16,
+"aula e commissione"
+]
+},
+"Q3765300": {
+"XII": [
+11,
+"aula e commissione"
+],
+"XIV": [
+36,
+"leggi in aula"
+]
+},
+"Q3765527": {
+"XII": [
+29,
+"aula e commissione"
+],
+"XIV": [
+38,
+"leggi in aula"
+],
+"XV": [
+23,
+"leggi in aula"
+],
+"XVI": [
+27,
+"aula",
+258
+]
+},
+"Q1220": {
+"XII": [
+30,
+"aula e commissione"
+]
+},
+"Q3765814": {
+"XII": [
+9,
+"aula e commissione"
+]
+},
+"Q28966650": {
+"XII": [
+3,
+"aula e commissione"
+],
+"XIV": [
+121,
+"leggi in aula"
+]
+},
+"Q447895": {
+"XII": [
+4,
+"aula e commissione"
+],
+"XIV": [
+33,
+"leggi in aula"
+],
+"XV": [
+0,
+"leggi in aula"
+],
+"XVI": [
+11,
+"aula",
+20
+]
+},
+"Q3766829": {
+"XII": [
+6,
+"aula e commissione"
+],
+"XIV": [
+126,
+"leggi in aula"
+]
+},
+"Q23047388": {
+"XII": [
+3,
+"aula e commissione"
+]
+},
+"Q61474407": {
+"XII": [
+16,
+"aula e commissione"
+]
+},
+"Q3767110": {
+"XII": [
+14,
+"aula e commissione"
+]
+},
+"Q29273997": {
+"XII": [
+0,
+"aula e commissione"
+]
+},
+"Q3767139": {
+"XII": [
+12,
+"aula e commissione"
+]
+},
+"Q60617583": {
+"XII": [
+6,
+"aula e commissione"
+]
+},
+"Q28222989": {
+"XII": [
+18,
+"aula e commissione"
+]
+},
+"Q3767711": {
+"XII": [
+35,
+"aula e commissione"
+]
+},
+"Q110797552": {
+"XII": [
+3,
+"aula e commissione"
+]
+},
+"Q106691221": {
+"XII": [
+15,
+"aula e commissione"
+]
+},
+"Q16560088": {
+"XII": [
+3,
+"aula e commissione"
+]
+},
+"Q3767854": {
+"XII": [
+17,
+"aula e commissione"
+]
+},
+"Q56706784": {
+"XII": [
+0,
+"aula e commissione"
+]
+},
+"Q24206170": {
+"XII": [
+1,
+"aula e commissione"
+]
+},
+"Q3768377": {
+"XII": [
+16,
+"aula e commissione"
+]
+},
+"Q110817405": {
+"XII": [
+13,
+"aula e commissione"
+]
+},
+"Q110794581": {
+"XII": [
+17,
+"aula e commissione"
+]
+},
+"Q16560453": {
+"XII": [
+19,
+"aula e commissione"
+]
+},
+"Q110796938": {
+"XII": [
+6,
+"aula e commissione"
+]
+},
+"Q2270132": {
+"XII": [
+3,
+"aula e commissione"
+],
+"XIV": [
+0,
+"leggi in aula"
+]
+},
+"Q3769486": {
+"XII": [
+3,
+"aula e commissione"
+]
+},
+"Q3769603": {
+"XII": [
+10,
+"aula e commissione"
+],
+"XIV": [
+80,
+"leggi in aula"
+],
+"XV": [
+1,
+"leggi in aula"
+]
+},
+"Q732850": {
+"XII": [
+2,
+"aula e commissione"
+],
+"XIV": [
+0,
+"leggi in aula"
+],
+"XV": [
+7,
+"leggi in aula"
+],
+"XVI": [
+0,
+"aula",
+6
+]
+},
+"Q3769922": {
+"XII": [
+4,
+"aula e commissione"
+],
+"XIV": [
+15,
+"leggi in aula"
+]
+},
+"Q59711474": {
+"XII": [
+5,
+"aula e commissione"
+]
+},
+"Q3770042": {
+"XII": [
+27,
+"aula e commissione"
+]
+},
+"Q3770147": {
+"XII": [
+14,
+"aula e commissione"
+]
+},
+"Q3770202": {
+"XII": [
+35,
+"aula e commissione"
+],
+"XVI": [
+104,
+"aula",
+468
+]
+},
+"Q3770398": {
+"XII": [
+12,
+"aula e commissione"
+]
+},
+"Q667530": {
+"XII": [
+18,
+"aula e commissione"
+]
+},
+"Q110794440": {
+"XII": [
+7,
+"aula e commissione"
+]
+},
+"Q3770628": {
+"XII": [
+14,
+"aula e commissione"
+],
+"XIV": [
+32,
+"leggi in aula"
+]
+},
+"Q3770673": {
+"XII": [
+16,
+"aula e commissione"
+]
+},
+"Q3770696": {
+"XII": [
+5,
+"aula e commissione"
+],
+"XIV": [
+66,
+"leggi in aula"
+],
+"XV": [
+4,
+"leggi in aula"
+],
+"XVI": [
+125,
+"aula",
+201
+]
+},
+"Q3770716": {
+"XII": [
+2,
+"aula e commissione"
+]
+},
+"Q3770799": {
+"XII": [
+8,
+"aula e commissione"
+]
+},
+"Q3770811": {
+"XII": [
+2,
+"aula e commissione"
+]
+},
+"Q28958813": {
+"XII": [
+7,
+"aula e commissione"
+]
+},
+"Q3770841": {
+"XII": [
+13,
+"aula e commissione"
+],
+"XIV": [
+83,
+"leggi in aula"
+],
+"XV": [
+2,
+"leggi in aula"
+]
+},
+"Q110813251": {
+"XII": [
+12,
+"aula e commissione"
+]
+},
+"Q16560945": {
+"XII": [
+7,
+"aula e commissione"
+],
+"XIV": [
+36,
+"leggi in aula"
+],
+"XV": [
+7,
+"leggi in aula"
+],
+"XVI": [
+73,
+"aula",
+1880
+]
+},
+"Q930444": {
+"XII": [
+9,
+"aula e commissione"
+]
+},
+"Q110801122": {
+"XII": [
+14,
+"aula e commissione"
+]
+},
+"Q738585": {
+"XII": [
+81,
+"aula e commissione"
+],
+"XIV": [
+0,
+"leggi in aula"
+]
+},
+"Q104150973": {
+"XII": [
+8,
+"aula e commissione"
+]
+},
+"Q18704079": {
+"XII": [
+21,
+"aula e commissione"
+]
+},
+"Q3771431": {
+"XII": [
+16,
+"aula e commissione"
+]
+},
+"Q16268762": {
+"XII": [
+1,
+"aula e commissione"
+]
+},
+"Q3771468": {
+"XII": [
+9,
+"aula e commissione"
+]
+},
+"Q2847139": {
+"XII": [
+38,
+"aula e commissione"
+]
+},
+"Q28966617": {
+"XII": [
+1,
+"aula e commissione"
+]
+},
+"Q16561124": {
+"XII": [
+15,
+"aula e commissione"
+],
+"XV": [
+1,
+"leggi in aula"
+],
+"XVI": [
+67,
+"aula",
+213
+]
+},
+"Q18224165": {
+"XII": [
+10,
+"aula e commissione"
+]
+},
+"Q3779008": {
+"XII": [
+12,
+"aula e commissione"
+],
+"XIV": [
+14,
+"leggi in aula"
+],
+"XV": [
+4,
+"leggi in aula"
+]
+},
+"Q110813219": {
+"XII": [
+17,
+"aula e commissione"
+]
+},
+"Q3779359": {
+"XII": [
+4,
+"aula e commissione"
+],
+"XIV": [
+0,
+"leggi in aula"
+]
+},
+"Q3779986": {
+"XII": [
+65,
+"aula e commissione"
+],
+"XIV": [
+174,
+"leggi in aula"
+]
+},
+"Q1394411": {
+"XII": [
+87,
+"aula e commissione"
+],
+"XIV": [
+108,
+"leggi in aula"
+],
+"XV": [
+36,
+"leggi in aula"
+],
+"XVI": [
+6,
+"aula",
+6
+]
+},
+"Q3796329": {
+"XII": [
+8,
+"aula e commissione"
+],
+"XIV": [
+2,
+"leggi in aula"
+],
+"XV": [
+3,
+"leggi in aula"
+]
+},
+"Q2247371": {
+"XII": [
+104,
+"aula e commissione"
+]
+},
+"Q3802371": {
+"XII": [
+3,
+"aula e commissione"
+]
+},
+"Q110801194": {
+"XII": [
+32,
+"aula e commissione"
+]
+},
+"Q70248760": {
+"XII": [
+24,
+"aula e commissione"
+]
+},
+"Q921486": {
+"XII": [
+7,
+"aula e commissione"
+],
+"XIV": [
+6,
+"leggi in aula"
+],
+"XV": [
+1,
+"leggi in aula"
+]
+},
+"Q1648265": {
+"XII": [
+9,
+"aula e commissione"
+],
+"XIV": [
+56,
+"leggi in aula"
+],
+"XV": [
+13,
+"leggi in aula"
+],
+"XVI": [
+82,
+"aula",
+236
+]
+},
+"Q3826862": {
+"XII": [
+23,
+"aula e commissione"
+],
+"XV": [
+24,
+"leggi in aula"
+]
+},
+"Q3827827": {
+"XII": [
+6,
+"aula e commissione"
+],
+"XIV": [
+101,
+"leggi in aula"
+]
+},
+"Q3830077": {
+"XII": [
+32,
+"aula e commissione"
+]
+},
+"Q701570": {
+"XII": [
+2,
+"aula e commissione"
+]
+},
+"Q1384236": {
+"XII": [
+44,
+"aula e commissione"
+]
+},
+"Q110781901": {
+"XII": [
+0,
+"aula e commissione"
+]
+},
+"Q23691599": {
+"XII": [
+8,
+"aula e commissione"
+]
+},
+"Q446016": {
+"XII": [
+5,
+"aula e commissione"
+],
+"XIV": [
+26,
+"leggi in aula"
+],
+"XVI": [
+95,
+"aula",
+316
+]
+},
+"Q3836866": {
+"XII": [
+101,
+"aula e commissione"
+],
+"XIV": [
+173,
+"leggi in aula"
+]
+},
+"Q3836939": {
+"XII": [
+0,
+"aula e commissione"
+],
+"XIV": [
+5,
+"leggi in aula"
+]
+},
+"Q16573566": {
+"XII": [
+52,
+"aula e commissione"
+]
+},
+"Q6695833": {
+"XII": [
+20,
+"aula e commissione"
+]
+},
+"Q110813222": {
+"XII": [
+2,
+"aula e commissione"
+]
+},
+"Q3838170": {
+"XII": [
+8,
+"aula e commissione"
+]
+},
+"Q110794451": {
+"XII": [
+3,
+"aula e commissione"
+]
+},
+"Q2674713": {
+"XII": [
+56,
+"aula e commissione"
+]
+},
+"Q110781830": {
+"XII": [
+1,
+"aula e commissione"
+]
+},
+"Q684295": {
+"XII": [
+36,
+"aula e commissione"
+]
+},
+"Q3838557": {
+"XII": [
+31,
+"aula e commissione"
+],
+"XV": [
+10,
+"leggi in aula"
+],
+"XVI": [
+39,
+"aula",
+55
+]
+},
+"Q67214776": {
+"XII": [
+7,
+"aula e commissione"
+]
+},
+"Q3838611": {
+"XII": [
+33,
+"aula e commissione"
+]
+},
+"Q2635569": {
+"XII": [
+119,
+"aula e commissione"
+],
+"XIV": [
+236,
+"leggi in aula"
+],
+"XV": [
+35,
+"leggi in aula"
+]
+},
+"Q110796973": {
+"XII": [
+2,
+"aula e commissione"
+]
+},
+"Q3838894": {
+"XII": [
+48,
+"aula e commissione"
+]
+},
+"Q24033524": {
+"XII": [
+3,
+"aula e commissione"
+]
+},
+"Q110794602": {
+"XII": [
+6,
+"aula e commissione"
+]
+},
+"Q327879": {
+"XII": [
+54,
+"aula e commissione"
+]
+},
+"Q3839692": {
+"XII": [
+6,
+"aula e commissione"
+],
+"XIV": [
+90,
+"leggi in aula"
+]
+},
+"Q23047401": {
+"XII": [
+35,
+"aula e commissione"
+]
+},
+"Q18715690": {
+"XII": [
+7,
+"aula e commissione"
+],
+"XIV": [
+43,
+"leggi in aula"
+]
+},
+"Q3839937": {
+"XII": [
+5,
+"aula e commissione"
+]
+},
+"Q3839942": {
+"XII": [
+2,
+"aula e commissione"
+]
+},
+"Q27986906": {
+"XII": [
+8,
+"aula e commissione"
+]
+},
+"Q3840101": {
+"XII": [
+34,
+"aula e commissione"
+]
+},
+"Q18224570": {
+"XII": [
+33,
+"aula e commissione"
+]
+},
+"Q54250152": {
+"XII": [
+2,
+"aula e commissione"
+]
+},
+"Q21086867": {
+"XII": [
+8,
+"aula e commissione"
+]
+},
+"Q17992624": {
+"XII": [
+2,
+"aula e commissione"
+]
+},
+"Q27986959": {
+"XII": [
+7,
+"aula e commissione"
+]
+},
+"Q3843092": {
+"XII": [
+9,
+"aula e commissione"
+]
+},
+"Q65497578": {
+"XII": [
+0,
+"aula e commissione"
+],
+"XIV": [
+3,
+"leggi in aula"
+]
+},
+"Q19361798": {
+"XII": [
+4,
+"aula e commissione"
+]
+},
+"Q26972603": {
+"XII": [
+24,
+"aula e commissione"
+]
+},
+"Q946023": {
+"XII": [
+5,
+"aula e commissione"
+],
+"XIV": [
+59,
+"leggi in aula"
+]
+},
+"Q110801196": {
+"XII": [
+0,
+"aula e commissione"
+]
+},
+"Q15965568": {
+"XII": [
+22,
+"aula e commissione"
+]
+},
+"Q3846514": {
+"XII": [
+50,
+"aula e commissione"
+]
+},
+"Q3846592": {
+"XII": [
+17,
+"aula e commissione"
+],
+"XIV": [
+111,
+"leggi in aula"
+],
+"XV": [
+54,
+"leggi in aula"
+],
+"XVI": [
+122,
+"aula",
+182
+]
+},
+"Q3846823": {
+"XII": [
+14,
+"aula e commissione"
+]
+},
+"Q60218146": {
+"XII": [
+20,
+"aula e commissione"
+]
+},
+"Q15142811": {
+"XII": [
+7,
+"aula e commissione"
+],
+"XIV": [
+36,
+"leggi in aula"
+]
+},
+"Q22953883": {
+"XII": [
+33,
+"aula e commissione"
+]
+},
+"Q3847188": {
+"XII": [
+23,
+"aula e commissione"
+],
+"XIV": [
+12,
+"leggi in aula"
+]
+},
+"Q110797535": {
+"XII": [
+2,
+"aula e commissione"
+]
+},
+"Q3847281": {
+"XII": [
+5,
+"aula e commissione"
+],
+"XIV": [
+24,
+"leggi in aula"
+]
+},
+"Q110801479": {
+"XII": [
+1,
+"aula e commissione"
+]
+},
+"Q19727814": {
+"XII": [
+7,
+"aula e commissione"
+]
+},
+"Q19862483": {
+"XII": [
+26,
+"aula e commissione"
+]
+},
+"Q37006234": {
+"XII": [
+14,
+"aula e commissione"
+]
+},
+"Q3847481": {
+"XII": [
+9,
+"aula e commissione"
+]
+},
+"Q29169602": {
+"XII": [
+6,
+"aula e commissione"
+]
+},
+"Q3847712": {
+"XII": [
+10,
+"aula e commissione"
+]
+},
+"Q17636199": {
+"XII": [
+23,
+"aula e commissione"
+],
+"XIV": [
+50,
+"leggi in aula"
+]
+},
+"Q17279962": {
+"XII": [
+1,
+"aula e commissione"
+]
+},
+"Q48814049": {
+"XII": [
+8,
+"aula e commissione"
+]
+},
+"Q3847960": {
+"XII": [
+1,
+"aula e commissione"
+]
+},
+"Q431003": {
+"XII": [
+20,
+"aula e commissione"
+],
+"XIV": [
+0,
+"leggi in aula"
+],
+"XVI": [
+39,
+"aula",
+87
+]
+},
+"Q1346627": {
+"XII": [
+15,
+"aula e commissione"
+]
+},
+"Q110781892": {
+"XII": [
+0,
+"aula e commissione"
+]
+},
+"Q3848377": {
+"XII": [
+54,
+"aula e commissione"
+]
+},
+"Q3848418": {
+"XII": [
+17,
+"aula e commissione"
+]
+},
+"Q3848564": {
+"XII": [
+8,
+"aula e commissione"
+]
+},
+"Q27986904": {
+"XII": [
+2,
+"aula e commissione"
+]
+},
+"Q3293470": {
+"XII": [
+9,
+"aula e commissione"
+],
+"XIV": [
+15,
+"leggi in aula"
+],
+"XV": [
+5,
+"leggi in aula"
+],
+"XVI": [
+24,
+"aula",
+53
+]
+},
+"Q110813249": {
+"XII": [
+11,
+"aula e commissione"
+],
+"XIV": [
+23,
+"leggi in aula"
+]
+},
+"Q3848876": {
+"XII": [
+4,
+"aula e commissione"
+],
+"XIV": [
+20,
+"leggi in aula"
+]
+},
+"Q3848938": {
+"XII": [
+11,
+"aula e commissione"
+],
+"XVI": [
+65,
+"aula",
+250
+]
+},
+"Q108896439": {
+"XII": [
+11,
+"aula e commissione"
+]
+},
+"Q110801162": {
+"XII": [
+3,
+"aula e commissione"
+]
+},
+"Q65497382": {
+"XII": [
+6,
+"aula e commissione"
+]
+},
+"Q3849206": {
+"XII": [
+0,
+"aula e commissione"
+],
+"XIV": [
+0,
+"leggi in aula"
+],
+"XV": [
+8,
+"leggi in aula"
+],
+"XVI": [
+56,
+"aula",
+1462
+]
+},
+"Q61769007": {
+"XII": [
+8,
+"aula e commissione"
+]
+},
+"Q1378016": {
+"XII": [
+13,
+"aula e commissione"
+]
+},
+"Q3850244": {
+"XII": [
+33,
+"aula e commissione"
+]
+},
+"Q47602": {
+"XII": [
+5,
+"aula e commissione"
+],
+"XIV": [
+6,
+"leggi in aula"
+],
+"XV": [
+0,
+"leggi in aula"
+],
+"XVI": [
+13,
+"aula",
+236
+]
+},
+"Q3851462": {
+"XII": [
+32,
+"aula e commissione"
+]
+},
+"Q28966642": {
+"XII": [
+5,
+"aula e commissione"
+]
+},
+"Q1825240": {
+"XII": [
+1,
+"aula e commissione"
+],
+"XVI": [
+0,
+"aula",
+0
+]
+},
+"Q3852521": {
+"XII": [
+3,
+"aula e commissione"
+],
+"XIV": [
+2,
+"leggi in aula"
+]
+},
+"Q431345": {
+"XII": [
+33,
+"aula e commissione"
+],
+"XIV": [
+3,
+"leggi in aula"
+],
+"XV": [
+28,
+"leggi in aula"
+]
+},
+"Q110797557": {
+"XII": [
+37,
+"aula e commissione"
+]
+},
+"Q110801179": {
+"XII": [
+6,
+"aula e commissione"
+]
+},
+"Q3852754": {
+"XII": [
+8,
+"aula e commissione"
+],
+"XIV": [
+67,
+"leggi in aula"
+]
+},
+"Q3852774": {
+"XII": [
+0,
+"aula e commissione"
+]
+},
+"Q3852840": {
+"XII": [
+80,
+"aula e commissione"
+]
+},
+"Q19999170": {
+"XII": [
+15,
+"aula e commissione"
+]
+},
+"Q3852891": {
+"XII": [
+10,
+"aula e commissione"
+]
+},
+"Q65497325": {
+"XII": [
+24,
+"aula e commissione"
+]
+},
+"Q20035563": {
+"XII": [
+3,
+"aula e commissione"
+]
+},
+"Q714290": {
+"XII": [
+0,
+"aula e commissione"
+],
+"XIV": [
+16,
+"leggi in aula"
+]
+},
+"Q18575606": {
+"XII": [
+14,
+"aula e commissione"
+]
+},
+"Q21207806": {
+"XII": [
+8,
+"aula e commissione"
+]
+},
+"Q3856626": {
+"XII": [
+10,
+"aula e commissione"
+]
+},
+"Q3856772": {
+"XII": [
+12,
+"aula e commissione"
+]
+},
+"Q24033602": {
+"XII": [
+14,
+"aula e commissione"
+]
+},
+"Q3856834": {
+"XII": [
+56,
+"aula e commissione"
+],
+"XIV": [
+0,
+"leggi in aula"
+],
+"XV": [
+15,
+"leggi in aula"
+],
+"XVI": [
+244,
+"aula",
+26
+]
+},
+"Q3858210": {
+"XII": [
+4,
+"aula e commissione"
+],
+"XIV": [
+14,
+"leggi in aula"
+],
+"XV": [
+0,
+"leggi in aula"
+],
+"XVI": [
+4,
+"aula",
+3
+]
+},
+"Q3858834": {
+"XII": [
+2,
+"aula e commissione"
+]
+},
+"Q1514742": {
+"XII": [
+25,
+"aula e commissione"
+],
+"XIV": [
+2,
+"leggi in aula"
+],
+"XV": [
+2,
+"leggi in aula"
+],
+"XVI": [
+5,
+"aula",
+2
+]
+},
+"Q3859965": {
+"XII": [
+4,
+"aula e commissione"
+]
+},
+"Q3869839": {
+"XII": [
+15,
+"aula e commissione"
+]
+},
+"Q23047385": {
+"XII": [
+13,
+"aula e commissione"
+]
+},
+"Q507595": {
+"XII": [
+12,
+"aula e commissione"
+],
+"XIV": [
+94,
+"leggi in aula"
+]
+},
+"Q3876133": {
+"XII": [
+48,
+"aula e commissione"
+],
+"XIV": [
+0,
+"leggi in aula"
+],
+"XV": [
+37,
+"leggi in aula"
+]
+},
+"Q19817401": {
+"XII": [
+13,
+"aula e commissione"
+]
+},
+"Q110801116": {
+"XII": [
+0,
+"aula e commissione"
+]
+},
+"Q3876309": {
+"XII": [
+6,
+"aula e commissione"
+]
+},
+"Q18580681": {
+"XII": [
+0,
+"aula e commissione"
+]
+},
+"Q110801441": {
+"XII": [
+9,
+"aula e commissione"
+]
+},
+"Q110793751": {
+"XII": [
+0,
+"aula e commissione"
+]
+},
+"Q445685": {
+"XII": [
+2,
+"aula e commissione"
+]
+},
+"Q3877226": {
+"XII": [
+4,
+"aula e commissione"
+],
+"XIV": [
+0,
+"leggi in aula"
+]
+},
+"Q3879198": {
+"XII": [
+5,
+"aula e commissione"
+],
+"XIV": [
+95,
+"leggi in aula"
+]
+},
+"Q739002": {
+"XII": [
+34,
+"aula e commissione"
+],
+"XIV": [
+36,
+"leggi in aula"
+],
+"XV": [
+7,
+"leggi in aula"
+]
+},
+"Q122345": {
+"XII": [
+0,
+"aula e commissione"
+]
+},
+"Q3882132": {
+"XII": [
+20,
+"aula e commissione"
+]
+},
+"Q110801432": {
+"XII": [
+0,
+"aula e commissione"
+]
+},
+"Q110813229": {
+"XII": [
+0,
+"aula e commissione"
+]
+},
+"Q3885576": {
+"XII": [
+15,
+"aula e commissione"
+]
+},
+"Q3885580": {
+"XII": [
+25,
+"aula e commissione"
+]
+},
+"Q1535927": {
+"XII": [
+27,
+"aula e commissione"
+]
+},
+"Q3887237": {
+"XII": [
+4,
+"aula e commissione"
+]
+},
+"Q3892807": {
+"XII": [
+7,
+"aula e commissione"
+]
+},
+"Q3893565": {
+"XII": [
+30,
+"aula e commissione"
+]
+},
+"Q27078230": {
+"XII": [
+7,
+"aula e commissione"
+],
+"XIV": [
+7,
+"leggi in aula"
+]
+},
+"Q28966641": {
+"XII": [
+1,
+"aula e commissione"
+],
+"XIV": [
+30,
+"leggi in aula"
+]
+},
+"Q110797060": {
+"XII": [
+9,
+"aula e commissione"
+]
+},
+"Q3893679": {
+"XII": [
+15,
+"aula e commissione"
+]
+},
+"Q64590420": {
+"XII": [
+13,
+"aula e commissione"
+]
+},
+"Q3893735": {
+"XII": [
+20,
+"aula e commissione"
+]
+},
+"Q17453214": {
+"XII": [
+21,
+"aula e commissione"
+]
+},
+"Q110781100": {
+"XII": [
+3,
+"aula e commissione"
+]
+},
+"Q17638291": {
+"XII": [
+33,
+"aula e commissione"
+]
+},
+"Q110794445": {
+"XII": [
+0,
+"aula e commissione"
+]
+},
+"Q3894080": {
+"XII": [
+15,
+"aula e commissione"
+]
+},
+"Q15300721": {
+"XII": [
+11,
+"aula e commissione"
+]
+},
+"Q110797851": {
+"XII": [
+8,
+"aula e commissione"
+]
+},
+"Q89365386": {
+"XII": [
+8,
+"aula e commissione"
+]
+},
+"Q3894387": {
+"XII": [
+9,
+"aula e commissione"
+]
+},
+"Q3894407": {
+"XII": [
+11,
+"aula e commissione"
+]
+},
+"Q1532642": {
+"XII": [
+14,
+"aula e commissione"
+],
+"XIV": [
+47,
+"leggi in aula"
+],
+"XV": [
+3,
+"leggi in aula"
+],
+"XVI": [
+2,
+"aula",
+14
+]
+},
+"Q17638296": {
+"XII": [
+6,
+"aula e commissione"
+]
+},
+"Q3894457": {
+"XII": [
+4,
+"aula e commissione"
+],
+"XIV": [
+0,
+"leggi in aula"
+]
+},
+"Q110813253": {
+"XII": [
+0,
+"aula e commissione"
+]
+},
+"Q105007549": {
+"XII": [
+1,
+"aula e commissione"
+]
+},
+"Q3894571": {
+"XII": [
+19,
+"aula e commissione"
+]
+},
+"Q110796967": {
+"XII": [
+5,
+"aula e commissione"
+]
+},
+"Q446679": {
+"XII": [
+4,
+"aula e commissione"
+]
+},
+"Q110801274": {
+"XII": [
+7,
+"aula e commissione"
+]
+},
+"Q552229": {
+"XII": [
+18,
+"aula e commissione"
+],
+"XV": [
+14,
+"leggi in aula"
+],
+"XVI": [
+279,
+"aula",
+17
+]
+},
+"Q50772502": {
+"XII": [
+39,
+"aula e commissione"
+]
+},
+"Q109595312": {
+"XII": [
+5,
+"aula e commissione"
+],
+"XIV": [
+5,
+"leggi in aula"
+]
+},
+"Q1119601": {
+"XII": [
+9,
+"aula e commissione"
+],
+"XIV": [
+63,
+"leggi in aula"
+]
+},
+"Q3903125": {
+"XII": [
+50,
+"aula e commissione"
+]
+},
+"Q542406": {
+"XII": [
+14,
+"aula e commissione"
+],
+"XIV": [
+25,
+"leggi in aula"
+],
+"XV": [
+3,
+"leggi in aula"
+],
+"XVI": [
+45,
+"aula",
+20
+]
+},
+"Q3903779": {
+"XII": [
+0,
+"aula e commissione"
+]
+},
+"Q3903839": {
+"XII": [
+65,
+"aula e commissione"
+]
+},
+"Q3904084": {
+"XII": [
+1,
+"aula e commissione"
+]
+},
+"Q2094471": {
+"XII": [
+8,
+"aula e commissione"
+]
+},
+"Q1334761": {
+"XII": [
+2,
+"aula e commissione"
+]
+},
+"Q23047394": {
+"XII": [
+29,
+"aula e commissione"
+]
+},
+"Q3925320": {
+"XII": [
+8,
+"aula e commissione"
+],
+"XIV": [
+9,
+"leggi in aula"
+]
+},
+"Q1055575": {
+"XII": [
+17,
+"aula e commissione"
+],
+"XIV": [
+15,
+"leggi in aula"
+]
+},
+"Q3929066": {
+"XII": [
+128,
+"aula e commissione"
+]
+},
+"Q3929188": {
+"XII": [
+89,
+"aula e commissione"
+]
+},
+"Q3930521": {
+"XII": [
+16,
+"aula e commissione"
+]
+},
+"Q3933020": {
+"XII": [
+19,
+"aula e commissione"
+]
+},
+"Q17651872": {
+"XII": [
+15,
+"aula e commissione"
+],
+"XIV": [
+240,
+"leggi in aula"
+]
+},
+"Q110781921": {
+"XII": [
+0,
+"aula e commissione"
+]
+},
+"Q27078225": {
+"XII": [
+11,
+"aula e commissione"
+]
+},
+"Q3934472": {
+"XII": [
+9,
+"aula e commissione"
+]
+},
+"Q110797427": {
+"XII": [
+3,
+"aula e commissione"
+]
+},
+"Q110801121": {
+"XII": [
+18,
+"aula e commissione"
+]
+},
+"Q110801397": {
+"XII": [
+10,
+"aula e commissione"
+]
+},
+"Q22991653": {
+"XII": [
+24,
+"aula e commissione"
+]
+},
+"Q110781001": {
+"XII": [
+9,
+"aula e commissione"
+]
+},
+"Q3938582": {
+"XII": [
+24,
+"aula e commissione"
+]
+},
+"Q3938612": {
+"XII": [
+2,
+"aula e commissione"
+]
+},
+"Q530825": {
+"XII": [
+35,
+"aula e commissione"
+]
+},
+"Q2171762": {
+"XII": [
+27,
+"aula e commissione"
+]
+},
+"Q110813244": {
+"XII": [
+0,
+"aula e commissione"
+]
+},
+"Q18597481": {
+"XII": [
+1,
+"aula e commissione"
+]
+},
+"Q28965095": {
+"XII": [
+10,
+"aula e commissione"
+]
+},
+"Q664465": {
+"XII": [
+1,
+"aula e commissione"
+]
+},
+"Q110796958": {
+"XII": [
+1,
+"aula e commissione"
+]
+},
+"Q81738006": {
+"XII": [
+13,
+"aula e commissione"
+],
+"XIV": [
+30,
+"leggi in aula"
+]
+},
+"Q562097": {
+"XII": [
+2,
+"aula e commissione"
+],
+"XIV": [
+0,
+"leggi in aula"
+],
+"XV": [
+6,
+"leggi in aula"
+],
+"XVI": [
+0,
+"aula",
+0
+]
+},
+"Q3938961": {
+"XII": [
+18,
+"aula e commissione"
+],
+"XIV": [
+46,
+"leggi in aula"
+],
+"XV": [
+15,
+"leggi in aula"
+],
+"XVI": [
+28,
+"aula",
+7
+]
+},
+"Q29169613": {
+"XII": [
+30,
+"aula e commissione"
+]
+},
+"Q3939061": {
+"XII": [
+32,
+"aula e commissione"
+],
+"XIV": [
+75,
+"leggi in aula"
+]
+},
+"Q110801232": {
+"XII": [
+11,
+"aula e commissione"
+]
+},
+"Q3939122": {
+"XII": [
+19,
+"aula e commissione"
+],
+"XIV": [
+34,
+"leggi in aula"
+],
+"XV": [
+6,
+"leggi in aula"
+],
+"XVI": [
+11,
+"aula",
+78
+]
+},
+"Q18397497": {
+"XII": [
+11,
+"aula e commissione"
+],
+"XIV": [
+16,
+"leggi in aula"
+]
+},
+"Q3939201": {
+"XII": [
+4,
+"aula e commissione"
+],
+"XIV": [
+0,
+"leggi in aula"
+],
+"XV": [
+6,
+"leggi in aula"
+],
+"XVI": [
+38,
+"aula",
+524
+]
+},
+"Q551188": {
+"XII": [
+8,
+"aula e commissione"
+],
+"XIV": [
+0,
+"leggi in aula"
+],
+"XVI": [
+4748,
+"aula",
+137
+]
+},
+"Q3939559": {
+"XII": [
+8,
+"aula e commissione"
+]
+},
+"Q3437457": {
+"XII": [
+4,
+"aula e commissione"
+],
+"XIV": [
+0,
+"leggi in aula"
+],
+"XV": [
+0,
+"leggi in aula"
+],
+"XVI": [
+0,
+"aula",
+1
+]
+},
+"Q3940264": {
+"XII": [
+19,
+"aula e commissione"
+]
+},
+"Q110794432": {
+"XII": [
+8,
+"aula e commissione"
+]
+},
+"Q452164": {
+"XII": [
+19,
+"aula e commissione"
+]
+},
+"Q96181754": {
+"XII": [
+4,
+"aula e commissione"
+]
+},
+"Q23047403": {
+"XII": [
+23,
+"aula e commissione"
+]
+},
+"Q110797023": {
+"XII": [
+3,
+"aula e commissione"
+]
+},
+"Q3941344": {
+"XII": [
+6,
+"aula e commissione"
+]
+},
+"Q3941371": {
+"XII": [
+2,
+"aula e commissione"
+]
+},
+"Q466836": {
+"XII": [
+19,
+"aula e commissione"
+],
+"XIV": [
+76,
+"leggi in aula"
+],
+"XV": [
+0,
+"leggi in aula"
+],
+"XVI": [
+4676,
+"aula",
+8
+]
+},
+"Q110813223": {
+"XII": [
+1,
+"aula e commissione"
+]
+},
+"Q3946009": {
+"XII": [
+23,
+"aula e commissione"
+],
+"XIV": [
+0,
+"leggi in aula"
+],
+"XV": [
+12,
+"leggi in aula"
+],
+"XVI": [
+75,
+"aula",
+187
+]
+},
+"Q3946023": {
+"XII": [
+0,
+"aula e commissione"
+]
+},
+"Q18786782": {
+"XII": [
+6,
+"aula e commissione"
+]
+},
+"Q17652092": {
+"XII": [
+12,
+"aula e commissione"
+]
+},
+"Q110801434": {
+"XII": [
+6,
+"aula e commissione"
+]
+},
+"Q3946255": {
+"XII": [
+8,
+"aula e commissione"
+]
+},
+"Q3948152": {
+"XII": [
+17,
+"aula e commissione"
+]
+},
+"Q3948309": {
+"XII": [
+1,
+"aula e commissione"
+]
+},
+"Q50359737": {
+"XII": [
+18,
+"aula e commissione"
+]
+},
+"Q3949448": {
+"XII": [
+0,
+"aula e commissione"
+]
+},
+"Q3950928": {
+"XII": [
+30,
+"aula e commissione"
+]
+},
+"Q21587694": {
+"XII": [
+8,
+"aula e commissione"
+],
+"XIV": [
+12,
+"leggi in aula"
+]
+},
+"Q3953734": {
+"XII": [
+2,
+"aula e commissione"
+]
+},
+"Q16601221": {
+"XII": [
+2,
+"aula e commissione"
+],
+"XVI": [
+34,
+"aula",
+187
+]
+},
+"Q3953773": {
+"XII": [
+19,
+"aula e commissione"
+],
+"XV": [
+16,
+"leggi in aula"
+]
+},
+"Q110801187": {
+"XII": [
+3,
+"aula e commissione"
+]
+},
+"Q3956057": {
+"XII": [
+41,
+"aula e commissione"
+]
+},
+"Q110813246": {
+"XII": [
+8,
+"aula e commissione"
+]
+},
+"Q3956072": {
+"XII": [
+26,
+"aula e commissione"
+],
+"XIV": [
+108,
+"leggi in aula"
+]
+},
+"Q28966651": {
+"XII": [
+20,
+"aula e commissione"
+]
+},
+"Q338536": {
+"XII": [
+25,
+"aula e commissione"
+]
+},
+"Q3956186": {
+"XII": [
+26,
+"aula e commissione"
+],
+"XIV": [
+75,
+"leggi in aula"
+],
+"XV": [
+8,
+"leggi in aula"
+]
+},
+"Q67214782": {
+"XII": [
+8,
+"aula e commissione"
+]
+},
+"Q110801714": {
+"XII": [
+3,
+"aula e commissione"
+]
+},
+"Q3847545": {
+"XII": [
+1,
+"aula e commissione"
+],
+"XIV": [
+130,
+"leggi in aula"
+],
+"XV": [
+22,
+"leggi in aula"
+],
+"XVI": [
+110,
+"aula",
+254
+]
+},
+"Q677894": {
+"XII": [
+14,
+"aula e commissione"
+],
+"XIV": [
+18,
+"leggi in aula"
+],
+"XV": [
+7,
+"leggi in aula"
+],
+"XVI": [
+67,
+"aula",
+25
+]
+},
+"Q29169617": {
+"XII": [
+12,
+"aula e commissione"
+]
+},
+"Q11860": {
+"XII": [
+8,
+"aula e commissione"
+],
+"XIV": [
+0,
+"leggi in aula"
+],
+"XV": [
+2,
+"leggi in aula"
+],
+"XVI": [
+0,
+"aula",
+0
+]
+},
+"Q3960890": {
+"XII": [
+55,
+"aula e commissione"
+],
+"XIV": [
+9,
+"leggi in aula"
+]
+},
+"Q3961150": {
+"XII": [
+5,
+"aula e commissione"
+]
+},
+"Q110794426": {
+"XII": [
+11,
+"aula e commissione"
+]
+},
+"Q3964775": {
+"XII": [
+7,
+"aula e commissione"
+]
+},
+"Q17453244": {
+"XII": [
+10,
+"aula e commissione"
+]
+},
+"Q466489": {
+"XII": [
+6,
+"aula e commissione"
+],
+"XIV": [
+0,
+"leggi in aula"
+],
+"XV": [
+5,
+"leggi in aula"
+],
+"XVI": [
+4,
+"aula",
+11
+]
+},
+"Q18608384": {
+"XII": [
+7,
+"aula e commissione"
+]
+},
+"Q25403336": {
+"XII": [
+0,
+"aula e commissione"
+]
+},
+"Q16268562": {
+"XII": [
+30,
+"aula e commissione"
+]
+},
+"Q3972655": {
+"XII": [
+32,
+"aula e commissione"
+]
+},
+"Q110813252": {
+"XII": [
+1,
+"aula e commissione"
+]
+},
+"Q3983873": {
+"XII": [
+36,
+"aula e commissione"
+],
+"XIV": [
+221,
+"leggi in aula"
+],
+"XV": [
+66,
+"leggi in aula"
+]
+},
+"Q29169620": {
+"XII": [
+6,
+"aula e commissione"
+]
+},
+"Q3991530": {
+"XII": [
+0,
+"aula e commissione"
+]
+},
+"Q3991979": {
+"XII": [
+41,
+"aula e commissione"
+]
+},
+"Q3991983": {
+"XII": [
+6,
+"aula e commissione"
+]
+},
+"Q3991990": {
+"XII": [
+24,
+"aula e commissione"
+],
+"XIV": [
+178,
+"leggi in aula"
+]
+},
+"Q110801279": {
+"XII": [
+0,
+"aula e commissione"
+]
+},
+"Q17397679": {
+"XII": [
+94,
+"aula e commissione"
+]
+},
+"Q30223215": {
+"XII": [
+8,
+"aula e commissione"
+]
+},
+"Q17279890": {
+"XII": [
+38,
+"aula e commissione"
+]
+},
+"Q110813238": {
+"XII": [
+30,
+"aula e commissione"
+]
+},
+"Q957190": {
+"XII": [
+3,
+"aula e commissione"
+],
+"XIV": [
+0,
+"leggi in aula"
+]
+},
+"Q47832": {
+"XII": [
+10,
+"aula e commissione"
+],
+"XIV": [
+0,
+"leggi in aula"
+],
+"XVI": [
+0,
+"aula",
+0
+]
+},
+"Q4003351": {
+"XII": [
+11,
+"aula e commissione"
+]
+},
+"Q4003470": {
+"XII": [
+2,
+"aula e commissione"
+],
+"XIV": [
+29,
+"leggi in aula"
+],
+"XV": [
+12,
+"leggi in aula"
+]
+},
+"Q4007598": {
+"XII": [
+24,
+"aula e commissione"
+],
+"XIV": [
+212,
+"leggi in aula"
+],
+"XV": [
+14,
+"leggi in aula"
+]
+},
+"Q4007660": {
+"XII": [
+13,
+"aula e commissione"
+],
+"XIV": [
+0,
+"leggi in aula"
+],
+"XV": [
+24,
+"leggi in aula"
+],
+"XVI": [
+56,
+"aula",
+1559
+]
+},
+"Q27553650": {
+"XII": [
+23,
+"aula e commissione"
+]
+},
+"Q4007863": {
+"XII": [
+15,
+"aula e commissione"
+],
+"XIV": [
+134,
+"leggi in aula"
+]
+},
+"Q56247570": {
+"XII": [
+5,
+"aula e commissione"
+]
+},
+"Q17453277": {
+"XII": [
+1,
+"aula e commissione"
+]
+},
+"Q26509642": {
+"XII": [
+32,
+"aula e commissione"
+],
+"XIV": [
+71,
+"leggi in aula"
+]
+},
+"Q110801439": {
+"XII": [
+10,
+"aula e commissione"
+]
+},
+"Q21076800": {
+"XII": [
+7,
+"aula e commissione"
+]
+},
+"Q28112186": {
+"XII": [
+20,
+"aula e commissione"
+]
+},
+"Q110781865": {
+"XII": [
+11,
+"aula e commissione"
+]
+},
+"Q110813221": {
+"XII": [
+12,
+"aula e commissione"
+]
+},
+"Q110813891": {
+"XII": [
+2,
+"aula e commissione"
+]
+},
+"Q110813247": {
+"XII": [
+2,
+"aula e commissione"
+]
+},
+"Q110794418": {
+"XII": [
+0,
+"aula e commissione"
+]
+},
+"Q4013395": {
+"XII": [
+22,
+"aula e commissione"
+]
+},
+"Q4013426": {
+"XII": [
+56,
+"aula e commissione"
+],
+"XIV": [
+22,
+"leggi in aula"
+],
+"XV": [
+17,
+"leggi in aula"
+]
+},
+"Q28950659": {
+"XII": [
+8,
+"aula e commissione"
+]
+},
+"Q4013521": {
+"XII": [
+2,
+"aula e commissione"
+],
+"XIV": [
+137,
+"leggi in aula"
+]
+},
+"Q110813254": {
+"XII": [
+2,
+"aula e commissione"
+]
+},
+"Q4013560": {
+"XII": [
+51,
+"aula e commissione"
+],
+"XIV": [
+57,
+"leggi in aula"
+]
+},
+"Q686194": {
+"XII": [
+8,
+"aula e commissione"
+],
+"XIV": [
+30,
+"leggi in aula"
+],
+"XV": [
+0,
+"leggi in aula"
+]
+},
+"Q51880264": {
+"XII": [
+6,
+"aula e commissione"
+]
+},
+"Q4013586": {
+"XII": [
+1,
+"aula e commissione"
+],
+"XIV": [
+0,
+"leggi in aula"
+]
+},
+"Q2528688": {
+"XII": [
+1,
+"aula e commissione"
+]
+},
+"Q4015076": {
+"XII": [
+11,
+"aula e commissione"
+]
+},
+"Q17639661": {
+"XII": [
+0,
+"aula e commissione"
+]
+},
+"Q18610120": {
+"XII": [
+53,
+"aula e commissione"
+]
+},
+"Q4015364": {
+"XII": [
+15,
+"aula e commissione"
+]
+},
+"Q110797013": {
+"XII": [
+24,
+"aula e commissione"
+]
+},
+"Q4015443": {
+"XII": [
+0,
+"aula e commissione"
+],
+"XIV": [
+41,
+"leggi in aula"
+]
+},
+"Q2426702": {
+"XII": [
+24,
+"aula e commissione"
+],
+"XIV": [
+18,
+"leggi in aula"
+]
+},
+"Q4015560": {
+"XII": [
+0,
+"aula e commissione"
+],
+"XIV": [
+32,
+"leggi in aula"
+]
+},
+"Q319547": {
+"XII": [
+1,
+"aula e commissione"
+],
+"XVI": [
+34,
+"aula",
+80
+]
+},
+"Q4019905": {
+"XII": [
+12,
+"aula e commissione"
+]
+},
+"Q110814066": {
+"XIV": [
+1,
+"leggi in aula"
+]
+},
+"Q3605758": {
+"XIV": [
+15,
+"leggi in aula"
+],
+"XV": [
+1,
+"leggi in aula"
+],
+"XVI": [
+3,
+"aula",
+2
+]
+},
+"Q1240927": {
+"XIV": [
+15,
+"leggi in aula"
+]
+},
+"Q3606762": {
+"XIV": [
+39,
+"leggi in aula"
+],
+"XVI": [
+167,
+"aula",
+236
+]
+},
+"Q3607838": {
+"XIV": [
+95,
+"leggi in aula"
+],
+"XV": [
+20,
+"leggi in aula"
+]
+},
+"Q3608122": {
+"XIV": [
+31,
+"leggi in aula"
+]
+},
+"Q3608295": {
+"XIV": [
+55,
+"leggi in aula"
+],
+"XV": [
+6,
+"leggi in aula"
+],
+"XVI": [
+75,
+"aula",
+662
+]
+},
+"Q3608341": {
+"XIV": [
+71,
+"leggi in aula"
+],
+"XV": [
+31,
+"leggi in aula"
+],
+"XVI": [
+40,
+"aula",
+90
+]
+},
+"Q3608481": {
+"XIV": [
+65,
+"leggi in aula"
+]
+},
+"Q16524881": {
+"XIV": [
+3,
+"leggi in aula"
+],
+"XV": [
+0,
+"leggi in aula"
+]
+},
+"Q2832307": {
+"XIV": [
+0,
+"leggi in aula"
+],
+"XV": [
+6,
+"leggi in aula"
+],
+"XVI": [
+0,
+"aula",
+3
+]
+},
+"Q81724290": {
+"XIV": [
+133,
+"leggi in aula"
+]
+},
+"Q79686671": {
+"XIV": [
+127,
+"leggi in aula"
+]
+},
+"Q3609954": {
+"XIV": [
+117,
+"leggi in aula"
+]
+},
+"Q3610113": {
+"XIV": [
+64,
+"leggi in aula"
+],
+"XV": [
+8,
+"leggi in aula"
+],
+"XVI": [
+55,
+"aula",
+52
+]
+},
+"Q3610479": {
+"XIV": [
+40,
+"leggi in aula"
+]
+},
+"Q3611084": {
+"XIV": [
+182,
+"leggi in aula"
+]
+},
+"Q3611171": {
+"XIV": [
+275,
+"leggi in aula"
+],
+"XV": [
+0,
+"leggi in aula"
+]
+},
+"Q3611432": {
+"XIV": [
+0,
+"leggi in aula"
+],
+"XVI": [
+55,
+"aula",
+58
+]
+},
+"Q79658824": {
+"XIV": [
+35,
+"leggi in aula"
+]
+},
+"Q3611516": {
+"XIV": [
+8,
+"leggi in aula"
+],
+"XV": [
+0,
+"leggi in aula"
+]
+},
+"Q3615480": {
+"XIV": [
+15,
+"leggi in aula"
+]
+},
+"Q16526216": {
+"XIV": [
+118,
+"leggi in aula"
+],
+"XV": [
+0,
+"leggi in aula"
+]
+},
+"Q3615816": {
+"XIV": [
+65,
+"leggi in aula"
+],
+"XV": [
+16,
+"leggi in aula"
+],
+"XVI": [
+131,
+"aula",
+636
+]
+},
+"Q3615834": {
+"XIV": [
+71,
+"leggi in aula"
+],
+"XV": [
+1,
+"leggi in aula"
+],
+"XVI": [
+17,
+"aula",
+23
+]
+},
+"Q3615910": {
+"XIV": [
+10,
+"leggi in aula"
+],
+"XVI": [
+74,
+"aula",
+163
+]
+},
+"Q16268618": {
+"XIV": [
+5,
+"leggi in aula"
+],
+"XV": [
+1,
+"leggi in aula"
+]
+},
+"Q110814068": {
+"XIV": [
+66,
+"leggi in aula"
+]
+},
+"Q1075557": {
+"XIV": [
+6,
+"leggi in aula"
+],
+"XV": [
+9,
+"leggi in aula"
+],
+"XVI": [
+22,
+"aula",
+39
+]
+},
+"Q535055": {
+"XIV": [
+48,
+"leggi in aula"
+],
+"XV": [
+4,
+"leggi in aula"
+],
+"XVI": [
+8,
+"aula",
+3
+]
+},
+"Q84259677": {
+"XIV": [
+31,
+"leggi in aula"
+]
+},
+"Q1246852": {
+"XIV": [
+0,
+"leggi in aula"
+]
+},
+"Q16526775": {
+"XIV": [
+18,
+"leggi in aula"
+],
+"XV": [
+1,
+"leggi in aula"
+],
+"XVI": [
+11,
+"aula",
+12
+]
+},
+"Q79798694": {
+"XIV": [
+33,
+"leggi in aula"
+]
+},
+"Q3618956": {
+"XIV": [
+44,
+"leggi in aula"
+]
+},
+"Q3618960": {
+"XIV": [
+11,
+"leggi in aula"
+],
+"XV": [
+1,
+"leggi in aula"
+],
+"XVI": [
+23,
+"aula",
+4
+]
+},
+"Q17364583": {
+"XIV": [
+17,
+"leggi in aula"
+]
+},
+"Q3619078": {
+"XIV": [
+48,
+"leggi in aula"
+],
+"XV": [
+11,
+"leggi in aula"
+],
+"XVI": [
+125,
+"aula",
+450
+]
+},
+"Q3619215": {
+"XIV": [
+24,
+"leggi in aula"
+]
+},
+"Q3619274": {
+"XIV": [
+373,
+"leggi in aula"
+]
+},
+"Q63034732": {
+"XIV": [
+0,
+"leggi in aula"
+]
+},
+"Q16039395": {
+"XIV": [
+21,
+"leggi in aula"
+],
+"XV": [
+24,
+"leggi in aula"
+],
+"XVI": [
+0,
+"aula",
+0
+]
+},
+"Q3619752": {
+"XIV": [
+103,
+"leggi in aula"
+],
+"XV": [
+75,
+"leggi in aula"
+],
+"XVI": [
+4601,
+"aula",
+94
+]
+},
+"Q3619762": {
+"XIV": [
+21,
+"leggi in aula"
+]
+},
+"Q16527603": {
+"XIV": [
+0,
+"leggi in aula"
+]
+},
+"Q16658040": {
+"XIV": [
+5,
+"leggi in aula"
+],
+"XV": [
+0,
+"leggi in aula"
+],
+"XVI": [
+4,
+"aula",
+0
+]
+},
+"Q3619783": {
+"XIV": [
+36,
+"leggi in aula"
+]
+},
+"Q16527648": {
+"XIV": [
+6,
+"leggi in aula"
+]
+},
+"Q3619856": {
+"XIV": [
+0,
+"leggi in aula"
+]
+},
+"Q15057322": {
+"XIV": [
+42,
+"leggi in aula"
+],
+"XV": [
+8,
+"leggi in aula"
+],
+"XVI": [
+50,
+"aula",
+105
+]
+},
+"Q110814061": {
+"XIV": [
+62,
+"leggi in aula"
+]
+},
+"Q3619995": {
+"XIV": [
+14,
+"leggi in aula"
+],
+"XV": [
+8,
+"leggi in aula"
+],
+"XVI": [
+11,
+"aula",
+123
+]
+},
+"Q79798680": {
+"XIV": [
+67,
+"leggi in aula"
+]
+},
+"Q3620125": {
+"XIV": [
+53,
+"leggi in aula"
+],
+"XV": [
+2,
+"leggi in aula"
+],
+"XVI": [
+58,
+"aula",
+238
+]
+},
+"Q3620131": {
+"XIV": [
+70,
+"leggi in aula"
+],
+"XV": [
+16,
+"leggi in aula"
+]
+},
+"Q17399512": {
+"XIV": [
+1,
+"leggi in aula"
+]
+},
+"Q3620211": {
+"XIV": [
+13,
+"leggi in aula"
+]
+},
+"Q80704856": {
+"XIV": [
+85,
+"leggi in aula"
+]
+},
+"Q715394": {
+"XIV": [
+2,
+"leggi in aula"
+],
+"XV": [
+0,
+"leggi in aula"
+],
+"XVI": [
+5,
+"aula",
+28
+]
+},
+"Q3629591": {
+"XIV": [
+188,
+"leggi in aula"
+]
+},
+"Q110246119": {
+"XIV": [
+65,
+"leggi in aula"
+]
+},
+"Q1071082": {
+"XIV": [
+13,
+"leggi in aula"
+],
+"XV": [
+0,
+"leggi in aula"
+],
+"XVI": [
+26,
+"aula",
+55
+]
+},
+"Q3635805": {
+"XIV": [
+11,
+"leggi in aula"
+],
+"XV": [
+3,
+"leggi in aula"
+],
+"XVI": [
+26,
+"aula",
+45
+]
+},
+"Q3635807": {
+"XIV": [
+35,
+"leggi in aula"
+],
+"XV": [
+12,
+"leggi in aula"
+]
+},
+"Q3637268": {
+"XIV": [
+94,
+"leggi in aula"
+]
+},
+"Q57776425": {
+"XIV": [
+3,
+"leggi in aula"
+]
+},
+"Q33083457": {
+"XIV": [
+34,
+"leggi in aula"
+]
+},
+"Q2246709": {
+"XIV": [
+49,
+"leggi in aula"
+]
+},
+"Q81738016": {
+"XIV": [
+29,
+"leggi in aula"
+]
+},
+"Q1074619": {
+"XIV": [
+87,
+"leggi in aula"
+],
+"XV": [
+7,
+"leggi in aula"
+],
+"XVI": [
+191,
+"aula",
+123
+]
+},
+"Q3658839": {
+"XIV": [
+58,
+"leggi in aula"
+],
+"XV": [
+9,
+"leggi in aula"
+],
+"XVI": [
+41,
+"aula",
+273
+]
+},
+"Q3658862": {
+"XIV": [
+73,
+"leggi in aula"
+]
+},
+"Q3659519": {
+"XIV": [
+135,
+"leggi in aula"
+],
+"XV": [
+4,
+"leggi in aula"
+]
+},
+"Q3659788": {
+"XIV": [
+55,
+"leggi in aula"
+]
+},
+"Q3659883": {
+"XIV": [
+32,
+"leggi in aula"
+]
+},
+"Q3660225": {
+"XIV": [
+10,
+"leggi in aula"
+],
+"XV": [
+9,
+"leggi in aula"
+],
+"XVI": [
+60,
+"aula",
+85
+]
+},
+"Q16268563": {
+"XIV": [
+64,
+"leggi in aula"
+],
+"XV": [
+8,
+"leggi in aula"
+],
+"XVI": [
+79,
+"aula",
+291
+]
+},
+"Q110813989": {
+"XIV": [
+41,
+"leggi in aula"
+]
+},
+"Q3660562": {
+"XIV": [
+92,
+"leggi in aula"
+],
+"XV": [
+24,
+"leggi in aula"
+],
+"XVI": [
+128,
+"aula",
+244
+]
+},
+"Q3665368": {
+"XIV": [
+56,
+"leggi in aula"
+],
+"XV": [
+46,
+"leggi in aula"
+]
+},
+"Q79798709": {
+"XIV": [
+91,
+"leggi in aula"
+]
+},
+"Q2947026": {
+"XIV": [
+10,
+"leggi in aula"
+],
+"XV": [
+0,
+"leggi in aula"
+]
+},
+"Q16539125": {
+"XIV": [
+175,
+"leggi in aula"
+]
+},
+"Q3667497": {
+"XIV": [
+56,
+"leggi in aula"
+],
+"XV": [
+7,
+"leggi in aula"
+],
+"XVI": [
+51,
+"aula",
+163
+]
+},
+"Q316226": {
+"XIV": [
+2,
+"leggi in aula"
+],
+"XV": [
+0,
+"leggi in aula"
+]
+},
+"Q3678150": {
+"XIV": [
+25,
+"leggi in aula"
+],
+"XV": [
+0,
+"leggi in aula"
+]
+},
+"Q42303912": {
+"XIV": [
+0,
+"leggi in aula"
+]
+},
+"Q16039227": {
+"XIV": [
+65,
+"leggi in aula"
+]
+},
+"Q3679928": {
+"XIV": [
+3,
+"leggi in aula"
+],
+"XV": [
+6,
+"leggi in aula"
+]
+},
+"Q546288": {
+"XIV": [
+24,
+"leggi in aula"
+]
+},
+"Q3680050": {
+"XIV": [
+106,
+"leggi in aula"
+],
+"XV": [
+8,
+"leggi in aula"
+]
+},
+"Q1098169": {
+"XIV": [
+0,
+"leggi in aula"
+],
+"XV": [
+1,
+"leggi in aula"
+],
+"XVI": [
+1,
+"aula",
+0
+]
+},
+"Q3695119": {
+"XIV": [
+43,
+"leggi in aula"
+],
+"XV": [
+4,
+"leggi in aula"
+]
+},
+"Q181794": {
+"XIV": [
+35,
+"leggi in aula"
+],
+"XV": [
+6,
+"leggi in aula"
+]
+},
+"Q3701971": {
+"XIV": [
+32,
+"leggi in aula"
+]
+},
+"Q3701974": {
+"XIV": [
+11,
+"leggi in aula"
+],
+"XV": [
+14,
+"leggi in aula"
+],
+"XVI": [
+40,
+"aula",
+24
+]
+},
+"Q80445116": {
+"XIV": [
+6,
+"leggi in aula"
+]
+},
+"Q388442": {
+"XIV": [
+31,
+"leggi in aula"
+],
+"XV": [
+13,
+"leggi in aula"
+],
+"XVI": [
+169,
+"aula",
+5
+]
+},
+"Q3702601": {
+"XIV": [
+134,
+"leggi in aula"
+]
+},
+"Q3702651": {
+"XIV": [
+80,
+"leggi in aula"
+],
+"XV": [
+13,
+"leggi in aula"
+]
+},
+"Q3703513": {
+"XIV": [
+77,
+"leggi in aula"
+],
+"XV": [
+31,
+"leggi in aula"
+],
+"XVI": [
+30,
+"aula",
+305
+]
+},
+"Q472396": {
+"XIV": [
+7,
+"leggi in aula"
+],
+"XV": [
+0,
+"leggi in aula"
+],
+"XVI": [
+3,
+"aula",
+2
+]
+},
+"Q745563": {
+"XIV": [
+4,
+"leggi in aula"
+]
+},
+"Q3712860": {
+"XIV": [
+2,
+"leggi in aula"
+]
+},
+"Q3713014": {
+"XIV": [
+52,
+"leggi in aula"
+],
+"XV": [
+25,
+"leggi in aula"
+],
+"XVI": [
+100,
+"aula",
+513
+]
+},
+"Q19545484": {
+"XIV": [
+69,
+"leggi in aula"
+]
+},
+"Q16550427": {
+"XIV": [
+45,
+"leggi in aula"
+],
+"XV": [
+0,
+"leggi in aula"
+]
+},
+"Q1120464": {
+"XIV": [
+47,
+"leggi in aula"
+],
+"XV": [
+4,
+"leggi in aula"
+]
+},
+"Q3713743": {
+"XIV": [
+155,
+"leggi in aula"
+],
+"XV": [
+9,
+"leggi in aula"
+],
+"XVI": [
+249,
+"aula",
+3196
+]
+},
+"Q3713769": {
+"XIV": [
+3,
+"leggi in aula"
+],
+"XV": [
+1,
+"leggi in aula"
+],
+"XVI": [
+6,
+"aula",
+0
+]
+},
+"Q3713780": {
+"XIV": [
+71,
+"leggi in aula"
+]
+},
+"Q15948822": {
+"XIV": [
+94,
+"leggi in aula"
+],
+"XV": [
+1,
+"leggi in aula"
+],
+"XVI": [
+133,
+"aula",
+58
+]
+},
+"Q3714273": {
+"XIV": [
+24,
+"leggi in aula"
+],
+"XV": [
+2,
+"leggi in aula"
+]
+},
+"Q3719439": {
+"XIV": [
+40,
+"leggi in aula"
+],
+"XV": [
+34,
+"leggi in aula"
+],
+"XVI": [
+119,
+"aula",
+782
+]
+},
+"Q3720340": {
+"XIV": [
+143,
+"leggi in aula"
+]
+},
+"Q3720401": {
+"XIV": [
+24,
+"leggi in aula"
+]
+},
+"Q3721908": {
+"XIV": [
+167,
+"leggi in aula"
+],
+"XV": [
+11,
+"leggi in aula"
+]
+},
+"Q3724123": {
+"XIV": [
+38,
+"leggi in aula"
+],
+"XV": [
+16,
+"leggi in aula"
+],
+"XVI": [
+59,
+"aula",
+711
+]
+},
+"Q3724390": {
+"XIV": [
+104,
+"leggi in aula"
+],
+"XV": [
+6,
+"leggi in aula"
+]
+},
+"Q3725649": {
+"XIV": [
+187,
+"leggi in aula"
+],
+"XV": [
+27,
+"leggi in aula"
+]
+},
+"Q674957": {
+"XIV": [
+20,
+"leggi in aula"
+],
+"XV": [
+0,
+"leggi in aula"
+],
+"XVI": [
+20,
+"aula",
+1
+]
+},
+"Q3725868": {
+"XIV": [
+3,
+"leggi in aula"
+]
+},
+"Q1346089": {
+"XIV": [
+67,
+"leggi in aula"
+]
+},
+"Q3726477": {
+"XIV": [
+43,
+"leggi in aula"
+],
+"XV": [
+1,
+"leggi in aula"
+],
+"XVI": [
+37,
+"aula",
+154
+]
+},
+"Q27078138": {
+"XIV": [
+35,
+"leggi in aula"
+]
+},
+"Q4013257": {
+"XIV": [
+1,
+"leggi in aula"
+]
+},
+"Q3726624": {
+"XIV": [
+59,
+"leggi in aula"
+],
+"XV": [
+12,
+"leggi in aula"
+],
+"XVI": [
+322,
+"aula",
+272
+]
+},
+"Q3726712": {
+"XIV": [
+17,
+"leggi in aula"
+]
+},
+"Q3732005": {
+"XIV": [
+204,
+"leggi in aula"
+],
+"XV": [
+11,
+"leggi in aula"
+],
+"XVI": [
+179,
+"aula",
+358
+]
+},
+"Q433628": {
+"XIV": [
+107,
+"leggi in aula"
+],
+"XV": [
+24,
+"leggi in aula"
+]
+},
+"Q3732032": {
+"XIV": [
+94,
+"leggi in aula"
+],
+"XV": [
+27,
+"leggi in aula"
+],
+"XVI": [
+1047,
+"aula",
+118
+]
+},
+"Q94998328": {
+"XIV": [
+17,
+"leggi in aula"
+]
+},
+"Q26972023": {
+"XIV": [
+15,
+"leggi in aula"
+]
+},
+"Q3733994": {
+"XIV": [
+93,
+"leggi in aula"
+],
+"XVI": [
+117,
+"aula",
+321
+]
+},
+"Q80013549": {
+"XIV": [
+3,
+"leggi in aula"
+]
+},
+"Q3737644": {
+"XIV": [
+67,
+"leggi in aula"
+]
+},
+"Q80013486": {
+"XIV": [
+5,
+"leggi in aula"
+]
+},
+"Q3737724": {
+"XIV": [
+56,
+"leggi in aula"
+],
+"XV": [
+41,
+"leggi in aula"
+],
+"XVI": [
+136,
+"aula",
+151
+]
+},
+"Q15936503": {
+"XIV": [
+0,
+"leggi in aula"
+],
+"XV": [
+6,
+"leggi in aula"
+],
+"XVI": [
+22,
+"aula",
+4
+]
+},
+"Q110814070": {
+"XIV": [
+22,
+"leggi in aula"
+]
+},
+"Q3737980": {
+"XIV": [
+16,
+"leggi in aula"
+],
+"XV": [
+4,
+"leggi in aula"
+],
+"XVI": [
+137,
+"aula",
+86
+]
+},
+"Q2689015": {
+"XIV": [
+63,
+"leggi in aula"
+],
+"XV": [
+17,
+"leggi in aula"
+]
+},
+"Q3743812": {
+"XIV": [
+0,
+"leggi in aula"
+]
+},
+"Q3745104": {
+"XIV": [
+99,
+"leggi in aula"
+],
+"XV": [
+11,
+"leggi in aula"
+],
+"XVI": [
+72,
+"aula",
+102
+]
+},
+"Q3745113": {
+"XIV": [
+0,
+"leggi in aula"
+]
+},
+"Q3745246": {
+"XIV": [
+57,
+"leggi in aula"
+]
+},
+"Q3745254": {
+"XIV": [
+4,
+"leggi in aula"
+]
+},
+"Q3745275": {
+"XIV": [
+29,
+"leggi in aula"
+],
+"XV": [
+21,
+"leggi in aula"
+]
+},
+"Q3749286": {
+"XIV": [
+135,
+"leggi in aula"
+],
+"XV": [
+9,
+"leggi in aula"
+]
+},
+"Q3749427": {
+"XIV": [
+56,
+"leggi in aula"
+],
+"XVI": [
+14,
+"aula",
+28
+]
+},
+"Q3749682": {
+"XIV": [
+18,
+"leggi in aula"
+],
+"XV": [
+7,
+"leggi in aula"
+]
+},
+"Q26973073": {
+"XIV": [
+52,
+"leggi in aula"
+]
+},
+"Q3749809": {
+"XIV": [
+4,
+"leggi in aula"
+],
+"XV": [
+0,
+"leggi in aula"
+],
+"XVI": [
+10,
+"aula",
+6
+]
+},
+"Q1056330": {
+"XIV": [
+160,
+"leggi in aula"
+],
+"XV": [
+3,
+"leggi in aula"
+]
+},
+"Q80358731": {
+"XIV": [
+0,
+"leggi in aula"
+]
+},
+"Q535345": {
+"XIV": [
+14,
+"leggi in aula"
+],
+"XV": [
+0,
+"leggi in aula"
+]
+},
+"Q3081082": {
+"XIV": [
+14,
+"leggi in aula"
+],
+"XV": [
+2,
+"leggi in aula"
+],
+"XVI": [
+40,
+"aula",
+6
+]
+},
+"Q3750702": {
+"XIV": [
+23,
+"leggi in aula"
+],
+"XV": [
+1,
+"leggi in aula"
+],
+"XVI": [
+16,
+"aula",
+55
+]
+},
+"Q16658148": {
+"XIV": [
+72,
+"leggi in aula"
+],
+"XV": [
+11,
+"leggi in aula"
+]
+},
+"Q79884025": {
+"XIV": [
+12,
+"leggi in aula"
+]
+},
+"Q1442525": {
+"XIV": [
+44,
+"leggi in aula"
+]
+},
+"Q333833": {
+"XIV": [
+0,
+"leggi in aula"
+],
+"XVI": [
+12,
+"aula",
+37
+]
+},
+"Q726247": {
+"XIV": [
+28,
+"leggi in aula"
+],
+"XV": [
+5,
+"leggi in aula"
+]
+},
+"Q27078137": {
+"XIV": [
+73,
+"leggi in aula"
+]
+},
+"Q3751437": {
+"XIV": [
+36,
+"leggi in aula"
+],
+"XV": [
+3,
+"leggi in aula"
+]
+},
+"Q3751540": {
+"XIV": [
+108,
+"leggi in aula"
+]
+},
+"Q15796640": {
+"XIV": [
+52,
+"leggi in aula"
+],
+"XV": [
+11,
+"leggi in aula"
+],
+"XVI": [
+15,
+"aula",
+168
+]
+},
+"Q3756528": {
+"XIV": [
+50,
+"leggi in aula"
+],
+"XV": [
+0,
+"leggi in aula"
+],
+"XVI": [
+22,
+"aula",
+0
+]
+},
+"Q3756590": {
+"XIV": [
+176,
+"leggi in aula"
+],
+"XV": [
+14,
+"leggi in aula"
+]
+},
+"Q389134": {
+"XIV": [
+28,
+"leggi in aula"
+],
+"XV": [
+15,
+"leggi in aula"
+],
+"XVI": [
+57,
+"aula",
+227
+]
+},
+"Q3756755": {
+"XIV": [
+13,
+"leggi in aula"
+],
+"XV": [
+6,
+"leggi in aula"
+],
+"XVI": [
+41,
+"aula",
+31
+]
+},
+"Q3757077": {
+"XIV": [
+85,
+"leggi in aula"
+],
+"XV": [
+15,
+"leggi in aula"
+],
+"XVI": [
+28,
+"aula",
+489
+]
+},
+"Q3758655": {
+"XIV": [
+29,
+"leggi in aula"
+],
+"XV": [
+39,
+"leggi in aula"
+],
+"XVI": [
+20,
+"aula",
+149
+]
+},
+"Q3759794": {
+"XIV": [
+25,
+"leggi in aula"
+]
+},
+"Q3759813": {
+"XIV": [
+39,
+"leggi in aula"
+],
+"XVI": [
+41,
+"aula",
+70
+]
+},
+"Q3760928": {
+"XIV": [
+194,
+"leggi in aula"
+],
+"XV": [
+23,
+"leggi in aula"
+]
+},
+"Q110814067": {
+"XIV": [
+33,
+"leggi in aula"
+]
+},
+"Q3762168": {
+"XIV": [
+39,
+"leggi in aula"
+],
+"XV": [
+10,
+"leggi in aula"
+]
+},
+"Q3762291": {
+"XIV": [
+35,
+"leggi in aula"
+],
+"XV": [
+32,
+"leggi in aula"
+],
+"XVI": [
+34,
+"aula",
+52
+]
+},
+"Q3762510": {
+"XIV": [
+3,
+"leggi in aula"
+],
+"XVI": [
+0,
+"aula",
+3
+]
+},
+"Q3762686": {
+"XIV": [
+0,
+"leggi in aula"
+]
+},
+"Q3762730": {
+"XIV": [
+145,
+"leggi in aula"
+]
+},
+"Q3762776": {
+"XIV": [
+47,
+"leggi in aula"
+]
+},
+"Q659163": {
+"XIV": [
+109,
+"leggi in aula"
+],
+"XV": [
+6,
+"leggi in aula"
+],
+"XVI": [
+156,
+"aula",
+3085
+]
+},
+"Q3762931": {
+"XIV": [
+70,
+"leggi in aula"
+]
+},
+"Q3762947": {
+"XIV": [
+0,
+"leggi in aula"
+],
+"XVI": [
+4,
+"aula",
+1
+]
+},
+"Q3762995": {
+"XIV": [
+260,
+"leggi in aula"
+],
+"XV": [
+15,
+"leggi in aula"
+],
+"XVI": [
+211,
+"aula",
+511
+]
+},
+"Q19614740": {
+"XIV": [
+59,
+"leggi in aula"
+]
+},
+"Q80012005": {
+"XIV": [
+10,
+"leggi in aula"
+]
+},
+"Q3763113": {
+"XIV": [
+106,
+"leggi in aula"
+]
+},
+"Q110813565": {
+"XIV": [
+23,
+"leggi in aula"
+]
+},
+"Q3763555": {
+"XIV": [
+31,
+"leggi in aula"
+],
+"XV": [
+8,
+"leggi in aula"
+],
+"XVI": [
+34,
+"aula",
+168
+]
+},
+"Q3763661": {
+"XIV": [
+50,
+"leggi in aula"
+],
+"XVI": [
+63,
+"aula",
+44
+]
+},
+"Q3763682": {
+"XIV": [
+144,
+"leggi in aula"
+]
+},
+"Q3763740": {
+"XIV": [
+86,
+"leggi in aula"
+],
+"XV": [
+42,
+"leggi in aula"
+]
+},
+"Q65497925": {
+"XIV": [
+42,
+"leggi in aula"
+]
+},
+"Q3763758": {
+"XIV": [
+0,
+"leggi in aula"
+]
+},
+"Q3764802": {
+"XIV": [
+6,
+"leggi in aula"
+],
+"XV": [
+27,
+"leggi in aula"
+],
+"XVI": [
+56,
+"aula",
+373
+]
+},
+"Q2248891": {
+"XIV": [
+167,
+"leggi in aula"
+]
+},
+"Q3765306": {
+"XIV": [
+41,
+"leggi in aula"
+]
+},
+"Q3765379": {
+"XIV": [
+11,
+"leggi in aula"
+],
+"XV": [
+6,
+"leggi in aula"
+],
+"XVI": [
+36,
+"aula",
+37
+]
+},
+"Q3765476": {
+"XIV": [
+3,
+"leggi in aula"
+]
+},
+"Q2460954": {
+"XIV": [
+76,
+"leggi in aula"
+],
+"XV": [
+34,
+"leggi in aula"
+],
+"XVI": [
+255,
+"aula",
+88
+]
+},
+"Q3765539": {
+"XIV": [
+0,
+"leggi in aula"
+],
+"XV": [
+2,
+"leggi in aula"
+],
+"XVI": [
+1,
+"aula",
+130
+]
+},
+"Q3765595": {
+"XIV": [
+37,
+"leggi in aula"
+],
+"XV": [
+0,
+"leggi in aula"
+],
+"XVI": [
+19,
+"aula",
+143
+]
+},
+"Q28057565": {
+"XIV": [
+143,
+"leggi in aula"
+]
+},
+"Q3765656": {
+"XIV": [
+72,
+"leggi in aula"
+]
+},
+"Q3766040": {
+"XIV": [
+2,
+"leggi in aula"
+],
+"XV": [
+0,
+"leggi in aula"
+]
+},
+"Q55721656": {
+"XIV": [
+82,
+"leggi in aula"
+]
+},
+"Q3766795": {
+"XIV": [
+26,
+"leggi in aula"
+]
+},
+"Q3766909": {
+"XIV": [
+143,
+"leggi in aula"
+],
+"XV": [
+4,
+"leggi in aula"
+],
+"XVI": [
+102,
+"aula",
+199
+]
+},
+"Q15921913": {
+"XIV": [
+109,
+"leggi in aula"
+],
+"XV": [
+1,
+"leggi in aula"
+]
+},
+"Q3767121": {
+"XIV": [
+0,
+"leggi in aula"
+],
+"XV": [
+0,
+"leggi in aula"
+],
+"XVI": [
+2,
+"aula",
+28
+]
+},
+"Q21296128": {
+"XIV": [
+33,
+"leggi in aula"
+]
+},
+"Q80013530": {
+"XIV": [
+58,
+"leggi in aula"
+]
+},
+"Q79422270": {
+"XIV": [
+14,
+"leggi in aula"
+]
+},
+"Q1439643": {
+"XIV": [
+100,
+"leggi in aula"
+]
+},
+"Q3767574": {
+"XIV": [
+51,
+"leggi in aula"
+],
+"XVI": [
+63,
+"aula",
+78
+]
+},
+"Q1111251": {
+"XIV": [
+15,
+"leggi in aula"
+],
+"XV": [
+13,
+"leggi in aula"
+]
+},
+"Q3767716": {
+"XIV": [
+11,
+"leggi in aula"
+]
+},
+"Q16560071": {
+"XIV": [
+25,
+"leggi in aula"
+]
+},
+"Q110814123": {
+"XIV": [
+0,
+"leggi in aula"
+]
+},
+"Q3768076": {
+"XIV": [
+255,
+"leggi in aula"
+]
+},
+"Q80009703": {
+"XIV": [
+68,
+"leggi in aula"
+]
+},
+"Q666504": {
+"XIV": [
+111,
+"leggi in aula"
+]
+},
+"Q110813969": {
+"XIV": [
+2,
+"leggi in aula"
+]
+},
+"Q3769694": {
+"XIV": [
+0,
+"leggi in aula"
+]
+},
+"Q934331": {
+"XIV": [
+79,
+"leggi in aula"
+],
+"XV": [
+0,
+"leggi in aula"
+],
+"XVI": [
+98,
+"aula",
+215
+]
+},
+"Q21587892": {
+"XIV": [
+18,
+"leggi in aula"
+]
+},
+"Q3769954": {
+"XIV": [
+6,
+"leggi in aula"
+]
+},
+"Q3108001": {
+"XIV": [
+16,
+"leggi in aula"
+],
+"XV": [
+2,
+"leggi in aula"
+]
+},
+"Q84360026": {
+"XIV": [
+2,
+"leggi in aula"
+]
+},
+"Q84259164": {
+"XIV": [
+17,
+"leggi in aula"
+]
+},
+"Q767345": {
+"XIV": [
+22,
+"leggi in aula"
+],
+"XV": [
+12,
+"leggi in aula"
+],
+"XVI": [
+2,
+"aula",
+3
+]
+},
+"Q3770460": {
+"XIV": [
+62,
+"leggi in aula"
+]
+},
+"Q3770490": {
+"XIV": [
+34,
+"leggi in aula"
+],
+"XV": [
+0,
+"leggi in aula"
+],
+"XVI": [
+6,
+"aula",
+5
+]
+},
+"Q3770513": {
+"XIV": [
+5,
+"leggi in aula"
+],
+"XV": [
+6,
+"leggi in aula"
+],
+"XVI": [
+32,
+"aula",
+117
+]
+},
+"Q3770515": {
+"XIV": [
+213,
+"leggi in aula"
+]
+},
+"Q730910": {
+"XIV": [
+101,
+"leggi in aula"
+],
+"XV": [
+0,
+"leggi in aula"
+],
+"XVI": [
+30,
+"aula",
+4
+]
+},
+"Q28070590": {
+"XIV": [
+0,
+"leggi in aula"
+],
+"XV": [
+0,
+"leggi in aula"
+],
+"XVI": [
+6,
+"aula",
+19
+]
+},
+"Q81738920": {
+"XIV": [
+4,
+"leggi in aula"
+]
+},
+"Q80321782": {
+"XIV": [
+10,
+"leggi in aula"
+]
+},
+"Q3770677": {
+"XIV": [
+29,
+"leggi in aula"
+],
+"XVI": [
+61,
+"aula",
+54
+]
+},
+"Q79882800": {
+"XIV": [
+0,
+"leggi in aula"
+]
+},
+"Q3770934": {
+"XIV": [
+43,
+"leggi in aula"
+],
+"XV": [
+46,
+"leggi in aula"
+],
+"XVI": [
+93,
+"aula",
+809
+]
+},
+"Q3771022": {
+"XIV": [
+150,
+"leggi in aula"
+]
+},
+"Q3771074": {
+"XIV": [
+76,
+"leggi in aula"
+],
+"XVI": [
+2,
+"aula",
+2
+]
+},
+"Q80321805": {
+"XIV": [
+29,
+"leggi in aula"
+]
+},
+"Q3771342": {
+"XIV": [
+19,
+"leggi in aula"
+],
+"XV": [
+15,
+"leggi in aula"
+],
+"XVI": [
+9,
+"aula",
+8
+]
+},
+"Q18812239": {
+"XIV": [
+75,
+"leggi in aula"
+]
+},
+"Q3771419": {
+"XIV": [
+9,
+"leggi in aula"
+],
+"XV": [
+1,
+"leggi in aula"
+],
+"XVI": [
+0,
+"aula",
+0
+]
+},
+"Q96333400": {
+"XIV": [
+4,
+"leggi in aula"
+]
+},
+"Q3771584": {
+"XIV": [
+0,
+"leggi in aula"
+]
+},
+"Q16561229": {
+"XIV": [
+41,
+"leggi in aula"
+],
+"XV": [
+8,
+"leggi in aula"
+]
+},
+"Q3772794": {
+"XIV": [
+12,
+"leggi in aula"
+]
+},
+"Q23047404": {
+"XIV": [
+41,
+"leggi in aula"
+]
+},
+"Q3775987": {
+"XIV": [
+115,
+"leggi in aula"
+]
+},
+"Q16561914": {
+"XIV": [
+93,
+"leggi in aula"
+]
+},
+"Q3776080": {
+"XIV": [
+252,
+"leggi in aula"
+],
+"XV": [
+26,
+"leggi in aula"
+]
+},
+"Q79798762": {
+"XIV": [
+27,
+"leggi in aula"
+]
+},
+"Q11703835": {
+"XIV": [
+17,
+"leggi in aula"
+],
+"XV": [
+7,
+"leggi in aula"
+],
+"XVI": [
+14,
+"aula",
+17
+]
+},
+"Q3119423": {
+"XIV": [
+55,
+"leggi in aula"
+],
+"XV": [
+32,
+"leggi in aula"
+],
+"XVI": [
+18,
+"aula",
+46
+]
+},
+"Q16562369": {
+"XIV": [
+37,
+"leggi in aula"
+],
+"XV": [
+20,
+"leggi in aula"
+],
+"XVI": [
+58,
+"aula",
+190
+]
+},
+"Q81738386": {
+"XIV": [
+172,
+"leggi in aula"
+]
+},
+"Q79798765": {
+"XIV": [
+4,
+"leggi in aula"
+]
+},
+"Q3779428": {
+"XIV": [
+0,
+"leggi in aula"
+]
+},
+"Q3779498": {
+"XIV": [
+0,
+"leggi in aula"
+]
+},
+"Q3802251": {
+"XIV": [
+41,
+"leggi in aula"
+],
+"XV": [
+2,
+"leggi in aula"
+],
+"XVI": [
+24,
+"aula",
+601
+]
+},
+"Q81158392": {
+"XIV": [
+26,
+"leggi in aula"
+]
+},
+"Q3155882": {
+"XIV": [
+24,
+"leggi in aula"
+],
+"XV": [
+24,
+"leggi in aula"
+],
+"XVI": [
+138,
+"aula",
+29
+]
+},
+"Q16566805": {
+"XIV": [
+6,
+"leggi in aula"
+]
+},
+"Q3804452": {
+"XIV": [
+8,
+"leggi in aula"
+],
+"XV": [
+1,
+"leggi in aula"
+],
+"XVI": [
+8,
+"aula",
+1
+]
+},
+"Q17375654": {
+"XIV": [
+0,
+"leggi in aula"
+]
+},
+"Q3804895": {
+"XIV": [
+44,
+"leggi in aula"
+]
+},
+"Q3809798": {
+"XIV": [
+0,
+"leggi in aula"
+],
+"XV": [
+52,
+"leggi in aula"
+],
+"XVI": [
+134,
+"aula",
+351
+]
+},
+"Q3194123": {
+"XIV": [
+78,
+"leggi in aula"
+],
+"XV": [
+2,
+"leggi in aula"
+]
+},
+"Q3813948": {
+"XIV": [
+68,
+"leggi in aula"
+],
+"XV": [
+9,
+"leggi in aula"
+]
+},
+"Q1055202": {
+"XIV": [
+18,
+"leggi in aula"
+],
+"XVI": [
+14,
+"aula",
+25
+]
+},
+"Q18715210": {
+"XIV": [
+316,
+"leggi in aula"
+]
+},
+"Q16571889": {
+"XIV": [
+202,
+"leggi in aula"
+],
+"XV": [
+40,
+"leggi in aula"
+]
+},
+"Q3833070": {
+"XIV": [
+101,
+"leggi in aula"
+],
+"XV": [
+20,
+"leggi in aula"
+],
+"XVI": [
+157,
+"aula",
+751
+]
+},
+"Q79686653": {
+"XIV": [
+116,
+"leggi in aula"
+]
+},
+"Q3836834": {
+"XIV": [
+7,
+"leggi in aula"
+],
+"XV": [
+6,
+"leggi in aula"
+],
+"XVI": [
+6,
+"aula",
+23
+]
+},
+"Q52144744": {
+"XIV": [
+2,
+"leggi in aula"
+]
+},
+"Q16573563": {
+"XIV": [
+20,
+"leggi in aula"
+],
+"XVI": [
+190,
+"aula",
+259
+]
+},
+"Q3837950": {
+"XIV": [
+330,
+"leggi in aula"
+],
+"XV": [
+19,
+"leggi in aula"
+]
+},
+"Q3838033": {
+"XIV": [
+20,
+"leggi in aula"
+],
+"XV": [
+13,
+"leggi in aula"
+],
+"XVI": [
+38,
+"aula",
+167
+]
+},
+"Q16573853": {
+"XIV": [
+120,
+"leggi in aula"
+]
+},
+"Q3838317": {
+"XIV": [
+119,
+"leggi in aula"
+],
+"XV": [
+56,
+"leggi in aula"
+],
+"XVI": [
+291,
+"aula",
+66
+]
+},
+"Q3838571": {
+"XIV": [
+125,
+"leggi in aula"
+],
+"XVI": [
+117,
+"aula",
+59
+]
+},
+"Q3838684": {
+"XIV": [
+0,
+"leggi in aula"
+],
+"XV": [
+9,
+"leggi in aula"
+]
+},
+"Q2051405": {
+"XIV": [
+22,
+"leggi in aula"
+],
+"XVI": [
+111,
+"aula",
+66
+]
+},
+"Q541458": {
+"XIV": [
+2,
+"leggi in aula"
+]
+},
+"Q79884018": {
+"XIV": [
+65,
+"leggi in aula"
+]
+},
+"Q3809258": {
+"XIV": [
+8,
+"leggi in aula"
+],
+"XV": [
+4,
+"leggi in aula"
+],
+"XVI": [
+3,
+"aula",
+3
+]
+},
+"Q597654": {
+"XIV": [
+2,
+"leggi in aula"
+],
+"XV": [
+2,
+"leggi in aula"
+],
+"XVI": [
+0,
+"aula",
+3
+]
+},
+"Q3839544": {
+"XIV": [
+85,
+"leggi in aula"
+],
+"XV": [
+37,
+"leggi in aula"
+]
+},
+"Q79422265": {
+"XIV": [
+48,
+"leggi in aula"
+]
+},
+"Q3839770": {
+"XIV": [
+8,
+"leggi in aula"
+],
+"XV": [
+15,
+"leggi in aula"
+],
+"XVI": [
+8,
+"aula",
+64
+]
+},
+"Q3839820": {
+"XIV": [
+28,
+"leggi in aula"
+]
+},
+"Q3839855": {
+"XIV": [
+11,
+"leggi in aula"
+]
+},
+"Q3839875": {
+"XIV": [
+53,
+"leggi in aula"
+]
+},
+"Q3839950": {
+"XIV": [
+139,
+"leggi in aula"
+]
+},
+"Q58230376": {
+"XIV": [
+52,
+"leggi in aula"
+]
+},
+"Q3840070": {
+"XIV": [
+44,
+"leggi in aula"
+]
+},
+"Q3840248": {
+"XIV": [
+59,
+"leggi in aula"
+],
+"XV": [
+7,
+"leggi in aula"
+],
+"XVI": [
+25,
+"aula",
+133
+]
+},
+"Q81738028": {
+"XIV": [
+97,
+"leggi in aula"
+]
+},
+"Q3844721": {
+"XIV": [
+0,
+"leggi in aula"
+],
+"XV": [
+43,
+"leggi in aula"
+],
+"XVI": [
+203,
+"aula",
+737
+]
+},
+"Q3845503": {
+"XIV": [
+120,
+"leggi in aula"
+]
+},
+"Q3845635": {
+"XIV": [
+22,
+"leggi in aula"
+]
+},
+"Q79882810": {
+"XIV": [
+38,
+"leggi in aula"
+]
+},
+"Q3845695": {
+"XIV": [
+24,
+"leggi in aula"
+],
+"XV": [
+5,
+"leggi in aula"
+],
+"XVI": [
+4,
+"aula",
+1
+]
+},
+"Q3845863": {
+"XIV": [
+22,
+"leggi in aula"
+],
+"XV": [
+12,
+"leggi in aula"
+],
+"XVI": [
+0,
+"aula",
+0
+]
+},
+"Q3845957": {
+"XIV": [
+445,
+"leggi in aula"
+],
+"XV": [
+84,
+"leggi in aula"
+]
+},
+"Q79422041": {
+"XIV": [
+0,
+"leggi in aula"
+]
+},
+"Q3846120": {
+"XIV": [
+11,
+"leggi in aula"
+],
+"XV": [
+0,
+"leggi in aula"
+]
+},
+"Q1226015": {
+"XIV": [
+1,
+"leggi in aula"
+]
+},
+"Q3846137": {
+"XIV": [
+4,
+"leggi in aula"
+],
+"XV": [
+0,
+"leggi in aula"
+]
+},
+"Q16575861": {
+"XIV": [
+158,
+"leggi in aula"
+],
+"XV": [
+4,
+"leggi in aula"
+]
+},
+"Q3557346": {
+"XIV": [
+58,
+"leggi in aula"
+],
+"XV": [
+0,
+"leggi in aula"
+],
+"XVI": [
+29,
+"aula",
+12
+]
+},
+"Q3846505": {
+"XIV": [
+99,
+"leggi in aula"
+]
+},
+"Q28112199": {
+"XIV": [
+56,
+"leggi in aula"
+]
+},
+"Q3846930": {
+"XIV": [
+32,
+"leggi in aula"
+]
+},
+"Q3847543": {
+"XIV": [
+0,
+"leggi in aula"
+],
+"XV": [
+18,
+"leggi in aula"
+],
+"XVI": [
+7,
+"aula",
+51
+]
+},
+"Q3847951": {
+"XIV": [
+21,
+"leggi in aula"
+],
+"XV": [
+14,
+"leggi in aula"
+]
+},
+"Q3848080": {
+"XIV": [
+19,
+"leggi in aula"
+],
+"XV": [
+7,
+"leggi in aula"
+],
+"XVI": [
+69,
+"aula",
+59
+]
+},
+"Q3848231": {
+"XIV": [
+22,
+"leggi in aula"
+],
+"XV": [
+17,
+"leggi in aula"
+],
+"XVI": [
+16,
+"aula",
+104
+]
+},
+"Q3848718": {
+"XIV": [
+403,
+"leggi in aula"
+]
+},
+"Q3848939": {
+"XIV": [
+31,
+"leggi in aula"
+],
+"XV": [
+25,
+"leggi in aula"
+],
+"XVI": [
+144,
+"aula",
+118
+]
+},
+"Q578993": {
+"XIV": [
+0,
+"leggi in aula"
+],
+"XV": [
+12,
+"leggi in aula"
+],
+"XVI": [
+80,
+"aula",
+1077
+]
+},
+"Q29545514": {
+"XIV": [
+4,
+"leggi in aula"
+]
+},
+"Q3849134": {
+"XIV": [
+0,
+"leggi in aula"
+],
+"XV": [
+32,
+"leggi in aula"
+],
+"XVI": [
+534,
+"aula",
+836
+]
+},
+"Q3849312": {
+"XIV": [
+125,
+"leggi in aula"
+]
+},
+"Q3851008": {
+"XIV": [
+1,
+"leggi in aula"
+]
+},
+"Q3851189": {
+"XIV": [
+58,
+"leggi in aula"
+],
+"XV": [
+1,
+"leggi in aula"
+]
+},
+"Q52420175": {
+"XIV": [
+11,
+"leggi in aula"
+]
+},
+"Q3851293": {
+"XIV": [
+22,
+"leggi in aula"
+]
+},
+"Q3851340": {
+"XIV": [
+0,
+"leggi in aula"
+],
+"XV": [
+9,
+"leggi in aula"
+],
+"XVI": [
+18,
+"aula",
+0
+]
+},
+"Q3851384": {
+"XIV": [
+16,
+"leggi in aula"
+]
+},
+"Q1118549": {
+"XIV": [
+155,
+"leggi in aula"
+],
+"XVI": [
+284,
+"aula",
+758
+]
+},
+"Q60154901": {
+"XIV": [
+5,
+"leggi in aula"
+]
+},
+"Q16576995": {
+"XIV": [
+30,
+"leggi in aula"
+],
+"XV": [
+1,
+"leggi in aula"
+],
+"XVI": [
+12,
+"aula",
+15
+]
+},
+"Q3852400": {
+"XIV": [
+223,
+"leggi in aula"
+]
+},
+"Q3852604": {
+"XIV": [
+11,
+"leggi in aula"
+],
+"XV": [
+0,
+"leggi in aula"
+]
+},
+"Q3852630": {
+"XIV": [
+97,
+"leggi in aula"
+],
+"XV": [
+26,
+"leggi in aula"
+],
+"XVI": [
+11,
+"aula",
+273
+]
+},
+"Q3852636": {
+"XIV": [
+82,
+"leggi in aula"
+],
+"XV": [
+13,
+"leggi in aula"
+],
+"XVI": [
+4682,
+"aula",
+24
+]
+},
+"Q3852680": {
+"XIV": [
+28,
+"leggi in aula"
+],
+"XV": [
+6,
+"leggi in aula"
+],
+"XVI": [
+76,
+"aula",
+249
+]
+},
+"Q3852713": {
+"XIV": [
+32,
+"leggi in aula"
+]
+},
+"Q3852780": {
+"XIV": [
+43,
+"leggi in aula"
+]
+},
+"Q3852795": {
+"XIV": [
+55,
+"leggi in aula"
+],
+"XV": [
+1,
+"leggi in aula"
+]
+},
+"Q3852857": {
+"XIV": [
+7,
+"leggi in aula"
+],
+"XV": [
+1,
+"leggi in aula"
+]
+},
+"Q23047392": {
+"XIV": [
+10,
+"leggi in aula"
+]
+},
+"Q15212457": {
+"XIV": [
+0,
+"leggi in aula"
+],
+"XV": [
+8,
+"leggi in aula"
+],
+"XVI": [
+65,
+"aula",
+201
+]
+},
+"Q80013505": {
+"XIV": [
+36,
+"leggi in aula"
+]
+},
+"Q3856793": {
+"XIV": [
+132,
+"leggi in aula"
+]
+},
+"Q16578327": {
+"XIV": [
+31,
+"leggi in aula"
+],
+"XV": [
+4,
+"leggi in aula"
+]
+},
+"Q3856833": {
+"XIV": [
+88,
+"leggi in aula"
+],
+"XV": [
+16,
+"leggi in aula"
+],
+"XVI": [
+72,
+"aula",
+101
+]
+},
+"Q79658801": {
+"XIV": [
+113,
+"leggi in aula"
+]
+},
+"Q110814127": {
+"XIV": [
+2,
+"leggi in aula"
+]
+},
+"Q3860840": {
+"XIV": [
+20,
+"leggi in aula"
+]
+},
+"Q3874766": {
+"XIV": [
+37,
+"leggi in aula"
+]
+},
+"Q3875866": {
+"XIV": [
+22,
+"leggi in aula"
+],
+"XVI": [
+0,
+"aula",
+4
+]
+},
+"Q3876096": {
+"XIV": [
+4,
+"leggi in aula"
+],
+"XV": [
+0,
+"leggi in aula"
+],
+"XVI": [
+70,
+"aula",
+365
+]
+},
+"Q473177": {
+"XIV": [
+4,
+"leggi in aula"
+],
+"XV": [
+1,
+"leggi in aula"
+],
+"XVI": [
+0,
+"aula",
+6
+]
+},
+"Q16582376": {
+"XIV": [
+54,
+"leggi in aula"
+],
+"XV": [
+8,
+"leggi in aula"
+]
+},
+"Q3876219": {
+"XIV": [
+1,
+"leggi in aula"
+]
+},
+"Q3876343": {
+"XIV": [
+127,
+"leggi in aula"
+],
+"XV": [
+0,
+"leggi in aula"
+]
+},
+"Q3514464": {
+"XIV": [
+92,
+"leggi in aula"
+],
+"XVI": [
+36,
+"aula",
+21
+]
+},
+"Q3876576": {
+"XIV": [
+25,
+"leggi in aula"
+]
+},
+"Q3877203": {
+"XIV": [
+20,
+"leggi in aula"
+],
+"XV": [
+3,
+"leggi in aula"
+]
+},
+"Q3877231": {
+"XIV": [
+62,
+"leggi in aula"
+]
+},
+"Q3342241": {
+"XIV": [
+54,
+"leggi in aula"
+]
+},
+"Q3879203": {
+"XIV": [
+41,
+"leggi in aula"
+]
+},
+"Q3881622": {
+"XIV": [
+24,
+"leggi in aula"
+],
+"XV": [
+5,
+"leggi in aula"
+],
+"XVI": [
+32,
+"aula",
+12
+]
+},
+"Q80691894": {
+"XIV": [
+42,
+"leggi in aula"
+]
+},
+"Q3886985": {
+"XIV": [
+24,
+"leggi in aula"
+],
+"XV": [
+1,
+"leggi in aula"
+]
+},
+"Q3887014": {
+"XIV": [
+36,
+"leggi in aula"
+],
+"XV": [
+22,
+"leggi in aula"
+],
+"XVI": [
+23,
+"aula",
+15
+]
+},
+"Q3362601": {
+"XIV": [
+0,
+"leggi in aula"
+],
+"XV": [
+0,
+"leggi in aula"
+],
+"XVI": [
+0,
+"aula",
+13
+]
+},
+"Q3893889": {
+"XIV": [
+241,
+"leggi in aula"
+],
+"XV": [
+0,
+"leggi in aula"
+]
+},
+"Q63034837": {
+"XIV": [
+13,
+"leggi in aula"
+]
+},
+"Q18613296": {
+"XIV": [
+1,
+"leggi in aula"
+]
+},
+"Q1071031": {
+"XIV": [
+20,
+"leggi in aula"
+],
+"XV": [
+0,
+"leggi in aula"
+],
+"XVI": [
+16,
+"aula",
+84
+]
+},
+"Q94998324": {
+"XIV": [
+14,
+"leggi in aula"
+]
+},
+"Q3894445": {
+"XIV": [
+10,
+"leggi in aula"
+],
+"XV": [
+14,
+"leggi in aula"
+],
+"XVI": [
+79,
+"aula",
+1594
+]
+},
+"Q110814064": {
+"XIV": [
+42,
+"leggi in aula"
+]
+},
+"Q3897161": {
+"XIV": [
+0,
+"leggi in aula"
+]
+},
+"Q15303869": {
+"XIV": [
+82,
+"leggi in aula"
+],
+"XV": [
+29,
+"leggi in aula"
+]
+},
+"Q47556": {
+"XIV": [
+26,
+"leggi in aula"
+],
+"XV": [
+0,
+"leggi in aula"
+],
+"XVI": [
+41,
+"aula",
+5
+]
+},
+"Q3902965": {
+"XIV": [
+77,
+"leggi in aula"
+]
+},
+"Q3902973": {
+"XIV": [
+10,
+"leggi in aula"
+],
+"XV": [
+9,
+"leggi in aula"
+]
+},
+"Q16039399": {
+"XIV": [
+32,
+"leggi in aula"
+]
+},
+"Q3903009": {
+"XIV": [
+81,
+"leggi in aula"
+],
+"XV": [
+23,
+"leggi in aula"
+]
+},
+"Q922984": {
+"XIV": [
+136,
+"leggi in aula"
+],
+"XV": [
+1,
+"leggi in aula"
+],
+"XVI": [
+87,
+"aula",
+512
+]
+},
+"Q3903119": {
+"XIV": [
+290,
+"leggi in aula"
+],
+"XV": [
+14,
+"leggi in aula"
+],
+"XVI": [
+403,
+"aula",
+617
+]
+},
+"Q7191922": {
+"XIV": [
+372,
+"leggi in aula"
+]
+},
+"Q3903371": {
+"XIV": [
+7,
+"leggi in aula"
+],
+"XV": [
+2,
+"leggi in aula"
+],
+"XVI": [
+4,
+"aula",
+29
+]
+},
+"Q3903660": {
+"XIV": [
+110,
+"leggi in aula"
+],
+"XV": [
+29,
+"leggi in aula"
+]
+},
+"Q3903879": {
+"XIV": [
+82,
+"leggi in aula"
+],
+"XV": [
+22,
+"leggi in aula"
+]
+},
+"Q3903884": {
+"XIV": [
+95,
+"leggi in aula"
+]
+},
+"Q79851062": {
+"XIV": [
+61,
+"leggi in aula"
+]
+},
+"Q16590457": {
+"XIV": [
+90,
+"leggi in aula"
+]
+},
+"Q16590535": {
+"XIV": [
+41,
+"leggi in aula"
+],
+"XV": [
+0,
+"leggi in aula"
+]
+},
+"Q3904297": {
+"XIV": [
+85,
+"leggi in aula"
+],
+"XVI": [
+64,
+"aula",
+32
+]
+},
+"Q3388783": {
+"XIV": [
+32,
+"leggi in aula"
+],
+"XV": [
+15,
+"leggi in aula"
+],
+"XVI": [
+171,
+"aula",
+118
+]
+},
+"Q3929221": {
+"XIV": [
+53,
+"leggi in aula"
+],
+"XV": [
+3,
+"leggi in aula"
+],
+"XVI": [
+110,
+"aula",
+511
+]
+},
+"Q16594302": {
+"XIV": [
+28,
+"leggi in aula"
+],
+"XV": [
+5,
+"leggi in aula"
+]
+},
+"Q3929908": {
+"XIV": [
+82,
+"leggi in aula"
+],
+"XV": [
+9,
+"leggi in aula"
+]
+},
+"Q19060515": {
+"XIV": [
+32,
+"leggi in aula"
+]
+},
+"Q3932676": {
+"XIV": [
+48,
+"leggi in aula"
+],
+"XV": [
+2,
+"leggi in aula"
+]
+},
+"Q3933026": {
+"XIV": [
+147,
+"leggi in aula"
+],
+"XV": [
+0,
+"leggi in aula"
+],
+"XVI": [
+57,
+"aula",
+31
+]
+},
+"Q18923611": {
+"XIV": [
+29,
+"leggi in aula"
+]
+},
+"Q3934410": {
+"XIV": [
+20,
+"leggi in aula"
+],
+"XV": [
+1,
+"leggi in aula"
+]
+},
+"Q695875": {
+"XIV": [
+22,
+"leggi in aula"
+]
+},
+"Q3934518": {
+"XIV": [
+142,
+"leggi in aula"
+],
+"XV": [
+4,
+"leggi in aula"
+]
+},
+"Q13634274": {
+"XIV": [
+25,
+"leggi in aula"
+],
+"XV": [
+14,
+"leggi in aula"
+],
+"XVI": [
+16,
+"aula",
+25
+]
+},
+"Q3934529": {
+"XIV": [
+68,
+"leggi in aula"
+],
+"XV": [
+4,
+"leggi in aula"
+]
+},
+"Q81277368": {
+"XIV": [
+13,
+"leggi in aula"
+]
+},
+"Q110814126": {
+"XIV": [
+3,
+"leggi in aula"
+]
+},
+"Q3934651": {
+"XIV": [
+30,
+"leggi in aula"
+],
+"XV": [
+2,
+"leggi in aula"
+]
+},
+"Q3936104": {
+"XIV": [
+18,
+"leggi in aula"
+],
+"XV": [
+0,
+"leggi in aula"
+]
+},
+"Q3938535": {
+"XIV": [
+81,
+"leggi in aula"
+],
+"XV": [
+13,
+"leggi in aula"
+]
+},
+"Q3938561": {
+"XIV": [
+6,
+"leggi in aula"
+]
+},
+"Q3938595": {
+"XIV": [
+39,
+"leggi in aula"
+]
+},
+"Q110813977": {
+"XIV": [
+2,
+"leggi in aula"
+]
+},
+"Q61655182": {
+"XIV": [
+12,
+"leggi in aula"
+]
+},
+"Q3938844": {
+"XIV": [
+178,
+"leggi in aula"
+],
+"XV": [
+52,
+"leggi in aula"
+],
+"XVI": [
+1635,
+"aula",
+79
+]
+},
+"Q17375630": {
+"XIV": [
+98,
+"leggi in aula"
+]
+},
+"Q3939130": {
+"XIV": [
+75,
+"leggi in aula"
+],
+"XV": [
+1,
+"leggi in aula"
+]
+},
+"Q586973": {
+"XIV": [
+103,
+"leggi in aula"
+],
+"XV": [
+29,
+"leggi in aula"
+]
+},
+"Q3939234": {
+"XIV": [
+42,
+"leggi in aula"
+],
+"XV": [
+25,
+"leggi in aula"
+],
+"XVI": [
+216,
+"aula",
+636
+]
+},
+"Q3939939": {
+"XIV": [
+36,
+"leggi in aula"
+],
+"XV": [
+1,
+"leggi in aula"
+]
+},
+"Q3939954": {
+"XIV": [
+0,
+"leggi in aula"
+]
+},
+"Q16597960": {
+"XIV": [
+55,
+"leggi in aula"
+],
+"XV": [
+11,
+"leggi in aula"
+],
+"XVI": [
+93,
+"aula",
+481
+]
+},
+"Q16598731": {
+"XIV": [
+21,
+"leggi in aula"
+],
+"XV": [
+6,
+"leggi in aula"
+]
+},
+"Q15558151": {
+"XIV": [
+143,
+"leggi in aula"
+],
+"XV": [
+5,
+"leggi in aula"
+]
+},
+"Q3944221": {
+"XIV": [
+2,
+"leggi in aula"
+],
+"XV": [
+1,
+"leggi in aula"
+],
+"XVI": [
+2,
+"aula",
+8
+]
+},
+"Q3945932": {
+"XIV": [
+65,
+"leggi in aula"
+]
+},
+"Q3945976": {
+"XIV": [
+9,
+"leggi in aula"
+],
+"XV": [
+3,
+"leggi in aula"
+]
+},
+"Q3946001": {
+"XIV": [
+8,
+"leggi in aula"
+],
+"XV": [
+0,
+"leggi in aula"
+]
+},
+"Q3946104": {
+"XIV": [
+5,
+"leggi in aula"
+]
+},
+"Q954698": {
+"XIV": [
+26,
+"leggi in aula"
+],
+"XV": [
+4,
+"leggi in aula"
+]
+},
+"Q3948212": {
+"XIV": [
+79,
+"leggi in aula"
+]
+},
+"Q15589948": {
+"XIV": [
+3,
+"leggi in aula"
+]
+},
+"Q110814121": {
+"XIV": [
+64,
+"leggi in aula"
+]
+},
+"Q3950927": {
+"XIV": [
+95,
+"leggi in aula"
+]
+},
+"Q3951075": {
+"XIV": [
+9,
+"leggi in aula"
+]
+},
+"Q3956086": {
+"XIV": [
+7,
+"leggi in aula"
+],
+"XV": [
+0,
+"leggi in aula"
+],
+"XVI": [
+92,
+"aula",
+123
+]
+},
+"Q81208800": {
+"XIV": [
+86,
+"leggi in aula"
+]
+},
+"Q84316314": {
+"XIV": [
+0,
+"leggi in aula"
+]
+},
+"Q58276966": {
+"XIV": [
+90,
+"leggi in aula"
+]
+},
+"Q3956269": {
+"XIV": [
+87,
+"leggi in aula"
+]
+},
+"Q3958502": {
+"XIV": [
+10,
+"leggi in aula"
+],
+"XV": [
+5,
+"leggi in aula"
+]
+},
+"Q79422275": {
+"XIV": [
+21,
+"leggi in aula"
+]
+},
+"Q16268656": {
+"XIV": [
+68,
+"leggi in aula"
+]
+},
+"Q3961296": {
+"XIV": [
+8,
+"leggi in aula"
+],
+"XV": [
+0,
+"leggi in aula"
+]
+},
+"Q3972562": {
+"XIV": [
+57,
+"leggi in aula"
+]
+},
+"Q3972702": {
+"XIV": [
+76,
+"leggi in aula"
+],
+"XV": [
+24,
+"leggi in aula"
+],
+"XVI": [
+48,
+"aula",
+518
+]
+},
+"Q2338481": {
+"XIV": [
+0,
+"leggi in aula"
+],
+"XVI": [
+79,
+"aula",
+873
+]
+},
+"Q3972781": {
+"XIV": [
+3,
+"leggi in aula"
+]
+},
+"Q3984328": {
+"XIV": [
+0,
+"leggi in aula"
+],
+"XV": [
+20,
+"leggi in aula"
+],
+"XVI": [
+289,
+"aula",
+529
+]
+},
+"Q15649684": {
+"XIV": [
+151,
+"leggi in aula"
+],
+"XV": [
+9,
+"leggi in aula"
+],
+"XVI": [
+66,
+"aula",
+199
+]
+},
+"Q1312739": {
+"XIV": [
+146,
+"leggi in aula"
+],
+"XV": [
+15,
+"leggi in aula"
+]
+},
+"Q3992765": {
+"XIV": [
+74,
+"leggi in aula"
+],
+"XV": [
+17,
+"leggi in aula"
+],
+"XVI": [
+38,
+"aula",
+287
+]
+},
+"Q4002809": {
+"XIV": [
+8,
+"leggi in aula"
+],
+"XV": [
+5,
+"leggi in aula"
+],
+"XVI": [
+7,
+"aula",
+0
+]
+},
+"Q3547806": {
+"XIV": [
+108,
+"leggi in aula"
+]
+},
+"Q4002820": {
+"XIV": [
+9,
+"leggi in aula"
+],
+"XV": [
+7,
+"leggi in aula"
+],
+"XVI": [
+22,
+"aula",
+16
+]
+},
+"Q63079938": {
+"XIV": [
+171,
+"leggi in aula"
+]
+},
+"Q4008361": {
+"XIV": [
+25,
+"leggi in aula"
+],
+"XV": [
+18,
+"leggi in aula"
+]
+},
+"Q4008624": {
+"XIV": [
+0,
+"leggi in aula"
+],
+"XV": [
+0,
+"leggi in aula"
+]
+},
+"Q3554631": {
+"XIV": [
+12,
+"leggi in aula"
+],
+"XV": [
+0,
+"leggi in aula"
+]
+},
+"Q79798666": {
+"XIV": [
+15,
+"leggi in aula"
+]
+},
+"Q4013216": {
+"XIV": [
+8,
+"leggi in aula"
+],
+"XV": [
+0,
+"leggi in aula"
+]
+},
+"Q4013404": {
+"XIV": [
+21,
+"leggi in aula"
+]
+},
+"Q15711787": {
+"XIV": [
+24,
+"leggi in aula"
+]
+},
+"Q4015704": {
+"XIV": [
+0,
+"leggi in aula"
+],
+"XVI": [
+57,
+"aula",
+296
+]
+},
+"Q4018027": {
+"XIV": [
+79,
+"leggi in aula"
+],
+"XV": [
+1,
+"leggi in aula"
+],
+"XVI": [
+29,
+"aula",
+27
+]
+},
+"Q3605754": {
+"XV": [
+2,
+"leggi in aula"
+]
+},
+"Q3608175": {
+"XV": [
+16,
+"leggi in aula"
+]
+},
+"Q3608292": {
+"XV": [
+30,
+"leggi in aula"
+]
+},
+"Q3609394": {
+"XV": [
+6,
+"leggi in aula"
+]
+},
+"Q15078797": {
+"XV": [
+35,
+"leggi in aula"
+]
+},
+"Q3610164": {
+"XV": [
+3,
+"leggi in aula"
+],
+"XVI": [
+53,
+"aula",
+218
+]
+},
+"Q3613508": {
+"XV": [
+3,
+"leggi in aula"
+]
+},
+"Q3613555": {
+"XV": [
+4,
+"leggi in aula"
+],
+"XVI": [
+66,
+"aula",
+249
+]
+},
+"Q3614121": {
+"XV": [
+11,
+"leggi in aula"
+],
+"XVI": [
+77,
+"aula",
+41
+]
+},
+"Q3615909": {
+"XV": [
+0,
+"leggi in aula"
+],
+"XVI": [
+41,
+"aula",
+52
+]
+},
+"Q3615985": {
+"XV": [
+22,
+"leggi in aula"
+]
+},
+"Q16526380": {
+"XV": [
+0,
+"leggi in aula"
+],
+"XVI": [
+9,
+"aula",
+7
+]
+},
+"Q3616756": {
+"XV": [
+12,
+"leggi in aula"
+]
+},
+"Q3616765": {
+"XV": [
+0,
+"leggi in aula"
+]
+},
+"Q3616859": {
+"XV": [
+17,
+"leggi in aula"
+],
+"XVI": [
+84,
+"aula",
+1337
+]
+},
+"Q3616895": {
+"XV": [
+20,
+"leggi in aula"
+]
+},
+"Q3616922": {
+"XV": [
+0,
+"leggi in aula"
+],
+"XVI": [
+34,
+"aula",
+5
+]
+},
+"Q3616933": {
+"XV": [
+11,
+"leggi in aula"
+],
+"XVI": [
+437,
+"aula",
+122
+]
+},
+"Q3617047": {
+"XV": [
+7,
+"leggi in aula"
+]
+},
+"Q3617153": {
+"XV": [
+12,
+"leggi in aula"
+]
+},
+"Q16526754": {
+"XV": [
+7,
+"leggi in aula"
+]
+},
+"Q16526826": {
+"XV": [
+6,
+"leggi in aula"
+],
+"XVI": [
+62,
+"aula",
+408
+]
+},
+"Q3617746": {
+"XV": [
+2,
+"leggi in aula"
+]
+},
+"Q16526986": {
+"XV": [
+21,
+"leggi in aula"
+],
+"XVI": [
+189,
+"aula",
+282
+]
+},
+"Q3618963": {
+"XV": [
+1,
+"leggi in aula"
+],
+"XVI": [
+8,
+"aula",
+2
+]
+},
+"Q13634401": {
+"XV": [
+14,
+"leggi in aula"
+]
+},
+"Q3619291": {
+"XV": [
+42,
+"leggi in aula"
+],
+"XVI": [
+1192,
+"aula",
+1040
+]
+},
+"Q3619322": {
+"XV": [
+4,
+"leggi in aula"
+],
+"XVI": [
+18,
+"aula",
+0
+]
+},
+"Q47547": {
+"XV": [
+0,
+"leggi in aula"
+],
+"XVI": [
+534,
+"aula",
+269
+]
+},
+"Q3619559": {
+"XV": [
+19,
+"leggi in aula"
+]
+},
+"Q3619725": {
+"XV": [
+6,
+"leggi in aula"
+],
+"XVI": [
+19,
+"aula",
+12
+]
+},
+"Q3619905": {
+"XV": [
+4,
+"leggi in aula"
+],
+"XVI": [
+61,
+"aula",
+97
+]
+},
+"Q604531": {
+"XV": [
+3,
+"leggi in aula"
+],
+"XVI": [
+83,
+"aula",
+199
+]
+},
+"Q3620121": {
+"XV": [
+6,
+"leggi in aula"
+]
+},
+"Q16527761": {
+"XV": [
+12,
+"leggi in aula"
+]
+},
+"Q16527786": {
+"XV": [
+0,
+"leggi in aula"
+]
+},
+"Q1055461": {
+"XV": [
+0,
+"leggi in aula"
+],
+"XVI": [
+41,
+"aula",
+190
+]
+},
+"Q3623604": {
+"XV": [
+14,
+"leggi in aula"
+]
+},
+"Q3624592": {
+"XV": [
+6,
+"leggi in aula"
+]
+},
+"Q3629692": {
+"XV": [
+17,
+"leggi in aula"
+]
+},
+"Q3629817": {
+"XV": [
+21,
+"leggi in aula"
+],
+"XVI": [
+277,
+"aula",
+249
+]
+},
+"Q2248530": {
+"XV": [
+33,
+"leggi in aula"
+],
+"XVI": [
+233,
+"aula",
+112
+]
+},
+"Q3645689": {
+"XV": [
+3,
+"leggi in aula"
+],
+"XVI": [
+32,
+"aula",
+52
+]
+},
+"Q3645839": {
+"XV": [
+47,
+"leggi in aula"
+]
+},
+"Q3645852": {
+"XV": [
+4,
+"leggi in aula"
+],
+"XVI": [
+1,
+"aula",
+42
+]
+},
+"Q3651566": {
+"XV": [
+6,
+"leggi in aula"
+]
+},
+"Q3659195": {
+"XV": [
+5,
+"leggi in aula"
+],
+"XVI": [
+37,
+"aula",
+257
+]
+},
+"Q3659219": {
+"XV": [
+17,
+"leggi in aula"
+],
+"XVI": [
+42,
+"aula",
+39
+]
+},
+"Q3659636": {
+"XV": [
+0,
+"leggi in aula"
+]
+},
+"Q3660245": {
+"XV": [
+5,
+"leggi in aula"
+],
+"XVI": [
+82,
+"aula",
+5
+]
+},
+"Q1071053": {
+"XV": [
+0,
+"leggi in aula"
+],
+"XVI": [
+130,
+"aula",
+384
+]
+},
+"Q3665405": {
+"XV": [
+0,
+"leggi in aula"
+]
+},
+"Q3677338": {
+"XV": [
+6,
+"leggi in aula"
+]
+},
+"Q3677351": {
+"XV": [
+2,
+"leggi in aula"
+]
+},
+"Q15976366": {
+"XV": [
+1,
+"leggi in aula"
+]
+},
+"Q3695124": {
+"XV": [
+0,
+"leggi in aula"
+]
+},
+"Q3695460": {
+"XV": [
+0,
+"leggi in aula"
+],
+"XVI": [
+14,
+"aula",
+33
+]
+},
+"Q3701785": {
+"XV": [
+3,
+"leggi in aula"
+]
+},
+"Q784785": {
+"XV": [
+5,
+"leggi in aula"
+]
+},
+"Q3701956": {
+"XV": [
+17,
+"leggi in aula"
+]
+},
+"Q3702009": {
+"XV": [
+2,
+"leggi in aula"
+],
+"XVI": [
+42,
+"aula",
+47
+]
+},
+"Q15972663": {
+"XV": [
+39,
+"leggi in aula"
+]
+},
+"Q3713098": {
+"XV": [
+0,
+"leggi in aula"
+]
+},
+"Q3713288": {
+"XV": [
+6,
+"leggi in aula"
+],
+"XVI": [
+18,
+"aula",
+20
+]
+},
+"Q3713683": {
+"XV": [
+2,
+"leggi in aula"
+],
+"XVI": [
+144,
+"aula",
+199
+]
+},
+"Q3713696": {
+"XV": [
+3,
+"leggi in aula"
+]
+},
+"Q3713702": {
+"XV": [
+11,
+"leggi in aula"
+]
+},
+"Q3713707": {
+"XV": [
+14,
+"leggi in aula"
+]
+},
+"Q15961970": {
+"XV": [
+16,
+"leggi in aula"
+]
+},
+"Q15961968": {
+"XV": [
+1,
+"leggi in aula"
+]
+},
+"Q3722940": {
+"XV": [
+12,
+"leggi in aula"
+]
+},
+"Q3723227": {
+"XV": [
+16,
+"leggi in aula"
+],
+"XVI": [
+0,
+"aula",
+0
+]
+},
+"Q3723247": {
+"XV": [
+3,
+"leggi in aula"
+],
+"XVI": [
+45,
+"aula",
+111
+]
+},
+"Q3723925": {
+"XV": [
+12,
+"leggi in aula"
+],
+"XVI": [
+145,
+"aula",
+166
+]
+},
+"Q3723996": {
+"XV": [
+1,
+"leggi in aula"
+]
+},
+"Q3724245": {
+"XV": [
+6,
+"leggi in aula"
+],
+"XVI": [
+103,
+"aula",
+313
+]
+},
+"Q3725703": {
+"XV": [
+24,
+"leggi in aula"
+],
+"XVI": [
+59,
+"aula",
+349
+]
+},
+"Q3725757": {
+"XV": [
+1,
+"leggi in aula"
+],
+"XVI": [
+54,
+"aula",
+458
+]
+},
+"Q3725850": {
+"XV": [
+31,
+"leggi in aula"
+],
+"XVI": [
+45,
+"aula",
+413
+]
+},
+"Q3725929": {
+"XV": [
+7,
+"leggi in aula"
+]
+},
+"Q16554292": {
+"XV": [
+3,
+"leggi in aula"
+]
+},
+"Q15942109": {
+"XV": [
+8,
+"leggi in aula"
+],
+"XVI": [
+1,
+"aula",
+4
+]
+},
+"Q3736389": {
+"XV": [
+3,
+"leggi in aula"
+]
+},
+"Q3737604": {
+"XV": [
+6,
+"leggi in aula"
+]
+},
+"Q3738078": {
+"XV": [
+0,
+"leggi in aula"
+]
+},
+"Q3741571": {
+"XV": [
+13,
+"leggi in aula"
+]
+},
+"Q3741850": {
+"XV": [
+29,
+"leggi in aula"
+],
+"XVI": [
+621,
+"aula",
+694
+]
+},
+"Q15936324": {
+"XV": [
+1,
+"leggi in aula"
+],
+"XVI": [
+43,
+"aula",
+116
+]
+},
+"Q3742103": {
+"XV": [
+14,
+"leggi in aula"
+]
+},
+"Q3742622": {
+"XV": [
+0,
+"leggi in aula"
+],
+"XVI": [
+13,
+"aula",
+24
+]
+},
+"Q3742653": {
+"XV": [
+10,
+"leggi in aula"
+]
+},
+"Q3745858": {
+"XV": [
+5,
+"leggi in aula"
+],
+"XVI": [
+15,
+"aula",
+44
+]
+},
+"Q3472189": {
+"XV": [
+2,
+"leggi in aula"
+],
+"XVI": [
+28,
+"aula",
+34
+]
+},
+"Q3746509": {
+"XV": [
+0,
+"leggi in aula"
+]
+},
+"Q3749505": {
+"XV": [
+32,
+"leggi in aula"
+]
+},
+"Q3749526": {
+"XV": [
+0,
+"leggi in aula"
+]
+},
+"Q3749659": {
+"XV": [
+17,
+"leggi in aula"
+],
+"XVI": [
+135,
+"aula",
+139
+]
+},
+"Q3749884": {
+"XV": [
+1,
+"leggi in aula"
+],
+"XVI": [
+2,
+"aula",
+3
+]
+},
+"Q3749967": {
+"XV": [
+0,
+"leggi in aula"
+]
+},
+"Q937258": {
+"XV": [
+8,
+"leggi in aula"
+]
+},
+"Q3080973": {
+"XV": [
+1,
+"leggi in aula"
+],
+"XVI": [
+0,
+"aula",
+0
+]
+},
+"Q3750146": {
+"XV": [
+0,
+"leggi in aula"
+],
+"XVI": [
+40,
+"aula",
+7
+]
+},
+"Q19545440": {
+"XV": [
+16,
+"leggi in aula"
+]
+},
+"Q2251620": {
+"XV": [
+13,
+"leggi in aula"
+],
+"XVI": [
+108,
+"aula",
+68
+]
+},
+"Q3750476": {
+"XV": [
+21,
+"leggi in aula"
+]
+},
+"Q3750501": {
+"XV": [
+1,
+"leggi in aula"
+],
+"XVI": [
+4,
+"aula",
+54
+]
+},
+"Q3750607": {
+"XV": [
+5,
+"leggi in aula"
+]
+},
+"Q15791568": {
+"XV": [
+2,
+"leggi in aula"
+],
+"XVI": [
+36,
+"aula",
+289
+]
+},
+"Q3751214": {
+"XV": [
+5,
+"leggi in aula"
+],
+"XVI": [
+56,
+"aula",
+106
+]
+},
+"Q1442626": {
+"XV": [
+5,
+"leggi in aula"
+],
+"XVI": [
+234,
+"aula",
+574
+]
+},
+"Q3751573": {
+"XV": [
+39,
+"leggi in aula"
+]
+},
+"Q3388667": {
+"XV": [
+7,
+"leggi in aula"
+]
+},
+"Q3756547": {
+"XV": [
+54,
+"leggi in aula"
+]
+},
+"Q3756979": {
+"XV": [
+41,
+"leggi in aula"
+]
+},
+"Q3759822": {
+"XV": [
+13,
+"leggi in aula"
+]
+},
+"Q15917017": {
+"XV": [
+3,
+"leggi in aula"
+],
+"XVI": [
+15,
+"aula",
+272
+]
+},
+"Q3761997": {
+"XV": [
+3,
+"leggi in aula"
+]
+},
+"Q3762469": {
+"XV": [
+3,
+"leggi in aula"
+],
+"XVI": [
+45,
+"aula",
+210
+]
+},
+"Q3762506": {
+"XV": [
+5,
+"leggi in aula"
+],
+"XVI": [
+44,
+"aula",
+48
+]
+},
+"Q1250075": {
+"XV": [
+9,
+"leggi in aula"
+],
+"XVI": [
+17,
+"aula",
+3
+]
+},
+"Q3762642": {
+"XV": [
+8,
+"leggi in aula"
+]
+},
+"Q3762681": {
+"XV": [
+25,
+"leggi in aula"
+],
+"XVI": [
+212,
+"aula",
+195
+]
+},
+"Q3762880": {
+"XV": [
+22,
+"leggi in aula"
+]
+},
+"Q3763041": {
+"XV": [
+1,
+"leggi in aula"
+]
+},
+"Q3763282": {
+"XV": [
+33,
+"leggi in aula"
+],
+"XVI": [
+186,
+"aula",
+488
+]
+},
+"Q3763335": {
+"XV": [
+8,
+"leggi in aula"
+]
+},
+"Q3763486": {
+"XV": [
+0,
+"leggi in aula"
+],
+"XVI": [
+8,
+"aula",
+24
+]
+},
+"Q15888162": {
+"XV": [
+3,
+"leggi in aula"
+],
+"XVI": [
+37,
+"aula",
+45
+]
+},
+"Q15886083": {
+"XV": [
+36,
+"leggi in aula"
+],
+"XVI": [
+96,
+"aula",
+437
+]
+},
+"Q23047408": {
+"XV": [
+7,
+"leggi in aula"
+]
+},
+"Q3764585": {
+"XV": [
+1,
+"leggi in aula"
+],
+"XVI": [
+27,
+"aula",
+33
+]
+},
+"Q3764590": {
+"XV": [
+25,
+"leggi in aula"
+]
+},
+"Q3764738": {
+"XV": [
+6,
+"leggi in aula"
+]
+},
+"Q451791": {
+"XV": [
+1,
+"leggi in aula"
+],
+"XVI": [
+0,
+"aula",
+10
+]
+},
+"Q3765330": {
+"XV": [
+0,
+"leggi in aula"
+]
+},
+"Q3765347": {
+"XV": [
+4,
+"leggi in aula"
+]
+},
+"Q15888286": {
+"XV": [
+0,
+"leggi in aula"
+]
+},
+"Q543783": {
+"XV": [
+11,
+"leggi in aula"
+],
+"XVI": [
+13,
+"aula",
+27
+]
+},
+"Q3765634": {
+"XV": [
+0,
+"leggi in aula"
+],
+"XVI": [
+0,
+"aula",
+1
+]
+},
+"Q3765757": {
+"XV": [
+0,
+"leggi in aula"
+],
+"XVI": [
+8,
+"aula",
+32
+]
+},
+"Q3767066": {
+"XV": [
+7,
+"leggi in aula"
+]
+},
+"Q3767132": {
+"XV": [
+0,
+"leggi in aula"
+],
+"XVI": [
+0,
+"aula",
+0
+]
+},
+"Q3768024": {
+"XV": [
+4,
+"leggi in aula"
+]
+},
+"Q16560169": {
+"XV": [
+8,
+"leggi in aula"
+],
+"XVI": [
+35,
+"aula",
+73
+]
+},
+"Q649382": {
+"XV": [
+5,
+"leggi in aula"
+],
+"XVI": [
+52,
+"aula",
+2075
+]
+},
+"Q3769250": {
+"XV": [
+9,
+"leggi in aula"
+],
+"XVI": [
+10,
+"aula",
+21
+]
+},
+"Q202209": {
+"XV": [
+0,
+"leggi in aula"
+]
+},
+"Q16268625": {
+"XV": [
+1,
+"leggi in aula"
+]
+},
+"Q3769971": {
+"XV": [
+2,
+"leggi in aula"
+],
+"XVI": [
+2,
+"aula",
+82
+]
+},
+"Q3770028": {
+"XV": [
+11,
+"leggi in aula"
+]
+},
+"Q16268272": {
+"XV": [
+1,
+"leggi in aula"
+]
+},
+"Q3770350": {
+"XV": [
+36,
+"leggi in aula"
+],
+"XVI": [
+128,
+"aula",
+58
+]
+},
+"Q3770413": {
+"XV": [
+2,
+"leggi in aula"
+]
+},
+"Q16560780": {
+"XV": [
+10,
+"leggi in aula"
+]
+},
+"Q3108084": {
+"XV": [
+22,
+"leggi in aula"
+]
+},
+"Q3771057": {
+"XV": [
+3,
+"leggi in aula"
+]
+},
+"Q3771119": {
+"XV": [
+5,
+"leggi in aula"
+],
+"XVI": [
+47,
+"aula",
+0
+]
+},
+"Q3771374": {
+"XV": [
+4,
+"leggi in aula"
+],
+"XVI": [
+105,
+"aula",
+173
+]
+},
+"Q16561076": {
+"XV": [
+11,
+"leggi in aula"
+]
+},
+"Q3771687": {
+"XV": [
+9,
+"leggi in aula"
+],
+"XVI": [
+13,
+"aula",
+75
+]
+},
+"Q3771688": {
+"XV": [
+3,
+"leggi in aula"
+]
+},
+"Q3771713": {
+"XV": [
+1,
+"leggi in aula"
+],
+"XVI": [
+5,
+"aula",
+41
+]
+},
+"Q3115881": {
+"XV": [
+17,
+"leggi in aula"
+]
+},
+"Q3778992": {
+"XV": [
+11,
+"leggi in aula"
+],
+"XVI": [
+18,
+"aula",
+63
+]
+},
+"Q3791436": {
+"XV": [
+20,
+"leggi in aula"
+]
+},
+"Q3791736": {
+"XV": [
+16,
+"leggi in aula"
+],
+"XVI": [
+46,
+"aula",
+95
+]
+},
+"Q16268544": {
+"XV": [
+2,
+"leggi in aula"
+],
+"XVI": [
+33,
+"aula",
+182
+]
+},
+"Q3804849": {
+"XV": [
+3,
+"leggi in aula"
+],
+"XVI": [
+196,
+"aula",
+215
+]
+},
+"Q3814913": {
+"XV": [
+10,
+"leggi in aula"
+]
+},
+"Q3826859": {
+"XV": [
+10,
+"leggi in aula"
+],
+"XVI": [
+70,
+"aula",
+92
+]
+},
+"Q3827769": {
+"XV": [
+7,
+"leggi in aula"
+]
+},
+"Q3827772": {
+"XV": [
+3,
+"leggi in aula"
+],
+"XVI": [
+78,
+"aula",
+348
+]
+},
+"Q3827834": {
+"XV": [
+20,
+"leggi in aula"
+],
+"XVI": [
+7,
+"aula",
+59
+]
+},
+"Q703503": {
+"XV": [
+11,
+"leggi in aula"
+],
+"XVI": [
+105,
+"aula",
+168
+]
+},
+"Q16572003": {
+"XV": [
+7,
+"leggi in aula"
+]
+},
+"Q3830689": {
+"XV": [
+5,
+"leggi in aula"
+]
+},
+"Q3831056": {
+"XV": [
+0,
+"leggi in aula"
+],
+"XVI": [
+55,
+"aula",
+132
+]
+},
+"Q3832605": {
+"XV": [
+0,
+"leggi in aula"
+],
+"XVI": [
+151,
+"aula",
+431
+]
+},
+"Q3833185": {
+"XV": [
+1,
+"leggi in aula"
+]
+},
+"Q3836888": {
+"XV": [
+34,
+"leggi in aula"
+]
+},
+"Q763148": {
+"XV": [
+3,
+"leggi in aula"
+],
+"XVI": [
+3,
+"aula",
+1
+]
+},
+"Q13426373": {
+"XV": [
+3,
+"leggi in aula"
+],
+"XVI": [
+107,
+"aula",
+238
+]
+},
+"Q16573982": {
+"XV": [
+45,
+"leggi in aula"
+]
+},
+"Q16039333": {
+"XV": [
+3,
+"leggi in aula"
+],
+"XVI": [
+21,
+"aula",
+104
+]
+},
+"Q3838809": {
+"XV": [
+113,
+"leggi in aula"
+],
+"XVI": [
+120,
+"aula",
+552
+]
+},
+"Q16574106": {
+"XV": [
+1,
+"leggi in aula"
+],
+"XVI": [
+277,
+"aula",
+493
+]
+},
+"Q3839428": {
+"XV": [
+7,
+"leggi in aula"
+]
+},
+"Q3839502": {
+"XV": [
+9,
+"leggi in aula"
+]
+},
+"Q15120158": {
+"XV": [
+10,
+"leggi in aula"
+],
+"XVI": [
+22,
+"aula",
+7
+]
+},
+"Q3839615": {
+"XV": [
+16,
+"leggi in aula"
+]
+},
+"Q3840438": {
+"XV": [
+21,
+"leggi in aula"
+],
+"XVI": [
+198,
+"aula",
+286
+]
+},
+"Q3843542": {
+"XV": [
+6,
+"leggi in aula"
+],
+"XVI": [
+80,
+"aula",
+643
+]
+},
+"Q268801": {
+"XV": [
+9,
+"leggi in aula"
+],
+"XVI": [
+21,
+"aula",
+72
+]
+},
+"Q3845082": {
+"XV": [
+4,
+"leggi in aula"
+],
+"XVI": [
+100,
+"aula",
+1042
+]
+},
+"Q266651": {
+"XV": [
+9,
+"leggi in aula"
+],
+"XVI": [
+0,
+"aula",
+0
+]
+},
+"Q3845933": {
+"XV": [
+22,
+"leggi in aula"
+],
+"XVI": [
+133,
+"aula",
+285
+]
+},
+"Q3845981": {
+"XV": [
+1,
+"leggi in aula"
+],
+"XVI": [
+51,
+"aula",
+96
+]
+},
+"Q1892362": {
+"XV": [
+0,
+"leggi in aula"
+]
+},
+"Q16575824": {
+"XV": [
+1,
+"leggi in aula"
+],
+"XVI": [
+54,
+"aula",
+65
+]
+},
+"Q15141218": {
+"XV": [
+1,
+"leggi in aula"
+],
+"XVI": [
+0,
+"aula",
+1
+]
+},
+"Q3846384": {
+"XV": [
+3,
+"leggi in aula"
+]
+},
+"Q3846928": {
+"XV": [
+2,
+"leggi in aula"
+],
+"XVI": [
+47,
+"aula",
+217
+]
+},
+"Q3847225": {
+"XV": [
+2,
+"leggi in aula"
+]
+},
+"Q3847272": {
+"XV": [
+16,
+"leggi in aula"
+]
+},
+"Q3847313": {
+"XV": [
+0,
+"leggi in aula"
+],
+"XVI": [
+38,
+"aula",
+44
+]
+},
+"Q3847319": {
+"XV": [
+4,
+"leggi in aula"
+],
+"XVI": [
+34,
+"aula",
+62
+]
+},
+"Q3847327": {
+"XV": [
+36,
+"leggi in aula"
+]
+},
+"Q3847359": {
+"XV": [
+16,
+"leggi in aula"
+]
+},
+"Q3847449": {
+"XV": [
+2,
+"leggi in aula"
+],
+"XVI": [
+3,
+"aula",
+3
+]
+},
+"Q466712": {
+"XV": [
+4,
+"leggi in aula"
+],
+"XVI": [
+0,
+"aula",
+5
+]
+},
+"Q3847895": {
+"XV": [
+7,
+"leggi in aula"
+],
+"XVI": [
+15,
+"aula",
+158
+]
+},
+"Q3847958": {
+"XV": [
+4,
+"leggi in aula"
+],
+"XVI": [
+150,
+"aula",
+404
+]
+},
+"Q3847962": {
+"XV": [
+1,
+"leggi in aula"
+]
+},
+"Q3848312": {
+"XV": [
+3,
+"leggi in aula"
+],
+"XVI": [
+71,
+"aula",
+243
+]
+},
+"Q3848732": {
+"XV": [
+7,
+"leggi in aula"
+],
+"XVI": [
+121,
+"aula",
+396
+]
+},
+"Q3849029": {
+"XV": [
+2,
+"leggi in aula"
+]
+},
+"Q15144796": {
+"XV": [
+5,
+"leggi in aula"
+]
+},
+"Q3849391": {
+"XV": [
+2,
+"leggi in aula"
+]
+},
+"Q3851077": {
+"XV": [
+1,
+"leggi in aula"
+]
+},
+"Q1733598": {
+"XV": [
+13,
+"leggi in aula"
+],
+"XVI": [
+297,
+"aula",
+3
+]
+},
+"Q3851255": {
+"XV": [
+0,
+"leggi in aula"
+],
+"XVI": [
+49,
+"aula",
+90
+]
+},
+"Q3851266": {
+"XV": [
+67,
+"leggi in aula"
+]
+},
+"Q3851375": {
+"XV": [
+15,
+"leggi in aula"
+]
+},
+"Q3851443": {
+"XV": [
+14,
+"leggi in aula"
+]
+},
+"Q3851459": {
+"XV": [
+2,
+"leggi in aula"
+]
+},
+"Q3851500": {
+"XV": [
+6,
+"leggi in aula"
+],
+"XVI": [
+185,
+"aula",
+977
+]
+},
+"Q3852085": {
+"XV": [
+40,
+"leggi in aula"
+],
+"XVI": [
+179,
+"aula",
+82
+]
+},
+"Q3852492": {
+"XV": [
+12,
+"leggi in aula"
+]
+},
+"Q3852519": {
+"XV": [
+15,
+"leggi in aula"
+],
+"XVI": [
+22,
+"aula",
+160
+]
+},
+"Q3852602": {
+"XV": [
+50,
+"leggi in aula"
+],
+"XVI": [
+93,
+"aula",
+441
+]
+},
+"Q3852662": {
+"XV": [
+0,
+"leggi in aula"
+],
+"XVI": [
+2,
+"aula",
+246
+]
+},
+"Q3852708": {
+"XV": [
+14,
+"leggi in aula"
+]
+},
+"Q3852744": {
+"XV": [
+14,
+"leggi in aula"
+],
+"XVI": [
+284,
+"aula",
+292
+]
+},
+"Q3852751": {
+"XV": [
+2,
+"leggi in aula"
+]
+},
+"Q3852768": {
+"XV": [
+3,
+"leggi in aula"
+]
+},
+"Q3852804": {
+"XV": [
+53,
+"leggi in aula"
+]
+},
+"Q3852817": {
+"XV": [
+10,
+"leggi in aula"
+]
+},
+"Q3301763": {
+"XV": [
+15,
+"leggi in aula"
+],
+"XVI": [
+76,
+"aula",
+118
+]
+},
+"Q3855054": {
+"XV": [
+3,
+"leggi in aula"
+]
+},
+"Q1930012": {
+"XV": [
+15,
+"leggi in aula"
+],
+"XVI": [
+14,
+"aula",
+31
+]
+},
+"Q3856525": {
+"XV": [
+1,
+"leggi in aula"
+],
+"XVI": [
+23,
+"aula",
+31
+]
+},
+"Q3856759": {
+"XV": [
+0,
+"leggi in aula"
+],
+"XVI": [
+2,
+"aula",
+0
+]
+},
+"Q3858073": {
+"XV": [
+0,
+"leggi in aula"
+]
+},
+"Q3876111": {
+"XV": [
+0,
+"leggi in aula"
+]
+},
+"Q3876253": {
+"XV": [
+0,
+"leggi in aula"
+],
+"XVI": [
+0,
+"aula",
+0
+]
+},
+"Q3876381": {
+"XV": [
+10,
+"leggi in aula"
+]
+},
+"Q3884888": {
+"XV": [
+17,
+"leggi in aula"
+]
+},
+"Q3885786": {
+"XV": [
+13,
+"leggi in aula"
+],
+"XVI": [
+124,
+"aula",
+249
+]
+},
+"Q3893523": {
+"XV": [
+27,
+"leggi in aula"
+]
+},
+"Q2050277": {
+"XV": [
+26,
+"leggi in aula"
+],
+"XVI": [
+119,
+"aula",
+391
+]
+},
+"Q16586767": {
+"XV": [
+32,
+"leggi in aula"
+],
+"XVI": [
+95,
+"aula",
+537
+]
+},
+"Q3893612": {
+"XV": [
+23,
+"leggi in aula"
+],
+"XVI": [
+62,
+"aula",
+192
+]
+},
+"Q3893674": {
+"XV": [
+17,
+"leggi in aula"
+]
+},
+"Q3893829": {
+"XV": [
+10,
+"leggi in aula"
+]
+},
+"Q2246855": {
+"XV": [
+3,
+"leggi in aula"
+]
+},
+"Q730921": {
+"XV": [
+0,
+"leggi in aula"
+]
+},
+"Q15300659": {
+"XV": [
+4,
+"leggi in aula"
+]
+},
+"Q16586847": {
+"XV": [
+0,
+"leggi in aula"
+],
+"XVI": [
+21,
+"aula",
+41
+]
+},
+"Q2050381": {
+"XV": [
+0,
+"leggi in aula"
+]
+},
+"Q3894084": {
+"XV": [
+9,
+"leggi in aula"
+]
+},
+"Q3894136": {
+"XV": [
+19,
+"leggi in aula"
+],
+"XVI": [
+16,
+"aula",
+59
+]
+},
+"Q3894547": {
+"XV": [
+28,
+"leggi in aula"
+]
+},
+"Q110814651": {
+"XV": [
+8,
+"leggi in aula"
+]
+},
+"Q3897841": {
+"XV": [
+0,
+"leggi in aula"
+]
+},
+"Q3902976": {
+"XV": [
+4,
+"leggi in aula"
+],
+"XVI": [
+22,
+"aula",
+51
+]
+},
+"Q3903899": {
+"XV": [
+9,
+"leggi in aula"
+],
+"XVI": [
+33,
+"aula",
+144
+]
+},
+"Q3904037": {
+"XV": [
+5,
+"leggi in aula"
+],
+"XVI": [
+2,
+"aula",
+0
+]
+},
+"Q3904043": {
+"XV": [
+10,
+"leggi in aula"
+]
+},
+"Q3904199": {
+"XV": [
+14,
+"leggi in aula"
+]
+},
+"Q3929006": {
+"XV": [
+11,
+"leggi in aula"
+]
+},
+"Q1060314": {
+"XV": [
+9,
+"leggi in aula"
+],
+"XVI": [
+5,
+"aula",
+3
+]
+},
+"Q3930224": {
+"XV": [
+0,
+"leggi in aula"
+]
+},
+"Q3932420": {
+"XV": [
+15,
+"leggi in aula"
+],
+"XVI": [
+26,
+"aula",
+292
+]
+},
+"Q1241606": {
+"XV": [
+6,
+"leggi in aula"
+]
+},
+"Q3934298": {
+"XV": [
+0,
+"leggi in aula"
+],
+"XVI": [
+49,
+"aula",
+194
+]
+},
+"Q3934279": {
+"XV": [
+0,
+"leggi in aula"
+],
+"XVI": [
+0,
+"aula",
+28
+]
+},
+"Q3934420": {
+"XV": [
+7,
+"leggi in aula"
+],
+"XVI": [
+5,
+"aula",
+4
+]
+},
+"Q3934530": {
+"XV": [
+3,
+"leggi in aula"
+]
+},
+"Q16596323": {
+"XV": [
+19,
+"leggi in aula"
+]
+},
+"Q762411": {
+"XV": [
+80,
+"leggi in aula"
+],
+"XVI": [
+117,
+"aula",
+38
+]
+},
+"Q3436949": {
+"XV": [
+8,
+"leggi in aula"
+],
+"XVI": [
+57,
+"aula",
+34
+]
+},
+"Q3939070": {
+"XV": [
+3,
+"leggi in aula"
+]
+},
+"Q3939137": {
+"XV": [
+30,
+"leggi in aula"
+]
+},
+"Q1109987": {
+"XV": [
+2,
+"leggi in aula"
+]
+},
+"Q16597380": {
+"XV": [
+16,
+"leggi in aula"
+]
+},
+"Q16597557": {
+"XV": [
+8,
+"leggi in aula"
+]
+},
+"Q3939956": {
+"XV": [
+1,
+"leggi in aula"
+],
+"XVI": [
+64,
+"aula",
+116
+]
+},
+"Q38484": {
+"XV": [
+0,
+"leggi in aula"
+]
+},
+"Q16598320": {
+"XV": [
+1,
+"leggi in aula"
+]
+},
+"Q3941264": {
+"XV": [
+5,
+"leggi in aula"
+]
+},
+"Q16598534": {
+"XV": [
+3,
+"leggi in aula"
+]
+},
+"Q16598539": {
+"XV": [
+4,
+"leggi in aula"
+]
+},
+"Q3944292": {
+"XV": [
+6,
+"leggi in aula"
+]
+},
+"Q3945987": {
+"XV": [
+10,
+"leggi in aula"
+]
+},
+"Q16599764": {
+"XV": [
+6,
+"leggi in aula"
+]
+},
+"Q3946090": {
+"XV": [
+1,
+"leggi in aula"
+]
+},
+"Q3946099": {
+"XV": [
+14,
+"leggi in aula"
+]
+},
+"Q3946121": {
+"XV": [
+14,
+"leggi in aula"
+],
+"XVI": [
+188,
+"aula",
+433
+]
+},
+"Q3946129": {
+"XV": [
+13,
+"leggi in aula"
+]
+},
+"Q3946199": {
+"XV": [
+12,
+"leggi in aula"
+]
+},
+"Q3946239": {
+"XV": [
+9,
+"leggi in aula"
+]
+},
+"Q16600130": {
+"XV": [
+18,
+"leggi in aula"
+]
+},
+"Q3948198": {
+"XV": [
+0,
+"leggi in aula"
+],
+"XVI": [
+37,
+"aula",
+208
+]
+},
+"Q3948237": {
+"XV": [
+11,
+"leggi in aula"
+],
+"XVI": [
+174,
+"aula",
+746
+]
+},
+"Q3956084": {
+"XV": [
+40,
+"leggi in aula"
+]
+},
+"Q15621372": {
+"XV": [
+2,
+"leggi in aula"
+]
+},
+"Q3956202": {
+"XV": [
+9,
+"leggi in aula"
+]
+},
+"Q16601770": {
+"XV": [
+7,
+"leggi in aula"
+],
+"XVI": [
+9,
+"aula",
+44
+]
+},
+"Q3958201": {
+"XV": [
+1,
+"leggi in aula"
+],
+"XVI": [
+0,
+"aula",
+3
+]
+},
+"Q3960611": {
+"XV": [
+7,
+"leggi in aula"
+],
+"XVI": [
+139,
+"aula",
+46
+]
+},
+"Q3483967": {
+"XV": [
+21,
+"leggi in aula"
+],
+"XVI": [
+196,
+"aula",
+1761
+]
+},
+"Q15623368": {
+"XV": [
+10,
+"leggi in aula"
+],
+"XVI": [
+76,
+"aula",
+430
+]
+},
+"Q16606268": {
+"XV": [
+22,
+"leggi in aula"
+]
+},
+"Q3960950": {
+"XV": [
+0,
+"leggi in aula"
+]
+},
+"Q3961039": {
+"XV": [
+3,
+"leggi in aula"
+],
+"XVI": [
+12,
+"aula",
+17
+]
+},
+"Q3961182": {
+"XV": [
+76,
+"leggi in aula"
+],
+"XVI": [
+561,
+"aula",
+31
+]
+},
+"Q390378": {
+"XV": [
+2,
+"leggi in aula"
+],
+"XVI": [
+3,
+"aula",
+2
+]
+},
+"Q3972340": {
+"XV": [
+27,
+"leggi in aula"
+],
+"XVI": [
+98,
+"aula",
+82
+]
+},
+"Q3972387": {
+"XV": [
+0,
+"leggi in aula"
+]
+},
+"Q3972634": {
+"XV": [
+7,
+"leggi in aula"
+]
+},
+"Q3980740": {
+"XV": [
+24,
+"leggi in aula"
+]
+},
+"Q3984267": {
+"XV": [
+2,
+"leggi in aula"
+],
+"XVI": [
+37,
+"aula",
+152
+]
+},
+"Q3991952": {
+"XV": [
+7,
+"leggi in aula"
+]
+},
+"Q16616215": {
+"XV": [
+13,
+"leggi in aula"
+]
+},
+"Q4002902": {
+"XV": [
+0,
+"leggi in aula"
+],
+"XVI": [
+7,
+"aula",
+14
+]
+},
+"Q4007770": {
+"XV": [
+0,
+"leggi in aula"
+],
+"XVI": [
+0,
+"aula",
+0
+]
+},
+"Q4013432": {
+"XV": [
+0,
+"leggi in aula"
+]
+},
+"Q4015086": {
+"XV": [
+18,
+"leggi in aula"
+]
+},
+"Q14633758": {
+"XV": [
+8,
+"leggi in aula"
+]
+},
+"Q258305": {
+"XV": [
+14,
+"leggi in aula"
+]
+},
+"Q4015858": {
+"XV": [
+0,
+"leggi in aula"
+]
+},
+"Q3608386": {
+"XVI": [
+6,
+"aula",
+1
+]
+},
+"Q16658149": {
+"XVI": [
+85,
+"aula",
+419
+]
+},
+"Q3609184": {
+"XVI": [
+238,
+"aula",
+232
+]
+},
+"Q3609711": {
+"XVI": [
+56,
+"aula",
+150
+]
+},
+"Q16268211": {
+"XVI": [
+191,
+"aula",
+478
+]
+},
+"Q15127137": {
+"XVI": [
+115,
+"aula",
+357
+]
+},
+"Q3610182": {
+"XVI": [
+22,
+"aula",
+144
+]
+},
+"Q3610270": {
+"XVI": [
+16,
+"aula",
+3
+]
+},
+"Q3610441": {
+"XVI": [
+34,
+"aula",
+102
+]
+},
+"Q3610476": {
+"XVI": [
+6,
+"aula",
+147
+]
+},
+"Q2834878": {
+"XVI": [
+28,
+"aula",
+45
+]
+},
+"Q3613704": {
+"XVI": [
+2,
+"aula",
+30
+]
+},
+"Q50375349": {
+"XVI": [
+305,
+"aula",
+563
+]
+},
+"Q3613895": {
+"XVI": [
+96,
+"aula",
+65
+]
+},
+"Q3616030": {
+"XVI": [
+116,
+"aula",
+155
+]
+},
+"Q16657885": {
+"XVI": [
+107,
+"aula",
+52
+]
+},
+"Q3617049": {
+"XVI": [
+4,
+"aula",
+4
+]
+},
+"Q3617584": {
+"XVI": [
+279,
+"aula",
+353
+]
+},
+"Q16526948": {
+"XVI": [
+125,
+"aula",
+612
+]
+},
+"Q2850556": {
+"XVI": [
+86,
+"aula",
+192
+]
+},
+"Q2635576": {
+"XVI": [
+68,
+"aula",
+77
+]
+},
+"Q16526978": {
+"XVI": [
+74,
+"aula",
+163
+]
+},
+"Q3617884": {
+"XVI": [
+18,
+"aula",
+41
+]
+},
+"Q3619064": {
+"XVI": [
+43,
+"aula",
+172
+]
+},
+"Q3619095": {
+"XVI": [
+0,
+"aula",
+0
+]
+},
+"Q3619119": {
+"XVI": [
+26,
+"aula",
+60
+]
+},
+"Q3335245": {
+"XVI": [
+0,
+"aula",
+4
+]
+},
+"Q3619275": {
+"XVI": [
+42,
+"aula",
+29
+]
+},
+"Q16657904": {
+"XVI": [
+27,
+"aula",
+42
+]
+},
+"Q1060462": {
+"XVI": [
+31,
+"aula",
+1
+]
+},
+"Q3619537": {
+"XVI": [
+12,
+"aula",
+15
+]
+},
+"Q3619614": {
+"XVI": [
+0,
+"aula",
+3
+]
+},
+"Q15063251": {
+"XVI": [
+18,
+"aula",
+5
+]
+},
+"Q16527696": {
+"XVI": [
+249,
+"aula",
+346
+]
+},
+"Q2865950": {
+"XVI": [
+329,
+"aula",
+88
+]
+},
+"Q3629617": {
+"XVI": [
+310,
+"aula",
+347
+]
+},
+"Q3634651": {
+"XVI": [
+3,
+"aula",
+10
+]
+},
+"Q3634682": {
+"XVI": [
+28,
+"aula",
+63
+]
+},
+"Q3637263": {
+"XVI": [
+60,
+"aula",
+202
+]
+},
+"Q3638079": {
+"XVI": [
+14,
+"aula",
+194
+]
+},
+"Q2934352": {
+"XVI": [
+47,
+"aula",
+14
+]
+},
+"Q3659637": {
+"XVI": [
+423,
+"aula",
+360
+]
+},
+"Q3659667": {
+"XVI": [
+36,
+"aula",
+103
+]
+},
+"Q3659910": {
+"XVI": [
+27,
+"aula",
+33
+]
+},
+"Q3663522": {
+"XVI": [
+43,
+"aula",
+77
+]
+},
+"Q1051169": {
+"XVI": [
+26,
+"aula",
+52
+]
+},
+"Q3665468": {
+"XVI": [
+37,
+"aula",
+68
+]
+},
+"Q3667470": {
+"XVI": [
+79,
+"aula",
+137
+]
+},
+"Q3677336": {
+"XVI": [
+98,
+"aula",
+284
+]
+},
+"Q3679932": {
+"XVI": [
+21,
+"aula",
+49
+]
+},
+"Q15976361": {
+"XVI": [
+140,
+"aula",
+426
+]
+},
+"Q15975915": {
+"XVI": [
+34,
+"aula",
+145
+]
+},
+"Q3695135": {
+"XVI": [
+27,
+"aula",
+358
+]
+},
+"Q3701773": {
+"XVI": [
+8,
+"aula",
+1
+]
+},
+"Q3014907": {
+"XVI": [
+135,
+"aula",
+16
+]
+},
+"Q15972640": {
+"XVI": [
+55,
+"aula",
+41
+]
+},
+"Q3702094": {
+"XVI": [
+52,
+"aula",
+144
+]
+},
+"Q3702604": {
+"XVI": [
+20,
+"aula",
+65
+]
+},
+"Q15972744": {
+"XVI": [
+395,
+"aula",
+288
+]
+},
+"Q3703515": {
+"XVI": [
+35,
+"aula",
+16
+]
+},
+"Q116026": {
+"XVI": [
+15,
+"aula",
+134
+]
+},
+"Q15964456": {
+"XVI": [
+46,
+"aula",
+123
+]
+},
+"Q3705647": {
+"XVI": [
+15,
+"aula",
+14
+]
+},
+"Q15958420": {
+"XVI": [
+0,
+"aula",
+0
+]
+},
+"Q642966": {
+"XVI": [
+337,
+"aula",
+35
+]
+},
+"Q15958435": {
+"XVI": [
+0,
+"aula",
+0
+]
+},
+"Q15958468": {
+"XVI": [
+301,
+"aula",
+1120
+]
+},
+"Q15948834": {
+"XVI": [
+58,
+"aula",
+117
+]
+},
+"Q16550545": {
+"XVI": [
+1,
+"aula",
+5
+]
+},
+"Q3714289": {
+"XVI": [
+101,
+"aula",
+304
+]
+},
+"Q15961960": {
+"XVI": [
+2,
+"aula",
+3
+]
+},
+"Q3721400": {
+"XVI": [
+30,
+"aula",
+252
+]
+},
+"Q3721447": {
+"XVI": [
+3,
+"aula",
+9
+]
+},
+"Q3723093": {
+"XVI": [
+83,
+"aula",
+24
+]
+},
+"Q16268500": {
+"XVI": [
+34,
+"aula",
+56
+]
+},
+"Q3723275": {
+"XVI": [
+275,
+"aula",
+167
+]
+},
+"Q3723755": {
+"XVI": [
+17,
+"aula",
+43
+]
+},
+"Q3723857": {
+"XVI": [
+30,
+"aula",
+4
+]
+},
+"Q3725786": {
+"XVI": [
+27,
+"aula",
+0
+]
+},
+"Q3725986": {
+"XVI": [
+193,
+"aula",
+445
+]
+},
+"Q3731058": {
+"XVI": [
+8,
+"aula",
+0
+]
+},
+"Q16554221": {
+"XVI": [
+56,
+"aula",
+112
+]
+},
+"Q3733987": {
+"XVI": [
+14,
+"aula",
+23
+]
+},
+"Q3059585": {
+"XVI": [
+2,
+"aula",
+24
+]
+},
+"Q3734396": {
+"XVI": [
+90,
+"aula",
+103
+]
+},
+"Q15942142": {
+"XVI": [
+0,
+"aula",
+0
+]
+},
+"Q15936530": {
+"XVI": [
+8,
+"aula",
+6
+]
+},
+"Q960576": {
+"XVI": [
+49,
+"aula",
+139
+]
+},
+"Q3737734": {
+"XVI": [
+127,
+"aula",
+193
+]
+},
+"Q3737786": {
+"XVI": [
+46,
+"aula",
+27
+]
+},
+"Q10279154": {
+"XVI": [
+54,
+"aula",
+65
+]
+},
+"Q3737814": {
+"XVI": [
+39,
+"aula",
+161
+]
+},
+"Q3741557": {
+"XVI": [
+57,
+"aula",
+75
+]
+},
+"Q255788": {
+"XVI": [
+35,
+"aula",
+212
+]
+},
+"Q3749320": {
+"XVI": [
+1,
+"aula",
+3
+]
+},
+"Q3749382": {
+"XVI": [
+21,
+"aula",
+19
+]
+},
+"Q3749564": {
+"XVI": [
+4,
+"aula",
+4
+]
+},
+"Q3749600": {
+"XVI": [
+470,
+"aula",
+455
+]
+},
+"Q3749632": {
+"XVI": [
+10,
+"aula",
+18
+]
+},
+"Q3749638": {
+"XVI": [
+108,
+"aula",
+106
+]
+},
+"Q3749930": {
+"XVI": [
+0,
+"aula",
+1
+]
+},
+"Q15791380": {
+"XVI": [
+129,
+"aula",
+333
+]
+},
+"Q3750475": {
+"XVI": [
+9,
+"aula",
+2
+]
+},
+"Q16557414": {
+"XVI": [
+162,
+"aula",
+297
+]
+},
+"Q16039391": {
+"XVI": [
+1,
+"aula",
+6
+]
+},
+"Q15796515": {
+"XVI": [
+89,
+"aula",
+157
+]
+},
+"Q15813283": {
+"XVI": [
+39,
+"aula",
+24
+]
+},
+"Q3754298": {
+"XVI": [
+80,
+"aula",
+526
+]
+},
+"Q729701": {
+"XVI": [
+248,
+"aula",
+201
+]
+},
+"Q3756569": {
+"XVI": [
+288,
+"aula",
+316
+]
+},
+"Q15830434": {
+"XVI": [
+38,
+"aula",
+283
+]
+},
+"Q3756747": {
+"XVI": [
+28,
+"aula",
+91
+]
+},
+"Q7000506": {
+"XVI": [
+12,
+"aula",
+34
+]
+},
+"Q3757090": {
+"XVI": [
+125,
+"aula",
+128
+]
+},
+"Q15916514": {
+"XVI": [
+5,
+"aula",
+81
+]
+},
+"Q3762043": {
+"XVI": [
+59,
+"aula",
+145
+]
+},
+"Q3762237": {
+"XVI": [
+7,
+"aula",
+6
+]
+},
+"Q15896935": {
+"XVI": [
+20,
+"aula",
+51
+]
+},
+"Q3762594": {
+"XVI": [
+2,
+"aula",
+39
+]
+},
+"Q15896973": {
+"XVI": [
+25,
+"aula",
+27
+]
+},
+"Q15896993": {
+"XVI": [
+5,
+"aula",
+44
+]
+},
+"Q3762882": {
+"XVI": [
+104,
+"aula",
+37
+]
+},
+"Q3762911": {
+"XVI": [
+14,
+"aula",
+100
+]
+},
+"Q3763122": {
+"XVI": [
+39,
+"aula",
+54
+]
+},
+"Q3763148": {
+"XVI": [
+0,
+"aula",
+1
+]
+},
+"Q16268176": {
+"XVI": [
+58,
+"aula",
+176
+]
+},
+"Q3763198": {
+"XVI": [
+97,
+"aula",
+36
+]
+},
+"Q3763228": {
+"XVI": [
+43,
+"aula",
+98
+]
+},
+"Q3765370": {
+"XVI": [
+130,
+"aula",
+250
+]
+},
+"Q15888334": {
+"XVI": [
+51,
+"aula",
+92
+]
+},
+"Q3766264": {
+"XVI": [
+0,
+"aula",
+19
+]
+},
+"Q3766565": {
+"XVI": [
+70,
+"aula",
+110
+]
+},
+"Q3767144": {
+"XVI": [
+26,
+"aula",
+85
+]
+},
+"Q3767579": {
+"XVI": [
+0,
+"aula",
+0
+]
+},
+"Q16560074": {
+"XVI": [
+14,
+"aula",
+14
+]
+},
+"Q3767860": {
+"XVI": [
+274,
+"aula",
+255
+]
+},
+"Q3769361": {
+"XVI": [
+347,
+"aula",
+819
+]
+},
+"Q3769520": {
+"XVI": [
+85,
+"aula",
+214
+]
+},
+"Q3769705": {
+"XVI": [
+5,
+"aula",
+40
+]
+},
+"Q3770102": {
+"XVI": [
+56,
+"aula",
+101
+]
+},
+"Q16560916": {
+"XVI": [
+9,
+"aula",
+26
+]
+},
+"Q3771417": {
+"XVI": [
+11,
+"aula",
+132
+]
+},
+"Q3771601": {
+"XVI": [
+10,
+"aula",
+46
+]
+},
+"Q3108160": {
+"XVI": [
+0,
+"aula",
+0
+]
+},
+"Q3905080": {
+"XVI": [
+29,
+"aula",
+27
+]
+},
+"Q3779040": {
+"XVI": [
+16,
+"aula",
+10
+]
+},
+"Q79422310": {
+"XVI": [
+14,
+"aula",
+22
+]
+},
+"Q3779385": {
+"XVI": [
+97,
+"aula",
+64
+]
+},
+"Q3792296": {
+"XVI": [
+40,
+"aula",
+139
+]
+},
+"Q3792354": {
+"XVI": [
+242,
+"aula",
+115
+]
+},
+"Q3796375": {
+"XVI": [
+135,
+"aula",
+56
+]
+},
+"Q3802495": {
+"XVI": [
+82,
+"aula",
+466
+]
+},
+"Q16566847": {
+"XVI": [
+148,
+"aula",
+27
+]
+},
+"Q405312": {
+"XVI": [
+91,
+"aula",
+131
+]
+},
+"Q16039205": {
+"XVI": [
+41,
+"aula",
+154
+]
+},
+"Q106446": {
+"XVI": [
+93,
+"aula",
+204
+]
+},
+"Q16571325": {
+"XVI": [
+124,
+"aula",
+448
+]
+},
+"Q3830086": {
+"XVI": [
+7,
+"aula",
+30
+]
+},
+"Q3832076": {
+"XVI": [
+28,
+"aula",
+43
+]
+},
+"Q16268549": {
+"XVI": [
+6,
+"aula",
+6
+]
+},
+"Q659712": {
+"XVI": [
+29,
+"aula",
+95
+]
+},
+"Q15117584": {
+"XVI": [
+0,
+"aula",
+1
+]
+},
+"Q3838260": {
+"XVI": [
+157,
+"aula",
+339
+]
+},
+"Q15117588": {
+"XVI": [
+41,
+"aula",
+33
+]
+},
+"Q16573955": {
+"XVI": [
+58,
+"aula",
+219
+]
+},
+"Q14636345": {
+"XVI": [
+23,
+"aula",
+80
+]
+},
+"Q16039318": {
+"XVI": [
+28,
+"aula",
+184
+]
+},
+"Q3838943": {
+"XVI": [
+0,
+"aula",
+19
+]
+},
+"Q3839347": {
+"XVI": [
+54,
+"aula",
+195
+]
+},
+"Q3839923": {
+"XVI": [
+37,
+"aula",
+39
+]
+},
+"Q3839941": {
+"XVI": [
+27,
+"aula",
+108
+]
+},
+"Q16574431": {
+"XVI": [
+75,
+"aula",
+88
+]
+},
+"Q1876572": {
+"XVI": [
+68,
+"aula",
+174
+]
+},
+"Q3287004": {
+"XVI": [
+97,
+"aula",
+738
+]
+},
+"Q16575521": {
+"XVI": [
+78,
+"aula",
+183
+]
+},
+"Q3845107": {
+"XVI": [
+3,
+"aula",
+10
+]
+},
+"Q3289628": {
+"XVI": [
+35,
+"aula",
+182
+]
+},
+"Q3845574": {
+"XVI": [
+11,
+"aula",
+41
+]
+},
+"Q16575764": {
+"XVI": [
+1,
+"aula",
+3
+]
+},
+"Q3845991": {
+"XVI": [
+54,
+"aula",
+130
+]
+},
+"Q3845998": {
+"XVI": [
+176,
+"aula",
+492
+]
+},
+"Q16575806": {
+"XVI": [
+35,
+"aula",
+166
+]
+},
+"Q15886080": {
+"XVI": [
+64,
+"aula",
+285
+]
+},
+"Q3846255": {
+"XVI": [
+20,
+"aula",
+68
+]
+},
+"Q3846259": {
+"XVI": [
+57,
+"aula",
+184
+]
+},
+"Q3846393": {
+"XVI": [
+54,
+"aula",
+84
+]
+},
+"Q3846412": {
+"XVI": [
+281,
+"aula",
+48
+]
+},
+"Q16575917": {
+"XVI": [
+39,
+"aula",
+85
+]
+},
+"Q3846918": {
+"XVI": [
+36,
+"aula",
+33
+]
+},
+"Q3847132": {
+"XVI": [
+75,
+"aula",
+338
+]
+},
+"Q13405623": {
+"XVI": [
+75,
+"aula",
+153
+]
+},
+"Q3847249": {
+"XVI": [
+12,
+"aula",
+155
+]
+},
+"Q15143075": {
+"XVI": [
+114,
+"aula",
+311
+]
+},
+"Q15143111": {
+"XVI": [
+56,
+"aula",
+341
+]
+},
+"Q3847714": {
+"XVI": [
+36,
+"aula",
+65
+]
+},
+"Q3847819": {
+"XVI": [
+8,
+"aula",
+37
+]
+},
+"Q15144151": {
+"XVI": [
+0,
+"aula",
+0
+]
+},
+"Q3848255": {
+"XVI": [
+12,
+"aula",
+17
+]
+},
+"Q3848427": {
+"XVI": [
+95,
+"aula",
+132
+]
+},
+"Q3849194": {
+"XVI": [
+36,
+"aula",
+73
+]
+},
+"Q3851022": {
+"XVI": [
+155,
+"aula",
+590
+]
+},
+"Q3851144": {
+"XVI": [
+88,
+"aula",
+276
+]
+},
+"Q3851170": {
+"XVI": [
+11,
+"aula",
+3
+]
+},
+"Q3851209": {
+"XVI": [
+70,
+"aula",
+130
+]
+},
+"Q16268499": {
+"XVI": [
+33,
+"aula",
+28
+]
+},
+"Q16576982": {
+"XVI": [
+2,
+"aula",
+27
+]
+},
+"Q3851390": {
+"XVI": [
+0,
+"aula",
+10
+]
+},
+"Q3851408": {
+"XVI": [
+23,
+"aula",
+69
+]
+},
+"Q3852082": {
+"XVI": [
+74,
+"aula",
+225
+]
+},
+"Q3852103": {
+"XVI": [
+13,
+"aula",
+21
+]
+},
+"Q3852156": {
+"XVI": [
+213,
+"aula",
+223
+]
+},
+"Q1055449": {
+"XVI": [
+3,
+"aula",
+1
+]
+},
+"Q3852525": {
+"XVI": [
+35,
+"aula",
+72
+]
+},
+"Q3852579": {
+"XVI": [
+2,
+"aula",
+104
+]
+},
+"Q16577230": {
+"XVI": [
+7,
+"aula",
+17
+]
+},
+"Q16577233": {
+"XVI": [
+16,
+"aula",
+46
+]
+},
+"Q3852722": {
+"XVI": [
+16,
+"aula",
+80
+]
+},
+"Q16268473": {
+"XVI": [
+286,
+"aula",
+222
+]
+},
+"Q3854094": {
+"XVI": [
+31,
+"aula",
+62
+]
+},
+"Q459670": {
+"XVI": [
+0,
+"aula",
+4
+]
+},
+"Q3856797": {
+"XVI": [
+29,
+"aula",
+101
+]
+},
+"Q3856821": {
+"XVI": [
+3,
+"aula",
+1
+]
+},
+"Q3860820": {
+"XVI": [
+8,
+"aula",
+82
+]
+},
+"Q16581799": {
+"XVI": [
+56,
+"aula",
+226
+]
+},
+"Q3617472": {
+"XVI": [
+110,
+"aula",
+18
+]
+},
+"Q3876213": {
+"XVI": [
+66,
+"aula",
+707
+]
+},
+"Q15269634": {
+"XVI": [
+112,
+"aula",
+175
+]
+},
+"Q3879474": {
+"XVI": [
+16,
+"aula",
+14
+]
+},
+"Q3879476": {
+"XVI": [
+64,
+"aula",
+314
+]
+},
+"Q16583188": {
+"XVI": [
+39,
+"aula",
+55
+]
+},
+"Q1102044": {
+"XVI": [
+213,
+"aula",
+413
+]
+},
+"Q3893547": {
+"XVI": [
+50,
+"aula",
+107
+]
+},
+"Q3893932": {
+"XVI": [
+62,
+"aula",
+160
+]
+},
+"Q3894052": {
+"XVI": [
+62,
+"aula",
+41
+]
+},
+"Q3362638": {
+"XVI": [
+8,
+"aula",
+26
+]
+},
+"Q15303101": {
+"XVI": [
+0,
+"aula",
+4
+]
+},
+"Q3897028": {
+"XVI": [
+52,
+"aula",
+39
+]
+},
+"Q16587440": {
+"XVI": [
+0,
+"aula",
+3
+]
+},
+"Q3902858": {
+"XVI": [
+19,
+"aula",
+76
+]
+},
+"Q3902934": {
+"XVI": [
+211,
+"aula",
+1005
+]
+},
+"Q16590200": {
+"XVI": [
+0,
+"aula",
+2
+]
+},
+"Q3903004": {
+"XVI": [
+3,
+"aula",
+0
+]
+},
+"Q3903007": {
+"XVI": [
+294,
+"aula",
+533
+]
+},
+"Q16590227": {
+"XVI": [
+167,
+"aula",
+444
+]
+},
+"Q3903981": {
+"XVI": [
+20,
+"aula",
+65
+]
+},
+"Q1055104": {
+"XVI": [
+3,
+"aula",
+2
+]
+},
+"Q15411483": {
+"XVI": [
+163,
+"aula",
+554
+]
+},
+"Q3929279": {
+"XVI": [
+86,
+"aula",
+436
+]
+},
+"Q2573947": {
+"XVI": [
+12,
+"aula",
+206
+]
+},
+"Q3932624": {
+"XVI": [
+473,
+"aula",
+808
+]
+},
+"Q3932666": {
+"XVI": [
+162,
+"aula",
+156
+]
+},
+"Q16595553": {
+"XVI": [
+45,
+"aula",
+101
+]
+},
+"Q15465052": {
+"XVI": [
+27,
+"aula",
+18
+]
+},
+"Q16039280": {
+"XVI": [
+15,
+"aula",
+60
+]
+},
+"Q405309": {
+"XVI": [
+398,
+"aula",
+476
+]
+},
+"Q3938580": {
+"XVI": [
+27,
+"aula",
+73
+]
+},
+"Q583533": {
+"XVI": [
+96,
+"aula",
+88
+]
+},
+"Q16597290": {
+"XVI": [
+104,
+"aula",
+171
+]
+},
+"Q3938945": {
+"XVI": [
+14,
+"aula",
+47
+]
+},
+"Q3938986": {
+"XVI": [
+65,
+"aula",
+56
+]
+},
+"Q3939013": {
+"XVI": [
+121,
+"aula",
+413
+]
+},
+"Q15479558": {
+"XVI": [
+187,
+"aula",
+287
+]
+},
+"Q3939167": {
+"XVI": [
+102,
+"aula",
+306
+]
+},
+"Q3939176": {
+"XVI": [
+3,
+"aula",
+69
+]
+},
+"Q16597402": {
+"XVI": [
+1,
+"aula",
+0
+]
+},
+"Q3939580": {
+"XVI": [
+22,
+"aula",
+107
+]
+},
+"Q16598476": {
+"XVI": [
+98,
+"aula",
+187
+]
+},
+"Q3941254": {
+"XVI": [
+91,
+"aula",
+182
+]
+},
+"Q3944290": {
+"XVI": [
+14,
+"aula",
+19
+]
+},
+"Q3944294": {
+"XVI": [
+18,
+"aula",
+28
+]
+},
+"Q3944351": {
+"XVI": [
+29,
+"aula",
+91
+]
+},
+"Q15585187": {
+"XVI": [
+13,
+"aula",
+11
+]
+},
+"Q16599793": {
+"XVI": [
+15,
+"aula",
+18
+]
+},
+"Q3946242": {
+"XVI": [
+54,
+"aula",
+66
+]
+},
+"Q3946247": {
+"XVI": [
+68,
+"aula",
+202
+]
+},
+"Q3948177": {
+"XVI": [
+83,
+"aula",
+87
+]
+},
+"Q3948194": {
+"XVI": [
+8,
+"aula",
+100
+]
+},
+"Q16600153": {
+"XVI": [
+13,
+"aula",
+0
+]
+},
+"Q707862": {
+"XVI": [
+16,
+"aula",
+39
+]
+},
+"Q681778": {
+"XVI": [
+113,
+"aula",
+95
+]
+},
+"Q16601752": {
+"XVI": [
+476,
+"aula",
+413
+]
+},
+"Q16601755": {
+"XVI": [
+0,
+"aula",
+0
+]
+},
+"Q3958418": {
+"XVI": [
+13,
+"aula",
+155
+]
+},
+"Q15622408": {
+"XVI": [
+40,
+"aula",
+208
+]
+},
+"Q16606350": {
+"XVI": [
+0,
+"aula",
+19
+]
+},
+"Q3961298": {
+"XVI": [
+110,
+"aula",
+176
+]
+},
+"Q15624743": {
+"XVI": [
+9,
+"aula",
+4
+]
+},
+"Q1237458": {
+"XVI": [
+74,
+"aula",
+47
+]
+},
+"Q687662": {
+"XVI": [
+6,
+"aula",
+43
+]
+},
+"Q3972486": {
+"XVI": [
+61,
+"aula",
+34
+]
+},
+"Q16610292": {
+"XVI": [
+30,
+"aula",
+53
+]
+},
+"Q15633011": {
+"XVI": [
+48,
+"aula",
+172
+]
+},
+"Q15636153": {
+"XVI": [
+3,
+"aula",
+33
+]
+},
+"Q3992773": {
+"XVI": [
+20,
+"aula",
+17
+]
+},
+"Q3993126": {
+"XVI": [
+60,
+"aula",
+48
+]
+},
+"Q1082039": {
+"XVI": [
+4,
+"aula",
+23
+]
+},
+"Q4007866": {
+"XVI": [
+0,
+"aula",
+0
+]
+},
+"Q4013095": {
+"XVI": [
+1,
+"aula",
+0
+]
+},
+"Q4013197": {
+"XVI": [
+94,
+"aula",
+38
+]
+},
+"Q4013275": {
+"XVI": [
+30,
+"aula",
+106
+]
+},
+"Q4013289": {
+"XVI": [
+41,
+"aula",
+286
+]
+},
+"Q15711755": {
+"XVI": [
+31,
+"aula",
+68
+]
+},
+"Q15711036": {
+"XVI": [
+3,
+"aula",
+4
+]
+},
+"Q4013535": {
+"XVI": [
+10,
+"aula",
+65
+]
+},
+"Q4013688": {
+"XVI": [
+58,
+"aula",
+69
+]
+},
+"Q16622444": {
+"XVI": [
+35,
+"aula",
+108
+]
+},
+"Q15727026": {
+"XVI": [
+35,
+"aula",
+9
+]
+}
+}
+}

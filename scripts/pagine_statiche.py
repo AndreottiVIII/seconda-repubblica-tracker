@@ -224,6 +224,16 @@ def pagine(dati):
           'Dalla lista al gruppo: con che lista si entra alla Camera, in che gruppo si finisce',
           'Legislatura per legislatura, dal 1994 al 2013: la lista con cui ogni deputato e\' stato '
           'eletto e il gruppo in cui ha finito la legislatura.')
+    if dati.get('riassunto_voti'):
+        fissa('voti', '/i-voti-alla-camera/',
+              'I voti alla Camera dal 1996 al 2013: presenze, gruppi, votazioni strette e maggioranze battute',
+              'Il riassunto delle votazioni elettroniche della Camera, legislatura per legislatura: '
+              'presenza mese per mese, gruppi a confronto, le votazioni più strette e quelle perse dalla maggioranza.')
+    if dati.get('collegi_sfide'):
+        fissa('collegi', '/i-collegi/',
+              'I collegi uninominali 1994-2001: le sfide più strette, i ripescati, i lontani da casa',
+              'Camera e Senato nel 1994, 1996 e 2001: le sfide decise per pochi voti, chi ha perso il collegio '
+              'ed è entrato lo stesso, chi ha vinto lontano dalla regione in cui è nato.')
     fissa('emiciclo', '/l-emiciclo/',
           'L’emiciclo: chi sedeva alla Camera e al Senato, giorno per giorno, dal 1994 al 2013',
           'Camera e Senato a semicerchio, legislatura per legislatura: i seggi di ogni partito '

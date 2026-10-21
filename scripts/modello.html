@@ -984,11 +984,12 @@ VISTE['persona'] = function(q){
           if (!v) return '<tr><td>' + m + '</td><td class="num">&mdash;</td>' +
             '<td style="font-size:11px">per questa legislatura l&rsquo;archivio non c&rsquo;&egrave;</td></tr>';
           return '<tr><td>' + m + '</td><td class="num">' + numIt(v[0]) + '</td><td style="font-size:11px">' +
-            cosa[v[1]] + (v[2] ? '; e ' + numIt(v[2]) + ' in commissione' : '') + '</td></tr>';
+            cosa[v[1]] + (v[2] ? ', pi&ugrave; ' + numIt(v[2]) + ' in commissione' : '') + '</td></tr>';
         }).join('') + '</tbody></table>' +
         '<p class="piede">Le fonti della Camera non contano tutte la stessa cosa: per questo i numeri ' +
-        'non si confrontano fra una legislatura e l&rsquo;altra. Fonti: portale storico (XII), siti ' +
-        'delle legislature (XIV, XV), dati aperti (XVI).</p>';
+        'non si confrontano fra una legislatura e l&rsquo;altra. Nella XIV e XV contano solo gli interventi ' +
+        'sulle leggi; nella XVI anche quelli di chi presiedeva la seduta. Fonti: portale storico (XII), ' +
+        'siti delle legislature (XIV, XV), dati aperti (XVI).</p>';
   }
 
   // le richieste dei giudici alla Camera: atti parlamentari, non condanne
@@ -2481,6 +2482,207 @@ document.addEventListener('click', e => {
   if (INDIRIZZI) linkVeri(corpo);
 });
 
+/* ---- I collegi uninominali 1994-2001 (scripts/collegi_sfide.py) ----
+   righe: [anno, ramo, regione, collegio, primo, qid, voti, %, secondo, qid, voti, %, nato a, regione di nascita] */
+const ANNO_LEG = {'1994': 'XII', '1996': 'XIII', '2001': 'XIV'};
+
+function chiCollegio(nome, q){
+  return q && perQid[q] ? '<span class="clic" data-apri="persona" data-arg="' + q + '">' + esc(perQid[q].n) + '</span>'
+                        : esc(nome);
+}
+
+VISTE['collegi'] = function(){
+  const C = DATI.collegi_sfide || [];
+  if (!C.length) throw new Error('Mancano i collegi: data/collegi_sfide.json.');
+  const ramo = r => r[1] === 'C' ? 'Camera' : 'Senato';
+  const scarto = r => r[7] - r[11];
+  const tabella = (righe, testa, riga) => '<table><thead><tr>' + testa.map(t => '<th>' + t + '</th>').join('') +
+    '</tr></thead><tbody>' + righe.map(riga).join('') + '</tbody></table>';
+  const sfida = r => '<tr><td>' + r[0] + '</td><td style="font-size:11px">' + esc(r[3]) + ' (' + ramo(r) + ')</td>' +
+    '<td style="font-size:11px">' + chiCollegio(r[4], r[5]) + ' ' + conUnDecimale(r[7]) + '%</td>' +
+    '<td style="font-size:11px">' + chiCollegio(r[8], r[9]) + ' ' + conUnDecimale(r[11]) + '%</td>' +
+    '<td class="num" style="white-space:nowrap">' + numIt(r[6] - r[10]) + ' voti</td></tr>';
+  const testaSfida = ['Anno', 'Collegio', 'Primo', 'Secondo', 'Distacco'];
+
+  let h = '<h1>I collegi</h1><p>Nel 1994, nel 1996 e nel 2001 tre deputati e senatori su quattro si eleggono ' +
+    'nei collegi uninominali: vince chi prende un voto in pi&ugrave;. ' + numIt(C.length) + ' sfide in tutto, ' +
+    'Camera e Senato.</p>';
+
+  // 1. le più strette
+  const strette = C.slice().sort((a, b) => (a[6] - a[10]) - (b[6] - b[10])).slice(0, 20);
+  h += '<h2 style="margin-top:12px">Le sfide pi&ugrave; strette</h2>' + tabella(strette, testaSfida, sfida);
+
+  // 2. le più larghe
+  const larghe = C.slice().sort((a, b) => scarto(b) - scarto(a)).slice(0, 10);
+  h += '<h2 style="margin-top:12px">Le vittorie pi&ugrave; larghe</h2>' + tabella(larghe,
+    ['Anno', 'Collegio', 'Primo', 'Secondo', 'Distacco'], r => sfida(r).replace(
+      /<td class="num"[^>]*>[^<]*<\/td><\/tr>$/, '<td class="num">' + conUnDecimale(scarto(r)) + ' punti</td></tr>'));
+
+  // 3. hanno perso il collegio, ma in Parlamento ci sono entrati lo stesso
+  const ripresi = [];
+  P.forEach(p => (p.cu || []).forEach(c => {
+    if (c[5] > 1 && p.m.indexOf(ANNO_LEG[c[0]]) >= 0) ripresi.push([p, c]);
+  }));
+  ripresi.sort((a, b) => a[1][0].localeCompare(b[1][0]) || perCognome(a[0], b[0]));
+  const perAnno = {};
+  ripresi.forEach(x => { perAnno[x[1][0]] = (perAnno[x[1][0]] || 0) + 1; });
+  h += '<h2 style="margin-top:12px">Hanno perso il collegio, ma sono entrati lo stesso</h2>' +
+    '<p>' + Object.keys(perAnno).sort().map(a => a + ': <b>' + perAnno[a] + '</b>').join(' &middot; ') +
+    '. Con la quota proporzionale, col recupero dei migliori perdenti al Senato, o subentrando a qualcuno ' +
+    'durante la legislatura.</p><details><summary class="clic">Tutti</summary>' +
+    tabella(ripresi, ['Anno', 'Chi', 'Collegio', 'Posto'], x => '<tr><td>' + x[1][0] + '</td><td>' +
+      chiCollegio(x[0].n, x[0].q) + '</td><td style="font-size:11px">' + esc(x[1][2]) + ' (' +
+      (x[1][1] === 'C' ? 'Camera' : 'Senato') + ')</td><td style="font-size:11px">' + x[1][5] + '&ordm; su ' +
+      x[1][6] + '</td></tr>') + '</details>';
+
+  // 4. lontani da casa
+  const noti = C.filter(r => r[13]), lontani = noti.filter(r => r[13] !== r[2]);
+  const gruppi = {};
+  C.forEach(r => {
+    const k = r[0] + ' ' + ramo(r);
+    gruppi[k] = gruppi[k] || {tutti: 0, lontani: 0};
+    if (r[13]) { gruppi[k].tutti++; if (r[13] !== r[2]) gruppi[k].lontani++; }
+  });
+  const regioni = {};
+  noti.forEach(r => {
+    regioni[r[2]] = regioni[r[2]] || [0, 0];
+    regioni[r[2]][0]++; if (r[13] !== r[2]) regioni[r[2]][1]++;
+  });
+  h += '<h2 style="margin-top:12px">Lontani da casa</h2>' +
+    '<p>Su ' + numIt(noti.length) + ' vincitori di cui si conosce la regione di nascita, <b>' + lontani.length +
+    '</b> (' + pcVoti(lontani.length, noti.length) + ') hanno vinto in un collegio di un&rsquo;altra regione.</p>' +
+    tabella(Object.keys(gruppi).sort(), ['Elezione', 'Vincitori', 'Nati in un&rsquo;altra regione'], k =>
+      '<tr><td>' + k + '</td><td class="num">' + gruppi[k].tutti + '</td><td class="num">' + gruppi[k].lontani +
+      ' (' + pcVoti(gruppi[k].lontani, gruppi[k].tutti) + ')</td></tr>') +
+    '<p style="margin-top:8px">Regione per regione, quanti dei suoi eletti nei collegi sono nati altrove:</p>' +
+    tabellaConBarre(Object.keys(regioni).sort((a, b) => regioni[b][1] / regioni[b][0] - regioni[a][1] / regioni[a][0])
+      .map(r => [r + ' (' + regioni[r][1] + ' su ' + regioni[r][0] + ')', 100 * regioni[r][1] / regioni[r][0],
+        '#808080', null, pcVoti(regioni[r][1], regioni[r][0])])) +
+    '<details><summary class="clic">Tutti i nomi</summary>' +
+    tabella(lontani.slice().sort((a, b) => a[0].localeCompare(b[0]) || a[4].localeCompare(b[4])),
+      ['Anno', 'Chi', 'Nato a', 'Eletto a'], r => '<tr><td>' + r[0] + '</td><td>' + chiCollegio(r[4], r[5]) +
+        '</td><td style="font-size:11px">' + esc(r[12]) + ' (' + esc(r[13]) + ')</td><td style="font-size:11px">' +
+        esc(r[3]) + ' (' + esc(r[2]) + ', ' + ramo(r) + ')</td></tr>') + '</details>' +
+    '<p class="piede">Fonte: Ministero dell&rsquo;Interno, archivio storico delle elezioni (Eligendo). La regione di ' +
+    'nascita viene dal comune scritto nelle candidature: chi &egrave; nato all&rsquo;estero o in un comune che ' +
+    'oggi non c&rsquo;&egrave; pi&ugrave; resta fuori dal conto. Le elezioni suppletive non ci sono.</p>';
+  return {titolo: 'I collegi', icona: '&#128506;', html: h, faccia: true,
+          larghezza: 740, altezza: 620, stato: numIt(C.length) + ' collegi'};
+};
+
+/* ---- I voti alla Camera: il riassunto (scripts/riassunto_voti_camera.py) ---- */
+const pcVoti = (a, b) => b ? conUnDecimale(100 * a / b) + '%' : '&mdash;';
+
+// la presenza mese per mese: su cento voti registrati, quanti espressi
+function graficoPresenza(){
+  const M = Object.entries((DATI.riassunto_voti || {}).mesi || {}).filter(x => x[1].voti >= 2000);
+  if (!M.length) return '';
+  const W = 680, H = 210, ml = 34, mr = 8, mt = 22, mb = 22;
+  const g = m => Date.UTC(+m.slice(0, 4), +m.slice(4, 6) - 1, 15) / 864e5;
+  const x0 = g(M[0][0]) - 20, x1 = g(M[M.length - 1][0]) + 20;
+  const X = m => ml + (g(m) - x0) / (x1 - x0) * (W - ml - mr);
+  const Y = v => mt + (1 - v / 100) * (H - mt - mb);
+  let svg = '';
+  LEG.filter(l => l.n !== 'XII').forEach((l, i) => {
+    const a = Math.max(ml, X(l.da.slice(0, 6))), b = Math.min(W - mr, X(l.a.slice(0, 6)));
+    svg += '<rect x="' + a + '" y="' + mt + '" width="' + Math.max(1, b - a) + '" height="' + (H - mt - mb) +
+      '" fill="' + (i % 2 ? '#ffffff' : '#f1f1f1') + '"/><text x="' + ((a + b) / 2) + '" y="' + (mt - 8) +
+      '" font-size="10" fill="#404040" text-anchor="middle">' + l.n + '</text>';
+  });
+  [0, 25, 50, 75, 100].forEach(v => {
+    svg += '<line x1="' + ml + '" x2="' + (W - mr) + '" y1="' + Y(v) + '" y2="' + Y(v) +
+      '" stroke="#d8d8d8"/><text x="' + (ml - 4) + '" y="' + (Y(v) + 3) +
+      '" font-size="10" fill="#606060" text-anchor="end">' + v + '</text>';
+  });
+  for (let a = 1997; a <= 2013; a += 2)
+    svg += '<text x="' + X(a + '01') + '" y="' + (H - 6) + '" font-size="10" fill="#606060" text-anchor="middle">' + a + '</text>';
+  svg += '<polyline fill="none" stroke="' + COL_SI + '" stroke-width="2" points="' +
+    M.map(([m, c]) => X(m).toFixed(1) + ',' + Y(100 * c.espressi / c.voti).toFixed(1)).join(' ') + '"/>';
+  svg += M.map(([m, c]) => '<circle cx="' + X(m).toFixed(1) + '" cy="' + Y(100 * c.espressi / c.voti).toFixed(1) +
+    '" r="6" fill="transparent"><title>' + MESI[+m.slice(4) - 1] + ' ' + m.slice(0, 4) + ': ' +
+    pcVoti(c.espressi, c.voti) + ' di voti espressi</title></circle>').join('');
+  return '<svg viewBox="0 0 ' + W + ' ' + H + '" style="width:100%;max-width:' + W + 'px;display:block">' + svg + '</svg>';
+}
+
+VISTE['voti'] = function(leg){
+  const R = DATI.riassunto_voti;
+  if (!R) throw new Error('Manca il riassunto dei voti: data/riassunto_voti.json.');
+  const legs = ORDINE.filter(m => R.legislature[m]);
+  leg = legs.indexOf(leg) >= 0 ? leg : legs[legs.length - 1];
+  let h = '<h1>I voti alla Camera</h1>' +
+    '<p>Tutte le votazioni elettroniche dell&rsquo;Aula dal 1996 al 2013, deputato per deputato. ' +
+    'Per la XII legislatura (1994-96) negli archivi della Camera non ci sono.</p>';
+
+  // 1. legislatura per legislatura
+  h += '<h2 style="margin-top:12px">Legislatura per legislatura</h2><table><thead><tr><th>Legisl.</th>' +
+    '<th class="num">Votazioni</th><th class="num">Approvate</th><th class="num">Segrete</th>' +
+    '<th class="num">Voti espressi</th><th class="num">In missione</th><th class="num">Non votato</th>' +
+    '<th class="num">Diversi dal gruppo</th></tr></thead><tbody>' + legs.map(m => {
+      const c = R.legislature[m];
+      return '<tr><td>' + m + '</td><td class="num">' + numIt(c.votazioni) + '</td><td class="num">' +
+        pcVoti(c.approvate, c.votazioni) + '</td><td class="num">' + numIt(c.segrete) + '</td><td class="num">' +
+        pcVoti(c.espressi, c.voti) + '</td><td class="num">' + pcVoti(c.missione, c.voti) + '</td><td class="num">' +
+        pcVoti(c.assente, c.voti) + '</td><td class="num">' + pcVoti(c.diversi, c.con_linea) + '</td></tr>';
+    }).join('') + '</tbody></table>' +
+    '<p class="piede">Le percentuali di voti espressi, missioni e voti non dati sono sul totale dei posti ' +
+    'in votazione (un deputato per ogni votazione). Diversi dal gruppo: sui voti palesi in cui il gruppo ' +
+    'ha una linea netta, il misto escluso.</p>';
+
+  // 2. mese per mese
+  h += '<h2 style="margin-top:12px">La presenza, mese per mese</h2>' + graficoPresenza() +
+    '<p class="piede">Su cento posti in votazione, quanti voti espressi (s&igrave;, no o astensione). ' +
+    'Passando sulla linea si legge il mese.</p>';
+
+  // 3. i gruppi
+  const gruppi = R.gruppi.filter(g => g.leg === leg).sort((a, b) => b.voti - a.voti);
+  h += '<h2 style="margin-top:12px">I gruppi a confronto</h2><p>Legislatura: ' + legs.map(m => m === leg
+      ? '<b>' + m + '</b>' : '<span class="clic sceglie-voti" data-leg="' + m + '">' + m + '</span>').join(' &middot; ') +
+    '</p><table><thead><tr><th>Gruppo</th><th class="num">Voti espressi</th><th class="num">In missione</th>' +
+    '<th class="num">Diversi dal gruppo</th></tr></thead><tbody>' + gruppi.map(g =>
+      '<tr><td style="font-size:11px">' + esc(g.nome) + '</td><td class="num">' + pcVoti(g.espressi, g.voti) +
+      '</td><td class="num">' + pcVoti(g.missione, g.voti) + '</td><td class="num">' +
+      (g.sigla.toUpperCase().startsWith('MIST') ? '&mdash;' : pcVoti(g.diversi, g.con_linea)) + '</td></tr>').join('') +
+    '</tbody></table><p class="piede">Solo i gruppi con almeno 20.000 posti in votazione nella legislatura. ' +
+    'Chi era all&rsquo;opposizione a volte esce dall&rsquo;Aula per protesta: anche questo &egrave; un voto non dato.</p>';
+
+  // 4. le più strette
+  const strette = R.strette.slice(0, 15);
+  const riga = v => '<tr><td style="white-space:nowrap;font-size:11px">' + dataIt(v.data) + '</td>' +
+    '<td style="font-size:11px">' + (v.scheda ? '<a target="_blank" rel="noopener" href="' + esc(v.scheda) + '">' : '') +
+    esc(v.descrizione || v.titolo) + (v.scheda ? '</a>' : '') + '</td><td class="num">' + numIt(v.si) +
+    '</td><td class="num">' + numIt(v.no) + '</td><td style="font-size:11px">' +
+    (v.approvata ? 'approvata' : 'respinta') + '</td></tr>';
+  const testa = '<table><thead><tr><th>Data</th><th>Che cosa</th><th class="num">S&igrave;</th>' +
+    '<th class="num">No</th><th>Esito</th></tr></thead><tbody>';
+  h += '<h2 style="margin-top:12px">Le votazioni pi&ugrave; strette</h2>' + testa + strette.map(riga).join('') +
+    '</tbody></table><p class="piede">Le votazioni con almeno 300 s&igrave; e no, ordinate per differenza fra ' +
+    's&igrave; e no. A parit&agrave;, una proposta &egrave; respinta.</p>';
+
+  // 5. le votazioni perse dalla maggioranza
+  const B = R.battute || [];
+  const perG = {};
+  B.forEach(v => { perG[v.governo] = (perG[v.governo] || 0) + 1; });
+  h += '<h2 style="margin-top:12px">Quando la maggioranza ha perso</h2>' +
+    '<p>' + numIt(B.length) + ' votazioni palesi in cui la maggioranza ha votato in un modo e la Camera ha ' +
+    'deciso l&rsquo;altro.</p>' +
+    tabellaConBarre(Object.keys(perG).sort((a, b) => perG[b] - perG[a]).map(g =>
+      [g, perG[g], '#808080', null, numIt(perG[g])])) +
+    '<details><summary class="clic">Tutte</summary>' + testa + B.map(riga).join('') + '</tbody></table></details>' +
+    '<p class="piede">La maggioranza sono i gruppi che hanno votato s&igrave; all&rsquo;ultima fiducia prima di ' +
+    'quel giorno; conta quando almeno sei su dieci dei loro deputati presenti hanno votato allo stesso modo. ' +
+    'Solo voti palesi, dalla XIV legislatura: nella XIII le fiducie negli archivi non sono segnate.</p>';
+  return {titolo: 'I voti alla Camera', icona: '&#128499;', html: h, faccia: true,
+          larghezza: 740, altezza: 620, stato: legs.length + ' legislature'};
+};
+
+document.addEventListener('click', e => {
+  const s = e.target.closest && e.target.closest('.sceglie-voti');
+  if (!s) return;
+  const corpo = s.closest('.corpo');
+  corpo.innerHTML = VISTE['voti'](s.dataset.leg).html;
+  if (INDIRIZZI) linkVeri(corpo);
+});
+
 /* ---- L'emiciclo: chi sedeva in aula, giorno per giorno ----
    Ogni pallino e' una persona, col partito del suo gruppo quel giorno. L'ordine
    da sinistra a destra e' quello dei grafici dei Parlamenti (Wikipedia e simili):
@@ -3677,8 +3879,10 @@ const SCRIVANIA = [
   ['&#128188;', 'Le poltrone', 'poltrone', '', 'sx'],
   ['&#9937;', 'I Responsabili', 'responsabili', '', 'sx'],
   ['&#128203;', 'Elezioni', 'elezioni', '', 'sx'],
+  ['&#128506;', 'I collegi', 'collegi', '', 'sx'],
   ['&#127963;', 'Governi', 'governi', '', 'sx'],
   ['&#128499;', 'Le fiducie', 'fiducia', '', 'sx'],
+  ['&#128202;', 'I voti alla Camera', 'voti', '', 'sx'],
   ['&#128256;', 'Dalla lista al gruppo', 'flussi', '', 'sx'],
   ['&#127967;', 'L’emiciclo', 'emiciclo', '', 'sx'],
   ['&#128721;', 'Le cadute', 'cadute', '', 'sx'],

@@ -486,11 +486,57 @@ def main():
     fi_file = os.path.join(QUI, '..', 'data', 'risultati_fi_pdl.json')
     if os.path.exists(fi_file):
         dati['risultati_fi_pdl'] = {'elezioni': json.load(open(fi_file, encoding='utf-8'))['elezioni']}
+    # Le sfide nei collegi uninominali 1994-2001 (scripts/collegi_sfide.py)
+    cs_file = os.path.join(QUI, '..', 'data', 'collegi_sfide.json')
+    if os.path.exists(cs_file):
+        dati['collegi_sfide'] = json.load(open(cs_file, encoding='utf-8'))['collegi']
     # Il riassunto dei voti alla Camera (scripts/riassunto_voti_camera.py)
     rv_file = os.path.join(QUI, '..', 'data', 'riassunto_voti.json')
     if os.path.exists(rv_file):
         rv = json.load(open(rv_file, encoding='utf-8'))
         dati['riassunto_voti'] = {k: v for k, v in rv.items() if not k.startswith('_')}
+        # I gruppi: quando un gruppo cambia nome l'archivio dei voti gli da' un codice
+        # nuovo (UDC -> UDCPTP, IR -> PT, FLI -> FLPTP). Si riuniscono per sigla col
+        # registro dei gruppi; FLI e FLPTP nel registro non ci sono, e si uniscono a
+        # mano. Le componenti del misto vanno tutte nel misto.
+        gc = json.load(open(os.path.join(QUI, '..', 'data', 'gruppi_camera.json'),
+                            encoding='utf-8'))['gruppi']
+        romani = {'13': 'XIII', '14': 'XIV', '15': 'XV', '16': 'XVI'}
+        per_sigla = {(romani.get(v[0]), v[1]): gid for gid, v in gc.items()}
+        # le sigle dell'archivio dei voti che il registro non conosce, scritte a mano:
+        # (legislatura, sigla nei voti) -> (sigla comune, nome)
+        a_mano = {
+            ('XIII', 'DS-U'): ('DS-U', "DEMOCRATICI DI SINISTRA - L'ULIVO"),
+            ('XIII', 'COMUN'): ('COMUN', 'COMUNISTI ITALIANI'),
+            ('XIII', 'RC-PRO'): ('RC-PRO', 'RIFONDAZIONE COMUNISTA - PROGRESSISTI'),
+            ('XIII', 'LEGA-P'): ('LEGA', 'LEGA NORD PADANIA'),
+            ('XIII', 'LFNIP'): ('LEGA', 'LEGA NORD PADANIA'),
+            ('XIII', 'LEGANP'): ('LEGA', 'LEGA NORD PADANIA'),
+            ('XIV', 'UDC'): ('UDC', 'UDC (CCD-CDU)'),
+            ('XIV', 'U.D.C.'): ('UDC', 'UDC (CCD-CDU)'),
+            ('XIV', 'CCDCDU'): ('UDC', 'UDC (CCD-CDU)'),
+            ('XVI', 'FLI'): ('FLI', "FUTURO E LIBERTA' PER IL TERZO POLO"),
+            ('XVI', 'FLPTP'): ('FLI', "FUTURO E LIBERTA' PER IL TERZO POLO"),
+        }
+        uniti = {}
+        for g in rv.get('gruppi', []):
+            if (g['leg'], g['sigla']) in a_mano:
+                sigla, nome = a_mano[(g['leg'], g['sigla'])]
+                u = uniti.setdefault((g['leg'], 'a mano', sigla), {'leg': g['leg'], 'sigla': sigla, 'nome': nome})
+                for k, v in g.items():
+                    if isinstance(v, int):
+                        u[k] = u.get(k, 0) + v
+                continue
+            sigla = g['sigla']
+            misto = sigla.upper().startswith(('MIST', 'M-')) or g['nome'].upper().startswith('MISTO')
+            chiave = (g['leg'], 'MISTO' if misto else g['gid'] if g['gid'] in gc
+                      else per_sigla.get((g['leg'], sigla), sigla))
+            nome = 'GRUPPO MISTO' if misto else (gc[chiave[1]][2] if chiave[1] in gc else g['nome'])
+            u = uniti.setdefault(chiave, {'leg': g['leg'], 'sigla': 'MISTO' if misto else sigla, 'nome': nome})
+            for k, v in g.items():
+                if isinstance(v, int):
+                    u[k] = u.get(k, 0) + v
+        dati['riassunto_voti']['gruppi'] = list(uniti.values())
         # le descrizioni della Camera portano entita' HTML ('&#39;'): la pagina le riscrive da se'
         for elenco in ('battute', 'strette'):
             for x in dati['riassunto_voti'].get(elenco, []):

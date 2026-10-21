@@ -71,10 +71,11 @@ def bel_nome(s):
 
 def camera(anno):
     f = glob.glob(os.path.join(ESTRATTI, 'camera-%s*' % anno, 'Camera_*_Uninom_Cand&Contr.txt'))[0]
-    per_comune, simboli = {}, collections.defaultdict(list)
+    per_comune, simboli, nato = {}, collections.defaultdict(list), {}
     for r in righe(f):
         cand = (r['circ'].strip(), r['coll'].strip(), r['cognome'].strip(), r['nome'].strip(),
                 data_iso(r['datanascita']))
+        nato[cand] = (r.get('luogonascita') or '').strip()
         per_comune[cand + (r['comune'].strip(),)] = numero(r['TOTVOTI'])
         s = (r['descrcontrass'] or '').strip()
         if s and s not in simboli[cand]:
@@ -82,22 +83,24 @@ def camera(anno):
     voti = collections.Counter()
     for k, v in per_comune.items():
         voti[k[:5]] += v
-    return [(k[0], k[1], k[2], k[3], k[4], v, simboli[k], '') for k, v in voti.items()]
+    # in coda il luogo di nascita, che serve a collegi_sfide.py
+    return [(k[0], k[1], k[2], k[3], k[4], v, simboli[k], '', nato[k]) for k, v in voti.items()]
 
 
 def senato(anno):
     f = glob.glob(os.path.join(ESTRATTI, 'senato-%s*' % anno, 'Senato_*_candlista.txt'))[0]
-    voti, simboli, eletti = collections.Counter(), collections.defaultdict(list), set()
+    voti, simboli, eletti, nato = collections.Counter(), collections.defaultdict(list), set(), {}
     for r in righe(f):
         cand = (r['REGIONE'].strip(), r['COLLEGIO'].strip(), r['cognome'].strip(), r['nome'].strip(),
                 data_iso(r['datanascita']))
+        nato[cand] = (r.get('luogonascita') or '').strip()
         voti[cand] += numero(r['votiLista'])
         s = (r['descrlista'] or '').strip()
         if s and s not in simboli[cand]:
             simboli[cand].append(s)
         if (r.get('CODTIPOELETTO') or '').strip() == 'E':
             eletti.add(cand)
-    return [k + (v, simboli[k], 'E' if k in eletti else '') for k, v in voti.items()]
+    return [k + (v, simboli[k], 'E' if k in eletti else '', nato[k]) for k, v in voti.items()]
 
 
 PARTICELLE = {'DE', 'DI', 'DEL', 'DELLA', 'DELLE', 'DEI', 'DEGLI', 'DA', 'DAL', 'DALLA', 'LA', 'LO', 'LE'}
