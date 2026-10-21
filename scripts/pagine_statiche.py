@@ -43,11 +43,12 @@ FUORI_DAI_MOTORI = {'trova', 'aggiorna', 'confronta', 'esegui', 'errore'}
 # grigio: vuole un indirizzo da scaricare, e una misura multipla di 48 pixel.
 # Solo nelle pagine pubblicate: dal disco /favicon.ico non porta da nessuna
 # parte, e li' resta l'icona incorporata.
+# Indirizzi completi, come su primarepubblica.net: Google li legge senza dubbi.
 ICONE = '\n'.join([
-    '<link rel="icon" href="/favicon.ico" sizes="48x48">',
-    '<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png">',
-    '<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">',
-    '<link rel="apple-touch-icon" href="/apple-touch-icon.png">',
+    '<link rel="icon" href="%s/favicon.ico" sizes="48x48">' % INDIRIZZO,
+    '<link rel="icon" type="image/png" sizes="96x96" href="%s/favicon-96.png">' % INDIRIZZO,
+    '<link rel="icon" type="image/png" sizes="192x192" href="%s/favicon-192.png">' % INDIRIZZO,
+    '<link rel="apple-touch-icon" href="%s/apple-touch-icon.png">' % INDIRIZZO,
 ])
 FILE_ICONE = ('favicon.ico', 'favicon-96.png', 'favicon-192.png', 'apple-touch-icon.png')
 
@@ -491,6 +492,9 @@ def costruisci(scheletro, dati, descrizione_casa, versione, cartella_sito, uscit
     # anche una correzione fatta in giornata arriva subito a chi ha gia' in
     # memoria la copia vecchia.
     impronta = lambda s: hashlib.sha1(s.encode('utf-8')).hexdigest()[:10]
+    # le icone incorporate (data:) servono solo al file da disco: nelle pagine
+    # pubblicate confondono Google, che resta col mappamondo grigio
+    involucro = re.sub(r'<link rel="icon"[^>]*href="data:[^>]*>\n?', '', involucro)
     involucro = (involucro
                  .replace('<!--%%STILE%%-->',
                           '<link rel="stylesheet" href="/stile.css?v=%s">' % impronta(stile))
