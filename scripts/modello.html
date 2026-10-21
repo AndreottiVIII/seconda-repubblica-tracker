@@ -699,6 +699,27 @@ function linkVeri(radice){
   });
 }
 
+/* I titoli delle proposte di legge stanno in un file per persona
+   (/proposte/<codice>.json): si chiedono solo quando qualcuno apre il
+   riquadro, invece di farli scaricare a tutti con il resto del sito. */
+document.addEventListener('toggle', e => {
+  const d = e.target;
+  if (!d.dataset || !d.dataset.proposte || !d.open || d.dataset.caricato) return;
+  d.dataset.caricato = '1';
+  const dove = d.querySelector('.titoli-proposte');
+  fetch(RADICE_SITO + 'proposte/' + d.dataset.proposte + '.json')
+    .then(r => r.ok ? r.json() : Promise.reject(r.status))
+    .then(t => {
+      const ramo = {C: 'Camera', S: 'Senato'};
+      dove.innerHTML = Object.keys(t).sort().map(k =>
+        '<h3 style="margin:6px 0 2px">' + ramo[k] + '</h3><table><tbody>' +
+        t[k].map(x => '<tr><td style="white-space:nowrap;font-size:11px">' +
+          (x[0] ? dataIt(x[0]) : '') + '</td><td style="font-size:11px">' + esc(x[1]) +
+          '</td></tr>').join('') + '</tbody></table>').join('');
+    })
+    .catch(() => { dove.textContent = 'Titoli non disponibili.'; });
+}, true);
+
 /* ---------- pezzi riusabili ---------- */
 function perElenco(p){
   /* 'Andreotti Giulio': in un elenco ordinato per cognome, il cognome sta
@@ -815,6 +836,7 @@ VISTE['persona'] = function(q){
        ).join(', ') : 'nessuna') + '</dd>';
   if (p.gv) d += '<dt>Governi</dt><dd>' + p.gv.map(esc).join(', ') + '</dd>';
   if (p.k) d += '<dt>Cariche</dt><dd>' + p.k.map(esc).join('<br>') + '</dd>';
+  if (p.st) d += '<dt>Studi e professione</dt><dd>' + esc(p.st) + '</dd>';
   d += '<dt>Cambi di casacca</dt><dd><b>' + p.c + '</b></dd>';
   d += '</dl>';
 
@@ -856,14 +878,71 @@ VISTE['persona'] = function(q){
         '<td style="white-space:nowrap">' + periodoGuida(r[2], r[3]) +
         '</td></tr>').join('') + '</tbody></table>';
 
+  // I mandati finiti prima del tempo. Quelli di pochi giorni li dice gia' la
+  // nota qui sopra.
+  (p.fm || []).forEach(x => {
+    const [leg, quando, motivo] = x;
+    if ((p.mb || []).some(b => b[0] === leg)) return;
+    corpo += '<div class="avviso">Nella ' + leg + ' legislatura il mandato alla Camera ' +
+      '&egrave; finito il ' + dataIt(quando) + ' per ' + esc(motivo.toLowerCase()) + '.</div>';
+  });
+
+  if (p.el){
+    const righe = ORDINE.filter(m => p.el[m]);
+    if (righe.length)
+      corpo += '<h2 style="margin-top:12px">Elezione alla Camera</h2>' +
+        '<table><thead><tr><th>Legisl.</th><th>Dove</th><th>Lista</th></tr></thead><tbody>' +
+        righe.map(m => '<tr><td>' + m + '</td><td>' + esc(p.el[m][1]) + '</td>' +
+          '<td style="font-size:11px">' + esc(p.el[m][2] || (p.el[m][0] === 'M' ? 'maggioritario' : '')) +
+          '</td></tr>').join('') + '</tbody></table>';
+  }
+
+  if (p.go && p.go.length)
+    corpo += '<h2 style="margin-top:12px">Al governo</h2>' +
+      '<table><thead><tr><th>Governo</th><th>Incarico</th><th>Dal</th><th>Al</th></tr></thead><tbody>' +
+      p.go.map(g => '<tr><td>' + esc(g[0]) + '</td><td style="font-size:11px">' + esc(g[1]) +
+        '</td><td style="white-space:nowrap">' + dataIt(g[2] || '') + '</td>' +
+        '<td style="white-space:nowrap">' + dataIt(g[3] || '') + '</td></tr>').join('') +
+      '</tbody></table>';
+
+  if (p.rg && p.rg.length)
+    corpo += '<h2 style="margin-top:12px">Ruoli nel gruppo</h2>' +
+      '<table><thead><tr><th>Legisl.</th><th>Ruolo</th><th>Gruppo</th><th>Quando</th></tr></thead><tbody>' +
+      p.rg.map(r => '<tr><td>' + r[0] + '</td><td>' + esc(r[1]) + '</td>' +
+        '<td style="font-size:11px">' + esc(r[2]) + '</td>' +
+        '<td style="white-space:nowrap;font-size:11px">' + periodoGuida(r[3], r[4]) + '</td></tr>').join('') +
+      '</tbody></table>';
+
+  if (p.pr){
+    const ramo = {C: 'Alla Camera', S: 'Al Senato'};
+    const frasi = Object.keys(p.pr).sort().map(k => {
+      const [primo, cof, gov] = p.pr[k];
+      const pezzi = [];
+      if (primo) pezzi.push('<b>' + primo + '</b> come primo firmatario');
+      if (cof) pezzi.push('<b>' + cof + '</b> cofirmate');
+      if (gov) pezzi.push('<b>' + gov + '</b> disegni di legge firmati per il governo');
+      return pezzi.length ? ramo[k] + ': ' + pezzi.join(', ') + '.' : '';
+    }).filter(Boolean);
+    const conTitoli = Object.keys(p.pr).some(k => p.pr[k][0]);
+    if (frasi.length)
+      corpo += '<h2 style="margin-top:12px">Proposte di legge</h2><p>' + frasi.join(' ') + '</p>' +
+        (conTitoli && INDIRIZZI
+          ? '<details data-proposte="' + p.q + '"><summary class="clic">I titoli delle ' +
+            'proposte come primo firmatario</summary><div class="titoli-proposte">' +
+            'Caricamento...</div></details>' : '') +
+        '<p class="piede">Il Senato pubblica le proposte dalla XIII legislatura: quelle ' +
+        'presentate al Senato nel 1994-96 non ci sono.</p>';
+  }
+
   if (p['in']){
     const righe = [];
-    ORDINE.forEach(m => (p['in'][m] || []).forEach(x => righe.push([m, x[0], x[1]])));
+    ORDINE.forEach(m => (p['in'][m] || []).forEach(x => righe.push([m, x[0], x[1], x[2] || 'C'])));
     if (righe.length)
       corpo += '<h2 style="margin-top:12px">Incarichi parlamentari</h2>' +
-        '<table><thead><tr><th>Legisl.</th><th>Ruolo</th><th>Organo</th>' +
+        '<table><thead><tr><th>Legisl.</th><th>Ramo</th><th>Ruolo</th><th>Organo</th>' +
         '</tr></thead><tbody>' + righe.map(r =>
-          '<tr><td>' + r[0] + '</td><td>' + esc(r[1].toLowerCase()) + '</td>' +
+          '<tr><td>' + r[0] + '</td><td>' + (r[3] === 'S' ? 'Senato' : 'Camera') + '</td>' +
+          '<td>' + esc(r[1].toLowerCase()) + '</td>' +
           '<td style="font-size:11px">' + esc(r[2]) + '</td></tr>').join('') +
         '</tbody></table>';
   }
@@ -2676,9 +2755,9 @@ VISTE['poltrone'] = function(){
         quanti(p) + '</td><td style="font-size:11px">' +
         esc([...new Set(elenco)].slice(0, 4).join('; ')) + '</td></tr>';
     }).join('') + '</tbody></table>' +
-    '<p class="piede">Solo la Camera: il Senato negli open data non pubblica ' +
-    'gli incarichi interni dei suoi senatori, quindi questa met&agrave; del ' +
-    'Parlamento resta scoperta.</p>';
+    '<p class="piede">Camera e Senato, dai rispettivi open data: presidenze e ' +
+    'vicepresidenze di commissione e di giunta, segreterie, Presidenza e ' +
+    'ufficio di presidenza.</p>';
 
   const traversi = conGoverni.filter(p =>
     p.gv.some(g => DESTRA.indexOf(g) >= 0) &&

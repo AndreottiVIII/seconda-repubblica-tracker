@@ -218,6 +218,38 @@ def main():
                 p['mb'] = brevi[p['q']]
         print('mandati brevi: %d persone' % sum(1 for p in persone if p.get('mb')))
 
+    # Le schede piu' ricche: studi, governo, elezioni, ruoli nel gruppo, fine
+    # del mandato, incarichi al Senato, proposte di legge. Le ricava
+    # scripts/arricchisci.py dagli archivi scaricati sul PC; qui arriva il file
+    # gia' fatto, perche' il lavoro notturno quegli archivi non li ha. I titoli
+    # delle proposte restano fuori: peserebbero quanto mezzo sito, e la scheda
+    # li carica a parte (pagine_statiche li scrive in pubblica/proposte/).
+    arr_file = os.path.join(QUI, '..', 'data', 'arricchimenti.json')
+    if os.path.exists(arr_file):
+        arr = json.load(open(arr_file, encoding='utf-8')).get('schede', {})
+        for p in persone:
+            x = arr.get(p['q'])
+            if not x:
+                continue
+            if x.get('studi'):
+                p['st'] = x['studi']
+            if x.get('governo'):
+                p['go'] = [[g['governo'], g['carica'], g['da'], g['a']] for g in x['governo']]
+            if x.get('elezioni'):
+                p['el'] = x['elezioni']
+            if x.get('ruoli_gruppo'):
+                p['rg'] = x['ruoli_gruppo']
+            if x.get('fine_mandato'):
+                p['fm'] = x['fine_mandato']
+            for leg, voci in (x.get('incarichi_senato') or {}).items():
+                lista = p.setdefault('in', {}).setdefault(leg, [])
+                for r, o in voci:
+                    lista.append([r, o, 'S'])
+            if x.get('proposte'):
+                p['pr'] = {ramo: [v.get('primo', 0), v.get('cofirmate', 0), v.get('governo', 0)]
+                           for ramo, v in x['proposte'].items()}
+        print('schede arricchite: %d' % sum(1 for p in persone if p['q'] in arr))
+
     # I distintivi: fatti datati e con una fonte, scritti a mano perche'
     # nessun registro li tiene. Il file e' piccolo apposta: se un distintivo
     # non si puo' scrivere senza un aggettivo, non e' un fatto.

@@ -520,6 +520,18 @@ def costruisci(scheletro, dati, descrizione_casa, versione, cartella_sito, uscit
     scrivi('404.html', monta(SITO, testa('/', SITO, descrizione_casa, fuori=True,
                                          canonico=False), SITO))
 
+    # I titoli delle proposte di legge, un file per persona: la scheda li
+    # chiede solo quando si apre, invece di farli scaricare a tutti.
+    arr_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'data',
+                            'arricchimenti.json')
+    if os.path.exists(arr_file):
+        arr = json.load(open(arr_file, encoding='utf-8')).get('schede', {})
+        for q, x in arr.items():
+            titoli = {ramo: v['titoli'] for ramo, v in (x.get('proposte') or {}).items()
+                      if v.get('titoli')}
+            if titoli:
+                scrivi('proposte/%s.json' % q,
+                       json.dumps(titoli, ensure_ascii=False, separators=(',', ':')))
     scrivi('stile.css', stile)
     scrivi('programma.js', programma)
     scrivi('versione.txt', versione)
