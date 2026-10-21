@@ -1103,6 +1103,60 @@ VISTE['classifiche'] = function(){
   h += '<h2 style="margin-top:12px">I fedeli</h2>' +
        '<p>Hanno fatto tutte e cinque le legislature senza cambiare casacca nemmeno una volta: ' +
        numero(fedeli.length, 'lista', 'fedeli') + '.</p>';
+
+  // --- dall'attivita' in aula: interrogazioni, proposte, voti
+  const num = x => x.toLocaleString('it-IT');
+  const pc = (a, b) => (100 * a / b).toLocaleString('it-IT', {maximumFractionDigits: 1}) + '%';
+  const somma = (p, campo, i) => Object.values(p[campo] || {}).reduce((t, v) => t + (v[i] || 0), 0);
+  const ispettivi = p => [0, 1, 2, 3, 4].reduce((t, i) => t + somma(p, 'ai', i), 0);
+  const conAi = P.filter(p => p.ai).sort((a, b) => ispettivi(b) - ispettivi(a) || perCognome(a, b));
+  if (conAi.length)
+    h += '<h2 style="margin-top:12px">Pi&ugrave; interrogazioni, interpellanze e mozioni</h2>' +
+      classifica(senzaTagliare(conAi, 10, ispettivi), p => num(ispettivi(p)),
+        p => 'di cui ' + num(somma(p, 'ai', 0)) + ' interrogazioni') +
+      '<p class="piede">Alla Camera, come primo firmatario, dalla XII alla XVI legislatura.</p>';
+
+  const proposte = p => ((p.pr || {}).C || [0])[0] + ((p.pr || {}).S || [0])[0];
+  const conPr = P.filter(p => proposte(p)).sort((a, b) => proposte(b) - proposte(a) || perCognome(a, b));
+  if (conPr.length)
+    h += '<h2 style="margin-top:12px">Pi&ugrave; proposte di legge come primo firmatario</h2>' +
+      classifica(senzaTagliare(conPr, 10, proposte), p => num(proposte(p)),
+        p => ['C', 'S'].filter(k => p.pr[k] && p.pr[k][0])
+          .map(k => (k === 'C' ? 'Camera ' : 'Senato ') + num(p.pr[k][0])).join(', ')) +
+      '<p class="piede">Camera dalla XII, Senato dalla XIII legislatura: le proposte presentate al ' +
+      'Senato nel 1994-96 negli archivi non ci sono.</p>';
+
+  // i voti: votazioni, espressi, missione, assente, con una linea del gruppo, diversi
+  const voti = p => {
+    const t = [0, 0, 0, 0, 0, 0];
+    Object.values(p.vc || {}).forEach(v => { for (let i = 0; i < 6; i++) t[i] += v[i]; });
+    return t;
+  };
+  const conVc = P.filter(p => p.vc).map(p => ({p: p, v: voti(p)}));
+  const SOGLIA = 10000, SOGLIA_LINEA = 2000;
+  const tabVoti = (elenco, valore, extra) => '<table><tbody>' + elenco.map(x =>
+    '<tr class="riga" data-q="' + x.p.q + '"><td style="width:38%">' + esc(x.p.n) + '</td>' +
+    '<td class="num" style="width:14%">' + valore(x) + '</td><td>' + extra(x) + '</td></tr>').join('') +
+    '</tbody></table>';
+  if (conVc.length){
+    const dis = conVc.filter(x => x.v[4] >= SOGLIA_LINEA)
+      .sort((a, b) => b.v[5] / b.v[4] - a.v[5] / a.v[4]);
+    h += '<h2 style="margin-top:12px">Pi&ugrave; voti diversi dal proprio gruppo</h2>' +
+      tabVoti(dis.slice(0, 10), x => pc(x.v[5], x.v[4]), x => num(x.v[5]) + ' su ' + num(x.v[4]) + ' voti') +
+      '<p class="piede">Alla Camera, dalla XIII alla XVI legislatura: le votazioni palesi in cui il ' +
+      'gruppo ha una maggioranza netta, il misto escluso; solo chi ne ha almeno ' + num(SOGLIA_LINEA) + '.</p>';
+    const tanti = conVc.filter(x => x.v[0] >= SOGLIA);
+    const piu = tanti.slice().sort((a, b) => b.v[1] / b.v[0] - a.v[1] / a.v[0]);
+    h += '<h2 style="margin-top:12px">Hanno votato pi&ugrave; spesso</h2>' +
+      tabVoti(piu.slice(0, 10), x => pc(x.v[1], x.v[0]), x => num(x.v[1]) + ' su ' + num(x.v[0]) + ' votazioni');
+    const assenti = tanti.slice().sort((a, b) => b.v[3] / b.v[0] - a.v[3] / a.v[0]);
+    h += '<h2 style="margin-top:12px">Pi&ugrave; spesso non hanno votato, senza essere in missione</h2>' +
+      tabVoti(assenti.slice(0, 10), x => pc(x.v[3], x.v[0]), x => num(x.v[3]) + ' su ' + num(x.v[0]) + ' votazioni') +
+      '<p class="piede">Alla Camera, dalla XIII alla XVI legislatura, fra chi ha almeno ' + num(SOGLIA) +
+      ' votazioni. La missione &egrave; un&rsquo;assenza giustificata e qui non conta. ' +
+      'L&rsquo;archivio dice solo che non ha votato, non perch&eacute;: una malattia, un altro ' +
+      'incarico, una scelta politica.</p>';
+  }
   return {titolo: 'Classifiche', icona: '&#127942;', html: h, faccia: true,
           larghezza: 660, altezza: 540, stato: 'ordinate per numero di cambi'};
 }
