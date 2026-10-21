@@ -1,0 +1,1963 @@
+{
+ "_nota": "Domande di autorizzazione contro i deputati, XII-XVI: banche dati della Camera (XII, XIII) e indici dei Documenti IV (XIV-XVI). Una domanda e' un atto parlamentare, non una condanna. Generato da scripts/autorizzazioni_camera.py.",
+ "domande": {
+  "Q2426702": [
+   [
+    "XII",
+    "19940624",
+    "opinioni",
+    "IV-ter 1",
+    "restituita",
+    "procedimento civile"
+   ],
+   [
+    "XII",
+    "19940624",
+    "opinioni",
+    "IV-ter 3",
+    "",
+    "offesa all'onore o al prestigio del Presidente della Repubblica"
+   ],
+   [
+    "XII",
+    "19940627",
+    "opinioni",
+    "IV-ter 4",
+    "",
+    "diffamazione col mezzo della stampa"
+   ],
+   [
+    "XII",
+    "19940929",
+    "opinioni",
+    "IV-ter 8",
+    "",
+    "diffamazione col mezzo della stampa"
+   ],
+   [
+    "XII",
+    "19941019",
+    "opinioni",
+    "IV-ter 11",
+    "",
+    "diffamazione col mezzo della stampa"
+   ],
+   [
+    "XII",
+    "19941115",
+    "opinioni",
+    "IV-ter 12",
+    "",
+    "procedimento civile"
+   ],
+   [
+    "XII",
+    "19941212",
+    "opinioni",
+    "IV-ter 14",
+    "",
+    "procedimento civile"
+   ],
+   [
+    "XII",
+    "19950313",
+    "opinioni",
+    "IV-ter 16",
+    "",
+    "procedimento civile"
+   ],
+   [
+    "XII",
+    "19950411",
+    "opinioni",
+    "",
+    "",
+    "ingiuria aggravata"
+   ],
+   [
+    "XII",
+    "19950503",
+    "opinioni",
+    "IV-ter 19",
+    "",
+    "diffamazione col mezzo della stampa"
+   ],
+   [
+    "XII",
+    "19950922",
+    "opinioni",
+    "IV-ter 25",
+    "",
+    "procedimento civile"
+   ],
+   [
+    "XII",
+    "19951026",
+    "opinioni",
+    "IV-ter 27",
+    "",
+    "diffamazione col mezzo della stampa"
+   ],
+   [
+    "XII",
+    "19951120",
+    "opinioni",
+    "IV-ter 28",
+    "",
+    "oltraggio a pubblico ufficiale, continuato e aggravato"
+   ],
+   [
+    "XII",
+    "19960327",
+    "opinioni",
+    "IV-ter 38",
+    "",
+    "diffamazione col mezzo della stampa aggravata"
+   ],
+   [
+    "XII",
+    "19960327",
+    "opinioni",
+    "IV-ter 40",
+    "",
+    "diffamazione col mezzo della stampa"
+   ],
+   [
+    "XII",
+    "19960327",
+    "opinioni",
+    "IV-ter 39",
+    "",
+    "diffamazione col mezzo della stampa"
+   ],
+   [
+    "XII",
+    "19960418",
+    "opinioni",
+    "IV-ter 42",
+    "",
+    "resistenza a pubblico ufficiale, aggravata; inosservanza dei provvedimenti dell'autorita', aggravata"
+   ],
+   [
+    "XIII",
+    "19960509",
+    "opinioni",
+    "IV-ter 1",
+    "",
+    "ingiuria aggravata"
+   ],
+   [
+    "XIII",
+    "19960509",
+    "opinioni",
+    "IV-ter 3",
+    "restituita",
+    "diffamazione col mezzo della stampa"
+   ],
+   [
+    "XIII",
+    "19960509",
+    "opinioni",
+    "IV-ter 7",
+    "",
+    "procedimento civile"
+   ],
+   [
+    "XIII",
+    "19960509",
+    "opinioni",
+    "IV-ter 9",
+    "",
+    "diffamazione col mezzo della stampa"
+   ],
+   [
+    "XIII",
+    "19960509",
+    "opinioni",
+    "IV-ter 10",
+    "",
+    "oltraggio a pubblico ufficiale, continuato ed aggravato"
+   ],
+   [
+    "XIII",
+    "19960509",
+    "opinioni",
+    "IV-ter 20",
+    "",
+    "diffamazione col mezzo della stampa"
+   ],
+   [
+    "XIII",
+    "19960509",
+    "opinioni",
+    "IV-ter 21",
+    "",
+    "diffamazione col mezzo della stampa"
+   ],
+   [
+    "XIII",
+    "19960509",
+    "opinioni",
+    "IV-ter 22",
+    "",
+    "diffamazione con mezzo della stampa"
+   ],
+   [
+    "XIII",
+    "19960509",
+    "opinioni",
+    "IV-ter 24",
+    "",
+    "resistenza a pubblico ufficiale aggravata; inosservanza dei provvedimenti dell'autorità aggravata"
+   ],
+   [
+    "XIII",
+    "19960515",
+    "opinioni",
+    "IV-ter 25",
+    "",
+    "diffamazione col mezzo della stampa continuata e aggravata"
+   ],
+   [
+    "XIII",
+    "19960618",
+    "opinioni",
+    "IV-ter 28",
+    "",
+    "diffamazione col mezzo della stampa, aggravata"
+   ],
+   [
+    "XIII",
+    "19960618",
+    "opinioni",
+    "IV-ter 27",
+    "",
+    "diffamazione col mezzo della stampa, aggravata"
+   ],
+   [
+    "XIII",
+    "19960618",
+    "opinioni",
+    "IV-ter 29",
+    "",
+    "oltraggio a pubblico ufficiale, aggravato"
+   ],
+   [
+    "XIII",
+    "19960808",
+    "opinioni",
+    "IV-ter 36",
+    "restituita",
+    "diffamazione col mezzo della stampa, aggravata"
+   ],
+   [
+    "XIII",
+    "19960808",
+    "opinioni",
+    "IV-ter 37",
+    "",
+    "procedimento civile"
+   ],
+   [
+    "XIII",
+    "19960909",
+    "opinioni",
+    "IV-ter 38",
+    "",
+    "diffamazione col mezzo della stampa, aggravata"
+   ],
+   [
+    "XIII",
+    "19961001",
+    "opinioni",
+    "IV-ter 41",
+    "",
+    "diffamazione col mezzo della stampa, continuata e aggravata"
+   ],
+   [
+    "XIII",
+    "19961030",
+    "opinioni",
+    "IV-ter 45",
+    "restituita",
+    "procedimento civile"
+   ],
+   [
+    "XIII",
+    "19961031",
+    "opinioni",
+    "IV-ter 46",
+    "",
+    "diffamazione col mezzo della stampa"
+   ],
+   [
+    "XIII",
+    "19961104",
+    "opinioni",
+    "IV-ter 47",
+    "",
+    "diffamazione col mezzo della stampa aggravata"
+   ],
+   [
+    "XIII",
+    "19961106",
+    "opinioni",
+    "IV-ter 49",
+    "",
+    "procedimento civile"
+   ],
+   [
+    "XIII",
+    "19961106",
+    "opinioni",
+    "IV-ter 50",
+    "",
+    "diffamazione col mezzo della stampa, aggravata"
+   ],
+   [
+    "XIII",
+    "19961125",
+    "opinioni",
+    "IV-ter 53",
+    "",
+    "procedimento civile"
+   ],
+   [
+    "XIII",
+    "19961205",
+    "opinioni",
+    "IV-ter 56",
+    "",
+    "diffamazione col mezzo della stampa"
+   ],
+   [
+    "XIII",
+    "19961205",
+    "opinioni",
+    "IV-ter 57",
+    "",
+    "diffamazione col mezzo della stampa aggravata"
+   ],
+   [
+    "XIII",
+    "19961205",
+    "opinioni",
+    "IV-ter 58",
+    "",
+    "procedimento civile"
+   ],
+   [
+    "XIII",
+    "19970109",
+    "opinioni",
+    "IV-ter 64",
+    "",
+    "diffamazione col mezzo della stampa, continuata e aggravata"
+   ],
+   [
+    "XIII",
+    "19970109",
+    "opinioni",
+    "IV-ter 65",
+    "",
+    "diffamazione continuata"
+   ],
+   [
+    "XIII",
+    "19970113",
+    "opinioni",
+    "IV-ter 66",
+    "",
+    "procedimento civile"
+   ],
+   [
+    "XIII",
+    "19960729",
+    "opinioni",
+    "IV-ter 34",
+    "",
+    "diffamazione col mezzo della stampa, aggravata"
+   ],
+   [
+    "XIII",
+    "19970130",
+    "opinioni",
+    "IV-ter 67",
+    "",
+    "procedimento civile"
+   ],
+   [
+    "XIII",
+    "19971209",
+    "opinioni",
+    "IV-ter 72",
+    "",
+    "diffamazione col mezzo della stampa"
+   ],
+   [
+    "XIV",
+    "20030711",
+    "opinioni",
+    "IV-ter 2",
+    "",
+    ""
+   ],
+   [
+    "XIV",
+    "20040121",
+    "opinioni",
+    "IV-ter 4",
+    "",
+    ""
+   ],
+   [
+    "XIV",
+    "20040611",
+    "opinioni",
+    "IV-ter 6",
+    "",
+    ""
+   ],
+   [
+    "XIV",
+    "20040731",
+    "opinioni",
+    "IV-ter 11",
+    "",
+    ""
+   ],
+   [
+    "XIV",
+    "20041216",
+    "opinioni",
+    "IV-ter 12",
+    "",
+    "procedimento civile"
+   ],
+   [
+    "XIV",
+    "20050115",
+    "opinioni",
+    "IV-ter 14",
+    "",
+    ""
+   ],
+   [
+    "XIV",
+    "20050512",
+    "opinioni",
+    "IV-ter 15",
+    "",
+    ""
+   ],
+   [
+    "XIV",
+    "20051215",
+    "opinioni",
+    "IV-ter 19",
+    "",
+    ""
+   ]
+  ],
+  "Q47832": [
+   [
+    "XII",
+    "19940624",
+    "opinioni",
+    "IV-ter 2",
+    "",
+    "vilipendio della Repubblica, delle istituzioni costituzionali e delle Forze armate"
+   ],
+   [
+    "XII",
+    "19940727",
+    "opinioni",
+    "IV-ter 7",
+    "",
+    "diffamazione col mezzo della stampa"
+   ],
+   [
+    "XII",
+    "19960313",
+    "opinioni",
+    "IV-ter 37",
+    "",
+    "offesa all'onore e al prestigio del Presidente della Repubblica"
+   ],
+   [
+    "XIII",
+    "19960509",
+    "opinioni",
+    "IV-ter 19",
+    "",
+    "offesa all'onore e al prestigio della Presidente della Repubblica; diffamazione col mezzo della stampa"
+   ],
+   [
+    "XIII",
+    "19960722",
+    "opinioni",
+    "",
+    "",
+    "attentato contro i diritti politici del cittadino; minaccia a pubblico ufficiale; istigazione a delinquere; diffamazione; minaccia; riorganizzazione del disciolto partito fascista"
+   ],
+   [
+    "XIII",
+    "19960722",
+    "opinioni",
+    "IV-ter 33",
+    "",
+    "istigazione a delinquere; diffamazione; minaccia"
+   ],
+   [
+    "XIII",
+    "19960909",
+    "misure",
+    "IV 4",
+    "",
+    "alla esecuzione del provvedimento di sequestro del corpo di reato (doc. IV, n. 4)"
+   ],
+   [
+    "XIII",
+    "19960909",
+    "misure",
+    "IV 5",
+    "",
+    "alla esecuzione del provvedimento di accompagnamento coattivo (doc. IV, n. 5)"
+   ],
+   [
+    "XIII",
+    "19960917",
+    "opinioni",
+    "IV-ter 40",
+    "",
+    "diffamazione continuata"
+   ],
+   [
+    "XIII",
+    "19961104",
+    "opinioni",
+    "IV-ter 48",
+    "",
+    "violenza privata"
+   ],
+   [
+    "XIII",
+    "19961218",
+    "opinioni",
+    "IV-ter 60",
+    "",
+    "diffamazione col mezzo della stampa"
+   ],
+   [
+    "XIII",
+    "19961219",
+    "opinioni",
+    "IV-ter 62",
+    "",
+    "diffamazione"
+   ],
+   [
+    "XIII",
+    "19980209",
+    "misure",
+    "IV 14",
+    "restituita",
+    "all'utilizzazione di intercettazioni di conversazioni telefoniche"
+   ],
+   [
+    "XIII",
+    "19980514",
+    "opinioni",
+    "IV-ter 74",
+    "",
+    "procedimento civile"
+   ]
+  ],
+  "Q3619219": [
+   [
+    "XII",
+    "19940706",
+    "opinioni",
+    "IV-ter 5",
+    "",
+    "diffamazione col mezzo della stampa; pubblicazioni o diffusione di notizie false, esagerate o tendenziose, atte a turbare l'ordine pubblico; abuso d'ufficio"
+   ],
+   [
+    "XII",
+    "19950919",
+    "opinioni",
+    "IV-ter 23",
+    "restituita",
+    "diffamazione col mezzo della stampa, aggravata; minaccia"
+   ],
+   [
+    "XII",
+    "19960109",
+    "opinioni",
+    "IV-ter 32",
+    "",
+    "calunnie"
+   ]
+  ],
+  "Q3925320": [
+   [
+    "XII",
+    "19941004",
+    "opinioni",
+    "IV-ter 9",
+    "",
+    "diffamazione col mezzo della stampa, continuata"
+   ]
+  ],
+  "Q3938961": [
+   [
+    "XII",
+    "19941119",
+    "opinioni",
+    "IV-ter 13",
+    "restituita",
+    "ingiuria"
+   ],
+   [
+    "XIV",
+    "20060105",
+    "opinioni",
+    "IV-ter 20",
+    "",
+    ""
+   ]
+  ],
+  "Q607219": [
+   [
+    "XII",
+    "19950322",
+    "ministro",
+    "",
+    "",
+    "concussione"
+   ]
+  ],
+  "Q47583": [
+   [
+    "XII",
+    "19950427",
+    "opinioni",
+    "IV-ter 18",
+    "",
+    "diffamazione col mezzo della stampa"
+   ],
+   [
+    "XIII",
+    "19960509",
+    "opinioni",
+    "IV-ter 2",
+    "",
+    "diffamazione col mezzo della stampa"
+   ],
+   [
+    "XVI",
+    "20091001",
+    "opinioni",
+    "IV-ter 12",
+    "",
+    ""
+   ]
+  ],
+  "Q3770628": [
+   [
+    "XII",
+    "19950623",
+    "opinioni",
+    "IV-ter 21",
+    "",
+    "diffamazione col mezzo della stampa"
+   ],
+   [
+    "XIII",
+    "19960509",
+    "opinioni",
+    "IV-ter 5",
+    "",
+    "diffamazione col mezzo della stampa"
+   ]
+  ],
+  "Q530825": [
+   [
+    "XII",
+    "19950628",
+    "opinioni",
+    "IV-ter 22",
+    "",
+    "offesa all'onore o al prestigio del Presidente della Repubblica, delle Istituzioni costituzionali e delle Forze armate, continuati"
+   ],
+   [
+    "XIII",
+    "19980209",
+    "misure",
+    "IV 14",
+    "restituita",
+    "all'utilizzazione di intercettazioni di conversazioni telefoniche"
+   ]
+  ],
+  "Q616525": [
+   [
+    "XII",
+    "19951025",
+    "opinioni",
+    "IV-ter 26",
+    "",
+    "diffamazione col mezzo della stampa"
+   ],
+   [
+    "XIII",
+    "19960509",
+    "opinioni",
+    "IV-ter 8",
+    "",
+    "diffamazione col mezzo della stampa"
+   ]
+  ],
+  "Q110781100": [
+   [
+    "XII",
+    "19951221",
+    "opinioni",
+    "IV-ter 31",
+    "",
+    "oltraggio a pubblico ufficiale"
+   ]
+  ],
+  "Q507595": [
+   [
+    "XII",
+    "19960109",
+    "opinioni",
+    "IV-ter 33",
+    "",
+    "diffamazione col mezzo della stampa"
+   ],
+   [
+    "XIII",
+    "19960509",
+    "opinioni",
+    "IV-ter 15",
+    "",
+    "diffamazione col mezzo della stampa"
+   ],
+   [
+    "XIV",
+    "20050110",
+    "opinioni",
+    "IV-ter 13",
+    "",
+    ""
+   ]
+  ],
+  "Q47602": [
+   [
+    "XII",
+    "19960124",
+    "opinioni",
+    "",
+    "",
+    "diffamazione col mezzo della stampa"
+   ],
+   [
+    "XIII",
+    "19960509",
+    "opinioni",
+    "IV-ter 16",
+    "",
+    "diffamazione col mezzo della stampa"
+   ],
+   [
+    "XV",
+    "20070725",
+    "misure",
+    "IV 9",
+    "",
+    "all'utilizzazione di intercettazioni di conversazioni telefoniche  dei deputati CICU, D'ALEMA e FASSINO"
+   ]
+  ],
+  "Q14928120": [
+   [
+    "XIII",
+    "19960509",
+    "opinioni",
+    "IV-ter 4",
+    "",
+    "oltraggio a pubblico ufficiale; lesioni personali tentate; diffamazione"
+   ]
+  ],
+  "Q731150": [
+   [
+    "XIII",
+    "19960509",
+    "opinioni",
+    "IV-ter 12",
+    "",
+    "diffamazione col mezzo della stampa"
+   ]
+  ],
+  "Q11860": [
+   [
+    "XIII",
+    "19960529",
+    "misure",
+    "IV 1",
+    "",
+    "alla utilizzazione di intercettazioni di conversazioni telefoniche"
+   ],
+   [
+    "XVI",
+    "20110114",
+    "misure",
+    "IV 13",
+    "",
+    "ad eseguire perquisizioni domiciliari"
+   ],
+   [
+    "XVI",
+    "20110125",
+    "misure",
+    "IV 15",
+    "",
+    "a procedere all'acquisizione di tabulati telefonici"
+   ],
+   [
+    "XVI",
+    "20130228",
+    "misure",
+    "IV 31",
+    "",
+    "a svolgere perquisizioni locali e ad acquisire tabulati di comunicazioni telefoniche"
+   ],
+   [
+    "XVI",
+    "20090710",
+    "opinioni",
+    "IV-ter 8",
+    "",
+    "procedimento civile"
+   ],
+   [
+    "XVI",
+    "20091125",
+    "opinioni",
+    "IV-ter 13",
+    "",
+    ""
+   ],
+   [
+    "XVI",
+    "20100213",
+    "opinioni",
+    "IV-ter 14",
+    "",
+    "procedimento civile"
+   ],
+   [
+    "XVI",
+    "20100330",
+    "opinioni",
+    "IV-ter 17",
+    "",
+    ""
+   ],
+   [
+    "XVI",
+    "20100918",
+    "opinioni",
+    "IV-ter 19",
+    "",
+    "procedimento civile"
+   ],
+   [
+    "XVI",
+    "20110622",
+    "opinioni",
+    "IV-ter 21",
+    "",
+    ""
+   ],
+   [
+    "XVI",
+    "20120123",
+    "opinioni",
+    "IV-ter 22",
+    "",
+    "procedimento civile"
+   ],
+   [
+    "XVI",
+    "20120604",
+    "opinioni",
+    "IV-ter 24",
+    "",
+    "procedimento civile"
+   ]
+  ],
+  "Q3613897": [
+   [
+    "XIII",
+    "19960606",
+    "opinioni",
+    "IV-ter 26",
+    "restituita",
+    "diffamazione col mezzo della stampa, aggravata"
+   ],
+   [
+    "XIII",
+    "19960626",
+    "opinioni",
+    "IV-ter 30",
+    "",
+    "diffamazione col mezzo della stampa, aggravata"
+   ],
+   [
+    "XIII",
+    "19961029",
+    "opinioni",
+    "IV-ter 43",
+    "restituita",
+    "diffamazione col mezzo della stampa"
+   ]
+  ],
+  "Q431345": [
+   [
+    "XIII",
+    "19960618",
+    "misure",
+    "IV 2",
+    "",
+    "Sulla domanda di autorizzazione a procedere all'esecuzione dell'accompagnamento coattivo nell'ambito di un procedimento penale (doc. IV, n. 2)"
+   ],
+   [
+    "XIII",
+    "19961218",
+    "opinioni",
+    "IV-ter 61",
+    "",
+    "diffamazione col mezzo della stampa pluriaggravata"
+   ]
+  ],
+  "Q3991983": [
+   [
+    "XIII",
+    "19960722",
+    "opinioni",
+    "IV-ter 32",
+    "",
+    "diffamazione col mezzo della stampa, aggravata"
+   ],
+   [
+    "XIII",
+    "19961029",
+    "opinioni",
+    "IV-ter 44",
+    "",
+    "diffamazione col mezzo della stampa"
+   ],
+   [
+    "XIII",
+    "19961125",
+    "opinioni",
+    "IV-ter 54",
+    "",
+    ""
+   ],
+   [
+    "XIII",
+    "19970915",
+    "misure",
+    "IV 7",
+    "negata",
+    "alla utilizzazione di intercettazioni di comunicazioni telefoniche nell'ambito di procedimenti penali riguardanti terzi (doc. IV, n. 7). IN DATA 18 FEBBRAIO 1998 NEGATA AUTORIZZAZIONE ALL'UTILIZZO DI INTERCETTAZIONI TELEFONICHE"
+   ],
+   [
+    "XIII",
+    "19980326",
+    "opinioni",
+    "IV-ter 73",
+    "",
+    "diffamazione col mezzo della stampa"
+   ]
+  ],
+  "Q28966642": [
+   [
+    "XIII",
+    "19960725",
+    "misure",
+    "IV 3",
+    "",
+    "alla utilizzazione di intercettazioni di comunicazioni telefoniche"
+   ]
+  ],
+  "Q546288": [
+   [
+    "XIII",
+    "19960725",
+    "misure",
+    "IV 3",
+    "",
+    "alla utilizzazione di intercettazioni di comunicazioni telefoniche"
+   ]
+  ],
+  "Q55833304": [
+   [
+    "XIII",
+    "19961001",
+    "opinioni",
+    "",
+    "",
+    "diffamazione col mezzo della stampa, aggravata"
+   ]
+  ],
+  "Q645165": [
+   [
+    "XIII",
+    "19961030",
+    "opinioni",
+    "",
+    "",
+    "procedimento civile"
+   ],
+   [
+    "XV",
+    "20060518",
+    "opinioni",
+    "IV-ter 4",
+    "",
+    "procedimento civile"
+   ]
+  ],
+  "Q562097": [
+   [
+    "XIII",
+    "19961121",
+    "opinioni",
+    "",
+    "",
+    ""
+   ],
+   [
+    "XIII",
+    "19961121",
+    "opinioni",
+    "",
+    "",
+    "Tribunale di Monza"
+   ],
+   [
+    "XIII",
+    "19980209",
+    "misure",
+    "IV 14",
+    "restituita",
+    "all'utilizzazione di intercettazioni di conversazioni telefoniche"
+   ]
+  ],
+  "Q2947026": [
+   [
+    "XIII",
+    "19970109",
+    "opinioni",
+    "IV-ter 63",
+    "",
+    "diffamazione col mezzo della stampa"
+   ],
+   [
+    "XIII",
+    "19970915",
+    "misure",
+    "IV 8",
+    "restituita",
+    "a richiedere, emettere - se concessa - ad eseguire ordinanza di custodia cautelare in carcere, per concorso - ai sensi dell'art. 110 c.p. - nel reato di cui agli artt. 81 e 321, in relazione all'art. 319, c.p. (corruzione per un atto contrario ai doveri di ufficio); per concorso - ai sensi dell'art. 110 c.p. - nel reato di cui agli artt. 81, 112 n. 1 e 321, in relazione agli artt. 319 e 319-ter, c.p. (corruzione per un atto contrario ai doveri d'ufficio in atti giudiziari, continuata ed aggravata) (doc. IV, n. 8). IN DATA 18 SETTEMBRE 1997 RESTITUZIONE DEGLI ATTI ALL'AUTORITA' GIUDIZIARIA"
+   ],
+   [
+    "XIII",
+    "19971215",
+    "misure",
+    "IV 11",
+    "negata",
+    "Per concorso - ai sensi dell'art. 110 c.p. - nel reato di cui agli artt. 81 e 321, in relazione all'art. 319 c.p. (corruzione per un atto contrario ai doveri di ufficio); per concorso - ai sensi dell'art. 110 c.p. - nel reato di cui agli artt. 81, 112 n. 1 e 321, in relazione agli artt. 319 e 319-ter, c.p. (corruzione per un atto contrario ai doveri di ufficio, in atti giudiziari, continuata ed aggravata) (doc. IV, n. 11). IN DATA 20 GENNAIO 1998 AUTORIZZAZIONE NEGATA"
+   ],
+   [
+    "XIII",
+    "19971215",
+    "misure",
+    "IV 11",
+    "negata",
+    "Per concorso - ai sensi dell'art. 110 c.p. - nel reato di cui agli artt. 81 e 321, in relazione all'art. 319 c.p. (corruzione per un atto contrario ai doveri d'ufficio); per concorso - ai sensi dell'art. 110 c.p. - nel reato di cui agli artt. 81, 112 n. 1 e 321, in relazione agli artt. 319 e 319-ter, c.p. (corruzione per un atto contrario ai doveri d'ufficio, in atti giudiziari, continuata ed aggravata) (doc. IV, n. 11). IN DATA 20 GENNAIO 1998 AUTORIZZAZIONE NEGATA"
+   ],
+   [
+    "XIII",
+    "19970915",
+    "misure",
+    "IV 8",
+    "restituita",
+    "a richiedere, emettere - se concessa - ad eseguire ordinanza di custodia cautelare in carcere, per concorso - ai sensi dell'art. 110 c.p. - nel reato di cui agli artt. 81 e 321, in relazione all'art. 319 c.p. (corruzione per un atto contrario ai doveri di ufficio); per concorso - ai sensi dell'art. 110 c.p. - nel reato di cui agli artt. 81, 112 n. 1 e 321, in relazione agli artt. 319 e 319-ter, c.p. (corruzione per un atto contrario ai doveri di ufficio in atti giudiziari, continuata ed aggravata) (doc. IV, n. 8). IN DATA 18 SETTEMBRE 1997 RESTITUZIONE DEGLI ATTI ALL'AUTORITA' GIUDIZIARIA"
+   ],
+   [
+    "XIV",
+    "20050709",
+    "opinioni",
+    "IV-ter 16",
+    "",
+    ""
+   ]
+  ],
+  "Q684295": [
+   [
+    "XIII",
+    "19970109",
+    "opinioni",
+    "",
+    "",
+    "adottata a seguito di deliberazione della Giunta per le autorizzazioni, in base a segnalazione del deputato interessato; abuso d'ufficio"
+   ]
+  ],
+  "Q3617215": [
+   [
+    "XIII",
+    "19970130",
+    "opinioni",
+    "IV-ter 68",
+    "",
+    "procedimento civile"
+   ],
+   [
+    "XIV",
+    "20020529",
+    "misure",
+    "IV 5",
+    "",
+    "a eseguire la misura cautelare degli arresti domiciliari"
+   ]
+  ],
+  "Q2635569": [
+   [
+    "XIII",
+    "19970508",
+    "opinioni",
+    "IV-ter 70",
+    "",
+    "procedimento civile"
+   ]
+  ],
+  "Q3991979": [
+   [
+    "XIII",
+    "19970709",
+    "opinioni",
+    "",
+    "",
+    ""
+   ],
+   [
+    "XIII",
+    "19991028",
+    "opinioni",
+    "",
+    "",
+    ""
+   ]
+  ],
+  "Q3762043": [
+   [
+    "XIII",
+    "19980209",
+    "misure",
+    "IV 14",
+    "restituita",
+    "all'utilizzazione di intercettazioni di conversazioni telefoniche"
+   ]
+  ],
+  "Q81738028": [
+   [
+    "XIII",
+    "19980209",
+    "misure",
+    "IV 14",
+    "restituita",
+    "all'utilizzazione di intercettazioni di conversazioni telefoniche"
+   ]
+  ],
+  "Q3725679": [
+   [
+    "XIII",
+    "19980209",
+    "misure",
+    "IV 14",
+    "restituita",
+    "all'utilizzazione di intercettazioni di conversazioni telefoniche"
+   ]
+  ],
+  "Q466836": [
+   [
+    "XIII",
+    "19980223",
+    "ministro",
+    "",
+    "",
+    "falsita' ideologica commessa dal pubblico ufficiale in atti pubblici e abuso d'ufficio"
+   ]
+  ],
+  "Q3758655": [
+   [
+    "XIII",
+    "19980610",
+    "misure",
+    "IV 15",
+    "concessa",
+    "all'esecuzione della misura cautelare della custodia in carcere, di autorizzazione alla utilizzazione di conversazioni telefoniche intercettate ed alla acquisizione ed alla utilizzazione di dati del traffico telefonico (doc. IV, n. 15). IN DATA 16 LUGLIO 1998 AUTORIZZAZIONE NEGATA ALLA MISURA CAUTELARE DELLA CUSTODIA IN CARCERE; CONCESSA PER L'AUTORIZZAZIONE ALLE INTERCETTAZIONI TELEFONICHE SU UTENZE DIVERSE DA QUELLE IN USO AL DEPUTATO IN CUI SIA L'INTERLOCUTORE; CONCESSA PER L'UTILIZZAZIONE DEI TABULATI DELL'UTENZA IN USO A VALERIO INFANTINO; NEGATA PER L'AUTORIZZAZIONE ALL'ACQUISIZIONE DEI TABULATI DOCUMENTANTI IL TRAFFICO TELEFONICO RELATIVO ALLE UTENZE DEL DEPUTATO"
+   ],
+   [
+    "XIII",
+    "19980610",
+    "misure",
+    "IV 15",
+    "concessa",
+    "all'esecuzione della misura cautelare della custodia in carcere, di autorizzazione alla utilizzazione di conversazioni telefoniche intercettate ed all'acquisizione ed alla utilizzazione di dati del traffico telefonico (doc. IV, n. 15). IN DATA 16 LUGLIO 1998 AUTORIZZAZIONE NEGATA ALLA MISURA CAUTELARE DELLA CUSTODIA IN CARCERE; CONCESSA PER L'AUTORIZZAZIONE ALLE INTERCETTAZIONI TELEFONICHE SU UTENZE DIVERSE DA QUELLE IN USO AL DEPUTATO IN CUI SIA L'INTERLOCUTORE; CONCESSA PER L'UTILIZZAZIONE DEI TABULATI DELL'UTENZA IN USO A VALERIO INFANTINO; NEGATA PER L'AUTORIZZAZIONE ALL'ACQUISIZIONE DEI TABULATI DOCUMENTANTI IL TRAFFICO TELEFONICO RELATIVO ALLE UTENZE DEL DEPUTATO"
+   ]
+  ],
+  "Q1346627": [
+   [
+    "XIII",
+    "19980710",
+    "opinioni",
+    "IV-ter 76",
+    "",
+    ""
+   ]
+  ],
+  "Q558815": [
+   [
+    "XIII",
+    "19990309",
+    "misure",
+    "IV 17",
+    "negata",
+    "all'esecuzione di ordinanza di custodia cautelare"
+   ],
+   [
+    "XIII",
+    "19990407",
+    "misure",
+    "IV 18",
+    "",
+    "Annunzio di una domanda di autorizzazione all'utilizzazione di intercettazioni di conversazioni telefoniche"
+   ],
+   [
+    "XIII",
+    "19990309",
+    "misure",
+    "IV 17",
+    "negata",
+    "all'esecuzione di ordinanza di custodia cautelare nell'ambito del procedimento penale n. 5222/97 R.G.N.R. e per concorso - ai sensi dell'art. 110 c.p. - nel reato di cui agli artt. 56 e 629, primo e secondo comma, quest'ultimo in relazione all'art. 628, terzo comma, nn. 1 e 3, c.p. (estorsione tentata ed aggravata); per concorso - ai sensi dell'art. 110 c.p. - nel reato di cui agli artt. 61 e n. 2, 81 capoverso e 368 c.p. e 7 del decreto-legge n. 152 del 1998 (calunnia aggravata) (doc. IV, n. 17). IN DATA 13 APRILE 1999 AUTORIZZAZIONE NEGATA"
+   ]
+  ],
+  "Q3762823": [
+   [
+    "XIII",
+    "19971117",
+    "misure",
+    "IV 9",
+    "restituita",
+    "Per concorso - ai sensi dell'art. 110 c.p. - nel reato di cui agli artt. 81 3 17 c.p. (concussione continuata) (doc. IV, n. 9). IN DATA 14 GENNAIO 1998 RINVIO DEGLI ATTI ALLA GIUNTA PER LE AUTORIZZAZIONI"
+   ],
+   [
+    "XIII",
+    "19971210",
+    "misure",
+    "IV 10",
+    "negata",
+    "Per concorso - ai sensi dell'art. 110 c.p. - nel reato di cui all'art. 317 c.p. (concussione) (doc. IV, n. 10). IN DATA 24 FEBBRAIO 1998 AUTORIZZAZIONE NEGATA"
+   ],
+   [
+    "XIII",
+    "19971117",
+    "misure",
+    "IV 9",
+    "restituita",
+    "Per concorso - ai sensi dell'art. 110 c.p. - nel reato di cui agli artt. 81 e 317 c.p. (concussione continuata) (doc. IV, n. 9). IN DATA 14 GENNAIO 1998 RINVIO DEGLI ATTI ALLA GIUNTA PER LE AUTORIZZAZIONI"
+   ]
+  ],
+  "Q27078138": [
+   [
+    "XIII",
+    "19990623",
+    "opinioni",
+    "",
+    "",
+    "nell'ambito di un procedimento penale"
+   ],
+   [
+    "XIII",
+    "19001024",
+    "opinioni",
+    "",
+    "",
+    ""
+   ]
+  ],
+  "Q3856793": [
+   [
+    "XIII",
+    "19010206",
+    "opinioni",
+    "",
+    "",
+    "procedimento civile"
+   ]
+  ],
+  "Q17399510": [
+   [
+    "XIII",
+    "19010206",
+    "opinioni",
+    "",
+    "",
+    "procedimento civile"
+   ]
+  ],
+  "Q27553650": [
+   [
+    "XIII",
+    "19010206",
+    "opinioni",
+    "",
+    "",
+    "procedimento civile"
+   ]
+  ],
+  "Q3611360": [
+   [
+    "XIII",
+    "19010206",
+    "opinioni",
+    "",
+    "",
+    "procedimento civile"
+   ]
+  ],
+  "Q3934518": [
+   [
+    "XIV",
+    "20010704",
+    "misure",
+    "IV 4",
+    "",
+    "a eseguire la misura cautelare della sospensione dall'esercizio di pubblici uffici"
+   ]
+  ],
+  "Q16658040": [
+   [
+    "XIV",
+    "20020529",
+    "misure",
+    "IV 5",
+    "",
+    "a eseguire la misura cautelare degli arresti domiciliari"
+   ]
+  ],
+  "Q3983873": [
+   [
+    "XIV",
+    "20031008",
+    "misure",
+    "IV 6",
+    "",
+    "a procedere all'acquisizione di tabulati telefonici"
+   ]
+  ],
+  "Q16268618": [
+   [
+    "XIV",
+    "20031208",
+    "misure",
+    "IV 8",
+    "",
+    "a procedere a perquisizioni domiciliari e all'acquisizione di tabulati di comunicazioni"
+   ]
+  ],
+  "Q15921913": [
+   [
+    "XIV",
+    "20040514",
+    "misure",
+    "IV 9",
+    "",
+    "all'utilizzazione di intercettazioni di conversazioni telefoniche"
+   ]
+  ],
+  "Q3836939": [
+   [
+    "XIV",
+    "20040719",
+    "misure",
+    "IV 10",
+    "",
+    "a procedere all'acquisizione di tabulati telefonici"
+   ]
+  ],
+  "Q19614740": [
+   [
+    "XIV",
+    "20041122",
+    "misure",
+    "IV 11",
+    "",
+    "a eseguire la misura cautelare della custodia in carcere"
+   ]
+  ],
+  "Q957190": [
+   [
+    "XIV",
+    "20051021",
+    "misure",
+    "IV 12",
+    "",
+    "all'utilizzazione di intercettazioni di conversazioni telefoniche"
+   ]
+  ],
+  "Q80013505": [
+   [
+    "XIV",
+    "20051227",
+    "misure",
+    "IV 13",
+    "",
+    "all'utilizzazione di intercettazioni di conversazioni"
+   ]
+  ],
+  "Q4013216": [
+   [
+    "XIV",
+    "20060124",
+    "misure",
+    "IV 15",
+    "",
+    "all'utilizzazione di intercettazioni di conversazioni"
+   ]
+  ],
+  "Q19060515": [
+   [
+    "XIV",
+    "20060210",
+    "misure",
+    "IV 16",
+    "",
+    "a eseguire la misura cautelare della custodia in carcere"
+   ]
+  ],
+  "Q3770934": [
+   [
+    "XIV",
+    "20060221",
+    "misure",
+    "IV 17",
+    "",
+    "a procedere all'acquisizione di tabulati telefonici"
+   ]
+  ],
+  "Q447895": [
+   [
+    "XIV",
+    "20060221",
+    "misure",
+    "IV 18",
+    "",
+    "a procedere all'acquisizione di tracciati IMEI"
+   ]
+  ],
+  "Q463130": [
+   [
+    "XIV",
+    "20060110",
+    "ministro",
+    "IV-bis 1",
+    "",
+    ""
+   ]
+  ],
+  "Q3619078": [
+   [
+    "XIV",
+    "20040601",
+    "opinioni",
+    "IV-ter 5",
+    "",
+    ""
+   ]
+  ],
+  "Q732850": [
+   [
+    "XIV",
+    "20040706",
+    "opinioni",
+    "IV-ter 8",
+    "",
+    "procedimento civile"
+   ]
+  ],
+  "Q3737980": [
+   [
+    "XIV",
+    "20050912",
+    "opinioni",
+    "IV-ter 17",
+    "",
+    ""
+   ]
+  ],
+  "Q597654": [
+   [
+    "XIV",
+    "20050927",
+    "opinioni",
+    "IV-ter 18",
+    "",
+    ""
+   ]
+  ],
+  "Q14633758": [
+   [
+    "XV",
+    "20060510",
+    "misure",
+    "IV 2",
+    "",
+    "a eseguire la misura cautelare degli arresti domiciliari"
+   ]
+  ],
+  "Q1060314": [
+   [
+    "XV",
+    "20060620",
+    "misure",
+    "IV 3",
+    "",
+    "a eseguire la misura cautelare degli arresti domiciliari"
+   ]
+  ],
+  "Q16599764": [
+   [
+    "XV",
+    "20070522",
+    "misure",
+    "IV 7",
+    "",
+    "a procedere all'acquisizione di tabulati telefonici"
+   ]
+  ],
+  "Q3616774": [
+   [
+    "XV",
+    "20070627",
+    "misure",
+    "IV 8",
+    "",
+    "all'utilizzazioni di intercettazioni di conversazioni"
+   ]
+  ],
+  "Q3946009": [
+   [
+    "XV",
+    "20070725",
+    "misure",
+    "IV 9",
+    "",
+    "all'utilizzazione di intercettazioni di conversazioni telefoniche  dei deputati CICU, D'ALEMA e FASSINO"
+   ]
+  ],
+  "Q542406": [
+   [
+    "XV",
+    "20070725",
+    "misure",
+    "IV 9",
+    "",
+    "all'utilizzazione di intercettazioni di conversazioni telefoniche  dei deputati CICU, D'ALEMA e FASSINO"
+   ]
+  ],
+  "Q3946121": [
+   [
+    "XV",
+    "20070927",
+    "misure",
+    "IV 10",
+    "",
+    "all'utilizzazione di intercettazioni di conversazioni telefoniche"
+   ],
+   [
+    "XVI",
+    "20081216",
+    "misure",
+    "IV 3",
+    "",
+    "a eseguire la misura cautelare degli arresti domiciliari"
+   ]
+  ],
+  "Q3894445": [
+   [
+    "XV",
+    "20071123",
+    "misure",
+    "IV 12",
+    "",
+    "all'utilizzazione di intercettazioni di conversazioni"
+   ]
+  ],
+  "Q3858210": [
+   [
+    "XV",
+    "20070311",
+    "misure",
+    "IV 13",
+    "",
+    "all'acquisizione di tabulati telefonici"
+   ],
+   [
+    "XVI",
+    "20080512",
+    "misure",
+    "IV 2",
+    "",
+    "all'acquisizione di tabulati telefonici"
+   ]
+  ],
+  "Q3725850": [
+   [
+    "XV",
+    "20080226",
+    "opinioni",
+    "IV-ter 10",
+    "",
+    "procedimento civile"
+   ],
+   [
+    "XVI",
+    "20080226",
+    "opinioni",
+    "IV-ter 3",
+    "",
+    "procedimento civile"
+   ]
+  ],
+  "Q3335245": [
+   [
+    "XVI",
+    "20090204",
+    "misure",
+    "IV 4",
+    "",
+    "a eseguire la misura cautelare degli arresti domiciliari"
+   ]
+  ],
+  "Q473177": [
+   [
+    "XVI",
+    "20091110",
+    "misure",
+    "IV 5",
+    "",
+    "ad eseguire la misura cautelare della custodia in carcere"
+   ],
+   [
+    "XVI",
+    "20100108",
+    "misure",
+    "IV 6",
+    "",
+    "all'utilizzazione di intercettazioni di conversazioni"
+   ],
+   [
+    "XVI",
+    "20111206",
+    "misure",
+    "IV 26",
+    "",
+    "ad eseguire la misura cautelare della custodia in carcere"
+   ]
+  ],
+  "Q3155882": [
+   [
+    "XVI",
+    "20100317",
+    "misure",
+    "IV 7",
+    "",
+    "all'acquisizione di tabulati telefonici"
+   ]
+  ],
+  "Q3875866": [
+   [
+    "XVI",
+    "20100611",
+    "misure",
+    "IV 9",
+    "",
+    "a eseguire l'accompagnamento coattivo"
+   ]
+  ],
+  "Q3293470": [
+   [
+    "XVI",
+    "20101221",
+    "misure",
+    "IV 11",
+    "",
+    "all'utilizzazione di intercettazioni di conversazioni"
+   ]
+  ],
+  "Q1051169": [
+   [
+    "XVI",
+    "20110111",
+    "misure",
+    "IV 12",
+    "",
+    "a procedere all'acquisizione di tabulati telefonici"
+   ],
+   [
+    "XVI",
+    "20110526",
+    "misure",
+    "IV 17",
+    "",
+    "a procedere all'acquisizione di tabulati telefonici"
+   ]
+  ],
+  "Q2053904": [
+   [
+    "XVI",
+    "20110117",
+    "misure",
+    "IV 14",
+    "",
+    "a procedere all'acquisizione di tabulati telefonici"
+   ]
+  ],
+  "Q3737734": [
+   [
+    "XVI",
+    "20110509",
+    "misure",
+    "IV 16",
+    "",
+    "a procedere all'acquisizione di tabulati telefonici"
+   ]
+  ],
+  "Q2834878": [
+   [
+    "XVI",
+    "20110615",
+    "misure",
+    "IV 18",
+    "",
+    "a eseguire la misura cautelare della custodia in carcere"
+   ],
+   [
+    "XVI",
+    "20110809",
+    "misure",
+    "IV 23",
+    "",
+    "all'acquisizione di tabulati telefonici"
+   ]
+  ],
+  "Q472396": [
+   [
+    "XVI",
+    "20110705",
+    "misure",
+    "IV 19",
+    "",
+    "all'utilizzazione di intercettazioni di conversazioni"
+   ],
+   [
+    "XVI",
+    "20120524",
+    "misure",
+    "IV 28",
+    "",
+    "all'utilizzazione di intercettazioni di conversazioni telefoniche"
+   ]
+  ],
+  "Q3846255": [
+   [
+    "XVI",
+    "20110707",
+    "misure",
+    "IV 20",
+    "",
+    "a eseguire la misura cautelare della custodia in carcere"
+   ],
+   [
+    "XVI",
+    "20110708",
+    "misure",
+    "IV 21",
+    "",
+    "all'acquisizione di tabulati di utenze telefoniche nonché alla perquisizione di cassette di sicurezza"
+   ],
+   [
+    "XVI",
+    "20121026",
+    "misure",
+    "IV 29",
+    "",
+    "all'acquisizione di tabulati di comunicazioni telefoniche"
+   ]
+  ],
+  "Q3081082": [
+   [
+    "XVI",
+    "20111018",
+    "misure",
+    "IV 24",
+    "",
+    "all'utilizzazione di intercettazioni di conversazioni telefoniche"
+   ]
+  ],
+  "Q3613895": [
+   [
+    "XVI",
+    "20111129",
+    "misure",
+    "IV 25",
+    "",
+    "ad eseguire un decreto di sequestro"
+   ]
+  ],
+  "Q3723093": [
+   [
+    "XVI",
+    "20120427",
+    "misure",
+    "IV 27",
+    "",
+    "all'acquisizione di tabulati telefonici"
+   ]
+  ],
+  "Q3852525": [
+   [
+    "XVI",
+    "20121026",
+    "misure",
+    "IV 30",
+    "",
+    "all'acquisizione di tabulati telefonici"
+   ]
+  ],
+  "Q1055104": [
+   [
+    "XVI",
+    "20100818",
+    "ministro",
+    "IV-bis 1",
+    "",
+    ""
+   ],
+   [
+    "XVI",
+    "20110111",
+    "ministro",
+    "IV-bis 2",
+    "",
+    ""
+   ]
+  ],
+  "Q3660382": [
+   [
+    "XVI",
+    "20090723",
+    "opinioni",
+    "IV-ter 10",
+    "",
+    ""
+   ]
+  ],
+  "Q3362638": [
+   [
+    "XVI",
+    "20100219",
+    "opinioni",
+    "IV-ter 15",
+    "",
+    "procedimento civile"
+   ]
+  ],
+  "Q3903007": [
+   [
+    "XVI",
+    "20100213",
+    "opinioni",
+    "IV-ter 16",
+    "",
+    ""
+   ]
+  ],
+  "Q3860820": [
+   [
+    "XVI",
+    "20120319",
+    "opinioni",
+    "IV-ter 23",
+    "",
+    "procedimento civile"
+   ]
+  ],
+  "Q3659667": [
+   [
+    "XVI",
+    "20121130",
+    "opinioni",
+    "IV-ter 25",
+    "",
+    ""
+   ]
+  ],
+  "Q15936503": [
+   [
+    "XVI",
+    "20121130",
+    "opinioni",
+    "IV-ter 25",
+    "",
+    ""
+   ]
+  ],
+  "Q3634682": [
+   [
+    "XVI",
+    "20121130",
+    "opinioni",
+    "IV-ter 25",
+    "",
+    ""
+   ]
+  ]
+ },
+ "non_agganciate": [
+  [
+   "XIV",
+   "Vito NAPOLI",
+   "1",
+   0
+  ],
+  [
+   "XVI",
+   "BONDI",
+   "1",
+   0
+  ],
+  [
+   "XVI",
+   "SCALOJA",
+   "4",
+   0
+  ]
+ ]
+}

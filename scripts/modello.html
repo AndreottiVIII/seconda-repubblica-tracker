@@ -356,6 +356,9 @@ function pill(codice, testo){
 }
 const MESI = ['gennaio','febbraio','marzo','aprile','maggio','giugno','luglio',
   'agosto','settembre','ottobre','novembre','dicembre'];
+// le migliaia sempre col punto: toLocaleString lascia 8918 senza
+function numIt(x){ return String(x).replace(/\B(?=(\d{3})+(?!\d))/g, '.'); }
+
 function dataIt(s){
   if (!s) return '';
   if (s.length === 8) s = s.slice(0,4)+'-'+s.slice(4,6)+'-'+s.slice(6,8);
@@ -800,7 +803,7 @@ VISTE['indice'] = function(){
 
 function riquadro(et, n, sotto, vista, arg){
   return '<div class="riquadro"><div>' + et + '</div>' +
-    '<div class="grande">' + numero(n.toLocaleString('it-IT'), vista, arg) + '</div>' +
+    '<div class="grande">' + numero(numIt(n), vista, arg) + '</div>' +
     '<div style="font-size:11px;color:#404040">' + sotto + '</div></div>';
 }
 
@@ -916,6 +919,27 @@ VISTE['persona'] = function(q){
           '</td></tr>').join('') + '</tbody></table>';
   }
 
+  // i collegi uninominali del 1994, 1996 e 2001: voti, posto, distacco
+  if (p.cu && p.cu.length){
+    const n = x => numIt(x);
+    const pc = x => x.toLocaleString('it-IT', {maximumFractionDigits: 1}) + '%';
+    corpo += '<h2 style="margin-top:12px">Nei collegi uninominali</h2>' +
+      '<table><thead><tr><th>Anno</th><th>Collegio</th><th>Voti</th><th>Com&rsquo;&egrave; andata</th></tr></thead><tbody>' +
+      p.cu.map(c => {
+        const [anno, ramo, coll, voti, perc, posto, quanti, distacco, simboli, recupero] = c;
+        const esito = posto === 1
+          ? '1&ordm; su ' + quanti + (quanti > 1 ? ', ' + n(distacco) + ' voti pi&ugrave; del secondo' : '')
+          : posto + '&ordm; su ' + quanti + ', ' + n(-distacco) + ' voti meno del primo' +
+            (recupero ? '; ' + (p.ge === 'F' ? 'eletta' : 'eletto') + ' con il recupero proporzionale' : '');
+        return '<tr><td>' + anno + '</td><td>' + esc(coll) +
+          ' <span style="font-size:11px">(' + (ramo === 'C' ? 'Camera' : 'Senato') + ')</span>' +
+          (simboli ? '<br><span style="font-size:11px">' + esc(simboli) + '</span>' : '') + '</td>' +
+          '<td class="num" style="white-space:nowrap">' + n(voti) + '<br><span style="font-size:11px">' +
+          pc(perc) + '</span></td><td style="font-size:11px">' + esito + '</td></tr>';
+      }).join('') + '</tbody></table>' +
+      '<p class="piede">Fonte: Ministero dell&rsquo;Interno, archivio storico delle elezioni (Eligendo).</p>';
+  }
+
   if (p.go && p.go.length)
     corpo += '<h2 style="margin-top:12px">Al governo</h2>' +
       '<table><thead><tr><th>Governo</th><th>Incarico</th><th>Dal</th><th>Al</th></tr></thead><tbody>' +
@@ -931,6 +955,35 @@ VISTE['persona'] = function(q){
         '<td style="font-size:11px">' + esc(r[2]) + '</td>' +
         '<td style="white-space:nowrap;font-size:11px">' + periodoGuida(r[3], r[4]) + '</td></tr>').join('') +
       '</tbody></table>';
+
+  // le richieste dei giudici alla Camera: atti parlamentari, non condanne
+  if (p.au && p.au.length){
+    const riga = a => {
+      const [leg, data, tipo, doc, esito, cosa] = a;
+      const testo = tipo === 'misure' ? 'Autorizzazione ' + esc(cosa || '')
+        : tipo === 'opinioni' ? 'Se le opinioni espresse sono coperte dall&rsquo;immunit&agrave;' +
+          (cosa ? ': ' + esc(cosa) : '')
+        : 'Reato da ministro' + (cosa ? ': ' + esc(cosa) : '');
+      return '<tr><td>' + leg + '</td><td style="white-space:nowrap;font-size:11px">' + dataIt(data) +
+        '</td><td style="font-size:11px">' + testo + '</td><td style="font-size:11px">' +
+        ({restituita: 'atti restituiti al giudice'}[esito] || esito || '') + '</td></tr>';
+    };
+    const conta = t => p.au.filter(a => a[2] === t).length;
+    const parti = [['opinioni', 'sulle opinioni espresse'], ['misure', 'per arresti, perquisizioni o intercettazioni'],
+                   ['ministro', 'per reati da ministro']].filter(x => conta(x[0])).map(x => conta(x[0]) + ' ' + x[1]);
+    const tabella = '<table><thead><tr><th>Legisl.</th><th>Data</th><th>Richiesta</th><th>Esito</th></tr></thead>' +
+      '<tbody>' + p.au.map(riga).join('') + '</tbody></table>';
+    corpo += '<h2 style="margin-top:12px">Richieste dei giudici alla Camera</h2>' +
+      '<p>' + (p.au.length === 1 ? 'Una richiesta, ' + parti[0].replace(/^1 /, '')
+        : parti.length === 1 ? p.au.length + ' richieste, tutte ' + parti[0].replace(/^\d+ /, '')
+        : p.au.length + ' richieste: ' + parti.join(', ')) + '.</p>' +
+      (p.au.length > 6 ? '<details><summary class="clic">Tutte le richieste</summary>' + tabella + '</details>' : tabella) +
+      '<p class="piede">Dal 1993 per processare un deputato non serve il permesso della Camera. Il giudice ' +
+      'lo chiede ancora per arresti, perquisizioni e intercettazioni, e la Camera decide se le opinioni ' +
+      'espresse da un deputato sono coperte dall&rsquo;immunit&agrave; (art. 68 della Costituzione). ' +
+      'Una richiesta non &egrave; una condanna. Fonte: Camera dei deputati; l&rsquo;esito c&rsquo;&egrave; ' +
+      'solo per la XII e la XIII legislatura.</p>';
+  }
 
   if (p.pr){
     const ramo = {C: 'Alla Camera', S: 'Al Senato'};
@@ -955,7 +1008,7 @@ VISTE['persona'] = function(q){
 
   if (p.ai){
     const righe = ORDINE.filter(m => p.ai[m]);
-    const num = n => n ? n.toLocaleString('it-IT') : '&mdash;';
+    const num = n => n ? numIt(n) : '&mdash;';
     if (righe.length)
       corpo += '<h2 style="margin-top:12px">Interrogazioni, interpellanze, mozioni</h2>' +
         '<table><thead><tr><th>Legisl.</th><th>Interrogazioni</th><th>Interpellanze</th>' +
@@ -967,7 +1020,7 @@ VISTE['persona'] = function(q){
   }
 
   if (p.vc){
-    const num = n => n.toLocaleString('it-IT');
+    const num = n => numIt(n);
     const pc = (a, b) => b ? ' (' + (100 * a / b).toLocaleString('it-IT', {maximumFractionDigits: 1}) + '%)' : '';
     // sotto le venti votazioni c'e' chi presiede la Camera, che non vota
     const righe = ORDINE.filter(m => p.vc[m] && p.vc[m][0] >= 20);
@@ -1123,7 +1176,7 @@ VISTE['classifiche'] = function(){
        numero(fedeli.length, 'lista', 'fedeli') + '.</p>';
 
   // --- dall'attivita' in aula: interrogazioni, proposte, voti
-  const num = x => x.toLocaleString('it-IT');
+  const num = x => numIt(x);
   const pc = (a, b) => (100 * a / b).toLocaleString('it-IT', {maximumFractionDigits: 1}) + '%';
   const somma = (p, campo, i) => Object.values(p[campo] || {}).reduce((t, v) => t + (v[i] || 0), 0);
   const ispettivi = p => [0, 1, 2, 3, 4].reduce((t, i) => t + somma(p, 'ai', i), 0);

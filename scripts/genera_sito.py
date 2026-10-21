@@ -350,6 +350,22 @@ def main():
         for x in json.load(open(p2_file, encoding='utf-8')):
             if x['qid'] in per_q:
                 per_q[x['qid']]['p2'] = x.get('fascicolo') or ''
+    # I collegi uninominali del 1994, 1996 e 2001 (scripts/collegi_eligendo.py):
+    # [anno, ramo, collegio, voti, %, posto, candidati, distacco, simboli, recupero]
+    cu_file = os.path.join(QUI, '..', 'data', 'collegi.json')
+    if os.path.exists(cu_file):
+        per_q = {p['q']: p for p in persone}
+        for q, v in json.load(open(cu_file, encoding='utf-8'))['collegi'].items():
+            if q in per_q:
+                per_q[q]['cu'] = v
+    # Le richieste dei giudici alla Camera (scripts/autorizzazioni_camera.py):
+    # [legislatura, data, tipo, documento, esito, reato o misura]
+    au_file = os.path.join(QUI, '..', 'data', 'autorizzazioni.json')
+    if os.path.exists(au_file):
+        per_q = {p['q']: p for p in persone}
+        for q, v in json.load(open(au_file, encoding='utf-8'))['domande'].items():
+            if q in per_q:
+                per_q[q]['au'] = sorted(v, key=lambda r: (r[1] or '', r[3]))
 
     # I voti alla Camera, dalla XIII alla XVI: li conta scripts/conta_voti_camera.py
     # dagli archivi votoNN.rdf.zip (33 GB, solo sul PC). Per ogni legislatura:
