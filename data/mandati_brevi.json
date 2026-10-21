@@ -1,0 +1,69 @@
+{
+ "_nota": "Mandati alla Camera di pochi giorni, finiti all'inizio della legislatura, senza adesione a un gruppo: le schede li contano e aggiungono una nota. Dall'anagrafe della Camera (mandatoCamera). Generato da scripts/controlla_camera.py.",
+ "mandati": {
+  "Q902439": [
+   [
+    "XV",
+    "20060421",
+    "20060428",
+    "Dimissioni per incompatibilita'"
+   ]
+  ],
+  "Q458064": [
+   [
+    "XVI",
+    "20080422",
+    "20080429",
+    "Dimissioni per incompatibilita'"
+   ]
+  ],
+  "Q3830562": [
+   [
+    "XV",
+    "20060421",
+    "20060421",
+    "Decesso"
+   ]
+  ],
+  "Q3721414": [
+   [
+    "XV",
+    "20060428",
+    "20060428",
+    "Dimissioni per incompatibilita'"
+   ]
+  ],
+  "Q559513": [
+   [
+    "XVI",
+    "20080422",
+    "20080429",
+    "Dimissioni per incompatibilita'"
+   ]
+  ],
+  "Q319547": [
+   [
+    "XIV",
+    "20010526",
+    "20010530",
+    "Dimissioni"
+   ]
+  ],
+  "Q5558099": [
+   [
+    "XV",
+    "20060421",
+    "20060428",
+    "Dimissioni per incompatibilita'"
+   ]
+  ],
+  "Q47832": [
+   [
+    "XV",
+    "20060421",
+    "20060428",
+    "Dimissioni per incompatibilita'"
+   ]
+  ]
+ }
+}

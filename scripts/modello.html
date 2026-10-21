@@ -607,6 +607,9 @@ function chiaveDaPercorso(x){
   try { x = decodeURI(x || '/'); } catch (e) {}
   x = x.replace(/index\.html$/, '');
   if (x.slice(-1) !== '/') x += '/';
+  // prima gli indirizzi fissi: anche /onorevole/mario-pepe/, che non e' una
+  // scheda ma l'elenco degli omonimi
+  if (INDIRIZZI.percorsi[x]) return INDIRIZZI.percorsi[x];
   const scheda = x.match(/^\/onorevole\/([^/]+)\/$/);
   if (scheda) return perScheggia[scheda[1]] ? 'persona/' + perScheggia[scheda[1]].q : null;
   return INDIRIZZI.percorsi[x] || null;
@@ -821,6 +824,19 @@ VISTE['persona'] = function(q){
 
   if (p.v) corpo += '<div class="avviso">Senatore a vita o di diritto: sta in tutte le ' +
     'legislature per definizione, quindi resta fuori dalle classifiche di longevit&agrave;.</div>';
+  // I mandati di pochi giorni all'inizio di una legislatura: la Camera li
+  // registra, ma in un gruppo non si e' fatto in tempo a entrare. Contano come
+  // gli altri (decisione di Davide, 21 ottobre 2026): la nota dice quanto sono
+  // durati e perche' nella scheda non c'e' un gruppo.
+  (p.mb || []).forEach(x => {
+    const [leg, dal, al, motivo] = x;
+    const quando = dal === al ? 'il ' + dataIt(dal)
+                              : 'dal ' + dataIt(dal) + ' al ' + dataIt(al);
+    const come = String(motivo || '').toLowerCase().replace(/incompatibilita'/, 'incompatibilit&agrave;');
+    corpo += '<div class="avviso">Nella ' + leg + ' legislatura il mandato alla ' +
+      'Camera &egrave; durato pochi giorni, ' + quando + (come ? ', ed &egrave; finito per ' + come : '') +
+      ', senza adesione a un gruppo parlamentare.</div>';
+  });
   if (p.x) corpo += '<div class="avviso">Ministro mai eletto in Parlamento. ' +
     'Non ha mai avuto un gruppo, quindi non ha cambi di casacca.</div>';
   if (p.r && !(p.f || p.fc) && !p.w)

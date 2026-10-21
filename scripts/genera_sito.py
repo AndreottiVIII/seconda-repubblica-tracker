@@ -206,6 +206,17 @@ def main():
     persone.sort(key=lambda x: x['n'])
     # Il pezzo d'indirizzo di ogni scheda, /onorevole/clemente-mastella/.
     pagine_statiche.assegna_schegge(persone)
+    # I mandati di pochi giorni, senza adesione a un gruppo: eletti che si
+    # dimettono all'inizio della legislatura, o che muoiono subito. Contano come
+    # gli altri; la scheda aggiunge una nota. Vengono
+    # dall'anagrafe della Camera, tramite scripts/controlla_camera.py.
+    brevi_file = os.path.join(QUI, '..', 'data', 'mandati_brevi.json')
+    if os.path.exists(brevi_file):
+        brevi = json.load(open(brevi_file, encoding='utf-8')).get('mandati', {})
+        for p in persone:
+            if p['q'] in brevi:
+                p['mb'] = brevi[p['q']]
+        print('mandati brevi: %d persone' % sum(1 for p in persone if p.get('mb')))
 
     # I distintivi: fatti datati e con una fonte, scritti a mano perche'
     # nessun registro li tiene. Il file e' piccolo apposta: se un distintivo

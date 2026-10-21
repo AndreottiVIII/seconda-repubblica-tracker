@@ -302,6 +302,24 @@ def pagine(dati):
               'Le %d persone che hanno fatto parte del governo %s, con il loro '
               'percorso in Parlamento.' % (gente, g))
 
+    # Gli omonimi: ognuno ha l'anno di nascita nell'indirizzo, e all'indirizzo
+    # col solo nome c'e' l'elenco di tutti quelli che si chiamano cosi'. Serve
+    # anche a non rompere i link gia' girati: /onorevole/mario-pepe/ era una
+    # scheda sola finche' non si e' scoperto che i Mario Pepe erano due.
+    per_base = {}
+    for p in P:
+        base = scheggia(re.sub(r'\s*\([^)]*\)', '', p['n']))
+        per_base.setdefault(base, []).append(p)
+    for base, gente in sorted(per_base.items()):
+        if len(gente) < 2 or any(p['u'] == base for p in gente):
+            continue
+        nome = re.sub(r'\s*\([^)]*\)', '', gente[0]['n'])
+        anni = elenco_parole(sorted('%s' % (p.get('b') or '?')[:4] for p in gente))
+        fissa('lista/cerca:' + nome, '/onorevole/%s/' % base,
+              '%s: %d persone con questo nome' % (nome, len(gente)),
+              'Nella Seconda Repubblica hanno seduto %d persone che si chiamano %s, '
+              'nate nel %s. Le loro schede.' % (len(gente), nome, anni))
+
     for p in P:
         out.append(('/onorevole/%s/' % p['u'], 'persona/' + p['q'],
                     titolo_scheda(p), descrizione_scheda(p, partiti), p))

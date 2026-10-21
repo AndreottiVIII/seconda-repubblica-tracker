@@ -99,6 +99,32 @@ def main():
             rapporto['decessi'].append({'qid': p['qid'], 'nome': p['nome'],
                                         'quando': [x[2] for x in mm if x[3] == 'Decesso']})
 
+    # I mandati di pochi giorni che le nostre schede non contano: eletti che si
+    # dimettono all'inizio della legislatura (incompatibilita', un altro
+    # incarico) o che muoiono subito. La Camera li registra, il registro dei
+    # gruppi no, perche' a un gruppo non hanno fatto in tempo ad aderire.
+    # Decisione di Davide (21 ottobre 2026): contano come le altre legislature
+    # (Wikidata le dava gia'), e la scheda aggiunge una nota. Il file va nel
+    # repository, perche' il lavoro notturno gli archivi della Camera non li ha.
+    brevi = {}
+    for x in rapporto['legislature']:
+        p = next(q for q in persone if q['qid'] == x['qid'])
+        for leg in x['solo_camera']:
+            mm = [m for m in per_dep[p['id_camera']] if m[0] == leg]
+            for _, dal, al, motivo in mm:
+                giorni = (int(al[:4]) * 372 + int(al[4:6]) * 31 + int(al[6:])) - \
+                         (int(dal[:4]) * 372 + int(dal[4:6]) * 31 + int(dal[6:]))
+                if 0 <= giorni <= 31:
+                    brevi.setdefault(p['qid'], []).append([leg, dal, al, motivo])
+    json.dump({'_nota': "Mandati alla Camera di pochi giorni, finiti all'inizio della "
+                        "legislatura, senza adesione a un gruppo: le schede li contano e aggiungono una nota. "
+                        "Dall'anagrafe della Camera (mandatoCamera). Generato da "
+                        "scripts/controlla_camera.py.",
+               'mandati': brevi},
+              open(os.path.join(QUI, '..', 'data', 'mandati_brevi.json'), 'w',
+                   encoding='utf-8', newline='\n'), ensure_ascii=False, indent=1)
+    print('mandati brevi: %d persone' % len(brevi))
+
     print('deputati XII-XVI nell\'anagrafe della Camera: %d' % len(per_dep))
     for k, v in rapporto.items():
         print('  %-12s %d' % (k, len(v)))
