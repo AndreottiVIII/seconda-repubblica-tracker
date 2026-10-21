@@ -118,6 +118,22 @@ def chiave_nome(nome):
     return ' '.join(sorted(n.replace("'", ' ').split()))
 
 
+GOVERNI_INIZIO = [('19940510', 'Berlusconi I'), ('19950117', 'Dini'), ('19960517', 'Prodi I'),
+                  ('19981021', "D'Alema I"), ('19991222', "D'Alema II"), ('20000425', 'Amato II'),
+                  ('20010611', 'Berlusconi II'), ('20050423', 'Berlusconi III'),
+                  ('20060517', 'Prodi II'), ('20080508', 'Berlusconi IV'), ('20111116', 'Monti')]
+
+
+def governo_al(giorno):
+    """Il governo in carica quel giorno (o appena nominato: la fiducia arriva
+    qualche giorno dopo il giuramento)."""
+    nome = GOVERNI_INIZIO[0][1]
+    for inizio, chi in GOVERNI_INIZIO:
+        if inizio <= giorno:
+            nome = chi
+    return nome
+
+
 def compatta(p, gruppi, ant):
     d = {
         'q': p['qid'],
@@ -241,6 +257,8 @@ def main():
                 p['rg'] = x['ruoli_gruppo']
             if x.get('fine_mandato'):
                 p['fm'] = x['fine_mandato']
+            if x.get('ispettivi'):
+                p['ai'] = x['ispettivi']
             for leg, voci in (x.get('incarichi_senato') or {}).items():
                 lista = p.setdefault('in', {}).setdefault(leg, [])
                 for r, o in voci:
@@ -249,6 +267,45 @@ def main():
                 p['pr'] = {ramo: [v.get('primo', 0), v.get('cofirmate', 0), v.get('governo', 0)]
                            for ramo, v in x['proposte'].items()}
         print('schede arricchite: %d' % sum(1 for p in persone if p['q'] in arr))
+
+    # I voti alla Camera, dalla XIII alla XVI: li conta scripts/conta_voti_camera.py
+    # dagli archivi votoNN.rdf.zip (33 GB, solo sul PC). Per ogni legislatura:
+    # votazioni, voti espressi, in missione, assente, votazioni con una linea del
+    # gruppo, voti diversi da quella linea, e le fiducie (si', no, astenuto, in
+    # missione, non ha votato).
+    voti_file = os.path.join(QUI, '..', 'data', 'voti_camera.json')
+    prime_fiducie = []
+    if os.path.exists(voti_file):
+        V = json.load(open(voti_file, encoding='utf-8'))
+        per_ci = {p['ci']: p for p in persone if p.get('ci')}
+        for pid, legs in V['deputati'].items():
+            p = per_ci.get(pid)
+            if not p:
+                continue
+            vc = {}
+            for leg, v in legs.items():
+                f_ = {}
+                for _, scelta in v.get('fiducie', []):
+                    f_[scelta] = f_.get(scelta, 0) + 1
+                vc[leg] = [v.get('votazioni', 0), v.get('espressi', 0), v.get('missione', 0),
+                           v.get('assente', 0), v.get('con_linea', 0), v.get('dissenso', 0)] +                           [f_.get(k, 0) for k in 'FCAMN']
+            p['vc'] = vc
+        # Il primo voto di fiducia di ogni governo, con i nomi: la mozione di
+        # fiducia con cui la Camera accoglie un governo nuovo.
+        for vs, m in sorted(V['fiducie'].items(), key=lambda kv: kv[1].get('data') or ''):
+            if not re.search(r'MOZION[EI] DI FIDUCIA', m.get('descrizione') or '', re.I):
+                continue
+            voti = {}
+            for pid, legs in V['deputati'].items():
+                for v in legs.values():
+                    for x, scelta in v.get('fiducie', []):
+                        if x == vs and pid in per_ci:
+                            voti.setdefault(scelta, []).append(per_ci[pid]['q'])
+            prime_fiducie.append({'g': governo_al(m['data']), 'data': m['data'], 'vs': vs,
+                                  'ufficiale': m.get('ufficiale'), 'voti': voti})
+        print('voti alla Camera: %d schede; prime fiducie: %s'
+              % (sum(1 for p in persone if p.get('vc')),
+                 ', '.join('%s %s' % (x['g'], x['data']) for x in prime_fiducie)))
 
     # I distintivi: fatti datati e con una fonte, scritti a mano perche'
     # nessun registro li tiene. Il file e' piccolo apposta: se un distintivo
@@ -288,6 +345,9 @@ def main():
     # Parlamento nel perimetro non c'e' mai stato - resta scritto senza
     # collegamento, che e' il modo onesto di dire che di lui non sappiamo
     # niente d'altro.
+    if prime_fiducie:
+        dati['fiducie'] = prime_fiducie
+
     if os.path.exists(SEGRETARI):
         sg = json.load(open(SEGRETARI, encoding='utf-8'))
         per_nome = {}

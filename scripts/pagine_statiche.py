@@ -214,6 +214,11 @@ def pagine(dati):
     fissa('governi', '/governi/', 'Gli undici governi della Seconda Repubblica',
           'Da Berlusconi I a Monti, dal maggio 1994 all’aprile 2013: i ministri di '
           'ogni governo, compresi quelli mai entrati in Parlamento.')
+    if dati.get('fiducie'):
+        fissa('fiducia', '/la-prima-fiducia/',
+              'La prima fiducia ai governi, nome per nome',
+              'Come hanno votato i deputati la prima fiducia a %s: sì, no, astenuti e '
+              'assenti, partito per partito.' % elenco_parole([f['g'] for f in dati['fiducie']]))
     fissa('cadute', '/le-cadute/', 'Le cadute dei governi della Seconda Repubblica',
           'I governi finiti prima del tempo per un voto perso o un appoggio '
           'ritirato: come, quando, con quali numeri, e chi ha cambiato gruppo attorno.')

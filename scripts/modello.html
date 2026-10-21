@@ -934,6 +934,46 @@ VISTE['persona'] = function(q){
         'presentate al Senato nel 1994-96 non ci sono.</p>';
   }
 
+  if (p.ai){
+    const righe = ORDINE.filter(m => p.ai[m]);
+    const num = n => n ? n.toLocaleString('it-IT') : '&mdash;';
+    if (righe.length)
+      corpo += '<h2 style="margin-top:12px">Interrogazioni, interpellanze, mozioni</h2>' +
+        '<table><thead><tr><th>Legisl.</th><th>Interrogazioni</th><th>Interpellanze</th>' +
+        '<th>Mozioni</th><th>Risoluzioni</th><th>Ordini del giorno</th><th>Cofirmati</th>' +
+        '</tr></thead><tbody>' + righe.map(m => '<tr><td>' + m + '</td>' +
+          p.ai[m].map(n => '<td class="num">' + num(n) + '</td>').join('') + '</tr>').join('') +
+        '</tbody></table><p class="piede">Alla Camera, come primo firmatario; nell&rsquo;ultima ' +
+        'colonna gli atti presentati da altri e cofirmati.</p>';
+  }
+
+  if (p.vc){
+    const num = n => n.toLocaleString('it-IT');
+    const pc = (a, b) => b ? ' (' + (100 * a / b).toLocaleString('it-IT', {maximumFractionDigits: 1}) + '%)' : '';
+    // sotto le venti votazioni c'e' chi presiede la Camera, che non vota
+    const righe = ORDINE.filter(m => p.vc[m] && p.vc[m][0] >= 20);
+    if (righe.length)
+      corpo += '<h2 style="margin-top:12px">Votazioni alla Camera</h2>' +
+        '<table><thead><tr><th>Legisl.</th><th>Ha votato</th><th>In missione</th>' +
+        '<th>Non ha votato</th><th>Diverso dal gruppo</th><th>Fiducie</th></tr></thead><tbody>' +
+        righe.map(m => {
+          const [tot, esp, mis, ass, linea, dis, fS, fN, fA, fM, fX] = p.vc[m];
+          const fid = [[fS, 's&igrave;'], [fN, 'no'], [fA, 'astenuto'], [fM, 'in missione'],
+                       [fX, 'non ha votato']].filter(x => x[0]).map(x => x[0] + ' ' + x[1]).join(', ');
+          return '<tr><td>' + m + '</td>' +
+            '<td style="white-space:nowrap">' + num(esp) + ' su ' + num(tot) + pc(esp, tot) + '</td>' +
+            '<td style="white-space:nowrap">' + num(mis) + pc(mis, tot) + '</td>' +
+            '<td style="white-space:nowrap">' + num(ass) + pc(ass, tot) + '</td>' +
+            '<td style="white-space:nowrap">' + num(dis) + ' su ' + num(linea) + pc(dis, linea) + '</td>' +
+            '<td style="font-size:11px">' + (fid || (m === 'XIII' ? 'non segnate' : '&mdash;')) + '</td></tr>';
+        }).join('') + '</tbody></table>' +
+        '<p class="piede">Dai voti elettronici della Camera, deputato per deputato: ci sono ' +
+        'dalla XIII legislatura, la XII negli archivi non c&rsquo;&egrave;. In missione &egrave; ' +
+        'un&rsquo;assenza giustificata, la regola per chi &egrave; al governo. Diverso dal gruppo: ' +
+        'nelle votazioni palesi in cui il gruppo ha una maggioranza netta; il gruppo misto, che ' +
+        'una linea non ce l&rsquo;ha, non conta. Le fiducie sono segnate dalla XIV.</p>';
+  }
+
   if (p['in']){
     const righe = [];
     ORDINE.forEach(m => (p['in'][m] || []).forEach(x => righe.push([m, x[0], x[1], x[2] || 'C'])));
@@ -1974,6 +2014,56 @@ const GOVERNI = [
   ['Monti',          '16.11.2011', '28.04.2013']
 ];
 
+/* La prima fiducia: il voto con cui la Camera accoglie un governo nuovo, nome
+   per nome. Viene dagli archivi dei voti della Camera, che le fiducie le
+   segnano dalla XIV legislatura: Prodi I, D'Alema e Amato non ci sono. */
+function partitoAl(p, giorno){
+  const passi = (p.g || []).filter(t => t[4] === 'C');
+  const t = passi.find(t => t[2] <= giorno && (!t[3] || t[3] >= giorno)) ||
+            passi.filter(t => t[2] <= giorno).pop();
+  return t ? t[1] : '?';
+}
+
+VISTE['fiducia'] = function(){
+  const F = DATI.fiducie || [];
+  if (!F.length) throw new Error('Mancano i voti di fiducia.');
+  const voce = {F: 'S&igrave;', C: 'No', A: 'Astenuti', M: 'In missione', N: 'Non hanno votato'};
+  let h = '<h1>La prima fiducia</h1>' +
+    '<p>Il primo voto di fiducia di ogni governo alla Camera dei deputati, deputato per ' +
+    'deputato, diviso per partito. Le fiducie sono negli archivi della Camera dalla XIV ' +
+    'legislatura: quelle a Prodi I, D&rsquo;Alema e Amato non ci sono.</p>';
+  F.forEach((f, i) => {
+    const conta = k => (f.voti[k] || []).length;
+    const u = f.ufficiale || [];
+    const astenuti = n => n === 1 ? '1 astenuto' : n + ' astenuti';
+    const uguale = u[0] === conta('F') && u[1] === conta('C');
+    h += '<details' + (i === F.length - 1 ? ' open' : '') + ' style="margin-top:8px">' +
+      '<summary><b>' + esc(f.g) + '</b>, ' + dataIt(f.data) + ': ' +
+      (u[0] != null ? u[0] : conta('F')) + ' s&igrave;, ' + (u[1] != null ? u[1] : conta('C')) + ' no' +
+      ((u[2] || conta('A')) ? ', ' + astenuti(u[2] != null ? u[2] : conta('A')) : '') + '</summary>' +
+      (u[0] != null && !uguale
+        ? '<p class="piede">Totale ufficiale: ' + u[0] + ' s&igrave;, ' + u[1] + ' no. Nell&rsquo;elenco ' +
+          'nominale della Camera ne risultano ' + conta('F') + ' e ' + conta('C') + ': i nomi qui ' +
+          'sotto sono quelli.</p>' : '');
+    ['F', 'C', 'A', 'M', 'N'].forEach(k => {
+      const gente = (f.voti[k] || []).map(q => perQid[q]).filter(Boolean);
+      if (!gente.length) return;
+      const perP = {};
+      gente.forEach(p => { const c = partitoAl(p, f.data); (perP[c] = perP[c] || []).push(p); });
+      h += '<h3 style="margin:8px 0 2px">' + voce[k] + ' (' + gente.length + ')</h3><table><tbody>' +
+        Object.keys(perP).sort((a, b) => perP[b].length - perP[a].length).map(c =>
+          '<tr><td style="width:150px;vertical-align:top">' + pill(c, nomePartito(c)) +
+          ' <span style="color:#606060">' + perP[c].length + '</span></td><td style="font-size:11px">' +
+          perP[c].sort(perCognome).map(p => '<span class="clic" data-apri="persona" data-arg="' +
+            p.q + '">' + esc(perElenco(p)) + '</span>').join(', ') + '</td></tr>').join('') +
+        '</tbody></table>';
+    });
+    h += '</details>';
+  });
+  return {titolo: 'La prima fiducia', icona: '&#128499;', html: h, faccia: true,
+          larghezza: 720, altezza: 560, stato: F.length + ' governi'};
+};
+
 VISTE['governi'] = function(){
   let h = '<h1>Gli undici governi</h1>' +
     '<p>Dal maggio 1994 all&rsquo;aprile 2013. Il numero &egrave; quante persone ' +
@@ -2963,6 +3053,7 @@ const SCRIVANIA = [
   ['&#9937;', 'I Responsabili', 'responsabili', '', 'sx'],
   ['&#128203;', 'Elezioni', 'elezioni', '', 'sx'],
   ['&#127963;', 'Governi', 'governi', '', 'sx'],
+  ['&#128499;', 'La prima fiducia', 'fiducia', '', 'sx'],
   ['&#128721;', 'Le cadute', 'cadute', '', 'sx'],
   ['&#128198;', 'Linea del tempo', 'tempo', '', 'sx'],
   ['&#128220;', 'Il gruppo misto', 'misto', '', 'sx'],

@@ -69,7 +69,9 @@ def pacchetto(nome):
         r = urllib.request.Request(DUMP % nome, headers={'User-Agent': UA})
         open(percorso, 'wb').write(urllib.request.urlopen(r, timeout=600).read())
     with zipfile.ZipFile(percorso) as z:
-        return z.read(z.namelist()[0]).decode('utf-8')
+        # qualche archivio ha byte rovinati (aic-12): meglio un carattere
+        # sostituito che un archivio intero illeggibile
+        return z.read(z.namelist()[0]).decode('utf-8', errors='replace')
 
 
 RIGA = re.compile(r'^(\S+)\t<([^>]+)>\t(.*) \.\s*$')
@@ -257,6 +259,51 @@ def fine_mandato():
         fuori.setdefault(m.group(2), []).append(
             [ROMANI[int(m.group(1))], data(v.get('endDate')),
              motivo.replace("incompatibilita'", 'incompatibilità')])
+    return fuori
+
+
+TIPI_ISPETTIVI = [('INTERROGAZIONE', 0), ('INTERPELLANZA', 1), ('MOZIONE', 2),
+                  ('RISOLUZIONE', 3), ('ODG', 4)]
+
+
+def atti_ispettivi():
+    """{pid: {legislatura: [interrogazioni, interpellanze, mozioni, risoluzioni,
+    ordini del giorno, cofirmati]}}, dagli archivi aic-12 ... aic-16.
+
+    Ogni atto si conta una volta sola: nelle righe di triple lo stesso
+    firmatario puo' comparire piu' volte per lo stesso atto. E come per le
+    proposte, rdf:type e dc:type finiscono tutti e due in 'type': conta il
+    secondo, che e' un testo ('INTERROGAZIONE A RISPOSTA SCRITTA')."""
+    fuori = {}
+    for n in ROMANI:
+        testo = pacchetto('aic-%d' % n)
+        atti = collections.defaultdict(lambda: {'primi': set(), 'altri': set(), 'tipo': ''})
+        if testo.lstrip().startswith('<http'):
+            for s, p, o in triple(testo, '<http://dati.camera.it/ocd/aic.rdf/'):
+                if p in ('primo_firmatario', 'altro_firmatario'):
+                    m = re.search(r'/[dp](\d+)(?:_|$)', o)
+                    if m:
+                        atti[s]['primi' if p == 'primo_firmatario' else 'altri'].add(m.group(1))
+                elif p == 'type' and not o.startswith('http'):
+                    atti[s]['tipo'] = o
+        else:
+            radice = ET.fromstring(testo.encode('utf-8'))
+            for el in radice.iter():
+                if _locale(el.tag) != 'aic':
+                    continue
+                a = atti[id(el)]
+                a['tipo'] = _testo(el, 'type')
+                a['primi'] = {x for x in (_pid(f) for f in _figli(el, 'primo_firmatario')) if x}
+                a['altri'] = {x for x in (_pid(f) for f in _figli(el, 'altro_firmatario')) if x}
+        for a in atti.values():
+            tipo = a['tipo'].upper()
+            col = next((i for k, i in TIPI_ISPETTIVI if tipo.startswith(k)), None)
+            for pid in a['primi']:
+                v = fuori.setdefault(pid, {}).setdefault(ROMANI[n], [0] * 6)
+                if col is not None:
+                    v[col] += 1
+            for pid in a['altri'] - a['primi']:
+                fuori.setdefault(pid, {}).setdefault(ROMANI[n], [0] * 6)[5] += 1
     return fuori
 
 
@@ -528,6 +575,7 @@ def main():
     elez = elezioni_camera()
     ruoli = ruoli_nei_gruppi()
     fine = fine_mandato()
+    ispettivi = atti_ispettivi()
     print('Senato: incarichi...')
     inc_s = incarichi_senato()
     print('Senato: professioni...')
@@ -556,6 +604,8 @@ def main():
             x['ruoli_gruppo'] = ruoli[c]
         if c and fine.get(c):
             x['fine_mandato'] = fine[c]
+        if c and ispettivi.get(c):
+            x['ispettivi'] = ispettivi[c]
         if s and inc_s.get(s):
             x['incarichi_senato'] = inc_s[s]
         prop = {}
@@ -571,7 +621,7 @@ def main():
     conta = lambda campo: sum(1 for v in fuori.values() if campo in v)
     print()
     print('schede arricchite: %d su %d' % (len(fuori), len(persone)))
-    for campo in ('studi', 'governo', 'elezioni', 'ruoli_gruppo', 'fine_mandato',
+    for campo in ('studi', 'governo', 'elezioni', 'ruoli_gruppo', 'fine_mandato', 'ispettivi',
                   'incarichi_senato', 'proposte'):
         print('  %-18s %d' % (campo, conta(campo)))
     json.dump({'_nota': 'Primo giro di arricchimento: studi e professione, incarichi di '
