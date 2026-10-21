@@ -206,6 +206,9 @@ button.p95:active{border-color:var(--ombra) var(--luce) var(--luce) var(--ombra)
 .ritratto{width:120px;flex:none;background:var(--faccia);padding:3px;
   border:2px solid;border-color:var(--ombra) var(--luce) var(--luce) var(--ombra)}
 .ritratto img{width:100%;display:block;image-rendering:auto}
+.ritratto-grande{background:var(--faccia);padding:3px;margin-bottom:8px;
+  border:2px solid;border-color:var(--ombra) var(--luce) var(--luce) var(--ombra)}
+.ritratto-grande img{display:block;margin:0 auto;max-width:100%;max-height:340px;width:auto;height:auto}
 .ritratto .vuoto{height:150px;display:flex;align-items:center;justify-content:center;
   font-size:44px;color:var(--ombra);background:#e8e8e8}
 .dati{flex:1;min-width:220px}
@@ -856,12 +859,22 @@ VISTE['persona'] = function(q){
   if (p.p2 !== undefined)
     d += '<dt>Lista P2</dt><dd>nella lista sequestrata a Castiglion Fibocchi nel 1981' +
       (p.p2 ? ' (fascicolo ' + esc(p.p2) + ')' : '') + '</dd>';
+  // la condanna sta nel Cestino; nella scheda di Berlusconi anche qui, una riga
+  const cavaliere = p.q === BERLUSCONI;
+  if (cavaliere && DATI.condanne)
+    DATI.condanne.voci.filter(v => v.qid === p.q).forEach(v => {
+      d += '<dt>Condanna</dt><dd>' + esc(v.reato.toLowerCase()) + ', ' + esc(v.grado) + ' (' + v.anno +
+        ') &mdash; <span class="clic" data-apri="cestino">nel Cestino</span></dd>';
+    });
   d += '<dt>Cambi di casacca</dt><dd><b>' + p.c + '</b></dd>';
   d += '</dl>';
 
-  let corpo = '<div class="scheda"><div class="ritratto">' +
-    ritratto(p) +
-    '</div><div class="dati"><h1>' + esc(p.n) + '</h1>' + d + '</div></div>';
+  let corpo = cavaliere
+    ? '<div class="ritratto-grande">' + ritratto(p).replace('?width=240', '?width=760') + '</div>' +
+      '<div class="dati"><h1>' + esc(p.n) + '</h1>' + d + '</div>' + schedaDelCavaliere(p)
+    : '<div class="scheda"><div class="ritratto">' +
+      ritratto(p) +
+      '</div><div class="dati"><h1>' + esc(p.n) + '</h1>' + d + '</div></div>';
 
   if (p.v) corpo += '<div class="avviso">Senatore a vita o di diritto: sta in tutte le ' +
     'legislature per definizione, quindi resta fuori dalle classifiche di longevit&agrave;.</div>';
@@ -955,6 +968,28 @@ VISTE['persona'] = function(q){
         '<td style="font-size:11px">' + esc(r[2]) + '</td>' +
         '<td style="white-space:nowrap;font-size:11px">' + periodoGuida(r[3], r[4]) + '</td></tr>').join('') +
       '</tbody></table>';
+
+  // gli interventi alla Camera: fonti diverse per legislatura, e la riga dice che cosa conta
+  const allaCameraXIII = (p.g || []).some(x => ORDINE[x[0]] === 'XIII' && x[4] === 'C');
+  if (p.ic){
+    const ic = p.ic || {};
+    const cosa = {'aula e commissione': 'in Aula e in commissione', 'leggi in aula': 'sulle leggi, in Aula',
+                  'aula': 'in Aula'};
+    const righe = ORDINE.filter(m => ic[m] || (m === 'XIII' && allaCameraXIII));
+    if (righe.length)
+      corpo += '<h2 style="margin-top:12px">Interventi alla Camera</h2>' +
+        '<table><thead><tr><th>Legisl.</th><th>Interventi</th><th>Che cosa conta</th></tr></thead><tbody>' +
+        righe.map(m => {
+          const v = ic[m];
+          if (!v) return '<tr><td>' + m + '</td><td class="num">&mdash;</td>' +
+            '<td style="font-size:11px">per questa legislatura l&rsquo;archivio non c&rsquo;&egrave;</td></tr>';
+          return '<tr><td>' + m + '</td><td class="num">' + numIt(v[0]) + '</td><td style="font-size:11px">' +
+            cosa[v[1]] + (v[2] ? '; e ' + numIt(v[2]) + ' in commissione' : '') + '</td></tr>';
+        }).join('') + '</tbody></table>' +
+        '<p class="piede">Le fonti della Camera non contano tutte la stessa cosa: per questo i numeri ' +
+        'non si confrontano fra una legislatura e l&rsquo;altra. Fonti: portale storico (XII), siti ' +
+        'delle legislature (XIV, XV), dati aperti (XVI).</p>';
+  }
 
   // le richieste dei giudici alla Camera: atti parlamentari, non condanne
   if (p.au && p.au.length){
@@ -2446,6 +2481,137 @@ document.addEventListener('click', e => {
   if (INDIRIZZI) linkVeri(corpo);
 });
 
+/* ---- L'emiciclo: chi sedeva in aula, giorno per giorno ----
+   Ogni pallino e' una persona, col partito del suo gruppo quel giorno. L'ordine
+   da sinistra a destra e' quello dei grafici dei Parlamenti (Wikipedia e simili):
+   una scelta del sito, scritta qui sotto, non un dato delle Camere. */
+const SPETTRO = ['PRC', 'PDCI', 'SIN-IND', 'SD', 'IU', 'VERDI', 'PDS', 'DS', 'PSI-PROG', 'ROSA', 'PD',
+  'IDV', 'DEM', 'MARGHERITA', 'PPI', 'RINN', 'UDEUR', 'UDR', 'AUT', 'MISTO', '?', 'DE', 'CDU', 'CCD',
+  'UDC', 'FLI', 'DCA', 'CN', 'RESP', 'FI', 'PDL', 'LEGA-FED', 'LEGA', 'CDN', 'AN'];
+const PIENO = {C: 630, S: 315};
+
+function dalGiorno(n){                       // numero di giorni -> 'YYYYMMDD'
+  return new Date(n * 86400000).toISOString().slice(0, 10).replace(/-/g, '');
+}
+
+function inAula(leg, ramo, quando){
+  const i = ORDINE.indexOf(leg), fuori = [];
+  P.forEach(p => {
+    const t = (p.g || []).find(t => t[0] === i && t[4] === ramo && t[2] && t[2] <= quando &&
+                                    (!t[3] || t[3] >= quando));
+    if (t) fuori.push([p, t[1]]);
+  });
+  const posto = c => { const k = SPETTRO.indexOf(c); return k < 0 ? SPETTRO.indexOf('?') : k; };
+  return fuori.sort((a, b) => posto(a[1]) - posto(b[1]) || perCognome(a[0], b[0]));
+}
+
+// il primo giorno in cui siede quasi tutta l'aula: i gruppi nascono qualche giorno dopo
+function inizioPieno(leg, ramo){
+  const L = LEG.find(l => l.n === leg), i = ORDINE.indexOf(leg);
+  const d0 = giorno(L.da), d1 = giorno(L.a), conta = new Array(d1 - d0 + 2).fill(0);
+  P.forEach(p => (p.g || []).forEach(t => {
+    if (t[0] !== i || t[4] !== ramo || !t[2]) return;
+    const a = Math.max(d0, giorno(t[2])), b = Math.min(d1, giorno(t[3] || L.a));
+    if (a > b) return;
+    conta[a - d0]++; conta[b - d0 + 1]--;
+  }));
+  let n = 0;
+  for (let k = 0; k <= d1 - d0; k++){
+    n += conta[k];
+    if (n >= 0.95 * PIENO[ramo]) return dalGiorno(d0 + k);
+  }
+  return L.da;
+}
+
+// i posti a semicerchio: piu' file, e in ogni fila tanti posti quanto e' lunga
+function sedili(n){
+  const file = n > 400 ? 12 : 8, r0 = 0.38;
+  const raggi = [...Array(file)].map((_, k) => r0 + (1 - r0) * k / (file - 1));
+  const somma = raggi.reduce((a, b) => a + b, 0);
+  const posti = raggi.map(r => Math.floor(n * r / somma));
+  let resto = n - posti.reduce((a, b) => a + b, 0);
+  for (let k = file - 1; resto > 0; k = (k + file - 1) % file, resto--) posti[k]++;
+  const pt = [];
+  raggi.forEach((r, k) => {
+    const m = posti[k];
+    for (let j = 0; j < m; j++){
+      const a = Math.PI * (m === 1 ? 0.5 : j / (m - 1));
+      pt.push({a: a, x: -Math.cos(a) * r, y: -Math.sin(a) * r});
+    }
+  });
+  return pt.sort((u, v) => u.a - v.a || u.y - v.y);
+}
+
+function disegnoEmiciclo(leg, ramo, quando){
+  const chi = inAula(leg, ramo, quando);
+  const pt = sedili(chi.length), r = chi.length > 400 ? 0.021 : 0.03;
+  const svg = '<svg viewBox="-1.06 -1.06 2.12 1.12" style="width:100%;max-width:640px;display:block;margin:0 auto">' +
+    chi.map((x, k) => '<circle class="clic" data-apri="persona" data-arg="' + x[0].q + '" cx="' +
+      pt[k].x.toFixed(4) + '" cy="' + pt[k].y.toFixed(4) + '" r="' + r + '" fill="' + colorePartito(x[1]) +
+      '"><title>' + esc(x[0].n) + ' &mdash; ' + esc(x[1] === '?' ? 'gruppo senza partito' : nomePartito(x[1])) + '</title></circle>').join('') +
+    '<text x="0" y="-0.12" text-anchor="middle" font-size="0.13" font-weight="bold">' + chi.length + '</text>' +
+    '<text x="0" y="-0.02" text-anchor="middle" font-size="0.06">' + (ramo === 'C' ? 'deputati' : 'senatori') +
+    '</text></svg>';
+  // i seggi per partito, con la differenza dall'inizio della legislatura
+  const conta = l => l.reduce((o, x) => (o[x[1]] = (o[x[1]] || 0) + 1, o), {});
+  const ora = conta(chi), prima = conta(inAula(leg, ramo, inizioPieno(leg, ramo)));
+  const partiti = SPETTRO.filter(c => ora[c] || prima[c]);
+  const tab = '<table><thead><tr><th>Partito del gruppo</th><th class="num">Seggi</th>' +
+    '<th class="num">Dall&rsquo;inizio</th></tr></thead><tbody>' + partiti.map(c => {
+      const d = (ora[c] || 0) - (prima[c] || 0);
+      return '<tr><td>' + pill(c, c === '?' ? 'gruppo senza partito' : nomePartito(c)) + '</td><td class="num">' + (ora[c] || 0) +
+        '</td><td class="num">' + (d > 0 ? '+' + d : d < 0 ? '&minus;' + (-d) : '&mdash;') + '</td></tr>';
+    }).join('') + '</tbody></table>';
+  return svg + '<p style="text-align:center;margin:4px 0 10px"><b>' + dataIt(quando) + '</b></p>' + tab;
+}
+
+VISTE['emiciclo'] = function(arg){
+  const [r0, l0, q0] = String(arg || '').split('|');
+  const ramo = r0 === 'S' ? 'S' : 'C';
+  const leg = ORDINE.indexOf(l0) >= 0 ? l0 : 'XVI';
+  const L = LEG.find(l => l.n === leg), primo = inizioPieno(leg, ramo);
+  const quando = q0 && q0 >= primo && q0 <= L.a ? q0 : primo;
+  const scegli = (testo, a, attivo) => attivo ? '<b>' + testo + '</b>'
+    : '<span class="clic emiciclo-scegli" data-arg="' + a + '">' + testo + '</span>';
+  const d0 = giorno(primo), d1 = giorno(L.a);
+  const html = '<h1>L&rsquo;emiciclo</h1>' +
+    '<p>Chi sedeva in aula, giorno per giorno, col partito del suo gruppo. Si sposta il cursore per vedere ' +
+    'come cambia l&rsquo;aula durante la legislatura; passando su un pallino si legge il nome, ' +
+    'cliccandolo si apre la scheda.</p>' +
+    '<p>' + scegli('Camera', 'C|' + leg, ramo === 'C') + ' &middot; ' + scegli('Senato', 'S|' + leg, ramo === 'S') +
+    ' &nbsp;|&nbsp; ' + ORDINE.map(m => scegli(m, ramo + '|' + m, m === leg)).join(' &middot; ') + '</p>' +
+    '<div class="emiciclo" data-ramo="' + ramo + '" data-leg="' + leg + '" data-d0="' + d0 + '">' +
+    '<p style="display:flex;gap:8px;align-items:center">' +
+    '<span class="clic emiciclo-scegli" data-arg="' + ramo + '|' + leg + '|' + primo + '">inizio</span>' +
+    '<input type="range" class="emiciclo-cursore" min="0" max="' + (d1 - d0) + '" value="' +
+    (giorno(quando) - d0) + '" style="flex:1">' +
+    '<span class="clic emiciclo-scegli" data-arg="' + ramo + '|' + leg + '|' + L.a + '">fine</span></p>' +
+    '<div class="emiciclo-disegno">' + disegnoEmiciclo(leg, ramo, quando) + '</div></div>' +
+    '<p class="piede">Dai registri dei gruppi di Camera e Senato. L&rsquo;inizio &egrave; il primo giorno ' +
+    'in cui siede quasi tutta l&rsquo;aula: i gruppi si formano qualche giorno dopo le elezioni. ' +
+    'L&rsquo;ordine da sinistra a destra &egrave; una scelta del sito, come nei grafici dei Parlamenti.</p>';
+  return {titolo: 'L’emiciclo', icona: '&#127967;', html: html, faccia: true,
+          larghezza: 700, altezza: 640, stato: (ramo === 'C' ? 'Camera' : 'Senato') + ', ' + leg + ' legislatura'};
+};
+
+// dentro la finestra: cambiare ramo, legislatura o giorno senza aprirne un'altra
+document.addEventListener('click', e => {
+  const s = e.target.closest && e.target.closest('.emiciclo-scegli');
+  if (!s) return;
+  const corpo = s.closest('.corpo');
+  const v = VISTE['emiciclo'](s.dataset.arg);
+  corpo.innerHTML = v.html;
+  const stato = corpo.closest('.finestra').querySelector('.stato div');
+  if (stato) stato.textContent = v.stato;
+  if (INDIRIZZI) linkVeri(corpo);
+});
+document.addEventListener('input', e => {
+  if (!e.target.classList || !e.target.classList.contains('emiciclo-cursore')) return;
+  const box = e.target.closest('.emiciclo');
+  const quando = dalGiorno(+box.dataset.d0 + +e.target.value);
+  box.querySelector('.emiciclo-disegno').innerHTML = disegnoEmiciclo(box.dataset.leg, box.dataset.ramo, quando);
+});
+
 VISTE['governi'] = function(){
   let h = '<h1>Gli undici governi</h1>' +
     '<p>Dal maggio 1994 all&rsquo;aprile 2013. Il numero &egrave; quante persone ' +
@@ -2844,6 +3010,83 @@ const SUOI_GOVERNI = [
   ['Berlusconi III','23.04.2005', '17.05.2006',  389],
   ['Berlusconi IV', '08.05.2008', '16.11.2011', 1287]
 ];
+
+// La parte in piu' della sua scheda (decisione di Davide, 21 ottobre 2026: solo
+// per lui). I numeri vengono dai dati; i giorni da A_PALAZZO qui sopra.
+function schedaDelCavaliere(p){
+  const giorni = A_PALAZZO.find(x => x[0] === 'Berlusconi')[1];
+  const suo = g => /^Berlusconi/.test(g || '');
+  const fid = (DATI.fiducie_tutte || []).filter(r => r[7] === 'F');
+  const perGov = {};
+  fid.forEach(r => { perGov[r[2]] = (perGov[r[2]] || 0) + 1; });
+  const suoiFid = fid.filter(r => suo(r[2])).length;
+  const collegi = (p.cu || []).filter(c => c[1] === 'C');
+  const vinti = collegi.filter(c => c[5] === 1).length;
+  const ddl = ((p.pr || {}).C || [])[2] || 0;
+
+  let h = '<p style="margin:8px 0">La sua finestra, con i governi, i ministri e le scissioni: ' +
+    '<span class="clic" data-apri="cavaliere">Il Cavaliere</span>.</p>';
+
+  h += '<h2 style="margin-top:12px">In numeri</h2><div class="gruppone">' +
+    riquadro('Giorni al governo', giorni, conUnDecimale(100 * giorni / GIORNI_PERIMETRO) +
+      '% dei giorni dal 1994 al 2013', 'cavaliere', '') +
+    riquadro('Governi', SUOI_GOVERNI.length, SUOI_GOVERNI.map(g => g[0].replace('Berlusconi ', '')).join(', '),
+      'governi', '') +
+    (ddl ? riquadro('Disegni di legge firmati per il governo', ddl, 'alla Camera', 'persona', p.q) : '') +
+    (suoiFid ? riquadro('Voti di fiducia alla Camera', suoiFid, 'chiesti dai suoi governi, dal 2001', 'fiducia', '') : '') +
+    (collegi.length ? riquadro('Collegi vinti', vinti, 'su ' + collegi.length + ' in cui si &egrave; candidato, 1994-2001',
+      'persona', p.q) : '') +
+    '</div>';
+
+  // le fiducie: i suoi governi accanto agli altri, dalla XIV (nella XIII non sono segnate)
+  const governi = Object.keys(perGov).sort((a, b) => perGov[b] - perGov[a]);
+  if (governi.length)
+    h += '<h2 style="margin-top:12px">Le fiducie chieste alla Camera</h2>' +
+      tabellaConBarre(governi.map(g => [g, perGov[g], suo(g) ? '#005baa' : '#808080', null,
+        numIt(perGov[g])])) +
+      '<p style="color:#404040;font-size:11px">Voti di fiducia per governo, dalla XIV legislatura: ' +
+      'negli archivi della XIII non sono segnati, e per il governo Berlusconi I (1994) i voti ' +
+      'elettronici non ci sono. Si veda <span class="clic" data-apri="fiducia">Le fiducie</span>.</p>';
+
+  // Forza Italia e il PdL alle elezioni
+  const el = (DATI.risultati_fi_pdl || {}).elezioni || [];
+  if (el.length)
+    h += '<h2 style="margin-top:12px">Il suo partito alle elezioni della Camera</h2>' +
+      '<table><thead><tr><th>Anno</th><th>Lista</th><th class="num">Voti</th><th class="num">%</th>' +
+      '<th>Posto</th></tr></thead><tbody>' + el.map(e => '<tr><td>' + e.anno + '</td><td>' +
+        (e.lista === 'FORZA ITALIA' ? 'Forza Italia' : 'Il Popolo della Libert&agrave;') + '</td>' +
+        '<td class="num">' + numIt(e.voti) + '</td><td class="num">' + conUnDecimale(e.percentuale) + '</td>' +
+        '<td style="font-size:11px">' + (e.posto === 1 ? 'primo partito'
+          : e.posto + '&ordm;, dopo ' + ({PDS: 'il Pds', "L'ULIVO": 'l&rsquo;Ulivo'}[e.primo] || esc(e.primo))) +
+        '</td></tr>').join('') + '</tbody></table>' +
+      '<p style="color:#404040;font-size:11px">Voti di lista (fino al 2001 la quota proporzionale), ' +
+      'in Italia senza la Valle d&rsquo;Aosta e senza l&rsquo;estero. Fonte: Ministero ' +
+      'dell&rsquo;Interno, archivio storico delle elezioni (Eligendo).</p>';
+
+  // le votazioni in cui la sua maggioranza ha perso
+  const battute = ((DATI.riassunto_voti || {}).battute || []).filter(v => suo(v.governo));
+  if (battute.length){
+    const perG = {};
+    battute.forEach(v => { perG[v.governo] = (perG[v.governo] || 0) + 1; });
+    h += '<h2 style="margin-top:12px">Le votazioni perse dalla sua maggioranza</h2>' +
+      '<p>' + numIt(battute.length) + ' votazioni palesi alla Camera in cui la maggioranza ha votato in un ' +
+      'modo e la Camera ha deciso l&rsquo;altro: ' + Object.keys(perG).map(g => esc(g) + ' ' +
+      numIt(perG[g])).join(', ') + '.</p>' +
+      '<details><summary class="clic">Tutte</summary><table><thead><tr><th>Data</th><th>Che cosa</th>' +
+      '<th class="num">S&igrave;</th><th class="num">No</th><th>Esito</th></tr></thead><tbody>' +
+      battute.map(v => '<tr><td style="white-space:nowrap;font-size:11px">' + dataIt(v.data) + '</td>' +
+        '<td style="font-size:11px">' + (v.scheda ? '<a target="_blank" rel="noopener" href="' +
+        esc(v.scheda) + '">' : '') + esc(v.descrizione || v.titolo) + (v.scheda ? '</a>' : '') + '</td>' +
+        '<td class="num">' + numIt(v.si) + '</td><td class="num">' + numIt(v.no) + '</td>' +
+        '<td style="font-size:11px">' + (v.approvata ? 'approvata' : 'respinta') + '</td></tr>').join('') +
+      '</tbody></table></details>' +
+      '<p style="color:#404040;font-size:11px">La maggioranza sono i gruppi che hanno votato s&igrave; ' +
+      'all&rsquo;ultima fiducia prima di quel giorno; conta quando almeno sei su dieci dei loro deputati ' +
+      'presenti hanno votato allo stesso modo. Solo voti palesi: in quelli segreti come vota ciascuno ' +
+      'non si sa. Dalla XIV legislatura.</p>';
+  }
+  return h;
+}
 
 function quotaDonne(gente){
   const con = gente.filter(p => p.ge);
@@ -3437,6 +3680,7 @@ const SCRIVANIA = [
   ['&#127963;', 'Governi', 'governi', '', 'sx'],
   ['&#128499;', 'Le fiducie', 'fiducia', '', 'sx'],
   ['&#128256;', 'Dalla lista al gruppo', 'flussi', '', 'sx'],
+  ['&#127967;', 'L’emiciclo', 'emiciclo', '', 'sx'],
   ['&#128721;', 'Le cadute', 'cadute', '', 'sx'],
   ['&#128198;', 'Linea del tempo', 'tempo', '', 'sx'],
   ['&#128220;', 'Il gruppo misto', 'misto', '', 'sx'],

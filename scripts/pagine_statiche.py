@@ -223,6 +223,10 @@ def pagine(dati):
           'Dalla lista al gruppo: con che lista si entra alla Camera, in che gruppo si finisce',
           'Legislatura per legislatura, dal 1994 al 2013: la lista con cui ogni deputato e\' stato '
           'eletto e il gruppo in cui ha finito la legislatura.')
+    fissa('emiciclo', '/l-emiciclo/',
+          'L’emiciclo: chi sedeva alla Camera e al Senato, giorno per giorno, dal 1994 al 2013',
+          'Camera e Senato a semicerchio, legislatura per legislatura: i seggi di ogni partito '
+          'all’inizio, alla fine e in ogni giorno di mezzo.')
     fissa('cadute', '/le-cadute/', 'Le cadute dei governi della Seconda Repubblica',
           'I governi finiti prima del tempo per un voto perso o un appoggio '
           'ritirato: come, quando, con quali numeri, e chi ha cambiato gruppo attorno.')

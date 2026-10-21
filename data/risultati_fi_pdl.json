@@ -1,0 +1,55 @@
+{
+ "_nota": "Forza Italia (1994-2006) e PdL (2008) alla Camera, voti di lista in Italia senza Valle d'Aosta ed estero, dagli open data del Ministero dell'Interno. Generato da scripts/risultati_fi_pdl.py.",
+ "elezioni": [
+  {
+   "anno": "1994",
+   "lista": "FORZA ITALIA",
+   "voti": 8134781,
+   "percentuale": 21.0,
+   "posto": 1,
+   "primo": "FORZA ITALIA",
+   "primo_voti": 8134781,
+   "validi": 38738121
+  },
+  {
+   "anno": "1996",
+   "lista": "FORZA ITALIA",
+   "voti": 7715394,
+   "percentuale": 20.6,
+   "posto": 2,
+   "primo": "PDS",
+   "primo_voti": 7897032,
+   "validi": 37494985
+  },
+  {
+   "anno": "2001",
+   "lista": "FORZA ITALIA",
+   "voti": 10884734,
+   "percentuale": 29.4,
+   "posto": 1,
+   "primo": "FORZA ITALIA",
+   "primo_voti": 10884734,
+   "validi": 36965947
+  },
+  {
+   "anno": "2006",
+   "lista": "FORZA ITALIA",
+   "voti": 9046869,
+   "percentuale": 23.7,
+   "posto": 2,
+   "primo": "L'ULIVO",
+   "primo_voti": 11929536,
+   "validi": 38152446
+  },
+  {
+   "anno": "2008",
+   "lista": "IL POPOLO DELLA LIBERTA'",
+   "voti": 13628865,
+   "percentuale": 37.4,
+   "posto": 1,
+   "primo": "IL POPOLO DELLA LIBERTA'",
+   "primo_voti": 13628865,
+   "validi": 36452305
+  }
+ ]
+}

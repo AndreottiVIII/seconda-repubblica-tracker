@@ -1,0 +1,7605 @@
+{
+"_nota": "Riassunto dei voti alla Camera XIII-XVI dagli archivi votoNN.rdf.zip e votazione.rdf.zip. Generato da scripts/riassunto_voti_camera.py.",
+"legislature": {
+"XIII": {
+"votazioni": 34655,
+"segrete": 173,
+"approvate": 9450,
+"fiducie": 0,
+"voti": 21730981,
+"espressi": 12638463,
+"con_linea": 11451312,
+"diversi": 257698,
+"assente": 7953693,
+"missione": 1138825
+},
+"XIV": {
+"votazioni": 27034,
+"segrete": 741,
+"approvate": 7354,
+"fiducie": 32,
+"voti": 16636912,
+"assente": 3953584,
+"espressi": 11103110,
+"con_linea": 10377687,
+"diversi": 166926,
+"missione": 1580218
+},
+"XV": {
+"votazioni": 4862,
+"segrete": 24,
+"approvate": 1662,
+"fiducie": 17,
+"voti": 3058183,
+"espressi": 2210723,
+"con_linea": 2162750,
+"diversi": 37112,
+"assente": 550730,
+"missione": 296730
+},
+"XVI": {
+"votazioni": 11689,
+"segrete": 234,
+"approvate": 5073,
+"fiducie": 69,
+"voti": 7282149,
+"espressi": 5496799,
+"con_linea": 5467842,
+"diversi": 84920,
+"assente": 1250310,
+"missione": 535040
+}
+},
+"gruppi": [
+{
+"leg": "XIII",
+"gid": "gr417",
+"sigla": "AN",
+"nome": "ALLEANZA NAZIONALE",
+"voti": 3131733,
+"espressi": 1341153,
+"con_linea": 1339783,
+"diversi": 42800,
+"assente": 1728391,
+"missione": 62189
+},
+{
+"leg": "XIII",
+"gid": "gr418",
+"sigla": "F-ITA",
+"nome": "FORZA ITALIA",
+"voti": 3925841,
+"assente": 1824584,
+"espressi": 2037961,
+"con_linea": 2035431,
+"diversi": 93543,
+"missione": 63296
+},
+{
+"leg": "XIII",
+"gid": "gr420",
+"sigla": "PD-U",
+"nome": "POPOLARI DEMOCRATICI - L'ULIVO",
+"voti": 2186400,
+"espressi": 1518272,
+"con_linea": 1518053,
+"diversi": 23422,
+"assente": 493141,
+"missione": 174987
+},
+{
+"leg": "XIII",
+"gid": "gr421",
+"sigla": "RIN-IT",
+"nome": "RINNOVAMENTO ITALIANO",
+"voti": 415956,
+"missione": 63080,
+"assente": 155255,
+"espressi": 197621,
+"con_linea": 197211,
+"diversi": 3675
+},
+{
+"leg": "XIII",
+"gid": "gr431",
+"sigla": "CCD-CDU",
+"nome": "CENTRO CRISTIANO DEMOCRATICO",
+"voti": 127050,
+"assente": 85355,
+"espressi": 41475,
+"con_linea": 41299,
+"diversi": 2006,
+"missione": 220
+},
+{
+"leg": "XIII",
+"gid": "gr432",
+"sigla": "CCD",
+"nome": "CCD",
+"voti": 181721,
+"assente": 110408,
+"espressi": 68178,
+"con_linea": 67238,
+"diversi": 3746,
+"missione": 3135
+},
+{
+"leg": "XIII",
+"gid": "gr433",
+"sigla": "RC-PRO",
+"nome": "COMUNISTA",
+"voti": 521517,
+"assente": 147138,
+"espressi": 355000,
+"con_linea": 354920,
+"diversi": 1390,
+"missione": 19379
+},
+{
+"leg": "XIII",
+"gid": "gr434",
+"sigla": "COMUN",
+"nome": "COMUN",
+"voti": 397191,
+"espressi": 223756,
+"con_linea": 223688,
+"diversi": 1625,
+"assente": 144651,
+"missione": 28784
+},
+{
+"leg": "XIII",
+"gid": "gr440",
+"sigla": "DS-U",
+"nome": "DS-U",
+"voti": 6081553,
+"espressi": 4648665,
+"con_linea": 4648506,
+"diversi": 49354,
+"assente": 994594,
+"missione": 438294
+},
+{
+"leg": "XIII",
+"gid": "gr442",
+"sigla": "LEGA-P",
+"nome": "LEGA-P",
+"voti": 1214767,
+"espressi": 493323,
+"con_linea": 492630,
+"diversi": 16575,
+"assente": 706507,
+"missione": 14937
+},
+{
+"leg": "XIII",
+"gid": "gr443",
+"sigla": "LFNIP",
+"nome": "LFNIP",
+"voti": 190620,
+"espressi": 74165,
+"con_linea": 73927,
+"diversi": 2616,
+"assente": 113373,
+"missione": 3082
+},
+{
+"leg": "XIII",
+"gid": "gr444",
+"sigla": "LEGANP",
+"nome": "LEGANP",
+"voti": 427846,
+"espressi": 277359,
+"con_linea": 276900,
+"diversi": 11585,
+"assente": 141485,
+"missione": 9002
+},
+{
+"leg": "XIII",
+"gid": "gr447",
+"sigla": "UDR",
+"nome": "UDR",
+"voti": 230656,
+"espressi": 89532,
+"con_linea": 88984,
+"diversi": 3668,
+"assente": 124183,
+"missione": 16941
+},
+{
+"leg": "XIII",
+"gid": "gr458",
+"sigla": "UDEUR",
+"nome": "UNIONE DEMOCRATICA PER L'EUROPA",
+"voti": 237809,
+"espressi": 93000,
+"con_linea": 92742,
+"diversi": 1693,
+"assente": 85533,
+"missione": 59276
+},
+{
+"leg": "XIV",
+"gid": "gr139",
+"sigla": "AN",
+"nome": "ALLEANZA NAZIONALE",
+"voti": 2645437,
+"assente": 630619,
+"espressi": 1613694,
+"con_linea": 1613483,
+"diversi": 18028,
+"missione": 401124
+},
+{
+"leg": "XIV",
+"gid": "gr140",
+"sigla": "MARG-U",
+"nome": "MARGHERITA, DL-L'ULIVO",
+"voti": 2133012,
+"assente": 680451,
+"espressi": 1390186,
+"con_linea": 1388435,
+"diversi": 41497,
+"missione": 62375
+},
+{
+"leg": "XIV",
+"gid": "gr141",
+"sigla": "FI",
+"nome": "FORZA ITALIA",
+"voti": 4743387,
+"assente": 719855,
+"espressi": 3452041,
+"con_linea": 3451914,
+"diversi": 31947,
+"missione": 571491
+},
+{
+"leg": "XIV",
+"gid": "gr142",
+"sigla": "DS-U",
+"nome": "DEMOCRATICI DI SINISTRA-L'ULIVO",
+"voti": 3648966,
+"assente": 903549,
+"espressi": 2640363,
+"con_linea": 2637578,
+"diversi": 55962,
+"missione": 105054
+},
+{
+"leg": "XIV",
+"gid": "gr143",
+"sigla": "CCDCDU",
+"nome": "UDC UNIONE DEI DEMOCRATICI CRISTIANI E DEI DEMOCRATICI DI CENTRO (CCD-CDU)",
+"voti": 144400,
+"assente": 28721,
+"espressi": 98127,
+"con_linea": 98123,
+"diversi": 1271,
+"missione": 17552
+},
+{
+"leg": "XIV",
+"gid": "gr145",
+"sigla": "LNP",
+"nome": "LEGA NORD FEDERAZIONE PADANA",
+"voti": 490538,
+"assente": 73333,
+"espressi": 326833,
+"con_linea": 326655,
+"diversi": 5680,
+"missione": 90372
+},
+{
+"leg": "XIV",
+"gid": "gr153",
+"sigla": "RC",
+"nome": "RIFONDAZIONE COMUNISTA",
+"voti": 301728,
+"assente": 111397,
+"espressi": 178143,
+"con_linea": 177196,
+"diversi": 3402,
+"missione": 12188
+},
+{
+"leg": "XIV",
+"gid": "gr174",
+"sigla": "UDC",
+"nome": "UDC",
+"voti": 289320,
+"assente": 76827,
+"missione": 42188,
+"espressi": 170305,
+"con_linea": 170300,
+"diversi": 1687
+},
+{
+"leg": "XIV",
+"gid": "gr194",
+"sigla": "U.D.C.",
+"nome": "U.D.C.",
+"voti": 597681,
+"assente": 156626,
+"missione": 116187,
+"espressi": 324868,
+"con_linea": 324769,
+"diversi": 4629
+},
+{
+"leg": "XIV",
+"gid": "gr199",
+"sigla": "LNFP",
+"nome": "LNFP",
+"voti": 295987,
+"missione": 61986,
+"espressi": 189339,
+"con_linea": 189234,
+"diversi": 2823,
+"assente": 44662
+},
+{
+"leg": "XV",
+"gid": "gr327",
+"sigla": "FI",
+"nome": "FORZA ITALIA",
+"voti": 646138,
+"espressi": 490383,
+"con_linea": 489884,
+"diversi": 13938,
+"assente": 130970,
+"missione": 24785
+},
+{
+"leg": "XV",
+"gid": "gr328",
+"sigla": "AN",
+"nome": "ALLEANZA NAZIONALE",
+"voti": 346419,
+"espressi": 228316,
+"con_linea": 228186,
+"diversi": 5301,
+"assente": 101514,
+"missione": 16589
+},
+{
+"leg": "XV",
+"gid": "gr329",
+"sigla": "LNP",
+"nome": "LEGA NORD PADANIA",
+"voti": 109571,
+"espressi": 78286,
+"con_linea": 78238,
+"diversi": 2216,
+"missione": 7310,
+"assente": 23975
+},
+{
+"leg": "XV",
+"gid": "gr330",
+"sigla": "IDV",
+"nome": "ITALIA DEI VALORI",
+"voti": 91197,
+"espressi": 63109,
+"con_linea": 63061,
+"diversi": 1061,
+"assente": 13654,
+"missione": 14434
+},
+{
+"leg": "XV",
+"gid": "gr333",
+"sigla": "ULIVO",
+"nome": "PARTITO DEMOCRATICO-L'ULIVO",
+"voti": 922174,
+"espressi": 682064,
+"con_linea": 682058,
+"diversi": 4561,
+"assente": 100025,
+"missione": 140085
+},
+{
+"leg": "XV",
+"gid": "gr334",
+"sigla": "RC-SE",
+"nome": "RIFONDAZIONE COMUNISTA - SINISTRA EUROPEA",
+"voti": 194288,
+"espressi": 155968,
+"con_linea": 155905,
+"diversi": 1177,
+"assente": 28055,
+"missione": 10265
+},
+{
+"leg": "XV",
+"gid": "gr357",
+"sigla": "UDC",
+"nome": "UDC",
+"voti": 186618,
+"espressi": 130915,
+"con_linea": 130588,
+"diversi": 4189,
+"assente": 46933,
+"missione": 8770
+},
+{
+"leg": "XV",
+"gid": "gr359",
+"sigla": "RNP",
+"nome": "SOCIALISTI E RADICALI-RNP",
+"voti": 84224,
+"espressi": 55202,
+"con_linea": 55104,
+"diversi": 1078,
+"assente": 21633,
+"missione": 7389
+},
+{
+"leg": "XV",
+"gid": "gr360",
+"sigla": "COM-IT",
+"nome": "COMUNISTI ITALIANI",
+"voti": 79092,
+"espressi": 60613,
+"con_linea": 60570,
+"diversi": 404,
+"assente": 10101,
+"missione": 8378
+},
+{
+"leg": "XV",
+"gid": "gr361",
+"sigla": "VERDI",
+"nome": "VERDI",
+"voti": 77314,
+"espressi": 49324,
+"con_linea": 49253,
+"diversi": 836,
+"assente": 9182,
+"missione": 18808
+},
+{
+"leg": "XV",
+"gid": "gr362",
+"sigla": "UDEUR",
+"nome": "POPOLARI-UDEUR",
+"voti": 68761,
+"espressi": 47228,
+"con_linea": 47138,
+"diversi": 968,
+"assente": 12159,
+"missione": 9374
+},
+{
+"leg": "XV",
+"gid": "gr456",
+"sigla": "SD-SE",
+"nome": "SINISTRA DEMOCRATICA. PER IL SOCIALISMO EUROPEO",
+"voti": 41903,
+"espressi": 33155,
+"con_linea": 33154,
+"diversi": 281,
+"missione": 4062,
+"assente": 4686
+},
+{
+"leg": "XV",
+"gid": "gr463",
+"sigla": "PD-U",
+"nome": "PD-U",
+"voti": 91356,
+"missione": 13401,
+"espressi": 70300,
+"con_linea": 70300,
+"diversi": 469,
+"assente": 7655
+},
+{
+"leg": "XVI",
+"gid": "gr1229",
+"sigla": "M-GSPA",
+"nome": "M-GSPA",
+"voti": 20384,
+"espressi": 9809,
+"con_linea": 9710,
+"diversi": 312,
+"assente": 9224,
+"missione": 1351
+},
+{
+"leg": "XVI",
+"gid": "gr1409",
+"sigla": "PT",
+"nome": "PT",
+"voti": 66313,
+"assente": 24002,
+"missione": 2329,
+"espressi": 39982,
+"con_linea": 39814,
+"diversi": 4539
+},
+{
+"leg": "XVI",
+"gid": "gr472",
+"sigla": "M-ALT",
+"nome": "MISTO",
+"voti": 69019,
+"espressi": 35054,
+"assente": 32689,
+"con_linea": 29653,
+"diversi": 3119,
+"missione": 1276
+},
+{
+"leg": "XVI",
+"gid": "gr474",
+"sigla": "IDV",
+"nome": "ITALIA DEI VALORI",
+"voti": 283742,
+"espressi": 209987,
+"con_linea": 209498,
+"diversi": 3119,
+"assente": 58251,
+"missione": 15504
+},
+{
+"leg": "XVI",
+"gid": "gr475",
+"sigla": "PD",
+"nome": "PARTITO DEMOCRATICO",
+"voti": 2433567,
+"espressi": 2007974,
+"con_linea": 2004078,
+"diversi": 27950,
+"assente": 372228,
+"missione": 53365
+},
+{
+"leg": "XVI",
+"gid": "gr476",
+"sigla": "UDC",
+"nome": "UNIONE DI CENTRO PER IL TERZO POLO",
+"voti": 294173,
+"espressi": 216133,
+"con_linea": 215877,
+"diversi": 3847,
+"assente": 66003,
+"missione": 12037
+},
+{
+"leg": "XVI",
+"gid": "gr477",
+"sigla": "PDL",
+"nome": "POPOLO DELLA LIBERTA'",
+"voti": 2886806,
+"espressi": 2088560,
+"con_linea": 2087756,
+"diversi": 30935,
+"assente": 469588,
+"missione": 328658
+},
+{
+"leg": "XVI",
+"gid": "gr478",
+"sigla": "LNP",
+"nome": "LEGA NORD PADANIA",
+"voti": 687060,
+"espressi": 543188,
+"con_linea": 543091,
+"diversi": 3659,
+"assente": 72567,
+"missione": 71305
+},
+{
+"leg": "XVI",
+"gid": "gr479",
+"sigla": "M-MIN",
+"nome": "M-MIN",
+"voti": 35067,
+"espressi": 27783,
+"con_linea": 24502,
+"diversi": 1538,
+"assente": 3920,
+"missione": 3364
+},
+{
+"leg": "XVI",
+"gid": "gr489",
+"sigla": "M-LDIE",
+"nome": "M-LDIE",
+"voti": 26198,
+"missione": 7634,
+"assente": 9765,
+"espressi": 8799,
+"con_linea": 5068,
+"diversi": 60
+},
+{
+"leg": "XVI",
+"gid": "gr549",
+"sigla": "M-MPA",
+"nome": "M-MPA",
+"voti": 67610,
+"espressi": 41029,
+"con_linea": 39198,
+"diversi": 1081,
+"assente": 16241,
+"missione": 10340
+},
+{
+"leg": "XVI",
+"gid": "gr609",
+"sigla": "M-API",
+"nome": "M-API",
+"voti": 41025,
+"espressi": 28895,
+"con_linea": 28421,
+"diversi": 697,
+"missione": 2143,
+"assente": 9987
+},
+{
+"leg": "XVI",
+"gid": "gr769",
+"sigla": "FLI",
+"nome": "FLI",
+"voti": 55870,
+"assente": 17009,
+"espressi": 36998,
+"con_linea": 36995,
+"diversi": 274,
+"missione": 1863
+},
+{
+"leg": "XVI",
+"gid": "gr849",
+"sigla": "IR",
+"nome": "POPOLO E TERRITORIO (NOI SUD-LIBERTA' ED AUTONOMIA, POPOLARI D'ITALIA DOMANI-PID, MOVIMENTO DI RESPONSABILITA' NAZIONALE-MRN, AZIONE POPOLARE, ALLEANZA DI CENTRO-ADC, INTESA POPOLARE)",
+"voti": 23693,
+"espressi": 19098,
+"con_linea": 19098,
+"diversi": 309,
+"assente": 3928,
+"missione": 667
+},
+{
+"leg": "XVI",
+"gid": "gr969",
+"sigla": "UDCPTP",
+"nome": "UDCPTP",
+"voti": 116945,
+"espressi": 88805,
+"con_linea": 88714,
+"diversi": 1205,
+"missione": 5144,
+"assente": 22996
+},
+{
+"leg": "XVI",
+"gid": "gr970",
+"sigla": "FLPTP",
+"nome": "FLPTP",
+"voti": 82037,
+"espressi": 53250,
+"con_linea": 53194,
+"diversi": 1180,
+"assente": 25734,
+"missione": 3053
+}
+],
+"mesi": {
+"199606": {
+"voti": 21980,
+"espressi": 14161,
+"con_linea": 13635,
+"diversi": 444,
+"assente": 7416,
+"missione": 403
+},
+"199607": {
+"voti": 92958,
+"espressi": 61861,
+"con_linea": 59446,
+"diversi": 1810,
+"assente": 29708,
+"missione": 1389
+},
+"199608": {
+"voti": 108188,
+"espressi": 68898,
+"con_linea": 65938,
+"diversi": 2557,
+"assente": 38217,
+"missione": 1073
+},
+"199609": {
+"voti": 35224,
+"espressi": 21764,
+"con_linea": 20911,
+"diversi": 393,
+"assente": 12340,
+"missione": 1120
+},
+"199610": {
+"voti": 149702,
+"espressi": 103342,
+"con_linea": 99147,
+"diversi": 2522,
+"assente": 43230,
+"missione": 3130
+},
+"199611": {
+"voti": 1254226,
+"espressi": 753990,
+"con_linea": 711707,
+"diversi": 10754,
+"assente": 489836,
+"missione": 10400
+},
+"199612": {
+"voti": 671143,
+"espressi": 366877,
+"con_linea": 346766,
+"diversi": 5187,
+"assente": 292298,
+"missione": 11968
+},
+"199701": {
+"voti": 300033,
+"espressi": 188302,
+"con_linea": 177992,
+"diversi": 3350,
+"assente": 100268,
+"missione": 11463
+},
+"199702": {
+"voti": 110075,
+"espressi": 53392,
+"con_linea": 50500,
+"diversi": 1150,
+"assente": 50395,
+"missione": 6288
+},
+"199703": {
+"voti": 124528,
+"espressi": 71296,
+"con_linea": 67869,
+"diversi": 755,
+"assente": 43438,
+"missione": 9794
+},
+"199704": {
+"voti": 135648,
+"espressi": 78457,
+"con_linea": 73727,
+"diversi": 1241,
+"assente": 47451,
+"missione": 9740
+},
+"199705": {
+"voti": 389360,
+"espressi": 219058,
+"con_linea": 206077,
+"diversi": 3686,
+"assente": 133930,
+"missione": 36372
+},
+"199706": {
+"voti": 455185,
+"espressi": 262158,
+"con_linea": 247119,
+"diversi": 7175,
+"assente": 143930,
+"missione": 49097
+},
+"199707": {
+"voti": 594405,
+"espressi": 340321,
+"con_linea": 319016,
+"diversi": 7210,
+"assente": 229321,
+"missione": 24763
+},
+"199709": {
+"voti": 384319,
+"espressi": 192563,
+"con_linea": 179768,
+"diversi": 4610,
+"assente": 152284,
+"missione": 39472
+},
+"199710": {
+"voti": 297517,
+"espressi": 171658,
+"con_linea": 161752,
+"diversi": 3547,
+"assente": 97100,
+"missione": 28759
+},
+"199711": {
+"voti": 491249,
+"espressi": 269287,
+"con_linea": 250685,
+"diversi": 4514,
+"assente": 199581,
+"missione": 22381
+},
+"199712": {
+"voti": 1479408,
+"espressi": 902103,
+"con_linea": 844832,
+"diversi": 20125,
+"assente": 522194,
+"missione": 55111
+},
+"199801": {
+"voti": 179894,
+"espressi": 107859,
+"con_linea": 101826,
+"diversi": 2752,
+"assente": 64029,
+"missione": 8006
+},
+"199802": {
+"voti": 162911,
+"espressi": 91403,
+"con_linea": 86179,
+"diversi": 2617,
+"missione": 8025,
+"assente": 63483
+},
+"199803": {
+"voti": 523885,
+"espressi": 307706,
+"con_linea": 291891,
+"diversi": 6445,
+"assente": 186689,
+"missione": 29490
+},
+"199804": {
+"voti": 513704,
+"espressi": 287442,
+"con_linea": 272071,
+"diversi": 8002,
+"assente": 199685,
+"missione": 26577
+},
+"199805": {
+"voti": 330328,
+"espressi": 184353,
+"con_linea": 175305,
+"diversi": 4516,
+"assente": 127676,
+"missione": 18299
+},
+"199806": {
+"voti": 257551,
+"espressi": 148267,
+"con_linea": 139755,
+"diversi": 3925,
+"assente": 95645,
+"missione": 13639
+},
+"199807": {
+"voti": 232101,
+"espressi": 136585,
+"con_linea": 128343,
+"diversi": 2978,
+"assente": 85587,
+"missione": 9929
+},
+"199809": {
+"voti": 294372,
+"espressi": 170560,
+"con_linea": 160474,
+"diversi": 3157,
+"assente": 106487,
+"missione": 17325
+},
+"199810": {
+"voti": 55352,
+"espressi": 32718,
+"con_linea": 30749,
+"diversi": 571,
+"assente": 20315,
+"missione": 2319
+},
+"199811": {
+"voti": 1036592,
+"espressi": 605362,
+"con_linea": 554338,
+"diversi": 14333,
+"assente": 399776,
+"missione": 31454
+},
+"199812": {
+"voti": 535279,
+"espressi": 304548,
+"con_linea": 276510,
+"diversi": 5902,
+"assente": 213870,
+"missione": 16861
+},
+"199901": {
+"voti": 283679,
+"espressi": 151123,
+"con_linea": 134450,
+"diversi": 5320,
+"assente": 117097,
+"missione": 15459
+},
+"199902": {
+"voti": 212380,
+"espressi": 94853,
+"con_linea": 84284,
+"diversi": 2312,
+"assente": 105926,
+"missione": 11601
+},
+"199903": {
+"voti": 339120,
+"espressi": 183597,
+"con_linea": 161282,
+"diversi": 4136,
+"assente": 136408,
+"missione": 19115
+},
+"199904": {
+"voti": 436658,
+"espressi": 212315,
+"con_linea": 188164,
+"diversi": 3238,
+"assente": 201491,
+"missione": 22852
+},
+"199905": {
+"voti": 412051,
+"espressi": 208089,
+"con_linea": 187501,
+"diversi": 5069,
+"assente": 182650,
+"missione": 21312
+},
+"199906": {
+"voti": 246593,
+"espressi": 128929,
+"con_linea": 113883,
+"diversi": 2588,
+"assente": 104007,
+"missione": 13657
+},
+"199907": {
+"voti": 249079,
+"espressi": 134697,
+"con_linea": 116127,
+"diversi": 3806,
+"assente": 104995,
+"missione": 9387
+},
+"199909": {
+"voti": 300482,
+"espressi": 157669,
+"con_linea": 136583,
+"diversi": 2506,
+"assente": 122275,
+"missione": 20538
+},
+"199910": {
+"voti": 161875,
+"espressi": 81187,
+"con_linea": 70325,
+"diversi": 1910,
+"assente": 70857,
+"missione": 9831
+},
+"199911": {
+"voti": 316915,
+"espressi": 157320,
+"con_linea": 137652,
+"diversi": 2716,
+"assente": 138256,
+"missione": 21339
+},
+"199912": {
+"voti": 976462,
+"espressi": 561644,
+"con_linea": 491815,
+"diversi": 10745,
+"assente": 387403,
+"missione": 27415
+},
+"200001": {
+"voti": 73593,
+"espressi": 37677,
+"con_linea": 33247,
+"diversi": 901,
+"assente": 30660,
+"missione": 5256
+},
+"200002": {
+"voti": 872423,
+"espressi": 476138,
+"con_linea": 414590,
+"diversi": 4130,
+"assente": 359001,
+"missione": 37284
+},
+"200003": {
+"voti": 374884,
+"espressi": 179800,
+"con_linea": 159568,
+"diversi": 2989,
+"assente": 164625,
+"missione": 30459
+},
+"200004": {
+"voti": 80384,
+"espressi": 36738,
+"con_linea": 32652,
+"diversi": 751,
+"assente": 35736,
+"missione": 7910
+},
+"200005": {
+"voti": 302602,
+"espressi": 159791,
+"con_linea": 141579,
+"diversi": 4692,
+"assente": 120458,
+"missione": 22353
+},
+"200006": {
+"voti": 319283,
+"espressi": 207020,
+"con_linea": 177043,
+"diversi": 5069,
+"assente": 83941,
+"missione": 28322
+},
+"200007": {
+"voti": 567840,
+"espressi": 393595,
+"con_linea": 338709,
+"diversi": 10204,
+"assente": 135306,
+"missione": 38939
+},
+"200009": {
+"voti": 392482,
+"espressi": 260650,
+"con_linea": 226187,
+"diversi": 7080,
+"assente": 103110,
+"missione": 28722
+},
+"200010": {
+"voti": 404922,
+"espressi": 256276,
+"con_linea": 221516,
+"diversi": 5966,
+"assente": 112505,
+"missione": 36141
+},
+"200011": {
+"voti": 1275722,
+"espressi": 866800,
+"con_linea": 747802,
+"diversi": 16296,
+"assente": 350628,
+"missione": 58294
+},
+"200012": {
+"voti": 727740,
+"espressi": 474095,
+"con_linea": 409095,
+"diversi": 5184,
+"assente": 215492,
+"missione": 38153
+},
+"200101": {
+"voti": 460902,
+"espressi": 273750,
+"con_linea": 237178,
+"diversi": 6136,
+"assente": 137283,
+"missione": 49869
+},
+"200102": {
+"voti": 357646,
+"assente": 111185,
+"espressi": 216549,
+"con_linea": 188973,
+"diversi": 3925,
+"missione": 29912
+},
+"200103": {
+"voti": 365663,
+"espressi": 210661,
+"con_linea": 185716,
+"diversi": 3783,
+"assente": 125122,
+"missione": 29880
+},
+"200104": {
+"voti": 1863,
+"espressi": 878,
+"con_linea": 771,
+"diversi": 16,
+"assente": 867,
+"missione": 118
+},
+"200105": {
+"voti": 1236,
+"espressi": 335,
+"con_linea": 292,
+"diversi": 2,
+"assente": 841,
+"missione": 60
+},
+"200106": {
+"voti": 4944,
+"espressi": 3989,
+"con_linea": 3764,
+"diversi": 25,
+"assente": 937,
+"missione": 18
+},
+"200107": {
+"voti": 127308,
+"espressi": 89955,
+"con_linea": 84638,
+"diversi": 1211,
+"assente": 29819,
+"missione": 7534
+},
+"200108": {
+"voti": 182928,
+"espressi": 139801,
+"con_linea": 132186,
+"diversi": 1717,
+"assente": 36716,
+"missione": 6411
+},
+"200109": {
+"voti": 71070,
+"espressi": 52893,
+"con_linea": 49956,
+"diversi": 439,
+"assente": 14273,
+"missione": 3904
+},
+"200110": {
+"voti": 385632,
+"espressi": 284311,
+"con_linea": 268823,
+"diversi": 3542,
+"assente": 76260,
+"missione": 25061
+},
+"200111": {
+"voti": 172760,
+"espressi": 124766,
+"con_linea": 117273,
+"diversi": 2769,
+"assente": 33703,
+"missione": 14291
+},
+"200112": {
+"voti": 1081601,
+"espressi": 832340,
+"con_linea": 785454,
+"diversi": 13822,
+"assente": 186353,
+"missione": 62908
+},
+"200201": {
+"voti": 70338,
+"espressi": 48214,
+"con_linea": 45570,
+"diversi": 1432,
+"assente": 15977,
+"missione": 6147
+},
+"200202": {
+"voti": 298011,
+"espressi": 216479,
+"con_linea": 203804,
+"diversi": 2391,
+"missione": 26930,
+"assente": 54602
+},
+"200203": {
+"voti": 405369,
+"espressi": 273663,
+"con_linea": 257187,
+"diversi": 4252,
+"assente": 91415,
+"missione": 40291
+},
+"200204": {
+"voti": 80210,
+"espressi": 52902,
+"con_linea": 49548,
+"diversi": 1550,
+"missione": 8376,
+"assente": 18932
+},
+"200205": {
+"voti": 639212,
+"espressi": 418568,
+"con_linea": 394326,
+"diversi": 3620,
+"missione": 65973,
+"assente": 154671
+},
+"200206": {
+"voti": 365881,
+"espressi": 226865,
+"con_linea": 213488,
+"diversi": 7328,
+"assente": 96425,
+"missione": 42591
+},
+"200207": {
+"voti": 247417,
+"espressi": 172913,
+"con_linea": 161313,
+"diversi": 3293,
+"assente": 49648,
+"missione": 24856
+},
+"200209": {
+"voti": 90082,
+"espressi": 62460,
+"con_linea": 58458,
+"diversi": 1420,
+"assente": 17253,
+"missione": 10369
+},
+"200210": {
+"voti": 522599,
+"espressi": 358110,
+"con_linea": 333595,
+"diversi": 3566,
+"assente": 109406,
+"missione": 55083
+},
+"200211": {
+"voti": 1184640,
+"espressi": 807216,
+"con_linea": 751400,
+"diversi": 9446,
+"assente": 299621,
+"missione": 77803
+},
+"200212": {
+"voti": 634893,
+"assente": 174866,
+"missione": 43752,
+"espressi": 416275,
+"con_linea": 389560,
+"diversi": 4031
+},
+"200301": {
+"voti": 207592,
+"espressi": 124395,
+"con_linea": 115927,
+"diversi": 3807,
+"assente": 58513,
+"missione": 24684
+},
+"200302": {
+"voti": 458304,
+"assente": 118417,
+"espressi": 289683,
+"con_linea": 272633,
+"diversi": 5289,
+"missione": 50204
+},
+"200303": {
+"voti": 205744,
+"espressi": 125297,
+"con_linea": 117161,
+"diversi": 1344,
+"assente": 56848,
+"missione": 23599
+},
+"200304": {
+"voti": 700392,
+"espressi": 421062,
+"con_linea": 395451,
+"diversi": 5259,
+"assente": 217037,
+"missione": 62293
+},
+"200305": {
+"voti": 160160,
+"espressi": 102813,
+"con_linea": 96969,
+"diversi": 1313,
+"assente": 38243,
+"missione": 19104
+},
+"200306": {
+"voti": 161247,
+"espressi": 111980,
+"con_linea": 104671,
+"diversi": 2147,
+"assente": 31815,
+"missione": 17452
+},
+"200307": {
+"voti": 706635,
+"espressi": 485000,
+"con_linea": 452106,
+"diversi": 9201,
+"assente": 152288,
+"missione": 69347
+},
+"200309": {
+"voti": 67035,
+"espressi": 45631,
+"con_linea": 42516,
+"diversi": 714,
+"assente": 12663,
+"missione": 8741
+},
+"200310": {
+"voti": 545585,
+"espressi": 338775,
+"con_linea": 314513,
+"diversi": 7176,
+"missione": 45641,
+"assente": 161169
+},
+"200311": {
+"voti": 214984,
+"espressi": 150530,
+"con_linea": 139294,
+"diversi": 2658,
+"assente": 44889,
+"missione": 19565
+},
+"200312": {
+"voti": 190344,
+"espressi": 132774,
+"con_linea": 122585,
+"diversi": 1915,
+"assente": 36313,
+"missione": 21257
+},
+"200401": {
+"voti": 134904,
+"espressi": 91604,
+"con_linea": 85165,
+"diversi": 919,
+"assente": 27897,
+"missione": 15403
+},
+"200402": {
+"voti": 260568,
+"assente": 53188,
+"missione": 26233,
+"espressi": 181147,
+"con_linea": 169022,
+"diversi": 2283
+},
+"200403": {
+"voti": 321552,
+"assente": 83612,
+"espressi": 208321,
+"con_linea": 193675,
+"diversi": 3129,
+"missione": 29619
+},
+"200404": {
+"voti": 187880,
+"espressi": 117094,
+"con_linea": 109390,
+"diversi": 1910,
+"assente": 48217,
+"missione": 22569
+},
+"200405": {
+"voti": 322784,
+"espressi": 205449,
+"con_linea": 194300,
+"diversi": 2790,
+"assente": 82188,
+"missione": 35147
+},
+"200406": {
+"voti": 65190,
+"espressi": 44010,
+"con_linea": 41682,
+"diversi": 727,
+"assente": 14492,
+"missione": 6688
+},
+"200407": {
+"voti": 563412,
+"espressi": 392184,
+"con_linea": 366615,
+"diversi": 7547,
+"assente": 117602,
+"missione": 53626
+},
+"200408": {
+"voti": 1827,
+"espressi": 1373,
+"con_linea": 1290,
+"diversi": 7,
+"assente": 385,
+"missione": 69
+},
+"200409": {
+"voti": 69426,
+"espressi": 50123,
+"con_linea": 46678,
+"diversi": 687,
+"missione": 7291,
+"assente": 12012
+},
+"200410": {
+"voti": 241269,
+"espressi": 161072,
+"con_linea": 151217,
+"diversi": 3454,
+"assente": 55301,
+"missione": 24896
+},
+"200411": {
+"voti": 461305,
+"espressi": 307817,
+"con_linea": 288382,
+"diversi": 2358,
+"assente": 103792,
+"missione": 49696
+},
+"200412": {
+"voti": 367770,
+"espressi": 236720,
+"con_linea": 221491,
+"diversi": 3346,
+"assente": 93584,
+"missione": 37466
+},
+"200501": {
+"voti": 106395,
+"espressi": 67017,
+"con_linea": 62263,
+"diversi": 1293,
+"assente": 25224,
+"missione": 14154
+},
+"200502": {
+"voti": 204136,
+"espressi": 123882,
+"con_linea": 115623,
+"diversi": 1749,
+"assente": 55085,
+"missione": 25169
+},
+"200503": {
+"voti": 412665,
+"espressi": 235119,
+"con_linea": 219310,
+"diversi": 5431,
+"assente": 130035,
+"missione": 47511
+},
+"200504": {
+"voti": 67036,
+"espressi": 44714,
+"con_linea": 41634,
+"diversi": 942,
+"assente": 14703,
+"missione": 7619
+},
+"200505": {
+"voti": 297471,
+"espressi": 185781,
+"con_linea": 171896,
+"diversi": 2757,
+"assente": 73905,
+"missione": 37785
+},
+"200506": {
+"voti": 379555,
+"espressi": 250931,
+"con_linea": 231086,
+"diversi": 4041,
+"assente": 80011,
+"missione": 48613
+},
+"200507": {
+"voti": 369600,
+"espressi": 248279,
+"con_linea": 229702,
+"diversi": 4837,
+"assente": 83653,
+"missione": 37668
+},
+"200509": {
+"voti": 348499,
+"assente": 62166,
+"espressi": 248535,
+"con_linea": 228837,
+"diversi": 1299,
+"missione": 37798
+},
+"200510": {
+"voti": 286559,
+"espressi": 169667,
+"con_linea": 155204,
+"diversi": 851,
+"assente": 98083,
+"missione": 18809
+},
+"200511": {
+"voti": 328790,
+"espressi": 219073,
+"con_linea": 201748,
+"diversi": 2441,
+"assente": 72713,
+"missione": 37004
+},
+"200512": {
+"voti": 128002,
+"espressi": 90984,
+"con_linea": 84732,
+"diversi": 1012,
+"assente": 25454,
+"missione": 11564
+},
+"200601": {
+"voti": 233856,
+"espressi": 139512,
+"con_linea": 129786,
+"diversi": 2386,
+"assente": 64161,
+"missione": 30183
+},
+"200602": {
+"voti": 280140,
+"assente": 80900,
+"espressi": 166596,
+"con_linea": 156672,
+"diversi": 2020,
+"missione": 32644
+},
+"200603": {
+"voti": 12789,
+"espressi": 6442,
+"con_linea": 6118,
+"diversi": 33,
+"assente": 5538,
+"missione": 809
+},
+"200605": {
+"voti": 1887,
+"espressi": 1536,
+"con_linea": 1509,
+"diversi": 0,
+"assente": 316,
+"missione": 35
+},
+"200606": {
+"voti": 9420,
+"assente": 4547,
+"missione": 380,
+"espressi": 4493,
+"con_linea": 4292,
+"diversi": 113
+},
+"200607": {
+"voti": 181152,
+"assente": 36913,
+"espressi": 134909,
+"con_linea": 133046,
+"diversi": 1511,
+"missione": 9330
+},
+"200608": {
+"voti": 64158,
+"espressi": 50445,
+"con_linea": 49495,
+"diversi": 371,
+"assente": 9978,
+"missione": 3735
+},
+"200609": {
+"voti": 52836,
+"assente": 8806,
+"espressi": 39896,
+"con_linea": 38961,
+"diversi": 621,
+"missione": 4134
+},
+"200610": {
+"voti": 134606,
+"espressi": 97397,
+"con_linea": 95518,
+"diversi": 569,
+"assente": 25853,
+"missione": 11356
+},
+"200611": {
+"voti": 310097,
+"espressi": 241047,
+"con_linea": 235867,
+"diversi": 1808,
+"assente": 43169,
+"missione": 25881
+},
+"200612": {
+"voti": 115107,
+"espressi": 80982,
+"con_linea": 79573,
+"diversi": 1093,
+"assente": 22159,
+"missione": 11966
+},
+"200701": {
+"voti": 100640,
+"espressi": 75610,
+"con_linea": 73868,
+"diversi": 1383,
+"assente": 14927,
+"missione": 10103
+},
+"200702": {
+"voti": 196877,
+"espressi": 139318,
+"con_linea": 136451,
+"diversi": 1971,
+"missione": 20782,
+"assente": 36777
+},
+"200703": {
+"voti": 220150,
+"espressi": 156701,
+"con_linea": 153871,
+"diversi": 3935,
+"assente": 40069,
+"missione": 23380
+},
+"200704": {
+"voti": 249713,
+"espressi": 165271,
+"con_linea": 162483,
+"diversi": 3329,
+"assente": 53847,
+"missione": 30595
+},
+"200705": {
+"voti": 113220,
+"espressi": 78453,
+"con_linea": 76612,
+"diversi": 1630,
+"missione": 11700,
+"assente": 23067
+},
+"200706": {
+"voti": 283679,
+"assente": 53810,
+"espressi": 195226,
+"con_linea": 190640,
+"diversi": 7109,
+"missione": 34643
+},
+"200707": {
+"voti": 298146,
+"espressi": 219197,
+"con_linea": 215074,
+"diversi": 1868,
+"assente": 51313,
+"missione": 27636
+},
+"200708": {
+"voti": 77367,
+"assente": 12183,
+"espressi": 57139,
+"con_linea": 55840,
+"diversi": 646,
+"missione": 8045
+},
+"200709": {
+"voti": 69819,
+"espressi": 47195,
+"con_linea": 46073,
+"diversi": 1179,
+"assente": 14447,
+"missione": 8177
+},
+"200710": {
+"voti": 182410,
+"espressi": 128044,
+"con_linea": 124372,
+"diversi": 3135,
+"missione": 21305,
+"assente": 33061
+},
+"200711": {
+"voti": 105043,
+"espressi": 78827,
+"con_linea": 76166,
+"diversi": 1517,
+"missione": 11098,
+"assente": 15118
+},
+"200712": {
+"voti": 77996,
+"espressi": 56352,
+"con_linea": 54827,
+"diversi": 756,
+"assente": 15523,
+"missione": 6121
+},
+"200801": {
+"voti": 629,
+"espressi": 601,
+"con_linea": 575,
+"diversi": 0,
+"assente": 22,
+"missione": 6
+},
+"200802": {
+"voti": 116994,
+"espressi": 83184,
+"con_linea": 80576,
+"diversi": 1281,
+"assente": 21889,
+"missione": 11921
+},
+"200805": {
+"voti": 19310,
+"espressi": 15456,
+"con_linea": 15405,
+"diversi": 127,
+"assente": 2604,
+"missione": 1250
+},
+"200806": {
+"voti": 117172,
+"assente": 15663,
+"espressi": 92312,
+"con_linea": 92086,
+"diversi": 1169,
+"missione": 9197
+},
+"200807": {
+"voti": 118394,
+"assente": 13294,
+"missione": 6968,
+"espressi": 98132,
+"con_linea": 97893,
+"diversi": 1962
+},
+"200808": {
+"voti": 9968,
+"espressi": 8139,
+"con_linea": 8094,
+"diversi": 283,
+"assente": 1378,
+"missione": 451
+},
+"200809": {
+"voti": 74161,
+"espressi": 55597,
+"con_linea": 55343,
+"diversi": 994,
+"missione": 6502,
+"assente": 12062
+},
+"200810": {
+"voti": 424114,
+"espressi": 329148,
+"con_linea": 327260,
+"diversi": 4583,
+"assente": 59812,
+"missione": 35154
+},
+"200811": {
+"voti": 399020,
+"espressi": 306211,
+"con_linea": 304425,
+"diversi": 4919,
+"missione": 33208,
+"assente": 59601
+},
+"200812": {
+"voti": 206261,
+"espressi": 156838,
+"con_linea": 156263,
+"diversi": 3257,
+"missione": 19487,
+"assente": 29936
+},
+"200901": {
+"voti": 155127,
+"espressi": 117623,
+"con_linea": 117146,
+"diversi": 5446,
+"missione": 14060,
+"assente": 23444
+},
+"200902": {
+"voti": 241101,
+"missione": 21243,
+"espressi": 188488,
+"con_linea": 187841,
+"diversi": 2026,
+"assente": 31370
+},
+"200903": {
+"voti": 232379,
+"missione": 17887,
+"espressi": 170574,
+"con_linea": 169584,
+"diversi": 1621,
+"assente": 43918
+},
+"200904": {
+"voti": 179952,
+"assente": 42094,
+"espressi": 117698,
+"con_linea": 117169,
+"diversi": 903,
+"missione": 20160
+},
+"200905": {
+"voti": 185031,
+"espressi": 124692,
+"con_linea": 124357,
+"diversi": 1016,
+"assente": 42838,
+"missione": 17501
+},
+"200906": {
+"voti": 253561,
+"espressi": 177634,
+"con_linea": 176972,
+"diversi": 728,
+"assente": 50058,
+"missione": 25869
+},
+"200907": {
+"voti": 164472,
+"missione": 16376,
+"espressi": 99830,
+"con_linea": 99389,
+"diversi": 1168,
+"assente": 48266
+},
+"200909": {
+"voti": 107156,
+"missione": 10124,
+"espressi": 77183,
+"con_linea": 76946,
+"diversi": 430,
+"assente": 19849
+},
+"200910": {
+"voti": 103418,
+"missione": 8480,
+"espressi": 81906,
+"con_linea": 81578,
+"diversi": 443,
+"assente": 13032
+},
+"200911": {
+"voti": 159488,
+"missione": 12604,
+"espressi": 127196,
+"con_linea": 126827,
+"diversi": 429,
+"assente": 19688
+},
+"200912": {
+"voti": 57939,
+"missione": 3489,
+"espressi": 45564,
+"con_linea": 45382,
+"diversi": 281,
+"assente": 8886
+},
+"201001": {
+"voti": 133322,
+"missione": 11551,
+"espressi": 104283,
+"con_linea": 104114,
+"diversi": 697,
+"assente": 17488
+},
+"201002": {
+"voti": 215558,
+"espressi": 174511,
+"con_linea": 173943,
+"diversi": 892,
+"assente": 28441,
+"missione": 12606
+},
+"201003": {
+"voti": 67907,
+"missione": 7127,
+"espressi": 46377,
+"con_linea": 46154,
+"diversi": 509,
+"assente": 14403
+},
+"201004": {
+"voti": 196868,
+"missione": 16177,
+"espressi": 156909,
+"con_linea": 156432,
+"diversi": 1051,
+"assente": 23782
+},
+"201005": {
+"voti": 100926,
+"espressi": 75419,
+"con_linea": 74991,
+"diversi": 400,
+"assente": 16346,
+"missione": 9161
+},
+"201006": {
+"voti": 289695,
+"missione": 24105,
+"espressi": 226659,
+"con_linea": 225424,
+"diversi": 1565,
+"assente": 38931
+},
+"201007": {
+"voti": 67907,
+"missione": 5991,
+"espressi": 53925,
+"con_linea": 53663,
+"diversi": 481,
+"assente": 7991
+},
+"201008": {
+"voti": 23674,
+"espressi": 20636,
+"con_linea": 20573,
+"diversi": 70,
+"assente": 2227,
+"missione": 811
+},
+"201009": {
+"voti": 42987,
+"missione": 2677,
+"espressi": 35464,
+"con_linea": 35272,
+"diversi": 358,
+"assente": 4846
+},
+"201010": {
+"voti": 89089,
+"missione": 7199,
+"espressi": 70476,
+"con_linea": 70250,
+"diversi": 455,
+"assente": 11414
+},
+"201011": {
+"voti": 376292,
+"espressi": 312196,
+"con_linea": 310226,
+"diversi": 1611,
+"assente": 45362,
+"missione": 18734
+},
+"201012": {
+"voti": 95942,
+"missione": 5536,
+"espressi": 77129,
+"con_linea": 76733,
+"diversi": 711,
+"assente": 13277
+},
+"201101": {
+"voti": 49217,
+"missione": 3371,
+"espressi": 39667,
+"con_linea": 39514,
+"diversi": 189,
+"assente": 6179
+},
+"201102": {
+"voti": 97811,
+"missione": 5972,
+"espressi": 78780,
+"con_linea": 78525,
+"diversi": 530,
+"assente": 13059
+},
+"201103": {
+"voti": 167587,
+"espressi": 137544,
+"con_linea": 137297,
+"diversi": 1136,
+"missione": 10108,
+"assente": 19935
+},
+"201104": {
+"voti": 143913,
+"espressi": 129425,
+"con_linea": 129061,
+"diversi": 874,
+"assente": 11345,
+"missione": 3143
+},
+"201105": {
+"voti": 57939,
+"missione": 2846,
+"espressi": 49363,
+"con_linea": 49154,
+"diversi": 451,
+"assente": 5730
+},
+"201106": {
+"voti": 95942,
+"espressi": 75807,
+"con_linea": 75579,
+"diversi": 1387,
+"missione": 6647,
+"assente": 13488
+},
+"201107": {
+"voti": 255430,
+"espressi": 131555,
+"con_linea": 126228,
+"diversi": 2155,
+"missione": 16579,
+"assente": 107296
+},
+"201108": {
+"voti": 29904,
+"espressi": 26199,
+"con_linea": 26064,
+"diversi": 647,
+"assente": 2820,
+"missione": 885
+},
+"201109": {
+"voti": 105287,
+"espressi": 86060,
+"con_linea": 85749,
+"diversi": 3351,
+"assente": 12815,
+"missione": 6412
+},
+"201110": {
+"voti": 38626,
+"espressi": 33965,
+"con_linea": 33909,
+"diversi": 928,
+"missione": 1533,
+"assente": 3128
+},
+"201111": {
+"voti": 51709,
+"espressi": 39215,
+"con_linea": 39123,
+"diversi": 432,
+"assente": 9719,
+"missione": 2775
+},
+"201112": {
+"voti": 61054,
+"missione": 1847,
+"assente": 11092,
+"espressi": 48115,
+"con_linea": 47932,
+"diversi": 2594
+},
+"201201": {
+"voti": 54201,
+"missione": 1988,
+"assente": 10158,
+"espressi": 42055,
+"con_linea": 41835,
+"diversi": 1457
+},
+"201202": {
+"voti": 116501,
+"espressi": 88092,
+"con_linea": 87650,
+"diversi": 2245,
+"missione": 4653,
+"assente": 23756
+},
+"201203": {
+"voti": 84105,
+"espressi": 63906,
+"con_linea": 63497,
+"diversi": 2435,
+"missione": 4537,
+"assente": 15662
+},
+"201204": {
+"voti": 64792,
+"espressi": 50134,
+"con_linea": 49907,
+"diversi": 1182,
+"assente": 11189,
+"missione": 3469
+},
+"201205": {
+"voti": 164472,
+"missione": 8751,
+"assente": 30345,
+"espressi": 125376,
+"con_linea": 124408,
+"diversi": 6170
+},
+"201206": {
+"voti": 104041,
+"missione": 5933,
+"assente": 18934,
+"espressi": 79174,
+"con_linea": 78565,
+"diversi": 2729
+},
+"201207": {
+"voti": 98434,
+"missione": 4652,
+"assente": 17877,
+"espressi": 75905,
+"con_linea": 75414,
+"diversi": 2256
+},
+"201208": {
+"voti": 8722,
+"espressi": 6193,
+"con_linea": 6127,
+"diversi": 441,
+"assente": 2241,
+"missione": 288
+},
+"201209": {
+"voti": 120862,
+"missione": 7972,
+"assente": 30714,
+"espressi": 82176,
+"con_linea": 81574,
+"diversi": 1832
+},
+"201210": {
+"voti": 206836,
+"espressi": 143256,
+"con_linea": 142174,
+"diversi": 3933,
+"missione": 14332,
+"assente": 49248
+},
+"201211": {
+"voti": 110894,
+"espressi": 75967,
+"con_linea": 75304,
+"diversi": 2801,
+"assente": 27605,
+"missione": 7322
+},
+"201212": {
+"voti": 164472,
+"missione": 11095,
+"assente": 40881,
+"espressi": 112496,
+"con_linea": 111607,
+"diversi": 3194
+},
+"201301": {
+"voti": 17444,
+"espressi": 11069,
+"con_linea": 10971,
+"diversi": 273,
+"assente": 5729,
+"missione": 646
+}
+},
+"strette": [
+{
+"vs": "vs13_162_002",
+"data": "19970305",
+"titolo": "Votazione Emendamento 5.33 DDL n.2732",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 5.33 BAGLIANI (LEGA N-PAD)",
+"si": 193,
+"no": 193,
+"astenuti": 1,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIII&RifVotazione=162_2&tipo=dettaglio",
+"governo": "Prodi I"
+},
+{
+"vs": "vs13_227_002",
+"data": "19970710",
+"titolo": "Votazione Emendamento 1.14 DDL n.3904",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 1.14 CE&#39; (LEGA N-PAD)",
+"si": 240,
+"no": 240,
+"astenuti": 0,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIII&RifVotazione=227_2&tipo=dettaglio",
+"governo": "Prodi I"
+},
+{
+"vs": "vs13_431_001",
+"data": "19981105",
+"titolo": "Votazione DOC. IV-TER",
+"tipo": "Doc",
+"descrizione": "PROPOSTA DELLA GIUNTA DI DICHIARARE CHE I FATTI PER I QUALI E&#39; IN CORSO IL PROCEDIMENTO, NON CONCERNONO OPINIONI ESPRESSE DALL&#39;ONOREVOLE SGARBI NELL&#39;ESERCIZIO DELLE SUE FUNZIONI (DOC. IV-TER, N. 53/A)",
+"si": 185,
+"no": 185,
+"astenuti": 34,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIII&RifVotazione=431_1&tipo=dettaglio",
+"governo": "D'Alema I"
+},
+{
+"vs": "vs13_739_046",
+"data": "20000613",
+"titolo": "Votazione Emendamento 3.12 DDL n.6433",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 3.12 GIANNATTASIO (F-ITA)",
+"si": 213,
+"no": 213,
+"astenuti": 2,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIII&RifVotazione=739_46&tipo=dettaglio",
+"governo": "Amato II"
+},
+{
+"vs": "vs14_079_318",
+"data": "20011217",
+"titolo": "Votazione Emendamento 38.100 DDL n.1984",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 38.100 PATRIA (F-ITA)",
+"si": 246,
+"no": 246,
+"astenuti": 8,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=79_318&tipo=dettaglio",
+"governo": "Berlusconi II"
+},
+{
+"vs": "vs14_202_025",
+"data": "20021010",
+"titolo": "Votazione Emendamento 0.1.390.23 PDL n.3102",
+"tipo": "Emendamento",
+"descrizione": "SUBEMENDAMENTO 0.1.390.23 BRESSA (MARGH-DL-U)",
+"si": 273,
+"no": 273,
+"astenuti": 1,
+"approvata": false,
+"segreta": true,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=202_25&tipo=dettaglio",
+"governo": "Berlusconi II"
+},
+{
+"vs": "vs14_304_008",
+"data": "20030506",
+"titolo": "Votazione Emendamento 2.4 PDL n.1447",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 2.4 FINOCCHIARO ANNA (DS-U)",
+"si": 180,
+"no": 180,
+"astenuti": 26,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=304_8&tipo=dettaglio",
+"governo": "Berlusconi II"
+},
+{
+"vs": "vs14_499_030",
+"data": "20040727",
+"titolo": "Votazione Emendamento 7.1 DDL n.5150",
+"tipo": "Emendamento",
+"descrizione": "IDENTICI EMENDAMENTI 7.1 LOLLI GIOVANNI (DS-U), 7.2 DE SIMONE TITTI (RC) E 7.3 FONTANINI PIETRO (LNFP)",
+"si": 211,
+"no": 211,
+"astenuti": 1,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=499_30&tipo=dettaglio",
+"governo": "Berlusconi II"
+},
+{
+"vs": "vs14_586_006",
+"data": "20050215",
+"titolo": "Votazione Emendamento 1.3 DDL n.5197",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 1.3 ROSATO ETTORE (MARG-U)",
+"si": 189,
+"no": 189,
+"astenuti": 1,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=586_6&tipo=dettaglio",
+"governo": "Berlusconi II"
+},
+{
+"vs": "vs14_650_012",
+"data": "20050705",
+"titolo": "Votazione Emendamento 27.01 DDL n.5736",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 27.01 (CAPOVERSI SECONDO E TERZO) BENVENUTO GIORGIO (DS-U)",
+"si": 205,
+"no": 205,
+"astenuti": 5,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=650_12&tipo=dettaglio",
+"governo": "Berlusconi III"
+},
+{
+"vs": "vs14_670_008",
+"data": "20050914",
+"titolo": "Votazione Articolo 2 PDL n.4604",
+"tipo": "Articolo",
+"descrizione": "ARTICOLO 2",
+"si": 212,
+"no": 212,
+"astenuti": 0,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=670_8&tipo=dettaglio",
+"governo": "Berlusconi III"
+},
+{
+"vs": "vs16_126_024",
+"data": "20090204",
+"titolo": "Votazione Mozione 1-00094",
+"tipo": "Mozione",
+"descrizione": "MOZIONE N. 1-00094 (NUOVA FORMULAZIONE) (CAPOVERSO QUATTORDICESIMO DELLA PARTE DISPOSITIVA) TURCO LIVIA (PD) ED ALTRI",
+"si": 245,
+"no": 245,
+"astenuti": 0,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=126_24&tipo=dettaglio",
+"governo": "Berlusconi IV"
+},
+{
+"vs": "vs16_151_105",
+"data": "20090324",
+"titolo": "Votazione Ordine del giorno 9/2105/85 DDL n.2105",
+"tipo": "Ordine del Giorno",
+"descrizione": "ORDINE DEL GIORNO N. 9/2105/85 LOMBARDO ANGELO SALVATORE (MISTO)",
+"si": 243,
+"no": 243,
+"astenuti": 1,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=151_105&tipo=dettaglio",
+"governo": "Berlusconi IV"
+},
+{
+"vs": "vs16_191_014",
+"data": "20090623",
+"titolo": "Votazione Ordine del giorno 9/2468/86 DDL n.2468",
+"tipo": "Ordine del Giorno",
+"descrizione": "ORDINE DEL GIORNO N. 9/2468/86 VANNUCCI MASSIMO (PD)",
+"si": 229,
+"no": 229,
+"astenuti": 2,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=191_14&tipo=dettaglio",
+"governo": "Berlusconi IV"
+},
+{
+"vs": "vs16_203_007",
+"data": "20090715",
+"titolo": "Votazione Mozione 1-00221",
+"tipo": "Mozione",
+"descrizione": "MOZIONE N. 1-00221 (LIMITATAMENTE ALLA PARTE DISPOSITIVA) TURCO LIVIA (PD) ED ALTRI",
+"si": 228,
+"no": 228,
+"astenuti": 10,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=203_7&tipo=dettaglio",
+"governo": "Berlusconi IV"
+},
+{
+"vs": "vs16_225_007",
+"data": "20091002",
+"titolo": "Votazione Ordine del giorno 9/2714/19 DDL n.2714",
+"tipo": "Ordine del Giorno",
+"descrizione": "ORDINE DEL GIORNO N. 9/2714/19 MESSINA IGNAZIO (IDV)",
+"si": 245,
+"no": 245,
+"astenuti": 0,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=225_7&tipo=dettaglio",
+"governo": "Berlusconi IV"
+},
+{
+"vs": "vs16_244_035",
+"data": "20091111",
+"titolo": "Votazione Emendamento 21.4 PDL n.2555",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 21.4 (FATTO PROPRIO DAL GRUPPO DEL PARTITO DEMOCRATICO)",
+"si": 265,
+"no": 265,
+"astenuti": 0,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=244_35&tipo=dettaglio",
+"governo": "Berlusconi IV"
+},
+{
+"vs": "vs16_281_004",
+"data": "20100210",
+"titolo": "Votazione Emendamento 1.040 DDL n.2260",
+"tipo": "Emendamento",
+"descrizione": "ARTICOLO AGGIUNTIVO 1.040 (NUOVA FORMULAZIONE) CUOMO ANTONIO (PD)",
+"si": 243,
+"no": 243,
+"astenuti": 0,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=281_4&tipo=dettaglio",
+"governo": "Berlusconi IV"
+},
+{
+"vs": "vs16_286_004",
+"data": "20100219",
+"titolo": "Votazione Ordine del giorno 9/3196/25 DDL n.3196",
+"tipo": "Ordine del Giorno",
+"descrizione": "ORDINE DEL GIORNO N. 9/3196/25 LIBE&#39; MAURO (UDC)",
+"si": 252,
+"no": 252,
+"astenuti": 0,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=286_4&tipo=dettaglio",
+"governo": "Berlusconi IV"
+},
+{
+"vs": "vs16_440_006",
+"data": "20110225",
+"titolo": "Votazione Ordine del giorno 9/4086/36 DDL n.4086",
+"tipo": "Ordine del Giorno",
+"descrizione": "ORDINE DEL GIORNO N. 9/4086/36 TABACCI BRUNO (MISTO)",
+"si": 276,
+"no": 276,
+"astenuti": 0,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=440_6&tipo=dettaglio",
+"governo": "Berlusconi IV"
+},
+{
+"vs": "vs16_449_060",
+"data": "20110315",
+"titolo": "Votazione Emendamento 1.67 PDL n.1640",
+"tipo": "Emendamento",
+"descrizione": "IDENTICI EMENDAMENTI 1.67 FERRANTI DONATELLA (PD) E 1.77 RAO ROBERTO (UDC)",
+"si": 256,
+"no": 256,
+"astenuti": 0,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=449_60&tipo=dettaglio",
+"governo": "Berlusconi IV"
+},
+{
+"vs": "vs16_450_012",
+"data": "20110316",
+"titolo": "Votazione Emendamento 3.7 DDL n.2008",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 3.7 CAPITANIO SANTOLINI LUISA (UDC)",
+"si": 260,
+"no": 260,
+"astenuti": 4,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=450_12&tipo=dettaglio",
+"governo": "Berlusconi IV"
+},
+{
+"vs": "vs16_478_005",
+"data": "20110525",
+"titolo": "Votazione Ordine del giorno 9/4307/48 DDL n.4307",
+"tipo": "Ordine del Giorno",
+"descrizione": "ORDINE DEL GIORNO 9/4307/48 DE BIASI EMILIA GRAZIA (PD)",
+"si": 276,
+"no": 276,
+"astenuti": 0,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=478_5&tipo=dettaglio",
+"governo": "Berlusconi IV"
+},
+{
+"vs": "vs16_507_060",
+"data": "20110726",
+"titolo": "Votazione Ordine del giorno 9/4059/28 DDL n.4059",
+"tipo": "Ordine del Giorno",
+"descrizione": "ORDINE DEL GIORNO N. 9/4059/28 CALVISI GIULIO (PD)",
+"si": 266,
+"no": 266,
+"astenuti": 1,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=507_60&tipo=dettaglio",
+"governo": "Berlusconi IV"
+},
+{
+"vs": "vs16_532_002",
+"data": "20111011",
+"titolo": "Votazione Articolo 1 DDL n.4621",
+"tipo": "Articolo",
+"descrizione": "ARTICOLO 1",
+"si": 290,
+"no": 290,
+"astenuti": 0,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=532_2&tipo=dettaglio",
+"governo": "Berlusconi IV"
+},
+{
+"vs": "vs16_542_009",
+"data": "20111026",
+"titolo": "Votazione Mozione 1-00722",
+"tipo": "Mozione",
+"descrizione": "MOZIONE N. 1-00722 (IN QUANTO NON ASSORBITA DALLA PRECEDENTE VOTAZIONE) EVANGELISTI FABIO (IDV) ED ALTRI",
+"si": 279,
+"no": 279,
+"astenuti": 0,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=542_9&tipo=dettaglio",
+"governo": "Berlusconi IV"
+},
+{
+"vs": "vs16_605_013",
+"data": "20120315",
+"titolo": "Votazione Ordine del giorno 9/4999-A/51 DDL n.4999",
+"tipo": "Ordine del Giorno",
+"descrizione": "ORDINE DEL GIORNO N. 9/4999-A/51 BARBATO FRANCESCO (IDV)",
+"si": 221,
+"no": 221,
+"astenuti": 38,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=605_13&tipo=dettaglio",
+"governo": "Monti"
+},
+{
+"vs": "vs13_234_001",
+"data": "19970723",
+"titolo": "Votazione Emendamento 1.1 ",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 1.1 COPERCINI (LEGA N-PAD)",
+"si": 214,
+"no": 213,
+"astenuti": 1,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIII&RifVotazione=234_1&tipo=dettaglio",
+"governo": "Prodi I"
+},
+{
+"vs": "vs13_290_003",
+"data": "19971218",
+"titolo": "Votazione Ordine del giorno 9/4354/8 DDL n.4354",
+"tipo": "Ordine del Giorno",
+"descrizione": "ORDINE DEL GIORNO 9/4354/8 DOZZO (LEGA N-PAD) ED ALTRI",
+"si": 248,
+"no": 249,
+"astenuti": 5,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIII&RifVotazione=290_3&tipo=dettaglio",
+"governo": "Prodi I"
+},
+{
+"vs": "vs13_328_120",
+"data": "19980318",
+"titolo": "Votazione Articolo 5 PDL n.3194",
+"tipo": "Articolo",
+"descrizione": "TESTO ALTERNATIVO ALL&#39;ARTICOLO 5 BALLAMAN (LEGA N-PAD)",
+"si": 237,
+"no": 238,
+"astenuti": 0,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIII&RifVotazione=328_120&tipo=dettaglio",
+"governo": "Prodi I"
+},
+{
+"vs": "vs13_328_122",
+"data": "19980318",
+"titolo": "Votazione Emendamento 5.1 PDL n.3194",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 5.1 BALLAMAN (LEGA N-PAD)",
+"si": 231,
+"no": 232,
+"astenuti": 1,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIII&RifVotazione=328_122&tipo=dettaglio",
+"governo": "Prodi I"
+},
+{
+"vs": "vs13_387_007",
+"data": "19980708",
+"titolo": "Votazione Emendamento 1.11 DDL n.4988",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 1.11 SCARPA BONAZZA BUORA (F-ITA)",
+"si": 225,
+"no": 224,
+"astenuti": 2,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIII&RifVotazione=387_7&tipo=dettaglio",
+"governo": "Prodi I"
+},
+{
+"vs": "vs13_410_004",
+"data": "19980923",
+"titolo": "Votazione Emendamento 1.41 DDL n.2756-TER",
+"tipo": "Emendamento",
+"descrizione": "IDENTICI EMENDAMENTI 1.41 CARLESI (AN) E 1.55 BURANI PROCACCINI (F-ITA)",
+"si": 270,
+"no": 269,
+"astenuti": 1,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIII&RifVotazione=410_4&tipo=dettaglio",
+"governo": "Prodi I"
+},
+{
+"vs": "vs13_468_008",
+"data": "19990121",
+"titolo": "Votazione Emendamento 4.21 PDL n.0646",
+"tipo": "Emendamento",
+"descrizione": "IDENTICI EMENDAMENTI 4.21 CE&#39; (LEGA N-PAD), 4.12 GALLETTI (MISTO) E 4.57 CARLESI (AN)",
+"si": 189,
+"no": 188,
+"astenuti": 1,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIII&RifVotazione=468_8&tipo=dettaglio",
+"governo": "D'Alema I"
+},
+{
+"vs": "vs13_471_002",
+"data": "19990126",
+"titolo": "Votazione Risoluzione 6-00071",
+"tipo": "Risoluzione",
+"descrizione": "RISOLUZIONE 6-00071 NESI (COMUNISTA) ED ALTRI",
+"si": 216,
+"no": 215,
+"astenuti": 6,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIII&RifVotazione=471_2&tipo=dettaglio",
+"governo": "D'Alema I"
+},
+{
+"vs": "vs13_505_011",
+"data": "19990316",
+"titolo": "Votazione DOC. IV-QUATER",
+"tipo": "Doc",
+"descrizione": "PROPOSTA DELLA GIUNTA DI DICHIARARE, PER CIO&#39; CHE RIGUARDA IL PRIMO CAPO D&#39;IMPUTAZIONE (RESISTENZA A PUBBLICO UFFICIALE), CHE I FATTI PER I QUALI E&#39; IN CORSO IL PROCEDIMENTO NON CONCERNO OPINIONE ESPRESSE DAL DEPUTATO MARIO BOGHEZIO NELL&#39;ESERCIZIO DELLE SUE FUNZIONI (DOC. IV-QUATER, ",
+"si": 173,
+"no": 172,
+"astenuti": 16,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIII&RifVotazione=505_11&tipo=dettaglio",
+"governo": "D'Alema I"
+},
+{
+"vs": "vs13_558_027",
+"data": "19990630",
+"titolo": "Votazione Emendamento 15.02 DDL n.4493",
+"tipo": "Emendamento",
+"descrizione": "IDENTICI ARTICOLI AGGIUNTIVI 15.02 BUTTIGLIONE (MISTO), 15.06 DONATO BRUNO (F-ITA) E 15.010 ANGELONI (DS-ULIVO)",
+"si": 188,
+"no": 189,
+"astenuti": 18,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIII&RifVotazione=558_27&tipo=dettaglio",
+"governo": "D'Alema I"
+},
+{
+"vs": "vs13_778_023",
+"data": "20000927",
+"titolo": "Votazione Articolo 6 DDL n.7184",
+"tipo": "Articolo",
+"descrizione": "ARTICOLO 6",
+"si": 200,
+"no": 199,
+"astenuti": 3,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIII&RifVotazione=778_23&tipo=dettaglio",
+"governo": "Amato II"
+},
+{
+"vs": "vs13_816_011",
+"data": "20001129",
+"titolo": "Votazione Emendamento 1.4 PDL n.5051",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 1.4 LANDI DI CHIAVENNA (AN)",
+"si": 189,
+"no": 188,
+"astenuti": 1,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIII&RifVotazione=816_11&tipo=dettaglio",
+"governo": "Amato II"
+},
+{
+"vs": "vs13_848_029",
+"data": "20010130",
+"titolo": "Votazione Emendamento 2.57 PDL n.0099",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 2.57 DE GHISLANZONI CARDOLI (F-ITA)",
+"si": 211,
+"no": 210,
+"astenuti": 0,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIII&RifVotazione=848_29&tipo=dettaglio",
+"governo": "Amato II"
+},
+{
+"vs": "vs14_129_021",
+"data": "20020411",
+"titolo": "Votazione Emendamento 3.31 DDL n.2580",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 3.31 GUIDO DUSSIN (LEGA NORD-P)",
+"si": 216,
+"no": 215,
+"astenuti": 16,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=129_21&tipo=dettaglio",
+"governo": "Berlusconi II"
+},
+{
+"vs": "vs14_286_073",
+"data": "20030325",
+"titolo": "Votazione Ordine del giorno 9/2144-B/24 DDL n.2144-B",
+"tipo": "Ordine del Giorno",
+"descrizione": "ORDINE DEL GIORNO N. 9/2144-B/24 BUEMI ENRICO (MISTO)",
+"si": 200,
+"no": 199,
+"astenuti": 5,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=286_73&tipo=dettaglio",
+"governo": "Berlusconi II"
+},
+{
+"vs": "vs14_366_026",
+"data": "20031002",
+"titolo": "Votazione Emendamento 24.1 PDL n.0310-B",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 24.1 COLASIO ANDREA (MARG-U)",
+"si": 288,
+"no": 287,
+"astenuti": 0,
+"approvata": true,
+"segreta": true,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=366_26&tipo=dettaglio",
+"governo": "Berlusconi II"
+},
+{
+"vs": "vs14_403_077",
+"data": "20031217",
+"titolo": "Votazione Ordine del giorno 9/4489/257 DDL n.4489",
+"tipo": "Ordine del Giorno",
+"descrizione": "ORDINE DEL GIORNO N. 9/4489/257 (NUOVA FORMULAZIONE) ZACCHERA MARCO (AN)",
+"si": 239,
+"no": 240,
+"astenuti": 13,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=403_77&tipo=dettaglio",
+"governo": "Berlusconi II"
+},
+{
+"vs": "vs14_453_005",
+"data": "20040420",
+"titolo": "Votazione Emendamento 1.10 PDL n.0566",
+"tipo": "Emendamento",
+"descrizione": "IDENTICI EMENDAMENTI 1.10 (NUOVA FORMULAZIONE) POLLEDRI MASSIMO (LNFP) E 1.113 DI TEODORO ANDREA (FI)",
+"si": 203,
+"no": 202,
+"astenuti": 5,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=453_5&tipo=dettaglio",
+"governo": "Berlusconi II"
+},
+{
+"vs": "vs14_575_018",
+"data": "20050126",
+"titolo": "Votazione Emendamento 1.9 DDL n.2381-B",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 1.9 CHIANALE MAURO (DS-U)",
+"si": 185,
+"no": 184,
+"astenuti": 2,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=575_18&tipo=dettaglio",
+"governo": "Berlusconi II"
+},
+{
+"vs": "vs14_582_006",
+"data": "20050208",
+"titolo": "Votazione Emendamento 2.5 DDL n.5521",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 2.5 BONITO FRANCESCO (DS-U)",
+"si": 215,
+"no": 216,
+"astenuti": 2,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=582_6&tipo=dettaglio",
+"governo": "Berlusconi II"
+},
+{
+"vs": "vs14_638_009",
+"data": "20050615",
+"titolo": "Votazione Emendamento 4.640 DDL n.4735",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 4.640 PISTONE GABRIELLA (MISTO)",
+"si": 206,
+"no": 207,
+"astenuti": 0,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=638_9&tipo=dettaglio",
+"governo": "Berlusconi III"
+},
+{
+"vs": "vs14_644_006",
+"data": "20050623",
+"titolo": "Votazione Emendamento 3.3 DDL n.5882",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 3.3 FOLENA PIETRO (RC)",
+"si": 194,
+"no": 193,
+"astenuti": 2,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=644_6&tipo=dettaglio",
+"governo": "Berlusconi III"
+},
+{
+"vs": "vs14_646_001",
+"data": "20050628",
+"titolo": "Votazione Emendamento 1.1 PDL n.0153",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 1.1 NESI NERIO (MISTO)",
+"si": 160,
+"no": 161,
+"astenuti": 0,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=646_1&tipo=dettaglio",
+"governo": "Berlusconi III"
+},
+{
+"vs": "vs14_646_003",
+"data": "20050628",
+"titolo": "Votazione Emendamento 1.97 PDL n.0153",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 1.97 JACINI GIOVANNI (FI)",
+"si": 165,
+"no": 164,
+"astenuti": 0,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=646_3&tipo=dettaglio",
+"governo": "Berlusconi III"
+},
+{
+"vs": "vs14_731_057",
+"data": "20060117",
+"titolo": "Votazione Emendamento 4.11 DDL n.6236",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 4.11 FATTO PROPRIO DAL GRUPPO DEI DEMOCRATICI DI SINISTRA-L&#39;ULIVO",
+"si": 184,
+"no": 185,
+"astenuti": 12,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=731_57&tipo=dettaglio",
+"governo": "Berlusconi III"
+},
+{
+"vs": "vs16_074_007",
+"data": "20081029",
+"titolo": "Votazione Emendamento 5.4 DDL n.1441-TER",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 5.4 VICO LUDOVICO (PD)",
+"si": 259,
+"no": 260,
+"astenuti": 3,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=74_7&tipo=dettaglio",
+"governo": "Berlusconi IV"
+},
+{
+"vs": "vs16_078_102",
+"data": "20081104",
+"titolo": "Votazione Ordine del giorno 9/1441-TER/28 DDL n.1441-TER",
+"tipo": "Ordine del Giorno",
+"descrizione": "ORDINE DEL GIORNO N. 9/1441-TER/28 BELLANOVA TERESA (PD)",
+"si": 242,
+"no": 241,
+"astenuti": 5,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=78_102&tipo=dettaglio",
+"governo": "Berlusconi IV"
+},
+{
+"vs": "vs16_097_024",
+"data": "20081203",
+"titolo": "Votazione Ordine del giorno 9/1891/52 DDL n.1891",
+"tipo": "Ordine del Giorno",
+"descrizione": "ORDINE DEL GIORNO N. 9/1891/52 VELO SILVIA (PD)",
+"si": 248,
+"no": 249,
+"astenuti": 2,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=97_24&tipo=dettaglio",
+"governo": "Berlusconi IV"
+},
+{
+"vs": "vs16_139_012",
+"data": "20090224",
+"titolo": "Votazione Ordine del giorno 9/2198/71 DDL n.2198",
+"tipo": "Ordine del Giorno",
+"descrizione": "ORDINE DEL GIORNO N. 9/2198/71 TASSONE MARIO (UDC)",
+"si": 242,
+"no": 243,
+"astenuti": 3,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=139_12&tipo=dettaglio",
+"governo": "Berlusconi IV"
+},
+{
+"vs": "vs16_140_038",
+"data": "20090225",
+"titolo": "Votazione Emendamento 8.2 DDL n.2206",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 8.2 MARIANI RAFFAELLA (PD)",
+"si": 238,
+"no": 239,
+"astenuti": 1,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=140_38&tipo=dettaglio",
+"governo": "Berlusconi IV"
+},
+{
+"vs": "vs16_209_034",
+"data": "20090727",
+"titolo": "Votazione Ordine del giorno 9/2561/161 DDL n.2561",
+"tipo": "Ordine del Giorno",
+"descrizione": "ORDINE DEL GIORNO N. 9/2561/161 GIULIETTI GIUSEPPE (IDV)",
+"si": 208,
+"no": 209,
+"astenuti": 1,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=209_34&tipo=dettaglio",
+"governo": "Berlusconi IV"
+},
+{
+"vs": "vs16_225_001",
+"data": "20091002",
+"titolo": "Votazione Ordine del giorno 9/2714/8 DDL n.2714",
+"tipo": "Ordine del Giorno",
+"descrizione": "ORDINE DEL GIORNO N. 9/2714/8 PISICCHIO PINO (IDV)",
+"si": 226,
+"no": 225,
+"astenuti": 1,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=225_1&tipo=dettaglio",
+"governo": "Berlusconi IV"
+},
+{
+"vs": "vs16_227_027",
+"data": "20091006",
+"titolo": "Votazione Emendamento 1.1 DDL n.2008",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 1.1 FAVIA DAVID (IDV)",
+"si": 250,
+"no": 249,
+"astenuti": 0,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=227_27&tipo=dettaglio",
+"governo": "Berlusconi IV"
+},
+{
+"vs": "vs16_244_057",
+"data": "20091111",
+"titolo": "Votazione Emendamento 39.1 PDL n.2555",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 39.1 CAMBURSANO RENATO (IDV)",
+"si": 263,
+"no": 264,
+"astenuti": 0,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=244_57&tipo=dettaglio",
+"governo": "Berlusconi IV"
+},
+{
+"vs": "vs16_249_011",
+"data": "20091118",
+"titolo": "Votazione Ordine del giorno 9/2897/19 DDL n.2897",
+"tipo": "Ordine del Giorno",
+"descrizione": "ORDINE DEL GIORNO N. 9/2897/19 BORGHESI ANTONIO (IDV)",
+"si": 265,
+"no": 264,
+"astenuti": 1,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=249_11&tipo=dettaglio",
+"governo": "Berlusconi IV"
+},
+{
+"vs": "vs16_249_013",
+"data": "20091118",
+"titolo": "Votazione Ordine del giorno 9/2897/21 DDL n.2897",
+"tipo": "Ordine del Giorno",
+"descrizione": "ORDINE DEL GIORNO N. 9/2897/21 EVANGELISTI FABIO (IDV)",
+"si": 265,
+"no": 266,
+"astenuti": 1,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=249_13&tipo=dettaglio",
+"governo": "Berlusconi IV"
+},
+{
+"vs": "vs16_259_009",
+"data": "20091216",
+"titolo": "Votazione Ordine del giorno 9/2936/157 DDL n.2936",
+"tipo": "Ordine del Giorno",
+"descrizione": "ORDINE DEL GIORNO N. 9/2936/157 LUSETTI RENZO (PD)",
+"si": 264,
+"no": 265,
+"astenuti": 0,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=259_9&tipo=dettaglio",
+"governo": "Berlusconi IV"
+},
+{
+"vs": "vs16_275_006",
+"data": "20100128",
+"titolo": "Votazione Emendamento 33.1 DDL n.1441-QUATER-B",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 33.1 PALADINI GIOVANNI (IDV)",
+"si": 246,
+"no": 247,
+"astenuti": 0,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=275_6&tipo=dettaglio",
+"governo": "Berlusconi IV"
+},
+{
+"vs": "vs16_281_008",
+"data": "20100210",
+"titolo": "Votazione Emendamento 1.042 DDL n.2260",
+"tipo": "Emendamento",
+"descrizione": "IDENTICI ARTICOLI AGGIUNTIVI 1.042 (NUOVA FORMULAZIONE) BRANDOLINI SANDRO (PD) E 1.043 (NUOVA FORMULAZIONE) RUVOLO GIUSEPPE (UDC)",
+"si": 252,
+"no": 251,
+"astenuti": 0,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=281_8&tipo=dettaglio",
+"governo": "Berlusconi IV"
+},
+{
+"vs": "vs16_286_003",
+"data": "20100219",
+"titolo": "Votazione Ordine del giorno 9/3196/23 DDL n.3196",
+"tipo": "Ordine del Giorno",
+"descrizione": "ORDINE DEL GIORNO N. 9/3196/23 RIA LORENZO (UDC)",
+"si": 250,
+"no": 249,
+"astenuti": 1,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=286_3&tipo=dettaglio",
+"governo": "Berlusconi IV"
+},
+{
+"vs": "vs16_286_005",
+"data": "20100219",
+"titolo": "Votazione Ordine del giorno 9/3196/26 DDL n.3196",
+"tipo": "Ordine del Giorno",
+"descrizione": "ORDINE DEL GIORNO N. 9/3196/26 PALOMBA FEDERICO (IDV)",
+"si": 253,
+"no": 254,
+"astenuti": 0,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=286_5&tipo=dettaglio",
+"governo": "Berlusconi IV"
+},
+{
+"vs": "vs16_310_044",
+"data": "20100421",
+"titolo": "Votazione Ordine del giorno 9/2449-C/8 DDL n.2449-B",
+"tipo": "Ordine del Giorno",
+"descrizione": "ORDINE DEL GIORNO N. 9/2449-C/8 PIFFARI SERGIO MICHELE (IDV)",
+"si": 228,
+"no": 227,
+"astenuti": 0,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=310_44&tipo=dettaglio",
+"governo": "Berlusconi IV"
+},
+{
+"vs": "vs16_312_029",
+"data": "20100427",
+"titolo": "Votazione Ordine del giorno 9/2100 E ABB,./17 PDL n.2100",
+"tipo": "Ordine del Giorno",
+"descrizione": "ORDINE DEL GIORNO N. 9/2100 E ABB,./17 RAMPI ELISABETTA (PD)",
+"si": 242,
+"no": 243,
+"astenuti": 0,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=312_29&tipo=dettaglio",
+"governo": "Berlusconi IV"
+},
+{
+"vs": "vs16_313_063",
+"data": "20100428",
+"titolo": "Votazione Emendamento 31.33 DDL n.1441-QUATER-D",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 31.33 DAMIANO CESARE (PD)",
+"si": 225,
+"no": 224,
+"astenuti": 0,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=313_63&tipo=dettaglio",
+"governo": "Berlusconi IV"
+},
+{
+"vs": "vs16_327_028",
+"data": "20100525",
+"titolo": "Votazione Emendamento 7.21 PDL n.2079",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 7.21 DEL TENNO MAURIZIO (PDL)",
+"si": 251,
+"no": 252,
+"astenuti": 3,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=327_28&tipo=dettaglio",
+"governo": "Berlusconi IV"
+},
+{
+"vs": "vs16_331_002",
+"data": "20100603",
+"titolo": "Votazione Emendamento 1.11 PDL n.3007",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 1.11 MONAI CARLO (IDV)",
+"si": 237,
+"no": 238,
+"astenuti": 0,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=331_2&tipo=dettaglio",
+"governo": "Berlusconi IV"
+},
+{
+"vs": "vs16_356_011",
+"data": "20100721",
+"titolo": "Votazione Emendamento 3.6 DDL n.3610",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 3.6 CORSINI PAOLO (PD)",
+"si": 253,
+"no": 254,
+"astenuti": 2,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=356_11&tipo=dettaglio",
+"governo": "Berlusconi IV"
+},
+{
+"vs": "vs16_440_011",
+"data": "20110225",
+"titolo": "Votazione Ordine del giorno 9/4086/163 DDL n.4086",
+"tipo": "Ordine del Giorno",
+"descrizione": "ORDINE DEL GIORNO N. 9/4086/163 MARGIOTTA SALVATORE (PD)",
+"si": 282,
+"no": 283,
+"astenuti": 0,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=440_11&tipo=dettaglio",
+"governo": "Berlusconi IV"
+},
+{
+"vs": "vs16_449_068",
+"data": "20110315",
+"titolo": "Votazione Emendamento 1.69 PDL n.1640",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 1.69 FERRANTI DONATELLA (PD)",
+"si": 251,
+"no": 250,
+"astenuti": 1,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=449_68&tipo=dettaglio",
+"governo": "Berlusconi IV"
+},
+{
+"vs": "vs16_450_049",
+"data": "20110316",
+"titolo": "Votazione Mozione 1-00580",
+"tipo": "Mozione",
+"descrizione": "MOZIONE N. 1-00580 (NUOVA FORMULAZIONE) FRANCESCHINI DARIO (PD) ED ALTRI",
+"si": 275,
+"no": 276,
+"astenuti": 0,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=450_49&tipo=dettaglio",
+"governo": "Berlusconi IV"
+},
+{
+"vs": "vs16_478_007",
+"data": "20110525",
+"titolo": "Votazione Ordine del giorno 9/4307/88 DDL n.4307",
+"tipo": "Ordine del Giorno",
+"descrizione": "ORDINE DEL GIORNO 9/4307/88 SARUBBI ANDREA (PD)",
+"si": 279,
+"no": 280,
+"astenuti": 0,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=478_7&tipo=dettaglio",
+"governo": "Berlusconi IV"
+},
+{
+"vs": "vs16_501_007",
+"data": "20110714",
+"titolo": "Votazione Emendamento 3.17 DDL n.4449",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 3.17 GOZI SANDRO (PD)",
+"si": 252,
+"no": 253,
+"astenuti": 0,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=501_7&tipo=dettaglio",
+"governo": "Berlusconi IV"
+},
+{
+"vs": "vs16_501_011",
+"data": "20110714",
+"titolo": "Votazione Emendamento 3.20 DDL n.4449",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 3.20 GOZI SANDRO (PD)",
+"si": 253,
+"no": 254,
+"astenuti": 0,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=501_11&tipo=dettaglio",
+"governo": "Berlusconi IV"
+},
+{
+"vs": "vs16_501_013",
+"data": "20110714",
+"titolo": "Votazione Emendamento 3.18 DDL n.4449",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 3.18 GOZI SANDRO (PD)",
+"si": 258,
+"no": 259,
+"astenuti": 0,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=501_13&tipo=dettaglio",
+"governo": "Berlusconi IV"
+},
+{
+"vs": "vs16_505_004",
+"data": "20110720",
+"titolo": "Votazione Mozione 1-00677",
+"tipo": "Mozione",
+"descrizione": "MOZIONE N. 1-00677 (LIMITATAMENTE AL SECONDO E TERZO CAPOVERSO DEL DISPOSITIVO) MOSELLA DONATO RENATO (MISTO) ED ALTRI",
+"si": 293,
+"no": 294,
+"astenuti": 2,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=505_4&tipo=dettaglio",
+"governo": "Berlusconi IV"
+},
+{
+"vs": "vs16_519_008",
+"data": "20110915",
+"titolo": "Votazione Emendamento 4.20 PDL n.2172",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 4.20 CIMADORO GABRIELE (IDV)",
+"si": 249,
+"no": 250,
+"astenuti": 0,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=519_8&tipo=dettaglio",
+"governo": "Berlusconi IV"
+},
+{
+"vs": "vs16_538_007",
+"data": "20111019",
+"titolo": "Votazione Emendamento 0.1.100.13 DDL n.4144",
+"tipo": "Emendamento",
+"descrizione": "SUBEMENDAMENTO 0.1.100.13 MANTINI PIERLUIGI (UDCPTP)",
+"si": 287,
+"no": 288,
+"astenuti": 0,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=538_7&tipo=dettaglio",
+"governo": "Berlusconi IV"
+},
+{
+"vs": "vs16_542_008",
+"data": "20111026",
+"titolo": "Votazione Mozione 1-00714",
+"tipo": "Mozione",
+"descrizione": "MOZIONE N. 1-00714 BOCCIA FRANCESCO (PD) ED ALTRI",
+"si": 279,
+"no": 280,
+"astenuti": 0,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=542_8&tipo=dettaglio",
+"governo": "Berlusconi IV"
+},
+{
+"vs": "vs16_542_010",
+"data": "20111026",
+"titolo": "Votazione Mozione 1-00734",
+"tipo": "Mozione",
+"descrizione": "MOZIONE N. 1-00734 TESTA NUNZIO FRANCESCO (UDCPTP) ED ALTRI",
+"si": 280,
+"no": 281,
+"astenuti": 0,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=542_10&tipo=dettaglio",
+"governo": "Berlusconi IV"
+},
+{
+"vs": "vs16_542_011",
+"data": "20111026",
+"titolo": "Votazione Mozione 1-00737",
+"tipo": "Mozione",
+"descrizione": "MOZIONE N. 1-00737 VALDUCCI MARIO (PDL), DESIDERATI MARCO (LNP), PIONATI FRANCESCO (PT) ED ALTRI",
+"si": 280,
+"no": 281,
+"astenuti": 0,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=542_11&tipo=dettaglio",
+"governo": "Berlusconi IV"
+},
+{
+"vs": "vs13_021_008",
+"data": "19960702",
+"titolo": "Votazione Ordine del giorno 9/1041/3 DDL n.1041",
+"tipo": "Ordine del Giorno",
+"descrizione": "ORDINE DEL GIORNO 9/1041/3 DELFINO TERESIO (CCD-CDU) E ARMOSINO (F-ITA)",
+"si": 198,
+"no": 196,
+"astenuti": 29,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIII&RifVotazione=21_8&tipo=dettaglio",
+"governo": "Prodi I"
+},
+{
+"vs": "vs13_290_007",
+"data": "19971218",
+"titolo": "Votazione Ordine del giorno 9/4354/12 DDL n.4354",
+"tipo": "Ordine del Giorno",
+"descrizione": "ORDINE DEL GIORNO 9/4354/12 CIAPUSCI (LEGA N-PAD) ED ALTRI",
+"si": 256,
+"no": 258,
+"astenuti": 8,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIII&RifVotazione=290_7&tipo=dettaglio",
+"governo": "Prodi I"
+},
+{
+"vs": "vs13_468_013",
+"data": "19990121",
+"titolo": "Votazione Emendamento 4.23 PDL n.0646",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 4.23 CE&#39; (LEGA N-PAD)",
+"si": 196,
+"no": 194,
+"astenuti": 4,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIII&RifVotazione=468_13&tipo=dettaglio",
+"governo": "D'Alema I"
+},
+{
+"vs": "vs13_744_019",
+"data": "20000620",
+"titolo": "Votazione Emendamento 11.3 PDL n.4953-BIS",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 11.3 SAPONARA (F-ITA)",
+"si": 220,
+"no": 222,
+"astenuti": 17,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIII&RifVotazione=744_19&tipo=dettaglio",
+"governo": "Amato II"
+},
+{
+"vs": "vs13_778_139",
+"data": "20000927",
+"titolo": "Votazione Emendamento 38.4 DDL n.7184",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 38.4 GIANFRANCO CONTE (F-ITA)",
+"si": 197,
+"no": 199,
+"astenuti": 5,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIII&RifVotazione=778_139&tipo=dettaglio",
+"governo": "Amato II"
+},
+{
+"vs": "vs13_797_021",
+"data": "20001024",
+"titolo": "Votazione Emendamento 5.1 DDL n.7186",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 5.1 NARDINI (MISTO)",
+"si": 195,
+"no": 193,
+"astenuti": 8,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIII&RifVotazione=797_21&tipo=dettaglio",
+"governo": "Amato II"
+},
+{
+"vs": "vs13_821_011",
+"data": "20001206",
+"titolo": "Votazione Emendamento 2.33 PDL n.5003",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 2.33 CHIAPPORI (LEGA NORD-P)",
+"si": 178,
+"no": 176,
+"astenuti": 1,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIII&RifVotazione=821_11&tipo=dettaglio",
+"governo": "Amato II"
+},
+{
+"vs": "vs13_830_035",
+"data": "20001220",
+"titolo": "Votazione Emendamento 7.8 PDL n.5003",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 7.8 EDO ROSSI (MISTO)",
+"si": 213,
+"no": 211,
+"astenuti": 1,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIII&RifVotazione=830_35&tipo=dettaglio",
+"governo": "Amato II"
+},
+{
+"vs": "vs13_834_068",
+"data": "20010110",
+"titolo": "Votazione Emendamento 8.12 DDL n.7115",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 8.12 LOSURDO (AN)",
+"si": 202,
+"no": 200,
+"astenuti": 1,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIII&RifVotazione=834_68&tipo=dettaglio",
+"governo": "Amato II"
+},
+{
+"vs": "vs13_864_009",
+"data": "20010221",
+"titolo": "Votazione Emendamento 1.51 DDL n.7583",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 1.51 GIORDANO (MISTO)",
+"si": 213,
+"no": 211,
+"astenuti": 0,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIII&RifVotazione=864_9&tipo=dettaglio",
+"governo": "Amato II"
+},
+{
+"vs": "vs14_139_014",
+"data": "20020507",
+"titolo": "Votazione Emendamento 2.24 DDL n.2144",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 2.24 AGOSTINI (DS-ULIVO)",
+"si": 207,
+"no": 205,
+"astenuti": 1,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=139_14&tipo=dettaglio",
+"governo": "Berlusconi II"
+},
+{
+"vs": "vs14_409_008",
+"data": "20040120",
+"titolo": "Votazione Emendamento 4.1 PDL n.0559-B",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 4.1 VASCON LUIGINO (LNFP)",
+"si": 229,
+"no": 231,
+"astenuti": 4,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=409_8&tipo=dettaglio",
+"governo": "Berlusconi II"
+},
+{
+"vs": "vs14_417_011",
+"data": "20040203",
+"titolo": "Votazione Articolo 3 PDL n.0310-D",
+"tipo": "Articolo",
+"descrizione": "ARTICOLO 3",
+"si": 272,
+"no": 270,
+"astenuti": 0,
+"approvata": true,
+"segreta": true,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=417_11&tipo=dettaglio",
+"governo": "Berlusconi II"
+}
+],
+"battute": [
+{
+"vs": "vs14_029_050",
+"data": "20010802",
+"titolo": "Votazione Emendamento 5.60 DDL n.1137",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 5.60 AGOSTINI (DS-ULIVO)",
+"si": 284,
+"no": 199,
+"astenuti": 11,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=29_50&tipo=dettaglio",
+"governo": "Berlusconi II",
+"maggioranza": [
+67,
+195
+]
+},
+{
+"vs": "vs14_047_001",
+"data": "20011017",
+"titolo": "Votazione Emendamento 1.599 DDL n.1516",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 1.599 RUSSO SPENA (RC)",
+"si": 159,
+"no": 152,
+"astenuti": 1,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=47_1&tipo=dettaglio",
+"governo": "Berlusconi II",
+"maggioranza": [
+0,
+149
+]
+},
+{
+"vs": "vs14_053_005",
+"data": "20011025",
+"titolo": "Votazione Ordine del giorno 9/1654/6 DDL n.1654",
+"tipo": "Ordine del Giorno",
+"descrizione": "ORDINE DEL GIORNO N. 9/1654/6 SODA (DS-ULIVO)",
+"si": 301,
+"no": 186,
+"astenuti": 12,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=53_5&tipo=dettaglio",
+"governo": "Berlusconi II",
+"maggioranza": [
+86,
+183
+]
+},
+{
+"vs": "vs14_081_136",
+"data": "20011219",
+"titolo": "Votazione Emendamento (IDENTICO DDL n.1984",
+"tipo": "Emendamento",
+"descrizione": "ARTICOLI AGGIUNTIVI (IDENTICO CONTENUTO NORMATIVO) 44.0118 BURANI PROCACCINI (F-ITA), 44.0215 ERCOLE (LEGA NORD-P), 44.0119 MASSIDDA (F-ITA) E 44.0120 GIUSEPPE DRAGO (CCD-CDU-BF)",
+"si": 208,
+"no": 307,
+"astenuti": 2,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=81_136&tipo=dettaglio",
+"governo": "Berlusconi II",
+"maggioranza": [
+202,
+81
+]
+},
+{
+"vs": "vs14_081_474",
+"data": "20011219",
+"titolo": "Votazione Ordine del giorno 9/1984/142 DDL n.1984",
+"tipo": "Ordine del Giorno",
+"descrizione": "ORDINE DEL GIORNO N. 9/1984/142 TUCCILLO (MARGH-DL-U)",
+"si": 206,
+"no": 186,
+"astenuti": 14,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=81_474&tipo=dettaglio",
+"governo": "Berlusconi II",
+"maggioranza": [
+41,
+180
+]
+},
+{
+"vs": "vs14_081_479",
+"data": "20011219",
+"titolo": "Votazione Ordine del giorno 9/1984/182 DDL n.1984",
+"tipo": "Ordine del Giorno",
+"descrizione": "ORDINE DEL GIORNO N. 9/1984/182 PANATTONI (DS-ULIVO)",
+"si": 215,
+"no": 172,
+"astenuti": 13,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=81_479&tipo=dettaglio",
+"governo": "Berlusconi II",
+"maggioranza": [
+38,
+168
+]
+},
+{
+"vs": "vs14_097_001",
+"data": "20020213",
+"titolo": "Votazione Emendamento 19.3 DDL n.2031",
+"tipo": "Emendamento",
+"descrizione": "IDENTICI EMENDAMENTI 19.3 GAMBINI (DS-ULIVO) E 19.6 VERNETTI (MARGH-DL-U), SOPPRESSIVI DELL&#39;ARTICOLO 19",
+"si": 230,
+"no": 216,
+"astenuti": 6,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=97_1&tipo=dettaglio",
+"governo": "Berlusconi II",
+"maggioranza": [
+21,
+212
+]
+},
+{
+"vs": "vs14_097_043",
+"data": "20020213",
+"titolo": "Votazione Ordine del giorno 9/2031/12 DDL n.2031",
+"tipo": "Ordine del Giorno",
+"descrizione": "ORDINE DEL GIORNO N. 9/2031/12 MARTINELLI (LEGA NORD-P)",
+"si": 174,
+"no": 195,
+"astenuti": 16,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=97_43&tipo=dettaglio",
+"governo": "Berlusconi II",
+"maggioranza": [
+164,
+39
+]
+},
+{
+"vs": "vs14_100_029",
+"data": "20020219",
+"titolo": "Votazione Ordine del giorno 9/2278/4 DDL n.2278",
+"tipo": "Ordine del Giorno",
+"descrizione": "ORDINE DEL GIORNO N. 9/2278/4 (NUOVA FORMULAZIONE) MARTINELLI (LEGA NORD-P)",
+"si": 194,
+"no": 205,
+"astenuti": 9,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=100_29&tipo=dettaglio",
+"governo": "Berlusconi II",
+"maggioranza": [
+169,
+13
+]
+},
+{
+"vs": "vs14_114_071",
+"data": "20020312",
+"titolo": "Votazione Emendamento 12.2 DDL n.2032",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 12.2 PAROLO (LEGA NORD-P)",
+"si": 216,
+"no": 211,
+"astenuti": 1,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=114_71&tipo=dettaglio",
+"governo": "Berlusconi II",
+"maggioranza": [
+20,
+186
+]
+},
+{
+"vs": "vs14_115_001",
+"data": "20020313",
+"titolo": "Votazione Emendamento 23.2 DDL n.2032",
+"tipo": "Emendamento",
+"descrizione": "IDENTICI EMENDAMENTI 23.2 LION (MISTO) E 23.3 VIGNI (DS-ULIVO)",
+"si": 154,
+"no": 151,
+"astenuti": 0,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=115_1&tipo=dettaglio",
+"governo": "Berlusconi II",
+"maggioranza": [
+0,
+141
+]
+},
+{
+"vs": "vs14_129_021",
+"data": "20020411",
+"titolo": "Votazione Emendamento 3.31 DDL n.2580",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 3.31 GUIDO DUSSIN (LEGA NORD-P)",
+"si": 216,
+"no": 215,
+"astenuti": 16,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=129_21&tipo=dettaglio",
+"governo": "Berlusconi II",
+"maggioranza": [
+30,
+183
+]
+},
+{
+"vs": "vs14_139_014",
+"data": "20020507",
+"titolo": "Votazione Emendamento 2.24 DDL n.2144",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 2.24 AGOSTINI (DS-ULIVO)",
+"si": 207,
+"no": 205,
+"astenuti": 1,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=139_14&tipo=dettaglio",
+"governo": "Berlusconi II",
+"maggioranza": [
+0,
+203
+]
+},
+{
+"vs": "vs14_156_016",
+"data": "20020611",
+"titolo": "Votazione Emendamento 1.51 PDL n.0047",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 1.51 GIULIO CONTI (AN)",
+"si": 256,
+"no": 156,
+"astenuti": 10,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=156_16&tipo=dettaglio",
+"governo": "Berlusconi II",
+"maggioranza": [
+69,
+153
+]
+},
+{
+"vs": "vs14_157_009",
+"data": "20020612",
+"titolo": "Votazione Emendamento 3.6 PDL n.0047",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 3.6 (PARTE PRIMA) DELLA COMMISSIONE",
+"si": 255,
+"no": 133,
+"astenuti": 15,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=157_9&tipo=dettaglio",
+"governo": "Berlusconi II",
+"maggioranza": [
+79,
+133
+]
+},
+{
+"vs": "vs14_160_019",
+"data": "20020618",
+"titolo": "Votazione Emendamento 9.1 PDL n.0047",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 9.1 MUSSOLINI (AN)",
+"si": 206,
+"no": 190,
+"astenuti": 11,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=160_19&tipo=dettaglio",
+"governo": "Berlusconi II",
+"maggioranza": [
+65,
+152
+]
+},
+{
+"vs": "vs14_176_003",
+"data": "20020715",
+"titolo": "Votazione Ordine del giorno ",
+"tipo": "Ordine del Giorno",
+"descrizione": "ORDINE DEL GIORNO N. 2 FILIPPO MANCUSO (MISTO)",
+"si": 226,
+"no": 190,
+"astenuti": 8,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=176_3&tipo=dettaglio",
+"governo": "Berlusconi II",
+"maggioranza": [
+26,
+181
+]
+},
+{
+"vs": "vs14_217_010",
+"data": "20021105",
+"titolo": "Votazione Ordine del giorno 9/3289/6 DDL n.3289",
+"tipo": "Ordine del Giorno",
+"descrizione": "ORDINE DEL GIORNO N. 9/3289/6 GIUSEPPE AMATO (F-ITA)",
+"si": 257,
+"no": 189,
+"astenuti": 2,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=217_10&tipo=dettaglio",
+"governo": "Berlusconi II",
+"maggioranza": [
+61,
+184
+]
+},
+{
+"vs": "vs14_219_057",
+"data": "20021107",
+"titolo": "Votazione Articolo 13 DDL n.3200-BIS",
+"tipo": "Articolo",
+"descrizione": "ARTICOLO 13",
+"si": 161,
+"no": 229,
+"astenuti": 15,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=219_57&tipo=dettaglio",
+"governo": "Berlusconi II",
+"maggioranza": [
+159,
+54
+]
+},
+{
+"vs": "vs14_220_021",
+"data": "20021108",
+"titolo": "Votazione Emendamento 0.24.020.7 DDL n.3200-BIS",
+"tipo": "Emendamento",
+"descrizione": "SUBEMENDAMENTO 0.24.020.7 BINDI (MARGH-DL-U)",
+"si": 177,
+"no": 171,
+"astenuti": 0,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=220_21&tipo=dettaglio",
+"governo": "Berlusconi II",
+"maggioranza": [
+1,
+169
+]
+},
+{
+"vs": "vs14_238_006",
+"data": "20021211",
+"titolo": "Votazione Emendamento 50.8 DDL n.2122-BIS-B",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 50.8 VALPIANA (RC)",
+"si": 213,
+"no": 206,
+"astenuti": 6,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=238_6&tipo=dettaglio",
+"governo": "Berlusconi II",
+"maggioranza": [
+25,
+203
+]
+},
+{
+"vs": "vs14_254_056",
+"data": "20030128",
+"titolo": "Votazione Emendamento 0.4.75.3 PDL n.0559",
+"tipo": "Emendamento",
+"descrizione": "SUBEMENDAMENTO 0.4.75.3 RAVA LINO (DS-U)",
+"si": 185,
+"no": 180,
+"astenuti": 1,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=254_56&tipo=dettaglio",
+"governo": "Berlusconi II",
+"maggioranza": [
+21,
+158
+]
+},
+{
+"vs": "vs14_260_053",
+"data": "20030206",
+"titolo": "Votazione Emendamento 5-BIS.71 DDL n.3524",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 5-BIS.71 ROSSI SERGIO (LNP)",
+"si": 196,
+"no": 206,
+"astenuti": 5,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=260_53&tipo=dettaglio",
+"governo": "Berlusconi II",
+"maggioranza": [
+170,
+17
+]
+},
+{
+"vs": "vs14_260_056",
+"data": "20030206",
+"titolo": "Votazione Emendamento 5-BIS.80 DDL n.3524",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 5-BIS.80 PINZA ROBERTO (MARG-U)",
+"si": 213,
+"no": 190,
+"astenuti": 4,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=260_56&tipo=dettaglio",
+"governo": "Berlusconi II",
+"maggioranza": [
+21,
+166
+]
+},
+{
+"vs": "vs14_263_004",
+"data": "20030211",
+"titolo": "Votazione Emendamento 1.1 DDL n.3605",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 1.1 BELLOTTI LUCA (AN)",
+"si": 211,
+"no": 197,
+"astenuti": 5,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=263_4&tipo=dettaglio",
+"governo": "Berlusconi II",
+"maggioranza": [
+19,
+171
+]
+},
+{
+"vs": "vs14_269_014",
+"data": "20030220",
+"titolo": "Votazione Emendamento DIS. DDL n.3564",
+"tipo": "Emendamento",
+"descrizione": "ARTICOLO AGGIUNTIVO DIS. 1.01 MINNITI MARCO (DS-U)",
+"si": 205,
+"no": 199,
+"astenuti": 4,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=269_14&tipo=dettaglio",
+"governo": "Berlusconi II",
+"maggioranza": [
+2,
+180
+]
+},
+{
+"vs": "vs14_286_072",
+"data": "20030325",
+"titolo": "Votazione Ordine del giorno 9/2144-B/23 DDL n.2144-B",
+"tipo": "Ordine del Giorno",
+"descrizione": "ORDINE DEL GIORNO N. 9/2144-B/23 SANTAGATA GIULIO (MARG-U)",
+"si": 209,
+"no": 187,
+"astenuti": 6,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=286_72&tipo=dettaglio",
+"governo": "Berlusconi II",
+"maggioranza": [
+37,
+167
+]
+},
+{
+"vs": "vs14_286_073",
+"data": "20030325",
+"titolo": "Votazione Ordine del giorno 9/2144-B/24 DDL n.2144-B",
+"tipo": "Ordine del Giorno",
+"descrizione": "ORDINE DEL GIORNO N. 9/2144-B/24 BUEMI ENRICO (MISTO)",
+"si": 200,
+"no": 199,
+"astenuti": 5,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=286_73&tipo=dettaglio",
+"governo": "Berlusconi II",
+"maggioranza": [
+28,
+179
+]
+},
+{
+"vs": "vs14_309_010",
+"data": "20030514",
+"titolo": "Votazione Emendamento 1.52 DDL n.3841",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 1.52 FRANCI CLAUDIO (MISTO)",
+"si": 205,
+"no": 194,
+"astenuti": 1,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=309_10&tipo=dettaglio",
+"governo": "Berlusconi II",
+"maggioranza": [
+24,
+176
+]
+},
+{
+"vs": "vs14_333_001",
+"data": "20030702",
+"titolo": "Votazione Emendamento 01.01 DDL n.4086",
+"tipo": "Emendamento",
+"descrizione": "ARTICOLO AGGIUNTIVO 01.01 GIORDANO FRANCESCO (RC)",
+"si": 259,
+"no": 167,
+"astenuti": 3,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=333_1&tipo=dettaglio",
+"governo": "Berlusconi II",
+"maggioranza": [
+55,
+164
+]
+},
+{
+"vs": "vs14_336_004",
+"data": "20030708",
+"titolo": "Votazione Emendamento 1.01 DDL n.4102",
+"tipo": "Emendamento",
+"descrizione": "IDENTICI ARTICOLI AGGIUNTIVI 1.01 VIGNI FABRIZIO (DS-U) E 1.04 IANNUZZI TINO (MARG-U)",
+"si": 226,
+"no": 208,
+"astenuti": 4,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=336_4&tipo=dettaglio",
+"governo": "Berlusconi II",
+"maggioranza": [
+21,
+206
+]
+},
+{
+"vs": "vs14_336_007",
+"data": "20030708",
+"titolo": "Votazione Emendamento 5.06 DDL n.4102",
+"tipo": "Emendamento",
+"descrizione": "ARTICOLO AGGIUNTIVO 5.06 ROSSI GUIDO GIUSEPPE (LNP)",
+"si": 226,
+"no": 220,
+"astenuti": 0,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=336_7&tipo=dettaglio",
+"governo": "Berlusconi II",
+"maggioranza": [
+18,
+218
+]
+},
+{
+"vs": "vs14_336_008",
+"data": "20030708",
+"titolo": "Votazione Emendamento 5.04 DDL n.4102",
+"tipo": "Emendamento",
+"descrizione": "ARTICOLO AGGIUNTIVO 5.04 ROSSI GUIDO GIUSEPPE (LNP)",
+"si": 234,
+"no": 212,
+"astenuti": 0,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=336_8&tipo=dettaglio",
+"governo": "Berlusconi II",
+"maggioranza": [
+26,
+210
+]
+},
+{
+"vs": "vs14_336_009",
+"data": "20030708",
+"titolo": "Votazione Emendamento 5.05 DDL n.4102",
+"tipo": "Emendamento",
+"descrizione": "ARTICOLO AGGIUNTIVO 5.05 PAROLI ADRIANO (FI)",
+"si": 228,
+"no": 214,
+"astenuti": 0,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=336_9&tipo=dettaglio",
+"governo": "Berlusconi II",
+"maggioranza": [
+24,
+212
+]
+},
+{
+"vs": "vs14_374_012",
+"data": "20031016",
+"titolo": "Votazione Emendamento 3.3 PDL n.1723",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 3.3 (PARTE PRIMA, NUOVA FORMULAZIONE) MARAN ALESSANDRO (DS-U)",
+"si": 203,
+"no": 167,
+"astenuti": 10,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=374_12&tipo=dettaglio",
+"governo": "Berlusconi II",
+"maggioranza": [
+17,
+165
+]
+},
+{
+"vs": "vs14_381_007",
+"data": "20031029",
+"titolo": "Votazione Emendamento 1.9 PDL n.0154",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 1.9 DUILIO LINO (MARG-U)",
+"si": 192,
+"no": 152,
+"astenuti": 61,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=381_7&tipo=dettaglio",
+"governo": "Berlusconi II",
+"maggioranza": [
+57,
+146
+]
+},
+{
+"vs": "vs14_383_039",
+"data": "20031104",
+"titolo": "Votazione Emendamento 16.9 DDL n.4233",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 16.9 BRICOLO FEDERICO (LNP)",
+"si": 194,
+"no": 172,
+"astenuti": 3,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=383_39&tipo=dettaglio",
+"governo": "Berlusconi II",
+"maggioranza": [
+22,
+171
+]
+},
+{
+"vs": "vs14_394_038",
+"data": "20031202",
+"titolo": "Votazione Emendamento 1.1 DDL n.3890",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 1.1 IANNUZZI TINO (MARG-U)",
+"si": 182,
+"no": 156,
+"astenuti": 0,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=394_38&tipo=dettaglio",
+"governo": "Berlusconi II",
+"maggioranza": [
+15,
+152
+]
+},
+{
+"vs": "vs14_403_013",
+"data": "20031217",
+"titolo": "Votazione Ordine del giorno 9/4489/73 DDL n.4489",
+"tipo": "Ordine del Giorno",
+"descrizione": "ORDINE DEL GIORNO N. 9/4489/73 ROSSIELLO GIUSEPPE (DS-U)",
+"si": 228,
+"no": 220,
+"astenuti": 3,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=403_13&tipo=dettaglio",
+"governo": "Berlusconi II",
+"maggioranza": [
+27,
+215
+]
+},
+{
+"vs": "vs14_403_029",
+"data": "20031217",
+"titolo": "Votazione Ordine del giorno 9/4489/138 DDL n.4489",
+"tipo": "Ordine del Giorno",
+"descrizione": "ORDINE DEL GIORNO N. 9/4489/138 VIGNI FABRIZIO (DS-U)",
+"si": 242,
+"no": 233,
+"astenuti": 2,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=403_29&tipo=dettaglio",
+"governo": "Berlusconi II",
+"maggioranza": [
+22,
+226
+]
+},
+{
+"vs": "vs14_403_043",
+"data": "20031217",
+"titolo": "Votazione Ordine del giorno 9/4489/177 DDL n.4489",
+"tipo": "Ordine del Giorno",
+"descrizione": "ORDINE DEL GIORNO N. 9/4489/177 LULLI ANDREA (DS-U)",
+"si": 246,
+"no": 229,
+"astenuti": 1,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=403_43&tipo=dettaglio",
+"governo": "Berlusconi II",
+"maggioranza": [
+27,
+222
+]
+},
+{
+"vs": "vs14_403_044",
+"data": "20031217",
+"titolo": "Votazione Ordine del giorno 9/4489/182 DDL n.4489",
+"tipo": "Ordine del Giorno",
+"descrizione": "ORDINE DEL GIORNO N. 9/4489/182 MARIOTTI ARNALDO (DS-U)",
+"si": 263,
+"no": 196,
+"astenuti": 4,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=403_44&tipo=dettaglio",
+"governo": "Berlusconi II",
+"maggioranza": [
+42,
+190
+]
+},
+{
+"vs": "vs14_403_077",
+"data": "20031217",
+"titolo": "Votazione Ordine del giorno 9/4489/257 DDL n.4489",
+"tipo": "Ordine del Giorno",
+"descrizione": "ORDINE DEL GIORNO N. 9/4489/257 (NUOVA FORMULAZIONE) ZACCHERA MARCO (AN)",
+"si": 239,
+"no": 240,
+"astenuti": 13,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=403_77&tipo=dettaglio",
+"governo": "Berlusconi II",
+"maggioranza": [
+223,
+30
+]
+},
+{
+"vs": "vs14_437_003",
+"data": "20040311",
+"titolo": "Votazione Emendamento 2.3 DDL n.4644",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 2.3 VASCON LUIGINO (LNFP)",
+"si": 194,
+"no": 187,
+"astenuti": 1,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=437_3&tipo=dettaglio",
+"governo": "Berlusconi II",
+"maggioranza": [
+15,
+180
+]
+},
+{
+"vs": "vs14_437_051",
+"data": "20040311",
+"titolo": "Votazione Emendamento DIS.1.6 DDL n.4644",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO DIS.1.6 VASCON LUIGINO (LNFP)",
+"si": 205,
+"no": 199,
+"astenuti": 0,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=437_51&tipo=dettaglio",
+"governo": "Berlusconi II",
+"maggioranza": [
+18,
+197
+]
+},
+{
+"vs": "vs14_439_001",
+"data": "20040316",
+"titolo": "Votazione pregiudiziale DDL n.4761",
+"tipo": "Pregiudiziale",
+"descrizione": "QUESTIONI PREGIUDIZIALI N. 1 LEONI CARLO (DS-U) ED ALTRI E N. 2 BURTONE GIOVANNI MARIO SALVINO (MARG-U) ED ALTRI",
+"si": 209,
+"no": 207,
+"astenuti": 1,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=439_1&tipo=dettaglio",
+"governo": "Berlusconi II",
+"maggioranza": [
+2,
+203
+]
+},
+{
+"vs": "vs14_450_011",
+"data": "20040406",
+"titolo": "Votazione Emendamento 1.112 PDL n.0566",
+"tipo": "Emendamento",
+"descrizione": "IDENTICI EMENDAMENTI 1.112 DI TEODORO ANDREA (FI) E 1.178 GAMBINI SERGIO (DS-U)",
+"si": 223,
+"no": 198,
+"astenuti": 14,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=450_11&tipo=dettaglio",
+"governo": "Berlusconi II",
+"maggioranza": [
+16,
+196
+]
+},
+{
+"vs": "vs14_453_005",
+"data": "20040420",
+"titolo": "Votazione Emendamento 1.10 PDL n.0566",
+"tipo": "Emendamento",
+"descrizione": "IDENTICI EMENDAMENTI 1.10 (NUOVA FORMULAZIONE) POLLEDRI MASSIMO (LNFP) E 1.113 DI TEODORO ANDREA (FI)",
+"si": 203,
+"no": 202,
+"astenuti": 5,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=453_5&tipo=dettaglio",
+"governo": "Berlusconi II",
+"maggioranza": [
+13,
+198
+]
+},
+{
+"vs": "vs14_455_002",
+"data": "20040422",
+"titolo": "Votazione Emendamento 1.53 DDL n.4833",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 1.53 BULGARELLI MAURO (MISTO)",
+"si": 179,
+"no": 172,
+"astenuti": 0,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=455_2&tipo=dettaglio",
+"governo": "Berlusconi II",
+"maggioranza": [
+4,
+169
+]
+},
+{
+"vs": "vs14_466_048",
+"data": "20040512",
+"titolo": "Votazione Emendamento 1.14 PDL n.4398",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 1.14 BONITO FRANCESCO (DS-U)",
+"si": 189,
+"no": 176,
+"astenuti": 6,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=466_48&tipo=dettaglio",
+"governo": "Berlusconi II",
+"maggioranza": [
+29,
+175
+]
+},
+{
+"vs": "vs14_473_040",
+"data": "20040525",
+"titolo": "Votazione Emendamento 7-QUINQUIES.012 DDL n.4962",
+"tipo": "Emendamento",
+"descrizione": "ARTICOLO AGGIUNTIVO 7-QUINQUIES.012 MARIOTTI ARNALDO (DS-U)",
+"si": 165,
+"no": 155,
+"astenuti": 2,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=473_40&tipo=dettaglio",
+"governo": "Berlusconi II",
+"maggioranza": [
+19,
+153
+]
+},
+{
+"vs": "vs14_485_007",
+"data": "20040706",
+"titolo": "Votazione Ordine del giorno 9/4222/1 DDL n.4222",
+"tipo": "Ordine del Giorno",
+"descrizione": "ORDINE DEL GIORNO N. 9/4222/1 ROSATO ETTORE (MARG-U)",
+"si": 223,
+"no": 182,
+"astenuti": 24,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=485_7&tipo=dettaglio",
+"governo": "Berlusconi II",
+"maggioranza": [
+30,
+177
+]
+},
+{
+"vs": "vs14_489_001",
+"data": "20040713",
+"titolo": "Votazione Emendamento 0.1.36.12 PDL n.4568",
+"tipo": "Emendamento",
+"descrizione": "SUBEMENDAMENTO 0.1.36.12 BENVENUTO GIORGIO (DS-U)",
+"si": 223,
+"no": 192,
+"astenuti": 3,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=489_1&tipo=dettaglio",
+"governo": "Berlusconi II",
+"maggioranza": [
+22,
+189
+]
+},
+{
+"vs": "vs14_495_008",
+"data": "20040721",
+"titolo": "Votazione Emendamento 1.12 PDL n.3838",
+"tipo": "Emendamento",
+"descrizione": "IDENTICI EMENDAMENTI 1.12 GAMBA PIERFRANCESCO EMILIO (AN) E 1.50 GAMBINI SERGIO (DS-U)",
+"si": 218,
+"no": 188,
+"astenuti": 2,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=495_8&tipo=dettaglio",
+"governo": "Berlusconi II",
+"maggioranza": [
+30,
+183
+]
+},
+{
+"vs": "vs14_495_027",
+"data": "20040721",
+"titolo": "Votazione Emendamento 1.17 PDL n.3838",
+"tipo": "Emendamento",
+"descrizione": "IDENTICI EMENDAMENTI 1.17 GAMBA PIERFRANCESCO EMILIO (AN) E 1.24 BENVENUTO GIORGIO (DS-U)",
+"si": 262,
+"no": 185,
+"astenuti": 3,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=495_27&tipo=dettaglio",
+"governo": "Berlusconi II",
+"maggioranza": [
+58,
+181
+]
+},
+{
+"vs": "vs14_495_031",
+"data": "20040721",
+"titolo": "Votazione Emendamento 1.06 PDL n.3838",
+"tipo": "Emendamento",
+"descrizione": "IDENTICI ARTICOLI AGGIUNTIVI 1.06 PINZA ROBERTO (MARG-U) E 1.07 BENVENUTO GIORGIO (DS-U)",
+"si": 234,
+"no": 190,
+"astenuti": 4,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=495_31&tipo=dettaglio",
+"governo": "Berlusconi II",
+"maggioranza": [
+41,
+182
+]
+},
+{
+"vs": "vs14_499_015",
+"data": "20040727",
+"titolo": "Votazione Emendamento 2.2 DDL n.5150",
+"tipo": "Emendamento",
+"descrizione": "IDENTICI EMENDAMENTI 2.2 FONTANINI PIETRO (LNFP) E 2.5 COSSUTTA MAURA (MISTO)",
+"si": 217,
+"no": 204,
+"astenuti": 0,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=499_15&tipo=dettaglio",
+"governo": "Berlusconi II",
+"maggioranza": [
+22,
+202
+]
+},
+{
+"vs": "vs14_499_026",
+"data": "20040727",
+"titolo": "Votazione Emendamento 5.4 DDL n.5150",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 5.4 FONTANINI PIETRO (LNFP)",
+"si": 215,
+"no": 212,
+"astenuti": 1,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=499_26&tipo=dettaglio",
+"governo": "Berlusconi II",
+"maggioranza": [
+19,
+210
+]
+},
+{
+"vs": "vs14_499_042",
+"data": "20040727",
+"titolo": "Votazione Emendamento 8-SEPTIES.02 DDL n.5150",
+"tipo": "Emendamento",
+"descrizione": "ARTICOLO AGGIUNTIVO 8-SEPTIES.02 BRESSA GIANCLAUDIO (MARG-U)",
+"si": 221,
+"no": 207,
+"astenuti": 0,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=499_42&tipo=dettaglio",
+"governo": "Berlusconi II",
+"maggioranza": [
+29,
+204
+]
+},
+{
+"vs": "vs14_501_021",
+"data": "20040729",
+"titolo": "Votazione Ordine del giorno 9/4233-B/9 DDL n.4233-B",
+"tipo": "Ordine del Giorno",
+"descrizione": "ORDINE DEL GIORNO N. 9/4233-B/9 ROSATO ETTORE (MARG-U)",
+"si": 182,
+"no": 179,
+"astenuti": 0,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=501_21&tipo=dettaglio",
+"governo": "Berlusconi II",
+"maggioranza": [
+23,
+178
+]
+},
+{
+"vs": "vs14_521_029",
+"data": "20041005",
+"titolo": "Votazione Emendamento 4.200 DDL n.4862",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 4.200 VITO ELIO (FI)",
+"si": 218,
+"no": 222,
+"astenuti": 9,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=521_29&tipo=dettaglio",
+"governo": "Berlusconi II",
+"maggioranza": [
+215,
+11
+]
+},
+{
+"vs": "vs14_526_010",
+"data": "20041012",
+"titolo": "Votazione Articolo 24 DDL n.4862",
+"tipo": "Articolo",
+"descrizione": "ARTICOLO 24",
+"si": 211,
+"no": 239,
+"astenuti": 9,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=526_10&tipo=dettaglio",
+"governo": "Berlusconi II",
+"maggioranza": [
+207,
+49
+]
+},
+{
+"vs": "vs14_536_002",
+"data": "20041028",
+"titolo": "Votazione Ordine del giorno ",
+"tipo": "Ordine del Giorno",
+"descrizione": "PROPOSTA DEL GRUPPO DI FORZA ITALIA DI INSERIMENTO DELLA PROPOSTA DI LEGGE N. 1773-B AL QUARTO PUNTO DELL&#39;ORDINE DEL GIORNO",
+"si": 211,
+"no": 154,
+"astenuti": 31,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=536_2&tipo=dettaglio",
+"governo": "Berlusconi II",
+"maggioranza": [
+192,
+19
+]
+},
+{
+"vs": "vs14_542_040",
+"data": "20041109",
+"titolo": "Votazione Emendamento 1.1 DDL n.5310-BIS",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 1.1 BOCCIA ANTONIO (MARG-U)",
+"si": 191,
+"no": 184,
+"astenuti": 1,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=542_40&tipo=dettaglio",
+"governo": "Berlusconi II",
+"maggioranza": [
+0,
+180
+]
+},
+{
+"vs": "vs14_547_088",
+"data": "20041116",
+"titolo": "Votazione Emendamento 0.6.600.106 DDL n.5310-BIS",
+"tipo": "Emendamento",
+"descrizione": "SUBEMENDAMENTO 0.6.600.106 CONTE GIANFRANCO (FI)",
+"si": 187,
+"no": 281,
+"astenuti": 7,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=547_88&tipo=dettaglio",
+"governo": "Berlusconi II",
+"maggioranza": [
+181,
+69
+]
+},
+{
+"vs": "vs14_558_028",
+"data": "20041213",
+"titolo": "Votazione Emendamento 19-SEXIES.1 DDL n.5454",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 19-SEXIES.1 CE&#39; ALESSANDRO (LNFP)",
+"si": 169,
+"no": 163,
+"astenuti": 1,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=558_28&tipo=dettaglio",
+"governo": "Berlusconi II",
+"maggioranza": [
+19,
+160
+]
+},
+{
+"vs": "vs14_565_007",
+"data": "20041222",
+"titolo": "Votazione Emendamento 2.10 DDL n.5434",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 2.10 CATANOSO BASILIO (AN)",
+"si": 234,
+"no": 230,
+"astenuti": 4,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=565_7&tipo=dettaglio",
+"governo": "Berlusconi II",
+"maggioranza": [
+21,
+225
+]
+},
+{
+"vs": "vs14_565_014",
+"data": "20041222",
+"titolo": "Votazione Emendamento 2.11 DDL n.5434",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 2.11 CATANOSO BASILIO (AN)",
+"si": 232,
+"no": 225,
+"astenuti": 6,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=565_14&tipo=dettaglio",
+"governo": "Berlusconi II",
+"maggioranza": [
+27,
+217
+]
+},
+{
+"vs": "vs14_571_031",
+"data": "20050119",
+"titolo": "Votazione Emendamento 2.1 DDL n.5463",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 2.1 VASCON LUIGINO (LNFP)",
+"si": 203,
+"no": 200,
+"astenuti": 1,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=571_31&tipo=dettaglio",
+"governo": "Berlusconi II",
+"maggioranza": [
+17,
+197
+]
+},
+{
+"vs": "vs14_572_012",
+"data": "20050120",
+"titolo": "Votazione Emendamento 4.1 DDL n.5463",
+"tipo": "Emendamento",
+"descrizione": "IDENTICI EMENDAMENTI 4.1 VASCON LUIGINO (LNFP), 4.4 ZANELLA LUANA (MISTO) E 4.15 MARCORA LUCA (MARG-U)",
+"si": 190,
+"no": 182,
+"astenuti": 3,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=572_12&tipo=dettaglio",
+"governo": "Berlusconi II",
+"maggioranza": [
+20,
+177
+]
+},
+{
+"vs": "vs14_572_037",
+"data": "20050120",
+"titolo": "Votazione Emendamento 6.1 DDL n.5463",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 6.1 VASCON LUIGINO (LNFP)",
+"si": 194,
+"no": 192,
+"astenuti": 3,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=572_37&tipo=dettaglio",
+"governo": "Berlusconi II",
+"maggioranza": [
+19,
+185
+]
+},
+{
+"vs": "vs14_575_018",
+"data": "20050126",
+"titolo": "Votazione Emendamento 1.9 DDL n.2381-B",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 1.9 CHIANALE MAURO (DS-U)",
+"si": 185,
+"no": 184,
+"astenuti": 2,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=575_18&tipo=dettaglio",
+"governo": "Berlusconi II",
+"maggioranza": [
+3,
+179
+]
+},
+{
+"vs": "vs14_588_007",
+"data": "20050217",
+"titolo": "Votazione Articolo 4 PDL n.4246-B",
+"tipo": "Articolo",
+"descrizione": "ARTICOLO 4",
+"si": 178,
+"no": 191,
+"astenuti": 5,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=588_7&tipo=dettaglio",
+"governo": "Berlusconi II",
+"maggioranza": [
+175,
+21
+]
+},
+{
+"vs": "vs14_591_015",
+"data": "20050223",
+"titolo": "Votazione Emendamento 7.21 PDL n.3204",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 7.21 ERCOLE CESARE (LNFP)",
+"si": 218,
+"no": 193,
+"astenuti": 1,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=591_15&tipo=dettaglio",
+"governo": "Berlusconi II",
+"maggioranza": [
+22,
+191
+]
+},
+{
+"vs": "vs14_604_103",
+"data": "20050317",
+"titolo": "Votazione Emendamento 5.5 DDL n.5697",
+"tipo": "Emendamento",
+"descrizione": "IDENTICI EMENDAMENTI 5.5 BRESSA GIANCLAUDIO (MARG-U), 5.23 VENTURA MICHELE (DS-U) E 5.24 MAZZONI ERMINIA (U.D.C.)",
+"si": 163,
+"no": 158,
+"astenuti": 3,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=604_103&tipo=dettaglio",
+"governo": "Berlusconi II",
+"maggioranza": [
+28,
+158
+]
+},
+{
+"vs": "vs14_606_061",
+"data": "20050322",
+"titolo": "Votazione Emendamento 1.63 DDL n.5640",
+"tipo": "Emendamento",
+"descrizione": "IDENTICI EMENDAMENTI 1.63 MAURANDI PIETRO (DS-U), 1.76 GIUDICE GASPARE (FI) E 1.127 ROSATO ETTORE (MARG-U)",
+"si": 199,
+"no": 197,
+"astenuti": 1,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=606_61&tipo=dettaglio",
+"governo": "Berlusconi II",
+"maggioranza": [
+7,
+194
+]
+},
+{
+"vs": "vs14_606_066",
+"data": "20050322",
+"titolo": "Votazione Ordine del giorno 9/5640/3 DDL n.5640",
+"tipo": "Ordine del Giorno",
+"descrizione": "ORDINE DEL GIORNO N. 9/5640/3 GIUDICE GASPARE (FI)",
+"si": 212,
+"no": 161,
+"astenuti": 10,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=606_66&tipo=dettaglio",
+"governo": "Berlusconi II",
+"maggioranza": [
+38,
+155
+]
+},
+{
+"vs": "vs14_615_005",
+"data": "20050420",
+"titolo": "Votazione Emendamento 1.2 DDL n.5640-B",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 1.2 ROSATO ETTORE (MARG-U)",
+"si": 237,
+"no": 207,
+"astenuti": 10,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=615_5&tipo=dettaglio",
+"governo": "Berlusconi II",
+"maggioranza": [
+25,
+204
+]
+},
+{
+"vs": "vs14_624_029",
+"data": "20050511",
+"titolo": "Votazione Emendamento 8.1 PDL n.4265",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 8.1 BINDI ROSY (MARG-U)",
+"si": 230,
+"no": 215,
+"astenuti": 6,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=624_29&tipo=dettaglio",
+"governo": "Berlusconi III",
+"maggioranza": [
+14,
+209
+]
+},
+{
+"vs": "vs14_624_033",
+"data": "20050511",
+"titolo": "Votazione Emendamento 10.1 PDL n.4265",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 10.1 VALPIANA TIZIANA (RC)",
+"si": 250,
+"no": 208,
+"astenuti": 0,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=624_33&tipo=dettaglio",
+"governo": "Berlusconi III",
+"maggioranza": [
+32,
+202
+]
+},
+{
+"vs": "vs14_631_014",
+"data": "20050524",
+"titolo": "Votazione Emendamento 8-BIS.01 DDL n.5842",
+"tipo": "Emendamento",
+"descrizione": "IDENTICI ARTICOLI AGGIUNTIVI 8-BIS.01 ASCIERTO FILIPPO (AN) E 8-BIS.03 MINNITI MARCO (DS-U)",
+"si": 170,
+"no": 158,
+"astenuti": 5,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=631_14&tipo=dettaglio",
+"governo": "Berlusconi III",
+"maggioranza": [
+18,
+152
+]
+},
+{
+"vs": "vs14_631_037",
+"data": "20050524",
+"titolo": "Votazione Emendamento 1-QUATER.3 DDL n.5841",
+"tipo": "Emendamento",
+"descrizione": "IDENTICI EMENDAMENTI 1-QUATER.3 NAPOLI OSVALDO (FI), 1-QUATER.15 LUSETTI RENZO (MARG-U), 1-QUATER.21 LION MARCO (MISTO) E 1-QUATER.22 COLLE&#39; IVO (MISTO)",
+"si": 210,
+"no": 201,
+"astenuti": 1,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=631_37&tipo=dettaglio",
+"governo": "Berlusconi III",
+"maggioranza": [
+12,
+198
+]
+},
+{
+"vs": "vs14_632_006",
+"data": "20050525",
+"titolo": "Votazione Ordine del giorno 9/5841/6 DDL n.5841",
+"tipo": "Ordine del Giorno",
+"descrizione": "ORDINE DEL GIORNO N. 9/5841/6 PAROLO UGO (LNFP)",
+"si": 258,
+"no": 172,
+"astenuti": 8,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=632_6&tipo=dettaglio",
+"governo": "Berlusconi III",
+"maggioranza": [
+43,
+164
+]
+},
+{
+"vs": "vs14_637_001",
+"data": "20050614",
+"titolo": "Votazione Emendamento 1.600 DDL n.4735",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 1.600 SGOBIO COSIMO GIUSEPPE (MISTO)",
+"si": 187,
+"no": 183,
+"astenuti": 1,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=637_1&tipo=dettaglio",
+"governo": "Berlusconi III",
+"maggioranza": [
+1,
+176
+]
+},
+{
+"vs": "vs14_638_017",
+"data": "20050615",
+"titolo": "Votazione Emendamento 4.648 DDL n.4735",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 4.648 GRIGNAFFINI GIOVANNA (DS-U)",
+"si": 226,
+"no": 224,
+"astenuti": 3,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=638_17&tipo=dettaglio",
+"governo": "Berlusconi III",
+"maggioranza": [
+0,
+219
+]
+},
+{
+"vs": "vs14_642_037",
+"data": "20050621",
+"titolo": "Votazione Emendamento 2-TER.19 DDL n.5901",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 2-TER.19 GRIGNAFFINI GIOVANNA (DS-U)",
+"si": 199,
+"no": 187,
+"astenuti": 1,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=642_37&tipo=dettaglio",
+"governo": "Berlusconi III",
+"maggioranza": [
+0,
+184
+]
+},
+{
+"vs": "vs14_644_006",
+"data": "20050623",
+"titolo": "Votazione Emendamento 3.3 DDL n.5882",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 3.3 FOLENA PIETRO (RC)",
+"si": 194,
+"no": 193,
+"astenuti": 2,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=644_6&tipo=dettaglio",
+"governo": "Berlusconi III",
+"maggioranza": [
+0,
+187
+]
+},
+{
+"vs": "vs14_646_003",
+"data": "20050628",
+"titolo": "Votazione Emendamento 1.97 PDL n.0153",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 1.97 JACINI GIOVANNI (FI)",
+"si": 165,
+"no": 164,
+"astenuti": 0,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=646_3&tipo=dettaglio",
+"governo": "Berlusconi III",
+"maggioranza": [
+0,
+163
+]
+},
+{
+"vs": "vs14_647_016",
+"data": "20050629",
+"titolo": "Votazione Emendamento 2.05 DDL n.5736",
+"tipo": "Emendamento",
+"descrizione": "ARTICOLO AGGIUNTIVO 2.05 BENEDETTI VALENTINI DOMENICO (AN)",
+"si": 218,
+"no": 214,
+"astenuti": 6,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=647_16&tipo=dettaglio",
+"governo": "Berlusconi III",
+"maggioranza": [
+26,
+198
+]
+},
+{
+"vs": "vs14_647_083",
+"data": "20050629",
+"titolo": "Votazione Emendamento 9.201(CAPOVERSO DDL n.5736",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 9.201(CAPOVERSO PRIMO) (NUOVA FORMULAZIONE) LEONE ANTONIO (FI)",
+"si": 192,
+"no": 222,
+"astenuti": 3,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=647_83&tipo=dettaglio",
+"governo": "Berlusconi III",
+"maggioranza": [
+188,
+29
+]
+},
+{
+"vs": "vs14_647_096",
+"data": "20050629",
+"titolo": "Votazione Emendamento 10.5 DDL n.5736",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 10.5 PERETTI ETTORE (U.D.C.)",
+"si": 217,
+"no": 206,
+"astenuti": 1,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=647_96&tipo=dettaglio",
+"governo": "Berlusconi III",
+"maggioranza": [
+22,
+203
+]
+},
+{
+"vs": "vs14_647_098",
+"data": "20050629",
+"titolo": "Votazione Emendamento 10.6 DDL n.5736",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 10.6 PERETTI ETTORE (U.D.C.)",
+"si": 221,
+"no": 203,
+"astenuti": 2,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=647_98&tipo=dettaglio",
+"governo": "Berlusconi III",
+"maggioranza": [
+25,
+199
+]
+},
+{
+"vs": "vs14_647_102",
+"data": "20050629",
+"titolo": "Votazione Emendamento 10.06 DDL n.5736",
+"tipo": "Emendamento",
+"descrizione": "ARTICOLO AGGIUNTIVO 10.06 CAPARINI DAVIDE (LNFP)",
+"si": 217,
+"no": 200,
+"astenuti": 0,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=647_102&tipo=dettaglio",
+"governo": "Berlusconi III",
+"maggioranza": [
+25,
+198
+]
+},
+{
+"vs": "vs14_650_002",
+"data": "20050705",
+"titolo": "Votazione Emendamento 27.2 DDL n.5736",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 27.2 BENVENUTO GIORGIO (DS-U)",
+"si": 194,
+"no": 163,
+"astenuti": 0,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=650_2&tipo=dettaglio",
+"governo": "Berlusconi III",
+"maggioranza": [
+1,
+159
+]
+},
+{
+"vs": "vs14_650_005",
+"data": "20050705",
+"titolo": "Votazione Emendamento 9.203 DDL n.5736",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 9.203 (NUOVA FORMULAZIONE) GIUDICE GASPARE (FI)",
+"si": 172,
+"no": 213,
+"astenuti": 2,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=650_5&tipo=dettaglio",
+"governo": "Berlusconi III",
+"maggioranza": [
+167,
+14
+]
+},
+{
+"vs": "vs14_650_022",
+"data": "20050705",
+"titolo": "Votazione Emendamento 1.10 DDL n.5917",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 1.10 LION MARCO (MISTO)",
+"si": 216,
+"no": 213,
+"astenuti": 3,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=650_22&tipo=dettaglio",
+"governo": "Berlusconi III",
+"maggioranza": [
+2,
+204
+]
+},
+{
+"vs": "vs14_650_025",
+"data": "20050705",
+"titolo": "Votazione Emendamento 1.1 DDL n.5917",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 1.1 QUARTIANI ERMINIO ANGELO (DS-U)",
+"si": 222,
+"no": 215,
+"astenuti": 1,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=650_25&tipo=dettaglio",
+"governo": "Berlusconi III",
+"maggioranza": [
+2,
+207
+]
+},
+{
+"vs": "vs14_652_008",
+"data": "20050707",
+"titolo": "Votazione Emendamento 0.1.700.1 PDL n.0066",
+"tipo": "Emendamento",
+"descrizione": "SUBEMENDAMENTO 0.1.700.1 FINOCCHIARO ANNA (DS-U)",
+"si": 195,
+"no": 192,
+"astenuti": 1,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=652_8&tipo=dettaglio",
+"governo": "Berlusconi III",
+"maggioranza": [
+2,
+185
+]
+},
+{
+"vs": "vs14_663_050",
+"data": "20050727",
+"titolo": "Votazione Emendamento 5.1 DDL n.6016",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 5.1 FOTI TOMMASO (AN)",
+"si": 227,
+"no": 215,
+"astenuti": 4,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=663_50&tipo=dettaglio",
+"governo": "Berlusconi III",
+"maggioranza": [
+17,
+208
+]
+},
+{
+"vs": "vs14_663_062",
+"data": "20050727",
+"titolo": "Votazione Emendamento 6.252 DDL n.6016",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 6.252 BOATO MARCO (MISTO)",
+"si": 256,
+"no": 193,
+"astenuti": 4,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=663_62&tipo=dettaglio",
+"governo": "Berlusconi III",
+"maggioranza": [
+40,
+188
+]
+},
+{
+"vs": "vs14_663_065",
+"data": "20050727",
+"titolo": "Votazione Emendamento 6-BIS.4 DDL n.6016",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 6-BIS.4 BOATO MARCO (MISTO)",
+"si": 230,
+"no": 212,
+"astenuti": 2,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=663_65&tipo=dettaglio",
+"governo": "Berlusconi III",
+"maggioranza": [
+14,
+210
+]
+},
+{
+"vs": "vs14_670_008",
+"data": "20050914",
+"titolo": "Votazione Articolo 2 PDL n.4604",
+"tipo": "Articolo",
+"descrizione": "ARTICOLO 2",
+"si": 212,
+"no": 212,
+"astenuti": 0,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=670_8&tipo=dettaglio",
+"governo": "Berlusconi III",
+"maggioranza": [
+203,
+2
+]
+},
+{
+"vs": "vs14_679_032",
+"data": "20050928",
+"titolo": "Votazione Emendamento 14.70 DDL n.5864",
+"tipo": "Emendamento",
+"descrizione": "IDENTICI EMENDAMENTI 14.70 AMICI SESA (DS-U) E 14.71 SGOBIO COSIMO GIUSEPPE (MISTO)",
+"si": 219,
+"no": 217,
+"astenuti": 2,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=679_32&tipo=dettaglio",
+"governo": "Berlusconi III",
+"maggioranza": [
+4,
+209
+]
+},
+{
+"vs": "vs14_707_044",
+"data": "20051117",
+"titolo": "Votazione Emendamento 5.12 DDL n.6144",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 5.12 MARTINI FRANCESCA (LNFP)",
+"si": 221,
+"no": 208,
+"astenuti": 1,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=707_44&tipo=dettaglio",
+"governo": "Berlusconi III",
+"maggioranza": [
+19,
+205
+]
+},
+{
+"vs": "vs14_707_045",
+"data": "20051117",
+"titolo": "Votazione Emendamento 5.13 DDL n.6144",
+"tipo": "Emendamento",
+"descrizione": "IDENTICI EMENDAMENTI 5.13 MARTINI FRANCESCA (LNFP) E 5.41 RAVA LINO (DS-U)",
+"si": 220,
+"no": 208,
+"astenuti": 1,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=707_45&tipo=dettaglio",
+"governo": "Berlusconi III",
+"maggioranza": [
+20,
+203
+]
+},
+{
+"vs": "vs14_714_043",
+"data": "20051130",
+"titolo": "Votazione Emendamento 2.10 DDL n.4129",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 2.10 BINDI ROSY (MARG-U)",
+"si": 204,
+"no": 191,
+"astenuti": 1,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=714_43&tipo=dettaglio",
+"governo": "Berlusconi III",
+"maggioranza": [
+29,
+190
+]
+},
+{
+"vs": "vs14_728_024",
+"data": "20060111",
+"titolo": "Votazione Articolo 28 DDL n.5767-B",
+"tipo": "Articolo",
+"descrizione": "ARTICOLO 28 (MANTENIMENTO)",
+"si": 192,
+"no": 196,
+"astenuti": 1,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=728_24&tipo=dettaglio",
+"governo": "Berlusconi III",
+"maggioranza": [
+181,
+7
+]
+},
+{
+"vs": "vs14_729_001",
+"data": "20060112",
+"titolo": "Votazione Emendamento 1.1 PDL n.0809",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 1.1 LEONI CARLO (DS-U)",
+"si": 198,
+"no": 190,
+"astenuti": 1,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=729_1&tipo=dettaglio",
+"governo": "Berlusconi III",
+"maggioranza": [
+1,
+189
+]
+},
+{
+"vs": "vs14_731_029",
+"data": "20060117",
+"titolo": "Votazione Emendamento 1.40 DDL n.6236",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 1.40 PAROLO UGO (LNFP)",
+"si": 190,
+"no": 173,
+"astenuti": 13,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=731_29&tipo=dettaglio",
+"governo": "Berlusconi III",
+"maggioranza": [
+10,
+170
+]
+},
+{
+"vs": "vs14_752_008",
+"data": "20060216",
+"titolo": "Votazione Ordine del giorno ",
+"tipo": "Ordine del Giorno",
+"descrizione": "PROPOSTA DI INSERIMENTO ALL&#39;ORDINE DEL GIORNO DEL DOC.IV-QUATER, N. 122",
+"si": 231,
+"no": 157,
+"astenuti": 2,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=752_8&tipo=dettaglio",
+"governo": "Berlusconi III",
+"maggioranza": [
+225,
+0
+]
+},
+{
+"vs": "vs14_752_009",
+"data": "20060216",
+"titolo": "Votazione Ordine del giorno ",
+"tipo": "Ordine del Giorno",
+"descrizione": "PROPOSTA DI INSERIMENTO ALL&#39;ORDINE DEL GIORNO DEL DOC.IV-QUATER, N. 121",
+"si": 237,
+"no": 159,
+"astenuti": 3,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XIV&RifVotazione=752_9&tipo=dettaglio",
+"governo": "Berlusconi III",
+"maggioranza": [
+231,
+0
+]
+},
+{
+"vs": "vs15_036_023",
+"data": "20060803",
+"titolo": "Votazione Ordine del giorno 9/1475/50 DDL n.1475",
+"tipo": "Ordine del Giorno",
+"descrizione": "ORDINE DEL GIORNO N. 9/1475/50 UGGE&#39; PAOLO (FI)",
+"si": 248,
+"no": 240,
+"astenuti": 5,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XV&RifVotazione=36_23&tipo=dettaglio",
+"governo": "Prodi II",
+"maggioranza": [
+16,
+240
+]
+},
+{
+"vs": "vs15_085_008",
+"data": "20061212",
+"titolo": "Votazione Mozione 1-00057",
+"tipo": "Mozione",
+"descrizione": "MOZIONE N. 1-00057 VENIER IACOPO (COM-IT) ED ALTRI",
+"si": 233,
+"no": 242,
+"astenuti": 24,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XV&RifVotazione=85_8&tipo=dettaglio",
+"governo": "Prodi II",
+"maggioranza": [
+228,
+7
+]
+},
+{
+"vs": "vs15_086_003",
+"data": "20061213",
+"titolo": "Votazione Emendamento 1.32 PDL n.0915",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 1.32 PECORELLA GAETANO (FI)",
+"si": 213,
+"no": 200,
+"astenuti": 38,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XV&RifVotazione=86_3&tipo=dettaglio",
+"governo": "Prodi II",
+"maggioranza": [
+1,
+197
+]
+},
+{
+"vs": "vs15_105_005",
+"data": "20070207",
+"titolo": "Votazione Emendamento 1.16 PDL n.0626",
+"tipo": "Emendamento",
+"descrizione": "IDENTICI EMENDAMENTI 1.16 BENEDETTI VALENTINI DOMENICO (AN) E 1.63 PALOMBA FEDERICO (IDV)",
+"si": 248,
+"no": 240,
+"astenuti": 2,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XV&RifVotazione=105_5&tipo=dettaglio",
+"governo": "Prodi II",
+"maggioranza": [
+15,
+236
+]
+},
+{
+"vs": "vs15_113_008",
+"data": "20070221",
+"titolo": "Votazione Mozione 1-00104",
+"tipo": "Mozione",
+"descrizione": "MOZIONE N. 1-00104 (CAPOVERSO PRIMO PARTE DISPOSITIVA) LUSSANA CAROLINA (LNP) ED ALTRI",
+"si": 259,
+"no": 240,
+"astenuti": 5,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XV&RifVotazione=113_8&tipo=dettaglio",
+"governo": "Prodi II",
+"maggioranza": [
+19,
+238
+]
+},
+{
+"vs": "vs15_146_020",
+"data": "20070418",
+"titolo": "Votazione Emendamento 3.14 PDL n.0015",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 3.14 PEGOLO GIAN LUIGI (RC-SE)",
+"si": 234,
+"no": 227,
+"astenuti": 4,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XV&RifVotazione=146_20&tipo=dettaglio",
+"governo": "Prodi II",
+"maggioranza": [
+16,
+220
+]
+},
+{
+"vs": "vs15_155_013",
+"data": "20070510",
+"titolo": "Votazione Ordine del giorno 9/2534/18 DDL n.2534",
+"tipo": "Ordine del Giorno",
+"descrizione": "ORDINE DEL GIORNO N. 9/2534/18 ULIVI ROBERTO (AN)",
+"si": 224,
+"no": 196,
+"astenuti": 15,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XV&RifVotazione=155_13&tipo=dettaglio",
+"governo": "Prodi II",
+"maggioranza": [
+56,
+190
+]
+},
+{
+"vs": "vs15_161_029",
+"data": "20070530",
+"titolo": "Votazione Emendamento 5.10 DDL n.2272-BIS",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 5.10 UGGE&#39; PAOLO (FI)",
+"si": 193,
+"no": 189,
+"astenuti": 71,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XV&RifVotazione=161_29&tipo=dettaglio",
+"governo": "Prodi II",
+"maggioranza": [
+9,
+178
+]
+},
+{
+"vs": "vs15_165_062",
+"data": "20070606",
+"titolo": "Votazione Emendamento 30.200 DDL n.2272-BIS",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 30.200 ACERBO MAURIZIO (RC-SE)",
+"si": 304,
+"no": 159,
+"astenuti": 5,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XV&RifVotazione=165_62&tipo=dettaglio",
+"governo": "Prodi II",
+"maggioranza": [
+58,
+157
+]
+},
+{
+"vs": "vs15_166_001",
+"data": "20070607",
+"titolo": "Votazione DOC. III",
+"tipo": "Doc",
+"descrizione": "PROPOSTA DELLA GIUNTA DI ANNULLARE L&#39;ELEZIONE PER MOTIVI DI INELEGGIBILITA&#39;, CON CONSEGUENTE DECADENZA DAL MANDATO PARLAMENTARE, DEL DEPUTATO SEBASTIANO NERI (DOC. III, N. 1)",
+"si": 167,
+"no": 236,
+"astenuti": 5,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XV&RifVotazione=166_1&tipo=dettaglio",
+"governo": "Prodi II",
+"maggioranza": [
+149,
+29
+]
+},
+{
+"vs": "vs15_168_031",
+"data": "20070612",
+"titolo": "Votazione Emendamento 43.019 DDL n.2272-BIS",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 43.019 DELLA VEDOVA BENEDETTO (FI)",
+"si": 235,
+"no": 218,
+"astenuti": 21,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XV&RifVotazione=168_31&tipo=dettaglio",
+"governo": "Prodi II",
+"maggioranza": [
+16,
+195
+]
+},
+{
+"vs": "vs15_172_010",
+"data": "20070619",
+"titolo": "Votazione Articolo 2 DDL n.2480",
+"tipo": "Articolo",
+"descrizione": "ARTICOLO 2",
+"si": 231,
+"no": 171,
+"astenuti": 10,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XV&RifVotazione=172_10&tipo=dettaglio",
+"governo": "Prodi II",
+"maggioranza": [
+56,
+156
+]
+},
+{
+"vs": "vs15_182_034",
+"data": "20070703",
+"titolo": "Votazione Ordine del giorno 9/2826/95 DDL n.2826",
+"tipo": "Ordine del Giorno",
+"descrizione": "ORDINE DEL GIORNO N. 9/2826/95 SCOTTO ARTURO (SD-SE)",
+"si": 284,
+"no": 200,
+"astenuti": 4,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XV&RifVotazione=182_34&tipo=dettaglio",
+"governo": "Prodi II",
+"maggioranza": [
+78,
+176
+]
+},
+{
+"vs": "vs15_183_005",
+"data": "20070704",
+"titolo": "Votazione Mozione 1-00168",
+"tipo": "Mozione",
+"descrizione": "MOZIONE N. 1-00168 BERTOLINI ISABELLA (FI) ED ALTRI",
+"si": 241,
+"no": 212,
+"astenuti": 24,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XV&RifVotazione=183_5&tipo=dettaglio",
+"governo": "Prodi II",
+"maggioranza": [
+34,
+210
+]
+},
+{
+"vs": "vs15_183_010",
+"data": "20070704",
+"titolo": "Votazione Mozione 1-00197",
+"tipo": "Mozione",
+"descrizione": "MOZIONE N. 1-00197 DONADI MASSIMO (IDV) E ALTRI",
+"si": 189,
+"no": 273,
+"astenuti": 8,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XV&RifVotazione=183_10&tipo=dettaglio",
+"governo": "Prodi II",
+"maggioranza": [
+183,
+61
+]
+},
+{
+"vs": "vs15_187_001",
+"data": "20070711",
+"titolo": "Votazione Ordine del giorno 9/2599/4 DDL n.2599",
+"tipo": "Ordine del Giorno",
+"descrizione": "ORDINE DEL GIORNO N. 9/2599/4 BALDELLI SIMONE (FI)",
+"si": 244,
+"no": 210,
+"astenuti": 3,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XV&RifVotazione=187_1&tipo=dettaglio",
+"governo": "Prodi II",
+"maggioranza": [
+28,
+205
+]
+},
+{
+"vs": "vs15_187_013",
+"data": "20070711",
+"titolo": "Votazione Ordine del giorno 9/2599/23 DDL n.2599",
+"tipo": "Ordine del Giorno",
+"descrizione": "ORDINE DEL GIORNO N. 9/2599/23 PORETTI DONATELLA (RNP)",
+"si": 241,
+"no": 229,
+"astenuti": 10,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XV&RifVotazione=187_13&tipo=dettaglio",
+"governo": "Prodi II",
+"maggioranza": [
+13,
+224
+]
+},
+{
+"vs": "vs15_193_005",
+"data": "20070724",
+"titolo": "Votazione Ordine del giorno 9/2852/16 DDL n.2852",
+"tipo": "Ordine del Giorno",
+"descrizione": "ORDINE DEL GIORNO N. 9/2852/16 RAITI SALVATORE (IDV)",
+"si": 234,
+"no": 226,
+"astenuti": 2,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XV&RifVotazione=193_5&tipo=dettaglio",
+"governo": "Prodi II",
+"maggioranza": [
+41,
+202
+]
+},
+{
+"vs": "vs15_207_005",
+"data": "20070919",
+"titolo": "Votazione Mozione 1-00219",
+"tipo": "Mozione",
+"descrizione": "MOZIONE N 1-00219 (NUOVA FORMULAZIONE) (LIMITATAMENTE AL QUARTO CAPOVERSO DELLA PARTE DISPOSITIVA) BARBI MARIO (ULIVO) ED ALTRI",
+"si": 191,
+"no": 204,
+"astenuti": 89,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XV&RifVotazione=207_5&tipo=dettaglio",
+"governo": "Prodi II",
+"maggioranza": [
+186,
+2
+]
+},
+{
+"vs": "vs15_212_012",
+"data": "20070927",
+"titolo": "Votazione Emendamento 2.4 DDL n.3044",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 2.4 BELTRANDI MARCO (RNP)",
+"si": 234,
+"no": 217,
+"astenuti": 0,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XV&RifVotazione=212_12&tipo=dettaglio",
+"governo": "Prodi II",
+"maggioranza": [
+23,
+213
+]
+},
+{
+"vs": "vs15_231_007",
+"data": "20071025",
+"titolo": "Votazione Emendamento 1.17 PDL n.0550",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 1.17 DUSSIN GUIDO (LNP)",
+"si": 241,
+"no": 185,
+"astenuti": 44,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XV&RifVotazione=231_7&tipo=dettaglio",
+"governo": "Prodi II",
+"maggioranza": [
+28,
+177
+]
+},
+{
+"vs": "vs15_247_046",
+"data": "20071121",
+"titolo": "Votazione Ordine del giorno 9/3194/97 DDL n.3194",
+"tipo": "Ordine del Giorno",
+"descrizione": "ORDINE DEL GIORNO N. 9/3194/97 D&#39;ANTONA OLGA (SD-SE)",
+"si": 280,
+"no": 201,
+"astenuti": 9,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XV&RifVotazione=247_46&tipo=dettaglio",
+"governo": "Prodi II",
+"maggioranza": [
+53,
+193
+]
+},
+{
+"vs": "vs15_252_014",
+"data": "20071129",
+"titolo": "Votazione Ordine del giorno 9/3178/24 DDL n.3178",
+"tipo": "Ordine del Giorno",
+"descrizione": "ORDINE DEL GIORNO N. 9/3178/24 BUFFO GLORIA (SD-SE)",
+"si": 226,
+"no": 249,
+"astenuti": 8,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XV&RifVotazione=252_14&tipo=dettaglio",
+"governo": "Prodi II",
+"maggioranza": [
+208,
+40
+]
+},
+{
+"vs": "vs15_252_040",
+"data": "20071129",
+"titolo": "Votazione Ordine del giorno 9/3178/61 DDL n.3178",
+"tipo": "Ordine del Giorno",
+"descrizione": "ORDINE DEL GIORNO N. 9/3178/61 LEONE ANTONIO (FI)",
+"si": 264,
+"no": 199,
+"astenuti": 11,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XV&RifVotazione=252_40&tipo=dettaglio",
+"governo": "Prodi II",
+"maggioranza": [
+72,
+180
+]
+},
+{
+"vs": "vs15_259_026",
+"data": "20071215",
+"titolo": "Votazione Ordine del giorno 9/3256/164 DDL n.3256",
+"tipo": "Ordine del Giorno",
+"descrizione": "ORDINE DEL GIORNO N. 9/3256/164 ACERBO MAURIZIO (RC-SE)",
+"si": 229,
+"no": 218,
+"astenuti": 15,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XV&RifVotazione=259_26&tipo=dettaglio",
+"governo": "Prodi II",
+"maggioranza": [
+52,
+212
+]
+},
+{
+"vs": "vs16_009_004",
+"data": "20080527",
+"titolo": "Votazione Emendamento 8.02 DDL n.0006",
+"tipo": "Emendamento",
+"descrizione": "ARTICOLO AGGIUNTIVO 8.02 DEL GOVERNO",
+"si": 238,
+"no": 240,
+"astenuti": 3,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=9_4&tipo=dettaglio",
+"governo": "Berlusconi IV",
+"maggioranza": [
+236,
+0
+]
+},
+{
+"vs": "vs16_020_056",
+"data": "20080619",
+"titolo": "Votazione Emendamento 12.101 DDL n.1145",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 12.101 STRADELLA FRANCO (PDL)",
+"si": 204,
+"no": 215,
+"astenuti": 29,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=20_56&tipo=dettaglio",
+"governo": "Berlusconi IV",
+"maggioranza": [
+198,
+49
+]
+},
+{
+"vs": "vs16_020_066",
+"data": "20080619",
+"titolo": "Votazione Emendamento 16.8 DDL n.1145",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 16.8 PIFFARI SERGIO MICHELE (IDV)",
+"si": 253,
+"no": 212,
+"astenuti": 2,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=20_66&tipo=dettaglio",
+"governo": "Berlusconi IV",
+"maggioranza": [
+47,
+209
+]
+},
+{
+"vs": "vs16_044_007",
+"data": "20080729",
+"titolo": "Votazione Emendamento 3.5 DDL n.1496",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 3.5 SERVODIO GIUSEPPINA (PD)",
+"si": 250,
+"no": 246,
+"astenuti": 3,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=44_7&tipo=dettaglio",
+"governo": "Berlusconi IV",
+"maggioranza": [
+8,
+245
+]
+},
+{
+"vs": "vs16_058_093",
+"data": "20081001",
+"titolo": "Votazione Emendamento 53-BIS.11 DDL n.1441-BIS",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 53-BIS.11 FERRANTI DONATELLA (PD)",
+"si": 239,
+"no": 235,
+"astenuti": 0,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=58_93&tipo=dettaglio",
+"governo": "Berlusconi IV",
+"maggioranza": [
+0,
+233
+]
+},
+{
+"vs": "vs16_059_004",
+"data": "20081002",
+"titolo": "Votazione Ordine del giorno 9/1441-BIS/13 DDL n.1441-BIS",
+"tipo": "Ordine del Giorno",
+"descrizione": "ORDINE DEL GIORNO N. 9/1441-BIS/13 PALAGIANO ANTONIO (IDV)",
+"si": 255,
+"no": 225,
+"astenuti": 4,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=59_4&tipo=dettaglio",
+"governo": "Berlusconi IV",
+"maggioranza": [
+29,
+224
+]
+},
+{
+"vs": "vs16_070_007",
+"data": "20081022",
+"titolo": "Votazione Ordine del giorno 9/1742/29 DDL n.1742",
+"tipo": "Ordine del Giorno",
+"descrizione": "ORDINE DEL GIORNO N. 9/1742/29 FIANO EMANUELE (PD)",
+"si": 271,
+"no": 212,
+"astenuti": 21,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=70_7&tipo=dettaglio",
+"governo": "Berlusconi IV",
+"maggioranza": [
+52,
+208
+]
+},
+{
+"vs": "vs16_073_053",
+"data": "20081028",
+"titolo": "Votazione Ordine del giorno 9/1441-QUATER/14 DDL n.1441-QUATER",
+"tipo": "Ordine del Giorno",
+"descrizione": "ORDINE DEL GIORNO N. 9/1441-QUATER/14 PEPE MARIO (PD) (PD)",
+"si": 258,
+"no": 235,
+"astenuti": 3,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=73_53&tipo=dettaglio",
+"governo": "Berlusconi IV",
+"maggioranza": [
+23,
+233
+]
+},
+{
+"vs": "vs16_074_026",
+"data": "20081029",
+"titolo": "Votazione Emendamento 5-BIS.2 DDL n.1441-TER",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 5-BIS.2 (NUOVA FORMULAZIONE) FALLICA GIUSEPPE (PDL)",
+"si": 195,
+"no": 306,
+"astenuti": 6,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=74_26&tipo=dettaglio",
+"governo": "Berlusconi IV",
+"maggioranza": [
+193,
+75
+]
+},
+{
+"vs": "vs16_078_102",
+"data": "20081104",
+"titolo": "Votazione Ordine del giorno 9/1441-TER/28 DDL n.1441-TER",
+"tipo": "Ordine del Giorno",
+"descrizione": "ORDINE DEL GIORNO N. 9/1441-TER/28 BELLANOVA TERESA (PD)",
+"si": 242,
+"no": 241,
+"astenuti": 5,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=78_102&tipo=dettaglio",
+"governo": "Berlusconi IV",
+"maggioranza": [
+21,
+236
+]
+},
+{
+"vs": "vs16_085_003",
+"data": "20081113",
+"titolo": "Votazione Ordine del giorno 9/1713/53 DDL n.1713",
+"tipo": "Ordine del Giorno",
+"descrizione": "ORDINE DEL GIORNO N. 9/1713/53 SCILIPOTI DOMENICO (IDV)",
+"si": 339,
+"no": 170,
+"astenuti": 12,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=85_3&tipo=dettaglio",
+"governo": "Berlusconi IV",
+"maggioranza": [
+100,
+167
+]
+},
+{
+"vs": "vs16_085_006",
+"data": "20081113",
+"titolo": "Votazione Ordine del giorno 9/1713/79 DDL n.1713",
+"tipo": "Ordine del Giorno",
+"descrizione": "ORDINE DEL GIORNO N. 9/1713/79 ROSATO ETTORE (PD)",
+"si": 260,
+"no": 252,
+"astenuti": 14,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=85_6&tipo=dettaglio",
+"governo": "Berlusconi IV",
+"maggioranza": [
+14,
+251
+]
+},
+{
+"vs": "vs16_101_009",
+"data": "20081210",
+"titolo": "Votazione Emendamento 2.30 DDL n.1875",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 2.30 STRADELLA FRANCO (PDL)",
+"si": 182,
+"no": 265,
+"astenuti": 41,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=101_9&tipo=dettaglio",
+"governo": "Berlusconi IV",
+"maggioranza": [
+178,
+75
+]
+},
+{
+"vs": "vs16_115_004",
+"data": "20090115",
+"titolo": "Votazione Ordine del giorno 9/1972/117 DDL n.1972",
+"tipo": "Ordine del Giorno",
+"descrizione": "ORDINE DEL GIORNO N. 9/1972/117 DE MICHELI PAOLA (PD)",
+"si": 231,
+"no": 224,
+"astenuti": 36,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=115_4&tipo=dettaglio",
+"governo": "Berlusconi IV",
+"maggioranza": [
+1,
+220
+]
+},
+{
+"vs": "vs16_126_011",
+"data": "20090204",
+"titolo": "Votazione Mozione 1-00094",
+"tipo": "Mozione",
+"descrizione": "MOZIONE N. 1-00094 (NUOVA FORMULAZIONE) (CAPOVERSO PRIMO DELLA PARTE DISPOSITIVA) TURCO LIVIA (PD) ED ALTRI",
+"si": 245,
+"no": 236,
+"astenuti": 1,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=126_11&tipo=dettaglio",
+"governo": "Berlusconi IV",
+"maggioranza": [
+1,
+234
+]
+},
+{
+"vs": "vs16_126_013",
+"data": "20090204",
+"titolo": "Votazione Mozione 1-00094",
+"tipo": "Mozione",
+"descrizione": "MOZIONE N. 1-00094 (NUUOVA FORMULAZIONE) (CAPOVERSO TERZO DELLA PARTE DISPOSITIVA) TURCO LIVIA (PD) ED ALTRI",
+"si": 246,
+"no": 244,
+"astenuti": 1,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=126_13&tipo=dettaglio",
+"governo": "Berlusconi IV",
+"maggioranza": [
+1,
+242
+]
+},
+{
+"vs": "vs16_126_019",
+"data": "20090204",
+"titolo": "Votazione Mozione 1-00094",
+"tipo": "Mozione",
+"descrizione": "MOZIONE N. 1-00094 (NUOVA FORMULAZIONE) (CAPOVERSO NONO DELLA PARTE DISPOSITIVA) TURCO LIVIA (PD) ED ALTRI",
+"si": 249,
+"no": 244,
+"astenuti": 0,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=126_19&tipo=dettaglio",
+"governo": "Berlusconi IV",
+"maggioranza": [
+1,
+242
+]
+},
+{
+"vs": "vs16_131_048",
+"data": "20090211",
+"titolo": "Votazione Emendamento 5.3 DDL n.2031",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 5.3 DELFINO TERESIO (UDC)",
+"si": 241,
+"no": 237,
+"astenuti": 0,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=131_48&tipo=dettaglio",
+"governo": "Berlusconi IV",
+"maggioranza": [
+9,
+235
+]
+},
+{
+"vs": "vs16_131_071",
+"data": "20090211",
+"titolo": "Votazione Emendamento 5.36 DDL n.2031",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 5.36 MIOTTO ANNA MARGHERITA (PD)",
+"si": 248,
+"no": 242,
+"astenuti": 0,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=131_71&tipo=dettaglio",
+"governo": "Berlusconi IV",
+"maggioranza": [
+4,
+241
+]
+},
+{
+"vs": "vs16_151_107",
+"data": "20090324",
+"titolo": "Votazione Ordine del giorno 9/2105/87 DDL n.2105",
+"tipo": "Ordine del Giorno",
+"descrizione": "ORDINE DEL GIORNO N. 9/2105/87 SARDELLI LUCIANO MARIO (MISTO)",
+"si": 249,
+"no": 243,
+"astenuti": 3,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=151_107&tipo=dettaglio",
+"governo": "Berlusconi IV",
+"maggioranza": [
+8,
+240
+]
+},
+{
+"vs": "vs16_161_038",
+"data": "20090408",
+"titolo": "Votazione Mozione 1-00145",
+"tipo": "Mozione",
+"descrizione": "MOZIONE N. 1-00145 (NUOVA FORMULAZIONE) FLUVI ALBERTO (PD) ED ALTRI",
+"si": 165,
+"no": 157,
+"astenuti": 1,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=161_38&tipo=dettaglio",
+"governo": "Berlusconi IV",
+"maggioranza": [
+0,
+156
+]
+},
+{
+"vs": "vs16_209_003",
+"data": "20090727",
+"titolo": "Votazione Ordine del giorno 9/2561/32 DDL n.2561",
+"tipo": "Ordine del Giorno",
+"descrizione": "ORDINE DEL GIORNO N. 9/2561/32 RUSSO ANTONINO (PD)",
+"si": 216,
+"no": 210,
+"astenuti": 6,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=209_3&tipo=dettaglio",
+"governo": "Berlusconi IV",
+"maggioranza": [
+7,
+209
+]
+},
+{
+"vs": "vs16_218_034",
+"data": "20090922",
+"titolo": "Votazione Emendamento 7-OCTIES.30 DDL n.2449",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 7-OCTIES.30 (FATTO PROPRIO DAL GRUPPO DELL&#39;ITALIA DEI VALORI)",
+"si": 237,
+"no": 220,
+"astenuti": 7,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=218_34&tipo=dettaglio",
+"governo": "Berlusconi IV",
+"maggioranza": [
+13,
+215
+]
+},
+{
+"vs": "vs16_225_001",
+"data": "20091002",
+"titolo": "Votazione Ordine del giorno 9/2714/8 DDL n.2714",
+"tipo": "Ordine del Giorno",
+"descrizione": "ORDINE DEL GIORNO N. 9/2714/8 PISICCHIO PINO (IDV)",
+"si": 226,
+"no": 225,
+"astenuti": 1,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=225_1&tipo=dettaglio",
+"governo": "Berlusconi IV",
+"maggioranza": [
+0,
+224
+]
+},
+{
+"vs": "vs16_227_027",
+"data": "20091006",
+"titolo": "Votazione Emendamento 1.1 DDL n.2008",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 1.1 FAVIA DAVID (IDV)",
+"si": 250,
+"no": 249,
+"astenuti": 0,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=227_27&tipo=dettaglio",
+"governo": "Berlusconi IV",
+"maggioranza": [
+0,
+245
+]
+},
+{
+"vs": "vs16_243_028",
+"data": "20091110",
+"titolo": "Votazione Emendamento 7.51 PDL n.2555",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 7.51 BARETTA PIER PAOLO (PD)",
+"si": 249,
+"no": 247,
+"astenuti": 0,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=243_28&tipo=dettaglio",
+"governo": "Berlusconi IV",
+"maggioranza": [
+1,
+244
+]
+},
+{
+"vs": "vs16_244_032",
+"data": "20091111",
+"titolo": "Votazione Emendamento 21.2 PDL n.2555",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 21.2 CAMBURSANO RENATO (IDV)",
+"si": 263,
+"no": 259,
+"astenuti": 0,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=244_32&tipo=dettaglio",
+"governo": "Berlusconi IV",
+"maggioranza": [
+1,
+257
+]
+},
+{
+"vs": "vs16_244_034",
+"data": "20091111",
+"titolo": "Votazione Emendamento 21.3 PDL n.2555",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 21.3 (FATTO PROPRIO DAL GRUPPO DEL PARTITO DEMOCRATICO)",
+"si": 262,
+"no": 259,
+"astenuti": 0,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=244_34&tipo=dettaglio",
+"governo": "Berlusconi IV",
+"maggioranza": [
+1,
+257
+]
+},
+{
+"vs": "vs16_249_002",
+"data": "20091118",
+"titolo": "Votazione Ordine del giorno 9/2897/1 DDL n.2897",
+"tipo": "Ordine del Giorno",
+"descrizione": "ORDINE DEL GIORNO N. 9/2897/1 BRUGGER SIEGFRIED (MISTO)",
+"si": 239,
+"no": 233,
+"astenuti": 0,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=249_2&tipo=dettaglio",
+"governo": "Berlusconi IV",
+"maggioranza": [
+0,
+229
+]
+},
+{
+"vs": "vs16_249_011",
+"data": "20091118",
+"titolo": "Votazione Ordine del giorno 9/2897/19 DDL n.2897",
+"tipo": "Ordine del Giorno",
+"descrizione": "ORDINE DEL GIORNO N. 9/2897/19 BORGHESI ANTONIO (IDV)",
+"si": 265,
+"no": 264,
+"astenuti": 1,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=249_11&tipo=dettaglio",
+"governo": "Berlusconi IV",
+"maggioranza": [
+0,
+261
+]
+},
+{
+"vs": "vs16_249_015",
+"data": "20091118",
+"titolo": "Votazione Ordine del giorno 9/2897/24 DDL n.2897",
+"tipo": "Ordine del Giorno",
+"descrizione": "ORDINE DEL GIORNO N. 9/2897/24 BRATTI ALESSANDRO (PD)",
+"si": 269,
+"no": 265,
+"astenuti": 0,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=249_15&tipo=dettaglio",
+"governo": "Berlusconi IV",
+"maggioranza": [
+0,
+262
+]
+},
+{
+"vs": "vs16_249_016",
+"data": "20091118",
+"titolo": "Votazione Ordine del giorno 9/2897/25 DDL n.2897",
+"tipo": "Ordine del Giorno",
+"descrizione": "ORDINE DEL GIORNO N. 9/2897/25 VIOLA RODOLFO GIULIANO (PD)",
+"si": 269,
+"no": 265,
+"astenuti": 0,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=249_16&tipo=dettaglio",
+"governo": "Berlusconi IV",
+"maggioranza": [
+1,
+262
+]
+},
+{
+"vs": "vs16_259_010",
+"data": "20091216",
+"titolo": "Votazione Ordine del giorno 9/2936/177 DDL n.2936",
+"tipo": "Ordine del Giorno",
+"descrizione": "ORDINE DEL GIORNO N. 9/2936/177 FERRANTI DONATELLA (PD)",
+"si": 267,
+"no": 264,
+"astenuti": 0,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=259_10&tipo=dettaglio",
+"governo": "Berlusconi IV",
+"maggioranza": [
+2,
+262
+]
+},
+{
+"vs": "vs16_259_012",
+"data": "20091216",
+"titolo": "Votazione Ordine del giorno 9/2936/202 DDL n.2936",
+"tipo": "Ordine del Giorno",
+"descrizione": "ORDINE DEL GIORNO N. 9/2936/202 META MICHELE POMPEO (PD)",
+"si": 263,
+"no": 259,
+"astenuti": 5,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=259_12&tipo=dettaglio",
+"governo": "Berlusconi IV",
+"maggioranza": [
+1,
+257
+]
+},
+{
+"vs": "vs16_265_002",
+"data": "20100113",
+"titolo": "Votazione Mozione 1-00300",
+"tipo": "Mozione",
+"descrizione": "MOZIONE N. 1-00300 (LIMITATAMENTE ALLE PREMESSE E AL SECONDO CAPOVERSO DEL DISPOSITIVO) D&#39;ANTONI SERGIO ANTONIO (PD) ED ALTRI",
+"si": 269,
+"no": 257,
+"astenuti": 0,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=265_2&tipo=dettaglio",
+"governo": "Berlusconi IV",
+"maggioranza": [
+1,
+256
+]
+},
+{
+"vs": "vs16_274_025",
+"data": "20100127",
+"titolo": "Votazione Emendamento 10.1 DDL n.1441-QUATER-B",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 10.1 GHIZZONI MANUELA (PD)",
+"si": 222,
+"no": 214,
+"astenuti": 0,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=274_25&tipo=dettaglio",
+"governo": "Berlusconi IV",
+"maggioranza": [
+0,
+207
+]
+},
+{
+"vs": "vs16_274_030",
+"data": "20100127",
+"titolo": "Votazione Emendamento 11.3 DDL n.1441-QUATER-B",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 11.3 FONTANA VINCENZO ANTONIO (PDL)",
+"si": 249,
+"no": 253,
+"astenuti": 5,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=274_30&tipo=dettaglio",
+"governo": "Berlusconi IV",
+"maggioranza": [
+244,
+1
+]
+},
+{
+"vs": "vs16_281_003",
+"data": "20100210",
+"titolo": "Votazione Emendamento 1.04 DDL n.2260",
+"tipo": "Emendamento",
+"descrizione": "ARTICOLO AGGIUNTIVO 1.04 (NUOVA FORMULAZIONE) RUVOLO GIUSEPPE (UDC)",
+"si": 244,
+"no": 235,
+"astenuti": 0,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=281_3&tipo=dettaglio",
+"governo": "Berlusconi IV",
+"maggioranza": [
+0,
+228
+]
+},
+{
+"vs": "vs16_281_008",
+"data": "20100210",
+"titolo": "Votazione Emendamento 1.042 DDL n.2260",
+"tipo": "Emendamento",
+"descrizione": "IDENTICI ARTICOLI AGGIUNTIVI 1.042 (NUOVA FORMULAZIONE) BRANDOLINI SANDRO (PD) E 1.043 (NUOVA FORMULAZIONE) RUVOLO GIUSEPPE (UDC)",
+"si": 252,
+"no": 251,
+"astenuti": 0,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=281_8&tipo=dettaglio",
+"governo": "Berlusconi IV",
+"maggioranza": [
+0,
+243
+]
+},
+{
+"vs": "vs16_286_001",
+"data": "20100219",
+"titolo": "Votazione Ordine del giorno 9/3196/11 DDL n.3196",
+"tipo": "Ordine del Giorno",
+"descrizione": "ORDINE DEL GIORNO N. 9/3196/11 ROSSOMANDO ANNA (PD)",
+"si": 248,
+"no": 244,
+"astenuti": 0,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=286_1&tipo=dettaglio",
+"governo": "Berlusconi IV",
+"maggioranza": [
+1,
+238
+]
+},
+{
+"vs": "vs16_286_002",
+"data": "20100219",
+"titolo": "Votazione Ordine del giorno 9/3196/14 DDL n.3196",
+"tipo": "Ordine del Giorno",
+"descrizione": "ORDINE DEL GIORNO N. 9/3196/14 CAPANO CINZIA (PD)",
+"si": 250,
+"no": 244,
+"astenuti": 0,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=286_2&tipo=dettaglio",
+"governo": "Berlusconi IV",
+"maggioranza": [
+1,
+238
+]
+},
+{
+"vs": "vs16_286_003",
+"data": "20100219",
+"titolo": "Votazione Ordine del giorno 9/3196/23 DDL n.3196",
+"tipo": "Ordine del Giorno",
+"descrizione": "ORDINE DEL GIORNO N. 9/3196/23 RIA LORENZO (UDC)",
+"si": 250,
+"no": 249,
+"astenuti": 1,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=286_3&tipo=dettaglio",
+"governo": "Berlusconi IV",
+"maggioranza": [
+0,
+243
+]
+},
+{
+"vs": "vs16_305_003",
+"data": "20100413",
+"titolo": "Votazione Emendamento 1.1 DDL n.3273",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 1.1 BRESSA GIANCLAUDIO (PD)",
+"si": 262,
+"no": 254,
+"astenuti": 0,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=305_3&tipo=dettaglio",
+"governo": "Berlusconi IV",
+"maggioranza": [
+0,
+252
+]
+},
+{
+"vs": "vs16_310_044",
+"data": "20100421",
+"titolo": "Votazione Ordine del giorno 9/2449-C/8 DDL n.2449-B",
+"tipo": "Ordine del Giorno",
+"descrizione": "ORDINE DEL GIORNO N. 9/2449-C/8 PIFFARI SERGIO MICHELE (IDV)",
+"si": 228,
+"no": 227,
+"astenuti": 0,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=310_44&tipo=dettaglio",
+"governo": "Berlusconi IV",
+"maggioranza": [
+1,
+225
+]
+},
+{
+"vs": "vs16_313_063",
+"data": "20100428",
+"titolo": "Votazione Emendamento 31.33 DDL n.1441-QUATER-D",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 31.33 DAMIANO CESARE (PD)",
+"si": 225,
+"no": 224,
+"astenuti": 0,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=313_63&tipo=dettaglio",
+"governo": "Berlusconi IV",
+"maggioranza": [
+0,
+223
+]
+},
+{
+"vs": "vs16_324_016",
+"data": "20100519",
+"titolo": "Votazione Ordine del giorno 9/82-A/11 PDL n.0082",
+"tipo": "Ordine del Giorno",
+"descrizione": "ORDINE DEL GIORNO N. 9/82-A/11 CODURELLI LUCIA (PD)",
+"si": 249,
+"no": 244,
+"astenuti": 0,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=324_16&tipo=dettaglio",
+"governo": "Berlusconi IV",
+"maggioranza": [
+4,
+241
+]
+},
+{
+"vs": "vs16_333_062",
+"data": "20100608",
+"titolo": "Votazione pregiudiziale DDL n.3514",
+"tipo": "Pregiudiziale",
+"descrizione": "QUESTIONE PREGIUDIZIALE N. 1 DONADI MASSIMO (IDV) ED ALTRI",
+"si": 249,
+"no": 231,
+"astenuti": 1,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=333_62&tipo=dettaglio",
+"governo": "Berlusconi IV",
+"maggioranza": [
+1,
+228
+]
+},
+{
+"vs": "vs16_335_004",
+"data": "20100610",
+"titolo": "Votazione Emendamento 1.33 PDL n.0278",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 1.33 TURCO LIVIA (PD)",
+"si": 247,
+"no": 242,
+"astenuti": 0,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=335_4&tipo=dettaglio",
+"governo": "Berlusconi IV",
+"maggioranza": [
+1,
+240
+]
+},
+{
+"vs": "vs16_335_005",
+"data": "20100610",
+"titolo": "Votazione Emendamento 1.34 PDL n.0278",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 1.34 TURCO LIVIA (PD)",
+"si": 251,
+"no": 245,
+"astenuti": 0,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=335_5&tipo=dettaglio",
+"governo": "Berlusconi IV",
+"maggioranza": [
+1,
+243
+]
+},
+{
+"vs": "vs16_356_012",
+"data": "20100721",
+"titolo": "Votazione Emendamento 3.13 DDL n.3610",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 3.13 BARBI MARIO (PD)",
+"si": 258,
+"no": 254,
+"astenuti": 1,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=356_12&tipo=dettaglio",
+"governo": "Berlusconi IV",
+"maggioranza": [
+1,
+251
+]
+},
+{
+"vs": "vs16_356_013",
+"data": "20100721",
+"titolo": "Votazione Emendamento 3.14 DDL n.3610",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 3.14 TEMPESTINI FRANCESCO (PD)",
+"si": 256,
+"no": 254,
+"astenuti": 3,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=356_13&tipo=dettaglio",
+"governo": "Berlusconi IV",
+"maggioranza": [
+1,
+251
+]
+},
+{
+"vs": "vs16_379_030",
+"data": "20101006",
+"titolo": "Votazione Ordine del giorno 9/2260-AR/34 DDL n.2260",
+"tipo": "Ordine del Giorno",
+"descrizione": "ORDINE DEL GIORNO N. 9/2260-AR/34 TASSONE MARIO (UDC)",
+"si": 247,
+"no": 242,
+"astenuti": 7,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=379_30&tipo=dettaglio",
+"governo": "Berlusconi IV",
+"maggioranza": [
+12,
+240
+]
+},
+{
+"vs": "vs16_392_002",
+"data": "20101109",
+"titolo": "Votazione Mozione 1-00484",
+"tipo": "Mozione",
+"descrizione": "MOZIONE VERNETTI GIANNI (MISTO) ED ALTRI N. 1-00484, EMENDAMENTO 1 MECACCI MATTEO (PD)",
+"si": 274,
+"no": 261,
+"astenuti": 0,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=392_2&tipo=dettaglio",
+"governo": "Berlusconi IV",
+"maggioranza": [
+28,
+251
+]
+},
+{
+"vs": "vs16_392_005",
+"data": "20101109",
+"titolo": "Votazione Mozione 1-00481",
+"tipo": "Mozione",
+"descrizione": "MOZIONE N. 1-00481 ADORNATO FERDINANDO (UDC) ED ALTRI",
+"si": 281,
+"no": 269,
+"astenuti": 1,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=392_5&tipo=dettaglio",
+"governo": "Berlusconi IV",
+"maggioranza": [
+28,
+257
+]
+},
+{
+"vs": "vs16_392_007",
+"data": "20101109",
+"titolo": "Votazione Mozione 1-00484",
+"tipo": "Mozione",
+"descrizione": "MOZIONE N. 1-00484 (COME MODIFICATA A SEGUITO DELL&#39;APPROVAZIONE DELL&#39;EMENDAMENTO MECACCI MATTEO (PD) RITIRATA DAI PRESENTATORI E DI CUI E&#39; STATA CHIESTA LA DISCUSSIONE E LA VOTAZIONE A NOME DEL GRUPPO FUTURO E LIBERTA&#39; PER L&#39;ITALIA AI SENSI DELL&#39;ART. 111, COMMA 2 DEL REGOLAME",
+"si": 281,
+"no": 270,
+"astenuti": 1,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=392_7&tipo=dettaglio",
+"governo": "Berlusconi IV",
+"maggioranza": [
+28,
+258
+]
+},
+{
+"vs": "vs16_401_115",
+"data": "20101124",
+"titolo": "Votazione Emendamento 6.205 DDL n.3687",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 6.205 CAPITANIO SANTOLINI LUISA (UDC)",
+"si": 284,
+"no": 254,
+"astenuti": 5,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=401_115&tipo=dettaglio",
+"governo": "Berlusconi IV",
+"maggioranza": [
+29,
+244
+]
+},
+{
+"vs": "vs16_402_029",
+"data": "20101125",
+"titolo": "Votazione Emendamento 16.204 DDL n.3687",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 16.204 GRANATA BENEDETTO FABIO (FLI)",
+"si": 282,
+"no": 261,
+"astenuti": 3,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=402_29&tipo=dettaglio",
+"governo": "Berlusconi IV",
+"maggioranza": [
+32,
+249
+]
+},
+{
+"vs": "vs16_404_026",
+"data": "20101130",
+"titolo": "Votazione Emendamento 19.203 DDL n.3687",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 19.203 GRANATA BENEDETTO FABIO (FLI)",
+"si": 277,
+"no": 257,
+"astenuti": 0,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=404_26&tipo=dettaglio",
+"governo": "Berlusconi IV",
+"maggioranza": [
+34,
+247
+]
+},
+{
+"vs": "vs16_404_107",
+"data": "20101130",
+"titolo": "Votazione Emendamento 25.200 DDL n.3687",
+"tipo": "Emendamento",
+"descrizione": "IDENTICI EMENDAMENTI 25.200 GRANATA BENEDETTO FABIO (FLI), 25.201 CALGARO MARCO (MISTO) E 25.203 GHIZZONI MANUELA (PD)",
+"si": 283,
+"no": 261,
+"astenuti": 0,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=404_107&tipo=dettaglio",
+"governo": "Berlusconi IV",
+"maggioranza": [
+32,
+252
+]
+},
+{
+"vs": "vs16_440_009",
+"data": "20110225",
+"titolo": "Votazione Ordine del giorno 9/4086/93 DDL n.4086",
+"tipo": "Ordine del Giorno",
+"descrizione": "ORDINE DEL GIORNO N. 9/4086/93 CICCANTI AMEDEO (UDC)",
+"si": 283,
+"no": 280,
+"astenuti": 0,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=440_9&tipo=dettaglio",
+"governo": "Berlusconi IV",
+"maggioranza": [
+2,
+278
+]
+},
+{
+"vs": "vs16_449_068",
+"data": "20110315",
+"titolo": "Votazione Emendamento 1.69 PDL n.1640",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 1.69 FERRANTI DONATELLA (PD)",
+"si": 251,
+"no": 250,
+"astenuti": 1,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=449_68&tipo=dettaglio",
+"governo": "Berlusconi IV",
+"maggioranza": [
+1,
+246
+]
+},
+{
+"vs": "vs16_450_014",
+"data": "20110316",
+"titolo": "Votazione Emendamento 3.16 DDL n.2008",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 3.16 SBROLLINI DANIELA (PD)",
+"si": 271,
+"no": 262,
+"astenuti": 1,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=450_14&tipo=dettaglio",
+"governo": "Berlusconi IV",
+"maggioranza": [
+1,
+258
+]
+},
+{
+"vs": "vs16_450_019",
+"data": "20110316",
+"titolo": "Votazione Emendamento 3.31 DDL n.2008",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 3.31 CAPITANIO SANTOLINI LUISA (UDC)",
+"si": 268,
+"no": 262,
+"astenuti": 2,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=450_19&tipo=dettaglio",
+"governo": "Berlusconi IV",
+"maggioranza": [
+2,
+258
+]
+},
+{
+"vs": "vs16_454_006",
+"data": "20110329",
+"titolo": "Votazione Emendamento 2.53 PDL n.0060",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 2.53 BRAGA CHIARA (PD)",
+"si": 259,
+"no": 250,
+"astenuti": 0,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=454_6&tipo=dettaglio",
+"governo": "Berlusconi IV",
+"maggioranza": [
+1,
+246
+]
+},
+{
+"vs": "vs16_458_010",
+"data": "20110405",
+"titolo": "Votazione Emendamento 3.26 PDL n.0054",
+"tipo": "Emendamento",
+"descrizione": "IDENTICI EMENDAMENTI 3.26 (RITIRATO DAI PRESENTATORI E FATTO PROPRIO DAL GRUPPO DELL&#39;ITALIA DEI VALORI) E 3.53 CICCANTI AMEDEO (UDC)",
+"si": 274,
+"no": 266,
+"astenuti": 0,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=458_10&tipo=dettaglio",
+"governo": "Berlusconi IV",
+"maggioranza": [
+1,
+263
+]
+},
+{
+"vs": "vs16_459_007",
+"data": "20110406",
+"titolo": "Votazione Ordine del giorno 9/3921-B/21 PDL n.3921-B",
+"tipo": "Ordine del Giorno",
+"descrizione": "ORDINE DEL GIORNO N. 9/3921-B/21 BARBATO FRANCESCO (IDV)",
+"si": 260,
+"no": 255,
+"astenuti": 29,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=459_7&tipo=dettaglio",
+"governo": "Berlusconi IV",
+"maggioranza": [
+40,
+230
+]
+},
+{
+"vs": "vs16_474_001",
+"data": "20110518",
+"titolo": "Votazione Mozione 1-00612",
+"tipo": "Mozione",
+"descrizione": "MOZIONE N. 1-00612 DELLA VEDOVA BENEDETTO (FLPTP) ED ALTRI",
+"si": 264,
+"no": 254,
+"astenuti": 4,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=474_1&tipo=dettaglio",
+"governo": "Berlusconi IV",
+"maggioranza": [
+1,
+251
+]
+},
+{
+"vs": "vs16_474_003",
+"data": "20110518",
+"titolo": "Votazione Mozione 1-00615",
+"tipo": "Mozione",
+"descrizione": "MOZIONE N. 1-00615 (NUOVA FORMULAZIONE - LIMITATAMENTE ALLA PREMESSA E AL QUARTO, SETTIMO, OTTAVO E NONO CAPOVERSO DEL DISPOSITIVO) FERRANTI DONATELLA (PD) ED ALTRI",
+"si": 269,
+"no": 255,
+"astenuti": 2,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=474_3&tipo=dettaglio",
+"governo": "Berlusconi IV",
+"maggioranza": [
+1,
+252
+]
+},
+{
+"vs": "vs16_474_005",
+"data": "20110518",
+"titolo": "Votazione Mozione 1-00616",
+"tipo": "Mozione",
+"descrizione": "MOZIONE N. 1-00616 (LIMITATAMENTE ALLA PREMESSA) COSTA ENRICO (PDL), LUSSANA CAROLINA (LNP), BELCASTRO ELIO VITTORIO (IR) ED ALTRI",
+"si": 255,
+"no": 268,
+"astenuti": 2,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=474_5&tipo=dettaglio",
+"governo": "Berlusconi IV",
+"maggioranza": [
+252,
+1
+]
+},
+{
+"vs": "vs16_474_008",
+"data": "20110518",
+"titolo": "Votazione Mozione 1-00618",
+"tipo": "Mozione",
+"descrizione": "MOZIONE N. 1-00618 (LIMITATAMENTE ALLA PREMESSA) DI PIETRO ANTONIO (IDV) ED ALTRI",
+"si": 269,
+"no": 257,
+"astenuti": 3,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=474_8&tipo=dettaglio",
+"governo": "Berlusconi IV",
+"maggioranza": [
+1,
+254
+]
+},
+{
+"vs": "vs16_474_025",
+"data": "20110518",
+"titolo": "Votazione Ordine del giorno 9/4193/4 DDL n.4193",
+"tipo": "Ordine del Giorno",
+"descrizione": "ORDINE DEL GIORNO N. 9/4193/4 DI STANISLAO AUGUSTO (IDV)",
+"si": 267,
+"no": 264,
+"astenuti": 2,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=474_25&tipo=dettaglio",
+"governo": "Berlusconi IV",
+"maggioranza": [
+1,
+260
+]
+},
+{
+"vs": "vs16_493_013",
+"data": "20110629",
+"titolo": "Votazione Articolo 1 DDL n.4059",
+"tipo": "Articolo",
+"descrizione": "ARTICOLO 1",
+"si": 262,
+"no": 270,
+"astenuti": 1,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=493_13&tipo=dettaglio",
+"governo": "Berlusconi IV",
+"maggioranza": [
+260,
+1
+]
+},
+{
+"vs": "vs16_505_001",
+"data": "20110720",
+"titolo": "Votazione Mozione 1-00670",
+"tipo": "Mozione",
+"descrizione": "MOZIONE N. 1-00670 (NUOVA FORMULAZIONE, LIMITATEMENTE ALLA PREMESSA E AL PRIMO CAPOVERSO DEL DISPOSITIVO) DONADI MASSIMO (IDV) ED ALTRI",
+"si": 296,
+"no": 287,
+"astenuti": 6,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=505_1&tipo=dettaglio",
+"governo": "Berlusconi IV",
+"maggioranza": [
+2,
+284
+]
+},
+{
+"vs": "vs16_505_003",
+"data": "20110720",
+"titolo": "Votazione Mozione 1-00677",
+"tipo": "Mozione",
+"descrizione": "MOZIONE N. 1-00677 (LIMITATAMENTE ALLA PREMESSA E AL PRIMO CAPOVERSO DEL DISPOSITIVO) MOSELLA DONATO RENATO (MISTO) ED ALTRI",
+"si": 297,
+"no": 288,
+"astenuti": 3,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=505_3&tipo=dettaglio",
+"governo": "Berlusconi IV",
+"maggioranza": [
+2,
+285
+]
+},
+{
+"vs": "vs16_505_005",
+"data": "20110720",
+"titolo": "Votazione Mozione 1-00679",
+"tipo": "Mozione",
+"descrizione": "MOZIONE N. 1-00679 (LIMITATAMENTE ALLA PREMESSA E AL QUARTO CAPOVERSO DEL DISPOSITIVO) LIBE&#39; MAURO (UDCPTP) , DELLA VEDOVA BENEDETTO (FLPTP) , LO MONTE CARMELO (MISTO) ED ALTRI",
+"si": 296,
+"no": 291,
+"astenuti": 0,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=505_5&tipo=dettaglio",
+"governo": "Berlusconi IV",
+"maggioranza": [
+2,
+288
+]
+},
+{
+"vs": "vs16_507_061",
+"data": "20110726",
+"titolo": "Votazione Ordine del giorno 9/4059/38 DDL n.4059",
+"tipo": "Ordine del Giorno",
+"descrizione": "ORDINE DEL GIORNO N. 9/4059/38 BRATTI ALESSANDRO (PD)",
+"si": 270,
+"no": 268,
+"astenuti": 0,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=507_61&tipo=dettaglio",
+"governo": "Berlusconi IV",
+"maggioranza": [
+0,
+262
+]
+},
+{
+"vs": "vs16_519_007",
+"data": "20110915",
+"titolo": "Votazione Emendamento 4.1 PDL n.2172",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 4.1 FRONER LAURA (PD)",
+"si": 247,
+"no": 244,
+"astenuti": 1,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=519_7&tipo=dettaglio",
+"governo": "Berlusconi IV",
+"maggioranza": [
+1,
+242
+]
+},
+{
+"vs": "vs16_521_002",
+"data": "20110920",
+"titolo": "Votazione Emendamento 1.51 PDL n.3465",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 1.51 ZAMPARUTTI ELISABETTA (PD)",
+"si": 258,
+"no": 246,
+"astenuti": 0,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=521_2&tipo=dettaglio",
+"governo": "Berlusconi IV",
+"maggioranza": [
+0,
+244
+]
+},
+{
+"vs": "vs16_521_007",
+"data": "20110920",
+"titolo": "Votazione Emendamento 3.50 PDL n.3465",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 3.50 ZAMPARUTTI ELISABETTA (PD)",
+"si": 268,
+"no": 256,
+"astenuti": 1,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=521_7&tipo=dettaglio",
+"governo": "Berlusconi IV",
+"maggioranza": [
+2,
+254
+]
+},
+{
+"vs": "vs16_521_009",
+"data": "20110920",
+"titolo": "Votazione Emendamento 3.01 PDL n.3465",
+"tipo": "Emendamento",
+"descrizione": "ARTICOLO AGGIUNTIVO 3.01 MORASSUT ROBERTO (PD)",
+"si": 265,
+"no": 255,
+"astenuti": 2,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=521_9&tipo=dettaglio",
+"governo": "Berlusconi IV",
+"maggioranza": [
+1,
+253
+]
+},
+{
+"vs": "vs16_521_010",
+"data": "20110920",
+"titolo": "Votazione Emendamento 4.1 PDL n.3465",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 4.1 PIFFARI SERGIO MICHELE (IDV)",
+"si": 270,
+"no": 262,
+"astenuti": 0,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=521_10&tipo=dettaglio",
+"governo": "Berlusconi IV",
+"maggioranza": [
+1,
+260
+]
+},
+{
+"vs": "vs16_525_026",
+"data": "20110927",
+"titolo": "Votazione Emendamento 6.44 DDL n.4274",
+"tipo": "Emendamento",
+"descrizione": "EMENDAMENTO 6.44 LENZI DONATA (PD)",
+"si": 273,
+"no": 259,
+"astenuti": 0,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=525_26&tipo=dettaglio",
+"governo": "Berlusconi IV",
+"maggioranza": [
+2,
+256
+]
+},
+{
+"vs": "vs16_527_009",
+"data": "20110929",
+"titolo": "Votazione Ordine del giorno 9/3261-A/6 PDL n.3261",
+"tipo": "Ordine del Giorno",
+"descrizione": "ORDINE DEL GIORNO N. 9/3261-A/6 RUSSO ANTONINO (PD)",
+"si": 247,
+"no": 223,
+"astenuti": 0,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=527_9&tipo=dettaglio",
+"governo": "Berlusconi IV",
+"maggioranza": [
+2,
+220
+]
+},
+{
+"vs": "vs16_532_002",
+"data": "20111011",
+"titolo": "Votazione Articolo 1 DDL n.4621",
+"tipo": "Articolo",
+"descrizione": "ARTICOLO 1",
+"si": 290,
+"no": 290,
+"astenuti": 0,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=532_2&tipo=dettaglio",
+"governo": "Berlusconi IV",
+"maggioranza": [
+288,
+3
+]
+},
+{
+"vs": "vs16_542_002",
+"data": "20111026",
+"titolo": "Votazione Mozione 1-00732",
+"tipo": "Mozione",
+"descrizione": "MOZIONE N. 1-00732 DI PIETRO ANTONIO (IDV) ED ALTRI",
+"si": 275,
+"no": 272,
+"astenuti": 0,
+"approvata": true,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=542_2&tipo=dettaglio",
+"governo": "Berlusconi IV",
+"maggioranza": [
+4,
+270
+]
+},
+{
+"vs": "vs16_542_011",
+"data": "20111026",
+"titolo": "Votazione Mozione 1-00737",
+"tipo": "Mozione",
+"descrizione": "MOZIONE N. 1-00737 VALDUCCI MARIO (PDL), DESIDERATI MARCO (LNP), PIONATI FRANCESCO (PT) ED ALTRI",
+"si": 280,
+"no": 281,
+"astenuti": 0,
+"approvata": false,
+"segreta": false,
+"scheda": "http://documenti.camera.it/votazioni/votazionitutte/schedavotazione.asp?Legislatura=XVI&RifVotazione=542_11&tipo=dettaglio",
+"governo": "Berlusconi IV",
+"maggioranza": [
+278,
+1
+]
+}
+]
+}

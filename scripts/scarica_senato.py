@@ -108,6 +108,9 @@ def main():
         for k, s in enumerate(senatori, 1):
             for alias, numero, con_date in PER_SENATORE:
                 campi = {'search[senatore]': s, 'search[legislatura]': str(leg)}
+                if alias == 'interventi-senatore-ddl-date':
+                    # questo modulo non ha il campo legislatura: se c'e', risponde una pagina d'errore
+                    del campi['search[legislatura]']
                 if con_date:
                     campi.update({'search[dataInizio]': da, 'search[dataFine]': a})
                 esito = scarica(alias, numero, leg, campi,

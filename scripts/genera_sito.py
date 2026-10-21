@@ -6,6 +6,7 @@ qualunque hosting statico, non serve ne' un server ne' un database. Le chiavi
 sono di una o due lettere perche' il file finito viaggia intero nel browser.
 """
 import sys, os, json, datetime, re, hashlib, unicodedata
+from html import unescape as html_unescape
 
 sys.stdout.reconfigure(encoding='utf-8', errors='replace')
 
@@ -358,6 +359,14 @@ def main():
         for q, v in json.load(open(cu_file, encoding='utf-8'))['collegi'].items():
             if q in per_q:
                 per_q[q]['cu'] = v
+    # Gli interventi alla Camera (scripts/interventi_camera.py):
+    # {legislatura: [numero, che cosa conta, (in commissione, solo XVI)]}
+    ic_file = os.path.join(QUI, '..', 'data', 'interventi_camera.json')
+    if os.path.exists(ic_file):
+        per_q = {p['q']: p for p in persone}
+        for q, v in json.load(open(ic_file, encoding='utf-8'))['interventi'].items():
+            if q in per_q:
+                per_q[q]['ic'] = v
     # Le richieste dei giudici alla Camera (scripts/autorizzazioni_camera.py):
     # [legislatura, data, tipo, documento, esito, reato o misura]
     au_file = os.path.join(QUI, '..', 'data', 'autorizzazioni.json')
@@ -472,6 +481,21 @@ def main():
         dati['fiducie'] = prime_fiducie
     if tutte_fiducie:
         dati['fiducie_tutte'] = tutte_fiducie
+    # Per la scheda di Berlusconi: Forza Italia e PdL alle elezioni
+    # (scripts/risultati_fi_pdl.py)
+    fi_file = os.path.join(QUI, '..', 'data', 'risultati_fi_pdl.json')
+    if os.path.exists(fi_file):
+        dati['risultati_fi_pdl'] = {'elezioni': json.load(open(fi_file, encoding='utf-8'))['elezioni']}
+    # Il riassunto dei voti alla Camera (scripts/riassunto_voti_camera.py)
+    rv_file = os.path.join(QUI, '..', 'data', 'riassunto_voti.json')
+    if os.path.exists(rv_file):
+        rv = json.load(open(rv_file, encoding='utf-8'))
+        dati['riassunto_voti'] = {k: v for k, v in rv.items() if not k.startswith('_')}
+        # le descrizioni della Camera portano entita' HTML ('&#39;'): la pagina le riscrive da se'
+        for elenco in ('battute', 'strette'):
+            for x in dati['riassunto_voti'].get(elenco, []):
+                x['descrizione'] = html_unescape(x.get('descrizione') or '')
+                x['titolo'] = html_unescape(x.get('titolo') or '')
 
     if os.path.exists(SEGRETARI):
         sg = json.load(open(SEGRETARI, encoding='utf-8'))
