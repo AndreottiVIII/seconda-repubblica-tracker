@@ -298,6 +298,18 @@ def fondi_doppioni(persone):
                     continue
                 if not set(persone[a]['mandati']) & set(persone[b]['mandati']):
                     continue
+                # Ma due numeri diversi della Camera, o del Senato, sono due
+                # persone, anche con lo stesso nome nella stessa legislatura:
+                # nella XVI sedevano due Mario Pepe, del 1941 e del 1951, e questa
+                # regola ne faceva uno solo.
+                # E lo stesso vale per due voci di Wikipedia diverse: Wikipedia ne
+                # scrive una per persona. I due Luciano Guerzoni, il giurista del
+                # 1938 deputato nella XII e il politico del 1935, finivano fusi.
+                diversi = any(persone[a].get(c) and persone[b].get(c)
+                              and persone[a][c] != persone[b][c]
+                              for c in ('id_camera', 'id_senato', 'wikipedia'))
+                if diversi:
+                    continue
                 tieni, scarta = sorted([a, b], key=valore, reverse=True)
                 buono, altro = persone[tieni], persone[scarta]
                 for campo in ('morte', 'prec_morte', 'nascita', 'prec_nascita',
@@ -525,6 +537,17 @@ def main():
     # Battista Melis su Wikidata e' del 1922, alla Camera del 1904.
     discordanze, contese = [], []
     alias = leggi_json('alias_registri.json')
+    # Gli omonimi dentro l'elenco, con la data di nascita di Wikidata presa
+    # PRIMA di ogni correzione. Quando due persone dell'elenco hanno lo stesso
+    # nome e una legislatura in comune, una voce del registro va solo a quella
+    # con la stessa data di nascita. Non e' una prova d'identita' per tutti,
+    # solo il modo di scegliere fra due che esistono gia' tutti e due: i due
+    # Luciano Guerzoni si prendevano a vicenda il seggio alla Camera e quello
+    # al Senato.
+    nascita_wd = {q: p['nascita'] for q, p in persone.items()}
+    omonimi = {}
+    for q, p in persone.items():
+        omonimi.setdefault(camera.chiave(p['nome']), []).append(q)
     for etichetta, modulo in [('Camera dei deputati', camera), ('Senato', senato)]:
         print('Incrocio con gli open data: %s...' % etichetta)
         # Nessun proseguimento al buio: senza registro il sito perde i morti
@@ -534,20 +557,48 @@ def main():
         if not reg:
             raise SystemExit('%s: registro vuoto, mi fermo qui.' % etichetta)
         indice = modulo.indice_per_data(reg)
+        # chi il registro ha dovuto mettere sotto una chiave col numero, perche'
+        # nella stessa legislatura c'era un omonimo: si ritrova dal numero
+        per_identita = {}
+        for kk, vv in reg.items():
+            if '|' in kk:
+                for m, voce in vv.items():
+                    per_identita.setdefault(voce.get('id') or voce.get('uri'), []).append((kk, m))
         per_mandato = modulo.indice_per_mandato(reg)
         agganciate = set()
         recuperati = 0
+        # i nomi di tutti: una voce del registro col nome esatto di qualcuno
+        # e' sua, e gli agganci larghi degli altri non la possono prendere
+        occupati = frozenset(camera.chiave(x) for p in persone.values()
+                             for x in (p['nome'], alias.get(p['qid'])) if x)
         for p in persone.values():
             k, come = modulo.cerca_chiave(reg, indice, p['nome'], p['nascita'],
-                                          p['mandati'], per_mandato)
+                                          p['mandati'], per_mandato, occupati)
             if not k and alias.get(p['qid']):
                 # Gianna Schelotto per i registri e' Giovanna Bochicchio.
                 k, come = modulo.cerca_chiave(reg, indice, alias[p['qid']],
-                                              p['nascita'], p['mandati'], per_mandato)
+                                              p['nascita'], p['mandati'], per_mandato,
+                                              occupati)
             if not k:
                 continue
             voci = reg[k]
             comuni = [m for m in p['mandati'] if m in voci]
+            if not comuni and come in ('nome e data', 'nome contenuto e data'):
+                # nessuna legislatura in comune: valgono quelle del registro
+                # dove la data di nascita e' la sua, e solo quelle (sotto la
+                # stessa chiave possono stare degli omonimi)
+                comuni = [m for m in voci if voci[m].get('nascita') == p['nascita']]
+            fratelli = [o for o in omonimi.get(camera.chiave(p['nome']), [])
+                        if o != p['qid']]
+            if fratelli:
+                def di_chi(voce):
+                    n = voce.get('nascita')
+                    if not n or len(n) < 10:
+                        return None
+                    if nascita_wd.get(p['qid']) == n:
+                        return p['qid']
+                    return next((o for o in fratelli if nascita_wd.get(o) == n), None)
+                comuni = [m for m in comuni if di_chi(voci[m]) in (None, p['qid'])]
             if not comuni:
                 continue
             agganciate.add(k)
@@ -557,8 +608,26 @@ def main():
             def _chi(voce):
                 return voce.get('id') or voce.get('uri')
             io_sono = {_chi(voci[m]) for m in comuni if _chi(voci[m])}
+            # Sotto lo stesso nome due identificativi diversi: due omonimi. Vale
+            # quello con la sua data di nascita. Senza questo, il Mario Pepe del
+            # 1951 si prendeva la XVI e la data di nascita di quello del 1941.
+            if len(io_sono) > 1 and p['nascita']:
+                buoni = {_chi(voci[m]) for m in comuni
+                         if voci[m].get('nascita') == p['nascita']}
+                if buoni:
+                    io_sono = buoni
+                    comuni = [m for m in comuni if _chi(voci[m]) in buoni]
             suoi = [m for m in voci
                     if m in comuni or (io_sono and _chi(voci[m]) in io_sono)]
+            # Le legislature dello stesso identificativo finite sotto un'altra
+            # chiave, perche' in quella legislatura sedeva anche un omonimo.
+            voci = {m: voci[m] for m in suoi}
+            for i in io_sono:
+                for kk, m in per_identita.get(i, []):
+                    if m not in voci:
+                        voci[m] = reg[kk][m]
+                        suoi.append(m)
+                        agganciate.add(kk)
             # I mandati li dicono le Camere. Wikidata ne dimentica: Giovanni
             # Alemanno risultava senza la XII, e con lei sparivano il gruppo di
             # allora e un pezzo della sua carriera.
@@ -603,6 +672,17 @@ def main():
                 # Sulla nascita crediamo al registro ufficiale, non a Wikidata.
                 p['nascita'] = v['nascita']
                 p['prec_nascita'] = 'giorno' if len(v['nascita']) == 10 else 'anno'
+            elif (v.get('nascita') and len(v['nascita']) == 10
+                  and v['nascita'][5:] != '01-01'
+                  and (not p['nascita'] or len(p['nascita']) < 10)):
+                # (il 1 gennaio no: nei registri e' spesso il riempitivo di chi
+                # ha scritto solo l'anno, e un anno vero vale piu' di un giorno
+                # inventato)
+                # Stesso anno, ma Wikidata ha solo quello e il registro il
+                # giorno: Riccardo Perale era sceso a "1946" quando la Camera
+                # lo dice nato il 4 marzo 1946.
+                p['nascita'] = v['nascita']
+                p['prec_nascita'] = 'giorno'
             if v.get('id'):
                 p['id_camera'] = v['id']
             # Il gruppo parlamentare e' il partito di allora. Wikidata elenca

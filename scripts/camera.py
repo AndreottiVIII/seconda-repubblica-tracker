@@ -324,7 +324,12 @@ def registro(usa_cache=True):
     un registro assente, che rimanderebbe fra i vivi tutti i morti che solo
     lui conosce.
     """
-    if usa_cache and os.path.exists(CACHE):
+    # La copia locale vale dodici ore, come le altre. Senza scadenza, sul
+    # PC restava quella del 30 agosto, e rifacendo l'elenco in locale
+    # tornavano vivi i morti di settembre. Sul server non succedeva solo
+    # perche' li' la cartella della cache non c'e'.
+    if (usa_cache and os.path.exists(CACHE)
+            and time.time() - os.path.getmtime(CACHE) < 12 * 3600):
         return json.load(open(CACHE, encoding='utf-8'))
     try:
         return _costruisci()
@@ -450,6 +455,13 @@ def _costruisci():
             if pid in gruppi:
                 voce['gruppi'] = gruppi[pid]
                 voce['gruppo'] = gruppi[pid][0]['g']
+            # Due omonimi nella stessa legislatura: senza questa riga il secondo
+            # cancellava il primo. Nella XVI sedevano due Mario Pepe, nati nel
+            # 1941 e nel 1951, e uno dei due spariva. Il secondo resta sotto una
+            # chiave col suo identificativo, e l'aggancio lo ritrova da quello.
+            gia = fuori.get(k, {}).get(mandato)
+            if gia and gia.get('id') != voce.get('id'):
+                k = '%s|%s' % (k, voce.get('id'))
             fuori.setdefault(k, {})[mandato] = voce
             if voce['morte']:
                 con_morte += 1
@@ -493,30 +505,67 @@ def indice_per_mandato(reg):
     return fuori
 
 
-def cerca_chiave(reg, indice, nome, nascita, mandati, per_mandato=None):
+def cerca_chiave(reg, indice, nome, nascita, mandati, per_mandato=None,
+                 occupati=frozenset()):
     """Come cerca_ampia, ma restituisce la CHIAVE della persona nel registro.
 
     Serve perche' di una persona non interessa piu' una legislatura sola: la
     successione dei gruppi va letta su tutte quelle che ha fatto.
+
+    occupati: i nomi, ridotti a chiave, di tutte le persone dell'elenco. Gli
+    agganci larghi (data, nome contenuto) non possono prendere una voce del
+    registro che porta esattamente il nome di un'altra persona: e' sua. Senza
+    questa regola Francesco Barra, senatore socialista del 1949, e Francesco
+    Michele Barra, deputato di An del 1947, finivano con gli stessi dati; e
+    Giovanni Di Mauro si prendeva data di nascita e seggio al Senato di
+    Giovanni Mauro, perche' il "Di", troppo corto, non conta come parola.
     """
     k = chiave(nome)
     voci = reg.get(k)
     if voci and any(m in voci for m in mandati):
         return k, 'nome'
 
+    def libera(kk):
+        return kk == k or kk not in occupati
+
+    # Stesso nome e stessa data di nascita completa: e' la stessa persona anche
+    # senza una legislatura in comune. Succede quando Wikidata ne dimentica
+    # una, e nei senatori a vita, che Wikidata non lega a nessuna legislatura:
+    # Mario Monti risultava solo ministro, e il suo seggio al Senato dal
+    # novembre 2011 non c'era. Con la sola legislatura in comune come regola,
+    # quattordici persone perdevano mandati e gruppi, e con loro dei cambi di
+    # casacca.
+    if voci and nascita and len(nascita) == 10 and any(
+            v.get('nascita') == nascita for v in voci.values()):
+        return k, 'nome e data'
+
     pezzi = {x for x in k.split() if len(x) >= 3}
     if nascita and len(nascita) == 10:
         for mandato in mandati:
             for kk, _voce in indice.get((mandato, nascita), []):
-                if pezzi & {x for x in kk.split() if len(x) >= 3}:
+                if libera(kk) and pezzi & {x for x in kk.split() if len(x) >= 3}:
                     return kk, 'data'
 
     if per_mandato and len(pezzi) >= 2:
         for mandato in mandati:
             for kk, _voce in per_mandato.get(mandato, []):
                 altri = {x for x in kk.split() if len(x) >= 3}
-                if len(altri) >= 2 and (altri <= pezzi or pezzi <= altri):
+                if (libera(kk) and len(altri) >= 2
+                        and (altri <= pezzi or pezzi <= altri)):
                     return kk, 'nome contenuto'
+
+    # Un nome dentro l'altro e la stessa data di nascita completa, anche senza
+    # legislature in comune. Ettore Pirovano per Wikidata e' solo deputato
+    # nella XIII e nella XVI; il Senato lo chiama Ettore Pietro e lo ha nella
+    # XIV e nella XV. Senza questa regola diventava due persone.
+    if nascita and len(nascita) == 10 and len(pezzi) >= 2:
+        for kk, voci_kk in reg.items():
+            if not libera(kk) or not any(v.get('nascita') == nascita
+                                         for v in voci_kk.values()):
+                continue
+            altri = {x for x in kk.split() if len(x) >= 3}
+            if len(altri) >= 2 and (altri <= pezzi or pezzi <= altri):
+                return kk, 'nome contenuto e data'
     return None, None
 
 

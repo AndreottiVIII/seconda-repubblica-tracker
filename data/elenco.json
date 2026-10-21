@@ -1,5 +1,5 @@
 {
- "generato": "2026-09-27",
+ "generato": "2026-10-21",
  "eta_massima_credibile": 106,
  "persone": [
   {
@@ -1251,8 +1251,8 @@
    "qid": "Q3605755",
    "nome": "Adriano Ossicini",
    "cognome": "Ossicini",
-   "nascita": "1920",
-   "prec_nascita": "anno",
+   "nascita": "1920-06-20",
+   "prec_nascita": "giorno",
    "morte": "2019-02-15",
    "prec_morte": "giorno",
    "foto": "http://commons.wikimedia.org/wiki/Special:FilePath/Adriano%20Ossicini%20Senato.jpg",
@@ -5106,7 +5106,7 @@
    "prec_nascita": "giorno",
    "morte": "2013-12-28",
    "prec_morte": "giorno",
-   "foto": null,
+   "foto": "http://commons.wikimedia.org/wiki/Special:FilePath/Alessandra%20Siracusa%20candidata%20a%20sindaco%20di%20Palermo.jpg",
    "wikipedia": "https://it.wikipedia.org/wiki/Alessandra_Siragusa",
    "gruppi_per_mandato": {
     "XVI": [
@@ -8178,6 +8178,7 @@
     "deputato della Repubblica Italiana"
    ],
    "partiti": [
+    "Democrazia Proletaria",
     "Partito della Rifondazione Comunista"
    ],
    "genere": "M",
@@ -12801,7 +12802,7 @@
    "morte": null,
    "prec_morte": null,
    "foto": "http://commons.wikimedia.org/wiki/Special:FilePath/Angelo%20Rossi%201933.jpg",
-   "wikipedia": "https://it.wikipedia.org/wiki/Angelo_Rossi_(1933)",
+   "wikipedia": "https://it.wikipedia.org/wiki/Angelo_Rossi_(politico_1933)",
    "gruppi_per_mandato": {
     "XII": [
      {
@@ -13387,14 +13388,24 @@
       "a": "20010529",
       "fine": "Fine Legislatura"
      }
+    ],
+    "XVI": [
+     {
+      "uri": "http://dati.senato.it/gruppo/57",
+      "g": "IdV",
+      "da": "20080506",
+      "a": "20130314"
+     }
     ]
    },
    "ramo": {
-    "XIII": "C"
+    "XIII": "C",
+    "XVI": "S"
    },
    "senatore_a_vita": false,
    "mandati": [
-    "XIII"
+    "XIII",
+    "XVI"
    ],
    "cariche": [
     "deputato della Repubblica Italiana"
@@ -13407,11 +13418,26 @@
     "XIII": [
      "19960502",
      "20010529"
+    ],
+    "XVI": [
+     "20080429",
+     "20130314"
     ]
    },
    "id_camera": "50217",
    "gruppo_eletto": "CENTRO CRISTIANO DEMOCRATICO",
    "registro_muto": "Camera dei deputati",
+   "mandati_dal_registro": [
+    "XVI"
+   ],
+   "foto_senato": [
+    "16",
+    "4414"
+   ],
+   "circoscrizioni": {
+    "XVI": "Campania"
+   },
+   "id_senato": "http://dati.senato.it/senatore/4414",
    "stato": "vivente",
    "non_eletto": false,
    "hall_of_fame": false
@@ -13953,7 +13979,7 @@
    "mandato": {
     "XII": [
      "19940415",
-     "19960516"
+     "19960508"
     ]
    },
    "gruppo_eletto": "Pr. Verdi-Rete",
@@ -14851,7 +14877,7 @@
    "prec_nascita": "giorno",
    "morte": null,
    "prec_morte": null,
-   "foto": null,
+   "foto": "http://commons.wikimedia.org/wiki/Special:FilePath/Anna%20Teresa%20Formisano.jpg",
    "wikipedia": "https://it.wikipedia.org/wiki/Anna_Teresa_Formisano",
    "gruppi_per_mandato": {
     "XV": [
@@ -28434,7 +28460,7 @@
    "prec_nascita": "giorno",
    "morte": null,
    "prec_morte": null,
-   "foto": null,
+   "foto": "http://commons.wikimedia.org/wiki/Special:FilePath/US%20Navy%20060526-N-4936C-009%20Mayor%20of%20Anzio%2C%20Italy%2C%20Candido%20DeAngelis%2C%20speaks%20at%20an%20Anzio%20Memorial%20Monument%20ceremony%20honoring%20the%20men%20who%20fought%20at%20the%20Battle%20of%20Anzio%20during%20World%20War%20II%20and%20for%20which%20the%20current%20USS%20Anzio%20%28CG%206.jpg",
    "wikipedia": "https://it.wikipedia.org/wiki/Candido_De_Angelis",
    "gruppi_per_mandato": {
     "XVI": [
@@ -28969,19 +28995,41 @@
   {
    "qid": "Q1224",
    "nome": "Carlo Azeglio Ciampi",
-   "cognome": null,
+   "cognome": "Ciampi",
    "nascita": "1920-12-09",
    "prec_nascita": "giorno",
    "morte": "2016-09-16",
    "prec_morte": "giorno",
    "foto": "http://commons.wikimedia.org/wiki/Special:FilePath/Ciampi%20ritratto.jpg",
    "wikipedia": "https://it.wikipedia.org/wiki/Carlo_Azeglio_Ciampi",
-   "gruppi_per_mandato": {},
-   "ramo": {},
-   "senatore_a_vita": false,
+   "gruppi_per_mandato": {
+    "XV": [
+     {
+      "uri": "http://dati.senato.it/gruppo/9",
+      "g": "Misto",
+      "da": "20060517",
+      "a": "20080428"
+     }
+    ],
+    "XVI": [
+     {
+      "uri": "http://dati.senato.it/gruppo/9",
+      "g": "Misto",
+      "da": "20080506",
+      "a": "20130314"
+     }
+    ]
+   },
+   "ramo": {
+    "XV": "S",
+    "XVI": "S"
+   },
+   "senatore_a_vita": true,
    "mandati": [
     "Governo Prodi I",
-    "Governo D'Alema I"
+    "Governo D'Alema I",
+    "XV",
+    "XVI"
    ],
    "cariche": [
     "ministro del bilancio e della programmazione economica della Repubblica Italiana",
@@ -28991,8 +29039,29 @@
     "presidente della Repubblica Italiana"
    ],
    "partiti": [],
+   "mandati_dal_registro": [
+    "XV",
+    "XVI"
+   ],
+   "foto_senato": [
+    "17",
+    "594"
+   ],
+   "genere": "M",
+   "mandato": {
+    "XV": [
+     "20060516",
+     "20080428"
+    ],
+    "XVI": [
+     "20080429",
+     "20130314"
+    ]
+   },
+   "gruppo_eletto": "Misto",
+   "id_senato": "http://dati.senato.it/senatore/594",
    "stato": "deceduto",
-   "non_eletto": true,
+   "non_eletto": false,
    "hall_of_fame": false
   },
   {
@@ -38161,8 +38230,8 @@
    "qid": "Q106884076",
    "nome": "Daniele Apolloni",
    "cognome": "Apolloni",
-   "nascita": "1961",
-   "prec_nascita": "anno",
+   "nascita": "1961-11-22",
+   "prec_nascita": "giorno",
    "morte": null,
    "prec_morte": null,
    "foto": "http://commons.wikimedia.org/wiki/Special:FilePath/Daniele%20Apolloni2.jpg",
@@ -40839,8 +40908,8 @@
    "qid": "Q3707212",
    "nome": "Diego Masi",
    "cognome": "Masi",
-   "nascita": "1947",
-   "prec_nascita": "anno",
+   "nascita": "1947-02-11",
+   "prec_nascita": "giorno",
    "morte": null,
    "prec_morte": null,
    "foto": "http://commons.wikimedia.org/wiki/Special:FilePath/Diego%20Masi.jpg",
@@ -50179,8 +50248,8 @@
    "qid": "Q3725868",
    "nome": "Enrico Luigi Micheli",
    "cognome": "Micheli",
-   "nascita": "1938",
-   "prec_nascita": "anno",
+   "nascita": "1938-05-16",
+   "prec_nascita": "giorno",
    "morte": "2011-01-21",
    "prec_morte": "giorno",
    "foto": "http://commons.wikimedia.org/wiki/Special:FilePath/Enrico%20Luigi%20Micheli.jpg",
@@ -53408,71 +53477,6 @@
    "hall_of_fame": false
   },
   {
-   "qid": "S4519",
-   "nome": "Ettore Pietro Pirovano",
-   "cognome": "Pirovano",
-   "foto_senato": [
-    "15",
-    "4519"
-   ],
-   "genere": "M",
-   "circoscrizioni": {
-    "XIV": "Lombardia",
-    "XV": "Lombardia"
-   },
-   "incarichi": {},
-   "mandato": {
-    "XIV": [
-     "20010530",
-     "20060427"
-    ],
-    "XV": [
-     "20060428",
-     "20080428"
-    ]
-   },
-   "nascita": "1949-07-07",
-   "prec_nascita": "giorno",
-   "morte": "2025-09-17",
-   "prec_morte": "giorno",
-   "foto": null,
-   "wikipedia": null,
-   "gruppi_per_mandato": {
-    "XIV": [
-     {
-      "uri": "http://dati.senato.it/gruppo/33",
-      "g": "LNP",
-      "da": "20010530",
-      "a": "20060427"
-     }
-    ],
-    "XV": [
-     {
-      "uri": "http://dati.senato.it/gruppo/33",
-      "g": "LNP",
-      "da": "20060428",
-      "a": "20080428"
-     }
-    ]
-   },
-   "ramo": {
-    "XIV": "S",
-    "XV": "S"
-   },
-   "senatore_a_vita": false,
-   "mandati": [
-    "XIV",
-    "XV"
-   ],
-   "cariche": [],
-   "partiti": [],
-   "solo_registro": "Senato",
-   "fonte_morte": "Senato",
-   "stato": "deceduto",
-   "non_eletto": false,
-   "hall_of_fame": false
-  },
-  {
    "qid": "Q3733987",
    "nome": "Ettore Pirovano",
    "cognome": "Pirovano",
@@ -53503,16 +53507,36 @@
       "a": "20111221",
       "fine": "Dimissioni"
      }
+    ],
+    "XIV": [
+     {
+      "uri": "http://dati.senato.it/gruppo/33",
+      "g": "LNP",
+      "da": "20010530",
+      "a": "20060427"
+     }
+    ],
+    "XV": [
+     {
+      "uri": "http://dati.senato.it/gruppo/33",
+      "g": "LNP",
+      "da": "20060428",
+      "a": "20080428"
+     }
     ]
    },
    "ramo": {
     "XIII": "C",
-    "XVI": "C"
+    "XVI": "C",
+    "XIV": "S",
+    "XV": "S"
    },
    "senatore_a_vita": false,
    "mandati": [
     "XIII",
-    "XVI"
+    "XVI",
+    "XIV",
+    "XV"
    ],
    "cariche": [
     "deputato della Repubblica Italiana"
@@ -53529,10 +53553,20 @@
     "XVI": [
      "20080422",
      "20111221"
+    ],
+    "XIV": [
+     "20010530",
+     "20060427"
+    ],
+    "XV": [
+     "20060428",
+     "20080428"
     ]
    },
    "circoscrizioni": {
-    "XVI": "LOMBARDIA 1"
+    "XVI": "LOMBARDIA 1",
+    "XIV": "Lombardia",
+    "XV": "Lombardia"
    },
    "incarichi": {
     "XVI": [
@@ -53549,6 +53583,15 @@
    "aggancio": "data di nascita",
    "id_camera": "50128",
    "gruppo_eletto": "LEGA NORD PADANIA",
+   "mandati_dal_registro": [
+    "XIV",
+    "XV"
+   ],
+   "foto_senato": [
+    "15",
+    "4519"
+   ],
+   "id_senato": "http://dati.senato.it/senatore/4519",
    "stato": "deceduto",
    "non_eletto": false,
    "hall_of_fame": false
@@ -55817,7 +55860,6 @@
    },
    "id_camera": "33820",
    "gruppo_eletto": "PROGRESSISTI - FEDERATIVO",
-   "registro_muto": "Camera dei deputati",
    "stato": "deceduto",
    "non_eletto": false,
    "hall_of_fame": false
@@ -63121,18 +63163,15 @@
    "gruppi_per_mandato": {
     "XII": [
      {
-      "uri": "http://dati.camera.it/ocd/gruppoParlamentare.rdf/gr404",
-      "g": "ALLEANZA NAZIONALE",
-      "s": "AN",
-      "da": "19940421",
-      "a": "19960508",
-      "fine": "Fine Legislatura",
-      "allora": "ALLEANZA NAZIONALE - MSI"
+      "uri": "http://dati.senato.it/gruppo/5",
+      "g": "Progr. PSI",
+      "da": "19940418",
+      "a": "19960508"
      }
     ]
    },
    "ramo": {
-    "XII": "C"
+    "XII": "S"
    },
    "senatore_a_vita": false,
    "mandati": [
@@ -63144,23 +63183,21 @@
    "partiti": [
     "Partito Socialista Italiano"
    ],
+   "foto_senato": [
+    "12",
+    "168"
+   ],
    "genere": "M",
+   "circoscrizioni": {
+    "XII": "Campania"
+   },
    "mandato": {
     "XII": [
      "19940415",
      "19960508"
     ]
    },
-   "id_camera": "35180",
-   "gruppo_eletto": "ALLEANZA NAZIONALE",
-   "fonte_morte": "Senato",
-   "foto_senato": [
-    "12",
-    "168"
-   ],
-   "circoscrizioni": {
-    "XII": "Campania"
-   },
+   "gruppo_eletto": "Progr. PSI",
    "id_senato": "http://dati.senato.it/senatore/168",
    "stato": "deceduto",
    "non_eletto": false,
@@ -64992,7 +65029,7 @@
    "prec_nascita": "giorno",
    "morte": null,
    "prec_morte": null,
-   "foto": null,
+   "foto": "http://commons.wikimedia.org/wiki/Special:FilePath/FRANCESCO%20FERRANTE.jpg",
    "wikipedia": "https://it.wikipedia.org/wiki/Francesco_Ferrante",
    "gruppi_per_mandato": {
     "XV": [
@@ -66352,9 +66389,9 @@
    "qid": "Q105096236",
    "nome": "Francesco Michele Barra",
    "cognome": "Barra",
-   "nascita": "1949-09-11",
+   "nascita": "1947-10-06",
    "prec_nascita": "giorno",
-   "morte": "2022-03-29",
+   "morte": "2026-06-15",
    "prec_morte": "giorno",
    "foto": "http://commons.wikimedia.org/wiki/Special:FilePath/Francesco%20Michele%20Barra%20daticamera.jpg",
    "wikipedia": "https://it.wikipedia.org/wiki/Francesco_Michele_Barra",
@@ -66385,21 +66422,12 @@
    "genere": "M",
    "mandato": {
     "XII": [
-     "19940415",
+     "19940401",
      "19960508"
     ]
    },
    "id_camera": "35180",
    "gruppo_eletto": "ALLEANZA NAZIONALE",
-   "foto_senato": [
-    "12",
-    "168"
-   ],
-   "circoscrizioni": {
-    "XII": "Campania"
-   },
-   "id_senato": "http://dati.senato.it/senatore/168",
-   "fonte_morte": "Senato",
    "stato": "deceduto",
    "non_eletto": false,
    "hall_of_fame": false
@@ -67827,8 +67855,8 @@
    "qid": "Q3750607",
    "nome": "Francesco Saverio Caruso",
    "cognome": "Caruso",
-   "nascita": "1974",
-   "prec_nascita": "anno",
+   "nascita": "1974-08-25",
+   "prec_nascita": "giorno",
    "morte": null,
    "prec_morte": null,
    "foto": "http://commons.wikimedia.org/wiki/Special:FilePath/Francesco%20Saverio%20Caruso.jpg",
@@ -71614,8 +71642,8 @@
    "qid": "Q62559630",
    "nome": "Fulvio Camerini",
    "cognome": "Camerini",
-   "nascita": "1925",
-   "prec_nascita": "anno",
+   "nascita": "1925-07-20",
+   "prec_nascita": "giorno",
    "morte": "2019-02-25",
    "prec_morte": "giorno",
    "foto": "http://commons.wikimedia.org/wiki/Special:FilePath/Fulvio%20Camerini%20datisenato.jpg",
@@ -71743,14 +71771,24 @@
       "fine": "Fine Legislatura",
       "allora": "L'ULIVO"
      }
+    ],
+    "XIV": [
+     {
+      "uri": "http://dati.senato.it/gruppo/40",
+      "g": "DS-U",
+      "da": "20010530",
+      "a": "20060427"
+     }
     ]
    },
    "ramo": {
-    "XV": "C"
+    "XV": "C",
+    "XIV": "S"
    },
    "senatore_a_vita": false,
    "mandati": [
-    "XV"
+    "XV",
+    "XIV"
    ],
    "cariche": [
     "deputato della Repubblica Italiana"
@@ -71760,17 +71798,30 @@
    ],
    "genere": "M",
    "circoscrizioni": {
-    "XV": "CAMPANIA 1"
+    "XV": "CAMPANIA 1",
+    "XIV": "Campania"
    },
    "mandato": {
     "XV": [
      "20060421",
      "20080428"
+    ],
+    "XIV": [
+     "20010530",
+     "20060427"
     ]
    },
    "id_camera": "300607",
    "gruppo_eletto": "PARTITO DEMOCRATICO-L'ULIVO",
    "registro_muto": "Camera dei deputati",
+   "mandati_dal_registro": [
+    "XIV"
+   ],
+   "foto_senato": [
+    "14",
+    "17649"
+   ],
+   "id_senato": "http://dati.senato.it/senatore/17649",
    "stato": "vivente",
    "non_eletto": false,
    "hall_of_fame": false
@@ -72218,8 +72269,8 @@
    "qid": "Q3756557",
    "nome": "Gabriele Calvi",
    "cognome": "Calvi",
-   "nascita": "1925",
-   "prec_nascita": "anno",
+   "nascita": "1925-04-30",
+   "prec_nascita": "giorno",
    "morte": "2015-08-22",
    "prec_morte": "giorno",
    "foto": "http://commons.wikimedia.org/wiki/Special:FilePath/GabrieleCalvi.jpg",
@@ -76661,7 +76712,7 @@
    "prec_nascita": "giorno",
    "morte": null,
    "prec_morte": null,
-   "foto": null,
+   "foto": "http://commons.wikimedia.org/wiki/Special:FilePath/Pietro%20Cannella%20XVI.jpg",
    "wikipedia": "https://it.wikipedia.org/wiki/Giampiero_Cannella",
    "gruppi_per_mandato": {
     "XIV": [
@@ -77640,7 +77691,7 @@
    "prec_nascita": "giorno",
    "morte": null,
    "prec_morte": null,
-   "foto": null,
+   "foto": "http://commons.wikimedia.org/wiki/Special:FilePath/Broglia%201995.jpg",
    "wikipedia": "https://it.wikipedia.org/wiki/Gian_Piero_Broglia",
    "gruppi_per_mandato": {
     "XII": [
@@ -77715,14 +77766,24 @@
       "a": "19960508",
       "fine": "Fine Legislatura"
      }
+    ],
+    "XVI": [
+     {
+      "uri": "http://dati.senato.it/gruppo/49",
+      "g": "PD",
+      "da": "20080506",
+      "a": "20130314"
+     }
     ]
    },
    "ramo": {
-    "XII": "C"
+    "XII": "C",
+    "XVI": "S"
    },
    "senatore_a_vita": false,
    "mandati": [
-    "XII"
+    "XII",
+    "XVI"
    ],
    "cariche": [
     "deputato della Repubblica Italiana"
@@ -77744,11 +77805,26 @@
     "XII": [
      "19940405",
      "19960508"
+    ],
+    "XVI": [
+     "20080429",
+     "20130314"
     ]
    },
    "id_camera": "38700",
    "gruppo_eletto": "PARTITO POPOLARE ITALIANO",
    "registro_muto": "Camera dei deputati",
+   "mandati_dal_registro": [
+    "XVI"
+   ],
+   "foto_senato": [
+    "16",
+    "2207"
+   ],
+   "circoscrizioni": {
+    "XVI": "Sardegna"
+   },
+   "id_senato": "http://dati.senato.it/senatore/2207",
    "stato": "vivente",
    "non_eletto": false,
    "hall_of_fame": false
@@ -89048,7 +89124,7 @@
    "qid": "Q3767132",
    "nome": "Giovanni Di Mauro",
    "cognome": "Di Mauro",
-   "nascita": "1962-06-22",
+   "nascita": "1956-06-27",
    "prec_nascita": "giorno",
    "morte": null,
    "prec_morte": null,
@@ -89093,7 +89169,7 @@
    ],
    "genere": "M",
    "circoscrizioni": {
-    "XV": "Sicilia",
+    "XV": "SICILIA 1",
     "XVI": "SICILIA 1"
    },
    "incarichi": {
@@ -89107,7 +89183,7 @@
    "mandato": {
     "XV": [
      "20060428",
-     "20080428"
+     "20060717"
     ],
     "XVI": [
      "20080522",
@@ -89117,11 +89193,6 @@
    "id_camera": "32970",
    "gruppo_eletto": "MISTO",
    "registro_muto": "Camera dei deputati",
-   "foto_senato": [
-    "17",
-    "17704"
-   ],
-   "id_senato": "http://dati.senato.it/senatore/17704",
    "stato": "vivente",
    "non_eletto": false,
    "hall_of_fame": false
@@ -101304,7 +101375,7 @@
    "prec_nascita": "giorno",
    "morte": null,
    "prec_morte": null,
-   "foto": null,
+   "foto": "http://commons.wikimedia.org/wiki/Special:FilePath/Giuseppe%20Siciliani%20daticamera%201994.jpg",
    "wikipedia": "https://it.wikipedia.org/wiki/Giuseppe_Siciliani",
    "gruppi_per_mandato": {
     "XII": [
@@ -102077,8 +102148,8 @@
    "qid": "Q3771601",
    "nome": "Giuseppe Vatinno",
    "cognome": "Vatinno",
-   "nascita": "1961",
-   "prec_nascita": "anno",
+   "nascita": "1961-04-03",
+   "prec_nascita": "giorno",
    "morte": null,
    "prec_morte": null,
    "foto": null,
@@ -104956,8 +105027,8 @@
    "qid": "Q3779385",
    "nome": "Guido Melis",
    "cognome": "Melis",
-   "nascita": "1949",
-   "prec_nascita": "anno",
+   "nascita": "1949-11-08",
+   "prec_nascita": "giorno",
    "morte": null,
    "prec_morte": null,
    "foto": "http://commons.wikimedia.org/wiki/Special:FilePath/Guido%20Melis.jpg",
@@ -110072,7 +110143,7 @@
     "deputato della Repubblica Italiana"
    ],
    "partiti": [
-    "Futuro Nazionale con Roberto Vannacci"
+    "Futuro Nazionale"
    ],
    "genere": "F",
    "circoscrizioni": {
@@ -115563,7 +115634,7 @@
    "cognome": "D'Ulizia",
    "nascita": "1945-07-21",
    "prec_nascita": "giorno",
-   "morte": "2022-03-18",
+   "morte": "2022-03-17",
    "prec_morte": "giorno",
    "foto": null,
    "wikipedia": "https://it.wikipedia.org/wiki/Luciano_D%27Ulizia",
@@ -115612,7 +115683,6 @@
    },
    "id_camera": "302121",
    "gruppo_eletto": "ITALIA DEI VALORI",
-   "fonte_morte": "Camera dei deputati",
    "stato": "deceduto",
    "non_eletto": false,
    "hall_of_fame": false
@@ -116007,12 +116077,10 @@
    "gruppi_per_mandato": {
     "XII": [
      {
-      "uri": "http://dati.camera.it/ocd/gruppoParlamentare.rdf/gr413",
-      "g": "PROGRESSISTI - FEDERATIVO",
-      "s": "PROGR-F",
-      "da": "19940421",
-      "a": "19960508",
-      "fine": "Fine Legislatura"
+      "uri": "http://dati.senato.it/gruppo/1",
+      "g": "Progr. Feder.",
+      "da": "19940418",
+      "a": "19960508"
      }
     ],
     "XIII": [
@@ -116033,7 +116101,7 @@
     ]
    },
    "ramo": {
-    "XII": "C",
+    "XII": "S",
     "XIII": "S",
     "XIV": "S"
    },
@@ -116044,14 +116112,21 @@
     "XIV"
    ],
    "cariche": [
-    "deputato della Repubblica Italiana",
     "senatore della Repubblica Italiana"
    ],
    "partiti": [
-    "Partito Comunista Italiano",
     "Partito Democratico"
    ],
+   "foto_senato": [
+    "14",
+    "1223"
+   ],
    "genere": "M",
+   "circoscrizioni": {
+    "XII": "Emilia Romagna",
+    "XIII": "Emilia Romagna",
+    "XIV": "Emilia Romagna"
+   },
    "mandato": {
     "XII": [
      "19940415",
@@ -116066,19 +116141,56 @@
      "20060427"
     ]
    },
+   "gruppo_eletto": "Progr. Feder.",
+   "id_senato": "http://dati.senato.it/senatore/1223",
+   "stato": "deceduto",
+   "non_eletto": false,
+   "hall_of_fame": false
+  },
+  {
+   "qid": "Q3838611",
+   "nome": "Luciano Guerzoni",
+   "cognome": "Guerzoni",
+   "nascita": "1938-04-01",
+   "prec_nascita": "giorno",
+   "morte": "2020-12-01",
+   "prec_morte": "giorno",
+   "foto": "http://commons.wikimedia.org/wiki/Special:FilePath/Luciano%20Guerzoni.jpg",
+   "wikipedia": "https://it.wikipedia.org/wiki/Luciano_Guerzoni_(1938)",
+   "gruppi_per_mandato": {
+    "XII": [
+     {
+      "uri": "http://dati.camera.it/ocd/gruppoParlamentare.rdf/gr413",
+      "g": "PROGRESSISTI - FEDERATIVO",
+      "s": "PROGR-F",
+      "da": "19940421",
+      "a": "19960508",
+      "fine": "Fine Legislatura"
+     }
+    ]
+   },
+   "ramo": {
+    "XII": "C"
+   },
+   "senatore_a_vita": false,
+   "mandati": [
+    "XII"
+   ],
+   "cariche": [
+    "deputato della Repubblica Italiana"
+   ],
+   "partiti": [
+    "Partito Comunista Italiano"
+   ],
+   "genere": "M",
+   "mandato": {
+    "XII": [
+     "19940402",
+     "19960508"
+    ]
+   },
    "id_camera": "23670",
    "gruppo_eletto": "PROGRESSISTI - FEDERATIVO",
-   "fonte_morte": "Senato",
-   "foto_senato": [
-    "14",
-    "1223"
-   ],
-   "circoscrizioni": {
-    "XII": "Emilia Romagna",
-    "XIII": "Emilia Romagna",
-    "XIV": "Emilia Romagna"
-   },
-   "id_senato": "http://dati.senato.it/senatore/1223",
    "stato": "deceduto",
    "non_eletto": false,
    "hall_of_fame": false
@@ -116372,8 +116484,8 @@
    "qid": "Q61477771",
    "nome": "Luciano Merigliano",
    "cognome": "Merigliano",
-   "nascita": "1924",
-   "prec_nascita": "anno",
+   "nascita": "1924-01-25",
+   "prec_nascita": "giorno",
    "morte": "2011-07-01",
    "prec_morte": "giorno",
    "foto": null,
@@ -120028,14 +120140,24 @@
       "fine": "Fine Legislatura",
       "allora": "CCD-CDU BIANCOFIORE"
      }
+    ],
+    "XV": [
+     {
+      "uri": "http://dati.senato.it/gruppo/26",
+      "g": "UDC",
+      "da": "20060428",
+      "a": "20080428"
+     }
     ]
    },
    "ramo": {
-    "XIV": "C"
+    "XIV": "C",
+    "XV": "S"
    },
    "senatore_a_vita": false,
    "mandati": [
-    "XIV"
+    "XIV",
+    "XV"
    ],
    "cariche": [
     "deputato della Repubblica Italiana"
@@ -120056,11 +120178,26 @@
     "XIV": [
      "20010521",
      "20060427"
+    ],
+    "XV": [
+     "20060428",
+     "20080428"
     ]
    },
    "id_camera": "300449",
    "gruppo_eletto": "UDC UNIONE DEI DEMOCRATICI CRISTIANI E DEI DEMOCRATICI DI CENTRO (CCD-CDU)",
    "registro_muto": "Camera dei deputati",
+   "mandati_dal_registro": [
+    "XV"
+   ],
+   "foto_senato": [
+    "15",
+    "17694"
+   ],
+   "circoscrizioni": {
+    "XV": "Lombardia"
+   },
+   "id_senato": "http://dati.senato.it/senatore/17694",
    "stato": "vivente",
    "non_eletto": false,
    "hall_of_fame": false
@@ -120440,7 +120577,7 @@
    "prec_nascita": "giorno",
    "morte": null,
    "prec_morte": null,
-   "foto": null,
+   "foto": "http://commons.wikimedia.org/wiki/Special:FilePath/Luigi%20Muro%20Sindaco%20di%20Procida%202025.jpg",
    "wikipedia": "https://it.wikipedia.org/wiki/Luigi_Muro",
    "gruppi_per_mandato": {
     "XVI": [
@@ -128144,18 +128281,28 @@
       "a": "20060427",
       "fine": "Fine Legislatura"
      }
+    ],
+    "XV": [
+     {
+      "uri": "http://dati.senato.it/gruppo/50",
+      "g": "RC-SE",
+      "da": "20060428",
+      "a": "20080428"
+     }
     ]
    },
    "ramo": {
     "XII": "C",
     "XIII": "C",
-    "XIV": "C"
+    "XIV": "C",
+    "XV": "S"
    },
    "senatore_a_vita": false,
    "mandati": [
     "XII",
     "XIII",
-    "XIV"
+    "XIV",
+    "XV"
    ],
    "cariche": [
     "deputato della Repubblica Italiana"
@@ -128167,7 +128314,8 @@
    "circoscrizioni": {
     "XII": "PUGLIA",
     "XIII": "CALABRIA",
-    "XIV": "PUGLIA"
+    "XIV": "PUGLIA",
+    "XV": "Puglia"
    },
    "mandato": {
     "XII": [
@@ -128181,6 +128329,10 @@
     "XIV": [
      "20050503",
      "20060427"
+    ],
+    "XV": [
+     "20060428",
+     "20080428"
     ]
    },
    "incarichi": {
@@ -128199,6 +128351,14 @@
    },
    "id_camera": "37860",
    "gruppo_eletto": "RIFONDAZIONE COMUNISTA - PROGRESSISTI",
+   "mandati_dal_registro": [
+    "XV"
+   ],
+   "foto_senato": [
+    "15",
+    "1674"
+   ],
+   "id_senato": "http://dati.senato.it/senatore/1674",
    "stato": "deceduto",
    "non_eletto": false,
    "hall_of_fame": false
@@ -133885,18 +134045,30 @@
   {
    "qid": "Q47904",
    "nome": "Mario Monti",
-   "cognome": null,
+   "cognome": "Monti",
    "nascita": "1943-03-19",
    "prec_nascita": "giorno",
    "morte": null,
    "prec_morte": null,
    "foto": "http://commons.wikimedia.org/wiki/Special:FilePath/Mario%20Monti%20portrait%20november%202011.jpg",
    "wikipedia": "https://it.wikipedia.org/wiki/Mario_Monti",
-   "gruppi_per_mandato": {},
-   "ramo": {},
-   "senatore_a_vita": false,
+   "gruppi_per_mandato": {
+    "XVI": [
+     {
+      "uri": "http://dati.senato.it/gruppo/9",
+      "g": "Misto",
+      "da": "20111117",
+      "a": "20130314"
+     }
+    ]
+   },
+   "ramo": {
+    "XVI": "S"
+   },
+   "senatore_a_vita": true,
    "mandati": [
-    "Governo Monti"
+    "Governo Monti",
+    "XVI"
    ],
    "cariche": [
     "ministro degli esteri della Repubblica Italiana",
@@ -133904,8 +134076,25 @@
     "presidente del Consiglio dei ministri della Repubblica Italiana"
    ],
    "partiti": [],
+   "mandati_dal_registro": [
+    "XVI"
+   ],
+   "foto_senato": [
+    "19",
+    "28543"
+   ],
+   "genere": "M",
+   "mandato": {
+    "XVI": [
+     "20111109",
+     "20130314"
+    ]
+   },
+   "gruppo_eletto": "Misto",
+   "registro_muto": "Senato",
+   "id_senato": "http://dati.senato.it/senatore/28543",
    "stato": "vivente",
-   "non_eletto": true,
+   "non_eletto": false,
    "hall_of_fame": false
   },
   {
@@ -134124,7 +134313,7 @@
    "hall_of_fame": false
   },
   {
-   "qid": "Q3848939",
+   "qid": "Q3848938",
    "nome": "Mario Pepe",
    "cognome": "Pepe",
    "nascita": "1941-01-14",
@@ -134132,7 +134321,7 @@
    "morte": null,
    "prec_morte": null,
    "foto": "http://commons.wikimedia.org/wiki/Special:FilePath/Mario%20Pepe%20XVI.jpg",
-   "wikipedia": "https://it.wikipedia.org/wiki/Mario_Pepe_(politico_1951)",
+   "wikipedia": "https://it.wikipedia.org/wiki/Mario_Pepe_(politico_1941)",
    "gruppi_per_mandato": {
     "XII": [
      {
@@ -134154,6 +134343,84 @@
       "fine": "Fine Legislatura"
      }
     ],
+    "XVI": [
+     {
+      "uri": "http://dati.camera.it/ocd/gruppoParlamentare.rdf/gr475",
+      "g": "PARTITO DEMOCRATICO",
+      "s": "PD",
+      "da": "20080505",
+      "a": "20130314",
+      "fine": "Fine Legislatura"
+     }
+    ]
+   },
+   "ramo": {
+    "XII": "C",
+    "XIII": "C",
+    "XVI": "C"
+   },
+   "senatore_a_vita": false,
+   "mandati": [
+    "XII",
+    "XIII",
+    "XVI"
+   ],
+   "cariche": [
+    "deputato della Repubblica Italiana"
+   ],
+   "partiti": [
+    "Partito Democratico"
+   ],
+   "genere": "M",
+   "mandato": {
+    "XII": [
+     "19940406",
+     "19960508"
+    ],
+    "XIII": [
+     "19960429",
+     "20010529"
+    ],
+    "XVI": [
+     "20080422",
+     "20130314"
+    ]
+   },
+   "incarichi": {
+    "XIII": [
+     {
+      "r": "PRESIDENTE",
+      "o": "COMMISSIONE PARLAMENTARE PER LE QUESTIONI REGIONALI"
+     }
+    ],
+    "XVI": [
+     {
+      "r": "VICEPRESIDENTE",
+      "o": "COMMISSIONE PARLAMENTARE PER LE QUESTIONI REGIONALI"
+     }
+    ]
+   },
+   "circoscrizioni": {
+    "XVI": "CAMPANIA 2"
+   },
+   "id_camera": "38120",
+   "gruppo_eletto": "PARTITO POPOLARE ITALIANO",
+   "registro_muto": "Camera dei deputati",
+   "stato": "vivente",
+   "non_eletto": false,
+   "hall_of_fame": false
+  },
+  {
+   "qid": "Q3848939",
+   "nome": "Mario Pepe",
+   "cognome": "Pepe",
+   "nascita": "1951-12-09",
+   "prec_nascita": "giorno",
+   "morte": null,
+   "prec_morte": null,
+   "foto": null,
+   "wikipedia": "https://it.wikipedia.org/wiki/Mario_Pepe_(politico_1951)",
+   "gruppi_per_mandato": {
     "XIV": [
      {
       "uri": "http://dati.camera.it/ocd/gruppoParlamentare.rdf/gr141",
@@ -134176,18 +134443,33 @@
     ],
     "XVI": [
      {
-      "uri": "http://dati.camera.it/ocd/gruppoParlamentare.rdf/gr475",
-      "g": "PARTITO DEMOCRATICO",
-      "s": "PD",
+      "uri": "http://dati.camera.it/ocd/gruppoParlamentare.rdf/gr477",
+      "g": "POPOLO DELLA LIBERTA'",
+      "s": "PDL",
       "da": "20080505",
+      "a": "20110120",
+      "fine": "Cessazione"
+     },
+     {
+      "uri": "http://dati.camera.it/ocd/gruppoParlamentare.rdf/gr849",
+      "g": "POPOLO E TERRITORIO (NOI SUD-LIBERTA' ED AUTONOMIA, POPOLARI D'ITALIA DOMANI-PID, MOVIMENTO DI RESPONSABILITA' NAZIONALE-MRN, AZIONE POPOLARE, ALLEANZA DI CENTRO-ADC, INTESA POPOLARE)",
+      "s": "PT",
+      "da": "20110120",
+      "a": "20110620",
+      "fine": "Cessazione",
+      "allora": "INIZIATIVA RESPONSABILE (NOI SUD-LIBERTA' ED AUTONOMIA, POPOLARI D'ITALIA DOMANI-PID, MOVIMENTO DI RESPONSABILITA' NAZIONALE-MRN, AZIONE POPOLARE, ALLEANZA DI CENTRO-ADC, LA DISCUSSIONE)"
+     },
+     {
+      "uri": "http://dati.camera.it/ocd/gruppoParlamentare.rdf/gr472",
+      "g": "MISTO",
+      "s": "MISTO",
+      "da": "20110620",
       "a": "20130314",
       "fine": "Fine Legislatura"
      }
     ]
    },
    "ramo": {
-    "XII": "C",
-    "XIII": "C",
     "XIV": "C",
     "XV": "C",
     "XVI": "C"
@@ -134196,31 +134478,16 @@
    "mandati": [
     "XIV",
     "XV",
-    "XVI",
-    "XII",
-    "XIII"
+    "XVI"
    ],
    "cariche": [
     "deputato della Repubblica Italiana"
    ],
    "partiti": [
-    "Il Popolo della Libertà",
-    "Partito Democratico"
-   ],
-   "mandati_dal_registro": [
-    "XII",
-    "XIII"
+    "Il Popolo della Libertà"
    ],
    "genere": "M",
    "mandato": {
-    "XII": [
-     "19940406",
-     "19960508"
-    ],
-    "XIII": [
-     "19960429",
-     "20010529"
-    ],
     "XIV": [
      "20010523",
      "20060427"
@@ -134234,26 +134501,20 @@
      "20130314"
     ]
    },
-   "incarichi": {
-    "XIII": [
-     {
-      "r": "PRESIDENTE",
-      "o": "COMMISSIONE PARLAMENTARE PER LE QUESTIONI REGIONALI"
-     }
-    ],
-    "XVI": [
-     {
-      "r": "VICEPRESIDENTE",
-      "o": "COMMISSIONE PARLAMENTARE PER LE QUESTIONI REGIONALI"
-     }
-    ]
-   },
    "circoscrizioni": {
     "XV": "LAZIO 1",
     "XVI": "CAMPANIA 2"
    },
-   "id_camera": "38120",
-   "gruppo_eletto": "PARTITO POPOLARE ITALIANO",
+   "incarichi": {
+    "XVI": [
+     {
+      "r": "CAPOGRUPPO",
+      "o": "VII COMMISSIONE (CULTURA"
+     }
+    ]
+   },
+   "id_camera": "300368",
+   "gruppo_eletto": "FORZA ITALIA",
    "registro_muto": "Camera dei deputati",
    "stato": "vivente",
    "non_eletto": false,
@@ -141691,14 +141952,24 @@
       "fine": "Fine Legislatura",
       "allora": "L'ULIVO"
      }
+    ],
+    "XIV": [
+     {
+      "uri": "http://dati.senato.it/gruppo/48",
+      "g": "Aut",
+      "da": "20010530",
+      "a": "20060427"
+     }
     ]
    },
    "ramo": {
-    "XV": "C"
+    "XV": "C",
+    "XIV": "S"
    },
    "senatore_a_vita": false,
    "mandati": [
-    "XV"
+    "XV",
+    "XIV"
    ],
    "cariche": [
     "deputato della Repubblica Italiana"
@@ -141710,17 +141981,30 @@
    ],
    "genere": "M",
    "circoscrizioni": {
-    "XV": "TRENTINO-ALTO ADIGE"
+    "XV": "TRENTINO-ALTO ADIGE",
+    "XIV": "Trentino-Alto Adige"
    },
    "mandato": {
     "XV": [
      "20060606",
      "20080428"
+    ],
+    "XIV": [
+     "20010530",
+     "20060427"
     ]
    },
    "id_camera": "300503",
    "gruppo_eletto": "PARTITO DEMOCRATICO-L'ULIVO",
    "registro_muto": "Camera dei deputati",
+   "mandati_dal_registro": [
+    "XIV"
+   ],
+   "foto_senato": [
+    "14",
+    "17551"
+   ],
+   "id_senato": "http://dati.senato.it/senatore/17551",
    "stato": "vivente",
    "non_eletto": false,
    "hall_of_fame": false
@@ -143961,14 +144245,24 @@
       "a": "20010529",
       "fine": "Fine Legislatura"
      }
+    ],
+    "XII": [
+     {
+      "uri": "http://dati.senato.it/gruppo/1",
+      "g": "Progr. Feder.",
+      "da": "19940418",
+      "a": "19960508"
+     }
     ]
    },
    "ramo": {
-    "XIII": "C"
+    "XIII": "C",
+    "XII": "S"
    },
    "senatore_a_vita": false,
    "mandati": [
-    "XIII"
+    "XIII",
+    "XII"
    ],
    "cariche": [
     "deputato della Repubblica Italiana"
@@ -143976,16 +144270,29 @@
    "partiti": [],
    "genere": "M",
    "circoscrizioni": {
-    "XIII": "CAMPANIA 2"
+    "XIII": "CAMPANIA 2",
+    "XII": "Campania"
    },
    "mandato": {
     "XIII": [
      "19990414",
      "20010529"
+    ],
+    "XII": [
+     "19940415",
+     "19960508"
     ]
    },
    "id_camera": "50466",
    "gruppo_eletto": "DEMOCRATICI DI SINISTRA - L'ULIVO",
+   "mandati_dal_registro": [
+    "XII"
+   ],
+   "foto_senato": [
+    "12",
+    "696"
+   ],
+   "id_senato": "http://dati.senato.it/senatore/696",
    "stato": "deceduto",
    "non_eletto": false,
    "hall_of_fame": false
@@ -152563,14 +152870,24 @@
       "a": "19960508",
       "fine": "Fine Legislatura"
      }
+    ],
+    "XIII": [
+     {
+      "uri": "http://dati.senato.it/gruppo/40",
+      "g": "Sin.Dem.-Ulivo",
+      "da": "19960509",
+      "a": "19991005"
+     }
     ]
    },
    "ramo": {
-    "XII": "C"
+    "XII": "C",
+    "XIII": "S"
    },
    "senatore_a_vita": false,
    "mandati": [
-    "XII"
+    "XII",
+    "XIII"
    ],
    "cariche": [
     "deputato della Repubblica Italiana"
@@ -152583,11 +152900,26 @@
     "XII": [
      "19940331",
      "19960508"
+    ],
+    "XIII": [
+     "19960509",
+     "19991005"
     ]
    },
    "id_camera": "39170",
    "gruppo_eletto": "PROGRESSISTI - FEDERATIVO",
    "registro_muto": "Camera dei deputati",
+   "mandati_dal_registro": [
+    "XIII"
+   ],
+   "foto_senato": [
+    "13",
+    "2438"
+   ],
+   "circoscrizioni": {
+    "XIII": "Marche"
+   },
+   "id_senato": "http://dati.senato.it/senatore/2438",
    "stato": "vivente",
    "non_eletto": false,
    "hall_of_fame": false
@@ -153708,8 +154040,8 @@
    "qid": "Q3893730",
    "nome": "Paolo Bagnoli",
    "cognome": "Bagnoli",
-   "nascita": "1947",
-   "prec_nascita": "anno",
+   "nascita": "1947-06-01",
+   "prec_nascita": "giorno",
    "morte": null,
    "prec_morte": null,
    "foto": "http://commons.wikimedia.org/wiki/Special:FilePath/Paolo%20Bagnoli%20XII.jpg",
@@ -163362,7 +163694,7 @@
    "prec_nascita": "giorno",
    "morte": null,
    "prec_morte": null,
-   "foto": null,
+   "foto": "http://commons.wikimedia.org/wiki/Special:FilePath/Pietro%20Rao.jpg",
    "wikipedia": "https://it.wikipedia.org/wiki/Pietro_Rao",
    "gruppi_per_mandato": {
     "XV": [
@@ -163422,7 +163754,7 @@
    "prec_nascita": "giorno",
    "morte": null,
    "prec_morte": null,
-   "foto": null,
+   "foto": "http://commons.wikimedia.org/wiki/Special:FilePath/Pietro%20Squeglia.jpg",
    "wikipedia": "https://it.wikipedia.org/wiki/Pietro_Squeglia",
    "gruppi_per_mandato": {
     "XIV": [
@@ -164294,7 +164626,6 @@
    },
    "id_camera": "15250",
    "gruppo_eletto": "FORZA ITALIA",
-   "registro_muto": "Camera dei deputati",
    "stato": "deceduto",
    "non_eletto": false,
    "hall_of_fame": false
@@ -170014,8 +170345,8 @@
    "qid": "Q3938622",
    "nome": "Roberto Biscardini",
    "cognome": "Biscardini",
-   "nascita": "1947",
-   "prec_nascita": "anno",
+   "nascita": "1947-06-11",
+   "prec_nascita": "giorno",
    "morte": null,
    "prec_morte": null,
    "foto": "http://commons.wikimedia.org/wiki/Special:FilePath/Roberto%20Biscardini%20datisenato.jpg",
@@ -184632,14 +184963,34 @@
       "a": "19960508",
       "fine": "Fine Legislatura"
      }
+    ],
+    "XIII": [
+     {
+      "uri": "http://dati.senato.it/gruppo/30",
+      "g": "FI",
+      "da": "19960509",
+      "a": "20010529"
+     }
+    ],
+    "XIV": [
+     {
+      "uri": "http://dati.senato.it/gruppo/30",
+      "g": "FI",
+      "da": "20010530",
+      "a": "20060427"
+     }
     ]
    },
    "ramo": {
-    "XII": "C"
+    "XII": "C",
+    "XIII": "S",
+    "XIV": "S"
    },
    "senatore_a_vita": false,
    "mandati": [
-    "XII"
+    "XII",
+    "XIII",
+    "XIV"
    ],
    "cariche": [
     "deputato della Repubblica Italiana"
@@ -184647,17 +184998,36 @@
    "partiti": [],
    "genere": "M",
    "circoscrizioni": {
-    "XII": "VENETO 1"
+    "XII": "VENETO 1",
+    "XIII": "Lombardia",
+    "XIV": "Lombardia"
    },
    "mandato": {
     "XII": [
      "19950713",
      "19960508"
+    ],
+    "XIII": [
+     "19960509",
+     "20010529"
+    ],
+    "XIV": [
+     "20010530",
+     "20060427"
     ]
    },
    "id_camera": "39500",
    "gruppo_eletto": "FORZA ITALIA",
    "registro_muto": "Camera dei deputati",
+   "mandati_dal_registro": [
+    "XIII",
+    "XIV"
+   ],
+   "foto_senato": [
+    "14",
+    "2570"
+   ],
+   "id_senato": "http://dati.senato.it/senatore/2570",
    "stato": "deceduto",
    "non_eletto": false,
    "hall_of_fame": false
@@ -187279,16 +187649,26 @@
       "a": "20080428",
       "fine": "Fine Legislatura"
      }
+    ],
+    "XVI": [
+     {
+      "uri": "http://dati.senato.it/gruppo/56",
+      "g": "PdL",
+      "da": "20080506",
+      "a": "20130314"
+     }
     ]
    },
    "ramo": {
     "XIV": "C",
-    "XV": "C"
+    "XV": "C",
+    "XVI": "S"
    },
    "senatore_a_vita": false,
    "mandati": [
     "XIV",
-    "XV"
+    "XV",
+    "XVI"
    ],
    "cariche": [
     "deputato della Repubblica Italiana"
@@ -187299,7 +187679,8 @@
    "genere": "F",
    "circoscrizioni": {
     "XIV": "LOMBARDIA 2",
-    "XV": "PUGLIA"
+    "XV": "PUGLIA",
+    "XVI": "Puglia"
    },
    "incarichi": {
     "XIV": [
@@ -187317,11 +187698,23 @@
     "XV": [
      "20060422",
      "20080428"
+    ],
+    "XVI": [
+     "20080429",
+     "20130314"
     ]
    },
    "id_camera": "300445",
    "gruppo_eletto": "FORZA ITALIA",
    "registro_muto": "Camera dei deputati",
+   "mandati_dal_registro": [
+    "XVI"
+   ],
+   "foto_senato": [
+    "16",
+    "17715"
+   ],
+   "id_senato": "http://dati.senato.it/senatore/17715",
    "stato": "vivente",
    "non_eletto": false,
    "hall_of_fame": false
@@ -191253,8 +191646,8 @@
    "qid": "Q3992012",
    "nome": "Tiziano Treu",
    "cognome": "Treu",
-   "nascita": "1939",
-   "prec_nascita": "anno",
+   "nascita": "1939-08-22",
+   "prec_nascita": "giorno",
    "morte": null,
    "prec_morte": null,
    "foto": "http://commons.wikimedia.org/wiki/Special:FilePath/Tiziano%20Treu.jpg",
@@ -198375,8 +198768,8 @@
    "qid": "Q2528688",
    "nome": "Vito Fumagalli",
    "cognome": "Fumagalli",
-   "nascita": "1938",
-   "prec_nascita": "anno",
+   "nascita": "1938-06-15",
+   "prec_nascita": "giorno",
    "morte": "1997-04-16",
    "prec_morte": "giorno",
    "foto": null,

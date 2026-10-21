@@ -139,7 +139,12 @@ def registro(usa_cache=True):
 
     Come per la Camera: se l'endpoint tace si usa la copia versionata.
     """
-    if usa_cache and os.path.exists(CACHE):
+    # La copia locale vale dodici ore, come le altre. Senza scadenza, sul
+    # PC restava quella del 30 agosto, e rifacendo l'elenco in locale
+    # tornavano vivi i morti di settembre. Sul server non succedeva solo
+    # perche' li' la cartella della cache non c'e'.
+    if (usa_cache and os.path.exists(CACHE)
+            and time.time() - os.path.getmtime(CACHE) < 12 * 3600):
         return json.load(open(CACHE, encoding='utf-8'))
     try:
         return _costruisci()
@@ -278,6 +283,13 @@ def _costruisci():
         if (k, mandato) in gruppi:
             voce['gruppi'] = gruppi[(k, mandato)]
             voce['gruppo'] = gruppi[(k, mandato)][0]['g']
+        # Due omonimi nella stessa legislatura: senza questa riga il secondo
+        # cancellava il primo. Nella XVI sedevano due Mario Pepe, nati nel
+        # 1941 e nel 1951, e uno dei due spariva. Il secondo resta sotto una
+        # chiave col suo identificativo, e l'aggancio lo ritrova da quello.
+        gia = fuori.get(k, {}).get(mandato)
+        if gia and gia.get('uri') != voce.get('uri'):
+            k = '%s|%s' % (k, voce.get('uri'))
         fuori.setdefault(k, {})[mandato] = voce
     # Una risposta molto piu' magra del solito e' un guasto travestito da
     # successo: meglio l'ultima copia buona che un elenco dimezzato.
@@ -314,9 +326,11 @@ def cerca_ampia(reg, indice, nome, nascita, mandati, per_mandato=None):
     return camera.cerca_ampia(reg, indice, nome, nascita, mandati, per_mandato)
 
 
-def cerca_chiave(reg, indice, nome, nascita, mandati, per_mandato=None):
+def cerca_chiave(reg, indice, nome, nascita, mandati, per_mandato=None,
+                 occupati=frozenset()):
     import camera
-    return camera.cerca_chiave(reg, indice, nome, nascita, mandati, per_mandato)
+    return camera.cerca_chiave(reg, indice, nome, nascita, mandati, per_mandato,
+                               occupati)
 
 
 if __name__ == '__main__':
