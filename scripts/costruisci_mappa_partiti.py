@@ -109,6 +109,8 @@ GRUPPI = {
         "UNIONE DEMOCRATICA PER L'EUROPA": 'UDEUR',
         "DEMOCRATICI - L'ULIVO": 'DEM',
         'COMUNISTA': 'PDCI',
+        # il nome che il gruppo aveva fino al 12 ottobre 1998
+        'RIFONDAZIONE COMUNISTA - PROGRESSISTI': 'PRC',
     },
     ('XIII', 'S'): {
         'Sin.Dem.-Ulivo': 'DS',

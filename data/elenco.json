@@ -40275,8 +40275,18 @@
       "g": "FORZA ITALIA",
       "s": "F-ITA",
       "da": "19960515",
-      "a": "19990211",
+      "a": "19980115",
       "fine": "Cessazione"
+     },
+     {
+      "uri": "http://dati.camera.it/ocd/gruppoParlamentare.rdf/gr421",
+      "g": "RINNOVAMENTO ITALIANO",
+      "s": "RINN.IT",
+      "da": "19980115",
+      "a": "19990211",
+      "fine": "Cessazione",
+      "allora": "RINNOVAMENTO ITALIANO",
+      "nota": "Il passaggio a Rinnovamento Italiano non è nel registro delle adesioni: viene dai voti elettronici, che dal 15 gennaio 1998 all'11 febbraio 1999 lo registrano in quel gruppo."
      },
      {
       "uri": "http://dati.camera.it/ocd/gruppoParlamentare.rdf/gr419",
@@ -44974,13 +44984,23 @@
    "gruppi_per_mandato": {
     "XIII": [
      {
+      "uri": "http://dati.camera.it/ocd/gruppoParlamentare.rdf/gr433",
+      "g": "RIFONDAZIONE COMUNISTA - PROGRESSISTI",
+      "s": "RC-PRO",
+      "da": "19960515",
+      "a": "19981012",
+      "fine": "Cessazione",
+      "nota": "Il 12 ottobre 1998, dopo la scissione di Rifondazione, il gruppo prende il nome «Comunista» e resta ai deputati che fondano il Partito dei Comunisti Italiani; gli altri passano al gruppo misto.",
+      "allora": "RIFONDAZIONE COMUNISTA - PROGRESSISTI"
+     },
+     {
       "uri": "http://dati.camera.it/ocd/gruppoParlamentare.rdf/gr419",
       "g": "MISTO",
       "s": "MISTO",
-      "da": "19960515",
+      "da": "19981012",
       "a": "20010529",
       "fine": "Fine Legislatura",
-      "allora": "RIFONDAZIONE COMUNISTA - PROGRESSISTI"
+      "allora": "MISTO - RIFONDAZIONE COMUNISTA - PROGRESSISTI"
      }
     ]
    },
@@ -56923,13 +56943,23 @@
     ],
     "XIII": [
      {
+      "uri": "http://dati.camera.it/ocd/gruppoParlamentare.rdf/gr433",
+      "g": "RIFONDAZIONE COMUNISTA - PROGRESSISTI",
+      "s": "RC-PRO",
+      "da": "19960515",
+      "a": "19981012",
+      "fine": "Cessazione",
+      "nota": "Il 12 ottobre 1998, dopo la scissione di Rifondazione, il gruppo prende il nome «Comunista» e resta ai deputati che fondano il Partito dei Comunisti Italiani; gli altri passano al gruppo misto.",
+      "allora": "RIFONDAZIONE COMUNISTA - PROGRESSISTI"
+     },
+     {
       "uri": "http://dati.camera.it/ocd/gruppoParlamentare.rdf/gr419",
       "g": "MISTO",
       "s": "MISTO",
-      "da": "19960515",
+      "da": "19981012",
       "a": "20010529",
       "fine": "Fine Legislatura",
-      "allora": "RIFONDAZIONE COMUNISTA - PROGRESSISTI"
+      "allora": "MISTO - RIFONDAZIONE COMUNISTA - PROGRESSISTI"
      }
     ],
     "XIV": [
@@ -65493,13 +65523,23 @@
    "gruppi_per_mandato": {
     "XIII": [
      {
+      "uri": "http://dati.camera.it/ocd/gruppoParlamentare.rdf/gr433",
+      "g": "RIFONDAZIONE COMUNISTA - PROGRESSISTI",
+      "s": "RC-PRO",
+      "da": "19960515",
+      "a": "19981012",
+      "fine": "Cessazione",
+      "nota": "Il 12 ottobre 1998, dopo la scissione di Rifondazione, il gruppo prende il nome «Comunista» e resta ai deputati che fondano il Partito dei Comunisti Italiani; gli altri passano al gruppo misto.",
+      "allora": "RIFONDAZIONE COMUNISTA - PROGRESSISTI"
+     },
+     {
       "uri": "http://dati.camera.it/ocd/gruppoParlamentare.rdf/gr419",
       "g": "MISTO",
       "s": "MISTO",
-      "da": "19960515",
+      "da": "19981012",
       "a": "20010529",
       "fine": "Fine Legislatura",
-      "allora": "RIFONDAZIONE COMUNISTA - PROGRESSISTI"
+      "allora": "MISTO - RIFONDAZIONE COMUNISTA - PROGRESSISTI"
      }
     ],
     "XIV": [
@@ -69106,13 +69146,23 @@
    "gruppi_per_mandato": {
     "XIII": [
      {
+      "uri": "http://dati.camera.it/ocd/gruppoParlamentare.rdf/gr433",
+      "g": "RIFONDAZIONE COMUNISTA - PROGRESSISTI",
+      "s": "RC-PRO",
+      "da": "19960515",
+      "a": "19981012",
+      "fine": "Cessazione",
+      "nota": "Il 12 ottobre 1998, dopo la scissione di Rifondazione, il gruppo prende il nome «Comunista» e resta ai deputati che fondano il Partito dei Comunisti Italiani; gli altri passano al gruppo misto.",
+      "allora": "RIFONDAZIONE COMUNISTA - PROGRESSISTI"
+     },
+     {
       "uri": "http://dati.camera.it/ocd/gruppoParlamentare.rdf/gr419",
       "g": "MISTO",
       "s": "MISTO",
-      "da": "19960515",
+      "da": "19981012",
       "a": "20010529",
       "fine": "Fine Legislatura",
-      "allora": "RIFONDAZIONE COMUNISTA - PROGRESSISTI"
+      "allora": "MISTO - RIFONDAZIONE COMUNISTA - PROGRESSISTI"
      }
     ]
    },
@@ -85850,13 +85900,23 @@
    "gruppi_per_mandato": {
     "XIII": [
      {
+      "uri": "http://dati.camera.it/ocd/gruppoParlamentare.rdf/gr433",
+      "g": "RIFONDAZIONE COMUNISTA - PROGRESSISTI",
+      "s": "RC-PRO",
+      "da": "19960515",
+      "a": "19981012",
+      "fine": "Cessazione",
+      "nota": "Il 12 ottobre 1998, dopo la scissione di Rifondazione, il gruppo prende il nome «Comunista» e resta ai deputati che fondano il Partito dei Comunisti Italiani; gli altri passano al gruppo misto.",
+      "allora": "RIFONDAZIONE COMUNISTA - PROGRESSISTI"
+     },
+     {
       "uri": "http://dati.camera.it/ocd/gruppoParlamentare.rdf/gr419",
       "g": "MISTO",
       "s": "MISTO",
-      "da": "19960515",
+      "da": "19981012",
       "a": "20010529",
       "fine": "Fine Legislatura",
-      "allora": "RIFONDAZIONE COMUNISTA - PROGRESSISTI"
+      "allora": "MISTO - RIFONDAZIONE COMUNISTA - PROGRESSISTI"
      }
     ],
     "XIV": [
@@ -93339,13 +93399,23 @@
    "gruppi_per_mandato": {
     "XIII": [
      {
+      "uri": "http://dati.camera.it/ocd/gruppoParlamentare.rdf/gr433",
+      "g": "RIFONDAZIONE COMUNISTA - PROGRESSISTI",
+      "s": "RC-PRO",
+      "da": "19960515",
+      "a": "19981012",
+      "fine": "Cessazione",
+      "nota": "Il 12 ottobre 1998, dopo la scissione di Rifondazione, il gruppo prende il nome «Comunista» e resta ai deputati che fondano il Partito dei Comunisti Italiani; gli altri passano al gruppo misto.",
+      "allora": "RIFONDAZIONE COMUNISTA - PROGRESSISTI"
+     },
+     {
       "uri": "http://dati.camera.it/ocd/gruppoParlamentare.rdf/gr419",
       "g": "MISTO",
       "s": "MISTO",
-      "da": "19960515",
+      "da": "19981012",
       "a": "20010529",
       "fine": "Fine Legislatura",
-      "allora": "RIFONDAZIONE COMUNISTA - PROGRESSISTI"
+      "allora": "MISTO - RIFONDAZIONE COMUNISTA - PROGRESSISTI"
      }
     ],
     "XIV": [
@@ -113864,13 +113934,23 @@
    "gruppi_per_mandato": {
     "XIII": [
      {
+      "uri": "http://dati.camera.it/ocd/gruppoParlamentare.rdf/gr433",
+      "g": "RIFONDAZIONE COMUNISTA - PROGRESSISTI",
+      "s": "RC-PRO",
+      "da": "19960515",
+      "a": "19981012",
+      "fine": "Cessazione",
+      "nota": "Il 12 ottobre 1998, dopo la scissione di Rifondazione, il gruppo prende il nome «Comunista» e resta ai deputati che fondano il Partito dei Comunisti Italiani; gli altri passano al gruppo misto.",
+      "allora": "RIFONDAZIONE COMUNISTA - PROGRESSISTI"
+     },
+     {
       "uri": "http://dati.camera.it/ocd/gruppoParlamentare.rdf/gr419",
       "g": "MISTO",
       "s": "MISTO",
-      "da": "19960515",
+      "da": "19981012",
       "a": "20010529",
       "fine": "Fine Legislatura",
-      "allora": "RIFONDAZIONE COMUNISTA - PROGRESSISTI"
+      "allora": "MISTO - RIFONDAZIONE COMUNISTA - PROGRESSISTI"
      }
     ]
    },
@@ -128263,13 +128343,23 @@
     ],
     "XIII": [
      {
+      "uri": "http://dati.camera.it/ocd/gruppoParlamentare.rdf/gr433",
+      "g": "RIFONDAZIONE COMUNISTA - PROGRESSISTI",
+      "s": "RC-PRO",
+      "da": "19960515",
+      "a": "19981012",
+      "fine": "Cessazione",
+      "nota": "Il 12 ottobre 1998, dopo la scissione di Rifondazione, il gruppo prende il nome «Comunista» e resta ai deputati che fondano il Partito dei Comunisti Italiani; gli altri passano al gruppo misto.",
+      "allora": "RIFONDAZIONE COMUNISTA - PROGRESSISTI"
+     },
+     {
       "uri": "http://dati.camera.it/ocd/gruppoParlamentare.rdf/gr419",
       "g": "MISTO",
       "s": "MISTO",
-      "da": "19960515",
+      "da": "19981012",
       "a": "20010529",
       "fine": "Fine Legislatura",
-      "allora": "RIFONDAZIONE COMUNISTA - PROGRESSISTI"
+      "allora": "MISTO - RIFONDAZIONE COMUNISTA - PROGRESSISTI"
      }
     ],
     "XIV": [
@@ -129808,13 +129898,23 @@
     ],
     "XIII": [
      {
+      "uri": "http://dati.camera.it/ocd/gruppoParlamentare.rdf/gr433",
+      "g": "RIFONDAZIONE COMUNISTA - PROGRESSISTI",
+      "s": "RC-PRO",
+      "da": "19960515",
+      "a": "19981012",
+      "fine": "Cessazione",
+      "nota": "Il 12 ottobre 1998, dopo la scissione di Rifondazione, il gruppo prende il nome «Comunista» e resta ai deputati che fondano il Partito dei Comunisti Italiani; gli altri passano al gruppo misto.",
+      "allora": "RIFONDAZIONE COMUNISTA - PROGRESSISTI"
+     },
+     {
       "uri": "http://dati.camera.it/ocd/gruppoParlamentare.rdf/gr419",
       "g": "MISTO",
       "s": "MISTO",
-      "da": "19960515",
+      "da": "19981012",
       "a": "20010529",
       "fine": "Fine Legislatura",
-      "allora": "RIFONDAZIONE COMUNISTA - PROGRESSISTI"
+      "allora": "MISTO - RIFONDAZIONE COMUNISTA - PROGRESSISTI"
      }
     ]
    },
@@ -147961,13 +148061,23 @@
     ],
     "XIII": [
      {
+      "uri": "http://dati.camera.it/ocd/gruppoParlamentare.rdf/gr433",
+      "g": "RIFONDAZIONE COMUNISTA - PROGRESSISTI",
+      "s": "RC-PRO",
+      "da": "19960515",
+      "a": "19981012",
+      "fine": "Cessazione",
+      "nota": "Il 12 ottobre 1998, dopo la scissione di Rifondazione, il gruppo prende il nome «Comunista» e resta ai deputati che fondano il Partito dei Comunisti Italiani; gli altri passano al gruppo misto.",
+      "allora": "RIFONDAZIONE COMUNISTA - PROGRESSISTI"
+     },
+     {
       "uri": "http://dati.camera.it/ocd/gruppoParlamentare.rdf/gr419",
       "g": "MISTO",
       "s": "MISTO",
-      "da": "19960515",
+      "da": "19981012",
       "a": "20010529",
       "fine": "Fine Legislatura",
-      "allora": "RIFONDAZIONE COMUNISTA - PROGRESSISTI"
+      "allora": "MISTO - RIFONDAZIONE COMUNISTA - PROGRESSISTI"
      }
     ],
     "XIV": [
@@ -165547,13 +165657,23 @@
    "gruppi_per_mandato": {
     "XIII": [
      {
+      "uri": "http://dati.camera.it/ocd/gruppoParlamentare.rdf/gr433",
+      "g": "RIFONDAZIONE COMUNISTA - PROGRESSISTI",
+      "s": "RC-PRO",
+      "da": "19960515",
+      "a": "19981012",
+      "fine": "Cessazione",
+      "nota": "Il 12 ottobre 1998, dopo la scissione di Rifondazione, il gruppo prende il nome «Comunista» e resta ai deputati che fondano il Partito dei Comunisti Italiani; gli altri passano al gruppo misto.",
+      "allora": "RIFONDAZIONE COMUNISTA - PROGRESSISTI"
+     },
+     {
       "uri": "http://dati.camera.it/ocd/gruppoParlamentare.rdf/gr419",
       "g": "MISTO",
       "s": "MISTO",
-      "da": "19960515",
+      "da": "19981012",
       "a": "20010529",
       "fine": "Fine Legislatura",
-      "allora": "RIFONDAZIONE COMUNISTA - PROGRESSISTI"
+      "allora": "MISTO - RIFONDAZIONE COMUNISTA - PROGRESSISTI"
      }
     ],
     "XIV": [
@@ -191531,13 +191651,23 @@
     ],
     "XIII": [
      {
+      "uri": "http://dati.camera.it/ocd/gruppoParlamentare.rdf/gr433",
+      "g": "RIFONDAZIONE COMUNISTA - PROGRESSISTI",
+      "s": "RC-PRO",
+      "da": "19960515",
+      "a": "19981012",
+      "fine": "Cessazione",
+      "nota": "Il 12 ottobre 1998, dopo la scissione di Rifondazione, il gruppo prende il nome «Comunista» e resta ai deputati che fondano il Partito dei Comunisti Italiani; gli altri passano al gruppo misto.",
+      "allora": "RIFONDAZIONE COMUNISTA - PROGRESSISTI"
+     },
+     {
       "uri": "http://dati.camera.it/ocd/gruppoParlamentare.rdf/gr419",
       "g": "MISTO",
       "s": "MISTO",
-      "da": "19960515",
+      "da": "19981012",
       "a": "20010529",
       "fine": "Fine Legislatura",
-      "allora": "RIFONDAZIONE COMUNISTA - PROGRESSISTI"
+      "allora": "MISTO - RIFONDAZIONE COMUNISTA - PROGRESSISTI"
      }
     ],
     "XIV": [
@@ -192857,13 +192987,23 @@
     ],
     "XIII": [
      {
+      "uri": "http://dati.camera.it/ocd/gruppoParlamentare.rdf/gr433",
+      "g": "RIFONDAZIONE COMUNISTA - PROGRESSISTI",
+      "s": "RC-PRO",
+      "da": "19960515",
+      "a": "19981012",
+      "fine": "Cessazione",
+      "nota": "Il 12 ottobre 1998, dopo la scissione di Rifondazione, il gruppo prende il nome «Comunista» e resta ai deputati che fondano il Partito dei Comunisti Italiani; gli altri passano al gruppo misto.",
+      "allora": "RIFONDAZIONE COMUNISTA - PROGRESSISTI"
+     },
+     {
       "uri": "http://dati.camera.it/ocd/gruppoParlamentare.rdf/gr419",
       "g": "MISTO",
       "s": "MISTO",
-      "da": "19960515",
+      "da": "19981012",
       "a": "20010529",
       "fine": "Fine Legislatura",
-      "allora": "RIFONDAZIONE COMUNISTA - PROGRESSISTI"
+      "allora": "MISTO - RIFONDAZIONE COMUNISTA - PROGRESSISTI"
      }
     ]
    },
@@ -200600,13 +200740,23 @@
    "gruppi_per_mandato": {
     "XIII": [
      {
+      "uri": "http://dati.camera.it/ocd/gruppoParlamentare.rdf/gr433",
+      "g": "RIFONDAZIONE COMUNISTA - PROGRESSISTI",
+      "s": "RC-PRO",
+      "da": "19960515",
+      "a": "19981012",
+      "fine": "Cessazione",
+      "nota": "Il 12 ottobre 1998, dopo la scissione di Rifondazione, il gruppo prende il nome «Comunista» e resta ai deputati che fondano il Partito dei Comunisti Italiani; gli altri passano al gruppo misto.",
+      "allora": "RIFONDAZIONE COMUNISTA - PROGRESSISTI"
+     },
+     {
       "uri": "http://dati.camera.it/ocd/gruppoParlamentare.rdf/gr419",
       "g": "MISTO",
       "s": "MISTO",
-      "da": "19960515",
+      "da": "19981012",
       "a": "20010529",
       "fine": "Fine Legislatura",
-      "allora": "RIFONDAZIONE COMUNISTA - PROGRESSISTI"
+      "allora": "MISTO - RIFONDAZIONE COMUNISTA - PROGRESSISTI"
      }
     ]
    },

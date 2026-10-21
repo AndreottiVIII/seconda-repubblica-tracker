@@ -878,6 +878,9 @@ VISTE['persona'] = function(q){
         '<td style="white-space:nowrap">' + periodoGuida(r[2], r[3]) +
         '</td></tr>').join('') + '</tbody></table>';
 
+  (p.gs || []).forEach(x => {
+    corpo += '<div class="avviso">Nella ' + x[0] + ' legislatura: ' + esc(x[1]) + '</div>';
+  });
   // I mandati finiti prima del tempo. Quelli di pochi giorni li dice gia' la
   // nota qui sopra.
   (p.fm || []).forEach(x => {

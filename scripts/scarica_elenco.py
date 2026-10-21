@@ -767,6 +767,17 @@ def main():
 
     fondi_doppioni(persone)
 
+    # Le correzioni ai gruppi dove il registro e' incoerente con se stesso e i
+    # voti lo mostrano: data/correzioni_gruppi.json, una per una, con la fonte.
+    correzioni = leggi_json('correzioni_gruppi.json').get('correzioni', {})
+    for q, per_leg in correzioni.items():
+        if q not in persone:
+            continue
+        for leg, gruppi in per_leg.items():
+            if leg in (persone[q].get('gruppi_per_mandato') or {}):
+                persone[q]['gruppi_per_mandato'][leg] = gruppi
+    print('  %d schede con i gruppi corretti a mano' % sum(1 for q in correzioni if q in persone))
+
     print('Cariche della hall of fame...')
     scarica_cariche(persone, list(hof))
 

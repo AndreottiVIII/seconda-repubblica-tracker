@@ -134,6 +134,51 @@ def governo_al(giorno):
     return nome
 
 
+# I gruppi della Camera con le date di vita (data/gruppi_camera.json, dall'archivio
+# gruppoParlamentare): servono a dire nella scheda quando un gruppo si e' sciolto.
+_FINE_LEG = {'12': '19960508', '13': '20010529', '14': '20060427', '15': '20080428',
+             '16': '20130314'}
+_G = os.path.join(QUI, '..', 'data', 'gruppi_camera.json')
+SCIOLTI = {}
+if os.path.exists(_G):
+    SCIOLTI = {gid: v for gid, v in json.load(open(_G, encoding='utf-8'))['gruppi'].items()
+               if v[4] and v[4] < _FINE_LEG.get(v[0], '0')}
+
+
+def nome_gruppo(nome, sigla):
+    """'RINNOVAMENTO ITALIANO' -> 'Rinnovamento Italiano'; la sigla resta com'e'."""
+    piccole = {'di', 'del', 'della', 'per', 'la', 'e', "l'", 'il'}
+    parole = nome.lower().split()
+    return ' '.join(w.upper() if w.upper() == (sigla or '').upper() else
+                    (w if i and w in piccole else w[:1].upper() + w[1:])
+                    for i, w in enumerate(parole))
+
+
+def note_gruppi(p):
+    """[[legislatura, testo]]: quando il gruppo di qualcuno si e' sciolto, e le
+    note delle correzioni fatte a mano."""
+    fuori = []
+    for leg, gl in (p.get('gruppi_per_mandato') or {}).items():
+        for g in gl:
+            if g.get('nota'):
+                fuori.append([leg, g['nota']])
+            v = SCIOLTI.get((g.get('uri') or '').rsplit('/', 1)[-1])
+            if v and g.get('a') == v[4]:
+                d = v[4]
+                articolo = "l'" if int(d[6:8]) in (8, 11) else 'il '
+                fuori.append([leg, 'Il gruppo %s si scioglie %s%s.' % (
+                    nome_gruppo(v[2], v[1]), articolo, data_estesa(d))])
+    return fuori
+
+
+MESI_IT = ['gennaio', 'febbraio', 'marzo', 'aprile', 'maggio', 'giugno', 'luglio',
+           'agosto', 'settembre', 'ottobre', 'novembre', 'dicembre']
+
+
+def data_estesa(d):
+    return '%d %s %s' % (int(d[6:8]), MESI_IT[int(d[4:6]) - 1], d[:4])
+
+
 def compatta(p, gruppi, ant):
     d = {
         'q': p['qid'],
@@ -209,6 +254,8 @@ def compatta(p, gruppi, ant):
         d['md'] = p['morte_dubbia']
     if p.get('id_camera'):
         d['ci'] = p['id_camera']
+    if note_gruppi(p):
+        d['gs'] = note_gruppi(p)
     return d
 
 

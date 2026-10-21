@@ -17,8 +17,8 @@ Per ogni deputato e legislatura si contano:
                 perche' una linea non ce l'ha
   fiducie       come ha votato su ogni votazione che la Camera segna come
                 fiducia (dalla XIV: nella XIII il segno non c'e')
-  gruppi        il gruppo con cui ha votato, giorno per giorno: un controllo
-                dei cambi di casacca che non viene dai registri dei gruppi
+  gruppi        i gruppi con cui ha votato, col primo e l'ultimo giorno: un
+                controllo dei cambi di casacca che non viene dai registri dei gruppi
 
 Scrive data/voti_camera.json. Gira per ore? No: una decina di minuti.
 """
@@ -82,7 +82,10 @@ def main():
 
     stat = collections.defaultdict(lambda: collections.Counter())
     fiducie = collections.defaultdict(list)          # (pid, leg) -> [[vs, scelta]]
-    gruppi = collections.defaultdict(list)           # (pid, leg) -> [[data, sigla]]
+    # (pid, leg) -> {codice del gruppo: [primo giorno, ultimo giorno, sigla]}: il
+    # codice e' quello del registro dei gruppi (gr474), la sigla cambia anche
+    # quando il gruppo resta lo stesso (IR, IRNP, PT) e nel misto dice la componente
+    gruppi = collections.defaultdict(dict)
     riaperte = 0
     chiuse = set()
 
@@ -98,7 +101,7 @@ def main():
         linea = {}
         if palese:
             conta = collections.defaultdict(collections.Counter)
-            for pid, s, g, _ in voti:
+            for pid, s, g, _, _ in voti:
                 if s in 'FCA':
                     conta[g][s] += 1
             for g, c in conta.items():
@@ -107,7 +110,7 @@ def main():
                 if g and not g.upper().startswith('MIST') and n1 >= 2 and n1 > resto[0][1]:
                     linea[g] = s1
         data = m.get('data', '')
-        for pid, s, g, missione in voti:
+        for pid, s, g, missione, gid in voti:
             c = stat[(pid, leg)]
             c['votazioni'] += 1
             if s in 'FCA':
@@ -122,9 +125,12 @@ def main():
                 c['assente'] += 1
             if m.get('richiestaFiducia'):
                 fiducie[(pid, leg)].append([vs, s if s in 'FCA' else ('M' if missione else 'N')])
-            gg = gruppi[(pid, leg)]
-            if g and (not gg or gg[-1][1] != g):
-                gg.append([data, g])
+            if gid and data:
+                gg = gruppi[(pid, leg)].setdefault(gid, [data, data, g])
+                if data < gg[0]:
+                    gg[0] = data
+                if data > gg[1]:
+                    gg[1] = data
 
     for leg in sorted(ROMANI):
         z = zipfile.ZipFile(os.path.join(D, 'voto%s.rdf.zip' % leg))
@@ -142,6 +148,9 @@ def main():
                         voto['pid'] = m.group(1) if m else None
                     elif '<dc:type>' in r:
                         voto['tipo'] = r.split('<dc:type>')[1].split('<')[0]
+                    elif 'rif_gruppoParlamentare' in r:
+                        m = re.search(r'/(gr\d+)', r)
+                        voto['gid'] = m.group(1) if m else None
                     elif 'siglaGruppo' in r:
                         voto['g'] = re.sub(r'<[^>]+>', '', r).strip()
                     elif '<dc:description>' in r:
@@ -155,7 +164,7 @@ def main():
                             corrente, voti = voto['vs'], []
                         s = SCELTE.get(voto.get('tipo'), 'N')
                         voti.append((voto['pid'], s, voto.get('g', ''),
-                                     'mission' in voto.get('desc', '')))
+                                     'mission' in voto.get('desc', ''), voto.get('gid')))
                 if corrente:
                     chiudi(corrente, voti)
             print('  %s: %d votazioni lette, %.0f s' % (info.filename, len(chiuse), time.time() - t0))
@@ -166,8 +175,9 @@ def main():
         v = dict(c)
         if fiducie.get((pid, leg)):
             v['fiducie'] = fiducie[(pid, leg)]
-        if len(gruppi[(pid, leg)]) > 1 or gruppi[(pid, leg)]:
-            v['gruppi'] = gruppi[(pid, leg)]
+        if gruppi[(pid, leg)]:
+            v['gruppi'] = sorted(([g] + x for g, x in gruppi[(pid, leg)].items()),
+                                 key=lambda x: x[1])
         fuori.setdefault(pid, {})[ROMANI[leg]] = v
     fid = {vs: {'data': m.get('data'), 'titolo': m.get('titolo'), 'descrizione': m.get('descrizione'),
                 'ufficiale': [m.get('favorevoli'), m.get('contrari'), m.get('astenuti')]}
