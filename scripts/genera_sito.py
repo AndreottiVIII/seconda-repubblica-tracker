@@ -359,6 +359,16 @@ def main():
         for q, v in json.load(open(cu_file, encoding='utf-8'))['collegi'].items():
             if q in per_q:
                 per_q[q]['cu'] = v
+    # Com'e' andata alla Camera per le proposte (scripts/proposte_leggi.py), per
+    # numero della Camera: [legislatura, numero, titolo, esito, data]
+    pl_file = os.path.join(QUI, '..', 'data', 'proposte_leggi.json')
+    if os.path.exists(pl_file):
+        per_q = {p['q']: p for p in persone}
+        camera_q = {x['id_camera']: x['qid'] for x in json.load(open(
+            os.path.join(QUI, '..', 'data', 'elenco.json'), encoding='utf-8'))['persone'] if x.get('id_camera')}
+        for pid, v in json.load(open(pl_file, encoding='utf-8'))['proposte'].items():
+            if camera_q.get(pid) in per_q:
+                per_q[camera_q[pid]]['pl'] = v
     # Gli interventi alla Camera (scripts/interventi_camera.py):
     # {legislatura: [numero, che cosa conta, (in commissione, solo XVI)]}
     ic_file = os.path.join(QUI, '..', 'data', 'interventi_camera.json')

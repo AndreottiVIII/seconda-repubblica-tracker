@@ -1032,14 +1032,32 @@ VISTE['persona'] = function(q){
       return pezzi.length ? ramo[k] + ': ' + pezzi.join(', ') + '.' : '';
     }).filter(Boolean);
     const conTitoli = Object.keys(p.pr).some(k => p.pr[k][0]);
+    // com'e' andata alla Camera (scripts/proposte_leggi.py): [leg, numero, titolo, esito, data]
+    const pl = p.pl || [], quante = e => pl.filter(x => x[3] === e).length;
+    const approvate = pl.filter(x => x[3] !== 'assorbita');
+    const COME = {legge: 'diventata legge, ultimo voto alla Camera', approvata: 'approvata e passata al Senato',
+                  'testo unificato': 'approvata in un testo unico con altre', assorbita: 'assorbita da un&rsquo;altra proposta'};
+    const esitoProposte = !pl.length ? '' :
+      '<p>Approvate dalla Camera: <b>' + approvate.length + '</b>' + (approvate.length
+        ? ' (' + [['legge', 'diventate legge con l&rsquo;ultimo voto alla Camera'],
+                  ['testo unificato', 'in un testo unico con altre'],
+                  ['approvata', 'passate al Senato']].filter(x => quante(x[0]))
+            .map(x => quante(x[0]) + ' ' + x[1]).join(', ') + ')' : '') +
+      (quante('assorbita') ? '. Assorbite da altre proposte: <b>' + quante('assorbita') + '</b>' : '') + '.</p>' +
+      '<details><summary class="clic">Quali</summary><table><thead><tr><th>Legisl.</th><th>N.</th><th>Titolo</th>' +
+      '<th>Com&rsquo;&egrave; andata</th></tr></thead><tbody>' + pl.map(x => '<tr><td>' + x[0] + '</td><td class="num">' +
+        esc(x[1]) + '</td><td style="font-size:11px">' + esc(x[2]) + '</td><td style="font-size:11px">' + COME[x[3]] +
+        (x[4] ? ', ' + dataIt(x[4]) : '') + '</td></tr>').join('') + '</tbody></table></details>';
     if (frasi.length)
-      corpo += '<h2 style="margin-top:12px">Proposte di legge</h2><p>' + frasi.join(' ') + '</p>' +
+      corpo += '<h2 style="margin-top:12px">Proposte di legge</h2><p>' + frasi.join(' ') + '</p>' + esitoProposte +
         (conTitoli && INDIRIZZI
           ? '<details data-proposte="' + p.q + '"><summary class="clic">I titoli delle ' +
             'proposte come primo firmatario</summary><div class="titoli-proposte">' +
             'Caricamento...</div></details>' : '') +
         '<p class="piede">Il Senato pubblica le proposte dalla XIII legislatura: quelle ' +
-        'presentate al Senato nel 1994-96 non ci sono.</p>';
+        'presentate al Senato nel 1994-96 non ci sono.' + (pl.length ? ' Com&rsquo;&egrave; andata: dalla XIII ' +
+        'legislatura, dall&rsquo;elenco dei disegni di legge del Senato, che segna ogni passaggio alla Camera. ' +
+        'Di una proposta passata al Senato, come &egrave; finita l&igrave; da qui non si vede.' : '') + '</p>';
   }
 
   if (p.ai){
