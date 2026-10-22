@@ -2298,9 +2298,14 @@ const GOVERNI = [
 /* La prima fiducia: il voto con cui la Camera accoglie un governo nuovo, nome
    per nome. Viene dagli archivi dei voti della Camera, che le fiducie le
    segnano dalla XIV legislatura: Prodi I, D'Alema e Amato non ci sono. */
-function partitoAl(p, giorno){
-  const passi = (p.g || []).filter(t => t[4] === 'C');
+// Il partito del gruppo di quel giorno, nel ramo dato. Chi quel giorno un gruppo non
+// ce l'ha ancora (la prima fiducia arriva prima che i gruppi si formino) prende quello
+// in cui entra nei due mesi dopo; solo se non c'e', quello di prima.
+function partitoAl(p, giorno, ramo){
+  const passi = (p.g || []).filter(t => t[4] === (ramo || 'C'));
+  const dopo = giorno.slice(0, 4) + String(+giorno.slice(4, 6) + 2).padStart(2, '0') + giorno.slice(6);
   const t = passi.find(t => t[2] <= giorno && (!t[3] || t[3] >= giorno)) ||
+            passi.find(t => t[2] > giorno && t[2] <= dopo) ||
             passi.filter(t => t[2] <= giorno).pop();
   return t ? t[1] : '?';
 }
@@ -2308,13 +2313,13 @@ function partitoAl(p, giorno){
 const VOCE_FIDUCIA = {F: 'S&igrave;', C: 'No', A: 'Astenuti', M: 'In missione', N: 'Non hanno votato'};
 
 // I nomi di un voto di fiducia, per voto e poi per partito (quello del giorno).
-function nomiPerVoto(voti, giorno){
+function nomiPerVoto(voti, giorno, ramo){
   let h = '';
   ['F', 'C', 'A', 'M', 'N'].forEach(k => {
     const gente = (voti[k] || []).map(q => perQid[q]).filter(Boolean);
     if (!gente.length) return;
     const perP = {};
-    gente.forEach(p => { const c = partitoAl(p, giorno); (perP[c] = perP[c] || []).push(p); });
+    gente.forEach(p => { const c = partitoAl(p, giorno, ramo); (perP[c] = perP[c] || []).push(p); });
     h += '<h3 style="margin:8px 0 2px">' + VOCE_FIDUCIA[k] + ' (' + gente.length + ')</h3><table><tbody>' +
       Object.keys(perP).sort((a, b) => perP[b].length - perP[a].length).map(c =>
         '<tr><td style="width:150px;vertical-align:top">' + pill(c, nomePartito(c)) +
@@ -2455,6 +2460,25 @@ VISTE['fiducia'] = function(){
           'nominale della Camera ne risultano ' + conta('F') + ' e ' + conta('C') + ': i nomi qui ' +
           'sotto sono quelli.</p>' : '') + nomiPerVoto(f.voti, f.data) + '</details>';
   });
+  // al Senato: la prima fiducia di ogni governo, dai resoconti (scripts/fiducie_senato.py)
+  const FS = DATI.fiducie_senato || [];
+  if (FS.length){
+    h += '<h2 style="margin-top:14px">La prima fiducia al Senato</h2>' +
+      '<p>Il Senato vota la fiducia per appello nominale: ogni senatore chiamato per nome risponde ' +
+      's&igrave; o no. Senatore per senatore, diviso per partito. I nomi vengono dai resoconti delle ' +
+      'sedute: negli open data del Senato gli appelli nominali ci sono solo dal 2018. Per il 1994-96 ' +
+      '(Berlusconi I e Dini) i resoconti sono solo in PDF, e qui mancano.</p>';
+    FS.forEach(f => {
+      const conta = k => (f.voti[k] || []).length;
+      const u = f.ufficiale || [];
+      const fuori = f.fuori ? ' (' + f.fuori + ' senatori non sono nell&rsquo;elenco del sito)' : '';
+      h += '<details style="margin-top:8px"><summary><b>' + esc(f.governo) + '</b>, ' + dataIt(f.data) + ': ' +
+        u[0] + ' s&igrave;, ' + u[1] + ' no' + (u[2] ? ', ' + u[2] + (u[2] === 1 ? ' astenuto' : ' astenuti') : '') +
+        '</summary><p class="piede">Totali ufficiali proclamati in Aula; i nomi dal ' +
+        '<a target="_blank" rel="noopener" href="' + esc(f.fonte) + '">resoconto della seduta</a>' + fuori + '.</p>' +
+        nomiPerVoto(f.voti, f.data, 'S') + '</details>';
+    });
+  }
   return {titolo: 'Le fiducie', icona: '&#128499;', html: h, faccia: true,
           larghezza: 740, altezza: 580, stato: T.length + ' voti di fiducia'};
 };

@@ -387,6 +387,22 @@ def main():
                 per_q[senato_q[s]]['vt'] = {leg: [v.get(k, 0) for k in ('votazioni', 'espressi', 'presente',
                                                                         'assente', 'con_linea', 'dissenso')]
                                             for leg, v in legs.items()}
+    prime_fiducie_senato = []
+    fs_file = os.path.join(QUI, '..', 'data', 'fiducie_senato.json')
+    if os.path.exists(fs_file):
+        # la prima fiducia al Senato, nome per nome (scripts/fiducie_senato.py)
+        fid_s = []
+        for x in json.load(open(fs_file, encoding='utf-8'))['fiducie']:
+            voti, fuori = {}, 0
+            for s, scelta in x['voti'].items():
+                if senato_q.get(s) in per_q:
+                    voti.setdefault(scelta, []).append(senato_q[s])
+                else:
+                    fuori += 1
+            fid_s.append({'governo': x['governo'], 'data': x['data'], 'fonte': x['fonte'],
+                          'ufficiale': x.get('ufficiale'), 'voti': voti, 'fuori': fuori})
+        prime_fiducie_senato = fid_s
+        print('prime fiducie al Senato: %d, senatori fuori elenco %d' % (len(fid_s), sum(f['fuori'] for f in fid_s)))
     ps_file = os.path.join(QUI, '..', 'data', 'proposte_senato.json')
     if os.path.exists(ps_file):
         # com'e' andata per le proposte dei senatori (scripts/proposte_senato.py)
@@ -533,6 +549,8 @@ def main():
         dati['fiducie'] = prime_fiducie
     if tutte_fiducie:
         dati['fiducie_tutte'] = tutte_fiducie
+    if prime_fiducie_senato:
+        dati['fiducie_senato'] = prime_fiducie_senato
     # Per la scheda di Berlusconi: Forza Italia e PdL alle elezioni
     # (scripts/risultati_fi_pdl.py)
     fi_file = os.path.join(QUI, '..', 'data', 'risultati_fi_pdl.json')
