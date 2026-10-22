@@ -387,6 +387,12 @@ def main():
                 per_q[senato_q[s]]['vt'] = {leg: [v.get(k, 0) for k in ('votazioni', 'espressi', 'presente',
                                                                         'assente', 'con_linea', 'dissenso')]
                                             for leg, v in legs.items()}
+    ps_file = os.path.join(QUI, '..', 'data', 'proposte_senato.json')
+    if os.path.exists(ps_file):
+        # com'e' andata per le proposte dei senatori (scripts/proposte_senato.py)
+        for s, v in json.load(open(ps_file, encoding='utf-8'))['proposte'].items():
+            if senato_q.get(s) in per_q:
+                per_q[senato_q[s]]['ps'] = v
     at_file = os.path.join(QUI, '..', 'data', 'attivita_senato.json')
     if os.path.exists(at_file):
         for s, legs in json.load(open(at_file, encoding='utf-8'))['senatori'].items():
@@ -536,6 +542,27 @@ def main():
     cs_file = os.path.join(QUI, '..', 'data', 'collegi_sfide.json')
     if os.path.exists(cs_file):
         dati['collegi_sfide'] = json.load(open(cs_file, encoding='utf-8'))['collegi']
+    # Le leggi governo per governo e le sedute della Camera (scripts/leggi_sedute.py):
+    # qui i numeri; i titoli li scrive pagine_statiche in un file per governo
+    ls_file = os.path.join(QUI, '..', 'data', 'leggi_sedute.json')
+    if os.path.exists(ls_file):
+        ls = json.load(open(ls_file, encoding='utf-8'))
+        dati['leggi_governi'] = ls['leggi']
+        dati['sedute'] = ls['sedute']
+    # Le leggi che hanno diviso (scripts/leggi_divise.py): i deputati per codice della Camera
+    ld_file = os.path.join(QUI, '..', 'data', 'leggi_divise.json')
+    if os.path.exists(ld_file):
+        ld = json.load(open(ld_file, encoding='utf-8'))
+        per_ci = {p['ci']: p['q'] for p in persone if p.get('ci')}
+        for elenco in ('scelte', 'automatiche'):
+            for x in ld[elenco]:
+                x['descrizione'] = html_unescape(x.get('descrizione') or '')
+                x['diversi'] = [[per_ci.get(d[0], ''), d[1], d[2], d[3]] for d in x['diversi']]
+        dati['leggi_divise'] = {'scelte': ld['scelte'], 'automatiche': ld['automatiche']}
+    # Il riassunto dei voti al Senato (scripts/voti_senato.py)
+    vt_r = os.path.join(QUI, '..', 'data', 'voti_senato.json')
+    if os.path.exists(vt_r):
+        dati['riassunto_senato'] = json.load(open(vt_r, encoding='utf-8')).get('riassunto')
     # Il riassunto dei voti alla Camera (scripts/riassunto_voti_camera.py)
     rv_file = os.path.join(QUI, '..', 'data', 'riassunto_voti.json')
     if os.path.exists(rv_file):

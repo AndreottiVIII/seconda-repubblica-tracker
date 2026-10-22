@@ -17,7 +17,7 @@ sys.stdout.reconfigure(encoding='utf-8', errors='replace')
 QUI = os.path.dirname(os.path.abspath(__file__))
 USCITA = os.path.join(QUI, '..', 'data', 'spread.json')
 UA = ('SecondaRepubblicaTracker/0.1 (progetto personale; '
-      'davide.caniatti@gmail.com)')
+      'https://secondarepubblica.it)')
 
 BASE = 'https://data-api.ecb.europa.eu/service/data/IRS/M.%s.L.L40.CI.0000.EUR.N.Z'
 DA, A = '2010-01', '2013-06'

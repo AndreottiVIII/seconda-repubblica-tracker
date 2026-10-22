@@ -234,6 +234,16 @@ def pagine(dati):
               'I collegi uninominali 1994-2001: le sfide più strette, i ripescati, i lontani da casa',
               'Camera e Senato nel 1994, 1996 e 2001: le sfide decise per pochi voti, chi ha perso il collegio '
               'ed è entrato lo stesso, chi ha vinto lontano dalla regione in cui è nato.')
+    if dati.get('riassunto_senato'):
+        fissa('votisenato', '/i-voti-al-senato/',
+              'I voti al Senato dal 1996 al 2013: presenze, gruppi, votazioni più strette',
+              'Il riassunto delle votazioni del Senato, legislatura per legislatura: presenza mese per mese, '
+              'gruppi a confronto, le votazioni decise per pochi voti.')
+    if dati.get('leggi_divise'):
+        fissa('leggi', '/le-leggi-che-hanno-diviso/',
+              'Le leggi che hanno diviso la Camera, 1996-2013: chi ha votato cosa',
+              'Il voto finale su Bossi-Fini, lodo Alfano, legittimo impedimento, Fornero e altre leggi, deputato '
+              'per deputato: come ha votato ogni gruppo e chi ha votato contro il proprio.')
     fissa('emiciclo', '/l-emiciclo/',
           'L’emiciclo: chi sedeva alla Camera e al Senato, giorno per giorno, dal 1994 al 2013',
           'Camera e Senato a semicerchio, legislatura per legislatura: i seggi di ogni partito '
@@ -559,6 +569,12 @@ def costruisci(scheletro, dati, descrizione_casa, versione, cartella_sito, uscit
             if titoli:
                 scrivi('proposte/%s.json' % q,
                        json.dumps(titoli, ensure_ascii=False, separators=(',', ':')))
+    # I titoli delle leggi di ogni governo (scripts/leggi_sedute.py), un file per
+    # governo: la finestra Governi li chiede quando si apre l'elenco.
+    ls_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'data', 'leggi_sedute.json')
+    if os.path.exists(ls_file):
+        for gov, titoli in json.load(open(ls_file, encoding='utf-8'))['titoli'].items():
+            scrivi('leggi/%s.json' % scheggia(gov), json.dumps(titoli, ensure_ascii=False, separators=(',', ':')))
     # I nomi di ogni voto di fiducia, un file per votazione: il grafico li chiede
     # quando si clicca un punto.
     voti_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'data',

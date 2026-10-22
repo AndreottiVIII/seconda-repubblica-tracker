@@ -126,7 +126,7 @@ def interroga(query, tentativi=4):
             u = ENDPOINT + '?' + urllib.parse.urlencode(
                 {'query': query, 'format': 'application/sparql-results+json'})
             r = urllib.request.Request(u, headers={
-                'User-Agent': 'SecondaRepubblicaTracker/0.1 (progetto personale; davide.caniatti@gmail.com)',
+                'User-Agent': 'SecondaRepubblicaTracker/0.1 (https://secondarepubblica.it)',
                 'Accept': 'application/sparql-results+json'})
             return json.load(urllib.request.urlopen(r, timeout=300))['results']['bindings']
         except Exception as e:

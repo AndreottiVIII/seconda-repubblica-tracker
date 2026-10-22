@@ -726,6 +726,23 @@ document.addEventListener('toggle', e => {
     .catch(() => { dove.textContent = 'Titoli non disponibili.'; });
 }, true);
 
+/* I titoli delle leggi di un governo (/leggi/<governo>.json): come per le proposte,
+   si chiedono solo quando si apre l'elenco. */
+document.addEventListener('toggle', e => {
+  const d = e.target;
+  if (!d.dataset || !d.dataset.leggi || !d.open || d.dataset.caricato) return;
+  d.dataset.caricato = '1';
+  const dove = d.querySelector('.titoli-leggi');
+  fetch(RADICE_SITO + 'leggi/' + d.dataset.leggi + '.json')
+    .then(r => r.ok ? r.json() : Promise.reject(r.status))
+    .then(t => {
+      dove.innerHTML = '<table><tbody>' + t.map(x => '<tr><td style="white-space:nowrap;font-size:11px">' +
+        dataIt(x[0]) + '</td><td class="num" style="font-size:11px">n. ' + esc(x[1]) + '</td>' +
+        '<td style="font-size:11px">' + esc(x[2]) + '</td></tr>').join('') + '</tbody></table>';
+    })
+    .catch(() => { dove.textContent = 'Titoli non disponibili.'; });
+}, true);
+
 /* ---------- pezzi riusabili ---------- */
 function perElenco(p){
   /* 'Andreotti Giulio': in un elenco ordinato per cognome, il cognome sta
@@ -1033,21 +1050,27 @@ VISTE['persona'] = function(q){
     }).filter(Boolean);
     const conTitoli = Object.keys(p.pr).some(k => p.pr[k][0]);
     // com'e' andata alla Camera (scripts/proposte_leggi.py): [leg, numero, titolo, esito, data]
-    const pl = p.pl || [], quante = e => pl.filter(x => x[3] === e).length;
-    const approvate = pl.filter(x => x[3] !== 'assorbita');
-    const COME = {legge: 'diventata legge, ultimo voto alla Camera', approvata: 'approvata e passata al Senato',
-                  'testo unificato': 'approvata in un testo unico con altre', assorbita: 'assorbita da un&rsquo;altra proposta'};
-    const esitoProposte = !pl.length ? '' :
-      '<p>Approvate dalla Camera: <b>' + approvate.length + '</b>' + (approvate.length
-        ? ' (' + [['legge', 'diventate legge con l&rsquo;ultimo voto alla Camera'],
-                  ['testo unificato', 'in un testo unico con altre'],
-                  ['approvata', 'passate al Senato']].filter(x => quante(x[0]))
-            .map(x => quante(x[0]) + ' ' + x[1]).join(', ') + ')' : '') +
-      (quante('assorbita') ? '. Assorbite da altre proposte: <b>' + quante('assorbita') + '</b>' : '') + '.</p>' +
-      '<details><summary class="clic">Quali</summary><table><thead><tr><th>Legisl.</th><th>N.</th><th>Titolo</th>' +
-      '<th>Com&rsquo;&egrave; andata</th></tr></thead><tbody>' + pl.map(x => '<tr><td>' + x[0] + '</td><td class="num">' +
-        esc(x[1]) + '</td><td style="font-size:11px">' + esc(x[2]) + '</td><td style="font-size:11px">' + COME[x[3]] +
-        (x[4] ? ', ' + dataIt(x[4]) : '') + '</td></tr>').join('') + '</tbody></table></details>';
+    // com'e' andata (scripts/proposte_leggi.py per la Camera, proposte_senato.py per il
+    // Senato): [leg, numero, titolo, esito, data]
+    const pl = (p.pl || []).concat(p.ps || []);
+    const esitoDi = (lista, qui, altro) => {
+      if (!lista.length) return '';
+      const quante = e => lista.filter(x => x[3] === e).length;
+      const approvate = lista.filter(x => x[3] !== 'assorbita');
+      const COME = {legge: 'diventata legge, ultimo voto ' + qui, approvata: 'approvata e passata ' + altro,
+                    'testo unificato': 'approvata in un testo unico con altre', assorbita: 'assorbita da un&rsquo;altra proposta'};
+      return '<p>Approvate ' + (qui === 'alla Camera' ? 'dalla Camera' : 'dal Senato') + ': <b>' + approvate.length + '</b>' +
+        (approvate.length ? ' (' + [['legge', 'diventate legge con l&rsquo;ultimo voto ' + qui],
+                                    ['testo unificato', 'in un testo unico con altre'],
+                                    ['approvata', 'passate ' + altro]].filter(x => quante(x[0]))
+          .map(x => quante(x[0]) + ' ' + x[1]).join(', ') + ')' : '') +
+        (quante('assorbita') ? '. Assorbite da altre proposte: <b>' + quante('assorbita') + '</b>' : '') + '.</p>' +
+        '<details><summary class="clic">Quali</summary><table><thead><tr><th>Legisl.</th><th>N.</th><th>Titolo</th>' +
+        '<th>Com&rsquo;&egrave; andata</th></tr></thead><tbody>' + lista.map(x => '<tr><td>' + x[0] + '</td><td class="num">' +
+          esc(x[1]) + '</td><td style="font-size:11px">' + esc(x[2]) + '</td><td style="font-size:11px">' + COME[x[3]] +
+          (x[4] ? ', ' + dataIt(x[4]) : '') + '</td></tr>').join('') + '</tbody></table></details>';
+    };
+    const esitoProposte = esitoDi(p.pl || [], 'alla Camera', 'al Senato') + esitoDi(p.ps || [], 'al Senato', 'alla Camera');
     if (frasi.length)
       corpo += '<h2 style="margin-top:12px">Proposte di legge</h2><p>' + frasi.join(' ') + '</p>' + esitoProposte +
         (conTitoli && INDIRIZZI
@@ -1056,8 +1079,9 @@ VISTE['persona'] = function(q){
             'Caricamento...</div></details>' : '') +
         '<p class="piede">Il Senato pubblica le proposte dalla XIII legislatura: quelle ' +
         'presentate al Senato nel 1994-96 non ci sono.' + (pl.length ? ' Com&rsquo;&egrave; andata: dalla XIII ' +
-        'legislatura, dall&rsquo;elenco dei disegni di legge del Senato, che segna ogni passaggio alla Camera. ' +
-        'Di una proposta passata al Senato, come &egrave; finita l&igrave; da qui non si vede.' : '') + '</p>';
+        'legislatura, dagli elenchi dei disegni di legge del Senato, che segnano ogni passaggio in tutti e ' +
+        'due i rami, ma uno per uno: di una proposta passata all&rsquo;altro ramo, come &egrave; finita ' +
+        'l&igrave; da qui non si vede.' : '') + '</p>';
   }
 
   if (p.ai){
@@ -2663,8 +2687,8 @@ VISTE['collegi'] = function(){
 const pcVoti = (a, b) => b ? conUnDecimale(100 * a / b) + '%' : '&mdash;';
 
 // la presenza mese per mese: su cento voti registrati, quanti espressi
-function graficoPresenza(){
-  const M = Object.entries((DATI.riassunto_voti || {}).mesi || {}).filter(x => x[1].voti >= 2000);
+function graficoPresenza(mesi){
+  const M = Object.entries(mesi || (DATI.riassunto_voti || {}).mesi || {}).filter(x => x[1].voti >= 2000);
   if (!M.length) return '';
   const W = 680, H = 210, ml = 34, mr = 8, mt = 22, mb = 22;
   const g = m => Date.UTC(+m.slice(0, 4), +m.slice(4, 6) - 1, 15) / 864e5;
@@ -2716,6 +2740,16 @@ VISTE['voti'] = function(leg){
     '<p class="piede">Le percentuali di voti espressi, missioni e voti non dati sono sul totale dei posti ' +
     'in votazione (un deputato per ogni votazione). Diversi dal gruppo: sui voti palesi in cui il gruppo ' +
     'ha una linea netta, il misto escluso.</p>';
+
+  // le sedute dell'Assemblea, anno per anno (scripts/leggi_sedute.py)
+  const S = DATI.sedute;
+  if (S && S.anni)
+    h += '<h2 style="margin-top:12px">Le sedute, anno per anno</h2>' +
+      tabellaConBarre(Object.keys(S.anni).map(a => [a, S.anni[a], '#808080', null, numIt(S.anni[a])])) +
+      '<p class="piede">Le sedute dell&rsquo;Assemblea della Camera, dal 15 aprile 1994 al 14 marzo 2013 ' +
+      '(qui anche la XII: per legislatura ' + ORDINE.filter(m => S.legislature[m]).map(m => m + ' ' +
+        numIt(S.legislature[m])).join(', ') + '). Il 1994, il 1996, il 2001, il 2006, il 2008 e il 2013 ' +
+      'sono anni di elezioni, e hanno mesi senza Camera. Fonte: archivio delle sedute della Camera.</p>';
 
   // 2. mese per mese
   h += '<h2 style="margin-top:12px">La presenza, mese per mese</h2>' + graficoPresenza() +
@@ -2769,6 +2803,118 @@ document.addEventListener('click', e => {
   if (!s) return;
   const corpo = s.closest('.corpo');
   corpo.innerHTML = VISTE['voti'](s.dataset.leg).html;
+  if (INDIRIZZI) linkVeri(corpo);
+});
+
+
+/* ---- Le leggi che hanno diviso: voto per voto (scripts/leggi_divise.py) ---- */
+const SCELTA_A_PAROLE = {F: 's&igrave;', C: 'no', A: 'astenuto'};
+
+function schedaLegge(x, titolo){
+  // i gruppi: le componenti del misto insieme, come nel resto del sito
+  const gruppi = {};
+  x.gruppi.forEach(g => {
+    const k = /^(MIST|M-)/i.test(g[0]) ? 'Misto' : g[0];
+    const t = gruppi[k] = gruppi[k] || [k, 0, 0, 0, 0, 0, k === 'Misto' ? '' : g[6]];
+    for (let i = 1; i <= 5; i++) t[i] += g[i];
+  });
+  const righe = Object.values(gruppi).sort((a, b) => (b[1] + b[2] + b[3]) - (a[1] + a[2] + a[3]));
+  return '<details><summary class="clic"><b>' + esc(titolo) + '</b> &mdash; ' + dataIt(x.data) + ': ' +
+    numIt(x.si) + ' s&igrave;, ' + numIt(x.no) + ' no, ' + (x.approvata ? 'approvata' : 'respinta') +
+    (x.diversi.length ? '; ' + x.diversi.length + ' contro il proprio gruppo' : '') + '</summary>' +
+    '<p style="font-size:11px;margin:4px 0">' + (x.scheda ? '<a target="_blank" rel="noopener" href="' + esc(x.scheda) +
+      '">' : '') + esc(x.descrizione) + (x.scheda ? '</a>' : '') + '</p>' +
+    '<table><thead><tr><th>Gruppo</th><th class="num">S&igrave;</th><th class="num">No</th><th class="num">Astenuti</th>' +
+    '<th class="num">In missione</th><th class="num">Non votato</th><th>Linea</th></tr></thead><tbody>' +
+    righe.map(g => '<tr><td>' + esc(g[0]) + '</td>' + [1, 2, 3, 4, 5].map(i => '<td class="num">' + (g[i] || '&mdash;') +
+      '</td>').join('') + '<td style="font-size:11px">' + (SCELTA_A_PAROLE[g[6]] || '&mdash;') + '</td></tr>').join('') +
+    '</tbody></table>' +
+    (x.diversi.length ? '<p style="margin:6px 0 2px">Contro il proprio gruppo:</p><table><tbody>' +
+      x.diversi.map(d => '<tr><td>' + (d[0] && perQid[d[0]] ? '<span class="clic" data-apri="persona" data-arg="' +
+        d[0] + '">' + esc(perQid[d[0]].n) + '</span>' : 'deputato non in elenco') + '</td><td>' + esc(d[1]) +
+        '</td><td style="font-size:11px">ha votato ' + SCELTA_A_PAROLE[d[2]] + ', il gruppo ' +
+        SCELTA_A_PAROLE[d[3]] + '</td></tr>').join('') + '</tbody></table>'
+      : '<p style="font-size:11px;margin:6px 0">Nessuno ha votato contro il proprio gruppo.</p>') + '</details>';
+}
+
+VISTE['leggi'] = function(){
+  const L = DATI.leggi_divise;
+  if (!L) throw new Error('Mancano le leggi: data/leggi_divise.json.');
+  let h = '<h1>Le leggi che hanno diviso</h1>' +
+    '<p>Il voto finale della Camera su alcune leggi del periodo, deputato per deputato: come ha votato ogni ' +
+    'gruppo e chi ha votato diversamente dal proprio. Si apre una legge con un clic.</p>' +
+    L.scelte.map(x => schedaLegge(x, x.nome)).join('') +
+    '<p style="margin-top:8px">Il caso Ruby (&laquo;la nipote di Mubarak&raquo;): il voto della Camera dell&rsquo;aprile ' +
+    '2011 negli archivi della Camera non c&rsquo;&egrave;; quello del Senato, con i nomi, &egrave; in ' +
+    '<span class="clic" data-apri="mubarak">La nipote di Mubarak</span>.</p>' +
+    '<p class="piede">Solo votazioni palesi: la legge elettorale del 2005, la Gasparri, la legge 40 nella lettura ' +
+    'finale, la ex-Cirielli e altre furono votate a scrutinio segreto, e i nomi non ci sono. La linea del gruppo ' +
+    '&egrave; la scelta della maggioranza dei suoi votanti; il misto non ne ha. Fonte: archivi dei voti della Camera.</p>' +
+    '<h2 style="margin-top:14px">Le dieci con pi&ugrave; voti contro il proprio gruppo</h2>' +
+    '<p>Fra tutte le votazioni finali palesi dal 1996 al 2013, quelle in cui pi&ugrave; deputati hanno votato ' +
+    'diversamente dal proprio gruppo: spesso leggi lontane dalla politica di tutti i giorni, dove la ' +
+    'disciplina di partito pesa meno.</p>' +
+    L.automatiche.map(x => schedaLegge(x, x.descrizione.replace(/\s*\((DDL|PDL|APPROVAT)[^)]*\)\s*$/i, '').slice(0, 110))).join('');
+  return {titolo: 'Le leggi che hanno diviso', icona: '&#9878;', html: h, faccia: true,
+          larghezza: 740, altezza: 620, stato: L.scelte.length + ' leggi scelte'};
+};
+
+/* ---- I voti al Senato: la gemella di quella della Camera (scripts/voti_senato.py) ---- */
+VISTE['votisenato'] = function(leg){
+  const R = DATI.riassunto_senato;
+  if (!R) throw new Error('Manca il riassunto dei voti del Senato: data/voti_senato.json.');
+  const legs = ORDINE.filter(m => R[m]);
+  leg = legs.indexOf(leg) >= 0 ? leg : legs[legs.length - 1];
+  let h = '<h1>I voti al Senato</h1>' +
+    '<p>Le votazioni del Senato dal 1996 al 2013, senatore per senatore. Per la XII legislatura (1994-96) ' +
+    'il Senato non le pubblica. Il Senato non segna le missioni: chi non ha votato comprende anche chi era ' +
+    'in missione, e per questo le assenze sembrano pi&ugrave; alte che alla Camera.</p>';
+  h += '<h2 style="margin-top:12px">Legislatura per legislatura</h2><table><thead><tr><th>Legisl.</th>' +
+    '<th class="num">Votazioni</th><th class="num">Approvate</th><th class="num">Voti espressi</th>' +
+    '<th class="num">In Aula senza votare</th><th class="num">Non votato</th><th class="num">Diversi dal gruppo</th>' +
+    '</tr></thead><tbody>' + legs.map(m => {
+      const c = R[m].totali;
+      return '<tr><td>' + m + '</td><td class="num">' + numIt(c.votazioni) + '</td><td class="num">' +
+        pcVoti(c.approvate, c.votazioni) + '</td><td class="num">' + pcVoti(c.espressi, c.voti) + '</td><td class="num">' +
+        pcVoti(c.presente, c.voti) + '</td><td class="num">' + pcVoti(c.assente, c.voti) + '</td><td class="num">' +
+        pcVoti(c.diversi, c.con_linea) + '</td></tr>';
+    }).join('') + '</tbody></table>' +
+    '<p class="piede">Percentuali sui posti in votazione (un senatore in carica per ogni votazione). Approvate: ' +
+    'fino al 2017 al Senato chi si astiene vota contro, e una proposta passa se i s&igrave; superano no e ' +
+    'astenuti insieme; l&rsquo;esito qui viene dai voti nominali. Fuori le verifiche del numero legale e le controprove.</p>';
+  const mesi = {};
+  legs.forEach(m => Object.assign(mesi, R[m].mesi));
+  h += '<h2 style="margin-top:12px">La presenza, mese per mese</h2>' + graficoPresenza(mesi) +
+    '<p class="piede">Su cento posti in votazione, quanti voti espressi. Passando sulla linea si legge il mese.</p>';
+  const gruppi = R[leg].gruppi.slice().sort((a, b) => b.voti - a.voti);
+  h += '<h2 style="margin-top:12px">I gruppi a confronto</h2><p>Legislatura: ' + legs.map(m => m === leg
+      ? '<b>' + m + '</b>' : '<span class="clic sceglie-votisenato" data-leg="' + m + '">' + m + '</span>').join(' &middot; ') +
+    '</p><table><thead><tr><th>Gruppo</th><th class="num">Voti espressi</th><th class="num">In Aula senza votare</th>' +
+    '<th class="num">Diversi dal gruppo</th></tr></thead><tbody>' + gruppi.map(g =>
+      '<tr><td style="font-size:11px">' + esc(g.nome) + '</td><td class="num">' + pcVoti(g.espressi, g.voti) +
+      '</td><td class="num">' + pcVoti(g.presente || 0, g.voti) + '</td><td class="num">' +
+      (/^misto/i.test(g.nome) ? '&mdash;' : pcVoti(g.diversi || 0, g.con_linea || 0)) + '</td></tr>').join('') +
+    '</tbody></table>';
+  const strette = [];
+  legs.forEach(m => R[m].strette.forEach(x => strette.push(x)));
+  strette.sort((a, b) => Math.abs(a[3] - a[4] - a[5]) - Math.abs(b[3] - b[4] - b[5]) || a[0].localeCompare(b[0]));
+  h += '<h2 style="margin-top:12px">Le votazioni pi&ugrave; strette</h2><table><thead><tr><th>Data</th><th>Che cosa</th>' +
+    '<th class="num">S&igrave;</th><th class="num">No</th><th class="num">Astenuti</th><th>Esito</th></tr></thead><tbody>' +
+    strette.slice(0, 15).map(x => '<tr><td style="white-space:nowrap;font-size:11px">' + dataIt(x[0]) + '</td>' +
+      '<td style="font-size:11px"><a target="_blank" rel="noopener" href="' + esc(x[1]) + '">' + esc(x[2] || 'votazione') +
+      '</a></td><td class="num">' + numIt(x[3]) + '</td><td class="num">' + numIt(x[4]) + '</td><td class="num">' +
+      numIt(x[5]) + '</td><td style="font-size:11px">' + (x[6] ? 'approvata' : 'respinta') + '</td></tr>').join('') +
+    '</tbody></table><p class="piede">Le votazioni con almeno 200 voti espressi, ordinate per la differenza fra i ' +
+    's&igrave; e i no pi&ugrave; gli astenuti. A parit&agrave; una proposta &egrave; respinta.</p>';
+  return {titolo: 'I voti al Senato', icona: '&#128499;', html: h, faccia: true,
+          larghezza: 740, altezza: 620, stato: legs.length + ' legislature'};
+};
+
+document.addEventListener('click', e => {
+  const s = e.target.closest && e.target.closest('.sceglie-votisenato');
+  if (!s) return;
+  const corpo = s.closest('.corpo');
+  corpo.innerHTML = VISTE['votisenato'](s.dataset.leg).html;
   if (INDIRIZZI) linkVeri(corpo);
 });
 
@@ -2919,6 +3065,25 @@ VISTE['governi'] = function(){
   });
   h += '</tbody></table>';
   const monti = P.filter(p => (p.gv || []).indexOf('Monti') >= 0);
+  // le leggi pubblicate mentre era in carica ciascun governo (scripts/leggi_sedute.py)
+  const LG = DATI.leggi_governi || {};
+  if (Object.keys(LG).length)
+    h += '<h2 style="margin-top:12px">Le leggi, governo per governo</h2>' +
+      '<table><thead><tr><th>Governo</th><th class="num">Leggi</th><th class="num">Decreti convertiti</th>' +
+      '<th class="num">Ratifiche di trattati</th><th class="num">Altre</th></tr></thead><tbody>' +
+      GOVERNI.filter(g => LG[g[0]]).map(g => {
+        const c = LG[g[0]];
+        return '<tr><td><b>' + esc(g[0]) + '</b></td><td class="num">' + numIt(c.totale) + '</td><td class="num">' +
+          numIt(c.decreti || 0) + '</td><td class="num">' + numIt(c.ratifiche || 0) + '</td><td class="num">' +
+          numIt(c.altre || 0) + '</td></tr>';
+      }).join('') + '</tbody></table>' +
+      GOVERNI.filter(g => LG[g[0]]).map(g => '<details data-leggi="' +
+        g[0].toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') + '"><summary class="clic">' +
+        'I titoli delle leggi: ' + esc(g[0]) + '</summary><div class="titoli-leggi">Caricamento...</div></details>').join('') +
+      '<p class="piede">Le leggi pubblicate mentre il governo era in carica, dal 10 maggio 1994 al 14 marzo 2013: ' +
+      'conta chi governava quel giorno, non chi le ha proposte. Decreti convertiti e ratifiche si riconoscono ' +
+      'dal titolo. Fonte: archivio delle leggi della Camera.</p>';
+
   h += '<p style="margin-top:10px">Il governo Monti &egrave; il solo in cui ' +
     'la quota di ministri senza un seggio &egrave; la maggioranza: ' +
     monti.filter(p => p.x).length + ' su ' + monti.length + '.</p>' +
@@ -3972,6 +4137,8 @@ const SCRIVANIA = [
   ['&#127963;', 'Governi', 'governi', '', 'sx'],
   ['&#128499;', 'Le fiducie', 'fiducia', '', 'sx'],
   ['&#128202;', 'I voti alla Camera', 'voti', '', 'sx'],
+  ['&#128202;', 'I voti al Senato', 'votisenato', '', 'sx'],
+  ['&#128220;', 'Le leggi che hanno diviso', 'leggi', '', 'sx'],
   ['&#128256;', 'Dalla lista al gruppo', 'flussi', '', 'sx'],
   ['&#127967;', 'L’emiciclo', 'emiciclo', '', 'sx'],
   ['&#128721;', 'Le cadute', 'cadute', '', 'sx'],

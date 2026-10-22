@@ -1,7 +1,7 @@
 """Utility minime per parlare con Wikidata (API + SPARQL)."""
 import urllib.request, urllib.parse, json, time, sys
 
-UA = 'DuriAMorire/0.1 (progetto personale; davide.caniatti@gmail.com) python-urllib'
+UA = 'SecondaRepubblicaTracker/0.1 (https://secondarepubblica.it) python-urllib'
 
 
 def _get(url, tries=5):

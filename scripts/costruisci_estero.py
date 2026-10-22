@@ -19,7 +19,7 @@ sys.stdout.reconfigure(encoding='utf-8', errors='replace')
 QUI = os.path.dirname(os.path.abspath(__file__))
 USCITA = os.path.join(QUI, '..', 'data', 'estero.json')
 UA = ('SecondaRepubblicaTracker/0.1 (progetto personale; '
-      'davide.caniatti@gmail.com)')
+      'https://secondarepubblica.it)')
 
 W = 'https://it.wikipedia.org/wiki/'
 

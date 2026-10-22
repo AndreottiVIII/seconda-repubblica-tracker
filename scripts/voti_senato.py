@@ -68,7 +68,7 @@ def legislatura(n):
                 return g, nome
         return None, ''
 
-    votazioni = {}                                   # uri -> data
+    votazioni, oggetti = {}, {}                      # uri -> data, oggetto
     voti = collections.defaultdict(dict)             # uri -> {senatore: scelta}
     for f in glob.glob(os.path.join(cartella, 'votazioni-senatore', '*.csv')):
         s = os.path.basename(f)[:-4]
@@ -77,6 +77,7 @@ def legislatura(n):
                 continue
             u = r['votazione']
             votazioni[u] = r['dataSeduta'].replace('-', '')
+            oggetti[u] = (r['oggetto'] or '').strip().strip('"')
             ruolo = r['voto'].rsplit('/', 1)[-1]
             v = voti[u]
             if ruolo in SCELTA:
@@ -86,8 +87,18 @@ def legislatura(n):
     print('  %s: %d votazioni, %d senatori' % (ROMANI[n], len(votazioni), len(mandati)), flush=True)
 
     conta = collections.defaultdict(collections.Counter)
+    # il riassunto della legislatura: totali, mesi, gruppi, votazioni strette
+    tot, mesi = collections.Counter(), collections.defaultdict(collections.Counter)
+    per_g, nomi_g, strette = collections.defaultdict(collections.Counter), {}, []
     for u, giorno in votazioni.items():
         v = voti[u]
+        sc = collections.Counter(x for x in v.values() if x in 'FCA')
+        tot['votazioni'] += 1
+        # al Senato, fino al 2017, chi si astiene vota contro: passa se i si' superano no e astenuti
+        tot['approvate'] += sc['F'] > sc['C'] + sc['A']
+        if sum(sc.values()) >= 200:
+            strette.append([abs(sc['F'] - sc['C'] - sc['A']), giorno, u, oggetti.get(u, '')[:250],
+                            sc['F'], sc['C'], sc['A'], sc['F'] > sc['C'] + sc['A']])
         linea, per_gruppo = {}, collections.defaultdict(collections.Counter)
         for s, x in v.items():
             if x in 'FCA':
@@ -104,6 +115,17 @@ def legislatura(n):
             c = conta[s]
             c['votazioni'] += 1
             x = v.get(s)
+            g0, nome0 = gruppo_al(s, giorno)
+            k = 'assente' if x is None else 'presente' if x == 'P' else 'espressi'
+            for cc in (tot, mesi[giorno[:6]], per_g[g0]):
+                cc['voti'] += 1
+                cc[k] += 1
+            if g0:
+                nomi_g[g0] = nome0
+            if x in ('F', 'C', 'A') and g0 in linea:
+                for cc in (tot, mesi[giorno[:6]], per_g[g0]):
+                    cc['con_linea'] += 1
+                    cc['diversi'] += x != linea[g0]
             if x is None:
                 c['assente'] += 1
             elif x == 'P':
@@ -114,20 +136,26 @@ def legislatura(n):
                 if g in linea:
                     c['con_linea'] += 1
                     c['dissenso'] += x != linea[g]
-    return {s: dict(c) for s, c in conta.items()}
+    strette.sort(key=lambda x: (x[0], x[1]))
+    riassunto = {'totali': dict(tot), 'mesi': {m: dict(c) for m, c in sorted(mesi.items())},
+                 'gruppi': [dict(c, nome=nomi_g.get(g, ''), leg=ROMANI[n]) for g, c in per_g.items()
+                            if g and c['voti'] >= 5000],
+                 'strette': [x[1:] for x in strette[:40]]}
+    return {s: dict(c) for s, c in conta.items()}, riassunto
 
 
 def main():
     t0 = time.time()
-    fuori = {}
+    fuori, riassunti = {}, {}
     for n, leg in sorted(ROMANI.items()):
-        for s, c in legislatura(n).items():
+        senatori, riassunti[leg] = legislatura(n)
+        for s, c in senatori.items():
             fuori.setdefault(s, {})[leg] = c
         print('%s fatta, %.0f s' % (leg, time.time() - t0), flush=True)
     json.dump({'_nota': "Voti dei senatori XIII-XVI dai file votazioni-senatore del Senato: votazioni durante "
                         "il mandato, voti espressi, presenti senza votare, assenti (missioni comprese), voti "
                         "diversi dalla linea del gruppo. Generato da scripts/voti_senato.py.",
-               'senatori': fuori},
+               'senatori': fuori, 'riassunto': riassunti},
               io.open(USCITA, 'w', encoding='utf-8', newline='\n'), ensure_ascii=False)
     print('senatori: %d; %.0f s' % (len(fuori), time.time() - t0))
 

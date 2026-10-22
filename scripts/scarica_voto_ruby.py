@@ -27,7 +27,7 @@ USCITA = os.path.join(QUI, '..', 'data', 'voto_ruby.json')
 ELENCO = os.path.join(QUI, '..', 'data', 'elenco.json')
 VOTAZIONE = 'http://dati.senato.it/votazione/16-602-1'
 UA = ('SecondaRepubblicaTracker/0.1 (progetto personale; '
-      'davide.caniatti@gmail.com)')
+      'https://secondarepubblica.it)')
 
 P = 'PREFIX osr: <http://dati.senato.it/osr/> '
 
