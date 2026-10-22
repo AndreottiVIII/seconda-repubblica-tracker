@@ -1100,6 +1100,42 @@ VISTE['persona'] = function(q){
         'una linea non ce l&rsquo;ha, non conta. Le fiducie sono segnate dalla XIV.</p>';
   }
 
+  // il Senato: voti (scripts/voti_senato.py), interventi e interrogazioni (attivita_senato.py)
+  if (p.vt){
+    const pc = (a, b) => b ? ' (' + conUnDecimale(100 * a / b) + '%)' : '';
+    const righe = ORDINE.filter(m => p.vt[m] && p.vt[m][0] >= 20);
+    if (righe.length)
+      corpo += '<h2 style="margin-top:12px">Votazioni al Senato</h2>' +
+        '<table><thead><tr><th>Legisl.</th><th>Ha votato</th><th>In Aula senza votare</th>' +
+        '<th>Non ha votato</th><th>Diverso dal gruppo</th></tr></thead><tbody>' +
+        righe.map(m => {
+          const [tot, esp, pres, ass, linea, dis] = p.vt[m];
+          return '<tr><td>' + m + '</td>' +
+            '<td style="white-space:nowrap">' + numIt(esp) + ' su ' + numIt(tot) + pc(esp, tot) + '</td>' +
+            '<td style="white-space:nowrap">' + numIt(pres) + pc(pres, tot) + '</td>' +
+            '<td style="white-space:nowrap">' + numIt(ass) + pc(ass, tot) + '</td>' +
+            '<td style="white-space:nowrap">' + numIt(dis) + ' su ' + numIt(linea) + pc(dis, linea) + '</td></tr>';
+        }).join('') + '</tbody></table>' +
+        '<p class="piede">Dai voti del Senato, senatore per senatore: ci sono dalla XIII legislatura. ' +
+        'Il Senato non segna le missioni: &laquo;non ha votato&raquo; le comprende, e per chi &egrave; al ' +
+        'governo pesa molto. In Aula senza votare: chi presiede la seduta o &egrave; presente senza ' +
+        'votare. Diverso dal gruppo: quando il gruppo ha una maggioranza netta, il misto escluso. ' +
+        'Verifiche del numero legale e controprove non contano.</p>';
+  }
+  if (p.at){
+    const righe = ORDINE.filter(m => p.at[m]);
+    const n = x => x ? numIt(x) : '&mdash;';
+    if (righe.length)
+      corpo += '<h2 style="margin-top:12px">Interventi e interrogazioni al Senato</h2>' +
+        '<table><thead><tr><th>Legisl.</th><th>Interventi in Aula</th><th>In commissione</th>' +
+        '<th>Interrogazioni</th><th>A risposta scritta</th><th>Interpellanze</th><th>Mozioni</th>' +
+        '</tr></thead><tbody>' + righe.map(m => '<tr><td>' + m + '</td>' + p.at[m].map((x, i) =>
+          '<td class="num">' + (i >= 2 && m === 'XIII' ? '&mdash;' : n(x)) + '</td>').join('') + '</tr>').join('') +
+        '</tbody></table><p class="piede">Gli interventi sono quelli sulle leggi, seduta per seduta. ' +
+        'Interrogazioni, interpellanze e mozioni sono quelle firmate, da primo firmatario o no: il Senato ' +
+        'non lo distingue; per la XIII non le pubblica.</p>';
+  }
+
   if (p['in']){
     const righe = [];
     ORDINE.forEach(m => (p['in'][m] || []).forEach(x => righe.push([m, x[0], x[1], x[2] || 'C'])));
@@ -1281,6 +1317,41 @@ VISTE['classifiche'] = function(){
       ' votazioni. La missione &egrave; un&rsquo;assenza giustificata e qui non conta. ' +
       'L&rsquo;archivio dice solo che non ha votato, non perch&eacute;: una malattia, un altro ' +
       'incarico, una scelta politica.</p>';
+  }
+
+  // --- i più loquaci, come su primarepubblica.net: ogni elenco una fonte sola.
+  // Gli archivi contano anche chi presiede l'Aula, che prende la parola migliaia di
+  // volte: le legislature in cui uno era presidente o vicepresidente non contano.
+  const presiede = (p, m, ramo) => ((p['in'] || {})[m] || []).some(x =>
+    /^(VICE)?PRESIDENTE$/.test(x[0]) && /^(UFFICIO DI PRESIDENZA|PRESIDENZA DEL SENATO)$/.test(x[1]) &&
+    (ramo === 'S') === (x[2] === 'S'));
+  const aulaSenato = p => Object.keys(p.at || {}).reduce((t, m) => t + (presiede(p, m, 'S') ? 0 : p.at[m][0]), 0);
+  const alSenato = P.filter(aulaSenato).sort((a, b) => aulaSenato(b) - aulaSenato(a) || perCognome(a, b));
+  if (alSenato.length)
+    h += '<h2 style="margin-top:12px">I pi&ugrave; loquaci al Senato</h2>' +
+      classifica(senzaTagliare(alSenato, 20, aulaSenato), p => num(aulaSenato(p)),
+        p => Object.keys(p.at).filter(m => p.at[m][0] && !presiede(p, m, 'S'))
+          .map(m => m + ' ' + num(p.at[m][0])).join(', ')) +
+      '<p class="piede">Interventi sulle leggi in Aula, seduta per seduta, dalla XIII alla XVI legislatura ' +
+      '(1996-2013): una fonte sola, il Senato, per tutti gli anni. Non contano le legislature in cui ' +
+      'uno presiedeva l&rsquo;Aula, da presidente o vicepresidente del Senato.</p>';
+  // Alla Camera le fonti cambiano da una legislatura all'altra: una classifica per
+  // legislatura, mai sommate.
+  const COSA = {XII: 'in Aula e in commissione, dal portale storico', XIV: 'sulle leggi, in Aula',
+                XV: 'sulle leggi, in Aula', XVI: 'in Aula, dai dati aperti'};
+  const legIc = ['XII', 'XIV', 'XV', 'XVI'].filter(m => P.some(p => p.ic && p.ic[m] && p.ic[m][0]));
+  if (legIc.length){
+    h += '<h2 style="margin-top:12px">I pi&ugrave; loquaci alla Camera</h2>';
+    legIc.forEach(m => {
+      const quanti = p => (p.ic && p.ic[m]) ? p.ic[m][0] : 0;
+      const el = P.filter(p => quanti(p) && !presiede(p, m, 'C'))
+        .sort((a, b) => quanti(b) - quanti(a) || perCognome(a, b));
+      h += '<p style="margin:8px 0 2px"><b>' + m + ' legislatura</b> &mdash; ' + COSA[m] + '</p>' +
+        classifica(senzaTagliare(el, 10, quanti), p => num(quanti(p)));
+    });
+    h += '<p class="piede">Le fonti della Camera non contano tutte la stessa cosa, e per la XIII una fonte ' +
+      'non c&rsquo;&egrave;: per questo una classifica per legislatura, senza sommarle. Fuori chi in quella ' +
+      'legislatura presiedeva l&rsquo;Aula, da presidente o vicepresidente della Camera.</p>';
   }
   return {titolo: 'Classifiche', icona: '&#127942;', html: h, faccia: true,
           larghezza: 660, altezza: 540, stato: 'ordinate per numero di cambi'};

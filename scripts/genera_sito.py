@@ -359,6 +359,42 @@ def main():
         for q, v in json.load(open(cu_file, encoding='utf-8'))['collegi'].items():
             if q in per_q:
                 per_q[q]['cu'] = v
+    # Il Senato dai file scaricati sul PC: i voti (scripts/voti_senato.py) e
+    # interventi e interrogazioni (scripts/attivita_senato.py), per numero del senatore.
+    elenco_x = json.load(open(os.path.join(QUI, '..', 'data', 'elenco.json'), encoding='utf-8'))['persone']
+    senato_q = {x['id_senato'].rsplit('/', 1)[-1]: x['qid'] for x in elenco_x if x.get('id_senato')}
+    # chi nell'elenco non ha il numero del Senato (i senatori a vita, soprattutto):
+    # nome, cognome e data di nascita del Senato (scripts/senatori_anagrafe.py),
+    # solo se tornano con una persona sola
+    an_file = os.path.join(QUI, '..', 'data', 'senatori_anagrafe.json')
+    if os.path.exists(an_file):
+        semplice = lambda s: re.sub(r'[^a-z]', '', unicodedata.normalize('NFKD', s or '').encode(
+            'ascii', 'ignore').decode().lower())
+        per_nome = {}
+        for x in elenco_x:
+            if x.get('nascita'):
+                per_nome.setdefault((semplice(x['nome']), x['nascita']), []).append(x['qid'])
+        for s, (nome, cognome, nato) in json.load(open(an_file, encoding='utf-8')).items():
+            q = per_nome.get((semplice(nome + cognome), nato), [])
+            if s not in senato_q and len(q) == 1:
+                senato_q[s] = q[0]
+    per_q = {p['q']: p for p in persone}
+    vt_file = os.path.join(QUI, '..', 'data', 'voti_senato.json')
+    if os.path.exists(vt_file):
+        for s, legs in json.load(open(vt_file, encoding='utf-8'))['senatori'].items():
+            if senato_q.get(s) in per_q:
+                # [votazioni, espressi, presente senza votare, assente, con una linea, diversi]
+                per_q[senato_q[s]]['vt'] = {leg: [v.get(k, 0) for k in ('votazioni', 'espressi', 'presente',
+                                                                        'assente', 'con_linea', 'dissenso')]
+                                            for leg, v in legs.items()}
+    at_file = os.path.join(QUI, '..', 'data', 'attivita_senato.json')
+    if os.path.exists(at_file):
+        for s, legs in json.load(open(at_file, encoding='utf-8'))['senatori'].items():
+            if senato_q.get(s) in per_q:
+                # [in Aula, in commissione, interrogazioni, a risposta scritta, interpellanze, mozioni]
+                per_q[senato_q[s]]['at'] = {leg: [v.get(k, 0) for k in ('aula', 'commissione', 'interrogazioni',
+                                                                        'scritte', 'interpellanze', 'mozioni')]
+                                            for leg, v in legs.items()}
     # Com'e' andata alla Camera per le proposte (scripts/proposte_leggi.py), per
     # numero della Camera: [legislatura, numero, titolo, esito, data]
     pl_file = os.path.join(QUI, '..', 'data', 'proposte_leggi.json')
