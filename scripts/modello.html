@@ -4082,6 +4082,41 @@ VISTE['metodo'] = function(){
     'gli open data della <b>Camera dei deputati</b>, quelli del <b>Senato della ' +
     'Repubblica</b> e <b>Wikidata</b>. L&rsquo;elenco di chi ha seduto in Parlamento ' +
     'lo danno le Camere: dove le fonti si contraddicono, comandano i registri.</p>' +
+    '<p>Tutto il resto viene da archivi pubblici scaricati per intero e letti una volta, ' +
+    'sul computer, da programmi che restano nel progetto e si possono rifare. Per ogni ' +
+    'tipo di dato c&rsquo;&egrave; una fonte sola; quando una fonte non basta, la scheda dice ' +
+    'che cosa manca invece di riempire il buco.</p>' +
+    '<h2>Da dove viene ogni dato</h2>' +
+    '<table><thead><tr><th>Dato</th><th>Fonte</th><th>Come</th></tr></thead><tbody>' +
+    [['Chi ha seduto, i gruppi, le cariche', 'Camera e Senato (open data); Wikidata',
+      'Interrogati ogni notte. I registri delle Camere decidono chi c&rsquo;&egrave;; Wikidata aggiunge ' +
+      'nascite, foto, voci di Wikipedia e della Treccani, luoghi, parenti.'],
+     ['Voti alla Camera, 1996-2013', 'Archivi dei voti della Camera (dati.camera.it)',
+      'Un archivio per legislatura, 33 GB in tutto, letti voto per voto. Da qui presenze, voti diversi ' +
+      'dal gruppo, fiducie, leggi che hanno diviso, maggioranze battute. Per il 1994-96 non esistono.'],
+     ['Proposte, interrogazioni, elezioni, governi', 'Archivi della Camera (dati.camera.it)',
+      'Gli archivi degli atti, degli atti ispettivi, delle elezioni, dei mandati e dei membri del governo.'],
+     ['Come sono finite le proposte', 'Elenco dei disegni di legge del Senato',
+      'Segue ogni proposta in tutti e due i rami, passaggio per passaggio, dal 1996.'],
+     ['Richieste dei giudici alla Camera', 'Banche dati della Camera; indici dei Documenti IV',
+      'Per il 1994-2001 le banche dati professionali; dal 2001 gli indici dei Documenti IV, IV-bis e IV-ter.'],
+     ['Interventi alla Camera', 'Portale storico; siti delle legislature; open data',
+      'Tre fonti che contano cose diverse, una per legislatura: per questo i numeri non si sommano. ' +
+      'Per il 1996-2001 una fonte non c&rsquo;&egrave;.'],
+     ['Leggi e sedute', 'Archivi delle leggi e delle sedute della Camera',
+      'Ogni legge con la data e il titolo, assegnata al governo in carica quel giorno.'],
+     ['Voti, interventi, interrogazioni e proposte al Senato', 'Senato (dati.senato.it)',
+      'I moduli dei dati del Senato, scaricati senatore per senatore per il 1996-2013: 8 GB.'],
+     ['Prime fiducie al Senato', 'Resoconti stenografici del Senato',
+      'Gli elenchi letti nei resoconti delle sedute, agganciati ai senatori; i totali tornano con quelli proclamati in Aula.'],
+     ['Collegi e risultati di lista', 'Ministero dell&rsquo;Interno, archivio storico delle elezioni (Eligendo)',
+      'I voti di ogni candidato, comune per comune, 1994-2008.'],
+     ['Lo spread', 'Banca centrale europea', 'La serie mensile dei rendimenti decennali, cos&igrave; com&rsquo;&egrave;.'],
+     ['La lista della P2', 'Relazione della Commissione Anselmi (1984)', 'Trascritta da Wikipedia, agganciata per codice di Wikidata.'],
+     ['Condanne, distintivi, fatti fuori dai confini, segretari, partiti', 'Scritti a mano',
+      'Ognuno con la sua fonte accanto.']].map(r =>
+      '<tr><td style="font-size:11px"><b>' + r[0] + '</b></td><td style="font-size:11px">' + r[1] +
+      '</td><td style="font-size:11px">' + r[2] + '</td></tr>').join('') + '</tbody></table>' +
     '<h2>Che cosa conta come cambio di casacca</h2>' +
     '<p>Due iscrizioni consecutive a gruppi diversi sono un cambio, con due eccezioni. ' +
     'La prima: se il gruppo ha soltanto cambiato nome, non conta &mdash; e non serve ' +
@@ -4113,6 +4148,15 @@ VISTE['metodo'] = function(){
     'vengono fuse: contarle separate inventerebbe cambi mai avvenuti.</li>' +
     '<li>Wikidata attribuisce meno legislature di quante ne risultino alle Camere, e ' +
     'non lega i senatori a vita a nessuna legislatura.</li>' +
+    '<li>Nell&rsquo;archivio dei voti della Camera un gruppo che cambia nome cambia anche codice ' +
+    '(UDC e UDC per il Terzo Polo, Iniziativa Responsabile e Popolo e Territorio): i codici sono ' +
+    'stati riuniti. Fra le &laquo;fiducie&raquo; ci sono anche le mozioni di sfiducia, dove s&igrave; vuol dire contro.</li>' +
+    '<li>Le votazioni a scrutinio segreto non hanno nomi: la legge elettorale del 2005, la Gasparri, ' +
+    'la ex-Cirielli non si possono mostrare deputato per deputato.</li>' +
+    '<li>Il portale storico della Camera ha un buco negli interventi dal 1996 al 2008 circa; il Senato ' +
+    'non pubblica le interrogazioni del 1996-2001 n&eacute; gli appelli nominali prima del 2018.</li>' +
+    '<li>In un collegio (Monterotondo, 1996) i voti del Ministero danno primo chi non risulta eletto: ' +
+    'quel collegio resta fuori.</li>' +
     '</ul>' +
     '<h2>Che cosa questo sito non dice</h2>' +
     '<p>Non dice perch&eacute;. Un cambio di gruppo &egrave; un atto pubblico, depositato ' +
@@ -4120,7 +4164,7 @@ VISTE['metodo'] = function(){
     '<p class="piede">Se trovate un errore scrivete a davide.caniatti@gmail.com e viene ' +
     'corretto. <span class="clic" data-apri="errore">Segnala un errore</span>.</p>';
   return {titolo: 'Il metodo', icona: '&#128209;', html: h, faccia: true,
-          larghezza: 640, altezza: 520, stato: 'documentazione'};
+          larghezza: 700, altezza: 560, stato: 'documentazione'};
 };
 
 VISTE['leggimi'] = function(){

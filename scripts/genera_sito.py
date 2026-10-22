@@ -45,14 +45,24 @@ DURATA = {
 COLOFONE = [
     'SECONDA REPUBBLICA TRACKER',
     '',
-    'Chi ha cambiato casacca in Parlamento fra il 1994 e il 2013, e quante '
-    'volte. Cinque legislature, dalla XII alla XVI.',
+    'Chi ha seduto in Parlamento fra il 1994 e il 2013: casacche, voti, leggi, '
+    'elezioni. Cinque legislature, dalla XII alla XVI.',
     '',
-    'I dati vengono da tre fonti pubbliche, interrogate ogni notte e messe a '
-    'confronto fra loro: gli open data della Camera dei deputati '
-    '(dati.camera.it), quelli del Senato della Repubblica (dati.senato.it) e '
-    'Wikidata. L’elenco di chi ha seduto in Parlamento lo danno le Camere: '
-    'dove le fonti si contraddicono, comandano i registri ufficiali.',
+    'I dati vengono da fonti pubbliche. Ogni notte il sito interroga e mette a '
+    'confronto gli open data della Camera dei deputati (dati.camera.it), quelli '
+    'del Senato della Repubblica (dati.senato.it) e Wikidata. L’elenco di chi ha '
+    'seduto in Parlamento lo danno le Camere: dove le fonti si contraddicono, '
+    'comandano i registri ufficiali.',
+    '',
+    'Il resto viene da archivi scaricati per intero e letti una volta, sul '
+    'computer, con programmi che restano nel progetto e si possono rifare: i '
+    'voti, le proposte di legge, le interrogazioni, gli interventi, le leggi e '
+    'le sedute della Camera; i voti, gli interventi e le proposte dei senatori; '
+    'i resoconti delle sedute del Senato per le fiducie; i risultati delle '
+    'elezioni dall’archivio storico del Ministero dell’Interno; lo spread dalla '
+    'Banca centrale europea; la lista della P2 dalla relazione della '
+    'Commissione Anselmi. Fonte per fonte, è tutto scritto nella finestra '
+    '«Il metodo».',
     '',
     'Il sito registra fatti, non giudizi. Un cambio di gruppo parlamentare '
     'è un atto pubblico, depositato e datato. Qui trovate quello, con la '
