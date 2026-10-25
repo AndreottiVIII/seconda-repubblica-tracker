@@ -1,5 +1,5 @@
 {
- "generato": "2026-10-21",
+ "generato": "2026-10-25",
  "eta_massima_credibile": 106,
  "persone": [
   {
@@ -80012,8 +80012,8 @@
    "cognome": "Morgando",
    "nascita": "1949-12-20",
    "prec_nascita": "giorno",
-   "morte": null,
-   "prec_morte": null,
+   "morte": "2026-10-21",
+   "prec_morte": "giorno",
    "foto": "http://commons.wikimedia.org/wiki/Special:FilePath/Gianfranco%20Morgando.jpg",
    "wikipedia": "https://it.wikipedia.org/wiki/Gianfranco_Morgando",
    "gruppi_per_mandato": {
@@ -80098,7 +80098,8 @@
     "XV": "Piemonte"
    },
    "id_senato": "http://dati.senato.it/senatore/1643",
-   "stato": "vivente",
+   "fonte_morte": "Senato",
+   "stato": "deceduto",
    "non_eletto": false,
    "hall_of_fame": false
   },
@@ -83754,7 +83755,7 @@
    },
    "nascita": "1931-03-18",
    "prec_nascita": "giorno",
-   "morte": "2026-09-08",
+   "morte": "2026-09-18",
    "prec_morte": "giorno",
    "foto": null,
    "wikipedia": null,
