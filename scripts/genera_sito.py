@@ -566,6 +566,11 @@ def main():
     fi_file = os.path.join(QUI, '..', 'data', 'risultati_fi_pdl.json')
     if os.path.exists(fi_file):
         dati['risultati_fi_pdl'] = {'elezioni': json.load(open(fi_file, encoding='utf-8'))['elezioni']}
+    # Chi ha perso il collegio ed e' entrato lo stesso: calcolato qui, perche' nel
+    # sito pubblicato i collegi di ogni persona stanno nella sua scheda
+    anno_leg = {'1994': 'XII', '1996': 'XIII', '2001': 'XIV'}
+    dati['ripresi'] = [[p['q']] + c for p in persone for c in p.get('cu') or []
+                       if c[5] > 1 and anno_leg.get(c[0]) in (p.get('m') or [])]
     # Le sfide nei collegi uninominali 1994-2001 (scripts/collegi_sfide.py)
     cs_file = os.path.join(QUI, '..', 'data', 'collegi_sfide.json')
     if os.path.exists(cs_file):

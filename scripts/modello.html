@@ -216,6 +216,13 @@ button.p95:active{border-color:var(--ombra) var(--luce) var(--luce) var(--ombra)
 .dati dt{font-weight:bold;white-space:nowrap}
 .dati dd{margin:0}
 
+/* --- il testo della pagina per chi non esegue il programma --- */
+#testo-pagina{max-width:760px;margin:16px auto;padding:12px 16px;background:#fff;color:#000;
+  font:14px/1.5 Arial,Helvetica,sans-serif}
+#testo-pagina h1{font-size:22px;margin:0 0 8px}
+#testo-pagina h2{font-size:16px;margin:14px 0 4px}
+#testo-pagina ul{margin:0 0 8px 18px;padding:0}
+#testo-pagina[hidden]{display:none}
 /* --- salvaschermo e schermata blu --- */
 #salvaschermo{position:fixed;inset:0;background:#000;z-index:9800;display:none}
 #salvaschermo.acceso{display:block}
@@ -276,16 +283,7 @@ button.p95:active{border-color:var(--ombra) var(--luce) var(--luce) var(--ombra)
   <ul id="voci-menu"></ul>
 </div>
 
-<div id="salvaschermo" data-nosnippet><b>Seconda Repubblica Tracker</b></div>
-
-<div id="bsod" data-nosnippet>
-  <p><span class="cap">Seconda Repubblica</span></p>
-  <p id="bsod-testo">Si &egrave; verificato un errore irreversibile.</p>
-  <p>&nbsp;</p>
-  <p>* Premere un tasto qualsiasi per tornare alla scrivania.</p>
-  <p>&nbsp;</p>
-  <p style="text-align:center">Premere un tasto per continuare _</p>
-</div>
+<!-- salvaschermo e schermata blu: le crea il programma, non stanno nel testo della pagina -->
 
 <script>
 /* L'indirizzo del sito non cambia mai, e GitHub lo serve con dieci minuti di
@@ -299,6 +297,19 @@ button.p95:active{border-color:var(--ombra) var(--luce) var(--luce) var(--ombra)
    circolo. E con un tempo massimo, perche' fetch da solo non ce l'ha e
    aspetterebbe per sempre. */
 const VERSIONE = '%%VERSIONE%%';
+// Il testo vero della pagina (testo_statico.py) e' per chi non esegue il programma:
+// qui il programma c'e', e lo sostituisce con la scrivania. Il salvaschermo e la
+// schermata blu stanno solo qui, cosi' non finiscono nel testo che legge Google.
+(function preparaPagina(){
+  const t = document.getElementById('testo-pagina');
+  if (t) t.hidden = true;
+  document.body.insertAdjacentHTML('beforeend',
+    '<div id="salvaschermo" data-nosnippet><b>Seconda Repubblica Tracker</b></div>' +
+    '<div id="bsod" data-nosnippet><p><span class="cap">Seconda Repubblica</span></p>' +
+    '<p id="bsod-testo">Si &egrave; verificato un errore irreversibile.</p><p>&nbsp;</p>' +
+    '<p>* Premere un tasto qualsiasi per tornare alla scrivania.</p><p>&nbsp;</p>' +
+    '<p style="text-align:center">Premere un tasto per continuare _</p></div>');
+})();
 // Le pagine del sito pubblicato stanno anche in sottocartelle
 // (/onorevole/clemente-mastella/): i file comuni vanno cercati alla radice.
 const RADICE_SITO = typeof RADICE === 'string' ? RADICE : '';
@@ -421,9 +432,40 @@ const stretto = () => window.innerWidth <= 768;
 
 function chiave(vista, arg){ return arg ? vista + '/' + arg : vista; }
 
+/* Nel sito pubblicato alcuni dati stanno fuori dal programma (pagine_statiche.py,
+   FINESTRE_A_PARTE e CAMPI_A_PARTE): si chiedono quando una finestra o una scheda
+   li usa. Nel file unico da disco ci sono gia' tutti, e qui non succede niente. */
+const PER_FINESTRA = {collegi: ['collegi_sfide'], voti: ['riassunto_voti'], votisenato: ['riassunto_senato'],
+                      leggi: ['leggi_divise'], fiducia: ['fiducie_senato'], mubarak: ['voto_ruby'],
+                      cavaliere: ['voto_ruby']};
+function bisogni(vista, arg){
+  const fuori = DATI.esterni || [];
+  const manca = k => fuori.indexOf(k) >= 0 && DATI[k] === undefined;
+  const serve = (PER_FINESTRA[vista] || []).filter(manca).map(k => 'dati/' + k);
+  if (vista === 'persona' && perQid[arg] && perQid[arg]._e) serve.push('schede/' + arg);
+  // la scheda del Cavaliere usa anche le votazioni perse dalla sua maggioranza
+  if (vista === 'persona' && arg === BERLUSCONI && manca('riassunto_voti')) serve.push('dati/riassunto_voti');
+  return serve;
+}
+function carica(cosa){
+  return fetch(RADICE_SITO + cosa + '.json').then(r => r.ok ? r.json() : Promise.reject(r.status)).then(v => {
+    if (cosa.indexOf('dati/') === 0) DATI[cosa.slice(5)] = v;
+    else { const p = perQid[cosa.slice(7)]; Object.assign(p, v); delete p._e; }
+  });
+}
+
 function apri(vista, arg, senzaStoria){
   const k = chiave(vista, arg);
   if (FIN[k]) { fronte(k); if (!senzaStoria) storia(k); return; }
+  const serve = bisogni(vista, arg);
+  if (serve.length){
+    document.body.classList.add('attesa');
+    Promise.all(serve.map(carica))
+      .then(() => { document.body.classList.remove('attesa'); apri(vista, arg, senzaStoria); })
+      .catch(() => { document.body.classList.remove('attesa');
+                     schermataBlu('Non riesco a caricare i dati di questa finestra. Riprovate fra poco.'); });
+    return;
+  }
   const v = VISTE[vista];
   if (!v) return schermataBlu('La vista richiesta non esiste: ' + vista);
   document.body.classList.add('attesa');
@@ -2656,10 +2698,9 @@ VISTE['collegi'] = function(){
       /<td class="num"[^>]*>[^<]*<\/td><\/tr>$/, '<td class="num">' + conUnDecimale(scarto(r)) + ' punti</td></tr>'));
 
   // 3. hanno perso il collegio, ma in Parlamento ci sono entrati lo stesso
-  const ripresi = [];
-  P.forEach(p => (p.cu || []).forEach(c => {
-    if (c[5] > 1 && p.m.indexOf(ANNO_LEG[c[0]]) >= 0) ripresi.push([p, c]);
-  }));
+  // calcolati in genera_sito.py: i collegi di ogni persona nel sito pubblicato
+  // stanno nella sua scheda, e qui servono tutti
+  const ripresi = (DATI.ripresi || []).filter(x => perQid[x[0]]).map(x => [perQid[x[0]], x.slice(1)]);
   ripresi.sort((a, b) => a[1][0].localeCompare(b[1][0]) || perCognome(a[0], b[0]));
   const perAnno = {};
   ripresi.forEach(x => { perAnno[x[1][0]] = (perAnno[x[1][0]] || 0) + 1; });

@@ -30,6 +30,8 @@ import re
 import shutil
 import unicodedata
 
+import testo_statico
+
 INDIRIZZO = 'https://secondarepubblica.it'
 SITO = 'Seconda Repubblica Tracker'
 
@@ -483,12 +485,41 @@ def scomponi(scheletro):
     return involucro, stile.strip('\n') + '\n', programma.strip('\n') + '\n'
 
 
+# I dati che servono solo a una finestra (in dati/<nome>.json) e quelli che servono
+# solo alla scheda aperta (in schede/<codice>.json). Le finestre e le schede li
+# chiedono da sole prima di aprirsi (modello.html, bisogni).
+FINESTRE_A_PARTE = ('collegi_sfide', 'riassunto_voti', 'leggi_divise', 'riassunto_senato',
+                    'fiducie_senato', 'voto_ruby')
+CAMPI_A_PARTE = ('pl', 'ps', 'cu', 'st', 'rg', 'lu', 'go')
+
+
 def costruisci(scheletro, dati, descrizione_casa, versione, cartella_sito, uscita):
     """scheletro: la pagina con dati, colofone e versione gia' al loro posto, e
     ancora da riempire titolo, testa e intestazione.
     Scrive la cartella da pubblicare e restituisce (file, pagine in mappa)."""
     involucro, stile, programma = scomponi(scheletro)
     elenco_pagine = pagine(dati)
+
+    # Il programma pubblicato senza i dati che servono solo a una finestra o a una
+    # scheda aperta: vanno in file a parte, chiesti quando servono. Con tutto dentro
+    # il programma era arrivato a 4 MB, e Google smetteva di eseguirlo (ottobre 2026).
+    # Il file unico da disco resta completo.
+    corpo = json.dumps(dati, ensure_ascii=False, separators=(',', ':'))
+    if corpo not in programma:
+        raise SystemExit('Non trovo i dati nel programma: non posso alleggerirlo.')
+    leggero = dict(dati)
+    fuori_dati = {k: leggero.pop(k) for k in FINESTRE_A_PARTE if k in leggero}
+    leggero['esterni'] = sorted(fuori_dati)
+    persone_leggere, fuori_schede = [], {}
+    for p in dati['persone']:
+        q = dict(p)
+        dett = {k: q.pop(k) for k in CAMPI_A_PARTE if k in q}
+        if dett:
+            q['_e'] = 1
+            fuori_schede[p['q']] = dett
+        persone_leggere.append(q)
+    leggero['persone'] = persone_leggere
+    programma = programma.replace(corpo, json.dumps(leggero, ensure_ascii=False, separators=(',', ':')), 1)
 
     # Al programma la tabella degli indirizzi arriva coi dati. I titoli delle
     # schede la scrivania li compone da sola (titoloScheda): portarseli dietro
@@ -523,11 +554,14 @@ def costruisci(scheletro, dati, descrizione_casa, versione, cartella_sito, uscit
                           '<script src="/programma.js?v=%s"></script>' % impronta(programma)))
     e = lambda s: html.escape(s, quote=True)
 
-    def monta(titolo_pieno, testa_html, h1):
+    def monta(titolo_pieno, testa_html, h1, testo=''):
+        # il testo vero della pagina (testo_statico.py): il programma lo nasconde
+        # e mostra la scrivania; chi non lo esegue legge questo
         return (involucro
                 .replace('%%TITOLO%%', e(titolo_pieno))
                 .replace('<!--%%TESTA%%-->', testa_html + '\n' + ICONE)
-                .replace('<!--%%INTESTAZIONE%%-->', intestazione(h1)))
+                .replace('<!--%%INTESTAZIONE%%-->',
+                         '<main id="testo-pagina"><h1>%s</h1>%s</main>' % (e(h1), testo)))
 
     if os.path.isdir(uscita):
         shutil.rmtree(uscita)
@@ -539,15 +573,17 @@ def costruisci(scheletro, dati, descrizione_casa, versione, cartella_sito, uscit
         with open(percorso, 'w', encoding='utf-8', newline='\n') as f:
             f.write(testo)
 
+    dati['_per_q'] = {p['q']: p for p in dati['persone']}
     scrivi('index.html', monta(titolo_casa, testa_casa(dati, descrizione_casa),
-                               titolo_casa))
+                               titolo_casa, testo_statico.corpo('indice', descrizione_casa, None, dati)))
     mappa = ['/']
     for indirizzo, chiave, titolo, descrizione, persona in elenco_pagine:
         pieno = '%s | %s' % (titolo, SITO)
         fuori = chiave in FUORI_DAI_MOTORI
         grafo = grafo_scheda(persona, INDIRIZZO + indirizzo, pieno, dati) if persona else None
         scrivi(indirizzo.strip('/') + '/index.html',
-               monta(pieno, testa(indirizzo, pieno, descrizione, grafo, fuori), titolo))
+               monta(pieno, testa(indirizzo, pieno, descrizione, grafo, fuori), titolo,
+                     testo_statico.corpo(chiave, descrizione, persona, dati)))
         if not fuori:
             mappa.append(indirizzo)
 
@@ -556,6 +592,12 @@ def costruisci(scheletro, dati, descrizione_casa, versione, cartella_sito, uscit
     # finestra principale.
     scrivi('404.html', monta(SITO, testa('/', SITO, descrizione_casa, fuori=True,
                                          canonico=False), SITO))
+
+    # I dati tolti dal programma: uno per finestra, uno per scheda.
+    for k, v in fuori_dati.items():
+        scrivi('dati/%s.json' % k, json.dumps(v, ensure_ascii=False, separators=(',', ':')))
+    for q, v in fuori_schede.items():
+        scrivi('schede/%s.json' % q, json.dumps(v, ensure_ascii=False, separators=(',', ':')))
 
     # I titoli delle proposte di legge, un file per persona: la scheda li
     # chiede solo quando si apre, invece di farli scaricare a tutti.
