@@ -4,3 +4,8 @@ data/cache/
 novita.txt
 # il sito scomposto in pagine: si rifa' da zero a ogni giro
 pubblica/
+
+# chiave di Google per leggere Search Console: mai su GitHub
+segreti/
+*.iam.gserviceaccount.com*.json
+secondarepubblica-*.json
