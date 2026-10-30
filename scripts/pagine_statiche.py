@@ -53,6 +53,7 @@ ICONE = '\n'.join([
     '<link rel="apple-touch-icon" href="%s/apple-touch-icon.png">' % INDIRIZZO,
 ])
 FILE_ICONE = ('favicon.ico', 'favicon-96.png', 'favicon-192.png', 'apple-touch-icon.png')
+DATE_PAGINE = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'data', 'date_pagine.json')
 
 
 def scheggia(testo):
@@ -573,19 +574,35 @@ def costruisci(scheletro, dati, descrizione_casa, versione, cartella_sito, uscit
         with open(percorso, 'w', encoding='utf-8', newline='\n') as f:
             f.write(testo)
 
+    # Per la mappa del sito, il giorno in cui il testo di ogni pagina e' cambiato
+    # l'ultima volta. Si guarda solo il testo, non il programma: una correzione
+    # al codice non e' una pagina nuova. Il registro sta in data/ e lo versiona
+    # il lavoro notturno, altrimenti ogni notte sembrerebbe tutto nuovo.
+    vecchie = json.load(open(DATE_PAGINE, encoding='utf-8')) if os.path.exists(DATE_PAGINE) else {}
+    date = {}
+
+    def datata(indirizzo, *testi):
+        h = impronta('\n'.join(testi))
+        prima = vecchie.get(indirizzo)
+        date[indirizzo] = [h, prima[1] if prima and prima[0] == h else dati['generato']]
+
     dati['_per_q'] = {p['q']: p for p in dati['persone']}
-    scrivi('index.html', monta(titolo_casa, testa_casa(dati, descrizione_casa),
-                               titolo_casa, testo_statico.corpo('indice', descrizione_casa, None, dati)))
+    corpo_casa = testo_statico.corpo('indice', descrizione_casa, None, dati)
+    scrivi('index.html', monta(titolo_casa, testa_casa(dati, descrizione_casa), titolo_casa, corpo_casa))
+    datata('/', titolo_casa, descrizione_casa, corpo_casa)
     mappa = ['/']
     for indirizzo, chiave, titolo, descrizione, persona in elenco_pagine:
         pieno = '%s | %s' % (titolo, SITO)
         fuori = chiave in FUORI_DAI_MOTORI
         grafo = grafo_scheda(persona, INDIRIZZO + indirizzo, pieno, dati) if persona else None
+        corpo = testo_statico.corpo(chiave, descrizione, persona, dati)
         scrivi(indirizzo.strip('/') + '/index.html',
-               monta(pieno, testa(indirizzo, pieno, descrizione, grafo, fuori), titolo,
-                     testo_statico.corpo(chiave, descrizione, persona, dati)))
+               monta(pieno, testa(indirizzo, pieno, descrizione, grafo, fuori), titolo, corpo))
         if not fuori:
             mappa.append(indirizzo)
+            datata(indirizzo, pieno, descrizione, corpo)
+    with open(DATE_PAGINE, 'w', encoding='utf-8', newline='\n') as f:
+        json.dump(date, f, ensure_ascii=False, sort_keys=True, indent=0)
 
     # Per un indirizzo che non esiste GitHub Pages serve 404.html: e' la
     # scrivania stessa, che legge l'indirizzo e, se non lo riconosce, apre la
@@ -636,12 +653,11 @@ def costruisci(scheletro, dati, descrizione_casa, versione, cartella_sito, uscit
     scrivi('programma.js', programma)
     scrivi('versione.txt', versione)
 
-    # La mappa del sito. La data c'e' solo sull'indice, l'unica pagina che
-    # cambia davvero ogni giorno: una data uguale su tremila pagine Google
-    # impara presto a non crederci.
-    voci = ['  <url><loc>%s%s</loc>%s</url>' % (
-        INDIRIZZO, html.escape(x),
-        '<lastmod>%s</lastmod>' % dati['generato'] if x == '/' else '') for x in mappa]
+    # La mappa del sito, con la data vera di ogni pagina: una data uguale su
+    # tremila pagine ogni giorno Google impara presto a non crederci, una che
+    # cambia solo quando cambia il testo la usa per decidere cosa rileggere.
+    voci = ['  <url><loc>%s%s</loc><lastmod>%s</lastmod></url>' % (
+        INDIRIZZO, html.escape(x), date[x][1]) for x in mappa]
     scrivi('sitemap.xml', '<?xml version="1.0" encoding="UTF-8"?>\n'
            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
            + '\n'.join(voci) + '\n</urlset>\n')
