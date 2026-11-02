@@ -40,6 +40,14 @@ SITO = 'Seconda Repubblica Tracker'
 # non le mostri.
 FUORI_DAI_MOTORI = {'trova', 'aggiorna', 'confronta', 'esegui', 'errore'}
 
+# Le schede che Google vede, per ora solo quelle dei piu' noti (letture della
+# voce su Wikipedia, scripts/notorieta.py). Nell'ottobre 2026 Google ha letto
+# tremila pagine vuote e ha giudicato il sito scarso: gli si fanno rileggere
+# prima le schede migliori, e le altre si riaprono a blocchi quando queste
+# entrano. Le schede escluse restano online come prima. None: tutte su Google.
+SCHEDE_SU_GOOGLE = 500
+NOTORIETA = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'data', 'notorieta.json')
+
 # L'icona come file vero. Quella incorporata nella pagina (data:) al browser
 # basta, ma Google nei risultati di ricerca la ignora e mette il mappamondo
 # grigio: vuole un indirizzo da scaricare, e una misura multipla di 48 pixel.
@@ -591,9 +599,13 @@ def costruisci(scheletro, dati, descrizione_casa, versione, cartella_sito, uscit
     scrivi('index.html', monta(titolo_casa, testa_casa(dati, descrizione_casa), titolo_casa, corpo_casa))
     datata('/', titolo_casa, descrizione_casa, corpo_casa)
     mappa = ['/']
+    noti = None
+    if SCHEDE_SU_GOOGLE is not None:
+        visite = json.load(open(NOTORIETA, encoding='utf-8'))
+        noti = set(sorted(visite, key=lambda q: -visite[q])[:SCHEDE_SU_GOOGLE])
     for indirizzo, chiave, titolo, descrizione, persona in elenco_pagine:
         pieno = '%s | %s' % (titolo, SITO)
-        fuori = chiave in FUORI_DAI_MOTORI
+        fuori = chiave in FUORI_DAI_MOTORI or bool(persona and noti is not None and persona['q'] not in noti)
         grafo = grafo_scheda(persona, INDIRIZZO + indirizzo, pieno, dati) if persona else None
         corpo = testo_statico.corpo(chiave, descrizione, persona, dati)
         scrivi(indirizzo.strip('/') + '/index.html',
