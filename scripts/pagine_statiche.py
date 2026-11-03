@@ -45,7 +45,7 @@ FUORI_DAI_MOTORI = {'trova', 'aggiorna', 'confronta', 'esegui', 'errore'}
 # tremila pagine vuote e ha giudicato il sito scarso: gli si fanno rileggere
 # prima le schede migliori, e le altre si riaprono a blocchi quando queste
 # entrano. Le schede escluse restano online come prima. None: tutte su Google.
-SCHEDE_SU_GOOGLE = 500
+SCHEDE_SU_GOOGLE = None
 NOTORIETA = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'data', 'notorieta.json')
 
 # L'icona come file vero. Quella incorporata nella pagina (data:) al browser
