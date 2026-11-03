@@ -159,12 +159,59 @@ def elenco(gente):
     return '<ul>%s</ul>' % ''.join('<li>%s</li>' % link_persona(p) for p in gente)
 
 
+def classifica_casacche(P):
+    gente = sorted((p for p in P if p.get('c', 0) >= 5), key=lambda p: (-p['c'], p['n'].split()[-1].lower()))
+    return '<h2>Almeno cinque cambi di casacca</h2><ol>%s</ol>' % ''.join(
+        '<li>%s: %d cambi</li>' % (link_persona(p), p['c']) for p in gente)
+
+
+def elenco_governi(P):
+    inizio, gente = {}, {}
+    for p in P:
+        for g in p.get('go') or []:
+            inizio[g[0]] = min(inizio.get(g[0], g[2]), g[2])
+        for g in p.get('gv') or []:
+            gente[g] = gente.get(g, 0) + 1
+    return '<ul>%s</ul>' % ''.join(
+        '<li><a href="/elenco/governo/%s/">Governo %s</a>: dal %s, %d persone</li>' % (
+            scheggia(g), e(g), data(inizio[g]), gente.get(g, 0))
+        for g in sorted(inizio, key=inizio.get))
+
+
+def elenco_elezioni(dati):
+    return '<h2>Elezioni politiche</h2><ul>%s</ul>' % ''.join(
+        '<li>%s: %s legislatura, %s, affluenza %s, poi il governo %s</li>' % (
+            e(x['etichetta']), e(x['leg']), e(x['legge']), ('%.2f' % x['affluenza']).replace('.', ',') + '%', e(x['dopo']))
+        for x in (dati.get('elezioni') or {}).get('politiche', []))
+
+
+def donne_per_legislatura(dati):
+    P = dati['persone']
+    righe = []
+    for L in dati['legislature']:
+        dentro = [p for p in P if L['n'] in (p.get('m') or [])]
+        donne = sum(1 for p in dentro if p.get('ge') == 'F')
+        righe.append('<li><a href="/elenco/legislatura/%s/">%s legislatura (%s)</a>: %d donne su %s, %s</li>' % (
+            scheggia(L['n']), L['n'], L['anni'], donne, num(len(dentro)), pc(donne, len(dentro))))
+    return '<ul>%s</ul>' % ''.join(righe)
+
+
 def corpo(chiave, descrizione, persona, dati):
     """Il testo di una pagina, dato quello che la pagina mostra."""
     P = dati['persone']
     h = ['<p>%s</p>' % e(descrizione)] if descrizione else []
     if persona:
         h.append(scheda(persona, dati))
+    elif chiave == 'classifiche':
+        h.append(classifica_casacche(P))
+    elif chiave == 'governi':
+        h.append(elenco_governi(P))
+    elif chiave == 'elezioni':
+        h.append(elenco_elezioni(dati))
+    elif chiave == 'donne':
+        h.append(donne_per_legislatura(dati))
+    elif chiave == 'misto':
+        h.append(elenco([p for p in P if any(x[1] == 'MISTO' for x in p.get('g') or [])]))
     elif chiave.startswith('partito/'):
         c = chiave.split('/', 1)[1]
         h.append(elenco([p for p in P if any(x[1] == c for x in p.get('g') or [])]))
