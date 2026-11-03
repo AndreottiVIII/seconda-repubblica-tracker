@@ -180,8 +180,9 @@ def elenco_governi(P):
 
 def elenco_elezioni(dati):
     return '<h2>Elezioni politiche</h2><ul>%s</ul>' % ''.join(
-        '<li>%s: %s legislatura, %s, affluenza %s, poi il governo %s</li>' % (
-            e(x['etichetta']), e(x['leg']), e(x['legge']), ('%.2f' % x['affluenza']).replace('.', ',') + '%', e(x['dopo']))
+        '<li>%s: %s legislatura, %s, affluenza %s%s</li>' % (
+            e(x['etichetta']), e(x['leg']), e(x['legge']), ('%.2f' % x['affluenza']).replace('.', ',') + '%',
+            ', poi il governo ' + e(x['dopo']) if x.get('dopo') else '')
         for x in (dati.get('elezioni') or {}).get('politiche', []))
 
 
