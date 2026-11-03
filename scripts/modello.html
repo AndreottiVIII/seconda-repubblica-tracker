@@ -338,6 +338,14 @@ const DATI = /*__DATI__*/;
 const COLOFONE = /*__COLOFONE__*/;
 
 const P = DATI.persone;
+/* Nel sito pubblicato le parole ripetute di questi campi arrivano come numeri
+   (pagine_statiche.py, CAMPI_A_PAROLE): qui tornano parole. Nel file unico no. */
+if (DATI.parole) {
+  const aParole = v => Array.isArray(v) ? v.map(aParole) : (typeof v === 'number' ? DATI.parole[v] : v);
+  P.forEach(p => ['el', 'in', 'mn'].forEach(c => {
+    if (p[c]) Object.keys(p[c]).forEach(m => { p[c][m] = aParole(p[c][m]); });
+  }));
+}
 const PARTITI = DATI.partiti;
 const LEG = DATI.legislature;
 const ORDINE = LEG.map(l => l.n);

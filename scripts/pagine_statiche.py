@@ -499,7 +499,15 @@ def scomponi(scheletro):
 # chiedono da sole prima di aprirsi (modello.html, bisogni).
 FINESTRE_A_PARTE = ('collegi_sfide', 'riassunto_voti', 'leggi_divise', 'riassunto_senato',
                     'fiducie_senato', 'voto_ruby')
-CAMPI_A_PARTE = ('pl', 'ps', 'cu', 'st', 'rg', 'lu', 'go')
+CAMPI_A_PARTE = ('pl', 'ps', 'cu', 'st', 'rg', 'lu', 'go', 'w', 'au', 'fm')
+# Campi pieni di parole ripetute (collegi, liste, incarichi, date): nel programma
+# ogni parola sta una volta sola in DATI.parole, e il programma li ricompone appena
+# parte (modello.html). Servono a piu' finestre, quindi non possono stare a parte.
+CAMPI_A_PAROLE = ('el', 'in', 'mn')
+# Googlebot legge solo i primi 2 MB di ogni file, programma compreso (2.097.152
+# byte, regola del 2026). Il 21 ottobre 2026 il programma ha passato quel limite e
+# il giorno dopo le visualizzazioni sono crollate da 444 a 51: meglio non pubblicare.
+PESO_MASSIMO_PROGRAMMA = 2000000
 
 
 def costruisci(scheletro, dati, descrizione_casa, versione, cartella_sito, uscita):
@@ -520,14 +528,32 @@ def costruisci(scheletro, dati, descrizione_casa, versione, cartella_sito, uscit
     fuori_dati = {k: leggero.pop(k) for k in FINESTRE_A_PARTE if k in leggero}
     leggero['esterni'] = sorted(fuori_dati)
     persone_leggere, fuori_schede = [], {}
+    parole, numero = [], {}
+
+    def a_numeri(v):
+        if isinstance(v, list):
+            return [a_numeri(x) for x in v]
+        if isinstance(v, str):
+            if v not in numero:
+                numero[v] = len(parole)
+                parole.append(v)
+            return numero[v]
+        if v is not None:
+            raise SystemExit('Nei campi a parole c\'e\' un valore che non e\' una parola: %r' % (v,))
+        return v
+
     for p in dati['persone']:
         q = dict(p)
         dett = {k: q.pop(k) for k in CAMPI_A_PARTE if k in q}
         if dett:
             q['_e'] = 1
             fuori_schede[p['q']] = dett
+        for k in CAMPI_A_PAROLE:
+            if k in q:
+                q[k] = {m: a_numeri(v) for m, v in q[k].items()}
         persone_leggere.append(q)
     leggero['persone'] = persone_leggere
+    leggero['parole'] = parole
     programma = programma.replace(corpo, json.dumps(leggero, ensure_ascii=False, separators=(',', ':')), 1)
 
     # Al programma la tabella degli indirizzi arriva coi dati. I titoli delle
@@ -662,6 +688,10 @@ def costruisci(scheletro, dati, descrizione_casa, versione, cartella_sito, uscit
         for vs, voti in nomi.items():
             scrivi('fiducie/%s.json' % vs, json.dumps(voti, separators=(',', ':')))
     scrivi('stile.css', stile)
+    peso = len(programma.encode('utf-8'))
+    if peso > PESO_MASSIMO_PROGRAMMA:
+        raise SystemExit('programma.js pesa %d byte, oltre %d: Google lo leggerebbe a meta\'.'
+                         % (peso, PESO_MASSIMO_PROGRAMMA))
     scrivi('programma.js', programma)
     scrivi('versione.txt', versione)
 
