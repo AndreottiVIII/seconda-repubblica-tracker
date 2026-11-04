@@ -53,6 +53,7 @@ body.attesa,body.attesa *{cursor:wait !important}
 #cestino-icona{position:absolute;right:8px;bottom:8px;z-index:1}
 .icona{width:88px;padding:4px 2px;text-align:center;cursor:default;
   color:#fff;text-shadow:1px 1px 0 rgba(0,0,0,.7);user-select:none}
+a.icona{display:block;text-decoration:none}
 .icona .dis{font-size:30px;line-height:34px;display:block}
 .icona .et{display:inline-block;padding:1px 3px;font-size:11px;line-height:13px}
 .icona:hover .et{background:rgba(0,0,128,.45)}
@@ -734,7 +735,7 @@ window.addEventListener('popstate', e => {
    clic resta quello di prima; con ctrl si apre una scheda nuova del browser,
    come su ogni sito. */
 function linkVeri(radice){
-  radice.querySelectorAll('span.clic[data-apri]').forEach(s => {
+  radice.querySelectorAll('span.clic[data-apri], div.icona[data-apri]').forEach(s => {
     const x = percorsoDi(chiave(s.dataset.apri, s.dataset.arg || ''));
     if (!x) return;
     const a = document.createElement('a');
@@ -4285,6 +4286,7 @@ function disegnaScrivania(){
   disegna('icone', 'sx');
   disegna('icone-destra', 'dx');
   disegna('cestino-icona', 'giu');
+  ['icone', 'icone-destra', 'cestino-icona'].forEach(x => linkVeri(document.getElementById(x)));
   const m = document.getElementById('voci-menu');
   m.innerHTML = SCRIVANIA.map(x =>
     '<li data-apri="' + x[2] + '" data-arg="' + x[3] + '">' +
