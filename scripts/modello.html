@@ -243,7 +243,9 @@ button.p95:active{border-color:var(--ombra) var(--luce) var(--luce) var(--ombra)
   .finestra{position:static !important;width:auto !important;
     height:auto !important;margin:6px;max-height:none}
   .corpo{max-height:none;padding:8px 6px}
-  #scrivania{overflow:auto;-webkit-overflow-scrolling:touch}
+  /* Sul telefono prima il contenuto, poi le icone: anche Google legge da telefono. */
+  #scrivania{overflow:auto;-webkit-overflow-scrolling:touch;display:flex;flex-direction:column}
+  #finestre{order:-1}
   .maniglia{display:none}
   .bottoni button:not(.chiudi){display:none}
   th{position:static}
@@ -535,6 +537,7 @@ function fronte(k){
   FIN[k].el.style.display = '';
   FIN[k].el.style.zIndex = ++zeta;
   FIN[k].el.classList.add('fronte');
+  if (stretto()) FIN[k].el.scrollIntoView();
   disegnaBarra();
 }
 
