@@ -224,6 +224,11 @@ button.p95:active{border-color:var(--ombra) var(--luce) var(--luce) var(--ombra)
 #testo-pagina h2{font-size:16px;margin:14px 0 4px}
 #testo-pagina ul{margin:0 0 8px 18px;padding:0}
 #testo-pagina[hidden]{display:none}
+/* Se il programma non riesce ad aprire la finestra prima che qualcuno abbia
+   toccato qualcosa (un bot, un dato che non arriva), niente schermata blu: si
+   spegne la scrivania e resta il testo della pagina (classe "spento"). */
+.spento #scrivania,.spento #barra,.spento #menu,.spento #salvaschermo,.spento #bsod{display:none}
+.spento body{overflow:auto}
 /* --- salvaschermo e schermata blu --- */
 #salvaschermo{position:fixed;inset:0;background:#000;z-index:9800;display:none}
 #salvaschermo.acceso{display:block}
@@ -269,10 +274,13 @@ button.p95:active{border-color:var(--ombra) var(--luce) var(--luce) var(--ombra)
 <!--%%INTESTAZIONE%%-->
 
 <div id="scrivania">
+  <!-- Prima le finestre, poi le icone: nel documento il contenuto viene prima
+       delle trenta etichette uguali in ogni pagina. A vista non cambia niente,
+       le icone sono posizionate in assoluto. -->
+  <div id="finestre"></div>
   <div id="icone" data-nosnippet></div>
   <div id="icone-destra" data-nosnippet></div>
   <div id="cestino-icona" data-nosnippet></div>
-  <div id="finestre"></div>
 </div>
 
 <div id="barra" data-nosnippet>
@@ -301,8 +309,10 @@ button.p95:active{border-color:var(--ombra) var(--luce) var(--luce) var(--ombra)
    aspetterebbe per sempre. */
 const VERSIONE = '%%VERSIONE%%';
 // Il testo vero della pagina (testo_statico.py) e' per chi non esegue il programma:
-// qui il programma c'e', e lo sostituisce con la scrivania. Il salvaschermo e la
-// schermata blu stanno solo qui, cosi' non finiscono nel testo che legge Google.
+// qui il programma c'e', e lo sostituisce con la scrivania (la finestra mostra lo
+// stesso contenuto). Niente testo coperto da altro: per Google sarebbe testo nascosto.
+// Il salvaschermo e la schermata blu stanno solo qui, cosi' non finiscono nel testo
+// che legge Google.
 (function preparaPagina(){
   const t = document.getElementById('testo-pagina');
   if (t) t.hidden = true;
@@ -313,6 +323,24 @@ const VERSIONE = '%%VERSIONE%%';
     '<p>* Premere un tasto qualsiasi per tornare alla scrivania.</p><p>&nbsp;</p>' +
     '<p style="text-align:center">Premere un tasto per continuare _</p></div>');
 })();
+/* C'e' qualcuno davanti allo schermo? Lo si sa dal primo tocco: mouse, tastiera,
+   dito, rotella. Un bot (Google compreso) non tocca niente. Finche' nessuno ha
+   toccato niente, un errore o un dato che non arriva non mostrano la schermata
+   blu, e il salvaschermo non parte: un bot deve leggere la pagina, non una
+   finta schermata d'errore o uno schermo nero. */
+let umano = false;
+['pointerdown', 'keydown', 'touchstart', 'wheel', 'mousemove'].forEach(ev =>
+  document.addEventListener(ev, () => { umano = true; }, {capture: true, once: true, passive: true}));
+// Spegne la scrivania e lascia il testo della pagina: e' quello che si vede se il
+// programma non riesce ad aprire la finestra. Nel file unico da disco il testo non
+// c'e', e non fa niente.
+function mostraTesto(){
+  const t = document.getElementById('testo-pagina');
+  if (!t) return false;
+  t.hidden = false;
+  document.documentElement.classList.add('spento');
+  return true;
+}
 // Le pagine del sito pubblicato stanno anche in sottocartelle
 // (/onorevole/clemente-mastella/): i file comuni vanno cercati alla radice.
 const RADICE_SITO = typeof RADICE === 'string' ? RADICE : '';
@@ -4318,8 +4346,9 @@ function contaInattivita(){
   }
 }
 setInterval(() => {
+  if (!umano) return;              // nessuno davanti allo schermo: niente salvaschermo
   inattivo++;
-  if (inattivo === 300) accendiSalvaschermo();      // cinque minuti
+  if (inattivo === 300) accendiSalvaschermo();      // cinque minuti dall'ultimo tocco
 }, 1000);
 
 function accendiSalvaschermo(){
@@ -4337,15 +4366,24 @@ function accendiSalvaschermo(){
 }
 
 function schermataBlu(messaggio){
+  document.body.classList.remove('attesa');
+  if (!umano && document.getElementById('testo-pagina')){
+    // Nessuno ha toccato niente: e' un bot, o la pagina si e' appena aperta. Se
+    // la finestra non c'e' resta il testo della pagina; se c'e', l'errore non si
+    // mostra. La schermata blu e' per chi l'ha provocata con un clic.
+    if (!document.querySelector('#finestre .finestra')) mostraTesto();
+    return;
+  }
   const b = document.getElementById('bsod');
   document.getElementById('bsod-testo').innerHTML =
     'Si &egrave; verificato un errore irreversibile alla 0E:0028:C11B3ADC ' +
     'nell&rsquo;applicazione corrente.<br><br>' + esc(messaggio) +
     '<br><br>L&rsquo;applicazione verr&agrave; chiusa.';
   b.classList.add('acceso');
-  document.body.classList.remove('attesa');
 }
-window.onerror = function(m){ schermataBlu(m); return true; };
+// Senza nessuno davanti l'errore resta anche nella console (return false): e'
+// quello che Search Console mostra in "Testa URL pubblicato".
+window.onerror = function(m){ schermataBlu(m); return umano; };
 
 /* ---------- ascolti ---------- */
 document.addEventListener('mousemove', contaInattivita);
