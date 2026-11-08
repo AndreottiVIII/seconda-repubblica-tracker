@@ -1,5 +1,5 @@
 {
- "generato": "2026-10-25",
+ "generato": "2026-11-08",
  "eta_massima_credibile": 106,
  "persone": [
   {
@@ -128661,7 +128661,7 @@
    "morte": null,
    "prec_morte": null,
    "foto": null,
-   "wikipedia": null,
+   "wikipedia": "https://it.wikipedia.org/wiki/Cristina_Matranga",
    "gruppi_per_mandato": {
     "XII": [
      {
@@ -136320,8 +136320,8 @@
    "cognome": "Baldini",
    "nascita": "1942-09-18",
    "prec_nascita": "giorno",
-   "morte": null,
-   "prec_morte": null,
+   "morte": "2026-10-30",
+   "prec_morte": "giorno",
    "foto": "http://commons.wikimedia.org/wiki/Special:FilePath/Massimo%20Baldini%20XIV.jpg",
    "wikipedia": "https://it.wikipedia.org/wiki/Massimo_Baldini_(politico)",
    "gruppi_per_mandato": {
@@ -136407,9 +136407,9 @@
     ]
    },
    "gruppo_eletto": "FI",
-   "registro_muto": "Senato",
    "id_senato": "http://dati.senato.it/senatore/139",
-   "stato": "vivente",
+   "fonte_morte": "Senato",
+   "stato": "deceduto",
    "non_eletto": false,
    "hall_of_fame": false
   },
