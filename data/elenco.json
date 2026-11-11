@@ -1,5 +1,5 @@
 {
- "generato": "2026-11-08",
+ "generato": "2026-11-11",
  "eta_massima_credibile": 106,
  "persone": [
   {
@@ -18813,30 +18813,15 @@
    "hall_of_fame": false
   },
   {
-   "qid": "S3845",
+   "qid": "Q116017509",
    "nome": "Antonio Duva",
    "cognome": "Duva",
-   "foto_senato": [
-    "13",
-    "3845"
-   ],
-   "genere": "M",
-   "circoscrizioni": {
-    "XIII": "Lombardia"
-   },
-   "incarichi": {},
-   "mandato": {
-    "XIII": [
-     "19960509",
-     "20010529"
-    ]
-   },
    "nascita": "1937-04-04",
    "prec_nascita": "giorno",
    "morte": null,
    "prec_morte": null,
    "foto": null,
-   "wikipedia": null,
+   "wikipedia": "https://it.wikipedia.org/wiki/Antonio_Duva",
    "gruppi_per_mandato": {
     "XIII": [
      {
@@ -18860,9 +18845,31 @@
    "mandati": [
     "XIII"
    ],
-   "cariche": [],
-   "partiti": [],
-   "solo_registro": "Senato",
+   "cariche": [
+    "senatore della Repubblica Italiana"
+   ],
+   "partiti": [
+    "Democratici di Sinistra",
+    "Partito Repubblicano Italiano",
+    "Sinistra Repubblicana"
+   ],
+   "foto_senato": [
+    "13",
+    "3845"
+   ],
+   "genere": "M",
+   "circoscrizioni": {
+    "XIII": "Lombardia"
+   },
+   "mandato": {
+    "XIII": [
+     "19960509",
+     "20010529"
+    ]
+   },
+   "gruppo_eletto": "Misto",
+   "registro_muto": "Senato",
+   "id_senato": "http://dati.senato.it/senatore/3845",
    "stato": "vivente",
    "non_eletto": false,
    "hall_of_fame": false
