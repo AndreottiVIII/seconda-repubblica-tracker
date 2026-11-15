@@ -409,7 +409,7 @@ def testa_casa(dati, descrizione):
              'inLanguage': 'it-IT',
              'temporalCoverage': '1994-04-15/2013-03-14',
              'spatialCoverage': {'@type': 'Place', 'name': 'Italia'},
-             'dateModified': dati['generato'],
+             'dateModified': data_iso(dati['generato']),
              'isBasedOn': ['https://dati.camera.it/', 'https://dati.senato.it/',
                            'https://www.wikidata.org/', 'https://it.wikipedia.org/'],
              'keywords': ['Seconda Repubblica', 'cambi di casacca', 'trasformismo',
@@ -421,7 +421,13 @@ def testa_casa(dati, descrizione):
                  descrizione, grafo)
 
 
-def grafo_scheda(p, url, titolo, dati):
+def data_iso(giorno):
+    # Data e ora complete con il fuso: con la sola data Search Console ha
+    # segnalato "Invalid datetime value".
+    return giorno + 'T00:00:00+01:00'
+
+
+def grafo_scheda(p, url, titolo, dati, modificata=None):
     individuo = {'@type': 'Person', 'name': p['n']}
     if p['q'].startswith('Q'):
         individuo['sameAs'] = ['https://www.wikidata.org/wiki/' + p['q']]
@@ -431,7 +437,10 @@ def grafo_scheda(p, url, titolo, dati):
         individuo['deathDate'] = p['d']
     return {'@context': 'https://schema.org', '@type': 'ProfilePage',
             'url': url, 'name': titolo, 'inLanguage': 'it-IT',
-            'dateModified': dati['generato'],
+            # il giorno in cui il testo della scheda e' cambiato davvero (lo
+            # stesso della mappa del sito), non quello della costruzione, che
+            # cambierebbe ogni notte su tutte le pagine
+            'dateModified': data_iso(modificata or dati['generato']),
             'isPartOf': {'@id': INDIRIZZO + '/#sito'},
             'mainEntity': individuo}
 
@@ -619,6 +628,7 @@ def costruisci(scheletro, dati, descrizione_casa, versione, cartella_sito, uscit
         h = impronta('\n'.join(testi))
         prima = vecchie.get(indirizzo)
         date[indirizzo] = [h, prima[1] if prima and prima[0] == h else dati['generato']]
+        return date[indirizzo][1]
 
     dati['_per_q'] = {p['q']: p for p in dati['persone']}
     corpo_casa = testo_statico.corpo('indice', descrizione_casa, None, dati)
@@ -632,13 +642,15 @@ def costruisci(scheletro, dati, descrizione_casa, versione, cartella_sito, uscit
     for indirizzo, chiave, titolo, descrizione, persona in elenco_pagine:
         pieno = '%s | %s' % (titolo, SITO)
         fuori = chiave in FUORI_DAI_MOTORI or bool(persona and noti is not None and persona['q'] not in noti)
-        grafo = grafo_scheda(persona, INDIRIZZO + indirizzo, pieno, dati) if persona else None
         corpo = testo_statico.corpo(chiave, descrizione, persona, dati)
+        giorno = datata(indirizzo, pieno, descrizione, corpo)
+        if fuori:
+            date.pop(indirizzo, None)
+        grafo = grafo_scheda(persona, INDIRIZZO + indirizzo, pieno, dati, giorno) if persona else None
         scrivi(indirizzo.strip('/') + '/index.html',
                monta(pieno, testa(indirizzo, pieno, descrizione, grafo, fuori), titolo, corpo))
         if not fuori:
             mappa.append(indirizzo)
-            datata(indirizzo, pieno, descrizione, corpo)
     with open(DATE_PAGINE, 'w', encoding='utf-8', newline='\n') as f:
         json.dump(date, f, ensure_ascii=False, sort_keys=True, indent=0)
 

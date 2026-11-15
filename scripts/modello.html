@@ -311,18 +311,23 @@ const VERSIONE = '%%VERSIONE%%';
 // Il testo vero della pagina (testo_statico.py) e' per chi non esegue il programma:
 // qui il programma c'e', e lo sostituisce con la scrivania (la finestra mostra lo
 // stesso contenuto). Niente testo coperto da altro: per Google sarebbe testo nascosto.
-// Il salvaschermo e la schermata blu stanno solo qui, cosi' non finiscono nel testo
-// che legge Google.
+// Il salvaschermo e la schermata blu non stanno nella pagina: li crea schermi()
+// solo quando servono davvero, cosi' il testo "errore irreversibile" non c'e'
+// in quello che legge Google.
 (function preparaPagina(){
   const t = document.getElementById('testo-pagina');
   if (t) t.hidden = true;
-  document.body.insertAdjacentHTML('beforeend',
-    '<div id="salvaschermo" data-nosnippet><b>Seconda Repubblica Tracker</b></div>' +
-    '<div id="bsod" data-nosnippet><p><span class="cap">Seconda Repubblica</span></p>' +
-    '<p id="bsod-testo">Si &egrave; verificato un errore irreversibile.</p><p>&nbsp;</p>' +
-    '<p>* Premere un tasto qualsiasi per tornare alla scrivania.</p><p>&nbsp;</p>' +
-    '<p style="text-align:center">Premere un tasto per continuare _</p></div>');
 })();
+function schermi(){
+  if (!document.getElementById('bsod'))
+    document.body.insertAdjacentHTML('beforeend',
+      '<div id="salvaschermo" data-nosnippet><b>Seconda Repubblica Tracker</b></div>' +
+      '<div id="bsod" data-nosnippet><p><span class="cap">Seconda Repubblica</span></p>' +
+      '<p id="bsod-testo">Si &egrave; verificato un errore irreversibile.</p><p>&nbsp;</p>' +
+      '<p>* Premere un tasto qualsiasi per tornare alla scrivania.</p><p>&nbsp;</p>' +
+      '<p style="text-align:center">Premere un tasto per continuare _</p></div>');
+  return {salva: document.getElementById('salvaschermo'), blu: document.getElementById('bsod')};
+}
 /* C'e' qualcuno davanti allo schermo? Lo si sa dal primo tocco: mouse, tastiera,
    dito, rotella. Un bot (Google compreso) non tocca niente. Finche' nessuno ha
    toccato niente, un errore o un dato che non arriva non mostrano la schermata
@@ -358,9 +363,14 @@ const RADICE_SITO = typeof RADICE === 'string' ? RADICE : '';
         if (sessionStorage.getItem('attesa') === fresca) return;
         sessionStorage.setItem('attesa', fresca);
       } catch (e) { return; }
-      // Un indirizzo diverso e' l'unico modo sicuro di scavalcare la cache.
-      location.replace(location.pathname + '?v=' + encodeURIComponent(fresca) +
-                       location.hash);
+      // Un indirizzo diverso e' l'unico modo sicuro di scavalcare la cache. Solo
+      // con qualcuno davanti: per un bot (Google) sarebbe un rimando a un altro
+      // indirizzo. Se nessuno ha ancora toccato niente, si aspetta il primo tocco.
+      const ricarica = () => location.replace(location.pathname + '?v=' +
+                                              encodeURIComponent(fresca) + location.hash);
+      if (umano) return ricarica();
+      ['pointerdown', 'keydown', 'touchstart'].forEach(ev =>
+        document.addEventListener(ev, ricarica, {once: true, passive: true}));
     })
     .catch(() => clearTimeout(scadenza));
 })();
@@ -4340,7 +4350,7 @@ let inattivo = 0, timerSalva = null;
 function contaInattivita(){
   inattivo = 0;
   const s = document.getElementById('salvaschermo');
-  if (s.classList.contains('acceso')){
+  if (s && s.classList.contains('acceso')){
     s.classList.remove('acceso');
     clearInterval(timerSalva); timerSalva = null;
   }
@@ -4352,7 +4362,7 @@ setInterval(() => {
 }, 1000);
 
 function accendiSalvaschermo(){
-  const s = document.getElementById('salvaschermo');
+  const s = schermi().salva;
   const b = s.querySelector('b');
   s.classList.add('acceso');
   let x = 60, y = 60, dx = 2.2, dy = 1.7;
@@ -4374,7 +4384,7 @@ function schermataBlu(messaggio){
     if (!document.querySelector('#finestre .finestra')) mostraTesto();
     return;
   }
-  const b = document.getElementById('bsod');
+  const b = schermi().blu;
   document.getElementById('bsod-testo').innerHTML =
     'Si &egrave; verificato un errore irreversibile alla 0E:0028:C11B3ADC ' +
     'nell&rsquo;applicazione corrente.<br><br>' + esc(messaggio) +
@@ -4391,8 +4401,9 @@ document.addEventListener('keydown', contaInattivita);
 document.addEventListener('click', contaInattivita, true);
 
 document.addEventListener('click', e => {
-  if (document.getElementById('bsod').classList.contains('acceso')){
-    document.getElementById('bsod').classList.remove('acceso');
+  const blu = document.getElementById('bsod');
+  if (blu && blu.classList.contains('acceso')){
+    blu.classList.remove('acceso');
     return;
   }
   const av = document.getElementById('avvio');
@@ -4434,7 +4445,8 @@ document.addEventListener('keydown', e => {
     return;
   }
   if (e.key === 'Escape'){
-    document.getElementById('bsod').classList.remove('acceso');
+    const blu = document.getElementById('bsod');
+    if (blu) blu.classList.remove('acceso');
     document.getElementById('menu').classList.remove('aperto');
   }
 });
