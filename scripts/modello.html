@@ -229,6 +229,17 @@ button.p95:active{border-color:var(--ombra) var(--luce) var(--luce) var(--ombra)
    spegne la scrivania e resta il testo della pagina (classe "spento"). */
 .spento #scrivania,.spento #barra,.spento #menu,.spento #salvaschermo,.spento #bsod{display:none}
 .spento body{overflow:auto}
+/* --- l'avviso sui cookie: una finestra di dialogo, sopra la barra --- */
+#sr-ck{position:fixed;left:8px;right:8px;bottom:38px;z-index:9500;max-width:440px;margin:0 auto;
+  background:var(--faccia);color:var(--testo);border:2px solid;padding:2px;
+  border-color:var(--luce) var(--buio) var(--buio) var(--luce);box-shadow:inset -1px -1px var(--ombra),inset 1px 1px var(--chiaro);
+  font:13px/1.4 "MS Sans Serif","Microsoft Sans Serif",Tahoma,Arial,sans-serif}
+#sr-ck .sr-ck-t{background:var(--titolo);color:#fff;font-weight:bold;padding:2px 6px;margin-bottom:8px}
+#sr-ck p{margin:0 10px 10px}
+#sr-ck a{color:#0000ee}
+#sr-ck .sr-ck-b{display:flex;gap:8px;justify-content:center;margin:0 10px 10px}
+#sr-ck .sr-ck-b button{flex:1 1 0;min-height:32px;font-size:13px}
+@media print{#sr-ck{display:none}}
 /* --- salvaschermo e schermata blu --- */
 #salvaschermo{position:fixed;inset:0;background:#000;z-index:9800;display:none}
 #salvaschermo.acceso{display:block}
@@ -267,6 +278,77 @@ button.p95:active{border-color:var(--ombra) var(--luce) var(--luce) var(--ombra)
   s.src = 'https://gc.zgo.at/count.js';
   s.setAttribute('data-goatcounter', 'https://' + codice + '.goatcounter.com/count');
   document.head.appendChild(s);
+})();
+</script>
+<!-- Visite con Google Analytics, SOLO dopo "Accetto" nell'avviso sui cookie
+     (stessa evidenza ai due pulsanti; chiudere senza scegliere = niente conteggio).
+     La scelta resta nel browser (localStorage 'sr-cookie'); la finestra "Il metodo"
+     spiega tutto e ha il pulsante per cambiarla (window.srCookie()). Fuori da
+     secondarepubblica.it (github.io, disco, anteprime) niente avviso e niente
+     Analytics; con navigator.webdriver (controlli automatici) niente avviso. -->
+<script>
+(function(){
+  'use strict';
+  var ID = 'G-LQVBVJSDRM', CHIAVE = 'sr-cookie';
+  var SITO = /(^|\.)secondarepubblica\.it$/.test(location.hostname);
+  function leggi(){ try { return localStorage.getItem(CHIAVE); } catch (e) { return null; } }
+  function scrivi(v){ try { localStorage.setItem(CHIAVE, v); } catch (e) {} }
+  var partito = false;
+  function avvia(){
+    if (partito || !SITO) return;
+    partito = true;
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function(){ window.dataLayer.push(arguments); };
+    window.gtag('js', new Date());
+    window.gtag('config', ID, {allow_google_signals: false, allow_ad_personalization_signals: false});
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + ID;
+    document.head.appendChild(s);
+  }
+  function togliCookie(){
+    document.cookie.split(';').forEach(function(c){
+      var n = c.split('=')[0].trim();
+      if (!/^_ga/.test(n)) return;
+      ['', location.hostname, '.' + location.hostname.replace(/^www\./, '')].forEach(function(d){
+        document.cookie = n + '=; Max-Age=0; path=/' + (d ? '; domain=' + d : '');
+      });
+    });
+  }
+  var box = null;
+  function chiudi(){ if (box && box.parentNode) box.parentNode.removeChild(box); box = null; }
+  function scegli(v){
+    var prima = leggi();
+    scrivi(v);
+    chiudi();
+    if (v === 'si') avvia();
+    else { togliCookie(); if (prima === 'si' && partito) location.reload(); }
+  }
+  function mostra(){
+    if (box || !document.body) return;
+    box = document.createElement('div');
+    box.id = 'sr-ck';
+    box.setAttribute('role', 'region');
+    box.setAttribute('aria-label', 'Avviso sui cookie');
+    box.setAttribute('data-nosnippet', '');
+    box.innerHTML =
+      '<div class="sr-ck-t">Cookie</div>' +
+      '<p>Questo sito conta le visite con Google Analytics, che usa dei cookie. Serve solo a sapere quali pagine vengono lette: niente pubblicit&agrave;. <a href="/metodo/" data-apri="metodo">Come funziona</a></p>' +
+      '<div class="sr-ck-b"><button type="button" class="p95" data-v="si">Accetto</button><button type="button" class="p95" data-v="no">Rifiuto</button></div>';
+    box.addEventListener('click', function(e){
+      var b = e.target.closest ? e.target.closest('button[data-v]') : null;
+      if (b) scegli(b.getAttribute('data-v'));
+    });
+    document.body.appendChild(box);
+  }
+  window.srCookie = function(){ if (SITO) mostra(); };
+  var scelta = leggi();
+  if (scelta === 'si') avvia();
+  // chi ha rifiutato: via i cookie anche quelli riscritti da Google mentre la pagina si ricaricava
+  else if (scelta === 'no') togliCookie();
+  else if (SITO && !navigator.webdriver){
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', mostra); else mostra();
+  }
 })();
 </script>
 </head>
@@ -4249,6 +4331,15 @@ VISTE['metodo'] = function(){
     '<li>In un collegio (Monterotondo, 1996) i voti del Ministero danno primo chi non risulta eletto: ' +
     'quel collegio resta fuori.</li>' +
     '</ul>' +
+    '<h2 id="visite">Visite e cookie</h2>' +
+    '<p>Per sapere quali pagine vengono lette, il sito conta le visite con Google Analytics, ' +
+    'ma solo se lo accettate nell&rsquo;avviso che compare alla prima visita. In quel caso Google ' +
+    'Analytics salva dei cookie sul vostro dispositivo, che durano fino a due anni, e riceve la pagina ' +
+    'che guardate, il tipo di dispositivo e la citt&agrave; approssimativa. Google non conserva il vostro ' +
+    'indirizzo IP. I dati non servono per la pubblicit&agrave; e non vengono incrociati con altri servizi di Google.</p>' +
+    '<p>Se rifiutate, niente cookie e niente Google Analytics. Il sito conta comunque le visite in forma ' +
+    'anonima con GoatCounter, che non usa cookie.</p>' +
+    '<p><button type="button" class="p95" onclick="window.srCookie&&window.srCookie()">Cambia la scelta sui cookie</button></p>' +
     '<h2>Che cosa questo sito non dice</h2>' +
     '<p>Non dice perch&eacute;. Un cambio di gruppo &egrave; un atto pubblico, depositato ' +
     'e datato; le ragioni no. Qui trovate il fatto, con la data e la fonte.</p>' +
