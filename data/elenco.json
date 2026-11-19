@@ -1,5 +1,5 @@
 {
- "generato": "2026-11-11",
+ "generato": "2026-11-19",
  "eta_massima_credibile": 106,
  "persone": [
   {
@@ -26887,8 +26887,8 @@
    "cognome": "Savo",
    "nascita": "1940-09-01",
    "prec_nascita": "giorno",
-   "morte": null,
-   "prec_morte": null,
+   "morte": "2026-10-19",
+   "prec_morte": "giorno",
    "foto": null,
    "wikipedia": "https://it.wikipedia.org/wiki/Benito_Savo",
    "gruppi_per_mandato": {
@@ -26925,8 +26925,8 @@
    },
    "id_camera": "300268",
    "gruppo_eletto": "FORZA ITALIA",
-   "registro_muto": "Camera dei deputati",
-   "stato": "vivente",
+   "fonte_morte": "Camera dei deputati",
+   "stato": "deceduto",
    "non_eletto": false,
    "hall_of_fame": false
   },
@@ -31393,8 +31393,8 @@
    "cognome": "Incorvaia",
    "nascita": "1941-02-07",
    "prec_nascita": "giorno",
-   "morte": null,
-   "prec_morte": null,
+   "morte": "2026-10-11",
+   "prec_morte": "giorno",
    "foto": "http://commons.wikimedia.org/wiki/Special:FilePath/Carmelo%20Incorvaia.jpg",
    "wikipedia": "https://it.wikipedia.org/wiki/Carmelo_Incorvaia",
    "gruppi_per_mandato": {
@@ -31439,8 +31439,8 @@
    },
    "id_camera": "37010",
    "gruppo_eletto": "PROGRESSISTI - FEDERATIVO",
-   "registro_muto": "Camera dei deputati",
-   "stato": "vivente",
+   "fonte_morte": "Camera dei deputati",
+   "stato": "deceduto",
    "non_eletto": false,
    "hall_of_fame": false
   },
@@ -117615,8 +117615,8 @@
    "cognome": "Marengo",
    "nascita": "1942-06-01",
    "prec_nascita": "giorno",
-   "morte": null,
-   "prec_morte": null,
+   "morte": "2026-10-17",
+   "prec_morte": "giorno",
    "foto": "http://commons.wikimedia.org/wiki/Special:FilePath/Lucio%20Marengo%20XIII.jpg",
    "wikipedia": "https://it.wikipedia.org/wiki/Lucio_Marengo",
    "gruppi_per_mandato": {
@@ -117670,8 +117670,8 @@
    },
    "id_camera": "37390",
    "gruppo_eletto": "ALLEANZA NAZIONALE",
-   "registro_muto": "Camera dei deputati",
-   "stato": "vivente",
+   "fonte_morte": "Camera dei deputati",
+   "stato": "deceduto",
    "non_eletto": false,
    "hall_of_fame": false
   },
@@ -134426,8 +134426,8 @@
    "cognome": "Pepe",
    "nascita": "1941-01-14",
    "prec_nascita": "giorno",
-   "morte": null,
-   "prec_morte": null,
+   "morte": "2026-10-02",
+   "prec_morte": "giorno",
    "foto": "http://commons.wikimedia.org/wiki/Special:FilePath/Mario%20Pepe%20XVI.jpg",
    "wikipedia": "https://it.wikipedia.org/wiki/Mario_Pepe_(politico_1941)",
    "gruppi_per_mandato": {
@@ -134513,8 +134513,8 @@
    },
    "id_camera": "38120",
    "gruppo_eletto": "PARTITO POPOLARE ITALIANO",
-   "registro_muto": "Camera dei deputati",
-   "stato": "vivente",
+   "fonte_morte": "Camera dei deputati",
+   "stato": "deceduto",
    "non_eletto": false,
    "hall_of_fame": false
   },
