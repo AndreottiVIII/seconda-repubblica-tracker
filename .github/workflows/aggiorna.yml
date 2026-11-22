@@ -95,5 +95,10 @@ jobs:
         with:
           path: pubblica
 
+      # GitHub a volte non trova subito il pacchetto appena caricato:
+      # mezzo minuto di attesa prima di pubblicare.
+      - name: Attendi che il pacchetto sia registrato
+        run: sleep 30
+
       - id: pubblicazione
         uses: actions/deploy-pages@v4
